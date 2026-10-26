@@ -40,7 +40,7 @@ abstract class AiFixture extends IntegrationFixture {
     }
     @BeforeEach void cleanSyntheticJobs() throws Exception {
         try(var c=admin()){
-            for(String table:List.of("fingerprint_perception_slots","fingerprint_rollout_perception_pins","perception_components","perception_audio","perception_jobs","perception_audio_usage",
+            for(String table:List.of("fingerprint_perception_slots","fingerprint_rollout_perception_pins","perception_components","perception_audio","perception_rerank_inputs","perception_jobs","perception_audio_usage",
                     "fingerprint_activations","fingerprint_active","fingerprint_snapshot_slots","fingerprint_snapshots",
                     "fingerprint_rollout_spaces","fingerprint_rollout_sources","fingerprint_rollouts","fingerprint_components","ai_jobs","ai_usage"))
                 try(var s=c.prepareStatement("DELETE FROM dzoka."+table+" WHERE tenant_id=?")){s.setObject(1,A);s.executeUpdate();}

@@ -6,4 +6,6 @@
 - [Local perception](perception-adoption.md): exact licensed ResNet/Paddle/Wav2Vec2 artifacts/dictionaries on the existing CPU runtime, plus independently authored classical local features; original/export terms retained separately.
 - [Joint/region profiles](joint-vision-adoption.md): official Apache-2.0 Jina CLIP v1 paired exports and Model Zoo SSD/FCN artifacts with both declared Apache-2.0/MIT obligations, exact immutable hashes and bounded processing.
 
+- [Structured attributes, translation and reranking](language-adoption.md): task-specific Apache-2.0 QA/Marian/official cross-encoder exports, independent native conformance and retained negative FLAN findings.
+
 The [artifact lock](../../dependencies.lock.json) records the combined application/test graph and explicit license choices. Dependency hashes and license declarations are not a complete source audit or vulnerability certification. New runtime versions, providers, model weights and production distributions require their own bounded adoption decision before installation.

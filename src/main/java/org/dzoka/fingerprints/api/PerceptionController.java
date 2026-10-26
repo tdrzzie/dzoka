@@ -23,6 +23,11 @@ public final class PerceptionController {
     public record Failure(UUID lease,String reason){}
     @PostMapping("/reports/{report}/perception/image") public Job image(@PathVariable UUID tenant,@PathVariable UUID report,@AuthenticationPrincipal Jwt jwt,@RequestBody Image body){return jobs.enqueue(actor(jwt),tenant,report,body.profileId(),body.mediaId(),null);}
     @PostMapping("/reports/{report}/perception/text") public Job text(@PathVariable UUID tenant,@PathVariable UUID report,@AuthenticationPrincipal Jwt jwt,@RequestBody Profile body){return jobs.enqueue(actor(jwt),tenant,report,body.profileId(),null,null);}
+    @PostMapping(value="/reports/{report}/perception/rerank",consumes="application/json") public Job rerank(@PathVariable UUID tenant,@PathVariable UUID report,@AuthenticationPrincipal Jwt jwt,HttpServletRequest request)throws IOException{
+        if(request.getContentLengthLong()>16384)throw new BoundedJsonInput.TooLarge();byte[] raw=request.getInputStream().readNBytes(16385);
+        if(raw.length>16384)throw new BoundedJsonInput.TooLarge();return jobs.rerank(actor(jwt),tenant,report,raw);
+    }
+    @GetMapping("/perception/jobs/{id}/result") public Optional<Component> result(@PathVariable UUID tenant,@PathVariable UUID id,@AuthenticationPrincipal Jwt jwt){return jobs.result(actor(jwt),tenant,id);}
     @PostMapping(value="/reports/{report}/perception/audio/{profile}",consumes="audio/wav") public Job audio(@PathVariable UUID tenant,@PathVariable UUID report,@PathVariable UUID profile,@AuthenticationPrincipal Jwt jwt,HttpServletRequest request)throws IOException{
         if(request.getContentLengthLong()>320044)throw new BoundedJsonInput.TooLarge();byte[] bytes=request.getInputStream().readNBytes(320045);
         if(bytes.length>320044)throw new BoundedJsonInput.TooLarge();return jobs.enqueue(actor(jwt),tenant,report,profile,null,bytes);

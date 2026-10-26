@@ -44,8 +44,9 @@ def main():
            ('native-model-artifacts',['tools/ai_runtime.py','check']),
            ('native-model-conformance',['tools/ai_runtime.py','probe']),
            ('perception-artifacts',['tools/perception_runtime.py','check']),
-           ('joint-region-artifacts',['tools/vision_runtime.py','check'])]
-    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--restore-drill']
+           ('joint-region-artifacts',['tools/vision_runtime.py','check']),
+           ('language-artifacts',['tools/language_runtime.py','check'])]
+    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--restore-drill']
     if args.pg_bin:integration+=['--pg-bin',args.pg_bin,'--maven',args.maven]
     steps.append(('real-provider-integration-and-restore',integration))
     run=ROOT/'.test-tmp'/('local-verification-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))

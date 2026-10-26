@@ -1,0 +1,214 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/dependencies/language-adoption.md",
+  "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+  "files": [
+    {
+      "group": "RERANK",
+      "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "path": "onnx/model.onnx",
+      "local": "reranker.onnx",
+      "bytes": 91011230,
+      "url": "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/onnx/model.onnx?download=true",
+      "sha256": "5d3e70fd0c9ff14b9b5169a51e957b7a9c74897afd0a35ce4bd318150c1d4d4a"
+    },
+    {
+      "group": "RERANK",
+      "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "path": "tokenizer.json",
+      "local": "rerank-tokenizer.json",
+      "bytes": 711396,
+      "url": "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/tokenizer.json?download=true",
+      "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+    },
+    {
+      "group": "RERANK",
+      "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "path": "config.json",
+      "local": "rerank-config.json",
+      "bytes": 794,
+      "url": "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/config.json?download=true",
+      "sha256": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc"
+    },
+    {
+      "group": "RERANK",
+      "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+      "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+      "path": "tokenizer_config.json",
+      "local": "rerank-tokenizer-config.json",
+      "bytes": 1330,
+      "url": "https://huggingface.co/cross-encoder/ms-marco-MiniLM-L6-v2/resolve/233902d25c440f23af6f7d6e94d2946bac0bee0a/tokenizer_config.json?download=true",
+      "sha256": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8"
+    },
+    {
+      "group": "QA",
+      "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+      "revision": "222ce933417187f06dd936952104aabfe889925c",
+      "path": "onnx/model_quantized.onnx",
+      "local": "extractor.onnx",
+      "bytes": 34005635,
+      "url": "https://huggingface.co/onnx-community/all-MiniLM-L12-v2-qa-all-ONNX/resolve/222ce933417187f06dd936952104aabfe889925c/onnx/model_quantized.onnx?download=true",
+      "sha256": "96dcabad9c2b36daa35cbca3677ae2dbfdbab1bc88eb921aeaafe12e1a322c9e"
+    },
+    {
+      "group": "QA",
+      "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+      "revision": "222ce933417187f06dd936952104aabfe889925c",
+      "path": "tokenizer.json",
+      "local": "qa-tokenizer.json",
+      "bytes": 711661,
+      "url": "https://huggingface.co/onnx-community/all-MiniLM-L12-v2-qa-all-ONNX/resolve/222ce933417187f06dd936952104aabfe889925c/tokenizer.json?download=true",
+      "sha256": "da0e79933b9ed51798a3ae27893d3c5fa4a201126cef75586296df9b4d2c62a0"
+    },
+    {
+      "group": "QA",
+      "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+      "revision": "222ce933417187f06dd936952104aabfe889925c",
+      "path": "config.json",
+      "local": "qa-config.json",
+      "bytes": 729,
+      "url": "https://huggingface.co/onnx-community/all-MiniLM-L12-v2-qa-all-ONNX/resolve/222ce933417187f06dd936952104aabfe889925c/config.json?download=true",
+      "sha256": "eda9eafc99e5044cab133664b88e39174b4ea67d51db0eceec0b7a0b540af83d"
+    },
+    {
+      "group": "QA",
+      "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+      "revision": "222ce933417187f06dd936952104aabfe889925c",
+      "path": "tokenizer_config.json",
+      "local": "qa-tokenizer-config.json",
+      "bytes": 1464,
+      "url": "https://huggingface.co/onnx-community/all-MiniLM-L12-v2-qa-all-ONNX/resolve/222ce933417187f06dd936952104aabfe889925c/tokenizer_config.json?download=true",
+      "sha256": "ccb4eb21a03e1442ee5c3f85431b9c307960a04579942537d74778dc8080a48c"
+    },
+    {
+      "group": "MARIAN",
+      "repository": "Chortan/opus-mt-fr-en",
+      "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+      "path": "onnx/encoder_model_quantized.onnx",
+      "local": "marian-encoder.onnx",
+      "bytes": 50115843,
+      "url": "https://huggingface.co/Chortan/opus-mt-fr-en/resolve/47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd/onnx/encoder_model_quantized.onnx?download=true",
+      "sha256": "770772a8acf35c3eccee056185ec58b0b859d2888047477788efc56f0abd332c"
+    },
+    {
+      "group": "MARIAN",
+      "repository": "Chortan/opus-mt-fr-en",
+      "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+      "path": "onnx/decoder_model_merged_quantized.onnx",
+      "local": "marian-decoder.onnx",
+      "bytes": 57468582,
+      "url": "https://huggingface.co/Chortan/opus-mt-fr-en/resolve/47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd/onnx/decoder_model_merged_quantized.onnx?download=true",
+      "sha256": "228d9267cff58a2ebefa5e5a8192637f959e9a9880d8aad5cc1e3fcbae07c507"
+    },
+    {
+      "group": "MARIAN",
+      "repository": "Chortan/opus-mt-fr-en",
+      "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+      "path": "tokenizer.json",
+      "local": "marian-tokenizer.json",
+      "bytes": 4199465,
+      "url": "https://huggingface.co/Chortan/opus-mt-fr-en/resolve/47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd/tokenizer.json?download=true",
+      "sha256": "8920f41b889048e5984470ca9caf40cce1476cad9aa9090db93cb8dd1d939042"
+    },
+    {
+      "group": "MARIAN",
+      "repository": "Chortan/opus-mt-fr-en",
+      "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+      "path": "config.json",
+      "local": "marian-config.json",
+      "bytes": 1416,
+      "url": "https://huggingface.co/Chortan/opus-mt-fr-en/resolve/47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd/config.json?download=true",
+      "sha256": "b3be13d046d9899d7aab8cf4ed624d9a79f5776038ba793f6b4d2ce3e02192f7"
+    },
+    {
+      "group": "MARIAN",
+      "repository": "Chortan/opus-mt-fr-en",
+      "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+      "path": "generation_config.json",
+      "local": "marian-generation-config.json",
+      "bytes": 293,
+      "url": "https://huggingface.co/Chortan/opus-mt-fr-en/resolve/47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd/generation_config.json?download=true",
+      "sha256": "4956fb9a7caaad7579cf8bb789c1e578b8a1cf48a0a8b779fda2f95dd10bbaa5"
+    }
+  ],
+  "sources": {
+    "ai/language.py": "9291cd671c8b009f56c63eedc6bc59db4b1e67f3bb0135549bf38e721b21ee0d",
+    "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+    "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+  },
+  "configuration": {
+    "ATTRIBUTES": {
+      "input": "TEXT_UTF8",
+      "language": "en",
+      "questions": {
+        "category": "What item was lost or found?",
+        "brand": "What is the brand of the item?",
+        "colour": "What colour is the item?",
+        "location": "Where was the item lost or found?",
+        "time": "When was the item lost or found?"
+      },
+      "prompt": "{question}",
+      "maxInputTokens": 256,
+      "truncation": "only-second",
+      "maxSpanTokens": 16,
+      "nullMargin": 0,
+      "grounding": "unique-word-span-utf16-v1",
+      "colours": [
+        "beige",
+        "black",
+        "blue",
+        "brown",
+        "cream",
+        "gold",
+        "gray",
+        "green",
+        "grey",
+        "navy",
+        "orange",
+        "pink",
+        "purple",
+        "red",
+        "silver",
+        "white",
+        "yellow"
+      ],
+      "colourModifiers": [
+        "bright",
+        "dark",
+        "light",
+        "metallic",
+        "off",
+        "pale"
+      ],
+      "temporalPattern": "\\b(?:morning|afternoon|evening|night|noon|midnight|today|yesterday|tomorrow|week|month|year|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b",
+      "output": "qa-source-spans-v1",
+      "locationPattern": "\\b(?:at|in|near|inside|outside|by|from|around)\\s+(?:(?:the|a|an)\\s+)?",
+      "timeQualifierPattern": "\\b(?:around|about|approximately|roughly|before|after|between)\\s+$",
+      "timeUncertainty": "UNINTERPRETED",
+      "padding": "none"
+    },
+    "TRANSLATION": {
+      "input": "TEXT_UTF8",
+      "sourceLanguage": "fr",
+      "targetLanguage": "en",
+      "prompt": "{source}",
+      "maxInputTokens": 256,
+      "maxOutputTokens": 64,
+      "decoding": "full-prefix-greedy-cache-disabled-pad-suppressed-v1",
+      "output": "opus-fr-en-greedy-v1",
+      "padding": "none"
+    },
+    "RERANK": {
+      "input": "RERANK_JSON",
+      "language": "en",
+      "maxCandidates": 8,
+      "maxCandidateCharacters": 512,
+      "maxInputTokens": 512,
+      "output": "raw-logit-descending-client-id-tie-v1",
+      "padding": "none"
+    }
+  }
+}

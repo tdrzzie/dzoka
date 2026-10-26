@@ -15,6 +15,7 @@ import tools.jackson.databind.ObjectMapper;
 @org.springframework.stereotype.Component
 public final class JdbcPerceptionJobs implements PerceptionJobs {
     private final TenantTransactions tx;private final PrivateObjects objects;private final ObjectMapper json=new ObjectMapper();
+    private final ObjectMapper requestJson=tools.jackson.databind.json.JsonMapper.builder().enable(tools.jackson.core.StreamReadFeature.STRICT_DUPLICATE_DETECTION).build();
     public JdbcPerceptionJobs(TenantTransactions tx,PrivateObjects objects){this.tx=tx;this.objects=objects;}
     private static final String JOB="SELECT j.*,p.task,p.profile_key FROM dzoka.perception_jobs j JOIN dzoka.perception_profiles p ON p.tenant_id=j.tenant_id AND p.id=j.profile_id ";
     private static void lock(Connection c,UUID tenant)throws SQLException{try(var s=c.prepareStatement("SELECT pg_advisory_xact_lock(hashtextextended(?,0))")){s.setString(1,"ai:"+tenant);s.execute();}}
@@ -53,38 +54,66 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             if(s.executeUpdate()==1)try(var u=c.prepareStatement("UPDATE dzoka.ai_usage SET pending=pending-1 WHERE tenant_id=?")){u.setObject(1,tenant);u.executeUpdate();}
         }
     }
-    @Override public Job enqueue(VerifiedIdentity actor,UUID tenant,UUID report,UUID profileId,UUID media,byte[] audio){
+    private record Rerank(UUID profile,List<Map<String,String>> candidates,byte[] raw){}
+    @Override public Job rerank(VerifiedIdentity actor,UUID tenant,UUID report,byte[] rawRequest){
+        if(rawRequest==null||rawRequest.length==0||rawRequest.length>16384)throw new IllegalArgumentException("Invalid rerank input");
+        byte[] raw=rawRequest.clone();tools.jackson.databind.JsonNode body;
+        try{body=requestJson.readTree(raw);}catch(RuntimeException invalid){throw new IllegalArgumentException("Invalid rerank JSON");}
+        if(body==null||!body.isObject()||body.size()!=2||!body.has("profileId")||!body.has("candidates")||!body.get("profileId").isString()||!body.get("candidates").isArray())throw new IllegalArgumentException("Invalid rerank input");
+        UUID profile=UUID.fromString(body.get("profileId").asString());var candidates=new ArrayList<Map<String,String>>();var ids=new HashSet<String>();
+        for(var candidate:body.get("candidates")){
+            if(!candidate.isObject()||candidate.size()!=2||!candidate.has("id")||!candidate.has("text")||!candidate.get("id").isString()||!candidate.get("text").isString())throw new IllegalArgumentException("Invalid candidate");
+            String id=UUID.fromString(candidate.get("id").asString()).toString(),text=candidate.get("text").asString();
+            if(!ids.add(id)||text.isBlank()||text.indexOf('\0')>=0||text.codePointCount(0,text.length())>512||text.codePoints().anyMatch(cp->cp>=0xD800&&cp<=0xDFFF))throw new IllegalArgumentException("Invalid candidate");
+            candidates.add(Map.of("id",id,"text",text));
+        }
+        if(candidates.isEmpty()||candidates.size()>8)throw new IllegalArgumentException("Invalid candidate count");
+        return enqueue(actor,tenant,report,profile,null,null,new Rerank(profile,List.copyOf(candidates),raw));
+    }
+    @Override public Job enqueue(VerifiedIdentity actor,UUID tenant,UUID report,UUID profileId,UUID media,byte[] audio){return enqueue(actor,tenant,report,profileId,media,audio,null);}
+    private Job enqueue(VerifiedIdentity actor,UUID tenant,UUID report,UUID profileId,UUID media,byte[] audio,Rerank rerank){
         if(profileId==null||(media!=null&&audio!=null))throw new IllegalArgumentException("Invalid input selection");
         final int samples=audio==null?0:PerceptionEvidence.wav(audio);
         return tx.execute(actor,tenant,"reports:write",c->{
             lock(c,tenant);int revision=report(c,tenant,report,true);var profile=profile(c,tenant,profileId);
-            if(profile.task().equals("SPEECH")!=(audio!=null)||profile.task().equals("JOINT_TEXT")!=(media==null&&audio==null))throw new IllegalArgumentException("Wrong input kind");
-            String sha;int length,width=0,height=0;
+            if(profile.task().equals("SPEECH")!=(audio!=null)||Set.of("JOINT_TEXT","ATTRIBUTES","TRANSLATION","RERANK").contains(profile.task())!=(media==null&&audio==null)||profile.task().equals("RERANK")!=(rerank!=null))throw new IllegalArgumentException("Wrong input kind");
+            if(Set.of("ATTRIBUTES","TRANSLATION","RERANK").contains(profile.task())){
+                try(var q=q(c,"SELECT language FROM dzoka.report_revisions WHERE tenant_id=? AND report_id=? AND revision=?",tenant,report)){
+                    q.setInt(3,revision);try(var r=q.executeQuery()){if(!r.next())throw new Failures.NotFound();String language=r.getString(1).toLowerCase(Locale.ROOT),expected=profile.task().equals("TRANSLATION")?"fr":"en";
+                        if(!language.equals(expected)&&!language.startsWith(expected+"-"))throw new IllegalArgumentException("Unsupported language profile");}
+                }
+            }
+            String sha;int length,width=0,height=0;byte[] payload;
+            if(rerank!=null){payload=json.writeValueAsBytes(sorted(Map.of("query",new String(text(c,tenant,report,revision),java.nio.charset.StandardCharsets.UTF_8),"candidates",rerank.candidates())));if(payload.length>65536)throw new IllegalArgumentException("Rerank payload exceeds bound");}else payload=null;
             if(media!=null){
                 try(var s=q(c,"SELECT derivative_sha256,derivative_bytes,width,height FROM dzoka.media_assets WHERE tenant_id=? AND id=? AND report_id=? AND state='SANITIZED' AND NOT purge_pending AND expires_at>clock_timestamp()",tenant,media)){
                     s.setObject(3,report);try(var r=s.executeQuery()){if(!r.next())throw new Failures.NotFound();sha=r.getString(1);length=r.getInt(2);width=r.getInt(3);height=r.getInt(4);}
                 }
-            }else{byte[] source=audio==null?text(c,tenant,report,revision):audio;sha=ContentDigest.sha256(source);length=source.length;}
+            }else{byte[] source=payload!=null?payload:audio==null?text(c,tenant,report,revision):audio;sha=ContentDigest.sha256(source);length=source.length;}
             try(var s=c.prepareStatement(JOB+"WHERE j.tenant_id=? AND j.report_id=? AND j.source_revision=? AND j.profile_id=? AND j.media_id IS NOT DISTINCT FROM CAST(? AS uuid) AND j.input_sha256=?")){
                 s.setObject(1,tenant);s.setObject(2,report);s.setInt(3,revision);s.setObject(4,profileId);s.setObject(5,media);s.setString(6,sha);try(var r=s.executeQuery()){if(r.next())return job(r);}
             }
             try(var s=q(c,"SELECT count(*) FROM dzoka.perception_jobs WHERE tenant_id=? AND report_id=? AND state<>'CANCELLED'",tenant,report);var r=s.executeQuery()){
                 r.next();if(r.getInt(1)>=64)throw new Failures.Conflict();
             }
-            if(audio!=null){
+            int retained=audio!=null?length:rerank!=null?payload.length+rerank.raw().length:0;
+            if(retained>0){
                 try(var s=c.prepareStatement("INSERT INTO dzoka.perception_audio_usage(tenant_id) VALUES(?) ON CONFLICT DO NOTHING")){s.setObject(1,tenant);s.executeUpdate();}
                 try(var s=c.prepareStatement("UPDATE dzoka.perception_audio_usage SET raw_bytes=raw_bytes+? WHERE tenant_id=? AND raw_bytes+?<=33554432")){
-                    s.setInt(1,length);s.setObject(2,tenant);s.setInt(3,length);if(s.executeUpdate()!=1)throw new Failures.Conflict();
+                    s.setInt(1,retained);s.setObject(2,tenant);s.setInt(3,retained);if(s.executeUpdate()!=1)throw new Failures.Conflict();
                 }
             }
             try(var s=c.prepareStatement("INSERT INTO dzoka.ai_usage(tenant_id) VALUES(?) ON CONFLICT DO NOTHING")){s.setObject(1,tenant);s.executeUpdate();}
             try(var s=c.prepareStatement("UPDATE dzoka.ai_usage SET pending=pending+1 WHERE tenant_id=? AND pending<32")){s.setObject(1,tenant);if(s.executeUpdate()!=1)throw new Failures.Conflict();}
             UUID id=UUID.randomUUID();
             try(var s=c.prepareStatement("INSERT INTO dzoka.perception_jobs(tenant_id,id,report_id,source_revision,profile_id,media_id,input_sha256,input_bytes,input_type,width,height,samples,state) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,'QUEUED')")){
-                s.setObject(1,tenant);s.setObject(2,id);s.setObject(3,report);s.setInt(4,revision);s.setObject(5,profileId);s.setObject(6,media);s.setString(7,sha);s.setInt(8,length);s.setString(9,media!=null?"IMAGE_PNG":audio!=null?"AUDIO_WAV":"TEXT_UTF8");
+                s.setObject(1,tenant);s.setObject(2,id);s.setObject(3,report);s.setInt(4,revision);s.setObject(5,profileId);s.setObject(6,media);s.setString(7,sha);s.setInt(8,length);s.setString(9,media!=null?"IMAGE_PNG":audio!=null?"AUDIO_WAV":rerank!=null?"RERANK_JSON":"TEXT_UTF8");
                 s.setObject(10,media!=null?width:null);s.setObject(11,media!=null?height:null);s.setObject(12,audio==null?null:samples);s.executeUpdate();
             }
             if(audio!=null)try(var s=c.prepareStatement("INSERT INTO dzoka.perception_audio(tenant_id,job_id,raw_wav) VALUES(?,?,?)")){s.setObject(1,tenant);s.setObject(2,id);s.setBytes(3,audio);s.executeUpdate();}
+            if(rerank!=null)try(var insert=c.prepareStatement("INSERT INTO dzoka.perception_rerank_inputs(tenant_id,job_id,payload,raw_request) VALUES(?,?,?,?)")){
+                insert.setObject(1,tenant);insert.setObject(2,id);insert.setBytes(3,payload);insert.setBytes(4,rerank.raw());insert.executeUpdate();
+            }
             journal(c,actor,tenant,report,"perception.requested");
             try(var s=q(c,JOB+"WHERE j.tenant_id=? AND j.id=?",tenant,id);var r=s.executeQuery()){r.next();return job(r);}
         });
@@ -137,6 +166,9 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             s.setObject(3,lease);try(var r=s.executeQuery()){
                 if(!r.next())throw new Failures.NotFound();String sha=r.getString("input_sha256");int size=r.getInt("input_bytes");UUID media=r.getObject("media_id",UUID.class);
                 if(!mediaValid(c,tenant,media,sha))throw new Failures.NotFound();
+                if("RERANK_JSON".equals(r.getString("input_type")))try(var input=q(c,"SELECT payload FROM dzoka.perception_rerank_inputs WHERE tenant_id=? AND job_id=?",tenant,id);var row=input.executeQuery()){
+                    if(!row.next())throw new Failures.NotFound();return new Input(sha,size,null,row.getBytes(1));
+                }
                 if("TEXT_UTF8".equals(r.getString("input_type")))return new Input(sha,size,null,text(c,tenant,r.getObject("report_id",UUID.class),r.getInt("source_revision")));
                 if(media!=null)try(var m=q(c,"SELECT derivative_key FROM dzoka.media_assets WHERE tenant_id=? AND id=?",tenant,media);var row=m.executeQuery()){
                     if(!row.next())throw new Failures.NotFound();return new Input(sha,size,row.getString(1),null);
@@ -165,7 +197,12 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             if(!result.profileKey().equals(profile.key())||!result.inputSha256().equals(r.getString("input_sha256"))
                     ||result.generatedAt().isAfter(Instant.now().plusSeconds(30))||result.generatedAt().isBefore(r.getTimestamp("created_at").toInstant().minusSeconds(5)))throw new IllegalArgumentException("Perception provenance mismatch");
             if(!mediaValid(c,tenant,r.getObject("media_id",UUID.class),result.inputSha256()))return false;
-            PerceptionEvidence.validate(profile.task(),result.evidence(),r.getInt("width"),r.getInt("height"),r.getInt("samples"),profile.manifest());
+            if(Set.of("ATTRIBUTES","TRANSLATION","RERANK").contains(profile.task())){
+                var ids=new HashSet<String>();String source="";
+                if(profile.task().equals("RERANK")){var input=inputRef(c,tenant,id,result.lease());for(var candidate:json.readTree(input.bytes()).get("candidates"))ids.add(candidate.get("id").asString());}
+                else source=new String(text(c,tenant,j.reportId(),j.sourceRevision()),java.nio.charset.StandardCharsets.UTF_8);
+                org.dzoka.fingerprints.domain.LanguageEvidence.validate(profile.task(),result.evidence(),source,ids);
+            }else PerceptionEvidence.validate(profile.task(),result.evidence(),r.getInt("width"),r.getInt("height"),r.getInt("samples"),profile.manifest());
             if(evidence.getBytes(java.nio.charset.StandardCharsets.UTF_8).length>60000)throw new IllegalArgumentException("Output exceeds bound");
             try(var insert=c.prepareStatement("INSERT INTO dzoka.perception_components(tenant_id,id,job_id,report_id,source_revision,profile_id,input_sha256,evidence,generated_at) VALUES(?,?,?,?,?,?,?,CAST(? AS jsonb),?)")){
                 insert.setObject(1,tenant);insert.setObject(2,UUID.randomUUID());insert.setObject(3,id);insert.setObject(4,j.reportId());insert.setInt(5,j.sourceRevision());insert.setObject(6,j.profileId());insert.setString(7,result.inputSha256());insert.setString(8,evidence);insert.setTimestamp(9,Timestamp.from(result.generatedAt()));insert.executeUpdate();
@@ -188,12 +225,16 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             }
         });
     }
+    @Override public Optional<Component> result(VerifiedIdentity actor,UUID tenant,UUID id){
+        var job=read(actor,tenant,id);String digest=tx.execute(actor,tenant,"reports:read",c->{try(var s=q(c,"SELECT input_sha256 FROM dzoka.perception_jobs WHERE tenant_id=? AND id=?",tenant,id);var r=s.executeQuery()){if(!r.next())throw new Failures.NotFound();return r.getString(1);}});
+        return current(actor,tenant,job.reportId()).stream().filter(component->component.profileId().equals(job.profileId())&&component.sourceRevision()==job.sourceRevision()&&component.inputSha256().equals(digest)).findFirst();
+    }
     @SuppressWarnings("unchecked")
     @Override public List<Component> current(VerifiedIdentity actor,UUID tenant,UUID report){return tx.execute(actor,tenant,"reports:read",c->{
         report(c,tenant,report,false);var found=new ArrayList<Component>();
         try(var s=q(c,"""
             SELECT f.*,p.profile_key,p.task,p.manifest,
-             CASE WHEN EXISTS(SELECT 1 FROM dzoka.fingerprint_active a JOIN dzoka.fingerprint_perception_slots s ON s.tenant_id=a.tenant_id AND s.rollout_id=a.rollout_id
+             CASE WHEN p.task<>'RERANK' AND EXISTS(SELECT 1 FROM dzoka.fingerprint_active a JOIN dzoka.fingerprint_perception_slots s ON s.tenant_id=a.tenant_id AND s.rollout_id=a.rollout_id
               WHERE a.tenant_id=f.tenant_id AND s.component_id=f.id AND s.report_id=f.report_id) THEN 'ACTIVE' ELSE 'SHADOW' END selection
             FROM dzoka.perception_components f
             JOIN dzoka.perception_profiles p ON p.tenant_id=f.tenant_id AND p.id=f.profile_id
@@ -220,6 +261,7 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
                 try(var d=q(c,"DELETE FROM dzoka.perception_components WHERE tenant_id=? AND report_id=?",tenant,report)){erased+=d.executeUpdate();}
                 long bytes=0;
                 try(var d=q(c,"DELETE FROM dzoka.perception_audio a USING dzoka.perception_jobs j WHERE a.tenant_id=? AND j.report_id=? AND j.tenant_id=a.tenant_id AND j.id=a.job_id RETURNING octet_length(a.raw_wav)",tenant,report);var rows=d.executeQuery()){while(rows.next())bytes+=rows.getLong(1);}
+                try(var d=q(c,"DELETE FROM dzoka.perception_rerank_inputs x USING dzoka.perception_jobs j WHERE x.tenant_id=? AND j.report_id=? AND j.tenant_id=x.tenant_id AND j.id=x.job_id RETURNING octet_length(x.payload)+octet_length(x.raw_request)",tenant,report);var rows=d.executeQuery()){while(rows.next())bytes+=rows.getLong(1);}
                 if(bytes>0)try(var d=c.prepareStatement("UPDATE dzoka.perception_audio_usage SET raw_bytes=raw_bytes-? WHERE tenant_id=?")){d.setLong(1,bytes);d.setObject(2,tenant);d.executeUpdate();}
                 try(var u=q(c,"UPDATE dzoka.perception_jobs SET state='CANCELLED',error_code='INPUT_REVOKED',lease_token=NULL,lease_owner=NULL,lease_until=NULL,completion_sha256=NULL WHERE tenant_id=? AND report_id=? AND state<>'CANCELLED' RETURNING id",tenant,report);var jobs=u.executeQuery()){
                     while(jobs.next())release(c,tenant,jobs.getObject(1,UUID.class));

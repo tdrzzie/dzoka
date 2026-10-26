@@ -33,6 +33,7 @@ def main():
     p.add_argument('--with-ai',action='store_true',help='Also run the reviewed native Python/model provider; requires its installed artifact lock')
     p.add_argument('--with-perception',action='store_true',help='Also run licensed native vision/local/OCR/speech profiles and synthetic voice fixture')
     p.add_argument('--with-vision',action='store_true',help='Run reviewed joint image/text, detection and semantic segmentation models')
+    p.add_argument('--with-language',action='store_true',help='Run reviewed native extraction, translation and cross-encoder reranking')
     p.add_argument('--restore-drill',action='store_true',help='Verify database logical restore after the full passing suite')
     args=p.parse_args();run=ROOT/'.test-tmp'/('intake-'+str(uuid.uuid4()));run.mkdir(parents=True)
     access,secret=secrets.token_hex(12),secrets.token_urlsafe(32)
@@ -78,7 +79,7 @@ def main():
             time.sleep(0.5)
         else:raise RuntimeError('Authenticated S3 readiness timeout')
         env['DZOKA_TEST_S3_ENDPOINT']=endpoint
-        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','VisionJobsIT','StartupConfigurationIT']
+        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','VisionJobsIT','LanguageJobsIT','StartupConfigurationIT']
         if not args.storage_only:classes.append('SandboxMediaIT')
         if args.with_ai:
             subprocess.run([sys.executable,str(ROOT/'tools/ai_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
@@ -95,6 +96,9 @@ def main():
             if args.storage_only:raise ValueError('Vision models require real image sanitizer')
             subprocess.run([sys.executable,str(ROOT/'tools/vision_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
             classes.append('VisionProviderIT')
+        if args.with_language:
+            subprocess.run([sys.executable,str(ROOT/'tools/language_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
+            classes.append('LanguageProviderIT')
         env['DZOKA_IT_CLASSES']=','.join(classes)
         if args.storage_only:
             print('Explicit storage-only verification: Docker decoder tests excluded, no decoder fallback.',flush=True)
