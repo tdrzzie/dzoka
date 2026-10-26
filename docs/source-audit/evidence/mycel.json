@@ -1,0 +1,191 @@
+{
+  "sourceId": "mycel",
+  "repository": "https://github.com/splch/mycel",
+  "revision": "07a671d03c4fbb68f459d24af262a3dec563c913",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "src/net/proto.rs",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          94,
+          120
+        ]
+      ],
+      "lineCount": 165,
+      "sha256": "eebd42562c9d0ba0efea211735843c4c3da63551d195d19550b416c39c68526a",
+      "blobSha": "ab9525868f34d3654b13f92d2837c11e0ec2a595",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/splch/mycel/blob/07a671d03c4fbb68f459d24af262a3dec563c913/src/net/proto.rs",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          18
+        ],
+        [
+          20,
+          29
+        ],
+        [
+          80,
+          89
+        ]
+      ],
+      "lineCount": 235,
+      "sha256": "d8a6cc31abc16b6748c7a21f21611f5a1ec33f67d22ca23d7da1c19b95496bee",
+      "blobSha": "0c97efd25b5974b974ed9a8a18207bc4f55bb338",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/splch/mycel/blob/07a671d03c4fbb68f459d24af262a3dec563c913/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: AGPL-3.0-only. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "src/search/fanout.rs",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          20
+        ],
+        [
+          47,
+          65
+        ],
+        [
+          87,
+          96
+        ],
+        [
+          103,
+          112
+        ],
+        [
+          145,
+          242
+        ],
+        [
+          280,
+          307
+        ]
+      ],
+      "lineCount": 307,
+      "sha256": "156ca5a603a3a39a3ba06446635dcbc82436a188a3f85cb32df5bed956cbe407",
+      "blobSha": "8e1246be02c7c98b7b68e6fdfc4bbccd634ece9b",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/splch/mycel/blob/07a671d03c4fbb68f459d24af262a3dec563c913/src/search/fanout.rs",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "src/config.rs",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          19,
+          28
+        ],
+        [
+          52,
+          61
+        ],
+        [
+          95,
+          104
+        ],
+        [
+          112,
+          121
+        ],
+        [
+          202,
+          211
+        ]
+      ],
+      "lineCount": 433,
+      "sha256": "fc6664c93768b0cb20ca5dbcda3b6cd7390bded847f7dbb24cba8fcea5664ab4",
+      "blobSha": "f9ba561007583ead5e64247b3bd6f7d285fa8aa4",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/splch/mycel/blob/07a671d03c4fbb68f459d24af262a3dec563c913/src/config.rs",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "Cargo.toml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          46
+        ]
+      ],
+      "lineCount": 46,
+      "sha256": "056c47739cd57eb7437dfe60fe8b1b0a1404a2d33561d31bbe126ec56b7edec9",
+      "blobSha": "a0703ebf5ff2b497e1e6f15e2a665b0d7df892e7",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/splch/mycel/blob/07a671d03c4fbb68f459d24af262a3dec563c913/Cargo.toml",
+      "observation": "Cargo manifest declares Rust 2024 and AGPL-3.0-only. Federation defaults are disabled; configuration can use relays/discovery or explicit empty-preset addresses. No new Dzoka deployment dependency is approved here."
+    },
+    {
+      "path": "tests/federation.rs",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 210,
+      "sha256": "49e670d8d5c2134769360f7c94a62cbef9bd48301d61b8b5e39783a3dcc361f4",
+      "blobSha": "289b7d4a131f79a3e1e77c9ad7d4afa8cc5f1216",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/splch/mycel/blob/07a671d03c4fbb68f459d24af262a3dec563c913/tests/federation.rs",
+      "observation": "Inspected loopback federation integration-test setup and actual merge assertions proving interleaving, deduplication and limits. Not executed; source test intent is not a network security result."
+    },
+    {
+      "path": "src/net/endpoint.rs",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          160,
+          205
+        ],
+        [
+          221,
+          230
+        ],
+        [
+          275,
+          284
+        ],
+        [
+          374,
+          383
+        ]
+      ],
+      "lineCount": 410,
+      "sha256": "248c2f3538b0fb6ddfdabbbf88de7383adf845cf6c436a3cbbb120d00e04d32b",
+      "blobSha": "acf957f4ae8e95bfd9fc2528fef5c73f4a702c6a",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/splch/mycel/blob/07a671d03c4fbb68f459d24af262a3dec563c913/src/net/endpoint.rs",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

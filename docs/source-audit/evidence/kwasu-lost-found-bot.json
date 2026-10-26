@@ -1,0 +1,70 @@
+{
+  "sourceId": "kwasu-lost-found-bot",
+  "repository": "https://github.com/zhuluh247/kwasu-lost-found-bot",
+  "revision": "e4863739135594d8ce0a541be6029d0bba5ae95c",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "license": "No root project LICENSE/COPYING in the complete pinned tree; missing licensing is a completed audit finding, not permission to copy.",
+    "tests": "No executable tests found in the four-entry pinned repository tree; no upstream code executed."
+  },
+  "files": [
+    {
+      "path": "package.json",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          15
+        ]
+      ],
+      "lineCount": 15,
+      "sha256": "a4c844d2bdbbb01d76783dd243738857f44cad681e30a87de6dc10fcd9a4ea00",
+      "blobSha": "f694f34e849280fe9ce6a57c7ed3e5001121f43f",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/zhuluh247/kwasu-lost-found-bot/blob/e4863739135594d8ce0a541be6029d0bba5ae95c/package.json",
+      "observation": "package.json starts index.js and lists Express/Twilio/Firebase/dotenv; code requires axios but the package does not declare it. Reproducibility is incomplete."
+    },
+    {
+      "path": "index.js",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          19,
+          60
+        ],
+        [
+          117,
+          193
+        ],
+        [
+          221,
+          270
+        ],
+        [
+          438,
+          447
+        ],
+        [
+          505,
+          535
+        ],
+        [
+          629,
+          638
+        ]
+      ],
+      "lineCount": 650,
+      "sha256": "d2e88eefc930a83651a688a5b0c4d940070a1506acbf291cd83dbcce7c234912",
+      "blobSha": "48db739fef7170621f3e6586b0091d0df696aaa1",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/zhuluh247/kwasu-lost-found-bot/blob/e4863739135594d8ce0a541be6029d0bba5ae95c/index.js",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

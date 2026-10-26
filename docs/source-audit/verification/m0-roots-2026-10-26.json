@@ -1,0 +1,301 @@
+[
+  {
+    "sourceId": "ai-lost-and-found",
+    "revision": "577edc3b492f62ac8707fc950230bc04a354e9d8",
+    "rootTreeSha": "577edc3b492f62ac8707fc950230bc04a354e9d8",
+    "truncated": false,
+    "rootEntries": 3,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "cctv-theft-finder",
+    "revision": "c3af22b1d6239424459a0c568f3a575de49572d6",
+    "rootTreeSha": "c3af22b1d6239424459a0c568f3a575de49572d6",
+    "truncated": false,
+    "rootEntries": 10,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "deepsort",
+    "revision": "f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab",
+    "rootTreeSha": "f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab",
+    "truncated": false,
+    "rootEntries": 12,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "detectron2",
+    "revision": "b0fe2f0a5bb6496f65246ef35687a386a9f19202",
+    "rootTreeSha": "b0fe2f0a5bb6496f65246ef35687a386a9f19202",
+    "truncated": false,
+    "rootEntries": 21,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "dpp-did",
+    "revision": "44533c27967d406f4eeb5f09c4257b506a0264d8",
+    "rootTreeSha": "44533c27967d406f4eeb5f09c4257b506a0264d8",
+    "truncated": false,
+    "rootEntries": 6,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "findback",
+    "revision": "fc91563886e4e8da6931bc07dd025fbe235068a2",
+    "rootTreeSha": "fc91563886e4e8da6931bc07dd025fbe235068a2",
+    "truncated": false,
+    "rootEntries": 68,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "furicbond-lost-and-found",
+    "revision": "ebe3974ef0c0096a521836b934661fa6e4f99897",
+    "rootTreeSha": "ebe3974ef0c0096a521836b934661fa6e4f99897",
+    "truncated": false,
+    "rootEntries": 17,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "globalenglish-lostfound",
+    "revision": "6ff8cffe55bfc3e7274124512a69fae746ceb643",
+    "rootTreeSha": "6ff8cffe55bfc3e7274124512a69fae746ceb643",
+    "truncated": false,
+    "rootEntries": 13,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "ilias",
+    "revision": "208815da09c31f728ca8427520eb4898c5156273",
+    "rootTreeSha": "208815da09c31f728ca8427520eb4898c5156273",
+    "truncated": false,
+    "rootEntries": 10,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "kwasu-lost-found-bot",
+    "revision": "e4863739135594d8ce0a541be6029d0bba5ae95c",
+    "rootTreeSha": "e4863739135594d8ce0a541be6029d0bba5ae95c",
+    "truncated": false,
+    "rootEntries": 4,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "lost-and-found-tracking-system",
+    "revision": "4ef1493f80590f6fa03d2ad9eded2e70a59ebe58",
+    "rootTreeSha": "4ef1493f80590f6fa03d2ad9eded2e70a59ebe58",
+    "truncated": false,
+    "rootEntries": 11,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "malak-lostandfound",
+    "revision": "d5d7bfaf043396a32b40c264c647f6456cadb633",
+    "rootTreeSha": "d5d7bfaf043396a32b40c264c647f6456cadb633",
+    "truncated": false,
+    "rootEntries": 6,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "mycel",
+    "revision": "07a671d03c4fbb68f459d24af262a3dec563c913",
+    "rootTreeSha": "07a671d03c4fbb68f459d24af262a3dec563c913",
+    "truncated": false,
+    "rootEntries": 12,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "open-federated-search",
+    "revision": "fe13ee670bd12d55d693a1e55f5be03c7d01333c",
+    "rootTreeSha": "fe13ee670bd12d55d693a1e55f5be03c7d01333c",
+    "truncated": false,
+    "rootEntries": 5,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "openclip",
+    "revision": "2bcb5adf5090df595a78b56ca9aee7b1c70efc18",
+    "rootTreeSha": "2bcb5adf5090df595a78b56ca9aee7b1c70efc18",
+    "truncated": false,
+    "rootEntries": 19,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "openepcis",
+    "revision": "e81a857771c4c4a2d12e62b60a2dbc094551aa6e",
+    "rootTreeSha": "e81a857771c4c4a2d12e62b60a2dbc094551aa6e",
+    "truncated": false,
+    "rootEntries": 10,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "openescrow",
+    "revision": "abebc3b6543a975e7ec5943e9bdd53cea6dc168a",
+    "rootTreeSha": "abebc3b6543a975e7ec5943e9bdd53cea6dc168a",
+    "truncated": false,
+    "rootEntries": 31,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "openvisualsearch",
+    "revision": "134dbb376bd61eac77bc388ef3531edd87fd5362",
+    "rootTreeSha": "134dbb376bd61eac77bc388ef3531edd87fd5362",
+    "truncated": false,
+    "rootEntries": 14,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "paddledetection",
+    "revision": "b25522a0f4bde8c80603f3ba5e3472059972e3b5",
+    "rootTreeSha": "b25522a0f4bde8c80603f3ba5e3472059972e3b5",
+    "truncated": false,
+    "rootEntries": 24,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "paddleocr",
+    "revision": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+    "rootTreeSha": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+    "truncated": false,
+    "rootEntries": 39,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "patchwise-retrieval",
+    "revision": "d593101957933fcd574649fcb3b0af02c7295c11",
+    "rootTreeSha": "d593101957933fcd574649fcb3b0af02c7295c11",
+    "truncated": false,
+    "rootEntries": 8,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "pgvector",
+    "revision": "5db3087b27a4fd095e7398f4b0f2706bf6d54bd3",
+    "rootTreeSha": "5db3087b27a4fd095e7398f4b0f2706bf6d54bd3",
+    "truncated": false,
+    "rootEntries": 14,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "qdrant",
+    "revision": "222b2e44ab1c3f17e8246396ead6558e45041df7",
+    "rootTreeSha": "222b2e44ab1c3f17e8246396ead6558e45041df7",
+    "truncated": false,
+    "rootEntries": 23,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "reranking-transformer",
+    "revision": "81fca3ca9b191950f702ae712daef0400608ae3a",
+    "rootTreeSha": "81fca3ca9b191950f702ae712daef0400608ae3a",
+    "truncated": false,
+    "rootEntries": 6,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "smart-asset-finder",
+    "revision": "8ac4484354d23aea42e1a569e2f127a878049b1e",
+    "rootTreeSha": "8ac4484354d23aea42e1a569e2f127a878049b1e",
+    "truncated": false,
+    "rootEntries": 37,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "trajectron-plus-plus",
+    "revision": "1031c7bd1a444273af378c1ec1dcca907ba59830",
+    "rootTreeSha": "1031c7bd1a444273af378c1ec1dcca907ba59830",
+    "truncated": false,
+    "rootEntries": 9,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "trishthakur-lost-and-found-ai",
+    "revision": "8e5fcb6f79595c9d429679ba7868cac4a90e1319",
+    "rootTreeSha": "8e5fcb6f79595c9d429679ba7868cac4a90e1319",
+    "truncated": false,
+    "rootEntries": 6,
+    "licenseCandidates": [],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "ultralytics",
+    "revision": "739d9c72b74b498fa674a477dc6a8190e2373350",
+    "rootTreeSha": "739d9c72b74b498fa674a477dc6a8190e2373350",
+    "truncated": false,
+    "rootEntries": 18,
+    "licenseCandidates": [
+      "LICENSE"
+    ],
+    "status": "PASS"
+  },
+  {
+    "sourceId": "visualmatch",
+    "revision": "941c69fa7d82c7fd5f570ad7392833b8d0b83791",
+    "rootTreeSha": "941c69fa7d82c7fd5f570ad7392833b8d0b83791",
+    "truncated": false,
+    "rootEntries": 7,
+    "licenseCandidates": [],
+    "status": "PASS"
+  }
+]

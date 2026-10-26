@@ -1,0 +1,139 @@
+{
+  "sourceId": "openescrow",
+  "repository": "https://github.com/omslice/OpenEscrow",
+  "revision": "abebc3b6543a975e7ec5943e9bdd53cea6dc168a",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "foundry.toml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          20
+        ]
+      ],
+      "lineCount": 20,
+      "sha256": "351a96b43521bc75922ca03765f5365851eb6699d3cd283ece09a93c883492bf",
+      "blobSha": "a78fafafb926bf89906be87ef5cb51266c6a3f2a",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/omslice/OpenEscrow/blob/abebc3b6543a975e7ec5943e9bdd53cea6dc168a/foundry.toml",
+      "observation": "foundry.toml pins solc 0.8.26, optimizer/via_ir and fuzz/invariant parameters. Deployment addresses, keys, chain guarantees and external token behavior were not validated."
+    },
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          21
+        ]
+      ],
+      "lineCount": 21,
+      "sha256": "61cfee9f4e16e411562f58918c1b465b5295ad9a5deaa4ebc1f25ae1fd63d888",
+      "blobSha": "aa7cf32fdabbdf127c34e32814876d65aea3003c",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/omslice/OpenEscrow/blob/abebc3b6543a975e7ec5943e9bdd53cea6dc168a/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: MIT. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "contracts/OpenEscrow.sol",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          20
+        ],
+        [
+          37,
+          87
+        ],
+        [
+          153,
+          162
+        ],
+        [
+          179,
+          188
+        ],
+        [
+          300,
+          309
+        ],
+        [
+          516,
+          590
+        ],
+        [
+          737,
+          804
+        ],
+        [
+          840,
+          905
+        ]
+      ],
+      "lineCount": 1104,
+      "sha256": "c9e2e6daeb647046f04ce0775ef7ee16b68b22cd9aba2074e6c73a25d5cae488",
+      "blobSha": "73329e17f0bde7b65977ed835a89c83816b8c554",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/omslice/OpenEscrow/blob/abebc3b6543a975e7ec5943e9bdd53cea6dc168a/contracts/OpenEscrow.sol",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "contracts/libraries/YieldEscrowAccounting.sol",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          45
+        ]
+      ],
+      "lineCount": 45,
+      "sha256": "6ecfbba4457a20702256605b108cf44b3178738a6078083a538c232cfac4dd16",
+      "blobSha": "b2ff30b3b2e6476a0ab04b23e6fd98a2022cd49e",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/omslice/OpenEscrow/blob/abebc3b6543a975e7ec5943e9bdd53cea6dc168a/contracts/libraries/YieldEscrowAccounting.sol",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "test/Claims.t.sol",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 281,
+      "sha256": "abbd1b717185b4539dab46c416f33636cbc9d89f499779fe28f0a9c719801f0c",
+      "blobSha": "5b4e8a9c776ffb52b57e90f33e8b188eb9aab3d5",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/omslice/OpenEscrow/blob/abebc3b6543a975e7ec5943e9bdd53cea6dc168a/test/Claims.t.sol",
+      "observation": "Inspected real lifecycle/claim tests assert unauthorized/phase/deadline rejection, exact boundaries, duplicate withdrawal prevention and balance conservation. Tests were not run and no contract certification is claimed."
+    },
+    {
+      "path": "test/Lifecycle.t.sol",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          167,
+          176
+        ]
+      ],
+      "lineCount": 254,
+      "sha256": "5ada8cb3798bae3fbc01c76085df2de6998e4842d3e8289aee55543cce18faae",
+      "blobSha": "788cb2fb85c6fb4a3d105e63f9661612814620ca",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/omslice/OpenEscrow/blob/abebc3b6543a975e7ec5943e9bdd53cea6dc168a/test/Lifecycle.t.sol",
+      "observation": "Inspected real lifecycle/claim tests assert unauthorized/phase/deadline rejection, exact boundaries, duplicate withdrawal prevention and balance conservation. Tests were not run and no contract certification is claimed."
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+{
+  "sourceId": "globalenglish-lostfound",
+  "repository": "https://github.com/globalenglish01/lostfound",
+  "revision": "6ff8cffe55bfc3e7274124512a69fae746ceb643",
+  "observedAt": "2026-10-26",
+  "method": "Static source inspection through connected GitHub; upstream code not executed.",
+  "scope": "Matching/scoring/conflict contracts, retrieval SQL, persistence schema, image provider, recovery API boundary and selected matcher tests; no full dependency or runtime security audit.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          21
+        ]
+      ],
+      "sha256": "ca8f51979262f70251f03895f97951e25feb7c368d00730d57734cf9c1f20f17",
+      "blobSha": "4c4b09ddcf9798c47ebb2a766b95ec32dcde5cef",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/LICENSE",
+      "observation": "MIT notice verified.",
+      "lineCount": 21
+    },
+    {
+      "path": "backend/app/main.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          52
+        ]
+      ],
+      "sha256": "80a5e4a7470b50d9cce7161998142cb78daee16e1e9c005055b3df2e2587e05e",
+      "blobSha": "f6e96872a90ad5b8870e87747912d29753a2e8a3",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/backend/app/main.py",
+      "observation": "Router registration and wildcard CORS; no application-level authentication middleware declared here.",
+      "lineCount": 52
+    },
+    {
+      "path": "backend/app/matching/scoring.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          261
+        ]
+      ],
+      "sha256": "2115ede82958fac2ec2fc89592ad0e088bdd1b494068acf9ba163fb92e8da666",
+      "blobSha": "6cb2883948b760df2b0707912ceaed359a2feb03",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/backend/app/matching/scoring.py",
+      "observation": "Available-evidence normalization, confidence heuristic, level caps and evidence flattening.",
+      "lineCount": 261
+    },
+    {
+      "path": "backend/app/matching/conflicts.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          176
+        ]
+      ],
+      "sha256": "8a27d309942db8ab041e9bf7fe3bcc0b726ebbfb4aac56f9399f463f8de9c573",
+      "blobSha": "83a716fe5c6ee0c595b24a065296d51b328f5f00",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/backend/app/matching/conflicts.py",
+      "observation": "Missing attributes skip conflict checks; explicit rejection and graded penalties.",
+      "lineCount": 176
+    },
+    {
+      "path": "backend/app/matching/retrieval.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          245
+        ]
+      ],
+      "sha256": "9d7a0f9e5b984c3341aec97a7b3b2361ee86707fac8ba16c5a68f820b947f3d6",
+      "blobSha": "59ef189a9021dcff582dc43b175d73d404b78f5d",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/backend/app/matching/retrieval.py",
+      "observation": "Independent channels and RRF; newest-record pool; model name but not model version in vector predicate.",
+      "lineCount": 245
+    },
+    {
+      "path": "db/schema.sql",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          145
+        ],
+        [
+          166,
+          357
+        ]
+      ],
+      "sha256": "256359ccad50aa0b9870ce5c68524638378ea88f434b91fbd3a66cfaa25bb473",
+      "blobSha": "0478e60be0283359a73bdedc29b5a74a36b8e8f1",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/db/schema.sql",
+      "observation": "Raw/normalized descriptions, model-versioned embeddings, candidates, decisions, returns and audit tables.",
+      "lineCount": 357
+    },
+    {
+      "path": "backend/app/api/matches.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          190
+        ],
+        [
+          200,
+          217
+        ]
+      ],
+      "sha256": "cb54132d2e1423a4303d17917fa73b0315ef3e8d617e9df0681ae486e8dd409f",
+      "blobSha": "acaeedf3069a901fe08dec8b826acba7ca94d04e",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/backend/app/api/matches.py",
+      "observation": "Decision and return handlers accept actor fields from request payloads; return handler updates status without checking verification result.",
+      "lineCount": 221
+    },
+    {
+      "path": "backend/app/ai/image_provider.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          97
+        ]
+      ],
+      "sha256": "c8df4e75a4fd111f41ce0a894b1f8ada8bdcd561a2ad00bd15bdd778d2b9b12e",
+      "blobSha": "49671b35dfb0cf4fbea259c2e9f1737730119725",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/backend/app/ai/image_provider.py",
+      "observation": "Explicit disabled provider errors; fixed-dimensional fitting of image and text vectors.",
+      "lineCount": 97
+    },
+    {
+      "path": "backend/tests/test_matching.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          135
+        ]
+      ],
+      "sha256": "9fbaec92e472db67c4a4bc51143d6761c46cc02671374525fbdcea318efdffe2",
+      "blobSha": "e938246a9cb3969b434fbcaab24e349d09a0e1f6",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/backend/tests/test_matching.py",
+      "observation": "Synthetic positive, missing-image, model and IMEI conflict tests inspected, not executed.",
+      "lineCount": 318
+    },
+    {
+      "path": "docker-compose.yml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          63
+        ]
+      ],
+      "sha256": "31bd442cc62094a1903f233ccfa9f536c381c6e3f947dde854045ec0dd22cd17",
+      "blobSha": "b4e0a01341a6ca260e91c009f52080ecd4a6a2c4",
+      "url": "https://github.com/globalenglish01/lostfound/blob/6ff8cffe55bfc3e7274124512a69fae746ceb643/docker-compose.yml",
+      "observation": "API plus pgvector PostgreSQL, local images/model volumes and development credentials.",
+      "lineCount": 63
+    }
+  ]
+}

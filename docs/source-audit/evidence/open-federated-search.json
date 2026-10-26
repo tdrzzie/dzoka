@@ -1,0 +1,94 @@
+{
+  "sourceId": "open-federated-search",
+  "repository": "https://github.com/dstl/Open-Federated-Search",
+  "revision": "fe13ee670bd12d55d693a1e55f5be03c7d01333c",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "tests": "No executable tests found in the inspected pinned tree. No live servlet/database/search environment executed.",
+    "deployment": "Java servlet container plus separately configured Derby/GaianDB/search engines. No reproducible build/dependency lock or production deployment manifest found in the pinned source tree."
+  },
+  "files": [
+    {
+      "path": "src/uk/gov/dstl/fedsearch/HTTP.java",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 498,
+      "sha256": "bc625b587aef0424f85168a750232483c1d15888b04a76c6107df97628593ac1",
+      "blobSha": "564c8f743673c4b5eac0ee9cadb1594c705e8c10",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/dstl/Open-Federated-Search/blob/fe13ee670bd12d55d693a1e55f5be03c7d01333c/src/uk/gov/dstl/fedsearch/HTTP.java",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "src/uk/gov/dstl/fedsearch/REST.java",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 387,
+      "sha256": "611eb821b969437d255b2688dba8ebbdf76cbb8116bd5553eb39f4e6fca6bb4f",
+      "blobSha": "4902454e983f2c3ccc9fee472629ce2f5be1fada",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/dstl/Open-Federated-Search/blob/fe13ee670bd12d55d693a1e55f5be03c7d01333c/src/uk/gov/dstl/fedsearch/REST.java",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 201,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "blobSha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/dstl/Open-Federated-Search/blob/fe13ee670bd12d55d693a1e55f5be03c7d01333c/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: Apache-2.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "src/uk/gov/dstl/fedsearch/Hit.java",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          41
+        ]
+      ],
+      "lineCount": 41,
+      "sha256": "135412618791db9233d8ffb4815d59956bd6f17373d5c04fa5cdb000960d21b0",
+      "blobSha": "7cb3203f5ab283b1303ad77ad162ea92ad7dabb6",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/dstl/Open-Federated-Search/blob/fe13ee670bd12d55d693a1e55f5be03c7d01333c/src/uk/gov/dstl/fedsearch/Hit.java",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "src/uk/gov/dstl/fedsearch/GaianHandler.java",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 223,
+      "sha256": "b777a56a54714d93b8ec13c424f2200bb585852a924dc41f7207af8458ca23ab",
+      "blobSha": "82dd599592432e30b0fdf3b97165590d6b4fa33c",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/dstl/Open-Federated-Search/blob/fe13ee670bd12d55d693a1e55f5be03c7d01333c/src/uk/gov/dstl/fedsearch/GaianHandler.java",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

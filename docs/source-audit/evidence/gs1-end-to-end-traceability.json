@@ -1,0 +1,110 @@
+{
+  "sourceId": "gs1-end-to-end-traceability",
+  "repository": null,
+  "revision": null,
+  "edition": "2.0.0 (August 2017)",
+  "observedAt": "2026-10-26",
+  "method": "Official edition PDF downloaded as bytes; pypdf text inspected on the declared pages and page 16 visually rendered/reviewed. Upstream software execution is not applicable.",
+  "limitations": {
+    "license": "GS1 copyrighted standard with its IP-policy disclaimer; not an open-source software grant. No full document redistributed.",
+    "tests": "Normative standard, not executable software; no conformance test suite or certification inferred.",
+    "deployment": "Technology-neutral framework, not a deployment implementation."
+  },
+  "files": [
+    {
+      "path": "GS1_Global_Traceability_Standard_2.0.pdf",
+      "role": "standard",
+      "url": "https://ref.gs1.org/standards/global-traceability/2.0.0/",
+      "sha256": "d05b1d8808ff597c8985c42846dd98d38506427eaae56486d60804acd904f06e",
+      "byteLength": 4219090,
+      "pageCount": 58,
+      "pageRanges": [
+        [
+          1,
+          3
+        ],
+        [
+          10,
+          12
+        ],
+        [
+          16,
+          18
+        ],
+        [
+          21,
+          21
+        ],
+        [
+          33,
+          35
+        ],
+        [
+          40,
+          40
+        ]
+      ],
+      "locatorUnit": "pypdf-extracted lines with page offsets; pageRanges are primary locators",
+      "lineCount": 2273,
+      "lines": [
+        [
+          1,
+          8
+        ],
+        [
+          9,
+          20
+        ],
+        [
+          21,
+          58
+        ],
+        [
+          262,
+          310
+        ],
+        [
+          311,
+          335
+        ],
+        [
+          336,
+          376
+        ],
+        [
+          453,
+          491
+        ],
+        [
+          492,
+          531
+        ],
+        [
+          532,
+          571
+        ],
+        [
+          688,
+          730
+        ],
+        [
+          1097,
+          1144
+        ],
+        [
+          1145,
+          1220
+        ],
+        [
+          1221,
+          1315
+        ],
+        [
+          1506,
+          1569
+        ]
+      ],
+      "observation": "Edition/IP-policy disclaimer; instance identifiers; event data dimensions; CTE/KDEs; networked custody data; access control and retention requirements inspected."
+    }
+  ]
+}

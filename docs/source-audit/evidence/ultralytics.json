@@ -1,0 +1,179 @@
+{
+  "sourceId": "ultralytics",
+  "repository": "https://github.com/ultralytics/ultralytics",
+  "revision": "739d9c72b74b498fa674a477dc6a8190e2373350",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          18
+        ],
+        [
+          26,
+          35
+        ],
+        [
+          51,
+          60
+        ],
+        [
+          204,
+          213
+        ]
+      ],
+      "lineCount": 661,
+      "sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "blobSha": "be3f7b28e564e7dd05eaf59d64adba1a4065ac0e",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ultralytics/ultralytics/blob/739d9c72b74b498fa674a477dc6a8190e2373350/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: AGPL-3.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "ultralytics/engine/results.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          54,
+          63
+        ],
+        [
+          331,
+          340
+        ],
+        [
+          536,
+          545
+        ],
+        [
+          981,
+          990
+        ],
+        [
+          1472,
+          1481
+        ]
+      ],
+      "lineCount": 1626,
+      "sha256": "ef9b152913e89deaa034a69842d43b3cf6e541e90ae13de5738f8205a695383d",
+      "blobSha": "58aa0be86fd6e03f6c6cc34d6b1baa514955d3f2",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ultralytics/ultralytics/blob/739d9c72b74b498fa674a477dc6a8190e2373350/ultralytics/engine/results.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "ultralytics/engine/predictor.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          267,
+          276
+        ],
+        [
+          298,
+          365
+        ],
+        [
+          370,
+          410
+        ],
+        [
+          429,
+          438
+        ],
+        [
+          477,
+          486
+        ]
+      ],
+      "lineCount": 606,
+      "sha256": "8d3f08ce9c916b41ce17d9f3cde8468a10bd73e04122742900a901340a754983",
+      "blobSha": "ccfdd8f649d782da15ec4bbeda0f87742b56c7d8",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ultralytics/ultralytics/blob/739d9c72b74b498fa674a477dc6a8190e2373350/ultralytics/engine/predictor.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "ultralytics/trackers/track.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 168,
+      "sha256": "be18af845beee8640e17908ab070cce73bb663375387038e0c4a76ca2e2d10df",
+      "blobSha": "e709d4807762cdee86993da9611f6988416e8d0a",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ultralytics/ultralytics/blob/739d9c72b74b498fa674a477dc6a8190e2373350/ultralytics/trackers/track.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "docker/Dockerfile-cpu",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          19
+        ]
+      ],
+      "lineCount": 19,
+      "sha256": "3c1af165ab121514e981d3745ebb50338a837c90a84d8416a27bc42e8f71123b",
+      "blobSha": "106c1f23d40d1b0e23173f16a101363fce261080",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ultralytics/ultralytics/blob/739d9c72b74b498fa674a477dc6a8190e2373350/docker/Dockerfile-cpu",
+      "observation": "Inspected CPU Dockerfile inherits a mutable latest-python upstream image. Root/source headers explicitly use AGPL-3.0; this review establishes no alternate commercial permission."
+    },
+    {
+      "path": "tests/test_python.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          56,
+          65
+        ],
+        [
+          67,
+          76
+        ],
+        [
+          88,
+          97
+        ],
+        [
+          104,
+          113
+        ],
+        [
+          126,
+          135
+        ]
+      ],
+      "lineCount": 2438,
+      "sha256": "cab8286a30d8c5ecaea77bb50aca782a61657ec6df7a4c9001af567f053000b8",
+      "blobSha": "411472857497ac6c444cfef4d804b17bc195dd43",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ultralytics/ultralytics/blob/739d9c72b74b498fa674a477dc6a8190e2373350/tests/test_python.py",
+      "observation": "Selected test_python tests exercise prefetch failure propagation, dataloader worker caps and deterministic seeds. None executed; these are not detector-accuracy or institutional privacy tests."
+    }
+  ]
+}

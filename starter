@@ -1,0 +1,39 @@
+docs/
+└── source-audit/
+    ├── README.md
+    ├── source-audit.lock.json
+    │
+
+    │
+    ├── retrieval/
+    │   ├── visualmatch.md
+    │   ├── openvisualsearch.md
+    │   ├── ilias.md
+    │   ├── patchwise-retrieval.md
+    │   ├── reranking-transformer.md
+    │   ├── openclip.md
+    │   ├── pgvector.md
+    │   └── qdrant.md
+    │
+    ├── vision/
+    │   ├── paddleocr.md
+    │   ├── paddledetection.md
+    │   ├── detectron2.md
+    │   ├── ultralytics.md
+    │   └── deepsort.md
+    │
+    ├── cctv/
+    │   ├── cctv-theft-finder.md
+    │   └── trajectron-plus-plus.md
+    │
+    ├── federation/
+    │   ├── mycel.md
+    │   └── open-federated-search.md
+    │
+    ├── traceability/
+    │   ├── openepcis.md
+    │   ├── gs1-end-to-end-traceability.md
+    │   └── dpp-did.md
+    │
+    ├── recovery/
+    │   └── openescrow.md

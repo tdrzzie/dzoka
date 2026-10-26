@@ -1,0 +1,177 @@
+{
+  "sourceId": "furicbond-lost-and-found",
+  "repository": "https://github.com/FuricBond/Lost-And-Found",
+  "revision": "ebe3974ef0c0096a521836b934661fa6e4f99897",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "license": "No root project LICENSE/COPYING in the complete pinned tree; missing licensing is a completed audit finding, not permission to copy."
+  },
+  "files": [
+    {
+      "path": "app/models/item.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 149,
+      "sha256": "642a257da5724ebe6dba106a96bc0cb837702caf93a3d862f550c7b377659707",
+      "blobSha": "e91384daae98f2645338208acb8b00862482cc1a",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/FuricBond/Lost-And-Found/blob/ebe3974ef0c0096a521836b934661fa6e4f99897/app/models/item.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "app/services/matching.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          52,
+          61
+        ],
+        [
+          65,
+          74
+        ],
+        [
+          79,
+          104
+        ],
+        [
+          130,
+          238
+        ],
+        [
+          285,
+          365
+        ]
+      ],
+      "lineCount": 439,
+      "sha256": "2c6f406ac89eab245c851d3dfd1a5f1b7111d677fd90e05c44ede2f917f57d6f",
+      "blobSha": "930d4ad8a379984e86593b3c08fada11b0711f95",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/FuricBond/Lost-And-Found/blob/ebe3974ef0c0096a521836b934661fa6e4f99897/app/services/matching.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "app/services/image_processing.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          85,
+          120
+        ],
+        [
+          300,
+          345
+        ],
+        [
+          412,
+          445
+        ]
+      ],
+      "lineCount": 446,
+      "sha256": "b01eeaaa305c06b91bf5a4fdf417bbd2c3ae8bdf2eccde4cd5a3efc14fac406a",
+      "blobSha": "db1d8bc87185e9f41a004cf5fb445d3686d84f87",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/FuricBond/Lost-And-Found/blob/ebe3974ef0c0096a521836b934661fa6e4f99897/app/services/image_processing.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "Dockerfile",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          58
+        ]
+      ],
+      "lineCount": 58,
+      "sha256": "aad10c973e593cbedad0474412d261142ec749f15642076b1174f2d771b1d80a",
+      "blobSha": "445f94d5c5bd87852852b9d2f355df4a28f16b84",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/FuricBond/Lost-And-Found/blob/ebe3974ef0c0096a521836b934661fa6e4f99897/Dockerfile",
+      "observation": "Inspected multistage Python 3.11 Dockerfile builds wheels, installs native image libraries, runs as appuser and starts uvicorn. Base tags are mutable and this is not an HA/backup validation."
+    },
+    {
+      "path": "app/api/routes/matches.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          128,
+          137
+        ],
+        [
+          233,
+          242
+        ],
+        [
+          252,
+          335
+        ],
+        [
+          411,
+          420
+        ]
+      ],
+      "lineCount": 454,
+      "sha256": "f55695ddae2a1069fc46d4fa873226d027d17452c755fbcdc9c9f1cd60a43219",
+      "blobSha": "c94c5384d598ce55d65259d061939df44d431b63",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/FuricBond/Lost-And-Found/blob/ebe3974ef0c0096a521836b934661fa6e4f99897/app/api/routes/matches.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "tests/test_api.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          14,
+          23
+        ],
+        [
+          34,
+          43
+        ],
+        [
+          53,
+          62
+        ],
+        [
+          66,
+          75
+        ],
+        [
+          78,
+          87
+        ]
+      ],
+      "lineCount": 292,
+      "sha256": "83ed1f3f912e92bdabe31c80854458498fed5124789ee20c8990198bfe68e132",
+      "blobSha": "d5b284b6ba08c479b222260cbc480e798136f681",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/FuricBond/Lost-And-Found/blob/ebe3974ef0c0096a521836b934661fa6e4f99897/tests/test_api.py",
+      "observation": "Inspected async HTTP tests for health, registration, duplicate-email rejection and invalid inputs. They were not executed; matcher accuracy, concurrency and tenant isolation were not measured."
+    }
+  ]
+}

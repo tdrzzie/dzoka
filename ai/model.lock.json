@@ -1,0 +1,43 @@
+{
+  "review": "docs/dependencies/ai-text-adoption.md",
+  "configuration": {
+    "maxTokens": 128,
+    "pooling": "attention-mask-mean",
+    "normalization": "L2",
+    "execution": "CPU-sequential-2threads",
+    "onnxruntime": "1.31.0",
+    "numpy": "2.5.4",
+    "tokenizers": "0.23.3",
+    "outputSchema": "text-embedding-v1",
+    "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+    "providerSourceSha256": "24ae0558d583131fd527f81e9991ea25e6fd02df4c1f0fde7c9c7a88f2f6a3cc",
+    "integritySourceSha256": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+  },
+  "space": {
+    "provider": "onnxruntime-cpu",
+    "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+    "artifactRevision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+    "artifactSha256": "98a01d88b7de996cdea58c32ca71208c09968d143798814b2ea09d3439dc334f",
+    "tokenizerSha256": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+    "preprocessing": "nfc-whitespace-v1:tokenizer-json:128:mask-mean:l2:quint8-v1",
+    "dimensions": 384,
+    "metric": "COSINE",
+    "normalization": "L2",
+    "configSha256": "ec6d9b6acd380a870ba2d84163b923782d4be71a211e1feea39fd5470da3d2cf",
+    "spaceKey": "a01282708ed6f57914db80532838b9949aeebd53437c87fa9f23e33ad2bb2301"
+  },
+  "files": [
+    {
+      "local": "model.onnx",
+      "path": "onnx/model_quint8_avx2.onnx",
+      "bytes": 118453870,
+      "sha256": "98a01d88b7de996cdea58c32ca71208c09968d143798814b2ea09d3439dc334f"
+    },
+    {
+      "local": "tokenizer.json",
+      "path": "tokenizer.json",
+      "bytes": 9081518,
+      "sha256": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8"
+    }
+  ]
+}

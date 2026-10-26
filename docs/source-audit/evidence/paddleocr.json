@@ -1,0 +1,151 @@
+{
+  "sourceId": "paddleocr",
+  "repository": "https://github.com/PaddlePaddle/PaddleOCR",
+  "revision": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "paddleocr/_pipelines/base.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          114
+        ]
+      ],
+      "lineCount": 135,
+      "sha256": "f555c35e540bea6150822c3b1ed44f8f20aae7f7284fccbac29e10a2a9e15b8f",
+      "blobSha": "f400cab41e9526bf516deeaf1c7297da4f545e9d",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/paddleocr/_pipelines/base.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 201,
+      "sha256": "3840c5c0c61c294264d2dd77b8777be6ddd90121ef4e0e64abcd22edea581d6e",
+      "blobSha": "430edfa0cfcb59f15b7aa5457427d0faf2e40dac",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: Apache-2.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "paddleocr/_pipelines/ocr.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          158,
+          167
+        ],
+        [
+          177,
+          245
+        ],
+        [
+          580,
+          589
+        ],
+        [
+          591,
+          600
+        ]
+      ],
+      "lineCount": 604,
+      "sha256": "fc870f7a7f1b33756020d75c63c6dc0dc04981df1ff46627a040336ead9a9b88",
+      "blobSha": "a708a0eec0d8d0add5affd2e8102e885bf24658d",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/paddleocr/_pipelines/ocr.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "tests/security/test_latexocr_pickle.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          70,
+          79
+        ],
+        [
+          121,
+          130
+        ],
+        [
+          135,
+          138
+        ]
+      ],
+      "lineCount": 138,
+      "sha256": "c5f32872c6cf4f90ba130a570c0ffd5a17ccc9915df979629ab6cd53969f0eb2",
+      "blobSha": "59fe54a23cfe0274f11e9ed7d12e9381226cc2f1",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/tests/security/test_latexocr_pickle.py",
+      "observation": "Inspected actual OCR result-shape/language-model tests and a LaTeXOCR malicious-pickle regression test asserting no marker file is created. None executed; the latter is a test of one training-data path, not certification of all deserialization."
+    },
+    {
+      "path": "pyproject.toml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          77,
+          86
+        ]
+      ],
+      "lineCount": 87,
+      "sha256": "63e8bfa19e197e47649a95dad422bcb09c1d2959367cafd40b0a7f19e4452412",
+      "blobSha": "184dec7f58fcb8ca40c06128adbba7cc1ea9af74",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/pyproject.toml",
+      "observation": "pyproject pins the PaddleX major/minor range >=3.7,<3.8 and exposes a paddleocr CLI. PaddleX is a critical transitive inference boundary; its full runtime was not part of this repository review."
+    },
+    {
+      "path": "tests/pipelines/test_ocr.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          50,
+          59
+        ],
+        [
+          90,
+          117
+        ],
+        [
+          119,
+          128
+        ]
+      ],
+      "lineCount": 188,
+      "sha256": "936b9f99f88af16d17d4aed53e29c3c1992d9df3d00cc1fa8f292d39f8dac0a9",
+      "blobSha": "4a0a675a3a73802254b0afaaabf9597b58062076",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleOCR/blob/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf/tests/pipelines/test_ocr.py",
+      "observation": "Inspected actual OCR result-shape/language-model tests and a LaTeXOCR malicious-pickle regression test asserting no marker file is created. None executed; the latter is a test of one training-data path, not certification of all deserialization."
+    }
+  ]
+}

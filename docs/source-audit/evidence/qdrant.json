@@ -1,0 +1,179 @@
+{
+  "sourceId": "qdrant",
+  "repository": "https://github.com/qdrant/qdrant",
+  "revision": "222b2e44ab1c3f17e8246396ead6558e45041df7",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "lib/storage/src/rbac/auth.rs",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          139
+        ]
+      ],
+      "lineCount": 143,
+      "sha256": "e48acd99b948b18d584e4f057abaf638b4c9f2401c9468301cc700c80516550a",
+      "blobSha": "9f12dfffc5783f4949ca5f734fd342efae9be565",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/lib/storage/src/rbac/auth.rs",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 201,
+      "sha256": "210b508429e913d9de5301f90508bc2cbf5b2281de5b45e607c04d58f0f3bd8f",
+      "blobSha": "456fb05e0e936f439cf42c517b19797dafd53ff9",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: Apache-2.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "src/actix/auth.rs",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          86,
+          165
+        ],
+        [
+          218,
+          256
+        ]
+      ],
+      "lineCount": 256,
+      "sha256": "cee9bdfd35133d607a61d75926811dab198342591888ae267b8234b24f52827d",
+      "blobSha": "8fc6d084594e672c5b59d49cc5fd1c9e7ffa54a6",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/src/actix/auth.rs",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "lib/collection/src/collection_manager/segments_searcher.rs",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          178,
+          187
+        ],
+        [
+          206,
+          215
+        ],
+        [
+          219,
+          228
+        ],
+        [
+          247,
+          256
+        ],
+        [
+          268,
+          277
+        ]
+      ],
+      "lineCount": 1353,
+      "sha256": "8479d3c2fb405fd9ff1c52100fbde1b0fe7476e2dcc2b616428bb402e9395afa",
+      "blobSha": "5e20be135f003404a4667aa2cebbc50fd887b713",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/lib/collection/src/collection_manager/segments_searcher.rs",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "config/production.yaml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          7
+        ]
+      ],
+      "lineCount": 7,
+      "sha256": "eb165b46b9827f75128229097f3c144070a3eeac6fe0f796ddf426917af56ebd",
+      "blobSha": "44d7b7f542fbe3efd65001e696ed6a98ea1657dc",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/config/production.yaml",
+      "observation": "Production YAML binds HTTP to 0.0.0.0:6333; inspected multistage Dockerfile has external build-tool/base dependencies. Enable authenticated private networking/TLS explicitly; the config fragment alone is not secure deployment proof."
+    },
+    {
+      "path": "tests/consensus_tests/auth_tests/test_jwt_access.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          654,
+          663
+        ],
+        [
+          674,
+          683
+        ],
+        [
+          704,
+          713
+        ],
+        [
+          740,
+          749
+        ],
+        [
+          752,
+          761
+        ]
+      ],
+      "lineCount": 2110,
+      "sha256": "0730c3b7e63aed09a9107b9f5a28c8f618f6ca15269d34664d536071af347a15",
+      "blobSha": "78338000a215d08a8d5bf0706f77bdce8bdc7e34",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/tests/consensus_tests/auth_tests/test_jwt_access.py",
+      "observation": "JWT access test includes REST endpoint coverage checks and real HTTP status verification helpers. Inspected statically, not executed; no Dzoka tenant/filter recall or durability result established."
+    },
+    {
+      "path": "Dockerfile",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          63,
+          72
+        ],
+        [
+          75,
+          84
+        ]
+      ],
+      "lineCount": 246,
+      "sha256": "e5796337f4c1fa080ddad9dd4260e5b8eec9dc6920ded0b4a3332e73bfb1db7f",
+      "blobSha": "d924e8b4762a9d38e5f03bf8a74fcbb8fc738665",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/qdrant/qdrant/blob/222b2e44ab1c3f17e8246396ead6558e45041df7/Dockerfile",
+      "observation": "Production YAML binds HTTP to 0.0.0.0:6333; inspected multistage Dockerfile has external build-tool/base dependencies. Enable authenticated private networking/TLS explicitly; the config fragment alone is not secure deployment proof."
+    }
+  ]
+}

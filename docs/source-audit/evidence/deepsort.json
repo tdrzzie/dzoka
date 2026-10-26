@@ -1,0 +1,157 @@
+{
+  "sourceId": "deepsort",
+  "repository": "https://github.com/nwojke/deep_sort",
+  "revision": "f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "tests": "Inspected MOTChallenge evaluation CLI and thresholds/budget arguments. No standalone unit-test suite found in the pinned tree; no evaluation executed."
+  },
+  "files": [
+    {
+      "path": "deep_sort/tracker.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          48,
+          138
+        ]
+      ],
+      "lineCount": 138,
+      "sha256": "b214c584e8b0151533c74297e377d3f700869c9b2ed3d30573ac6bbf6adfe65f",
+      "blobSha": "de99de44e95f97c0ae91a90b810565bb036d6ae9",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/nwojke/deep_sort/blob/f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab/deep_sort/tracker.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "deep_sort/nn_matching.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          29,
+          38
+        ],
+        [
+          76,
+          85
+        ],
+        [
+          90,
+          99
+        ],
+        [
+          105,
+          114
+        ],
+        [
+          126,
+          177
+        ]
+      ],
+      "lineCount": 177,
+      "sha256": "717e5c135e9bdbe5819c0d41c7da79b2e5ca2f61918399dcd4cc21f94048746d",
+      "blobSha": "2e7bfea4b87b0c256274937c8323ffc93fa5d61b",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/nwojke/deep_sort/blob/f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab/deep_sort/nn_matching.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          26
+        ],
+        [
+          39,
+          48
+        ],
+        [
+          216,
+          225
+        ]
+      ],
+      "lineCount": 674,
+      "sha256": "589ed823e9a84c56feb95ac58e7cf384626b9cbf4fda2a907bc36e103de1bad2",
+      "blobSha": "9cecc1d4669ee8af2ca727a5d8cde10cd8b2d7cc",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/nwojke/deep_sort/blob/f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: GPL-3.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "evaluate_motchallenge.py",
+      "role": "evaluation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          31,
+          40
+        ],
+        [
+          52,
+          54
+        ]
+      ],
+      "lineCount": 54,
+      "sha256": "b1168e4d9d5c5b4112464107bca376a9087c0bd5e855ddabba5274104b1e6a57",
+      "blobSha": "05a1e9b26941cda662655db8345ce83aa2875a20",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/nwojke/deep_sort/blob/f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab/evaluate_motchallenge.py",
+      "observation": "Offline evaluation implementation inspected; metrics/harness are not a passing test result. Association costs grow with active tracks/detections and sample history; enforce scene/time bounds and appearance budgets at the authorized edge."
+    },
+    {
+      "path": "deep_sort/track.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          110,
+          119
+        ],
+        [
+          124,
+          133
+        ]
+      ],
+      "lineCount": 166,
+      "sha256": "78dbc1961841713cf24d6397fd32b24f7b1624ce9f4b3def3e2df491fcfcc04e",
+      "blobSha": "f638e9b3e618b590f59f3f644af5c79d1c33ea2c",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/nwojke/deep_sort/blob/f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab/deep_sort/track.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "requirements.txt",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          3
+        ]
+      ],
+      "lineCount": 3,
+      "sha256": "1d03337ef86f32c867c7191d2b512e17cae8b64b9d313c7aac88432fb5c97712",
+      "blobSha": "e7590640de37f69a782424616f0d5ecc836b634a",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/nwojke/deep_sort/blob/f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab/requirements.txt",
+      "observation": "Simple unpinned requirements for NumPy/OpenCV/SciPy; appearance descriptor/model generation is a separate boundary and was not certified here."
+    }
+  ]
+}

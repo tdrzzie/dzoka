@@ -1,0 +1,141 @@
+{
+  "sourceId": "ilias",
+  "repository": "https://github.com/ilias-vrg/ilias",
+  "revision": "208815da09c31f728ca8427520eb4898c5156273",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "tests": "Inspected evaluation code is recorded in the evidence manifest. It was not executed and does not establish unit-test coverage, deployment security or Dzoka retrieval accuracy."
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          21
+        ]
+      ],
+      "lineCount": 21,
+      "sha256": "866ea9bdb01d7343870e1935fa5a2bc12894efe224298ecba35a2e8932d2a812",
+      "blobSha": "40830917c50bfd961948286cca13c6fc9ade2cf6",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ilias-vrg/ilias/blob/208815da09c31f728ca8427520eb4898c5156273/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: MIT. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "knn_search/src/searcher.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          38,
+          55
+        ],
+        [
+          75,
+          130
+        ],
+        [
+          173,
+          197
+        ]
+      ],
+      "lineCount": 197,
+      "sha256": "cb8922ff8e2db6f8744c6c21e46f6314f87af7082b24792572784cc2615c9641",
+      "blobSha": "ba3a8593933caadfea6164571eb640c401599722",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ilias-vrg/ilias/blob/208815da09c31f728ca8427520eb4898c5156273/knn_search/src/searcher.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "feature_extraction/src/model/extractors/openclip.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 126,
+      "sha256": "4823dbc372d73458e2da77a8c2ce596fcef478f6d0e4dc44837ace113f16daf7",
+      "blobSha": "f61054aa79f47c7e971925cb1f1710ac862b294b",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ilias-vrg/ilias/blob/208815da09c31f728ca8427520eb4898c5156273/feature_extraction/src/model/extractors/openclip.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "knn_search/requirements.txt",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          6
+        ]
+      ],
+      "lineCount": 6,
+      "sha256": "7dba32bdcb313d07e058c0a99f7332109c8f4c092c39fd6f8d3208e9f820ffa3",
+      "blobSha": "d8308a19e9ac2f25f6c8f45678c86447e9822599",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ilias-vrg/ilias/blob/208815da09c31f728ca8427520eb4898c5156273/knn_search/requirements.txt",
+      "observation": "Reviewed dependency files describe an offline Python environment. GPU/native runtime compatibility, reproducible images and model artifact provisioning need separate integration validation."
+    },
+    {
+      "path": "evaluation/evaluate.py",
+      "role": "evaluation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          17,
+          35
+        ],
+        [
+          57,
+          66
+        ]
+      ],
+      "lineCount": 87,
+      "sha256": "fc31f06f3380995515ae167925b638e690a956c7327f2d8b8492af7e1a25580e",
+      "blobSha": "f6fc53543c5594c3e443165e25ea8e53ab864271",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ilias-vrg/ilias/blob/208815da09c31f728ca8427520eb4898c5156273/evaluation/evaluate.py",
+      "observation": "Offline evaluation implementation inspected; metrics/harness are not a passing test result. Chunking bounds memory, not total gallery comparisons. Query expansion adds another search; shortlist reranking cost depends on local token count."
+    },
+    {
+      "path": "local_reranking/src/ames.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          51,
+          96
+        ],
+        [
+          117,
+          126
+        ],
+        [
+          188,
+          197
+        ]
+      ],
+      "lineCount": 220,
+      "sha256": "59d5115adb99d3c3b5093c70eba8721c00daa9a0db7aa3290e11bda3c4c6b139",
+      "blobSha": "ff7dba07fe2215e574ed7fa8d5684cecce4642e7",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/ilias-vrg/ilias/blob/208815da09c31f728ca8427520eb4898c5156273/local_reranking/src/ames.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

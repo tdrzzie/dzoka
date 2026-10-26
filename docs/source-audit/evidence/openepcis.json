@@ -1,0 +1,127 @@
+{
+  "sourceId": "openepcis",
+  "repository": "https://github.com/openepcis/epcis-repository-ce",
+  "revision": "e81a857771c4c4a2d12e62b60a2dbc094551aa6e",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 201,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "blobSha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/openepcis/epcis-repository-ce/blob/e81a857771c4c4a2d12e62b60a2dbc094551aa6e/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: Apache-2.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "modules/quarkus-capture-topology-ce/src/main/java/io/openepcis/capture/kafka/CaptureContextTopology.java",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          175,
+          238
+        ],
+        [
+          320,
+          375
+        ]
+      ],
+      "lineCount": 775,
+      "sha256": "289e1c23a99e3f6f7b0d0a3c75076456da8d83372ca6279561f6b30d0fb5705b",
+      "blobSha": "d0c686166f3781f9ba723d8bf847858609d2bf53",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/openepcis/epcis-repository-ce/blob/e81a857771c4c4a2d12e62b60a2dbc094551aa6e/modules/quarkus-capture-topology-ce/src/main/java/io/openepcis/capture/kafka/CaptureContextTopology.java",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "modules/openepcis-rest-api-common/src/main/java/io/openepcis/rest/api/common/EventsCaptureApi.java",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          250,
+          298
+        ]
+      ],
+      "lineCount": 298,
+      "sha256": "df427258ca8ead9770c9e0c8899aa8a180a94907dc917949d674771e589d9279",
+      "blobSha": "946e4c24a624d446370571eca555cc388dcdc2de",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/openepcis/epcis-repository-ce/blob/e81a857771c4c4a2d12e62b60a2dbc094551aa6e/modules/openepcis-rest-api-common/src/main/java/io/openepcis/rest/api/common/EventsCaptureApi.java",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "docker/docker-compose.yml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          58
+        ]
+      ],
+      "lineCount": 58,
+      "sha256": "b38cb1a140adbce5a10d8510a6aee1489d88af13dcb6cc91f032cb976f121b9b",
+      "blobSha": "3fa3dc43c6cc8366f5a64909f17e49150f6d6556",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/openepcis/epcis-repository-ce/blob/e81a857771c4c4a2d12e62b60a2dbc094551aa6e/docker/docker-compose.yml",
+      "observation": "Compose has OpenSearch security disabled, a privileged service and plaintext Kafka listeners; this is a development example, not a safe production template. Parent Maven dependency repositories/build chain need independent provisioning review."
+    },
+    {
+      "path": "parent/pom.xml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          59,
+          68
+        ],
+        [
+          73,
+          82
+        ]
+      ],
+      "lineCount": 410,
+      "sha256": "129ae3791d64bc482f0fc77d9a2137cbe75739f16232dbfd48563bd4f8b66dd8",
+      "blobSha": "2e3d278571a205b189d2909912b62a1e71f3c586",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/openepcis/epcis-repository-ce/blob/e81a857771c4c4a2d12e62b60a2dbc094551aa6e/parent/pom.xml",
+      "observation": "Compose has OpenSearch security disabled, a privileged service and plaintext Kafka listeners; this is a development example, not a safe production template. Parent Maven dependency repositories/build chain need independent provisioning review."
+    },
+    {
+      "path": "modules/openepcis-generated-events-capture/src/test/java/io/openepcis/test/GenerateEventsTest.java",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          32
+        ]
+      ],
+      "lineCount": 32,
+      "sha256": "65e7304bd4458ce425436d9fbbe70d805d041b2a8c4d2273b6963ffd95a70527",
+      "blobSha": "c809822835c858ea0bdd687c45bd3cf8abd8667c",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/openepcis/epcis-repository-ce/blob/e81a857771c4c4a2d12e62b60a2dbc094551aa6e/modules/openepcis-generated-events-capture/src/test/java/io/openepcis/test/GenerateEventsTest.java",
+      "observation": "Inspected GenerateEventsTest has launch annotations but its exit-code/response assertions are commented out. No upstream tests executed; these methods do not establish successful capture or conformance."
+    }
+  ]
+}

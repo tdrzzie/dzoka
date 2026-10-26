@@ -1,0 +1,133 @@
+{
+  "sourceId": "openvisualsearch",
+  "repository": "https://github.com/GolffyCoding/OpenVisualSearch",
+  "revision": "134dbb376bd61eac77bc388ef3531edd87fd5362",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source review through connected GitHub; code not executed.",
+  "scope": "Encoder selection, inference/fallback semantics, search filters, API-key middleware, startup, smoke test and Compose; segment/WAL internals and full gateway registration not reviewed.",
+  "limitations": {
+    "license": "No root LICENSE/COPYING found in complete non-truncated pinned repository tree. No permission to copy established."
+  },
+  "files": [
+    {
+      "path": "internal/embedding/clip/clip.go",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          125
+        ]
+      ],
+      "lineCount": 161,
+      "blobSha": "a193a7bca3fe1f42b94a3fcd87c8a7f9a230d0cf",
+      "sha256": "aefff0dab06e4a52f30238f16d68b2c2b527340bc352cf45095d54e644f86485",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/internal/embedding/clip/clip.go",
+      "observation": "Actual ONNX sessions, inference calls, mutex-protected shared runtime and normalized outputs."
+    },
+    {
+      "path": "internal/embedding/simple/simple.go",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          110
+        ]
+      ],
+      "lineCount": 110,
+      "blobSha": "85840eac1098f8495560cc3d6eed66719f3a01de",
+      "sha256": "6a2b265ea839c02e9f25b1158e80fa1f4a24329e5d87cde5d292268f5eb1eaab",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/internal/embedding/simple/simple.go",
+      "observation": "Block-average image colors and feature-hashed text bags; padding/truncation does not create a shared semantic space."
+    },
+    {
+      "path": "internal/search/pipeline.go",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          242
+        ]
+      ],
+      "lineCount": 242,
+      "blobSha": "ebb2855a9dcd66cd80270a3d5f4073ff48ba16a2",
+      "sha256": "734d9b555621b868a79fcba7125a0b216f6e3201c20330cdbbb14504bbb78396",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/internal/search/pipeline.go",
+      "observation": "Top-K search capped at 500 candidates before metadata filtering; fallback image errors return successful zero vectors."
+    },
+    {
+      "path": "internal/auth/auth.go",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          28
+        ]
+      ],
+      "lineCount": 28,
+      "blobSha": "4739a06af8a40f8873b2876887b0232dc474d1de",
+      "sha256": "df0871a140fc252c9891fb0429d7ee538b1d15cc7ad19d54369cea3a2edbf3ad",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/internal/auth/auth.go",
+      "observation": "Empty API key bypasses middleware authentication; otherwise a shared bearer token is compared."
+    },
+    {
+      "path": "internal/api/rest/handler.go",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          80
+        ]
+      ],
+      "lineCount": 180,
+      "blobSha": "b5f9dace6f592b654887e4e9359e343ca56516e0",
+      "sha256": "6060860d6a00c995ff79657121cc6fb76966ba635ae7e2758583b8ffa56343e4",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/internal/api/rest/handler.go",
+      "observation": "Versioned search/product routes; top_k defaults to 20 when zero."
+    },
+    {
+      "path": "cmd/ovs-server/main.go",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          110
+        ]
+      ],
+      "lineCount": 110,
+      "blobSha": "b6d0c1e8ccc3ead98bcd6a3def2220b7c83d069a",
+      "sha256": "2efa0f3336e4e5f29f9b34fbe7a0de66b69fa1f8e5d397dc271c2b4152a510dc",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/cmd/ovs-server/main.go",
+      "observation": "Encoder initialization warns and continues with content-based fallback when CLIP fails."
+    },
+    {
+      "path": "internal/embedding/clip/smoke_test.go",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          109
+        ]
+      ],
+      "lineCount": 109,
+      "blobSha": "8c38f163fa361510ef5e976a923960f936623faf",
+      "sha256": "92109889edb2675fe85718f3cb7de915ba598047da78aa97a791aa3277c9e25e",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/internal/embedding/clip/smoke_test.go",
+      "observation": "CLIP semantic and image/text smoke assertions; tests skip if vision model is absent."
+    },
+    {
+      "path": "docker-compose.yml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          43
+        ]
+      ],
+      "lineCount": 43,
+      "blobSha": "dda6ac02bb5d652179834ae9053c9488efa45b5e",
+      "sha256": "83f605550b8c56702d1161c45c2200b47b387307aee9414ff78abcc4589194be",
+      "url": "https://github.com/GolffyCoding/OpenVisualSearch/blob/134dbb376bd61eac77bc388ef3531edd87fd5362/docker-compose.yml",
+      "observation": "Three local nodes expose HTTP/gRPC/metrics ports and bind data/configuration volumes."
+    }
+  ]
+}

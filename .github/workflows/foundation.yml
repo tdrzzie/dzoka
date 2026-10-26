@@ -1,0 +1,30 @@
+name: Core foundation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  foundation:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '21.0.13+9'
+      - name: Require mandatory source evidence
+        run: python3 tools/audit_registry.py gate
+      - name: Resolve reviewed pinned artifacts
+        run: python3 tools/maven.py dependency:resolve
+      - name: Verify dependency bytes and license evidence
+        run: python3 tools/dependency_lock.py
+      - name: Test real core media and portable AI lifecycle contracts
+        run: python3 tools/test_intake.py

@@ -1,0 +1,199 @@
+{
+  "sourceId": "lost-and-found-tracking-system",
+  "repository": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system",
+  "revision": "4ef1493f80590f6fa03d2ad9eded2e70a59ebe58",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          21
+        ]
+      ],
+      "lineCount": 21,
+      "sha256": "429b413fa108a42543a8e54c339f366613701ea14e9ed91c2de3cb9190a45c0f",
+      "blobSha": "d3471e5cc16ca2f7698ce8fbc0c382d4d2e6b242",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: MIT. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "backend/src/services/embeddingService.ts",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          56,
+          65
+        ],
+        [
+          73,
+          82
+        ],
+        [
+          112,
+          121
+        ],
+        [
+          395,
+          434
+        ],
+        [
+          493,
+          542
+        ],
+        [
+          552,
+          561
+        ],
+        [
+          988,
+          1042
+        ]
+      ],
+      "lineCount": 1405,
+      "sha256": "fc95de13bc980700a077aecba0a254bd664680466a9abf934b437cf0be0e553b",
+      "blobSha": "572a650f078a80aa76ce82817cb82ed4138579e7",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/backend/src/services/embeddingService.ts",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "backend/src/services/findImagePairs.ts",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          41,
+          50
+        ],
+        [
+          127,
+          136
+        ],
+        [
+          185,
+          202
+        ],
+        [
+          205,
+          214
+        ]
+      ],
+      "lineCount": 788,
+      "sha256": "bb41fdeaf3b1dce9b50976e34796d7306483aa0e51f15cf8509f16d9a9cf4987",
+      "blobSha": "4b5f3d5625b124f74939429bc84f3e3fdca42ef9",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/backend/src/services/findImagePairs.ts",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "backend/src/routes/v1/claims.ts",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          81
+        ]
+      ],
+      "lineCount": 111,
+      "sha256": "0d546a1995d6c8b265f1c94c156dea48c16997290b39521abdd8187053c2852b",
+      "blobSha": "97875478c7b83153dfcf267186d6442c1f65caba",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/backend/src/routes/v1/claims.ts",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "backend/src/services/fraudDetectionService.ts",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          52,
+          61
+        ],
+        [
+          78,
+          87
+        ],
+        [
+          364,
+          373
+        ],
+        [
+          497,
+          579
+        ]
+      ],
+      "lineCount": 635,
+      "sha256": "e2ab8d61654d5dd36a2e4e91b92a1a0f7b29f31398e0a02cb2f7c89be71a8abc",
+      "blobSha": "220a0cb577c04eecd6a2bb971f4de5f24ad5d90b",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/backend/src/services/fraudDetectionService.ts",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "backend/src/models/claims.ts",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 87,
+      "sha256": "dd1277f6000f724df488102468fce93486623dbb5bb392932683ded8916689d1",
+      "blobSha": "1e6240beeff216eeeef5a18c83847b00dcd1e769",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/backend/src/models/claims.ts",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "backend/package.json",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          54
+        ]
+      ],
+      "lineCount": 54,
+      "sha256": "ae5f326a9a96dee2f7391c51f8d9bcef2290f43e9037b101ffd89f7a04c3cd30",
+      "blobSha": "5bbf9dafd3fb269f5cb26f8cd0911c2b0d830311",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/backend/package.json",
+      "observation": "backend/package.json supplies TypeScript build, start, lint and Vitest commands; MongoDB/Redis/cloud-media dependencies increase operational boundaries. No deployed system was started."
+    },
+    {
+      "path": "backend/tests/unit/middleware/auth.test.ts",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 90,
+      "sha256": "efabcc02d8359cb4182e5ddec22f2c3b4a511207d786eee77e702238a2ac6c11",
+      "blobSha": "2eaca822973fc298d2e45e0244a20ca6da9593e9",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system/blob/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58/backend/tests/unit/middleware/auth.test.ts",
+      "observation": "The inspected auth.test.ts reimplements token parsing inside tests and asserts constants; it does not invoke the production middleware. Other integration tests exist in the tree but were not run or used to claim security coverage."
+    }
+  ]
+}

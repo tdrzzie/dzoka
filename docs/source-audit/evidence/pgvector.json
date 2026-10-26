@@ -1,0 +1,105 @@
+{
+  "sourceId": "pgvector",
+  "repository": "https://github.com/pgvector/pgvector",
+  "revision": "5db3087b27a4fd095e7398f4b0f2706bf6d54bd3",
+  "observedAt": "2026-10-26",
+  "method": "Static source inspection through connected GitHub; upstream code not executed.",
+  "scope": "PostgreSQL vector SQL contract, HNSW iterative scan implementation, filtered-scan test and extension/container packaging; not all native code, access methods or PostgreSQL security.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          20
+        ]
+      ],
+      "sha256": "6bba9ebeb73e27477463b05e5ef1bf303bccbddb3db9bbc95905d351604d6a87",
+      "blobSha": "fc5f177fa5d9c0d20a949f4b4faa028999977008",
+      "url": "https://github.com/pgvector/pgvector/blob/5db3087b27a4fd095e7398f4b0f2706bf6d54bd3/LICENSE",
+      "observation": "Permissive PostgreSQL-family notice verified.",
+      "lineCount": 20
+    },
+    {
+      "path": "src/hnswscan.c",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          100
+        ],
+        [
+          201,
+          350
+        ]
+      ],
+      "sha256": "036ceae14f6ca4dad2515356770b3c9e59eaafd1adaca19257dcdb2ac9fd07a7",
+      "blobSha": "75732fc036f25ebac72c27deece8bf58abd3f9b1",
+      "url": "https://github.com/pgvector/pgvector/blob/5db3087b27a4fd095e7398f4b0f2706bf6d54bd3/src/hnswscan.c",
+      "observation": "Dimension checks, layered search, MVCC requirement, scan memory/tuple budgets and ordering behavior.",
+      "lineCount": 353
+    },
+    {
+      "path": "sql/vector.sql",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          100
+        ]
+      ],
+      "sha256": "d30fae09182afdbe3c6c8326e1c1eb04c5e0754255cca384971244ecd34e8746",
+      "blobSha": "fece8beb68263ab637a0cd8a148e98f9e816f919",
+      "url": "https://github.com/pgvector/pgvector/blob/5db3087b27a4fd095e7398f4b0f2706bf6d54bd3/sql/vector.sql",
+      "observation": "SQL vector type and strict immutable distance/dimension functions.",
+      "lineCount": 1217
+    },
+    {
+      "path": "test/t/043_hnsw_iterative_scan.pl",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          59
+        ]
+      ],
+      "sha256": "e7a79bdc4ee2a83156e0769dd45ec53c0c1a3dbbca80d5fecb493765c5870a91",
+      "blobSha": "e75c69757ce4b86d4f2a2a38ebff978974666aa7",
+      "url": "https://github.com/pgvector/pgvector/blob/5db3087b27a4fd095e7398f4b0f2706bf6d54bd3/test/t/043_hnsw_iterative_scan.pl",
+      "observation": "Synthetic filtered HNSW count tests with scan tuple and memory limits.",
+      "lineCount": 59
+    },
+    {
+      "path": "vector.control",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          4
+        ]
+      ],
+      "sha256": "9f7d0fcada5e68aa41adf9d5b3ab3fd43c83f2edd462c391a0f715d72a9941ec",
+      "blobSha": "c9c4b6a0ae87c61ef8092d6c5163da9b7ef05fab",
+      "url": "https://github.com/pgvector/pgvector/blob/5db3087b27a4fd095e7398f4b0f2706bf6d54bd3/vector.control",
+      "observation": "Extension reports version 0.8.7 at this commit.",
+      "lineCount": 4
+    },
+    {
+      "path": "Dockerfile",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          23
+        ]
+      ],
+      "sha256": "fc8fd4c0fe162653c536a8aeab8aa6e5ef0409d7f7761e142de113364fcdfe4d",
+      "blobSha": "cbeaed72f87696f1345c720b1dbb9b43e939df2d",
+      "url": "https://github.com/pgvector/pgvector/blob/5db3087b27a4fd095e7398f4b0f2706bf6d54bd3/Dockerfile",
+      "observation": "Build downloads tag v0.8.7 rather than automatically using the audit commit.",
+      "lineCount": 23
+    }
+  ]
+}

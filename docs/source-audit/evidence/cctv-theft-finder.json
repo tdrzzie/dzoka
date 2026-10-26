@@ -1,0 +1,124 @@
+{
+  "sourceId": "cctv-theft-finder",
+  "repository": "https://github.com/daanishmufti/cctv-theft-finder",
+  "revision": "c3af22b1d6239424459a0c568f3a575de49572d6",
+  "observedAt": "2026-10-26",
+  "method": "Static source inspection through connected GitHub; upstream code not executed.",
+  "scope": "Temporal search, baseline presence verifier, selected local API boundaries, evidence persistence, synthetic search tests and Python dependency deployment entry point; not detector models, all upload paths or a full privacy/security review.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          20
+        ]
+      ],
+      "sha256": "a65f5757c850ac41fadb71271dfca53ab26c2ce22607e2a470442625a9cda6af",
+      "blobSha": "0c712d9e7fccfe59e3140776dcbffc27b6794c64",
+      "url": "https://github.com/daanishmufti/cctv-theft-finder/blob/c3af22b1d6239424459a0c568f3a575de49572d6/LICENSE",
+      "observation": "MIT notice verified.",
+      "lineCount": 21
+    },
+    {
+      "path": "lastseen/search.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          130
+        ],
+        [
+          211,
+          387
+        ]
+      ],
+      "sha256": "0bdced351e6e62c50db359a3d347cc61767e5b60dd7096d87984f42b3c861dff",
+      "blobSha": "fe89c0750e3ed6cfb47dbef4d4d23dc1cdbdc08c",
+      "url": "https://github.com/daanishmufti/cctv-theft-finder/blob/c3af22b1d6239424459a0c568f3a575de49572d6/lastseen/search.py",
+      "observation": "Day/night sampling, refinement, gap/occlusion states and optional binary strategy.",
+      "lineCount": 387
+    },
+    {
+      "path": "lastseen/presence.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          130
+        ]
+      ],
+      "sha256": "294d0e38bf0b24380fb09fe2d0fc9fbcb4c37e11d648617f713f6ca4330f03ff",
+      "blobSha": "593dcf638ccd2b2f60cfcfc9a4302930955ac655",
+      "url": "https://github.com/daanishmufti/cctv-theft-finder/blob/c3af22b1d6239424459a0c568f3a575de49572d6/lastseen/presence.py",
+      "observation": "Intensity/edge ZNCC template matching, scene recognition and moved-object fallback.",
+      "lineCount": 184
+    },
+    {
+      "path": "lastseen/api.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          95
+        ],
+        [
+          171,
+          240
+        ]
+      ],
+      "sha256": "a99d90402b4927407fc35f053f1c5bd07efae372aaccd5d36f220416065627fd",
+      "blobSha": "9f1f500607b0a800995954b39f6baa4a18d23726",
+      "url": "https://github.com/daanishmufti/cctv-theft-finder/blob/c3af22b1d6239424459a0c568f3a575de49572d6/lastseen/api.py",
+      "observation": "Local FastAPI, in-memory job registry, camera deletion and client-supplied user field.",
+      "lineCount": 310
+    },
+    {
+      "path": "lastseen/evidence.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          86
+        ]
+      ],
+      "sha256": "0a54b3a88554ca04df0706a943b8ae1247bb27a2891fd3352cbc2fcc0c1ca9db",
+      "blobSha": "5a47b92d859f656afc410409157a8068a40a926c",
+      "url": "https://github.com/daanishmufti/cctv-theft-finder/blob/c3af22b1d6239424459a0c568f3a575de49572d6/lastseen/evidence.py",
+      "observation": "Filesystem cases, SHA-256 manifests, SQLite audit table and local naive timestamps.",
+      "lineCount": 86
+    },
+    {
+      "path": "tests/test_search_logic.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          130
+        ]
+      ],
+      "sha256": "e3adb5051fee8d2f05bfdc25d3b4a4c4a46a8700f7009bf8e9cdd65cbab45c22",
+      "blobSha": "144134e965292e3681962dc17f95fa033e167b22",
+      "url": "https://github.com/daanishmufti/cctv-theft-finder/blob/c3af22b1d6239424459a0c568f3a575de49572d6/tests/test_search_logic.py",
+      "observation": "Synthetic world tests distinguish missing, occluded, moved and unavailable footage; frame budget assertions are synthetic.",
+      "lineCount": 152
+    },
+    {
+      "path": "requirements.txt",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          15
+        ]
+      ],
+      "sha256": "d899ffcdcc613abcce9fc4fc70381071df0ed212e5ce66e3e9c27ba94441e7fe",
+      "blobSha": "b82229e43c5e722a0b75f30d051af28997fdd342",
+      "url": "https://github.com/daanishmufti/cctv-theft-finder/blob/c3af22b1d6239424459a0c568f3a575de49572d6/requirements.txt",
+      "observation": "Unbounded minimum dependencies; optional learned components commented out.",
+      "lineCount": 15
+    }
+  ]
+}

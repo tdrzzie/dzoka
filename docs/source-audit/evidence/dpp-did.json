@@ -1,0 +1,109 @@
+{
+  "sourceId": "dpp-did",
+  "repository": "https://github.com/Jorge-Lopes/dpp-did",
+  "revision": "44533c27967d406f4eeb5f09c4257b506a0264d8",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "license": "No root project LICENSE/COPYING in the complete pinned tree; missing licensing is a completed audit finding, not permission to copy."
+  },
+  "files": [
+    {
+      "path": "wallet/src/utils/vc.js",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          5
+        ]
+      ],
+      "lineCount": 5,
+      "sha256": "c2f4a5f2645c038e0c8e761b55c39d94e676c7ff95eee8baede076cf86d12270",
+      "blobSha": "2031e5e184f52d7bda39e923eeea8840f55b054e",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Jorge-Lopes/dpp-did/blob/44533c27967d406f4eeb5f09c4257b506a0264d8/wallet/src/utils/vc.js",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "wallet/src/utils/did.js",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          42
+        ]
+      ],
+      "lineCount": 42,
+      "sha256": "e392e02cc83f7c711b121f3a3fd64cc0369d9c8bba310c8c90d2adecad3b1e29",
+      "blobSha": "a937620ad219d7644c2befa66813a327c0314e80",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Jorge-Lopes/dpp-did/blob/44533c27967d406f4eeb5f09c4257b506a0264d8/wallet/src/utils/did.js",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "wallet/src/utils/storage.js",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          34
+        ]
+      ],
+      "lineCount": 34,
+      "sha256": "7f25e29217d2d788be08dfdbc3af80e164e9021419ca4b62b86d10193fcb343b",
+      "blobSha": "601b4d2baa43e2743b5a3a58be954e953b0c8b26",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Jorge-Lopes/dpp-did/blob/44533c27967d406f4eeb5f09c4257b506a0264d8/wallet/src/utils/storage.js",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "wallet/test/test.js",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          68
+        ]
+      ],
+      "lineCount": 117,
+      "sha256": "33a60f062b16d72329fd70c03fbc946ebeeffe10f568902cf6ea071f026504aa",
+      "blobSha": "28c2dc8d16f05d85d9e15be886b26b313ce85f7e",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Jorge-Lopes/dpp-did/blob/44533c27967d406f4eeb5f09c4257b506a0264d8/wallet/test/test.js",
+      "observation": "Inspected happy-path wallet/product/credential tests use a deterministic synthetic seed and stubbed documents. They are not authorization, TLS or adversarial DID verification tests; none executed."
+    },
+    {
+      "path": "wallet/src/server.js",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 116,
+      "sha256": "5a975d4696a1d1cf7fb4162eef992d1d9494383e65c503b7ca4f5258b3e0252f",
+      "blobSha": "b0b74bda085a5c8d6332285e0bc8d23b19c0366e",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Jorge-Lopes/dpp-did/blob/44533c27967d406f4eeb5f09c4257b506a0264d8/wallet/src/server.js",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "docker-compose.yaml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          32
+        ]
+      ],
+      "lineCount": 32,
+      "sha256": "63213b3476d90b4568b9c49ed85b523dd3857607c876833d2964eedb579607ce",
+      "blobSha": "d32e70458f5cd32f21d40a70b05d8c317549447d",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/Jorge-Lopes/dpp-did/blob/44533c27967d406f4eeb5f09c4257b506a0264d8/docker-compose.yaml",
+      "observation": "Compose launches two wallets and a document server sharing a local data volume. This is a demonstration topology, not secure institutional key management."
+    }
+  ]
+}

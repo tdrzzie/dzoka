@@ -1,0 +1,139 @@
+{
+  "sourceId": "findback",
+  "repository": "https://github.com/pirinthaban/findback",
+  "revision": "fc91563886e4e8da6931bc07dd025fbe235068a2",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          21
+        ]
+      ],
+      "lineCount": 21,
+      "sha256": "5d79c95df8a55a9f37e559006562a63af9988999ac13a0de0d034c484a99dbf9",
+      "blobSha": "f3209727b2c20da52848f253ae828842bd61a547",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/pirinthaban/findback/blob/fc91563886e4e8da6931bc07dd025fbe235068a2/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: MIT. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "functions/src/triggers/onClaimCreated.ts",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          111,
+          114
+        ]
+      ],
+      "lineCount": 114,
+      "sha256": "5e13727f924a3ba3a2973deced3a03327026e0516cbc9ac551e4dd5b1c6ed764",
+      "blobSha": "2500c9127800d0cb98e8d8b20960cf52bc8b3354",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/pirinthaban/findback/blob/fc91563886e4e8da6931bc07dd025fbe235068a2/functions/src/triggers/onClaimCreated.ts",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "functions/src/ai/matchingEngine.ts",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          15,
+          24
+        ],
+        [
+          158,
+          167
+        ],
+        [
+          250,
+          259
+        ],
+        [
+          280,
+          289
+        ],
+        [
+          298,
+          307
+        ],
+        [
+          537,
+          554
+        ],
+        [
+          575,
+          610
+        ]
+      ],
+      "lineCount": 610,
+      "sha256": "3b29e936db835fd62a0c3f259493959ae33036e3b77b370fcaa8b85c728014b7",
+      "blobSha": "2d0f2bba335dae1524d7209cb052cf7f6368a8f4",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/pirinthaban/findback/blob/fc91563886e4e8da6931bc07dd025fbe235068a2/functions/src/ai/matchingEngine.ts",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "firestore.rules",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 281,
+      "sha256": "748eb34bd0d98f8a0afc5efdc7a0b456d684bdc727f37967607dabd512e7abb4",
+      "blobSha": "30fb2387e340e3626099e6bc2c3a8a50ba4cbc77",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/pirinthaban/findback/blob/fc91563886e4e8da6931bc07dd025fbe235068a2/firestore.rules",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "functions/package.json",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          36
+        ]
+      ],
+      "lineCount": 36,
+      "sha256": "84f75874f0cba064787c69b7cf9229ceefaa4b4e150f055b0000a7fbd3cabcf7",
+      "blobSha": "13c65cd52f4d87b5700e89fdbb59a121374610ce",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/pirinthaban/findback/blob/fc91563886e4e8da6931bc07dd025fbe235068a2/functions/package.json",
+      "observation": "functions/package.json deploys Firebase functions with Node 18; managed services are required. No self-hosted alternative was demonstrated by the reviewed package."
+    },
+    {
+      "path": "test/widget_test.dart",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          27
+        ]
+      ],
+      "lineCount": 27,
+      "sha256": "cc23d69bad85760eafcb4d0ccdf7b01753baa7e6aa3a4ba1d07544bd5d450864",
+      "blobSha": "fb7a4fcc53d1afcc2e9b6486a58d1dfa138fa9e1",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/pirinthaban/findback/blob/fc91563886e4e8da6931bc07dd025fbe235068a2/test/widget_test.dart",
+      "observation": "The inspected Flutter test pumps a hard-coded text widget rather than the actual app or Firestore rules. No upstream tests executed; rules-emulator and webhook replay tests remain necessary."
+    }
+  ]
+}

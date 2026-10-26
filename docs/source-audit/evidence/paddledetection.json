@@ -1,0 +1,139 @@
+{
+  "sourceId": "paddledetection",
+  "repository": "https://github.com/PaddlePaddle/PaddleDetection",
+  "revision": "b25522a0f4bde8c80603f3ba5e3472059972e3b5",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 201,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "blobSha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: Apache-2.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "deploy/python/preprocess.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          139,
+          148
+        ],
+        [
+          199,
+          208
+        ],
+        [
+          402,
+          411
+        ]
+      ],
+      "lineCount": 549,
+      "sha256": "5bf3c389dce88968740c792f9f5ccba77ee120f1463582204dad3a1fd8bd25c8",
+      "blobSha": "1936d3e49ef6d9069edc974b4399a5cd71aa9f5d",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/deploy/python/preprocess.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "deploy/python/infer.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          137,
+          146
+        ],
+        [
+          159,
+          168
+        ],
+        [
+          184,
+          251
+        ],
+        [
+          369,
+          378
+        ]
+      ],
+      "lineCount": 1278,
+      "sha256": "5b6fc6c97c04ee4e3bf8f61231e8659ac10990307c78eff1e3c4cb72b3ebb634",
+      "blobSha": "9366db02b625238b1b79e0a82e6fe1b83cd81fa0",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/deploy/python/infer.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "ppdet/modeling/tests/test_architectures.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 69,
+      "sha256": "9e5b0e7131bf6246e0fda1f2e52e94cada144bda65a1b4a15492bdaff559efb0",
+      "blobSha": "5de79b2cedb3fffac0ce853406560821a9142363",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/ppdet/modeling/tests/test_architectures.py",
+      "observation": "Architecture tests load concrete configs and construct Trainer in test mode. They were not executed and do not measure detection accuracy, safe input handling or privacy redaction."
+    },
+    {
+      "path": "requirements.txt",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          26
+        ]
+      ],
+      "lineCount": 26,
+      "sha256": "6c6c0e1daea05cf817a3b40eed3ab45c954583459c2b9591975c76ebe370d4e6",
+      "blobSha": "fd8b92105905941d930057d78497a2cc6ad6ecdc",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/requirements.txt",
+      "observation": "requirements limits NumPy<2 and OpenCV<=4.6.0 at this pin, plus native/scientific dependencies. Native Paddle/device compatibility and exported model packaging must be tested separately."
+    },
+    {
+      "path": "ppdet/modeling/architectures/yolo.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          86,
+          95
+        ]
+      ],
+      "lineCount": 150,
+      "sha256": "b0d725dd31712096caf701550085f396b912c6ac798d0cde74cfd5b748e34c8d",
+      "blobSha": "b004935654ed0ec2290af758133f479147231dbd",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/PaddlePaddle/PaddleDetection/blob/b25522a0f4bde8c80603f3ba5e3472059972e3b5/ppdet/modeling/architectures/yolo.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

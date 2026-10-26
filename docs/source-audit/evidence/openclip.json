@@ -1,0 +1,163 @@
+{
+  "sourceId": "openclip",
+  "repository": "https://github.com/mlfoundations/open_clip",
+  "revision": "2bcb5adf5090df595a78b56ca9aee7b1c70efc18",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {},
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          23
+        ]
+      ],
+      "lineCount": 23,
+      "sha256": "4a5b4f13ea4792a8211a69f32d2b460b6d520e57cd23c6301e707c76a6e97a55",
+      "blobSha": "5bfbf6c09daad743dbf9a98d303c0402e4099a27",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/mlfoundations/open_clip/blob/2bcb5adf5090df595a78b56ca9aee7b1c70efc18/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: MIT. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "src/open_clip/model.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          63,
+          72
+        ],
+        [
+          131,
+          140
+        ],
+        [
+          201,
+          210
+        ],
+        [
+          275,
+          284
+        ],
+        [
+          362,
+          371
+        ],
+        [
+          484,
+          515
+        ]
+      ],
+      "lineCount": 923,
+      "sha256": "a1b1983bb51ca3643fb842985b4d1ed8a8d5ac9cc576974cd431b11b0ab4810c",
+      "blobSha": "c0cc77aa820e1af20681c373f4182d8ad352fd56",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/mlfoundations/open_clip/blob/2bcb5adf5090df595a78b56ca9aee7b1c70efc18/src/open_clip/model.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "src/open_clip/factory.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          234,
+          254
+        ],
+        [
+          725,
+          780
+        ]
+      ],
+      "lineCount": 1516,
+      "sha256": "86a259877a2d037799cf9a29b5ed1ce674cb533a96c2b51364facd56dc364331",
+      "blobSha": "8bfefc49479f417f61d00940a6fc22704e79438a",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/mlfoundations/open_clip/blob/2bcb5adf5090df595a78b56ca9aee7b1c70efc18/src/open_clip/factory.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "pyproject.toml",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 93,
+      "sha256": "8c081b77627d5d99936363e145a9e0f8f774971dcc68327ea7dedfff40f143a2",
+      "blobSha": "0199d9212e6f0b9ba9cab3b82c705cdc4f9155c4",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/mlfoundations/open_clip/blob/2bcb5adf5090df595a78b56ca9aee7b1c70efc18/pyproject.toml",
+      "observation": "pyproject requires torch>=2.6 and timm>=1.0.29 at this revision. Local checkpoint provisioning and pinned runtime compatibility are required; a library installation alone does not enable a valid embedding provider."
+    },
+    {
+      "path": "tests/test_inference_simple.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          40
+        ]
+      ],
+      "lineCount": 40,
+      "sha256": "604f358cb834ed593025828eb5dc200708ed76265af8eb6edcbefb19fff8164c",
+      "blobSha": "7e79088b8004ca60c25653898601003ee3099c4a",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/mlfoundations/open_clip/blob/2bcb5adf5090df595a78b56ca9aee7b1c70efc18/tests/test_inference_simple.py",
+      "observation": "Inspected parameterized inference test encodes an image and three texts and asserts output probabilities. Not run; this small test is not same-instance or multilingual recovery validation."
+    },
+    {
+      "path": "src/open_clip/pretrained.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          130,
+          139
+        ],
+        [
+          147,
+          156
+        ],
+        [
+          181,
+          190
+        ],
+        [
+          192,
+          201
+        ],
+        [
+          238,
+          247
+        ],
+        [
+          818,
+          863
+        ]
+      ],
+      "lineCount": 954,
+      "sha256": "afa5151271bd1dea0f5fe11d3900ad29dd37e97c41d609af8828768dd2412fd9",
+      "blobSha": "d3fd558eb2d61088c0ccea5a96b716033d078362",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/mlfoundations/open_clip/blob/2bcb5adf5090df595a78b56ca9aee7b1c70efc18/src/open_clip/pretrained.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

@@ -1,0 +1,362 @@
+{
+  "method": "Connected GitHub tree resolution; discovery alone is not source review.",
+  "sources": [
+    {
+      "id": "globalenglish-lostfound",
+      "repository": "https://github.com/globalenglish01/lostfound",
+      "branch": "main",
+      "revision": "6ff8cffe55bfc3e7274124512a69fae746ceb643",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/globalenglish01/lostfound/git/trees/6ff8cffe55bfc3e7274124512a69fae746ceb643?recursive=1",
+      "truncated": false,
+      "fileCount": 85,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "furicbond-lost-and-found",
+      "repository": "https://github.com/FuricBond/Lost-And-Found",
+      "branch": "main",
+      "revision": "ebe3974ef0c0096a521836b934661fa6e4f99897",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/FuricBond/Lost-And-Found/git/trees/ebe3974ef0c0096a521836b934661fa6e4f99897?recursive=1",
+      "truncated": false,
+      "fileCount": 72,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "lost-and-found-tracking-system",
+      "repository": "https://github.com/Lost-and-Found-Tracking-System/lost-and-found-system",
+      "branch": "main",
+      "revision": "4ef1493f80590f6fa03d2ad9eded2e70a59ebe58",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/Lost-and-Found-Tracking-System/lost-and-found-system/git/trees/4ef1493f80590f6fa03d2ad9eded2e70a59ebe58?recursive=1",
+      "truncated": false,
+      "fileCount": 220,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "smart-asset-finder",
+      "repository": "https://github.com/fredopoku/Smart-Asset-Finder",
+      "branch": "main",
+      "revision": "8ac4484354d23aea42e1a569e2f127a878049b1e",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/fredopoku/Smart-Asset-Finder/git/trees/8ac4484354d23aea42e1a569e2f127a878049b1e?recursive=1",
+      "truncated": false,
+      "fileCount": 1272,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "ai-lost-and-found",
+      "repository": "https://github.com/dhanushshetty40/AI-lost-and-found",
+      "branch": "main",
+      "revision": "577edc3b492f62ac8707fc950230bc04a354e9d8",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/dhanushshetty40/AI-lost-and-found/git/trees/577edc3b492f62ac8707fc950230bc04a354e9d8?recursive=1",
+      "truncated": false,
+      "fileCount": 169,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "malak-lostandfound",
+      "repository": "https://github.com/Malak-Rashad/LostAndFound",
+      "branch": "master",
+      "revision": "d5d7bfaf043396a32b40c264c647f6456cadb633",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/Malak-Rashad/LostAndFound/git/trees/d5d7bfaf043396a32b40c264c647f6456cadb633?recursive=1",
+      "truncated": false,
+      "fileCount": 380,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "findback",
+      "repository": "https://github.com/pirinthaban/findback",
+      "branch": "main",
+      "revision": "fc91563886e4e8da6931bc07dd025fbe235068a2",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/pirinthaban/findback/git/trees/fc91563886e4e8da6931bc07dd025fbe235068a2?recursive=1",
+      "truncated": false,
+      "fileCount": 253,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "kwasu-lost-found-bot",
+      "repository": "https://github.com/zhuluh247/kwasu-lost-found-bot",
+      "branch": "main",
+      "revision": "e4863739135594d8ce0a541be6029d0bba5ae95c",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/zhuluh247/kwasu-lost-found-bot/git/trees/e4863739135594d8ce0a541be6029d0bba5ae95c?recursive=1",
+      "truncated": false,
+      "fileCount": 4,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "trishthakur-lost-and-found-ai",
+      "repository": "https://github.com/trishthakur/lost-and-found-ai",
+      "branch": "main",
+      "revision": "8e5fcb6f79595c9d429679ba7868cac4a90e1319",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/trishthakur/lost-and-found-ai/git/trees/8e5fcb6f79595c9d429679ba7868cac4a90e1319?recursive=1",
+      "truncated": false,
+      "fileCount": 75,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "visualmatch",
+      "repository": "https://github.com/soham-k-sinha/visualmatch",
+      "branch": "main",
+      "revision": "941c69fa7d82c7fd5f570ad7392833b8d0b83791",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/soham-k-sinha/visualmatch/git/trees/941c69fa7d82c7fd5f570ad7392833b8d0b83791?recursive=1",
+      "truncated": false,
+      "fileCount": 76,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "openvisualsearch",
+      "repository": "https://github.com/GolffyCoding/OpenVisualSearch",
+      "branch": "main",
+      "revision": "134dbb376bd61eac77bc388ef3531edd87fd5362",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/GolffyCoding/OpenVisualSearch/git/trees/134dbb376bd61eac77bc388ef3531edd87fd5362?recursive=1",
+      "truncated": false,
+      "fileCount": 37,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "ilias",
+      "repository": "https://github.com/ilias-vrg/ilias",
+      "branch": "main",
+      "revision": "208815da09c31f728ca8427520eb4898c5156273",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/ilias-vrg/ilias/git/trees/208815da09c31f728ca8427520eb4898c5156273?recursive=1",
+      "truncated": false,
+      "fileCount": 62,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "patchwise-retrieval",
+      "repository": "https://github.com/kaist-ami/Patchwise-Retrieval",
+      "branch": "main",
+      "revision": "d593101957933fcd574649fcb3b0af02c7295c11",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/kaist-ami/Patchwise-Retrieval/git/trees/d593101957933fcd574649fcb3b0af02c7295c11?recursive=1",
+      "truncated": false,
+      "fileCount": 20,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "reranking-transformer",
+      "repository": "https://github.com/uvavision/RerankingTransformer",
+      "branch": "main",
+      "revision": "81fca3ca9b191950f702ae712daef0400608ae3a",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/uvavision/RerankingTransformer/git/trees/81fca3ca9b191950f702ae712daef0400608ae3a?recursive=1",
+      "truncated": false,
+      "fileCount": 129,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "openclip",
+      "repository": "https://github.com/mlfoundations/open_clip",
+      "branch": "main",
+      "revision": "2bcb5adf5090df595a78b56ca9aee7b1c70efc18",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/mlfoundations/open_clip/git/trees/2bcb5adf5090df595a78b56ca9aee7b1c70efc18?recursive=1",
+      "truncated": false,
+      "fileCount": 401,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "pgvector",
+      "repository": "https://github.com/pgvector/pgvector",
+      "branch": "master",
+      "revision": "5db3087b27a4fd095e7398f4b0f2706bf6d54bd3",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/pgvector/pgvector/git/trees/5db3087b27a4fd095e7398f4b0f2706bf6d54bd3?recursive=1",
+      "truncated": false,
+      "fileCount": 157,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "qdrant",
+      "repository": "https://github.com/qdrant/qdrant",
+      "branch": "master",
+      "revision": "222b2e44ab1c3f17e8246396ead6558e45041df7",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/qdrant/qdrant/git/trees/222b2e44ab1c3f17e8246396ead6558e45041df7?recursive=1",
+      "truncated": false,
+      "fileCount": 2556,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "paddleocr",
+      "repository": "https://github.com/PaddlePaddle/PaddleOCR",
+      "branch": "main",
+      "revision": "dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/PaddlePaddle/PaddleOCR/git/trees/dab3fe35379033fdcb2d0e9572fac0b36c9a9ebf?recursive=1",
+      "truncated": false,
+      "fileCount": 2455,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "paddledetection",
+      "repository": "https://github.com/PaddlePaddle/PaddleDetection",
+      "branch": "release/2.9",
+      "revision": "b25522a0f4bde8c80603f3ba5e3472059972e3b5",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/PaddlePaddle/PaddleDetection/git/trees/b25522a0f4bde8c80603f3ba5e3472059972e3b5?recursive=1",
+      "truncated": false,
+      "fileCount": 2114,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "detectron2",
+      "repository": "https://github.com/facebookresearch/detectron2",
+      "branch": "main",
+      "revision": "b0fe2f0a5bb6496f65246ef35687a386a9f19202",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/facebookresearch/detectron2/git/trees/b0fe2f0a5bb6496f65246ef35687a386a9f19202?recursive=1",
+      "truncated": false,
+      "fileCount": 828,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "ultralytics",
+      "repository": "https://github.com/ultralytics/ultralytics",
+      "branch": "main",
+      "revision": "739d9c72b74b498fa674a477dc6a8190e2373350",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/ultralytics/ultralytics/git/trees/739d9c72b74b498fa674a477dc6a8190e2373350?recursive=1",
+      "truncated": false,
+      "fileCount": 1045,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "deepsort",
+      "repository": "https://github.com/nwojke/deep_sort",
+      "branch": "master",
+      "revision": "f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/nwojke/deep_sort/git/trees/f08cf1dc470eeb1cd2add1cbf077d95ac6c48aab?recursive=1",
+      "truncated": false,
+      "fileCount": 23,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "cctv-theft-finder",
+      "repository": "https://github.com/daanishmufti/cctv-theft-finder",
+      "branch": "main",
+      "revision": "c3af22b1d6239424459a0c568f3a575de49572d6",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/daanishmufti/cctv-theft-finder/git/trees/c3af22b1d6239424459a0c568f3a575de49572d6?recursive=1",
+      "truncated": false,
+      "fileCount": 39,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "trajectron-plus-plus",
+      "repository": "https://github.com/StanfordASL/Trajectron-plus-plus",
+      "branch": "master",
+      "revision": "1031c7bd1a444273af378c1ec1dcca907ba59830",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/StanfordASL/Trajectron-plus-plus/git/trees/1031c7bd1a444273af378c1ec1dcca907ba59830?recursive=1",
+      "truncated": false,
+      "fileCount": 185,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "mycel",
+      "repository": "https://github.com/splch/mycel",
+      "branch": "main",
+      "revision": "07a671d03c4fbb68f459d24af262a3dec563c913",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/splch/mycel/git/trees/07a671d03c4fbb68f459d24af262a3dec563c913?recursive=1",
+      "truncated": false,
+      "fileCount": 48,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "open-federated-search",
+      "repository": "https://github.com/dstl/Open-Federated-Search",
+      "branch": "master",
+      "revision": "fe13ee670bd12d55d693a1e55f5be03c7d01333c",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/dstl/Open-Federated-Search/git/trees/fe13ee670bd12d55d693a1e55f5be03c7d01333c?recursive=1",
+      "truncated": false,
+      "fileCount": 13,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "openepcis",
+      "repository": "https://github.com/openepcis/epcis-repository-ce",
+      "branch": "main",
+      "revision": "e81a857771c4c4a2d12e62b60a2dbc094551aa6e",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/openepcis/epcis-repository-ce/git/trees/e81a857771c4c4a2d12e62b60a2dbc094551aa6e?recursive=1",
+      "truncated": false,
+      "fileCount": 112,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    },
+    {
+      "id": "dpp-did",
+      "repository": "https://github.com/Jorge-Lopes/dpp-did",
+      "branch": "main",
+      "revision": "44533c27967d406f4eeb5f09c4257b506a0264d8",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/Jorge-Lopes/dpp-did/git/trees/44533c27967d406f4eeb5f09c4257b506a0264d8?recursive=1",
+      "truncated": false,
+      "fileCount": 26,
+      "rootLicensePaths": []
+    },
+    {
+      "id": "openescrow",
+      "repository": "https://github.com/omslice/OpenEscrow",
+      "branch": "main",
+      "revision": "abebc3b6543a975e7ec5943e9bdd53cea6dc168a",
+      "resolvedAt": "2026-10-26",
+      "treeUrl": "https://api.github.com/repos/omslice/OpenEscrow/git/trees/abebc3b6543a975e7ec5943e9bdd53cea6dc168a?recursive=1",
+      "truncated": false,
+      "fileCount": 920,
+      "rootLicensePaths": [
+        "LICENSE"
+      ]
+    }
+  ]
+}

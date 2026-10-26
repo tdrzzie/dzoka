@@ -1,0 +1,24 @@
+* text=auto
+*.java text eol=lf
+*.sql text eol=lf
+*.py text eol=lf
+*.xml text eol=lf
+*.json text eol=lf
+*.properties text eol=lf
+mvnw text eol=lf
+*.cmd text eol=crlf
+# Supplied research contains original mixed line endings. Preserve its exact bytes.
+docs/ARCHITECTURE.md -text
+docs/DESIGN.md -text
+docs/dzoka.md -text
+docs/platforms/** -text
+docs/findings/** -text
+docs/design/** -text
+docs/architecture/system-context.md -text
+docs/architecture/container-architecture.md -text
+docs/architecture/component-architecture.md -text
+docs/architecture/domain-architecture.md -text
+docs/architecture/data-architecture.md -text
+docs/architecture/event-architecture.md -text
+docs/source-audit/README.md -text
+starter -text

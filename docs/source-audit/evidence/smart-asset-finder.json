@@ -1,0 +1,114 @@
+{
+  "sourceId": "smart-asset-finder",
+  "repository": "https://github.com/fredopoku/Smart-Asset-Finder",
+  "revision": "8ac4484354d23aea42e1a569e2f127a878049b1e",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "tests": "No application test suite found in the pinned tree after excluding bundled vendor material. No tests executed.",
+    "deployment": "Reviewed PHP entry points require shared config.php and a configured database. No reproducible production container or application lockfile was inspected; README deployment prose is orientation only."
+  },
+  "files": [
+    {
+      "path": "classes/QrScan.php",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 74,
+      "sha256": "d85fcb703a7a44d0950f3598c01a8d602517e368820b1ef7a5e676254ac36aaa",
+      "blobSha": "4498af5c2f922c257e833784d46e5f29a9bbbad9",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/fredopoku/Smart-Asset-Finder/blob/8ac4484354d23aea42e1a569e2f127a878049b1e/classes/QrScan.php",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "classes/Whatsapp.php",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 120,
+      "sha256": "21587ee5ccdd4fcde8acd7f6af88023d7b472c1c49a8a2db7ac96971ded5e9d1",
+      "blobSha": "1fc046346a29700a13d22cee6e60bb42eb3776ce",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/fredopoku/Smart-Asset-Finder/blob/8ac4484354d23aea42e1a569e2f127a878049b1e/classes/Whatsapp.php",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "classes/AiMatcher.php",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          72,
+          125
+        ],
+        [
+          158,
+          205
+        ],
+        [
+          251,
+          260
+        ]
+      ],
+      "lineCount": 300,
+      "sha256": "e35470a05a01d79d1cd11a82d98f8ef51d6ae3a46079314f77499b4e6ec2bc5b",
+      "blobSha": "9825ed07df8254f6ecbed9b3e4b4b6c99bc2b092",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/fredopoku/Smart-Asset-Finder/blob/8ac4484354d23aea42e1a569e2f127a878049b1e/classes/AiMatcher.php",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "README.md",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          65
+        ],
+        [
+          157,
+          166
+        ],
+        [
+          268,
+          278
+        ]
+      ],
+      "lineCount": 278,
+      "sha256": "3b8fc2fa63334c679d423c03b37fa265c84ef03407722aef0fe3ba08e39fbd94",
+      "blobSha": "6f8daeeec58cc8548dc5d3e8ffef341ec456cad1",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/fredopoku/Smart-Asset-Finder/blob/8ac4484354d23aea42e1a569e2f127a878049b1e/README.md",
+      "observation": "README lines 276-278 explicitly reserve all rights; no root permissive license found. No code reuse permission established."
+    },
+    {
+      "path": "classes/Login.php",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 491,
+      "sha256": "ef0feb234375ff660c68a20107781162b78d907dd4b1ad9eb5746c053b7119b1",
+      "blobSha": "aeea3ebaae5aba238cff39649b5b86c2a53bd2d3",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/fredopoku/Smart-Asset-Finder/blob/8ac4484354d23aea42e1a569e2f127a878049b1e/classes/Login.php",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

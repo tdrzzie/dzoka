@@ -1,0 +1,2103 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/dependencies/README.md",
+  "pomSha256": "05a098a6063b0f6e4ee82fe0e66334e59e339bb844e56bc104c27514fdfc4e13",
+  "maven": "3.9.16",
+  "dependencies": [
+    {
+      "coordinate": "ch.qos.logback:logback-classic:1.5.38",
+      "scope": "compile",
+      "jar": "ch/qos/logback/logback-classic/1.5.38/logback-classic-1.5.38.jar",
+      "jarSha256": "afb439c61fa287c9e1925523b13baab03617e724406a389d48b61c2c3e46b700",
+      "pom": "ch/qos/logback/logback-classic/1.5.38/logback-classic-1.5.38.pom",
+      "pomSha256": "63313f843b669c60255e66f2c52a9c1d3af3787009d9f389159e35a691b63857",
+      "licenses": [
+        "EPL-2.0",
+        "LGPL-2.1-only"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "ch/qos/logback/logback-parent/1.5.38/logback-parent-1.5.38.pom",
+        "sha256": "2bce3a61a6449adb9a0722e1c0c1e391533880ba02916d3df83208999aea6c66"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "ch.qos.logback:logback-core:1.5.38",
+      "scope": "compile",
+      "jar": "ch/qos/logback/logback-core/1.5.38/logback-core-1.5.38.jar",
+      "jarSha256": "a855a0fc97b1d06f4efb1c3bba5ebd0eb508d8b58e68e89e4bbc23a85135c883",
+      "pom": "ch/qos/logback/logback-core/1.5.38/logback-core-1.5.38.pom",
+      "pomSha256": "dba1707f025202fe344052163c3419a0f03d056777ac5c346175e5523c937d60",
+      "licenses": [
+        "EPL-2.0",
+        "LGPL-2.1-only"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "ch/qos/logback/logback-parent/1.5.38/logback-parent-1.5.38.pom",
+        "sha256": "2bce3a61a6449adb9a0722e1c0c1e391533880ba02916d3df83208999aea6c66"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "com.fasterxml.jackson.core:jackson-annotations:2.21",
+      "scope": "compile",
+      "jar": "com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.jar",
+      "jarSha256": "53ca085f4a150f703f49e1aabd935bd03b43e1ea3d55d135438292af22cef56b",
+      "pom": "com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.pom",
+      "pomSha256": "71cac5392151e2a528cc9a09179f0a334179f05c52f8e596cf58ddf12bb27f2b",
+      "licenses": [
+        "The Apache Software License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "com/fasterxml/jackson/core/jackson-annotations/2.21/jackson-annotations-2.21.pom",
+        "sha256": "71cac5392151e2a528cc9a09179f0a334179f05c52f8e596cf58ddf12bb27f2b"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "612b14bc77c944ce229cbba0d14919162cfea8ed802cbf06a8e865e032d03201"
+      }
+    },
+    {
+      "coordinate": "com.nimbusds:nimbus-jose-jwt:10.9.1",
+      "scope": "compile",
+      "jar": "com/nimbusds/nimbus-jose-jwt/10.9.1/nimbus-jose-jwt-10.9.1.jar",
+      "jarSha256": "33152ea83ec50d22706fdaf3b07acbcd716f9a68edcabdd7c4d02843cbdcdcf6",
+      "pom": "com/nimbusds/nimbus-jose-jwt/10.9.1/nimbus-jose-jwt-10.9.1.pom",
+      "pomSha256": "d729b6d5d9efcb6bf54e77a9513c54deb2f1a2d9e9aab5ff3ddffbc1cbf716aa",
+      "licenses": [
+        "The Apache Software License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "com/nimbusds/nimbus-jose-jwt/10.9.1/nimbus-jose-jwt-10.9.1.pom",
+        "sha256": "d729b6d5d9efcb6bf54e77a9513c54deb2f1a2d9e9aab5ff3ddffbc1cbf716aa"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "com.zaxxer:HikariCP:7.0.2",
+      "scope": "compile",
+      "jar": "com/zaxxer/HikariCP/7.0.2/HikariCP-7.0.2.jar",
+      "jarSha256": "f1e612fa27345be3107a85431e8a8aeb205c15364ab2f2d411e40a9d7bb08095",
+      "pom": "com/zaxxer/HikariCP/7.0.2/HikariCP-7.0.2.pom",
+      "pomSha256": "662a87f80487be89bd77296213e91108ff9f01ed0d9a90f9a4e21263cc49e73e",
+      "licenses": [
+        "The Apache Software License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "com/zaxxer/HikariCP/7.0.2/HikariCP-7.0.2.pom",
+        "sha256": "662a87f80487be89bd77296213e91108ff9f01ed0d9a90f9a4e21263cc49e73e"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "commons-logging:commons-logging:1.3.6",
+      "scope": "compile",
+      "jar": "commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.jar",
+      "jarSha256": "f8ead8943401081dea0aa824b5b1ba40a0e4ed297a572a0f02258150a0b62357",
+      "pom": "commons-logging/commons-logging/1.3.6/commons-logging-1.3.6.pom",
+      "pomSha256": "49fc185139bdd0c6c4adf440721e3279cb5342906bcd01a7a89399ceeaa78e85",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/apache/37/apache-37.pom",
+        "sha256": "524ec4787aff73af6b3a9fafa154c7f1881b648299b663fdbfcadda1286f2353"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "b1d2870f1a00e4d7f56576e5f0870cba109e041f8af66866cf5b499478e654e7",
+        "META-INF/NOTICE.txt": "d649e220dd0497197a266b7d7304a009d06bcefce3141fa6ff4f2ceddb438237"
+      }
+    },
+    {
+      "coordinate": "io.micrometer:micrometer-commons:1.17.2",
+      "scope": "compile",
+      "jar": "io/micrometer/micrometer-commons/1.17.2/micrometer-commons-1.17.2.jar",
+      "jarSha256": "af8c85e879025ce30c381e6810e14c4f52b4150894e36c815860d14763271348",
+      "pom": "io/micrometer/micrometer-commons/1.17.2/micrometer-commons-1.17.2.pom",
+      "pomSha256": "977aeeff5157d233cac605125d8db52f5f687376ea01789624a5d7f7369b43d0",
+      "licenses": [
+        "The Apache Software License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "io/micrometer/micrometer-commons/1.17.2/micrometer-commons-1.17.2.pom",
+        "sha256": "977aeeff5157d233cac605125d8db52f5f687376ea01789624a5d7f7369b43d0"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "62fb8a3a9621dc2388174caaabe9c2317b694bb9a1d46c98bcf5655b68f51be3",
+        "META-INF/NOTICE": "df207ca1a2ea3794caf112d7c1f024c87b4ddfe91d3f243977ad1d3cd085d538"
+      }
+    },
+    {
+      "coordinate": "io.micrometer:micrometer-observation:1.17.2",
+      "scope": "compile",
+      "jar": "io/micrometer/micrometer-observation/1.17.2/micrometer-observation-1.17.2.jar",
+      "jarSha256": "d3ff53cfa0532dc1af0de349073f9aeb985e01f4b88c1d904350178805859695",
+      "pom": "io/micrometer/micrometer-observation/1.17.2/micrometer-observation-1.17.2.pom",
+      "pomSha256": "55f13a820250f4a7f237276e261775bb4a8f41789e9158ae6d6df112ec0c15b5",
+      "licenses": [
+        "The Apache Software License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "io/micrometer/micrometer-observation/1.17.2/micrometer-observation-1.17.2.pom",
+        "sha256": "55f13a820250f4a7f237276e261775bb4a8f41789e9158ae6d6df112ec0c15b5"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "62fb8a3a9621dc2388174caaabe9c2317b694bb9a1d46c98bcf5655b68f51be3",
+        "META-INF/NOTICE": "df207ca1a2ea3794caf112d7c1f024c87b4ddfe91d3f243977ad1d3cd085d538"
+      }
+    },
+    {
+      "coordinate": "jakarta.annotation:jakarta.annotation-api:3.0.0",
+      "scope": "compile",
+      "jar": "jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.jar",
+      "jarSha256": "b01f55552284cfb149411e64eabca75e942d26d2e1786b32914250e4330afaa2",
+      "pom": "jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.pom",
+      "pomSha256": "9fc66a87375df8443aba6bdcc1d4ff07f126542583785a482a9262a19bfe8eae",
+      "licenses": [
+        "EPL 2.0",
+        "GPL2 w/ CPE"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "jakarta/annotation/jakarta.annotation-api/3.0.0/jakarta.annotation-api-3.0.0.pom",
+        "sha256": "9fc66a87375df8443aba6bdcc1d4ff07f126542583785a482a9262a19bfe8eae"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.md": "6e1f002892b81cbe0647019b150c8a056efc1add565671a4f8af629b6cd2cc7b",
+        "META-INF/NOTICE.md": "20bf986a153cc3095639379c99ef0a5a3bf99ac4895429920d380414a3eecf08"
+      }
+    },
+    {
+      "coordinate": "org.apache.httpcomponents.client5:httpclient5:5.6.5",
+      "scope": "runtime",
+      "jar": "org/apache/httpcomponents/client5/httpclient5/5.6.5/httpclient5-5.6.5.jar",
+      "jarSha256": "a10b555f7c85a720d1011a086d679d854b155816cde91a40198cc98c2b0867e8",
+      "pom": "org/apache/httpcomponents/client5/httpclient5/5.6.5/httpclient5-5.6.5.pom",
+      "pomSha256": "7ac6193d8917a7c6e31166c40b5d3042fbe6060f1b05e7b1b9b3ec4b5318bfd5",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/apache/27/apache-27.pom",
+        "sha256": "b2b0fc69e22a650c3892f1c366d77076f29575c6738df4c7a70a44844484cdf9"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "4ad1973880c25e0c41fdf45fb47fbb3cb935b322982cca535d4dbf8062cc5a47"
+      }
+    },
+    {
+      "coordinate": "org.apache.httpcomponents.core5:httpcore5-h2:5.4.4",
+      "scope": "runtime",
+      "jar": "org/apache/httpcomponents/core5/httpcore5-h2/5.4.4/httpcore5-h2-5.4.4.jar",
+      "jarSha256": "9a61441889f9b222ce99581977cc549b4dfca7ac9d2841582c1e57a31fa65b48",
+      "pom": "org/apache/httpcomponents/core5/httpcore5-h2/5.4.4/httpcore5-h2-5.4.4.pom",
+      "pomSha256": "18797c3669470a602a59ede28af6ccb6d2b4e91be26566483e7100b7dc4bc678",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/apache/27/apache-27.pom",
+        "sha256": "b2b0fc69e22a650c3892f1c366d77076f29575c6738df4c7a70a44844484cdf9"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "9c9b2e926919e38adf222b3191267806a742ce1adcd1e13dc91d11014b85bd57"
+      }
+    },
+    {
+      "coordinate": "org.apache.httpcomponents.core5:httpcore5:5.4.4",
+      "scope": "runtime",
+      "jar": "org/apache/httpcomponents/core5/httpcore5/5.4.4/httpcore5-5.4.4.jar",
+      "jarSha256": "b08e3c3a440fec2029e89980134c7c787dd6796454641ad1eafb81478d7e8b0b",
+      "pom": "org/apache/httpcomponents/core5/httpcore5/5.4.4/httpcore5-5.4.4.pom",
+      "pomSha256": "f9bdd181a02c97958b913f5cb47a4595f1193a962ad4964a3d0c56d965732daa",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/apache/27/apache-27.pom",
+        "sha256": "b2b0fc69e22a650c3892f1c366d77076f29575c6738df4c7a70a44844484cdf9"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "94a71d64ef74b0ca85db2d5e538118a4265ff8eed2f978eda58d2cfa5d88a310"
+      }
+    },
+    {
+      "coordinate": "org.apache.logging.log4j:log4j-api:2.25.5",
+      "scope": "compile",
+      "jar": "org/apache/logging/log4j/log4j-api/2.25.5/log4j-api-2.25.5.jar",
+      "jarSha256": "64777f73ea0b3104c04eb82befbdccc30a425a19e83ad06cb2f93aa303511863",
+      "pom": "org/apache/logging/log4j/log4j-api/2.25.5/log4j-api-2.25.5.pom",
+      "pomSha256": "035b3e6057d26535cac74e5333403a797460ebef0b9313b844826140ed36de67",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/logging/log4j/log4j-api/2.25.5/log4j-api-2.25.5.pom",
+        "sha256": "035b3e6057d26535cac74e5333403a797460ebef0b9313b844826140ed36de67"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "0b23e26a6260c82e2608899128a81a0c82e81f15d708779d0639227f6a2f801f"
+      }
+    },
+    {
+      "coordinate": "org.apache.logging.log4j:log4j-to-slf4j:2.25.5",
+      "scope": "compile",
+      "jar": "org/apache/logging/log4j/log4j-to-slf4j/2.25.5/log4j-to-slf4j-2.25.5.jar",
+      "jarSha256": "b68e8b47342dbc9b35644a14fe2efc0b7bf18da703910cd05ad5501ffe07bba1",
+      "pom": "org/apache/logging/log4j/log4j-to-slf4j/2.25.5/log4j-to-slf4j-2.25.5.pom",
+      "pomSha256": "3baf24b64811bfc634adf68b1872166f4a696d04ad48e380a7a7e0a8c9818d5a",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/logging/log4j/log4j-to-slf4j/2.25.5/log4j-to-slf4j-2.25.5.pom",
+        "sha256": "3baf24b64811bfc634adf68b1872166f4a696d04ad48e380a7a7e0a8c9818d5a"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "0ccd7e8250b33edc64612733af1b614c40eec22505446b6faec1c7a40cbeda95"
+      }
+    },
+    {
+      "coordinate": "org.apache.tomcat.embed:tomcat-embed-core:11.0.27",
+      "scope": "compile",
+      "jar": "org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.jar",
+      "jarSha256": "b71785ff101c0df501064b3e3b8c4a02e4f9cc3047a7fa686c41fc4edc2f0cb4",
+      "pom": "org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.pom",
+      "pomSha256": "36b7fee41fa8eac7a9b9654aa3add6f71d1cde5f8a979828b1991ff7af379252",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/tomcat/embed/tomcat-embed-core/11.0.27/tomcat-embed-core-11.0.27.pom",
+        "sha256": "36b7fee41fa8eac7a9b9654aa3add6f71d1cde5f8a979828b1991ff7af379252"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "8c39166d578175fb936229613e48de47d9e494b8c7c2fda6da717a1be29c8724",
+        "META-INF/NOTICE": "234d3234bb332895157270092fa2a11e80aa0b3d70d59e13de0eed4c2adb1790"
+      }
+    },
+    {
+      "coordinate": "org.apache.tomcat.embed:tomcat-embed-el:11.0.27",
+      "scope": "compile",
+      "jar": "org/apache/tomcat/embed/tomcat-embed-el/11.0.27/tomcat-embed-el-11.0.27.jar",
+      "jarSha256": "206d6c6b1b6ce67b1c9af9ed0f6f43b4dbbc26164dd47bb49b9aad1583191f33",
+      "pom": "org/apache/tomcat/embed/tomcat-embed-el/11.0.27/tomcat-embed-el-11.0.27.pom",
+      "pomSha256": "d278f37f85457665d695197124cf7c2c29c28caedebebc99e9be99689f950945",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/tomcat/embed/tomcat-embed-el/11.0.27/tomcat-embed-el-11.0.27.pom",
+        "sha256": "d278f37f85457665d695197124cf7c2c29c28caedebebc99e9be99689f950945"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "0317acaa42a5e48bec061cf009cb5c8b4b8ff845f3c6ba548f67c5c22c29fc96"
+      }
+    },
+    {
+      "coordinate": "org.apache.tomcat.embed:tomcat-embed-websocket:11.0.27",
+      "scope": "compile",
+      "jar": "org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.jar",
+      "jarSha256": "cbcd7ed6d7428fa71af6572d541a3ef74ceff42dfc523273950fe586062dc60f",
+      "pom": "org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.pom",
+      "pomSha256": "0a6546463fc61ef2c1a3b08c24a8296fcc4f3683829fb4971efb8b1a081d94a9",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apache/tomcat/embed/tomcat-embed-websocket/11.0.27/tomcat-embed-websocket-11.0.27.pom",
+        "sha256": "0a6546463fc61ef2c1a3b08c24a8296fcc4f3683829fb4971efb8b1a081d94a9"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "0317acaa42a5e48bec061cf009cb5c8b4b8ff845f3c6ba548f67c5c22c29fc96"
+      }
+    },
+    {
+      "coordinate": "org.apiguardian:apiguardian-api:1.1.2",
+      "scope": "test",
+      "jar": "org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar",
+      "jarSha256": "b509448ac506d607319f182537f0b35d71007582ec741832a1f111e5b5b70b38",
+      "pom": "org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom",
+      "pomSha256": "32355081d109095c3d5d374d5a43b4f4c1b75d549e983ef50723e2772e5302a0",
+      "licenses": [
+        "The Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.pom",
+        "sha256": "32355081d109095c3d5d374d5a43b4f4c1b75d549e983ef50723e2772e5302a0"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+      }
+    },
+    {
+      "coordinate": "org.checkerframework:checker-qual:3.55.1",
+      "scope": "runtime",
+      "jar": "org/checkerframework/checker-qual/3.55.1/checker-qual-3.55.1.jar",
+      "jarSha256": "857658c8bdcbff794949a8d9922f88d63ee3751c203c7cd7d21ea97f9e745288",
+      "pom": "org/checkerframework/checker-qual/3.55.1/checker-qual-3.55.1.pom",
+      "pomSha256": "627d92aa92fd4d6bb8c2b56bcbb38543417f49d38b5a62fbdb4aeff551e7b760",
+      "licenses": [
+        "The MIT License"
+      ],
+      "selectedLicense": "MIT",
+      "licenseEvidence": {
+        "path": "org/checkerframework/checker-qual/3.55.1/checker-qual-3.55.1.pom",
+        "sha256": "627d92aa92fd4d6bb8c2b56bcbb38543417f49d38b5a62fbdb4aeff551e7b760"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "e90eaa08dea089df10f2bf7f9dba63a5f6237c01562c4741e2e86773e78582d5"
+      }
+    },
+    {
+      "coordinate": "org.flywaydb:flyway-core:12.4.0",
+      "scope": "compile",
+      "jar": "org/flywaydb/flyway-core/12.4.0/flyway-core-12.4.0.jar",
+      "jarSha256": "c3f93df1f3e0c9d14652adb5ade97401f2ede503859ac693c2af5c06e2797799",
+      "pom": "org/flywaydb/flyway-core/12.4.0/flyway-core-12.4.0.pom",
+      "pomSha256": "31432b9590cfeaf495603eeb7c86e52061a4a8b9cca1331b4df167ed4b2285be",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/flywaydb/flyway-parent/12.4.0/flyway-parent-12.4.0.pom",
+        "sha256": "70767d82783ee14e0ac0b7be78a68ebd92308c9bebe5c3f8925d24db4ac54088"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "6707b7b3ba3220ab64a81a5ab869ffecc3a6a023e9488ea08b897471b069c078"
+      }
+    },
+    {
+      "coordinate": "org.flywaydb:flyway-database-postgresql:12.4.0",
+      "scope": "compile",
+      "jar": "org/flywaydb/flyway-database-postgresql/12.4.0/flyway-database-postgresql-12.4.0.jar",
+      "jarSha256": "abc075a5c3cbf37dc64b28fec7e2398fb14f31109f7ab6271854738797407b85",
+      "pom": "org/flywaydb/flyway-database-postgresql/12.4.0/flyway-database-postgresql-12.4.0.pom",
+      "pomSha256": "e61221d4404382f791988a2ccd9bed83a1ea0b4be4d2d3d906ce4485ee7fa658",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/flywaydb/flyway-parent/12.4.0/flyway-parent-12.4.0.pom",
+        "sha256": "70767d82783ee14e0ac0b7be78a68ebd92308c9bebe5c3f8925d24db4ac54088"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "org.jspecify:jspecify:1.0.1",
+      "scope": "compile",
+      "jar": "org/jspecify/jspecify/1.0.1/jspecify-1.0.1.jar",
+      "jarSha256": "070d75f261fe4c5b8202508366715f7f2d4660f88c8ef7e6d3575e48c9683b66",
+      "pom": "org/jspecify/jspecify/1.0.1/jspecify-1.0.1.pom",
+      "pomSha256": "55b38bf1a7b1d8ea518cf2f4f3ae9aaa236e61bbf0b6bd31ffb49753a059dd5e",
+      "licenses": [
+        "The Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/jspecify/jspecify/1.0.1/jspecify-1.0.1.pom",
+        "sha256": "55b38bf1a7b1d8ea518cf2f4f3ae9aaa236e61bbf0b6bd31ffb49753a059dd5e"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "org.junit.jupiter:junit-jupiter-api:6.0.3",
+      "scope": "test",
+      "jar": "org/junit/jupiter/junit-jupiter-api/6.0.3/junit-jupiter-api-6.0.3.jar",
+      "jarSha256": "d655d7e6f0c7ae07f10a2f3bbaaebb6d30e9b26204a068ad9e9b3950aa28792c",
+      "pom": "org/junit/jupiter/junit-jupiter-api/6.0.3/junit-jupiter-api-6.0.3.pom",
+      "pomSha256": "766c80fb318e1600ebf6c9a921de801887b1548aa282d6ad69188b7608d56d47",
+      "licenses": [
+        "Eclipse Public License v2.0"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "org/junit/jupiter/junit-jupiter-api/6.0.3/junit-jupiter-api-6.0.3.pom",
+        "sha256": "766c80fb318e1600ebf6c9a921de801887b1548aa282d6ad69188b7608d56d47"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE-notice.md": "c7340d7b84e87498bf1e3ce8e2763b8cf1d8153def1648800b796f7b24ec0020",
+        "META-INF/LICENSE.md": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0"
+      }
+    },
+    {
+      "coordinate": "org.junit.jupiter:junit-jupiter-engine:6.0.3",
+      "scope": "test",
+      "jar": "org/junit/jupiter/junit-jupiter-engine/6.0.3/junit-jupiter-engine-6.0.3.jar",
+      "jarSha256": "1e2fab61ad27ea08fc7c70dd9677cf8c6d1ae5434d42dcfdd633b12c7e7c04d0",
+      "pom": "org/junit/jupiter/junit-jupiter-engine/6.0.3/junit-jupiter-engine-6.0.3.pom",
+      "pomSha256": "bafbc099326c1883f0ee1cb056d31b4222e26165f9f9aa9b896f3d3f78a31538",
+      "licenses": [
+        "Eclipse Public License v2.0"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "org/junit/jupiter/junit-jupiter-engine/6.0.3/junit-jupiter-engine-6.0.3.pom",
+        "sha256": "bafbc099326c1883f0ee1cb056d31b4222e26165f9f9aa9b896f3d3f78a31538"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE-notice.md": "c7340d7b84e87498bf1e3ce8e2763b8cf1d8153def1648800b796f7b24ec0020",
+        "META-INF/LICENSE.md": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0"
+      }
+    },
+    {
+      "coordinate": "org.junit.jupiter:junit-jupiter-params:6.0.3",
+      "scope": "test",
+      "jar": "org/junit/jupiter/junit-jupiter-params/6.0.3/junit-jupiter-params-6.0.3.jar",
+      "jarSha256": "cf2947e2302b9f8c8a059259a277881c1cadae8fbc2514c16a925cfeb7beb2e5",
+      "pom": "org/junit/jupiter/junit-jupiter-params/6.0.3/junit-jupiter-params-6.0.3.pom",
+      "pomSha256": "995b64ecaa2227c4b55f3eb8e77735f544434a2ec2cfeed0605e8baf108263de",
+      "licenses": [
+        "Eclipse Public License v2.0"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "org/junit/jupiter/junit-jupiter-params/6.0.3/junit-jupiter-params-6.0.3.pom",
+        "sha256": "995b64ecaa2227c4b55f3eb8e77735f544434a2ec2cfeed0605e8baf108263de"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE-fastcsv": "44a3c34ab8724a755072803e5941fb87a967eb451147df335afcb5d1a44ba758",
+        "META-INF/LICENSE-notice.md": "c7340d7b84e87498bf1e3ce8e2763b8cf1d8153def1648800b796f7b24ec0020",
+        "META-INF/LICENSE.md": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0"
+      }
+    },
+    {
+      "coordinate": "org.junit.jupiter:junit-jupiter:6.0.3",
+      "scope": "test",
+      "jar": "org/junit/jupiter/junit-jupiter/6.0.3/junit-jupiter-6.0.3.jar",
+      "jarSha256": "784b65815f479a0c99a9d3a573b142e2a525efb6025d97f751b19e72f90aeda3",
+      "pom": "org/junit/jupiter/junit-jupiter/6.0.3/junit-jupiter-6.0.3.pom",
+      "pomSha256": "bced20e91aaa5677f1ba96fa6f718100ab83e894a52e9961b6004c056a1845ec",
+      "licenses": [
+        "Eclipse Public License v2.0"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "org/junit/jupiter/junit-jupiter/6.0.3/junit-jupiter-6.0.3.pom",
+        "sha256": "bced20e91aaa5677f1ba96fa6f718100ab83e894a52e9961b6004c056a1845ec"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE-notice.md": "c7340d7b84e87498bf1e3ce8e2763b8cf1d8153def1648800b796f7b24ec0020",
+        "META-INF/LICENSE.md": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0"
+      }
+    },
+    {
+      "coordinate": "org.junit.platform:junit-platform-commons:6.0.3",
+      "scope": "test",
+      "jar": "org/junit/platform/junit-platform-commons/6.0.3/junit-platform-commons-6.0.3.jar",
+      "jarSha256": "39f262d09c3d52719fe0b77f080e90a3695e285d779a41b232e17963ae5da200",
+      "pom": "org/junit/platform/junit-platform-commons/6.0.3/junit-platform-commons-6.0.3.pom",
+      "pomSha256": "bdb8e24be97e0e59769f2164b5361f55227958df4103d68682f8779ad2ca8d7d",
+      "licenses": [
+        "Eclipse Public License v2.0"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "org/junit/platform/junit-platform-commons/6.0.3/junit-platform-commons-6.0.3.pom",
+        "sha256": "bdb8e24be97e0e59769f2164b5361f55227958df4103d68682f8779ad2ca8d7d"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE-notice.md": "c7340d7b84e87498bf1e3ce8e2763b8cf1d8153def1648800b796f7b24ec0020",
+        "META-INF/LICENSE.md": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0"
+      }
+    },
+    {
+      "coordinate": "org.junit.platform:junit-platform-engine:6.0.3",
+      "scope": "test",
+      "jar": "org/junit/platform/junit-platform-engine/6.0.3/junit-platform-engine-6.0.3.jar",
+      "jarSha256": "491e9e4f745f161b8a8e4186a1a7c6a450ea12c70930c9aedae427215301d947",
+      "pom": "org/junit/platform/junit-platform-engine/6.0.3/junit-platform-engine-6.0.3.pom",
+      "pomSha256": "7a87d8c6a0a7db0260b00ce303180f6f41d040562895d6804619d5db6ee232be",
+      "licenses": [
+        "Eclipse Public License v2.0"
+      ],
+      "selectedLicense": "EPL-2.0",
+      "licenseEvidence": {
+        "path": "org/junit/platform/junit-platform-engine/6.0.3/junit-platform-engine-6.0.3.pom",
+        "sha256": "7a87d8c6a0a7db0260b00ce303180f6f41d040562895d6804619d5db6ee232be"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE-notice.md": "c7340d7b84e87498bf1e3ce8e2763b8cf1d8153def1648800b796f7b24ec0020",
+        "META-INF/LICENSE.md": "5aa4cd44c111add178d1c2e2fe36d58a484012c80167df925f826cd64d411bf0"
+      }
+    },
+    {
+      "coordinate": "org.opentest4j:opentest4j:1.3.0",
+      "scope": "test",
+      "jar": "org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar",
+      "jarSha256": "48e2df636cab6563ced64dcdff8abb2355627cb236ef0bf37598682ddf742f1b",
+      "pom": "org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom",
+      "pomSha256": "9bf7cffc410f3e8372c2522578df9ca56d9d43bd937e30948706c232a943b355",
+      "licenses": [
+        "The Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.pom",
+        "sha256": "9bf7cffc410f3e8372c2522578df9ca56d9d43bd937e30948706c232a943b355"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "c6596eb7be8581c18be736c846fb9173b69eccf6ef94c5135893ec56bd92ba08"
+      }
+    },
+    {
+      "coordinate": "org.postgresql:postgresql:42.7.14",
+      "scope": "runtime",
+      "jar": "org/postgresql/postgresql/42.7.14/postgresql-42.7.14.jar",
+      "jarSha256": "73914527305a40cce504b0d3d90b23caf565136912d607ae8ae7c5895512332c",
+      "pom": "org/postgresql/postgresql/42.7.14/postgresql-42.7.14.pom",
+      "pomSha256": "b7e66ccf3088cba04d68ec374da4e981686fafe426e4ca69d6d276427175dc63",
+      "licenses": [
+        "BSD-2-Clause"
+      ],
+      "selectedLicense": "BSD-2-Clause",
+      "licenseEvidence": {
+        "path": "org/postgresql/postgresql/42.7.14/postgresql-42.7.14.pom",
+        "sha256": "b7e66ccf3088cba04d68ec374da4e981686fafe426e4ca69d6d276427175dc63"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "08bb580d3cb8f9a4a05f008466a294fdb019e0e177d03a035d46f1eb94077de5",
+        "META-INF/licenses/com.ongres.scram/scram-client-3.2/META-INF/LICENSE": "7c89807167a03a92d2fbfc936aff4f87d8ce31434637381c89e38282c8c99198",
+        "META-INF/licenses/com.ongres.scram/scram-common-3.2/META-INF/LICENSE": "7c89807167a03a92d2fbfc936aff4f87d8ce31434637381c89e38282c8c99198",
+        "META-INF/licenses/com.ongres.stringprep/saslprep-2.2/META-INF/LICENSE": "5c49fc155ebccd206277e0d1f424aadbf365f0a9ccfb54d400d728a375d523f9",
+        "META-INF/licenses/com.ongres.stringprep/stringprep-2.2/META-INF/LICENSE": "5c49fc155ebccd206277e0d1f424aadbf365f0a9ccfb54d400d728a375d523f9"
+      }
+    },
+    {
+      "coordinate": "org.reactivestreams:reactive-streams:1.0.4",
+      "scope": "compile",
+      "jar": "org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.jar",
+      "jarSha256": "f75ca597789b3dac58f61857b9ac2e1034a68fa672db35055a8fb4509e325f28",
+      "pom": "org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.pom",
+      "pomSha256": "54ba23d87a2d438540c99ef8794a0856fc573a256b498678283c3c67ef18ada8",
+      "licenses": [
+        "MIT-0"
+      ],
+      "selectedLicense": "MIT-0",
+      "licenseEvidence": {
+        "path": "org/reactivestreams/reactive-streams/1.0.4/reactive-streams-1.0.4.pom",
+        "sha256": "54ba23d87a2d438540c99ef8794a0856fc573a256b498678283c3c67ef18ada8"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "org.slf4j:jul-to-slf4j:2.0.20",
+      "scope": "compile",
+      "jar": "org/slf4j/jul-to-slf4j/2.0.20/jul-to-slf4j-2.0.20.jar",
+      "jarSha256": "062249d0677a0e08039120a2292a8db064c69d04282bf562af2e54c53ff06976",
+      "pom": "org/slf4j/jul-to-slf4j/2.0.20/jul-to-slf4j-2.0.20.pom",
+      "pomSha256": "9bd18149b58303b4d843059d5b135b3b56fa0dd1c27a9db8898d4609cd338a27",
+      "licenses": [
+        "MIT"
+      ],
+      "selectedLicense": "MIT",
+      "licenseEvidence": {
+        "path": "org/slf4j/slf4j-bom/2.0.20/slf4j-bom-2.0.20.pom",
+        "sha256": "351a3d34f0886942268efcf291708c48dfadce7f2643837efdb4a6954d4e6c62"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "4e7f90c86ab51278228bce153122f1d8df30149d13ce9ef524c8444a84c32dcc"
+      }
+    },
+    {
+      "coordinate": "org.slf4j:slf4j-api:2.0.20",
+      "scope": "compile",
+      "jar": "org/slf4j/slf4j-api/2.0.20/slf4j-api-2.0.20.jar",
+      "jarSha256": "7e1446499b359675d8aabe6af2de86b85e72ae8a2a932c0b40d0e5ba57097439",
+      "pom": "org/slf4j/slf4j-api/2.0.20/slf4j-api-2.0.20.pom",
+      "pomSha256": "2e625c3f553cddd49f8554cea9926cbf70673b3d6833464f0c5a02f4d9130594",
+      "licenses": [
+        "MIT"
+      ],
+      "selectedLicense": "MIT",
+      "licenseEvidence": {
+        "path": "org/slf4j/slf4j-bom/2.0.20/slf4j-bom-2.0.20.pom",
+        "sha256": "351a3d34f0886942268efcf291708c48dfadce7f2643837efdb4a6954d4e6c62"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "6632f550c207be8d7d6b5e87f5d7b905bee218d18392d531df457bf60bec1447"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-autoconfigure:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-autoconfigure/4.1.2/spring-boot-autoconfigure-4.1.2.jar",
+      "jarSha256": "a3582f417c8194a621776d14ea281e072d84e85bdbabc1e02df5c035835b5096",
+      "pom": "org/springframework/boot/spring-boot-autoconfigure/4.1.2/spring-boot-autoconfigure-4.1.2.pom",
+      "pomSha256": "0f6d40ccfa008d17f70063713046396de9e8c9e79bf4a6b5b9eb3e00c6111c08",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-autoconfigure/4.1.2/spring-boot-autoconfigure-4.1.2.pom",
+        "sha256": "0f6d40ccfa008d17f70063713046396de9e8c9e79bf4a6b5b9eb3e00c6111c08"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-http-converter:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-http-converter/4.1.2/spring-boot-http-converter-4.1.2.jar",
+      "jarSha256": "d1e655ce47617315c6d87e754597928a31d21478b5c28b0e3300963b0915b551",
+      "pom": "org/springframework/boot/spring-boot-http-converter/4.1.2/spring-boot-http-converter-4.1.2.pom",
+      "pomSha256": "aa7b6eb54ebde9b5050d12bfaa7e82a78daaecc0bd6e64762c4d4d1e5e32aca8",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-http-converter/4.1.2/spring-boot-http-converter-4.1.2.pom",
+        "sha256": "aa7b6eb54ebde9b5050d12bfaa7e82a78daaecc0bd6e64762c4d4d1e5e32aca8"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-jackson:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-jackson/4.1.2/spring-boot-jackson-4.1.2.jar",
+      "jarSha256": "83a8d3ca9ac434f22e6d148e41ba82aeb52add220484bf7f9551c74323d9cbc7",
+      "pom": "org/springframework/boot/spring-boot-jackson/4.1.2/spring-boot-jackson-4.1.2.pom",
+      "pomSha256": "289a26ee602ae9ecdc8ef4cca9d0c35499cc9cc5e580c40141b1333c8007787b",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-jackson/4.1.2/spring-boot-jackson-4.1.2.pom",
+        "sha256": "289a26ee602ae9ecdc8ef4cca9d0c35499cc9cc5e580c40141b1333c8007787b"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-jdbc:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-jdbc/4.1.2/spring-boot-jdbc-4.1.2.jar",
+      "jarSha256": "2c4f460e7b965fd9a3d7ee6c3d7c5f3ebbc9b447841c118abed20d7b5a72d184",
+      "pom": "org/springframework/boot/spring-boot-jdbc/4.1.2/spring-boot-jdbc-4.1.2.pom",
+      "pomSha256": "c0b739179a7ff2555352e1adff18e9e3943cae0aee6102adf7d238874cfe9b92",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-jdbc/4.1.2/spring-boot-jdbc-4.1.2.pom",
+        "sha256": "c0b739179a7ff2555352e1adff18e9e3943cae0aee6102adf7d238874cfe9b92"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-persistence:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-persistence/4.1.2/spring-boot-persistence-4.1.2.jar",
+      "jarSha256": "fd1473df17db5d4d444eac14ed262407a971fc0a3a9631e6753343d72e7859af",
+      "pom": "org/springframework/boot/spring-boot-persistence/4.1.2/spring-boot-persistence-4.1.2.pom",
+      "pomSha256": "8968b24b44a1a4c1ad25b2b10370b3f506d6b67fd7e9a7eb54e0a8d0b8c15b73",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-persistence/4.1.2/spring-boot-persistence-4.1.2.pom",
+        "sha256": "8968b24b44a1a4c1ad25b2b10370b3f506d6b67fd7e9a7eb54e0a8d0b8c15b73"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-security-oauth2-resource-server:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-security-oauth2-resource-server/4.1.2/spring-boot-security-oauth2-resource-server-4.1.2.jar",
+      "jarSha256": "f9cd304e41b06917c144d2c8eaf20181be1a305d06c5873b01c5c7809544e983",
+      "pom": "org/springframework/boot/spring-boot-security-oauth2-resource-server/4.1.2/spring-boot-security-oauth2-resource-server-4.1.2.pom",
+      "pomSha256": "e767dbd5859a5f7213822a36202a64a746a7521d95f3a8a0558e66855e3e28f5",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-security-oauth2-resource-server/4.1.2/spring-boot-security-oauth2-resource-server-4.1.2.pom",
+        "sha256": "e767dbd5859a5f7213822a36202a64a746a7521d95f3a8a0558e66855e3e28f5"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-security:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-security/4.1.2/spring-boot-security-4.1.2.jar",
+      "jarSha256": "12b5c8478a965677aaa98ced147d15db214cfeb373eb5acfd84c1e9c25dc8ac3",
+      "pom": "org/springframework/boot/spring-boot-security/4.1.2/spring-boot-security-4.1.2.pom",
+      "pomSha256": "284709bf74930fedc1781189aab92dabb348da5f0aa48b97f57c8d6324016b86",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-security/4.1.2/spring-boot-security-4.1.2.pom",
+        "sha256": "284709bf74930fedc1781189aab92dabb348da5f0aa48b97f57c8d6324016b86"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-servlet:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.jar",
+      "jarSha256": "0ff3618e8b37143843d1a8824e42ffd66b4ff73d6225b2087acce4dfc676d0e8",
+      "pom": "org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.pom",
+      "pomSha256": "6d76c836ceb96b4b026e1c5c3a47d74ef3263a8a8542f663b144b4b3aac04667",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-servlet/4.1.2/spring-boot-servlet-4.1.2.pom",
+        "sha256": "6d76c836ceb96b4b026e1c5c3a47d74ef3263a8a8542f663b144b4b3aac04667"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-sql:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-sql/4.1.2/spring-boot-sql-4.1.2.jar",
+      "jarSha256": "6055db3a7e6f9b59814aac0a346a604d54a8638beff8a145273415b263936d45",
+      "pom": "org/springframework/boot/spring-boot-sql/4.1.2/spring-boot-sql-4.1.2.pom",
+      "pomSha256": "684be13283f68dc2f173cdbd8ad0873276d5ecf189162186a95b55ee64336bf5",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-sql/4.1.2/spring-boot-sql-4.1.2.pom",
+        "sha256": "684be13283f68dc2f173cdbd8ad0873276d5ecf189162186a95b55ee64336bf5"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-jackson:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-jackson/4.1.2/spring-boot-starter-jackson-4.1.2.jar",
+      "jarSha256": "d580732a43d7bb5793dc7ea8dc67020ab55a0af2e7923454d92758ca31d3c046",
+      "pom": "org/springframework/boot/spring-boot-starter-jackson/4.1.2/spring-boot-starter-jackson-4.1.2.pom",
+      "pomSha256": "33fc67763dbcd351fbb05ddbaab82a420630a2009df0af0ddc63cc2b9f80b906",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-jackson/4.1.2/spring-boot-starter-jackson-4.1.2.pom",
+        "sha256": "33fc67763dbcd351fbb05ddbaab82a420630a2009df0af0ddc63cc2b9f80b906"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-jdbc:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-jdbc/4.1.2/spring-boot-starter-jdbc-4.1.2.jar",
+      "jarSha256": "c87d182025f1eb36a6c5ec4ac2da96f92025173a7f779056ed988ed0f44b5d08",
+      "pom": "org/springframework/boot/spring-boot-starter-jdbc/4.1.2/spring-boot-starter-jdbc-4.1.2.pom",
+      "pomSha256": "21ea055f347b8af9b896745fe1e3c8a945d088c05fdf708615e91ba9f47abfe8",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-jdbc/4.1.2/spring-boot-starter-jdbc-4.1.2.pom",
+        "sha256": "21ea055f347b8af9b896745fe1e3c8a945d088c05fdf708615e91ba9f47abfe8"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-logging:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-logging/4.1.2/spring-boot-starter-logging-4.1.2.jar",
+      "jarSha256": "bad444f86b06a2a764b4f06b5045f3d43e94c77ed56250a444a29bf755a3b9bd",
+      "pom": "org/springframework/boot/spring-boot-starter-logging/4.1.2/spring-boot-starter-logging-4.1.2.pom",
+      "pomSha256": "bc338117a5b070c1978cad6aeb2f039e8b7627fd3097d57aea7b8739df53bc38",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-logging/4.1.2/spring-boot-starter-logging-4.1.2.pom",
+        "sha256": "bc338117a5b070c1978cad6aeb2f039e8b7627fd3097d57aea7b8739df53bc38"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-oauth2-resource-server:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-oauth2-resource-server/4.1.2/spring-boot-starter-oauth2-resource-server-4.1.2.jar",
+      "jarSha256": "f9566721a93b98990eefc27e49d02f332165073c876c8ee539921fa6f90691c0",
+      "pom": "org/springframework/boot/spring-boot-starter-oauth2-resource-server/4.1.2/spring-boot-starter-oauth2-resource-server-4.1.2.pom",
+      "pomSha256": "9dc7ee4a3f09442e98c0ac5034bea7f54463331e77dae838506af0a455bb810d",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-oauth2-resource-server/4.1.2/spring-boot-starter-oauth2-resource-server-4.1.2.pom",
+        "sha256": "9dc7ee4a3f09442e98c0ac5034bea7f54463331e77dae838506af0a455bb810d"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-security:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-security/4.1.2/spring-boot-starter-security-4.1.2.jar",
+      "jarSha256": "66756863f254e4393dd7f0148d37679034548fd573031082c226be498773f611",
+      "pom": "org/springframework/boot/spring-boot-starter-security/4.1.2/spring-boot-starter-security-4.1.2.pom",
+      "pomSha256": "0aca367db443e59156dbf6501267167661b121fabad4b72e299244441f6ea0e6",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-security/4.1.2/spring-boot-starter-security-4.1.2.pom",
+        "sha256": "0aca367db443e59156dbf6501267167661b121fabad4b72e299244441f6ea0e6"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-tomcat-runtime:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.jar",
+      "jarSha256": "05371dcfb766c50238f3f5cce398622189e3e4f131a3c0c8b583d24f37c99716",
+      "pom": "org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.pom",
+      "pomSha256": "b5d8303fcd8d0e89a3328590ab53e460c195f921e9b0d310094e44661895eae2",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-tomcat-runtime/4.1.2/spring-boot-starter-tomcat-runtime-4.1.2.pom",
+        "sha256": "b5d8303fcd8d0e89a3328590ab53e460c195f921e9b0d310094e44661895eae2"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-tomcat:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.jar",
+      "jarSha256": "a8d9201be15c70d0c3c17205eff462de9d40146f6da131d140e9644105e8b0a0",
+      "pom": "org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.pom",
+      "pomSha256": "706da0b15a616e7f8eef091a101c5a61083c0547c565c781fa60458c57018ee3",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-tomcat/4.1.2/spring-boot-starter-tomcat-4.1.2.pom",
+        "sha256": "706da0b15a616e7f8eef091a101c5a61083c0547c565c781fa60458c57018ee3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter-webmvc:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter-webmvc/4.1.2/spring-boot-starter-webmvc-4.1.2.jar",
+      "jarSha256": "aee9565e0d62924d294cd102a563f9fb8b44dd013b3dfbc4888990a67aaaec0d",
+      "pom": "org/springframework/boot/spring-boot-starter-webmvc/4.1.2/spring-boot-starter-webmvc-4.1.2.pom",
+      "pomSha256": "852a7eff93ec6b058f2435a48b1985c33c8ea576f437493ab842d700e8d61a6a",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter-webmvc/4.1.2/spring-boot-starter-webmvc-4.1.2.pom",
+        "sha256": "852a7eff93ec6b058f2435a48b1985c33c8ea576f437493ab842d700e8d61a6a"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-starter:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-starter/4.1.2/spring-boot-starter-4.1.2.jar",
+      "jarSha256": "38e64ef99846b0f64a2cac43c2bc54f729cd13fcd5db25983a99cb5c8669a443",
+      "pom": "org/springframework/boot/spring-boot-starter/4.1.2/spring-boot-starter-4.1.2.pom",
+      "pomSha256": "7e531868be0d39afecf74d1a4c49617897c121780c97cf87640110b84191507a",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-starter/4.1.2/spring-boot-starter-4.1.2.pom",
+        "sha256": "7e531868be0d39afecf74d1a4c49617897c121780c97cf87640110b84191507a"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-tomcat:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.jar",
+      "jarSha256": "f0b1d8d33b090bc773298005708b4df1576d1c4b1bbf9583afce065580e13002",
+      "pom": "org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.pom",
+      "pomSha256": "0f7e87201ee3bca2e72770a994395ba3e2db5ef3faedad3432d4b1b668301099",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-tomcat/4.1.2/spring-boot-tomcat-4.1.2.pom",
+        "sha256": "0f7e87201ee3bca2e72770a994395ba3e2db5ef3faedad3432d4b1b668301099"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-transaction:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-transaction/4.1.2/spring-boot-transaction-4.1.2.jar",
+      "jarSha256": "f0430406b83310c65219082ff16a9af5ee74e2c1ee19f9f478f6a0ab8ec1f70f",
+      "pom": "org/springframework/boot/spring-boot-transaction/4.1.2/spring-boot-transaction-4.1.2.pom",
+      "pomSha256": "31a897ae9aae705ba1ca9e945d3f61e01e84f9559281d4bbdb85f63f5bca1bb0",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-transaction/4.1.2/spring-boot-transaction-4.1.2.pom",
+        "sha256": "31a897ae9aae705ba1ca9e945d3f61e01e84f9559281d4bbdb85f63f5bca1bb0"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-web-server:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-web-server/4.1.2/spring-boot-web-server-4.1.2.jar",
+      "jarSha256": "e5b2fa7222baf36621566a2d0f7d924aa92a8462680f8e67d972f965ef18356a",
+      "pom": "org/springframework/boot/spring-boot-web-server/4.1.2/spring-boot-web-server-4.1.2.pom",
+      "pomSha256": "21b2967e95cdc7592228275e21cb3620fba98227f6715efb1bff1b13ec913bec",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-web-server/4.1.2/spring-boot-web-server-4.1.2.pom",
+        "sha256": "21b2967e95cdc7592228275e21cb3620fba98227f6715efb1bff1b13ec913bec"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot-webmvc:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.jar",
+      "jarSha256": "3c39a0578d1e66b5b5371641790a66c89b14f8099731987a7dd6502e2fdd32b5",
+      "pom": "org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.pom",
+      "pomSha256": "3f8f0a0a191deb29024cf7bbac41950b13eff59580177dabbeaad4dc1a042308",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot-webmvc/4.1.2/spring-boot-webmvc-4.1.2.pom",
+        "sha256": "3f8f0a0a191deb29024cf7bbac41950b13eff59580177dabbeaad4dc1a042308"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.boot:spring-boot:4.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/boot/spring-boot/4.1.2/spring-boot-4.1.2.jar",
+      "jarSha256": "1fbf6443a301eb9a098bd024149c0edc6578b073f75da8c98bc1af84c43a8f59",
+      "pom": "org/springframework/boot/spring-boot/4.1.2/spring-boot-4.1.2.pom",
+      "pomSha256": "ca4d30c42c8d93577d5ea497823459616b451fb70450ec8bc81a6090390493b7",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/boot/spring-boot/4.1.2/spring-boot-4.1.2.pom",
+        "sha256": "ca4d30c42c8d93577d5ea497823459616b451fb70450ec8bc81a6090390493b7"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628",
+        "META-INF/NOTICE.txt": "33ed49a8e57825e3497d5e4ad4ad67815dec123fadff99ffee9705bd1564deca"
+      }
+    },
+    {
+      "coordinate": "org.springframework.security:spring-security-config:7.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/security/spring-security-config/7.1.2/spring-security-config-7.1.2.jar",
+      "jarSha256": "826af4e79495d54b761a5f0313774a07d36359e83dd5518d57d69bacd7bbf478",
+      "pom": "org/springframework/security/spring-security-config/7.1.2/spring-security-config-7.1.2.pom",
+      "pomSha256": "f5438160e6578a467fc9243104caabfa41ad4d28d6c0ab30bb8de632ff8d6e89",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/security/spring-security-config/7.1.2/spring-security-config-7.1.2.pom",
+        "sha256": "f5438160e6578a467fc9243104caabfa41ad4d28d6c0ab30bb8de632ff8d6e89"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628"
+      }
+    },
+    {
+      "coordinate": "org.springframework.security:spring-security-core:7.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/security/spring-security-core/7.1.2/spring-security-core-7.1.2.jar",
+      "jarSha256": "39df3dc77436d3e9308f89056c1a42605e08f0ad9ad208f7e34c4b16102886e1",
+      "pom": "org/springframework/security/spring-security-core/7.1.2/spring-security-core-7.1.2.pom",
+      "pomSha256": "2c84b75977d6fd3129ecd6377e984a7803d1a38fbc774e723a803a15916a8995",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/security/spring-security-core/7.1.2/spring-security-core-7.1.2.pom",
+        "sha256": "2c84b75977d6fd3129ecd6377e984a7803d1a38fbc774e723a803a15916a8995"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628"
+      }
+    },
+    {
+      "coordinate": "org.springframework.security:spring-security-crypto:7.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/security/spring-security-crypto/7.1.2/spring-security-crypto-7.1.2.jar",
+      "jarSha256": "4aaa60bb612d5fece004c07f893b3a8d707c207bbd8585d10e0015b5301cd864",
+      "pom": "org/springframework/security/spring-security-crypto/7.1.2/spring-security-crypto-7.1.2.pom",
+      "pomSha256": "f8d138da4b1e9d5bc9216c71c73a35376bdecd91c18761601a119ce22be53246",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/security/spring-security-crypto/7.1.2/spring-security-crypto-7.1.2.pom",
+        "sha256": "f8d138da4b1e9d5bc9216c71c73a35376bdecd91c18761601a119ce22be53246"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628"
+      }
+    },
+    {
+      "coordinate": "org.springframework.security:spring-security-oauth2-core:7.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/security/spring-security-oauth2-core/7.1.2/spring-security-oauth2-core-7.1.2.jar",
+      "jarSha256": "aa50c141cb303bae1b87d761f9459930d75af280c43e80b7488d50e62dd1e216",
+      "pom": "org/springframework/security/spring-security-oauth2-core/7.1.2/spring-security-oauth2-core-7.1.2.pom",
+      "pomSha256": "a45d1397bd76c4278f545e4c9cd0c11c8bcb1e01c018fb69095d609e3b11493e",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/security/spring-security-oauth2-core/7.1.2/spring-security-oauth2-core-7.1.2.pom",
+        "sha256": "a45d1397bd76c4278f545e4c9cd0c11c8bcb1e01c018fb69095d609e3b11493e"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628"
+      }
+    },
+    {
+      "coordinate": "org.springframework.security:spring-security-oauth2-jose:7.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/security/spring-security-oauth2-jose/7.1.2/spring-security-oauth2-jose-7.1.2.jar",
+      "jarSha256": "e956dcaf0342699b967b5ca301d628d0808e97c7e6614b822fe832f6eba762dc",
+      "pom": "org/springframework/security/spring-security-oauth2-jose/7.1.2/spring-security-oauth2-jose-7.1.2.pom",
+      "pomSha256": "dbbc615dc4533742f904b9a0d4bf3ab9bacb369daeeee9444d063450ac5cf090",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/security/spring-security-oauth2-jose/7.1.2/spring-security-oauth2-jose-7.1.2.pom",
+        "sha256": "dbbc615dc4533742f904b9a0d4bf3ab9bacb369daeeee9444d063450ac5cf090"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628"
+      }
+    },
+    {
+      "coordinate": "org.springframework.security:spring-security-oauth2-resource-server:7.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/security/spring-security-oauth2-resource-server/7.1.2/spring-security-oauth2-resource-server-7.1.2.jar",
+      "jarSha256": "a154ce053da747c0be4144794cf2bd835b6cd56e09d1b4b2a62dfdcda6d273fb",
+      "pom": "org/springframework/security/spring-security-oauth2-resource-server/7.1.2/spring-security-oauth2-resource-server-7.1.2.pom",
+      "pomSha256": "2de0865cbdbfe93caa269732d4536b6b0a5af48e247ce05abb23939d866537af",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/security/spring-security-oauth2-resource-server/7.1.2/spring-security-oauth2-resource-server-7.1.2.pom",
+        "sha256": "2de0865cbdbfe93caa269732d4536b6b0a5af48e247ce05abb23939d866537af"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628"
+      }
+    },
+    {
+      "coordinate": "org.springframework.security:spring-security-web:7.1.2",
+      "scope": "compile",
+      "jar": "org/springframework/security/spring-security-web/7.1.2/spring-security-web-7.1.2.jar",
+      "jarSha256": "fc36d37695462dbe4fb32bd6820043afbf83ebcffce4974929bf79a29fcb5e73",
+      "pom": "org/springframework/security/spring-security-web/7.1.2/spring-security-web-7.1.2.pom",
+      "pomSha256": "0f924f250b31c11ea7ae0bd71e82b2a184f1b73fdaeb35b1728cb43cc0c7544f",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/security/spring-security-web/7.1.2/spring-security-web-7.1.2.pom",
+        "sha256": "0f924f250b31c11ea7ae0bd71e82b2a184f1b73fdaeb35b1728cb43cc0c7544f"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "7200000367e0e8b47822d563a5ddd2dd3a97cc05b32bd7dbcc7b4eeb92b76628"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-aop:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-aop/7.0.10/spring-aop-7.0.10.jar",
+      "jarSha256": "babf50a645f4f788e1267078cf891e472f657cabf65518055cf5214220574e3f",
+      "pom": "org/springframework/spring-aop/7.0.10/spring-aop-7.0.10.pom",
+      "pomSha256": "eefa53fcd44cdb50ab070804d18dd68e010fe67a899fc8bb04a963ed4643d7c0",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-aop/7.0.10/spring-aop-7.0.10.pom",
+        "sha256": "eefa53fcd44cdb50ab070804d18dd68e010fe67a899fc8bb04a963ed4643d7c0"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-beans:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-beans/7.0.10/spring-beans-7.0.10.jar",
+      "jarSha256": "bd67c6fc887afa30cbcb489ff4f82bf19f818e79ab1cf1bef98dff8a289108ec",
+      "pom": "org/springframework/spring-beans/7.0.10/spring-beans-7.0.10.pom",
+      "pomSha256": "951f5c80e2cc77f975af53adb6b1a25a441c2efe56b1d8dfde149f415d3d7a1d",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-beans/7.0.10/spring-beans-7.0.10.pom",
+        "sha256": "951f5c80e2cc77f975af53adb6b1a25a441c2efe56b1d8dfde149f415d3d7a1d"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-context:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-context/7.0.10/spring-context-7.0.10.jar",
+      "jarSha256": "f0065166b6a5101a871ab8702d6c4011cf39faed370a64e7ef14a3ad2bf2a99a",
+      "pom": "org/springframework/spring-context/7.0.10/spring-context-7.0.10.pom",
+      "pomSha256": "dcf3784a75dcea3b0fd2fec8d781b660037ec64f067314599eb0be2012e08013",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-context/7.0.10/spring-context-7.0.10.pom",
+        "sha256": "dcf3784a75dcea3b0fd2fec8d781b660037ec64f067314599eb0be2012e08013"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-core:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-core/7.0.10/spring-core-7.0.10.jar",
+      "jarSha256": "a236f31a7c07e3a1a8e7839ec5c0d47b5cc75709132db50416d5dad320341f12",
+      "pom": "org/springframework/spring-core/7.0.10/spring-core-7.0.10.pom",
+      "pomSha256": "9486cb0e22252dd80cb03e1a96d0394ce3dc50be1c543534e0136a182f004057",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-core/7.0.10/spring-core-7.0.10.pom",
+        "sha256": "9486cb0e22252dd80cb03e1a96d0394ce3dc50be1c543534e0136a182f004057"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-expression:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-expression/7.0.10/spring-expression-7.0.10.jar",
+      "jarSha256": "12067b66548f7613fa8938ca6051a6d1dd8c397bf478e0bb1adb9936358ec81d",
+      "pom": "org/springframework/spring-expression/7.0.10/spring-expression-7.0.10.pom",
+      "pomSha256": "894d8859eb7f8e84140be90d7c5c77152573772b599f09e3da13cf901cf9c9b3",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-expression/7.0.10/spring-expression-7.0.10.pom",
+        "sha256": "894d8859eb7f8e84140be90d7c5c77152573772b599f09e3da13cf901cf9c9b3"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-jdbc:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-jdbc/7.0.10/spring-jdbc-7.0.10.jar",
+      "jarSha256": "bc4ba6bd242f2db2642938960ae27589b53dd6a611d700a260af7b3383cd0c6c",
+      "pom": "org/springframework/spring-jdbc/7.0.10/spring-jdbc-7.0.10.pom",
+      "pomSha256": "5dfec2c3da198df95a74d22b809c583576f712dbfcfb0ff46faad3f8dc548de2",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-jdbc/7.0.10/spring-jdbc-7.0.10.pom",
+        "sha256": "5dfec2c3da198df95a74d22b809c583576f712dbfcfb0ff46faad3f8dc548de2"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-tx:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-tx/7.0.10/spring-tx-7.0.10.jar",
+      "jarSha256": "9442610a8ed3d44e70fa97f49896ea810c831da62620101450f0feb522edb4cd",
+      "pom": "org/springframework/spring-tx/7.0.10/spring-tx-7.0.10.pom",
+      "pomSha256": "e3ff4afdea57617b74717375abe7cad5b518fcfdbe4c7fb4efce78f8e55a1885",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-tx/7.0.10/spring-tx-7.0.10.pom",
+        "sha256": "e3ff4afdea57617b74717375abe7cad5b518fcfdbe4c7fb4efce78f8e55a1885"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-web:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-web/7.0.10/spring-web-7.0.10.jar",
+      "jarSha256": "76ddb03d236547f6852def8cb303e1cf2cd2c1954dec5bf2abd87d11b89dfee7",
+      "pom": "org/springframework/spring-web/7.0.10/spring-web-7.0.10.pom",
+      "pomSha256": "e1db2144ad4718bf23812992c0540c288379fbd566eb47ef947fd4c4c13db713",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-web/7.0.10/spring-web-7.0.10.pom",
+        "sha256": "e1db2144ad4718bf23812992c0540c288379fbd566eb47ef947fd4c4c13db713"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.springframework:spring-webmvc:7.0.10",
+      "scope": "compile",
+      "jar": "org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.jar",
+      "jarSha256": "8ad0e813999d0ef1c65b8d5e55c21e4a6c0d6895cd3df32a33f9cc57bf9d226a",
+      "pom": "org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.pom",
+      "pomSha256": "cd71c8080ef7e4f75d50d08c05a0e1f18692a3fb697178a31735f0ac6ad68198",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/springframework/spring-webmvc/7.0.10/spring-webmvc-7.0.10.pom",
+        "sha256": "cd71c8080ef7e4f75d50d08c05a0e1f18692a3fb697178a31735f0ac6ad68198"
+      },
+      "embeddedNotices": {
+        "META-INF/notice.txt": "dd0c7dcb434e06953bcf6677e8b67922f09bf79f1b477cd16868da59b68b928b",
+        "META-INF/license.txt": "222dd5e84501f80ca9e334f843659471001c40762073efc29f351e2d53e57e38"
+      }
+    },
+    {
+      "coordinate": "org.yaml:snakeyaml:2.6",
+      "scope": "compile",
+      "jar": "org/yaml/snakeyaml/2.6/snakeyaml-2.6.jar",
+      "jarSha256": "c8f7a98e7394adda02f6317249710e4d1b4c7a25aa8c7eace0c2eea52eb8bf85",
+      "pom": "org/yaml/snakeyaml/2.6/snakeyaml-2.6.pom",
+      "pomSha256": "2773b0e948964d21e37b0e1dcf39025e627b873e0ce6aa2a47e23c374303e0c4",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "org/yaml/snakeyaml/2.6/snakeyaml-2.6.pom",
+        "sha256": "2773b0e948964d21e37b0e1dcf39025e627b873e0ce6aa2a47e23c374303e0c4"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "software.amazon.awssdk:annotations:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/annotations/2.56.0/annotations-2.56.0.jar",
+      "jarSha256": "d69f78bda022da6ed37075861a56def042352bae66499d9e566c6cb19abe5018",
+      "pom": "software/amazon/awssdk/annotations/2.56.0/annotations-2.56.0.pom",
+      "pomSha256": "40b534497b5a86e1988f17f54c7c723fb8b29971e8cd097ba44b6eed665bfc21",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:apache5-client:2.56.0",
+      "scope": "runtime",
+      "jar": "software/amazon/awssdk/apache5-client/2.56.0/apache5-client-2.56.0.jar",
+      "jarSha256": "33f980ab16e788d243572e5324f899b1151bd411386d7595f1beb866f2d5b08a",
+      "pom": "software/amazon/awssdk/apache5-client/2.56.0/apache5-client-2.56.0.pom",
+      "pomSha256": "c2fc306a7f70010eabb2482c36a284944f214e5f84834e577293813d68c8ce59",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:arns:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/arns/2.56.0/arns-2.56.0.jar",
+      "jarSha256": "337bad947d022dd67fbc0da95a63b9883e63c4883609e5721999f873fd4329f3",
+      "pom": "software/amazon/awssdk/arns/2.56.0/arns-2.56.0.pom",
+      "pomSha256": "bc9f872f5a24877da6700cbbab50dd3bac7b044010e13d3169f1d5a1e30d84b3",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:auth:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/auth/2.56.0/auth-2.56.0.jar",
+      "jarSha256": "9b01ce9e95f6118cacb5a508cf2bd2ca9da2d4296553318cf0007dc703afcc59",
+      "pom": "software/amazon/awssdk/auth/2.56.0/auth-2.56.0.pom",
+      "pomSha256": "a21b7c71f45ebade65958efac8847bcd2ee0f6e5614b42839bba7ec639546c20",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:aws-core:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/aws-core/2.56.0/aws-core-2.56.0.jar",
+      "jarSha256": "21740c28bd83fbcdbcd4b879c996ba2b490fa047e7dfee410eb34f2d4b043aaa",
+      "pom": "software/amazon/awssdk/aws-core/2.56.0/aws-core-2.56.0.pom",
+      "pomSha256": "d458c65b8ea7629ebb0fc4755dda286eac7bf5cf48a89121629b4a182794074f",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:aws-query-protocol:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/aws-query-protocol/2.56.0/aws-query-protocol-2.56.0.jar",
+      "jarSha256": "05bca55e8570ceda98df11e0b70f595a8aba5cd3d896ab5fda4f93ccc3e9285d",
+      "pom": "software/amazon/awssdk/aws-query-protocol/2.56.0/aws-query-protocol-2.56.0.pom",
+      "pomSha256": "9da21119e1f3923390b35883558d77f3fa4bd9af5c1ee126cb8a6a1576dba2b0",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:aws-xml-protocol:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/aws-xml-protocol/2.56.0/aws-xml-protocol-2.56.0.jar",
+      "jarSha256": "9871880fa6eac9d43f8e958de964773d0b71a97284d74f7fc0bfc28f41c060d0",
+      "pom": "software/amazon/awssdk/aws-xml-protocol/2.56.0/aws-xml-protocol-2.56.0.pom",
+      "pomSha256": "cce71f839d7ebe3112ad3e12538aac3db4762ef34f070d8b1232a0c4cf67b7ec",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:checksums-spi:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/checksums-spi/2.56.0/checksums-spi-2.56.0.jar",
+      "jarSha256": "84e71d00efc277bd257d7560f239c030436fd3d1ab58fd47b95e54c99f031c43",
+      "pom": "software/amazon/awssdk/checksums-spi/2.56.0/checksums-spi-2.56.0.pom",
+      "pomSha256": "da957767fd0918fce6ba0ccadc4d419bed1b626ce06782a96da9c1dcc73da725",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:checksums:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/checksums/2.56.0/checksums-2.56.0.jar",
+      "jarSha256": "169e7e03eb7b6b8c7a827fb04c1b9f5f2928534ad8bf249f90f68dd7f91516bd",
+      "pom": "software/amazon/awssdk/checksums/2.56.0/checksums-2.56.0.pom",
+      "pomSha256": "760e2296a8eb57085d733e085154db2085f3b8699926c1b01261fdbb8fc144d9",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:crt-core:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/crt-core/2.56.0/crt-core-2.56.0.jar",
+      "jarSha256": "3898c34b2fc062fdd09e3a520654054bf4524fe7dff89f1c44985ef769b5de58",
+      "pom": "software/amazon/awssdk/crt-core/2.56.0/crt-core-2.56.0.pom",
+      "pomSha256": "1a17ffcecae4b5e3f3f2e35dc7f4c2ab467bae259db31e3413f7c02b4647eeb0",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:endpoints-spi:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/endpoints-spi/2.56.0/endpoints-spi-2.56.0.jar",
+      "jarSha256": "b6be09fd91b2e61f333b0977a841437ae7ad056fd63f51077fc663658df749b0",
+      "pom": "software/amazon/awssdk/endpoints-spi/2.56.0/endpoints-spi-2.56.0.pom",
+      "pomSha256": "e894ca76dcf8deb94a83af3276dd00f47a05516cef2bbb64ba309350146d6cb2",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:http-auth-aws-eventstream:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/http-auth-aws-eventstream/2.56.0/http-auth-aws-eventstream-2.56.0.jar",
+      "jarSha256": "87e7dc94134934ebf720b8471eb62313da2b8fe696ea85f1cdc7e028d8eefcca",
+      "pom": "software/amazon/awssdk/http-auth-aws-eventstream/2.56.0/http-auth-aws-eventstream-2.56.0.pom",
+      "pomSha256": "7b40d0cc35fce71c40f8901859e7c03d81aa8acc97253072205609a9a648d21a",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:http-auth-aws:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/http-auth-aws/2.56.0/http-auth-aws-2.56.0.jar",
+      "jarSha256": "d68bcec5558daa87493568c6a269a93f0efd2f3dac9c8f084ce57b0853858cf0",
+      "pom": "software/amazon/awssdk/http-auth-aws/2.56.0/http-auth-aws-2.56.0.pom",
+      "pomSha256": "3f874a2aa7c8a0942c73e5c5138b7b27d8bd194e6e23bbe76510efa4257ea5b4",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:http-auth-spi:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/http-auth-spi/2.56.0/http-auth-spi-2.56.0.jar",
+      "jarSha256": "e4889eaa94f2133527eee004c7e21926beb028e8b0b20cf0330ad2bd0247fbe3",
+      "pom": "software/amazon/awssdk/http-auth-spi/2.56.0/http-auth-spi-2.56.0.pom",
+      "pomSha256": "d593a708aa4e575a40372f2d80be7aa34a5024e1c0f4b5212bc8e9315c981f73",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:http-auth:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/http-auth/2.56.0/http-auth-2.56.0.jar",
+      "jarSha256": "92da16dc5ee9fb0b226b736811f1643b748b592afe2eace5cb63ac627e98abbd",
+      "pom": "software/amazon/awssdk/http-auth/2.56.0/http-auth-2.56.0.pom",
+      "pomSha256": "53c306a952b4aa1e566a36484bb8d2a97f62b1ea15a7b4c7c6f016c4310f1ba3",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:http-client-spi:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/http-client-spi/2.56.0/http-client-spi-2.56.0.jar",
+      "jarSha256": "2674468e262b73e0aed82434e473ea430b6f9a21cce11d2f6bf2ea5d388858b9",
+      "pom": "software/amazon/awssdk/http-client-spi/2.56.0/http-client-spi-2.56.0.pom",
+      "pomSha256": "7adc9343ac8a0f1970823ff1bb39c99a51bb8106280ee577fd8b389549e3a34a",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:identity-spi:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/identity-spi/2.56.0/identity-spi-2.56.0.jar",
+      "jarSha256": "eede78992fa70364ecdb457bf41a9b3dc097cafcfc3e40fa78cd1be650f909c8",
+      "pom": "software/amazon/awssdk/identity-spi/2.56.0/identity-spi-2.56.0.pom",
+      "pomSha256": "7f6e6e035fbcb27f83562a51e5c0fd7024d632c17d088feb165ce751394bddce",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:json-utils:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/json-utils/2.56.0/json-utils-2.56.0.jar",
+      "jarSha256": "961212ec6832617f26c18cae62b8a20ac769794aa1c1e0ece4be6a7694b05ab0",
+      "pom": "software/amazon/awssdk/json-utils/2.56.0/json-utils-2.56.0.pom",
+      "pomSha256": "a85889bfede7cd2f9fcbd9f0b93ed1f39e9cfce1c59dd6264191ce92704106e8",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:metrics-spi:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/metrics-spi/2.56.0/metrics-spi-2.56.0.jar",
+      "jarSha256": "4353cc3da07d68e0ebd5e66131f724593d91bd58f493d4104f337175cd273516",
+      "pom": "software/amazon/awssdk/metrics-spi/2.56.0/metrics-spi-2.56.0.pom",
+      "pomSha256": "ea4bfbfed3921b7968a276cdbdc549cfeba84147ca5114df8a6438380b13a452",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:profiles:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/profiles/2.56.0/profiles-2.56.0.jar",
+      "jarSha256": "65ee508eccda857d20694fcad1cfb07147fa644ab9b9e57931283bfb0a28bc6a",
+      "pom": "software/amazon/awssdk/profiles/2.56.0/profiles-2.56.0.pom",
+      "pomSha256": "fc19f244fb83308e03891392b50ab00363d204c453965a0045b050068fe7bcc0",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:protocol-core:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/protocol-core/2.56.0/protocol-core-2.56.0.jar",
+      "jarSha256": "fff7dd13a27ce89929438736d5badf97d17c8f44ee4e40ffff70cb19afab92b8",
+      "pom": "software/amazon/awssdk/protocol-core/2.56.0/protocol-core-2.56.0.pom",
+      "pomSha256": "fe3a5dd196ce80492a58c78e99dc162b59cb48924738e438a6109cc7500cba6a",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:regions:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/regions/2.56.0/regions-2.56.0.jar",
+      "jarSha256": "eb430b446886e15f9d60e4c7b2ecd471d2ce18a1487aed5cdb9f84d189e1bd1e",
+      "pom": "software/amazon/awssdk/regions/2.56.0/regions-2.56.0.pom",
+      "pomSha256": "ea81123191479a2feab1468bf19769459c691729db6d90cb870f98e0e1e1f212",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:retries-spi:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/retries-spi/2.56.0/retries-spi-2.56.0.jar",
+      "jarSha256": "4c48f913a1b20ecd929064b1f5250a12981ae2f286e606778615fdb880b9508a",
+      "pom": "software/amazon/awssdk/retries-spi/2.56.0/retries-spi-2.56.0.pom",
+      "pomSha256": "9f85d567ddac4186949fab4c54688292d0887f3bc46cb206e456154dfcf9bc50",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:retries:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/retries/2.56.0/retries-2.56.0.jar",
+      "jarSha256": "51c077475baeeea0cd3802af0e0f01e5c0e618342ebb1911ec9ce7c82114c038",
+      "pom": "software/amazon/awssdk/retries/2.56.0/retries-2.56.0.pom",
+      "pomSha256": "d6dbde370e54f4bfd7c72c3e885ef82aca804b6e2988f63d275f24b8486167e0",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:s3:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/s3/2.56.0/s3-2.56.0.jar",
+      "jarSha256": "ff4f6a6c4ce5c44df5258dff778b2f786dd3ca7b4e1685a36f01845eff2564ca",
+      "pom": "software/amazon/awssdk/s3/2.56.0/s3-2.56.0.pom",
+      "pomSha256": "de9e5eb9f21d0317ea1d4863e66765289b6977e42b052ea60a546a1542b2e15f",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:sdk-core:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/sdk-core/2.56.0/sdk-core-2.56.0.jar",
+      "jarSha256": "37e763863fc25227f4c0dd9718c7b60f97d008a1435ee59a21d2ce176e746a42",
+      "pom": "software/amazon/awssdk/sdk-core/2.56.0/sdk-core-2.56.0.pom",
+      "pomSha256": "24fcf99c78b848a4d577142bc400d52ee8dffdcb85a830a095ed7687e98cecd7",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:third-party-jackson-core:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/third-party-jackson-core/2.56.0/third-party-jackson-core-2.56.0.jar",
+      "jarSha256": "40aa389232ab0a83574392d0f28b7e3e8aa38d59248bfff0bba56af066d8db67",
+      "pom": "software/amazon/awssdk/third-party-jackson-core/2.56.0/third-party-jackson-core-2.56.0.pom",
+      "pomSha256": "7a02029fe568ae9b59d6c2223a300e34e5d4ea999b14e1877a71510921b2d41b",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340",
+        "META-INF/FastDoubleParser-LICENSE": "59067508e44346bf93dc9c5e4d673a67ecd77988c2020bb5e0f8667eb199f396",
+        "META-INF/FastDoubleParser-ThirdParty-LICENSE": "dbc36f9422a40d58d1a214080583667cfd37d61c2fae1657d981edda2a60727f",
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/Schubfach-LICENSE": "12d39a6615219d73202300715e365bec2b958f858d1e837c8f2dace57f905969",
+        "META-INF/NOTICE": "e6aef1c0f4cf5b0f802c16b31fce309b3c3737450b93c40d6291bf6540aae3d1"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:url-connection-client:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/url-connection-client/2.56.0/url-connection-client-2.56.0.jar",
+      "jarSha256": "a9826303fae4d0ba7789cf4d6e252016ae873d649380fb6de881c9f5a50a28f9",
+      "pom": "software/amazon/awssdk/url-connection-client/2.56.0/url-connection-client-2.56.0.pom",
+      "pomSha256": "5b1252ebb5c85409414ff50c138e3312fb16e2cea39cfb672fb6b3ebc052188b",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:utils-lite:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/utils-lite/2.56.0/utils-lite-2.56.0.jar",
+      "jarSha256": "7c50301338f0542d19d6fd685f1f4a3bc0f80d677415813cc81497c7821aec66",
+      "pom": "software/amazon/awssdk/utils-lite/2.56.0/utils-lite-2.56.0.pom",
+      "pomSha256": "27a068733222493e1520dce1cdba03435a9725f71bf3bcbc7bd50a1320342e23",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.awssdk:utils:2.56.0",
+      "scope": "compile",
+      "jar": "software/amazon/awssdk/utils/2.56.0/utils-2.56.0.jar",
+      "jarSha256": "e9006e0207d9520c1eb57f5a0890f063ee49b6311b53ae2f9975c11efb51c2aa",
+      "pom": "software/amazon/awssdk/utils/2.56.0/utils-2.56.0.pom",
+      "pomSha256": "2b2ada7223d1428428fd15d42dc7643508c63f6805fdf654af1513617af51ce2",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/awssdk/aws-sdk-java-pom/2.56.0/aws-sdk-java-pom-2.56.0.pom",
+        "sha256": "df34acb9a6879f241fd282bd4400ccf8753a86bdef2caf55f93e53215eef42e3"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE.txt": "14c6a5fbdbd6b87244abeb494712b9922d43f53afb658a42014c66da8e0c4403",
+        "META-INF/NOTICE.txt": "21290a3b8fa10c01b1a68704cb824d6e0aaedaec4d4373ddeeaf6173c864e340"
+      }
+    },
+    {
+      "coordinate": "software.amazon.eventstream:eventstream:1.0.1",
+      "scope": "compile",
+      "jar": "software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.jar",
+      "jarSha256": "0c37d8e696117f02c302191b8110b0d0eb20fa412fce34c3a269ec73c16ce822",
+      "pom": "software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.pom",
+      "pomSha256": "f9460cb794a0a7af68277efb5769569e8e66515250276c37e62a7e8bd4b257cc",
+      "licenses": [
+        "Apache License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "software/amazon/eventstream/eventstream/1.0.1/eventstream-1.0.1.pom",
+        "sha256": "f9460cb794a0a7af68277efb5769569e8e66515250276c37e62a7e8bd4b257cc"
+      },
+      "embeddedNotices": {}
+    },
+    {
+      "coordinate": "tools.jackson.core:jackson-core:3.1.7",
+      "scope": "compile",
+      "jar": "tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.jar",
+      "jarSha256": "7608c367fd8a92666d28711519599543c180298259963184ce04d2947a8f71e7",
+      "pom": "tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.pom",
+      "pomSha256": "94b0996a916055c908e95afb84fa286f3db38170dc40677246724906c27d9553",
+      "licenses": [
+        "The Apache Software License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "tools/jackson/core/jackson-core/3.1.7/jackson-core-3.1.7.pom",
+        "sha256": "94b0996a916055c908e95afb84fa286f3db38170dc40677246724906c27d9553"
+      },
+      "embeddedNotices": {
+        "META-INF/FastDoubleParser-LICENSE": "59067508e44346bf93dc9c5e4d673a67ecd77988c2020bb5e0f8667eb199f396",
+        "META-INF/FastDoubleParser-ThirdParty-LICENSE": "dbc36f9422a40d58d1a214080583667cfd37d61c2fae1657d981edda2a60727f",
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/Schubfach-LICENSE": "12d39a6615219d73202300715e365bec2b958f858d1e837c8f2dace57f905969",
+        "META-INF/NOTICE": "a8eb9ab6d21e719ba217c6367621a7ab5baa3d38df896ef258a9754a6b97527d"
+      }
+    },
+    {
+      "coordinate": "tools.jackson.core:jackson-databind:3.1.7",
+      "scope": "compile",
+      "jar": "tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.jar",
+      "jarSha256": "48c781de87e2016e1f0d973748a27130f11643e7ac080173f40e2d9669d84be3",
+      "pom": "tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.pom",
+      "pomSha256": "e8d6eede027716b2b55fd9efcc93ab155ded881cfb473ff0f778446f8f1c7c9a",
+      "licenses": [
+        "The Apache Software License, Version 2.0"
+      ],
+      "selectedLicense": "Apache-2.0",
+      "licenseEvidence": {
+        "path": "tools/jackson/core/jackson-databind/3.1.7/jackson-databind-3.1.7.pom",
+        "sha256": "e8d6eede027716b2b55fd9efcc93ab155ded881cfb473ff0f778446f8f1c7c9a"
+      },
+      "embeddedNotices": {
+        "META-INF/LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "META-INF/NOTICE": "d3fa47349b4ba4a3763bf635b930f8877073aa3915a3f3e45fe4b1842fc60302"
+      }
+    }
+  ]
+}

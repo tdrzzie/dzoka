@@ -1,0 +1,177 @@
+{
+  "sourceId": "detectron2",
+  "repository": "https://github.com/facebookresearch/detectron2",
+  "revision": "b0fe2f0a5bb6496f65246ef35687a386a9f19202",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "deployment": "setup.py builds native extensions with PyTorch/CUDA/ROCm-sensitive configuration. A compatible compiler/runtime image is necessary; generic Python requirements are insufficient."
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 202,
+      "sha256": "ceb78ee847e76f67a6a521a5732dc3373aed07eee003d738a572dc96705f08ff",
+      "blobSha": "cd1b070674331757508398d99c830664dce6eaec",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/facebookresearch/detectron2/blob/b0fe2f0a5bb6496f65246ef35687a386a9f19202/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: Apache-2.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "detectron2/engine/defaults.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          313,
+          322
+        ],
+        [
+          325,
+          354
+        ],
+        [
+          520,
+          529
+        ],
+        [
+          630,
+          639
+        ],
+        [
+          654,
+          663
+        ]
+      ],
+      "lineCount": 751,
+      "sha256": "4a6124fa20f376caf497db3b17cc3c7a266289e213b6302c52ded3f7a6cfe0d4",
+      "blobSha": "3dbcd86b753ab93185f03ac1b6b3c918da553e7b",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/facebookresearch/detectron2/blob/b0fe2f0a5bb6496f65246ef35687a386a9f19202/detectron2/engine/defaults.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "detectron2/checkpoint/detection_checkpoint.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          33,
+          42
+        ],
+        [
+          71,
+          80
+        ],
+        [
+          87,
+          96
+        ],
+        [
+          100,
+          109
+        ]
+      ],
+      "lineCount": 143,
+      "sha256": "7b08eed32be62a72b750956933bbdaed2a79d826b9a89b18357bb4e264da7df8",
+      "blobSha": "cecb1fc2cfe46283b47096bcbcb2be3181431bf2",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/facebookresearch/detectron2/blob/b0fe2f0a5bb6496f65246ef35687a386a9f19202/detectron2/checkpoint/detection_checkpoint.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "tests/structures/test_instances.py",
+      "role": "tests",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          29,
+          38
+        ],
+        [
+          43,
+          52
+        ],
+        [
+          74,
+          83
+        ],
+        [
+          85,
+          94
+        ],
+        [
+          116,
+          125
+        ]
+      ],
+      "lineCount": 219,
+      "sha256": "8de51bac9c441f6941eec6201cfe8235920d7e69419803d0263a5228669b55ba",
+      "blobSha": "a352f74313ae9b2b7a42398f0ef4606fcb4a610c",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/facebookresearch/detectron2/blob/b0fe2f0a5bb6496f65246ef35687a386a9f19202/tests/structures/test_instances.py",
+      "observation": "Inspected Instances indexing/TorchScript field-access tests, not a full detector benchmark or security suite. None executed."
+    },
+    {
+      "path": "detectron2/structures/instances.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          76,
+          85
+        ],
+        [
+          160,
+          177
+        ]
+      ],
+      "lineCount": 194,
+      "sha256": "c25b08e473cbf31d94c6090652147d9955b704ebd4a61c6fa83979a0cef81ca2",
+      "blobSha": "557bd6a7294c9770068d0908950a7a8f6e476ce4",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/facebookresearch/detectron2/blob/b0fe2f0a5bb6496f65246ef35687a386a9f19202/detectron2/structures/instances.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "setup.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          30
+        ],
+        [
+          51,
+          60
+        ]
+      ],
+      "lineCount": 219,
+      "sha256": "ba12d83fabbe9a324e7ccfeff57c299f1f8908f43d38700e81369dbdd9c6e123",
+      "blobSha": "b51307a625e7102d19cb18fb0cd555f9bc3ba36f",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/facebookresearch/detectron2/blob/b0fe2f0a5bb6496f65246ef35687a386a9f19202/setup.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    }
+  ]
+}

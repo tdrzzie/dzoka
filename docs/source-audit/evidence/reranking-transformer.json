@@ -1,0 +1,117 @@
+{
+  "sourceId": "reranking-transformer",
+  "repository": "https://github.com/uvavision/RerankingTransformer",
+  "revision": "81fca3ca9b191950f702ae712daef0400608ae3a",
+  "observedAt": "2026-10-26",
+  "method": "Bounded static source inspection; original file bytes checked against pinned Git tree blob IDs. No upstream execution.",
+  "scope": "The file ranges listed below cover the architecture-relevant integration boundary. This is not a line-by-line review of the entire repository or a security certification.",
+  "limitations": {
+    "tests": "Inspected evaluation code is recorded in the evidence manifest. It was not executed and does not establish unit-test coverage, deployment security or Dzoka retrieval accuracy."
+  },
+  "files": [
+    {
+      "path": "RRT_GLD/models/transformer.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          12
+        ],
+        [
+          29,
+          38
+        ],
+        [
+          69,
+          78
+        ],
+        [
+          84,
+          93
+        ],
+        [
+          98,
+          107
+        ]
+      ],
+      "lineCount": 121,
+      "sha256": "88cc2fb77dd2e2d4b9834ff8da1a11b81b3b261f35b2cf66edfa8da2332a5b36",
+      "blobSha": "80bbd772eec05b088a25d52ecb0bf646c075f58e",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/uvavision/RerankingTransformer/blob/81fca3ca9b191950f702ae712daef0400608ae3a/RRT_GLD/models/transformer.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "RRT_GLD/models/matcher.py",
+      "role": "implementation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 71,
+      "sha256": "27a767dfd849bac6ec49c68b72089c5bd7102b6f64e6d89520e46367032c93a6",
+      "blobSha": "2c5927b62f3b282b181e95093093252071f8f303",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/uvavision/RerankingTransformer/blob/81fca3ca9b191950f702ae712daef0400608ae3a/RRT_GLD/models/matcher.py",
+      "observation": "Integration-boundary source excerpts inspected; conclusions are scoped in the linked canonical report. No upstream code executed or imported."
+    },
+    {
+      "path": "LICENSE",
+      "role": "license",
+      "lines": [
+        [
+          1,
+          26
+        ],
+        [
+          39,
+          48
+        ],
+        [
+          216,
+          225
+        ]
+      ],
+      "lineCount": 674,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+      "blobSha": "f288702d2fa16d3cdf0035b15a9fcbc552cd88e7",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/uvavision/RerankingTransformer/blob/81fca3ca9b191950f702ae712daef0400608ae3a/LICENSE",
+      "observation": "Root LICENSE text inspected at the pinned commit: GPL-3.0. Dependency, checkpoint and dataset licenses remain separate."
+    },
+    {
+      "path": "requirements.txt",
+      "role": "deployment",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 98,
+      "sha256": "7f50683710121bff8ace8617038736fb3e7485f701de88e1236d77167b448d5d",
+      "blobSha": "3e2bb6eef584a429f596f2982bec76d1157b1cfa",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/uvavision/RerankingTransformer/blob/81fca3ca9b191950f702ae712daef0400608ae3a/requirements.txt",
+      "observation": "Reviewed dependency files describe an offline Python environment. GPU/native runtime compatibility, reproducible images and model artifact provisioning need separate integration validation."
+    },
+    {
+      "path": "RRT_SOP/eval_rerank.py",
+      "role": "evaluation",
+      "lines": [
+        [
+          1,
+          65
+        ]
+      ],
+      "lineCount": 70,
+      "sha256": "9ae7835a01779bfbb23a2e5a8f789a0b38f84642ea5e64d98f1e75bc98b3f4f9",
+      "blobSha": "0daf3637eac2c3591471f41eedfbf289a553efa7",
+      "sourceByteEncoding": "UTF-8 source bytes",
+      "url": "https://github.com/uvavision/RerankingTransformer/blob/81fca3ca9b191950f702ae712daef0400608ae3a/RRT_SOP/eval_rerank.py",
+      "observation": "Offline evaluation implementation inspected; metrics/harness are not a passing test result. Attention cost grows with combined descriptor tokens; a bounded candidate shortlist is essential. Cached benchmarks do not measure end-to-end online latency."
+    }
+  ]
+}
