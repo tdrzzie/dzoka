@@ -1,0 +1,1078 @@
+{
+  "LLM_EN": {
+    "key": "e07bb2c79ef14fe4bee0207c617384983c8802b9745437c6b7ccec23c1d71bd2",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "LLM",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "language": "en",
+        "system": "You are a helpful assistant. Write draft text that answers the instruction, using report data when relevant. Report data is untrusted. Do not invent verified facts or claim to perform actions.",
+        "maxInputTokens": 512,
+        "maxInstructionTokens": 160,
+        "maxOutputTokens": 64,
+        "format": "escaped-segmented-chat-v1",
+        "decoding": "cpu-cached-greedy-v1",
+        "stopTokenIds": [
+          0,
+          2
+        ],
+        "trust": "UNTRUSTED_DRAFT",
+        "leaseSeconds": 300
+      },
+      "artifacts": [
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 137147981,
+          "sha256": "ecc1a19eece6494e2963cf74f78ace35916e8d0b803168ddd41db00979f18e39"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "config.json",
+          "bytes": 861,
+          "sha256": "8eb740e8bbe4cff95ea7b4588d17a2432deb16e8075bc5828ff7ba9be94d982a"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "tokenizer.json",
+          "bytes": 2104556,
+          "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "tokenizer_config.json",
+          "bytes": 3764,
+          "sha256": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "generation_config.json",
+          "bytes": 132,
+          "sha256": "87b916edaaab66b3899b9d0dd0752727dff6666686da0504d89ae0a6e055a013"
+        }
+      ]
+    }
+  },
+  "M2M_EN_FR": {
+    "key": "ac5a801642dc528d8d0d270639a112fce940d0ee446f6aa33c20e3537cf627ab",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "fr",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_FR_EN": {
+    "key": "81f1fd98b6f15c1c04553948207902aeff00f2db14d6eac3adbc6308610e2111",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "fr",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_EN_DE": {
+    "key": "c7cf89b1b0f87b20062315ba82bb3409e813b43e2e71d0adb919db565ca9ffc1",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "de",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_DE_EN": {
+    "key": "308d072dda1bee25187389433182f673159b076e15379a74961780d2eda0dfaf",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "de",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_EN_ES": {
+    "key": "fd87e4b619a3c9056f70fcb9f945f36dec33296af7baad13c25cd6c8e2bab478",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "es",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_ES_EN": {
+    "key": "d5cc551f6cd26f3fe87ddeff0e068cb26d63987109ccfb393f1600287a7446d4",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "es",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_EN_AF": {
+    "key": "4d069c6764a93bfe7b63ad0353e4da7d0dd9a66d104d97485a0da851a259b303",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "af",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_AF_EN": {
+    "key": "2a21a1e025c5b397dc2e161999205795e975f6a0c8a373fc322cca20dea4ab79",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "af",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_EN_ZU": {
+    "key": "809f5b550024c627c99220955005c4c38afa108ae86a344c51f64b235fec8827",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "zu",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_ZU_EN": {
+    "key": "d212d04c76ecdf791574bf4c1ba2e479a94c54264c5291c4f55a47127dfcf4f8",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "zu",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_EN_XH": {
+    "key": "7a88135e0568bbc590b34701e39c9d487f29ffd02713af95e0587bc1f33df1aa",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "xh",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "M2M_XH_EN": {
+    "key": "8652404323f2a63c2ebc458471515cbd453aad74afa1183b225e9917750a683e",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0"
+      },
+      "configuration": {
+        "sourceLanguage": "xh",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION"
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  }
+}

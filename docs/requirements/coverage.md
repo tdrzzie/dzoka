@@ -11,7 +11,7 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 5 | ITEM FINGERPRINT | Text and explicitly pinned vision/local/OCR/speech/joint/detection/semantic-mask/attribute/translation components (query-dependent rerank scores excluded), full profile/input/output provenance, source-pixel regions, immutable cohort snapshots, measured coverage and atomic activation/rollback implemented; wider quality/profiles and larger/index migration remain. |
 | 6 | MULTIMODAL INTAKE | Text/uncertain context, private PNG/JPEG and strict short PCM16 WAV intake/leased inference implemented with exact raw preservation and governed erasure. Broader codecs/video/documents/channels and production quality remain. |
 | 7 | WHATSAPP-FIRST EXPERIENCE | Specified; implementation and production validation pending. |
-| 8 | AI PERCEPTION LAYER | Durable private text/ResNet/classical local/Paddle OCR/English-CTC speech plus paired Jina joint image/text, SSD detection and FCN semantic segmentation plus grounded QA attributes/explicit French→English translation support snapshot selection. Private bounded cross-encoder reranking runs separately; broader general LLM behavior remains. Wider models/languages/LLM perception, representative quality and deployment hardening remain. |
+| 8 | AI PERCEPTION LAYER | Durable private text/ResNet/classical local/Paddle OCR/English-CTC speech plus paired Jina joint image/text, SSD detection and FCN semantic segmentation plus grounded QA attributes/explicit French→English translation support snapshot selection. Private bounded cross-encoder reranking runs separately; private bounded English general drafts and twelve directed multilingual profiles run locally with explicit untrusted output. Wider models/languages/LLM quality, representative quality and deployment hardening remain. |
 | 9 | SEARCH AND MATCHING PIPELINE | Specified; implementation and production validation pending. |
 | 10 | MATCH EVIDENCE MODEL | Specified; implementation and production validation pending. |
 | 11 | MISSING EVIDENCE RULE | Nullable source context and explicit fingerprint AVAILABLE/PENDING/UNAVAILABLE/FAILED states implemented; scoring-wide coverage/reliability remains. |
@@ -20,7 +20,7 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 14 | AI-GENERATED PRIVATE OWNERSHIP CHALLENGES | Specified; implementation and production validation pending. |
 | 15 | TRUST AND FRAUD ENGINE | Specified; implementation and production validation pending. |
 | 16 | PRIVACY ARCHITECTURE | Specified; implementation and production validation pending. |
-| 17 | DATABASE ARCHITECTURE | V1–V9 cover foundation, private intake, text/perception jobs/profiles/components/shared quotas/raw-audio and rerank-input retention and immutable multimodal cohorts/activation history; full recovery schema and spatial/vector extensions remain. |
+| 17 | DATABASE ARCHITECTURE | V1–V10 cover foundation, private intake, text/perception jobs/profiles/components/shared quotas/raw-audio and rerank/prompt-input retention and immutable multimodal cohorts/activation history; full recovery schema and spatial/vector extensions remain. |
 | 18 | VECTOR SEARCH ABSTRACTION | Specified; implementation and production validation pending. |
 | 19 | EVENT-DRIVEN ARCHITECTURE | Transactional outbox/inbox and leased dispatch foundation implemented/tested; live Kafka adapter, scheduling, DLQ and operations remain. |
 | 20 | RECOVERY EVENT MODEL | Specified; implementation and production validation pending. |

@@ -38,4 +38,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 | 0030 | [Pair joint encoders and validate region evidence](0030-joint-vision-and-region-models.md) | Accepted scoped implementation profile |
 | 0031 | [Ground private attributes and separate query-dependent reranking](0031-private-language-inference.md) | Accepted scoped implementation profile |
 
+| 0032 | [Keep general drafts private and language directions explicit](0032-general-drafts-and-multilingual-profiles.md) | Accepted scoped implementation profile |
+
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

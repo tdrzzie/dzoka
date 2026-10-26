@@ -9,6 +9,6 @@ public record ItemFingerprint(int schemaVersion,UUID tenantId,UUID itemId,UUID r
         components=List.copyOf(components);coverage=Map.copyOf(coverage);perceptionComponents=List.copyOf(perceptionComponents);
         for(var component:components)if(!component.itemId().equals(itemId) || !component.reportId().equals(reportId) || component.sourceRevision()!=sourceRevision)
             throw new IllegalArgumentException("Mixed fingerprint sources");
-        for(var component:perceptionComponents)if(component.task().equals("RERANK")||!component.reportId().equals(reportId)||component.sourceRevision()!=sourceRevision||!component.selection().equals("ACTIVE"))throw new IllegalArgumentException("Unselected or query-dependent perception source");
+        for(var component:perceptionComponents)if(Set.of("RERANK","LLM").contains(component.task())||!component.reportId().equals(reportId)||component.sourceRevision()!=sourceRevision||!component.selection().equals("ACTIVE"))throw new IllegalArgumentException("Unselected or query-dependent perception source");
     }
 }

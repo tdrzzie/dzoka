@@ -45,15 +45,17 @@ def main():
            ('native-model-conformance',['tools/ai_runtime.py','probe']),
            ('perception-artifacts',['tools/perception_runtime.py','check']),
            ('joint-region-artifacts',['tools/vision_runtime.py','check']),
-           ('language-artifacts',['tools/language_runtime.py','check'])]
-    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--restore-drill']
+           ('language-artifacts',['tools/language_runtime.py','check']),
+           ('generative-artifacts',['tools/generative_runtime.py','check']),
+           ('generative-installed-runtime',['tools/generative_runtime.py','runtime-check'])]
+    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--restore-drill']
     if args.pg_bin:integration+=['--pg-bin',args.pg_bin,'--maven',args.maven]
     steps.append(('real-provider-integration-and-restore',integration))
     run=ROOT/'.test-tmp'/('local-verification-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
     run.mkdir(parents=True)
     result={'startedAt':datetime.now(timezone.utc).isoformat(),'status':'IN_PROGRESS',
             'inputSha256':source_digest(ROOT),'phases':[],
-            'scope':'Implemented foundation/intake/text slice; not full specification or production acceptance'}
+            'scope':'Implemented foundation/intake/multimodal/generative slice; not full specification or production acceptance'}
     def save():
         (run/'result.json').write_text(json.dumps(result,indent=2)+'\n',encoding='utf-8')
     save()

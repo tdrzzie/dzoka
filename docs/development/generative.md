@@ -1,0 +1,33 @@
+# Private general drafts and directed multilingual inference
+
+[ADR 0032](../adr/0032-general-drafts-and-multilingual-profiles.md) and [adoption](../dependencies/generative-adoption.md) define this Windows amd64 CPU profile. English SmolLM2-135M-Instruct drafts and M2M100 translations run as asynchronous private jobs. They cannot authorize release or verify ownership. Results are untrusted: the local multilingual probes include substantive meaning errors, particularly for Zulu/Xhosa. These are executable profiles, not accepted language quality.
+
+## Provision and verify
+
+Keep the existing reviewed 21-wheel archives and additionally provision the exact SentencePiece wheel from `ai/generative-runtime.lock.json` in `.audit-cache/generative-wheels` (the base wheels stay in `.audit-cache/ai-wheels`). Run `python tools/generative_setup.py` to create a separate `.audit-cache/generative-venv`; it installs only the 22 exact offline hash-checked wheels with no dependencies/extras. The original environment and runtime/model locks remain unchanged. Five retained bundled license texts are hash-checked before native imports.
+
+Run `python tools/generative_runtime.py fetch` for the thirteen immutable model/tokenizer/configuration artifacts, then `check`, `runtime-check`, and `probe --all-profiles`. Downloads are explicit; workers never download models. Each graph is stream-hashed and held open against Windows write/delete sharing while ONNX Runtime loads its path. Native dependencies and installed wheel contents are checked before native imports. This protects reviewed local artifact identity; it does not implement an OS sandbox or hostile-host defense.
+
+Generate disabled registration SQL using `python tools/generative_profile.py --tenant UUID --profile UUID --profile-name LLM_EN`. Review and enable the exact profile deliberately. No profile is enabled automatically. The registry `ai/generative-profiles.json` contains one English LLM profile and twelve explicit M2M directions: `M2M_EN_FR`, `M2M_FR_EN`, `M2M_EN_DE`, `M2M_DE_EN`, `M2M_EN_ES`, `M2M_ES_EN`, `M2M_EN_AF`, `M2M_AF_EN`, `M2M_EN_ZU`, `M2M_ZU_EN`, `M2M_EN_XH`, `M2M_XH_EN`. These mean English paired separately with French, German, Spanish, Afrikaans, Zulu and Xhosa. The model vocabulary's other languages are not application profiles. Shona has no model language token and is unsupported. Existing dedicated French-to-English Marian remains a distinct profile.
+
+## Private requests and results
+
+For LLM, POST JSON to `/api/v1/tenants/{tenant}/reports/{report}/perception/generate`:
+
+```json
+{"profileId":"UUID","prompt":"Describe the reported item in one sentence."}
+```
+
+The report must have an English language hint (regional English accepted). The exact accepted raw request is retained privately, alongside a digest-bound payload containing the exact instruction and current normalized report description. The report's original raw revision stays unchanged. Requests are at most 16 KiB, with one nonblank instruction of at most 1,024 Unicode code points. Duplicate/unknown fields, malformed Unicode and chunked overflows are rejected. Prompt framing escapes special-token strings in untrusted segments. Formatting is independently authored; no publisher Jinja, Python conversion or remote code executes. Prompt injection and hallucination remain possible: `UNTRUSTED_DRAFT` is enforced and no action tools are provided.
+
+LLM decoding uses at most 512 input tokens (instruction at most 160) and 64 output tokens, preserving the trusted assistant footer. Output includes token counts, separate instruction/context truncation, aggregate input truncation, output truncation, EOS/OUTPUT_LIMIT and representation identity. Read the exact authorized job result through the existing private result endpoint. LLM is query-dependent and always SHADOW; rollout validation, selected-component filtering and the fingerprint domain prohibit intrinsic LLM components.
+
+For `MULTILINGUAL_TRANSLATION`, enqueue `POST .../reports/{report}/perception/text` with the selected profile ID and no media. The current report language hint must match its explicit source direction; unsupported hints fail before queue reservation. Regional hints are accepted. The worker leases current normalized text with forced source/target language tokens, at most 128 source tokens and 32 generated tokens. Full-prefix greedy decoding has no hidden beam-search/parity claim. Results require `UNVERIFIED_TRANSLATION`, explicit source/target, unknown-input count, token counts and truncation/finish flags. They append derived text and never overwrite source language/text. Explicit translation component pins may join reviewed snapshots with `translation` coverage; this measures availability, not semantic correctness or human acceptance.
+
+Set `DZOKA_AI_CORE_URL`, scoped `DZOKA_AI_TOKEN`, `DZOKA_AI_TENANT`, `DZOKA_AI_PROFILE`, and `DZOKA_AI_GENERATIVE_DIR`, then run `python tools/generative_worker.py --once`. Production requires HTTPS; `DZOKA_AI_ALLOW_INSECURE_LOOPBACK=true` is an explicit local-only exception. The launcher uses isolated Python, scrubs unrelated credentials and limits the process to 290 seconds; these tasks have 300-second durable leases. Worker input is bound to a live owner/tenant/profile/current-revision lease. There are no DB/S3 credentials or storage URLs in the worker contract.
+
+All tasks share existing 32-pending-per-tenant and 64-noncancelled-per-report bounds, deadline/three-attempt recovery and atomic outbox/idempotency. Raw prompt request plus exact worker payload share the 32 MiB retained-input accounting with WAV/rerank inputs. The compatibility tables retain their prior names `perception_audio_usage` and `perception_rerank_inputs`. Hold-aware actual erasure removes private payload/raw data and results and releases reservations once. Logs/status/events exclude raw prompts and report text.
+
+`python tools/verify_local.py` requires twelve phases, including the new artifact and installed-runtime checks and full real-provider integration/restore. The underlying harness adds `--with-generative` to earlier provider flags. Portable contract tests explicitly omit native inference. [Execution evidence](../testing/m4-generative-2026-10-26.md) distinguishes all thirteen direct native probes from five service-worker jobs and the observed quality failures.
+
+Representative permitted multilingual/recovery data, native-speaker acceptance and institutional policies remain external requirements. Better models, Shona alternatives, longer-context support, evaluation tooling and deployment isolation remain possible local engineering; no GPU/cloud account is inherently required. Full M4 and production readiness remain open.

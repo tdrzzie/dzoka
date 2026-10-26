@@ -115,7 +115,7 @@ public final class JdbcFingerprintRollouts implements org.dzoka.fingerprints.por
                 SELECT f.profile_id,f.input_sha256,p.profile_key,encode(sha256(convert_to(f.evidence::text,'UTF8')),'hex') output
                 FROM dzoka.perception_components f JOIN dzoka.perception_profiles p ON p.tenant_id=f.tenant_id AND p.id=f.profile_id
                 JOIN dzoka.perception_jobs j ON j.tenant_id=f.tenant_id AND j.id=f.job_id
-                WHERE f.tenant_id=? AND f.id=? AND f.report_id=? AND f.source_revision=? AND p.enabled AND p.task<>'RERANK' AND j.state='SUCCEEDED'
+                WHERE f.tenant_id=? AND f.id=? AND f.report_id=? AND f.source_revision=? AND p.enabled AND p.task NOT IN ('RERANK','LLM') AND j.state='SUCCEEDED'
                  AND (j.media_id IS NULL OR EXISTS(SELECT 1 FROM dzoka.media_assets m WHERE m.tenant_id=j.tenant_id AND m.id=j.media_id
                   AND m.state='SANITIZED' AND NOT m.purge_pending AND m.expires_at>clock_timestamp() AND m.derivative_sha256=f.input_sha256))
                 """,tenant,pin.componentId())){

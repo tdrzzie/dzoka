@@ -28,3 +28,8 @@ Individual reports record narrower exclusions: checkpoint/native-code security, 
 All 100 sections remain in [requirements coverage](../../requirements/coverage.md). The [earlier gap catalogue](../../findings/unresolved-gaps.md) remains intact for detailed planning, with assumptions subject to current evidence and ADRs.
 
 2026-10-26 language adoption update: independently reviewed Apache-2.0 task-specific QA, Marian French→English and official MS MARCO cross-encoder exports now supply bounded private language profiles under [ADR 0031](../../adr/0031-private-language-inference.md). Exact grants/bytes and rejected FLAN observations are in [adoption](../../dependencies/language-adoption.md). This closes the named local provider slice, not general LLM quality, representative multilingual/instance acceptance, server-side candidate retrieval/fusion or deployment isolation. No previously unresolved source grant is silently approved.
+
+
+## Subsequent bounded generative implementation (2026-10-26)
+
+[ADR 0032](../../adr/0032-general-drafts-and-multilingual-profiles.md), [separate model/runtime adoption](../../dependencies/generative-adoption.md) and [execution evidence](../../testing/m4-generative-2026-10-26.md) add private English general drafts and twelve explicit M2M100 translation directions. This separate artifact/dependency review does not expand the thirty mandatory source audits or certify upstream tests. Known translation meaning errors and LLM repetition remain recorded; Shona, representative quality acceptance, native host isolation and full M4 remain open. General drafts cannot become intrinsic fingerprints or release authority.

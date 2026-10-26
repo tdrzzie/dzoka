@@ -4,6 +4,7 @@ import org.dzoka.identity.domain.VerifiedIdentity;
 import org.dzoka.fingerprints.domain.Perception.*;
 public interface PerceptionJobs {
     Job enqueue(VerifiedIdentity actor,UUID tenant,UUID report,UUID profile,UUID media,byte[] audio);
+    Job generate(VerifiedIdentity actor,UUID tenant,UUID report,byte[] rawRequest);
     Job rerank(VerifiedIdentity actor,UUID tenant,UUID report,byte[] rawRequest);
     Job read(VerifiedIdentity actor,UUID tenant,UUID id);
     Optional<Lease> claim(VerifiedIdentity actor,UUID tenant,UUID profile);
@@ -12,6 +13,6 @@ public interface PerceptionJobs {
     boolean fail(VerifiedIdentity actor,UUID tenant,UUID id,UUID lease,String reason);
     List<Component> current(VerifiedIdentity actor,UUID tenant,UUID report);
     Optional<Component> result(VerifiedIdentity actor,UUID tenant,UUID id);
-    default List<Component> selected(VerifiedIdentity actor,UUID tenant,UUID report){return current(actor,tenant,report).stream().filter(c->!c.task().equals("RERANK")&&c.selection().equals("ACTIVE")).toList();}
+    default List<Component> selected(VerifiedIdentity actor,UUID tenant,UUID report){return current(actor,tenant,report).stream().filter(c->!Set.of("RERANK","LLM").contains(c.task())&&c.selection().equals("ACTIVE")).toList();}
     int purge(VerifiedIdentity actor,UUID tenant);
 }

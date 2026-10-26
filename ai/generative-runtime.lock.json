@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/dependencies/generative-adoption.md",
+  "python": "3.14",
+  "platformVerified": "Windows-amd64",
+  "baseRuntimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+  "additionalWheels": [
+    {
+      "name": "sentencepiece",
+      "version": "0.2.2",
+      "wheel": "sentencepiece-0.2.2-cp314-cp314-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/33/fe/4906f12c458274edd96387e4baaad7c6f064a2b7c11a1cc2401c8a7bd483/sentencepiece-0.2.2-cp314-cp314-win_amd64.whl",
+      "bytes": 1356144,
+      "sha256": "63250cfab8b80a1ef82a614eb2b3cadfec2c405f870cedc139d08e2f063eb708",
+      "license": "Apache-2.0",
+      "upstreamRevision": "e0cce7d37b065b5140349dbe12c6bcf6192fdd78",
+      "abseilBuildTag": "20260526.0",
+      "abseilBuildRevision": "5650e9cf76d3be4318d5fa3af38ee483ddfd5e4a"
+    }
+  ],
+  "notices": [
+    {
+      "path": "docs/dependencies/notices/generative/sentencepiece-Apache-2.0.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    {
+      "path": "docs/dependencies/notices/generative/protobuf-lite-BSD-3-Clause.txt",
+      "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d"
+    },
+    {
+      "path": "docs/dependencies/notices/generative/darts-BSD-3-Clause.txt",
+      "sha256": "155f59997298ee336602c49f9c1110f268ac394ca2197eb02647a3555935ad52"
+    },
+    {
+      "path": "docs/dependencies/notices/generative/esaxx-MIT.txt",
+      "sha256": "7c28553d1d3312d65fe309f76a22ebaf33a3d76c8c1e3b98a88ee4654ecb53db"
+    },
+    {
+      "path": "docs/dependencies/notices/generative/abseil-Apache-2.0.txt",
+      "sha256": "c79a7fea0e3cac04cd43f20e7b648e5a0ff8fa5344e644b0ee09ca1162b62747"
+    }
+  ]
+}

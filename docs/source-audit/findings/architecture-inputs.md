@@ -25,3 +25,8 @@ All mandatory source reviews are complete within their declared scopes. These re
 Mandatory reviews do not cover every prospective runtime dependency. Concrete PostgreSQL/PostGIS, Kafka distribution, Spring/security, object storage, OIDC, OpenTelemetry and transitive AI runtime versions still need targeted adoption/license review. No technology choice is justified solely by upstream implementation language or popularity.
 
 Technical ADRs must document alternatives, evidence, consequences, implementation implications and acceptance tests. [Unresolved gaps](unresolved-gaps.md) separates completed source review from remaining design, experiments and production validation.
+
+
+## Subsequent bounded generative implementation (2026-10-26)
+
+[ADR 0032](../../adr/0032-general-drafts-and-multilingual-profiles.md), [separate model/runtime adoption](../../dependencies/generative-adoption.md) and [execution evidence](../../testing/m4-generative-2026-10-26.md) add private English general drafts and twelve explicit M2M100 translation directions. This separate artifact/dependency review does not expand the thirty mandatory source audits or certify upstream tests. Known translation meaning errors and LLM repetition remain recorded; Shona, representative quality acceptance, native host isolation and full M4 remain open. General drafts cannot become intrinsic fingerprints or release authority.

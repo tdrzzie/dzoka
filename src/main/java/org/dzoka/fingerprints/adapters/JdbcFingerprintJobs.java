@@ -220,6 +220,7 @@ public final class JdbcFingerprintJobs implements FingerprintJobs {
             var derived=perception.selected(actor,tenant,report);var coverage=new HashMap<String,ItemFingerprint.EvidenceState>();coverage.put("text",text);
             for(var entry:Map.of("image","VISION","localFeatures","LOCAL_FEATURES","ocr","OCR","speech","SPEECH","jointImage","JOINT_IMAGE","jointText","JOINT_TEXT","detection","DETECTION","segmentation","SEGMENTATION","attributes","ATTRIBUTES","translation","TRANSLATION").entrySet())
                 coverage.put(entry.getKey(),derived.stream().anyMatch(f->f.task().equals(entry.getValue()))?ItemFingerprint.EvidenceState.AVAILABLE:unavailable);
+            if(derived.stream().anyMatch(f->f.task().equals("MULTILINGUAL_TRANSLATION")))coverage.put("translation",ItemFingerprint.EvidenceState.AVAILABLE);
             return new ItemFingerprint(1,tenant,item,report,revision,matching,coverage,rollout,activation,derived);
         });
     }
