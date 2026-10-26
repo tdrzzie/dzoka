@@ -10,4 +10,6 @@
 
 - [General drafts and multilingual profiles](generative-adoption.md): Apache-2.0 official SmolLM2, explicitly MIT M2M100 export/base and separately reviewed SentencePiece wheel with preserved bundled notices, in a separate 22-wheel environment.
 
+- [Language quality and Shona](language-quality-adoption.md): official larger SmolLM2 and explicit Apache-2.0 dedicated Shona/Spanish/German-to-English ONNX exports on the unchanged separate 22-wheel runtime.
+
 The [artifact lock](../../dependencies.lock.json) records the combined application/test graph and explicit license choices. Dependency hashes and license declarations are not a complete source audit or vulnerability certification. New runtime versions, providers, model weights and production distributions require their own bounded adoption decision before installation.

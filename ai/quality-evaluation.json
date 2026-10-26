@@ -1,0 +1,84 @@
+{
+  "schemaVersion": 1,
+  "scope": "Authored synthetic diagnostics with English references; Shona examples require native-speaker validation. Not training data or representative accuracy.",
+  "cases": [
+    {
+      "id": "es-bag",
+      "profile": "OPUS_ES_EN",
+      "source": "Perdí una bolsa negra.",
+      "references": [
+        "I lost a black bag."
+      ],
+      "baseline": "M2M_ES_EN"
+    },
+    {
+      "id": "es-umbrella",
+      "profile": "OPUS_ES_EN",
+      "source": "Encontré un paraguas rojo.",
+      "references": [
+        "I found a red umbrella."
+      ],
+      "baseline": "M2M_ES_EN"
+    },
+    {
+      "id": "de-bag",
+      "profile": "OPUS_DE_EN",
+      "source": "Ich habe eine schwarze Tasche verloren.",
+      "references": [
+        "I lost a black bag.",
+        "I have lost a black bag."
+      ],
+      "baseline": "M2M_DE_EN"
+    },
+    {
+      "id": "de-umbrella",
+      "profile": "OPUS_DE_EN",
+      "source": "Ich habe einen roten Regenschirm gefunden.",
+      "references": [
+        "I found a red umbrella.",
+        "I have found a red umbrella."
+      ],
+      "baseline": "M2M_DE_EN"
+    },
+    {
+      "id": "sn-bag",
+      "profile": "OPUS_SN_EN",
+      "source": "Ndarasa bhegi rangu.",
+      "references": [
+        "I lost my bag.",
+        "I have lost my bag."
+      ]
+    },
+    {
+      "id": "sn-place",
+      "profile": "OPUS_SN_EN",
+      "source": "Ndasiya bhegi dema muJoina City.",
+      "references": [
+        "I left a black bag in Joina City.",
+        "I left a black bag at Joina City."
+      ]
+    },
+    {
+      "id": "sn-code-switch",
+      "profile": "OPUS_SN_EN",
+      "source": "Ndasiya black Lenovo bag muJoina around 2pm.",
+      "references": []
+    },
+    {
+      "id": "llm-backpack",
+      "profile": "SMOL360_EN",
+      "baseline": "LLM_EN",
+      "source": "I lost a black bag.",
+      "prompt": "Explain in one sentence what a backpack is.",
+      "references": []
+    },
+    {
+      "id": "llm-bag",
+      "profile": "SMOL360_EN",
+      "baseline": "LLM_EN",
+      "source": "I lost a black bag.",
+      "prompt": "Describe the reported item in one sentence.",
+      "references": []
+    }
+  ]
+}

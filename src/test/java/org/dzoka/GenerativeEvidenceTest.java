@@ -15,6 +15,12 @@ class GenerativeEvidenceTest {
         var manifest=Map.<String,Object>of("configuration",Map.of("sourceLanguage","es","targetLanguage","en"));var e=translation("es","en");GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest);
         e.put("targetLanguage","zu");assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));e.put("targetLanguage","en");e.put("inputUnknownTokenCount",8);assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
     }
+    @Test void marianRepresentationIsBoundToProfileAndItsOwnStructuralTokenCount(){
+        var manifest=Map.<String,Object>of("configuration",Map.of("sourceLanguage","sn","targetLanguage","en","representation","marian-source-target-v1"));var e=translation("sn","en");
+        assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));e.put("representation","marian-source-target-v1");e.put("inputTokenCount",128);e.put("inputUnknownTokenCount",126);GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest);
+        e.put("inputUnknownTokenCount",127);assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));e.put("inputUnknownTokenCount",0);e.put("inputTokenCount",1);assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
+        e.put("inputTokenCount",2);e.put("trust","VERIFIED");assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
+    }
     @Test void evenActiveLookingDraftsCannotBecomeIntrinsicFingerprints(){
         UUID report=UUID.randomUUID();var c=new Perception.Component(UUID.randomUUID(),report,1,"a".repeat(64),UUID.randomUUID(),"b".repeat(64),"LLM",java.time.Instant.now(),java.time.Instant.now(),Map.of(),draft(),"ACTIVE");
         assertThrows(IllegalArgumentException.class,()->new ItemFingerprint(1,UUID.randomUUID(),UUID.randomUUID(),report,1,List.of(),Map.of(),null,0,List.of(c)));

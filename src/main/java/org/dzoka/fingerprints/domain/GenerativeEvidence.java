@@ -21,9 +21,13 @@ public final class GenerativeEvidence {
         }else{
             require(e.keySet().equals(Set.of("text","sourceLanguage","targetLanguage","inputTokenCount","inputUnknownTokenCount","outputTokenCount","inputTruncated","outputTruncated","finishReason","trust","representation")));
             require("UNVERIFIED_TRANSLATION".equals(e.get("trust"))&&e.get("sourceLanguage") instanceof String&&e.get("targetLanguage") instanceof String);
-            require(nonnegative(e.get("inputUnknownTokenCount"),126)<=integer(e.get("inputTokenCount"),128)-2);
-            require("m2m100-source-target-v1".equals(e.get("representation"))&&manifest.get("configuration") instanceof Map<?,?>);
-            var config=(Map<?,?>)manifest.get("configuration");require(Objects.equals(config.get("sourceLanguage"),e.get("sourceLanguage"))&&Objects.equals(config.get("targetLanguage"),e.get("targetLanguage"))&&!Objects.equals(e.get("sourceLanguage"),e.get("targetLanguage")));
+            require(manifest.get("configuration") instanceof Map<?,?>);var config=(Map<?,?>)manifest.get("configuration");
+            Object representation=config.get("representation");boolean marian="marian-source-target-v1".equals(representation);
+            require(representation==null||marian||"m2m100-source-target-v1".equals(representation));
+            require((marian?"marian-source-target-v1":"m2m100-source-target-v1").equals(e.get("representation")));
+            int structural=marian?1:2,input=integer(e.get("inputTokenCount"),128);require(input>structural);
+            require(nonnegative(e.get("inputUnknownTokenCount"),128-structural)<input-structural);
+            require(Objects.equals(config.get("sourceLanguage"),e.get("sourceLanguage"))&&Objects.equals(config.get("targetLanguage"),e.get("targetLanguage"))&&!Objects.equals(e.get("sourceLanguage"),e.get("targetLanguage")));
         }
     }
 }

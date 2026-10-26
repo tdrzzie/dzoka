@@ -30,3 +30,8 @@ Technical ADRs must document alternatives, evidence, consequences, implementatio
 ## Subsequent bounded generative implementation (2026-10-26)
 
 [ADR 0032](../../adr/0032-general-drafts-and-multilingual-profiles.md), [separate model/runtime adoption](../../dependencies/generative-adoption.md) and [execution evidence](../../testing/m4-generative-2026-10-26.md) add private English general drafts and twelve explicit M2M100 translation directions. This separate artifact/dependency review does not expand the thirty mandatory source audits or certify upstream tests. Known translation meaning errors and LLM repetition remain recorded; Shona, representative quality acceptance, native host isolation and full M4 remain open. General drafts cannot become intrinsic fingerprints or release authority.
+
+
+## Subsequent language-quality and Shona extension (2026-10-27)
+
+[ADR 0033](../../adr/0033-language-quality-and-shona.md) and [separate artifact adoption](../../dependencies/language-quality-adoption.md) append a larger official draft model and dedicated Shona/Spanish/German-to-English exports. These reuse the reviewed 22-wheel environment and preserve older keys. [Execution evidence](../../testing/m4-language-quality-2026-10-27.md) distinguishes controlled synthetic comparisons from representative/native-speaker acceptance. One-way Shona support is not language detection, bidirectional support or verified translation. English→Shona/further quality remains local engineering; permitted data and institutional acceptance remain external. Mandatory thirty-source audit scope and supplied research bodies remain unchanged.

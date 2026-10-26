@@ -40,4 +40,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0032 | [Keep general drafts private and language directions explicit](0032-general-drafts-and-multilingual-profiles.md) | Accepted scoped implementation profile |
 
+| 0033 | [Append language alternatives and measure their limits](0033-language-quality-and-shona.md) | Accepted scoped implementation profile |
+
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

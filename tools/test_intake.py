@@ -34,6 +34,7 @@ def main():
     p.add_argument('--with-perception',action='store_true',help='Also run licensed native vision/local/OCR/speech profiles and synthetic voice fixture')
     p.add_argument('--with-vision',action='store_true',help='Run reviewed joint image/text, detection and semantic segmentation models')
     p.add_argument('--with-language',action='store_true',help='Run reviewed native extraction, translation and cross-encoder reranking')
+    p.add_argument('--with-quality',action='store_true',help='Run reviewed larger draft and dedicated Shona/Spanish/German translators')
     p.add_argument('--with-generative',action='store_true',help='Run reviewed general draft and multilingual profiles in the separate native runtime')
     p.add_argument('--restore-drill',action='store_true',help='Verify database logical restore after the full passing suite')
     args=p.parse_args();run=ROOT/'.test-tmp'/('intake-'+str(uuid.uuid4()));run.mkdir(parents=True)
@@ -80,7 +81,7 @@ def main():
             time.sleep(0.5)
         else:raise RuntimeError('Authenticated S3 readiness timeout')
         env['DZOKA_TEST_S3_ENDPOINT']=endpoint
-        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','VisionJobsIT','LanguageJobsIT','GenerativeJobsIT','StartupConfigurationIT']
+        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','VisionJobsIT','LanguageJobsIT','GenerativeJobsIT','QualityJobsIT','StartupConfigurationIT']
         if not args.storage_only:classes.append('SandboxMediaIT')
         if args.with_ai:
             subprocess.run([sys.executable,str(ROOT/'tools/ai_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
@@ -100,6 +101,11 @@ def main():
         if args.with_language:
             subprocess.run([sys.executable,str(ROOT/'tools/language_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
             classes.append('LanguageProviderIT')
+        if args.with_quality:
+            subprocess.run([sys.executable,str(ROOT/'tools/quality_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
+            subprocess.run([sys.executable,str(ROOT/'tools/generative_runtime.py'),'runtime-check'],cwd=ROOT,env=env,check=True)
+            classes.append('QualityProviderIT')
+        else:print('Portable quality lifecycle scope; native alternatives require --with-quality.',flush=True)
         if args.with_generative:
             subprocess.run([sys.executable,str(ROOT/'tools/generative_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
             subprocess.run([sys.executable,str(ROOT/'tools/generative_runtime.py'),'runtime-check'],cwd=ROOT,env=env,check=True)
