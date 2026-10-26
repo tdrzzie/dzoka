@@ -23,3 +23,5 @@ docs/architecture/data-architecture.md -text
 docs/architecture/event-architecture.md -text
 docs/source-audit/README.md -text
 starter -text
+
+docs/dependencies/notices/shona/** -text

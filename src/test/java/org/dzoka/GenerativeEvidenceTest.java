@@ -21,6 +21,10 @@ class GenerativeEvidenceTest {
         e.put("inputUnknownTokenCount",127);assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));e.put("inputUnknownTokenCount",0);e.put("inputTokenCount",1);assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
         e.put("inputTokenCount",2);e.put("trust","VERIFIED");assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
     }
+    @Test void ctranslateDirectionAndRepresentationStayUnverified(){
+        var manifest=Map.<String,Object>of("configuration",Map.of("sourceLanguage","en","targetLanguage","sn","representation","ctranslate2-marian-v1"));var e=translation("en","sn");assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
+        e.put("representation","ctranslate2-marian-v1");GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest);e.put("targetLanguage","en");assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));e.put("targetLanguage","sn");e.put("trust","VERIFIED");assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
+    }
     @Test void evenActiveLookingDraftsCannotBecomeIntrinsicFingerprints(){
         UUID report=UUID.randomUUID();var c=new Perception.Component(UUID.randomUUID(),report,1,"a".repeat(64),UUID.randomUUID(),"b".repeat(64),"LLM",java.time.Instant.now(),java.time.Instant.now(),Map.of(),draft(),"ACTIVE");
         assertThrows(IllegalArgumentException.class,()->new ItemFingerprint(1,UUID.randomUUID(),UUID.randomUUID(),report,1,List.of(),Map.of(),null,0,List.of(c)));

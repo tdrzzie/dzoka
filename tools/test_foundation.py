@@ -70,7 +70,7 @@ def main():
         print('Fresh loopback PostgreSQL cluster ready; existing installations untouched.', flush=True)
         maven = [args.maven, '-B', '-ntp', '-Dmaven.repo.local=.audit-cache/m2', 'verify']
         if not args.full:
-            maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,FingerprintRolloutsIT,PerceptionJobsIT,VisionJobsIT,LanguageJobsIT,GenerativeJobsIT,QualityJobsIT,StartupConfigurationIT')
+            maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,FingerprintRolloutsIT,PerceptionJobsIT,VisionJobsIT,LanguageJobsIT,GenerativeJobsIT,QualityJobsIT,ShonaJobsIT,StartupConfigurationIT')
             print('Explicit database/API suite; live S3/sandbox tests require the full intake harness.',flush=True)
         elif env.get('DZOKA_IT_CLASSES'):
             maven.append('-Dit.test='+env['DZOKA_IT_CLASSES'])

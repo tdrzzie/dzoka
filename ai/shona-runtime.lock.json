@@ -1,0 +1,62 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/dependencies/shona-adoption.md",
+  "parentRuntimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+  "python": "3.14",
+  "platformVerified": "Windows-amd64",
+  "deploymentScope": "LOCAL_DEVELOPMENT_ONLY",
+  "additionalWheels": [
+    {
+      "name": "ctranslate2",
+      "version": "4.8.4",
+      "wheel": "ctranslate2-4.8.4-cp314-cp314-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/50/98/6bd005eb63150a8d029aa06076180bc3452243b56da592c770128ac6f47b/ctranslate2-4.8.4-cp314-cp314-win_amd64.whl",
+      "bytes": 20638792,
+      "sha256": "4b322215f3b8eaab1db45b9e6aebfb8ddfe1336651e15a569c90826bfdb4b136",
+      "license": "MIT with separately governed bundled native libraries",
+      "upstreamRevision": "5de572ef60b67a0276c5989ee73d0072808ff4c3"
+    }
+  ],
+  "notices": [
+    {
+      "path": "docs/dependencies/notices/shona/cpu_features--license.txt",
+      "sha256": "af272c1b4dd08dd61d43e001d3134119d03ca7a2b057a64f7355fdf27fbea3dd"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/ct2--LICENSE",
+      "sha256": "54aa79d9fe3c09e67a16dcd95b9e88676405a6ec174efda31036983cf7672ecb"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/cxxopts--license.txt",
+      "sha256": "aa324fbe633a96546bebca975fbbab65caa175894bd00cfa13d7335e7363400c"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/intel--LICENSE.txt",
+      "sha256": "febfb69a5b058f55892dc7f341108a9ca29d50e9fe85723a57eebbb826436958"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/intel--third-party-programs.txt",
+      "sha256": "f8ce918fe7311ce279e68380a2e233f8a42b1cd3dda8f4c48d6de97a0255c1d7"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/oneDNN--license.txt",
+      "sha256": "dd12452e1ae11e3282271aa5895d8175296b83e936a027209f9399d26a407d0f"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/oneDNN-thirdparty.txt",
+      "sha256": "9117585dfc6b5cd0fafc063312f28a86ec82eb97bf68316dcefcaaa7fc11428e"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/pybind11-license.txt",
+      "sha256": "83965b843b98f670d3a85bd041ed4b372c8ec50d7b4a5995a83ac697ba675dcb"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/spdlog--license.txt",
+      "sha256": "a7241a379cb98d37788f82c2fc2e484c3ae85dae881fd3406f0637644850926f"
+    },
+    {
+      "path": "docs/dependencies/notices/shona/thrust--license.txt",
+      "sha256": "01b767dcd7d36f42efb608076741cf83f154a995e198028cb698aadc3a43b63b"
+    }
+  ]
+}

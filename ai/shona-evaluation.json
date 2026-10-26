@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "scope": "Authored synthetic local-development diagnostics, not representative quality or native-speaker acceptance. Marked examples change the input and test exact source copying, not automatic language detection.",
+  "cases": [
+    {
+      "id": "en-bag",
+      "profile": "CT2_EN_SN",
+      "source": "I lost my bag."
+    },
+    {
+      "id": "en-place",
+      "profile": "CT2_EN_SN",
+      "source": "I left a black bag in Joina City."
+    },
+    {
+      "id": "en-umbrella",
+      "profile": "CT2_EN_SN",
+      "source": "I found a red umbrella."
+    },
+    {
+      "id": "sn-bag",
+      "profile": "CT2_SN_EN",
+      "source": "Ndarasa bhegi rangu.",
+      "baseline": "OPUS_SN_EN"
+    },
+    {
+      "id": "sn-place",
+      "profile": "CT2_SN_EN",
+      "source": "Ndasiya bhegi dema muJoina City.",
+      "baseline": "OPUS_SN_EN"
+    },
+    {
+      "id": "sn-code-switch",
+      "profile": "CT2_SN_EN",
+      "source": "Ndasiya black Lenovo bag muJoina around 2pm.",
+      "baseline": "OPUS_SN_EN"
+    },
+    {
+      "id": "sn-marked",
+      "profile": "CT2_SN_EN_KEEP",
+      "source": "Ndasiya [[keep:black Lenovo bag]] mu[[keep:Joina]] [[keep:around 2pm]]."
+    },
+    {
+      "id": "en-marked-place",
+      "profile": "CT2_EN_SN_KEEP",
+      "source": "I left a black bag in [[keep:Joina City]]."
+    }
+  ]
+}

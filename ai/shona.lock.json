@@ -1,0 +1,240 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/dependencies/shona-adoption.md",
+  "runtimeLockSha256": "8a00a393185e1a1e4fbef2092529df4329c0ac67e4b4f262c2aa7c7c0d8340d8",
+  "files": [
+    {
+      "group": "CT2_EN_SN",
+      "role": "model.bin",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "model.bin",
+      "local": "ct2_en_sn/model.bin",
+      "bytes": 77566675,
+      "sha256": "8fb57a9473ef0df4781c28879e7351f785574f1295108068bac44042e4f749fc",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/model.bin?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "config.json",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "config.json",
+      "local": "ct2_en_sn/config.json",
+      "bytes": 223,
+      "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/config.json?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "shared_vocabulary.json",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "shared_vocabulary.json",
+      "local": "ct2_en_sn/shared_vocabulary.json",
+      "bytes": 1099336,
+      "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/shared_vocabulary.json?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "source.spm",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "source.spm",
+      "local": "ct2_en_sn/source.spm",
+      "bytes": 824524,
+      "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/source.spm?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "target.spm",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "target.spm",
+      "local": "ct2_en_sn/target.spm",
+      "bytes": 832442,
+      "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/target.spm?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "model.bin",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "model.bin",
+      "local": "ct2_sn_en/model.bin",
+      "bytes": 77566675,
+      "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/model.bin?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "config.json",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "config.json",
+      "local": "ct2_sn_en/config.json",
+      "bytes": 223,
+      "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/config.json?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "shared_vocabulary.json",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "shared_vocabulary.json",
+      "local": "ct2_sn_en/shared_vocabulary.json",
+      "bytes": 1099336,
+      "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/shared_vocabulary.json?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "source.spm",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "source.spm",
+      "local": "ct2_sn_en/source.spm",
+      "bytes": 832442,
+      "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/source.spm?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "target.spm",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "target.spm",
+      "local": "ct2_sn_en/target.spm",
+      "bytes": 824524,
+      "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/target.spm?download=true"
+    }
+  ],
+  "licenseEvidence": [
+    {
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "license": "Apache-2.0",
+      "path": "README.md",
+      "sha256": "2e70845d26425dbcb34e081e20e24c73a1d812468d4a868c3cd93f0f7fcb9a61"
+    },
+    {
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "license": "Apache-2.0",
+      "path": "README.md",
+      "sha256": "1d921623a84f187db0d67675fb9d1d4916992a5d0c872db706ef105fc95bd90f"
+    },
+    {
+      "repository": "Helsinki-NLP/opus-mt-en-sn",
+      "revision": "7313e969b1783060740e1ea49cf5ad0876e4792e",
+      "path": "README.md",
+      "license": "Apache-2.0",
+      "sha256": "2c143d471ee2b2cabe6224d6a3939c674384f709240c1eee5927652c8db5ba9a"
+    },
+    {
+      "repository": "Helsinki-NLP/opus-mt-sn-en",
+      "revision": "9fc9d70ed5584666e50ad1d43aa72317bfa6f5e2",
+      "path": "README.md",
+      "license": "Apache-2.0",
+      "sha256": "2e1eb2c8c9d9c1dcdb6bfcd5c961f4ab6742376040be4d3d05407a3b1b9364f6"
+    }
+  ],
+  "sources": {
+    "ai/shona.py": "77ac773b6dd3c6e734d1cd9f845de34d8df2568df9a3168a73072888aae3b06e",
+    "ai/shona_integrity.py": "9652cca1b3d772a3ce98824e25436b3d23dadea9d7d4af1be651f81323934047",
+    "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+    "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+    "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+    "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b"
+  },
+  "configuration": {
+    "CT2_EN_SN": {
+      "task": "MULTILINGUAL_TRANSLATION",
+      "sourceLanguage": "en",
+      "targetLanguage": "sn",
+      "beamSize": 4,
+      "maxInputTokens": 128,
+      "maxOutputTokens": 32,
+      "representation": "ctranslate2-marian-v1",
+      "computeType": "int8_float32",
+      "device": "cpu",
+      "threads": 2,
+      "trust": "UNVERIFIED_TRANSLATION",
+      "deploymentScope": "LOCAL_DEVELOPMENT_ONLY",
+      "sourceFormat": "explicit-source-eos-v1",
+      "decoding": "cpu-int8-float32-beam4-v1",
+      "disableUnknownOutput": true,
+      "tokenCountScope": "SOURCE_MODEL_TOKENS_WITH_EOS"
+    },
+    "CT2_SN_EN": {
+      "task": "MULTILINGUAL_TRANSLATION",
+      "sourceLanguage": "sn",
+      "targetLanguage": "en",
+      "beamSize": 4,
+      "maxInputTokens": 128,
+      "maxOutputTokens": 32,
+      "representation": "ctranslate2-marian-v1",
+      "computeType": "int8_float32",
+      "device": "cpu",
+      "threads": 2,
+      "trust": "UNVERIFIED_TRANSLATION",
+      "deploymentScope": "LOCAL_DEVELOPMENT_ONLY",
+      "sourceFormat": "explicit-source-eos-v1",
+      "decoding": "cpu-int8-float32-beam4-v1",
+      "disableUnknownOutput": true,
+      "tokenCountScope": "SOURCE_MODEL_TOKENS_WITH_EOS"
+    },
+    "CT2_EN_SN_KEEP": {
+      "task": "MULTILINGUAL_TRANSLATION",
+      "sourceLanguage": "en",
+      "targetLanguage": "sn",
+      "beamSize": 4,
+      "maxInputTokens": 128,
+      "maxOutputTokens": 32,
+      "representation": "ctranslate2-marked-v1",
+      "computeType": "int8_float32",
+      "device": "cpu",
+      "threads": 2,
+      "trust": "UNVERIFIED_TRANSLATION",
+      "deploymentScope": "LOCAL_DEVELOPMENT_ONLY",
+      "sourceFormat": "explicit-source-eos-v1",
+      "decoding": "cpu-int8-float32-beam4-v1",
+      "disableUnknownOutput": true,
+      "artifactGroup": "CT2_EN_SN",
+      "protectionPolicy": "explicit-keep-utf16-v1",
+      "reservedPlaceholderPrefix": "982",
+      "maxPreservedSpans": 8,
+      "maxPreservedSpanUtf16": 256,
+      "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS"
+    },
+    "CT2_SN_EN_KEEP": {
+      "task": "MULTILINGUAL_TRANSLATION",
+      "sourceLanguage": "sn",
+      "targetLanguage": "en",
+      "beamSize": 4,
+      "maxInputTokens": 128,
+      "maxOutputTokens": 32,
+      "representation": "ctranslate2-marked-v1",
+      "computeType": "int8_float32",
+      "device": "cpu",
+      "threads": 2,
+      "trust": "UNVERIFIED_TRANSLATION",
+      "deploymentScope": "LOCAL_DEVELOPMENT_ONLY",
+      "sourceFormat": "explicit-source-eos-v1",
+      "decoding": "cpu-int8-float32-beam4-v1",
+      "disableUnknownOutput": true,
+      "artifactGroup": "CT2_SN_EN",
+      "protectionPolicy": "explicit-keep-utf16-v1",
+      "reservedPlaceholderPrefix": "982",
+      "maxPreservedSpans": 8,
+      "maxPreservedSpanUtf16": 256,
+      "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS"
+    }
+  },
+  "evaluationSha256": "805d5799c555d957f5d85e23c0dbe6bfc93f5e4eb9a94f9c7f1f24fa64c47aad"
+}

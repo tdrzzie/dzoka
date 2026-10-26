@@ -12,4 +12,6 @@
 
 - [Language quality and Shona](language-quality-adoption.md): official larger SmolLM2 and explicit Apache-2.0 dedicated Shona/Spanish/German-to-English ONNX exports on the unchanged separate 22-wheel runtime.
 
+- [Bidirectional Shona and explicit span preservation](shona-adoption.md): Apache-2.0 int8 exports plus a separately reviewed 23-wheel CTranslate2 environment. Bundled vendor terms limit this adoption to local development; production/SaaS/distribution remains a separate gate.
+
 The [artifact lock](../../dependencies.lock.json) records the combined application/test graph and explicit license choices. Dependency hashes and license declarations are not a complete source audit or vulnerability certification. New runtime versions, providers, model weights and production distributions require their own bounded adoption decision before installation.

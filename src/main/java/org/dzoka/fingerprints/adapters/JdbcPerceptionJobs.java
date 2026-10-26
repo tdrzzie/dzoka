@@ -97,6 +97,7 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
                         if(!language.equals(expected)&&!language.startsWith(expected+"-"))throw new IllegalArgumentException("Unsupported language profile");}
                 }
             }
+            if(profile.manifest().get("configuration") instanceof Map<?,?> config&&"ctranslate2-marked-v1".equals(config.get("representation")))org.dzoka.fingerprints.domain.ShonaEvidence.validateSource(new String(text(c,tenant,report,revision),java.nio.charset.StandardCharsets.UTF_8),profile.manifest());
             String sha;int length,width=0,height=0;byte[] payload;
             if(rerank!=null){payload=json.writeValueAsBytes(sorted(Map.of("query",new String(text(c,tenant,report,revision),java.nio.charset.StandardCharsets.UTF_8),"candidates",rerank.candidates())));if(payload.length>65536)throw new IllegalArgumentException("Rerank payload exceeds bound");}else if(prompt!=null){payload=json.writeValueAsBytes(sorted(Map.of("query",new String(text(c,tenant,report,revision),java.nio.charset.StandardCharsets.UTF_8),"prompt",prompt.text())));if(payload.length>65536)throw new IllegalArgumentException("Prompt payload exceeds bound");}else payload=null;
             if(media!=null){
@@ -211,7 +212,10 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             if(!result.profileKey().equals(profile.key())||!result.inputSha256().equals(r.getString("input_sha256"))
                     ||result.generatedAt().isAfter(Instant.now().plusSeconds(30))||result.generatedAt().isBefore(r.getTimestamp("created_at").toInstant().minusSeconds(5)))throw new IllegalArgumentException("Perception provenance mismatch");
             if(!mediaValid(c,tenant,r.getObject("media_id",UUID.class),result.inputSha256()))return false;
-            if(Set.of("LLM","MULTILINGUAL_TRANSLATION").contains(profile.task()))org.dzoka.fingerprints.domain.GenerativeEvidence.validate(profile.task(),result.evidence(),profile.manifest());
+            if(Set.of("LLM","MULTILINGUAL_TRANSLATION").contains(profile.task())){
+                if(profile.manifest().get("configuration") instanceof Map<?,?> config&&"ctranslate2-marked-v1".equals(config.get("representation")))org.dzoka.fingerprints.domain.ShonaEvidence.validate(result.evidence(),profile.manifest(),new String(text(c,tenant,j.reportId(),j.sourceRevision()),java.nio.charset.StandardCharsets.UTF_8));
+                else org.dzoka.fingerprints.domain.GenerativeEvidence.validate(profile.task(),result.evidence(),profile.manifest());
+            }
             else if(Set.of("ATTRIBUTES","TRANSLATION","RERANK").contains(profile.task())){
                 var ids=new HashSet<String>();String source="";
                 if(profile.task().equals("RERANK")){var input=inputRef(c,tenant,id,result.lease());for(var candidate:json.readTree(input.bytes()).get("candidates"))ids.add(candidate.get("id").asString());}
