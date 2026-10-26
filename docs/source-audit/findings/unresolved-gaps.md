@@ -23,4 +23,6 @@ The architecture milestone is recorded in the [accepted baseline](../../architec
 
 Individual reports record narrower exclusions: checkpoint/native-code security, complete router/rules/filter enforcement, remote provider contracts, decoder paths and transitive licenses. Resolve these at integration adoption; a bounded review is not blanket approval.
 
+2026-10-26 adoption update: separately reviewed immutable [joint/region artifacts](../../dependencies/joint-vision-adoption.md) supply local Jina CLIP v1 paired encoders, SSD detection and FCN semantic segmentation on the existing reviewed CPU runtime. This does not resolve grants for previously ambiguous distributions or authorize copying their implementation. Paired-space identity, private typed outputs and explicit cohort selection are implemented under [ADR 0030](../../adr/0030-joint-vision-and-region-models.md); representative quality, cross-modal retrieval/indexing, instance segmentation, redistribution notices and deployment acceptance remain distinct work. [STATUS.md](../../../STATUS.md) records executed conformance and external prerequisites.
+
 All 100 sections remain in [requirements coverage](../../requirements/coverage.md). The [earlier gap catalogue](../../findings/unresolved-gaps.md) remains intact for detailed planning, with assumptions subject to current evidence and ADRs.

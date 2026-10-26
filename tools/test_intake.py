@@ -32,6 +32,7 @@ def main():
     p.add_argument('--pg-bin');p.add_argument('--maven');p.add_argument('--storage-only',action='store_true',help='Explicitly excludes Docker sandbox tests; never a production decoder fallback')
     p.add_argument('--with-ai',action='store_true',help='Also run the reviewed native Python/model provider; requires its installed artifact lock')
     p.add_argument('--with-perception',action='store_true',help='Also run licensed native vision/local/OCR/speech profiles and synthetic voice fixture')
+    p.add_argument('--with-vision',action='store_true',help='Run reviewed joint image/text, detection and semantic segmentation models')
     p.add_argument('--restore-drill',action='store_true',help='Verify database logical restore after the full passing suite')
     args=p.parse_args();run=ROOT/'.test-tmp'/('intake-'+str(uuid.uuid4()));run.mkdir(parents=True)
     access,secret=secrets.token_hex(12),secrets.token_urlsafe(32)
@@ -48,7 +49,9 @@ def main():
         if not args.storage_only:pull(RASTER_IMAGE)
         if not args.native_s3:pull(S3_IMAGE)
         ports=free_ports(10)
-        flags=['mini','-master.telemetry=false','-s3.port.iceberg=0','-s3.port.lance=0','-admin.port.legacy=0','-admin.ui=false','-volume.max=4','-master.volumeSizeLimitMB=32']
+        # Each fixture bucket can allocate its own collection volumes. Keep the
+        # disposable capacity bounded while allowing all four provider fixtures.
+        flags=['mini','-master.telemetry=false','-s3.port.iceberg=0','-s3.port.lance=0','-admin.port.legacy=0','-admin.ui=false','-volume.max=16','-master.volumeSizeLimitMB=32']
         if args.native_s3:
             binary=Path(args.native_s3).resolve()
             # Reviewed archive hash is checked by bootstrap/operator before executable selection.
@@ -75,7 +78,7 @@ def main():
             time.sleep(0.5)
         else:raise RuntimeError('Authenticated S3 readiness timeout')
         env['DZOKA_TEST_S3_ENDPOINT']=endpoint
-        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','StartupConfigurationIT']
+        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','VisionJobsIT','StartupConfigurationIT']
         if not args.storage_only:classes.append('SandboxMediaIT')
         if args.with_ai:
             subprocess.run([sys.executable,str(ROOT/'tools/ai_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
@@ -88,6 +91,10 @@ def main():
             subprocess.run([sys.executable,str(ROOT/'tools/perception_fixture.py'),'--output',str(audio)],cwd=ROOT,env=env,check=True)
             env['DZOKA_TEST_SPEECH_WAV']=str(audio);classes.append('PerceptionProviderIT')
         else:print('Explicit portable perception lifecycle scope; native vision/OCR/speech require --with-perception.',flush=True)
+        if args.with_vision:
+            if args.storage_only:raise ValueError('Vision models require real image sanitizer')
+            subprocess.run([sys.executable,str(ROOT/'tools/vision_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
+            classes.append('VisionProviderIT')
         env['DZOKA_IT_CLASSES']=','.join(classes)
         if args.storage_only:
             print('Explicit storage-only verification: Docker decoder tests excluded, no decoder fallback.',flush=True)
@@ -103,7 +110,12 @@ def main():
             try:child.wait(timeout=15)
             except subprocess.TimeoutExpired:child.kill();child.wait(timeout=5)
         if log is not None:log.close()
-        if created:subprocess.run(['docker','rm','--force','--volumes',container],capture_output=True,timeout=60)
+        if created:
+            # Private synthetic diagnostics stay ignored; never print credentials.
+            try:
+                with (run/'s3.log').open('w',encoding='utf-8') as output:
+                    subprocess.run(['docker','logs',container],stdout=output,stderr=subprocess.STDOUT,timeout=30)
+            finally:subprocess.run(['docker','rm','--force','--volumes',container],capture_output=True,timeout=60)
         credentials.unlink(missing_ok=True)
 
 if __name__=='__main__':raise SystemExit(main())

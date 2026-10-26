@@ -8,10 +8,10 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 2 | REQUIRED SOURCE AUDIT | Complete within declared static scopes: 29 pinned repositories and one edition-pinned standard; 176 evidence records; no pending mandatory audits. |
 | 3 | PROJECT IDENTITY | Temporary codename Dzoka retained. |
 | 4 | CORE ARCHITECTURAL PRINCIPLE | Specified; implementation and production validation pending. |
-| 5 | ITEM FINGERPRINT | Text and explicitly pinned vision/local/OCR/speech components, full profile/input/output provenance, source-pixel regions, immutable cohort snapshots, measured coverage and atomic activation/rollback implemented; wider quality/profiles and larger/index migration remain. |
+| 5 | ITEM FINGERPRINT | Text and explicitly pinned vision/local/OCR/speech/joint/detection/semantic-mask components, full profile/input/output provenance, source-pixel regions, immutable cohort snapshots, measured coverage and atomic activation/rollback implemented; wider quality/profiles and larger/index migration remain. |
 | 6 | MULTIMODAL INTAKE | Text/uncertain context, private PNG/JPEG and strict short PCM16 WAV intake/leased inference implemented with exact raw preservation and governed erasure. Broader codecs/video/documents/channels and production quality remain. |
 | 7 | WHATSAPP-FIRST EXPERIENCE | Specified; implementation and production validation pending. |
-| 8 | AI PERCEPTION LAYER | Durable private text/ResNet/global signatures/classical local/Paddle OCR/English-CTC speech profiles run locally and can be explicitly snapshot-selected. Wider models/languages/LLM perception, representative quality and deployment hardening remain. |
+| 8 | AI PERCEPTION LAYER | Durable private text/ResNet/classical local/Paddle OCR/English-CTC speech plus paired Jina joint image/text, SSD detection and FCN semantic segmentation profiles support explicit snapshot selection. Wider models/languages/LLM perception, representative quality and deployment hardening remain. |
 | 9 | SEARCH AND MATCHING PIPELINE | Specified; implementation and production validation pending. |
 | 10 | MATCH EVIDENCE MODEL | Specified; implementation and production validation pending. |
 | 11 | MISSING EVIDENCE RULE | Nullable source context and explicit fingerprint AVAILABLE/PENDING/UNAVAILABLE/FAILED states implemented; scoring-wide coverage/reliability remains. |
@@ -20,7 +20,7 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 14 | AI-GENERATED PRIVATE OWNERSHIP CHALLENGES | Specified; implementation and production validation pending. |
 | 15 | TRUST AND FRAUD ENGINE | Specified; implementation and production validation pending. |
 | 16 | PRIVACY ARCHITECTURE | Specified; implementation and production validation pending. |
-| 17 | DATABASE ARCHITECTURE | V1–V7 cover foundation, private intake, text/perception jobs/profiles/components/shared quotas/raw-audio retention and immutable multimodal cohorts/activation history; full recovery schema and spatial/vector extensions remain. |
+| 17 | DATABASE ARCHITECTURE | V1–V8 cover foundation, private intake, text/perception jobs/profiles/components/shared quotas/raw-audio retention and immutable multimodal cohorts/activation history; full recovery schema and spatial/vector extensions remain. |
 | 18 | VECTOR SEARCH ABSTRACTION | Specified; implementation and production validation pending. |
 | 19 | EVENT-DRIVEN ARCHITECTURE | Transactional outbox/inbox and leased dispatch foundation implemented/tested; live Kafka adapter, scheduling, DLQ and operations remain. |
 | 20 | RECOVERY EVENT MODEL | Specified; implementation and production validation pending. |

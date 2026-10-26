@@ -28,6 +28,11 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             String hash=ContentDigest.sha256(codec.writeValueAsString(sorted(manifest)).getBytes(java.nio.charset.StandardCharsets.UTF_8));
             if(!hash.equals(r.getString(2))||!r.getString(1).equals(manifest.get("task"))||!"perception-profile-v1".equals(manifest.get("schema")))
                 throw new Failures.Unavailable(new IllegalStateException("Perception profile identity mismatch"));
+            if(r.getString(1).startsWith("JOINT_")){
+                if(!(manifest.get("sharedSpace") instanceof Map<?,?> shared)||!(shared.get("definition") instanceof Map<?,?> definition)
+                    ||!ContentDigest.sha256(codec.writeValueAsString(sorted(definition)).getBytes(java.nio.charset.StandardCharsets.UTF_8)).equals(shared.get("key")))
+                    throw new Failures.Unavailable(new IllegalStateException("Joint space identity mismatch"));
+            }
             return new Profile(r.getString(1),r.getString(2),manifest);
         }
     }
@@ -49,17 +54,17 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
         }
     }
     @Override public Job enqueue(VerifiedIdentity actor,UUID tenant,UUID report,UUID profileId,UUID media,byte[] audio){
-        if(profileId==null||(media==null)==(audio==null))throw new IllegalArgumentException("Exactly one input required");
+        if(profileId==null||(media!=null&&audio!=null))throw new IllegalArgumentException("Invalid input selection");
         final int samples=audio==null?0:PerceptionEvidence.wav(audio);
         return tx.execute(actor,tenant,"reports:write",c->{
             lock(c,tenant);int revision=report(c,tenant,report,true);var profile=profile(c,tenant,profileId);
-            if(profile.task().equals("SPEECH")!=(audio!=null))throw new IllegalArgumentException("Wrong input kind");
+            if(profile.task().equals("SPEECH")!=(audio!=null)||profile.task().equals("JOINT_TEXT")!=(media==null&&audio==null))throw new IllegalArgumentException("Wrong input kind");
             String sha;int length,width=0,height=0;
             if(media!=null){
                 try(var s=q(c,"SELECT derivative_sha256,derivative_bytes,width,height FROM dzoka.media_assets WHERE tenant_id=? AND id=? AND report_id=? AND state='SANITIZED' AND NOT purge_pending AND expires_at>clock_timestamp()",tenant,media)){
                     s.setObject(3,report);try(var r=s.executeQuery()){if(!r.next())throw new Failures.NotFound();sha=r.getString(1);length=r.getInt(2);width=r.getInt(3);height=r.getInt(4);}
                 }
-            }else{sha=ContentDigest.sha256(audio);length=audio.length;}
+            }else{byte[] source=audio==null?text(c,tenant,report,revision):audio;sha=ContentDigest.sha256(source);length=source.length;}
             try(var s=c.prepareStatement(JOB+"WHERE j.tenant_id=? AND j.report_id=? AND j.source_revision=? AND j.profile_id=? AND j.media_id IS NOT DISTINCT FROM CAST(? AS uuid) AND j.input_sha256=?")){
                 s.setObject(1,tenant);s.setObject(2,report);s.setInt(3,revision);s.setObject(4,profileId);s.setObject(5,media);s.setString(6,sha);try(var r=s.executeQuery()){if(r.next())return job(r);}
             }
@@ -76,8 +81,8 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             try(var s=c.prepareStatement("UPDATE dzoka.ai_usage SET pending=pending+1 WHERE tenant_id=? AND pending<32")){s.setObject(1,tenant);if(s.executeUpdate()!=1)throw new Failures.Conflict();}
             UUID id=UUID.randomUUID();
             try(var s=c.prepareStatement("INSERT INTO dzoka.perception_jobs(tenant_id,id,report_id,source_revision,profile_id,media_id,input_sha256,input_bytes,input_type,width,height,samples,state) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,'QUEUED')")){
-                s.setObject(1,tenant);s.setObject(2,id);s.setObject(3,report);s.setInt(4,revision);s.setObject(5,profileId);s.setObject(6,media);s.setString(7,sha);s.setInt(8,length);s.setString(9,audio==null?"IMAGE_PNG":"AUDIO_WAV");
-                s.setObject(10,audio==null?width:null);s.setObject(11,audio==null?height:null);s.setObject(12,audio==null?null:samples);s.executeUpdate();
+                s.setObject(1,tenant);s.setObject(2,id);s.setObject(3,report);s.setInt(4,revision);s.setObject(5,profileId);s.setObject(6,media);s.setString(7,sha);s.setInt(8,length);s.setString(9,media!=null?"IMAGE_PNG":audio!=null?"AUDIO_WAV":"TEXT_UTF8");
+                s.setObject(10,media!=null?width:null);s.setObject(11,media!=null?height:null);s.setObject(12,audio==null?null:samples);s.executeUpdate();
             }
             if(audio!=null)try(var s=c.prepareStatement("INSERT INTO dzoka.perception_audio(tenant_id,job_id,raw_wav) VALUES(?,?,?)")){s.setObject(1,tenant);s.setObject(2,id);s.setBytes(3,audio);s.executeUpdate();}
             journal(c,actor,tenant,report,"perception.requested");
@@ -106,6 +111,15 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
         }
     });}
     private record Input(String sha,int length,String key,byte[] bytes){}
+    private static byte[] text(Connection c,UUID tenant,UUID report,int revision)throws SQLException{
+        try(var s=q(c,"SELECT normalized_text FROM dzoka.report_revisions WHERE tenant_id=? AND report_id=? AND revision=?",tenant,report)){
+            s.setInt(3,revision);try(var r=s.executeQuery()){
+                if(!r.next())throw new Failures.NotFound();String value=r.getString(1);
+                if(value==null||value.isBlank()||value.codePointCount(0,value.length())>8000)throw new IllegalArgumentException("Text unavailable or oversized");
+                byte[] bytes=value.getBytes(java.nio.charset.StandardCharsets.UTF_8);if(bytes.length>32000)throw new IllegalArgumentException("Text oversized");return bytes;
+            }
+        }
+    }
     private static boolean mediaValid(Connection c,UUID tenant,UUID media,String sha)throws SQLException{
         if(media==null)return true;
         try(var s=q(c,"SELECT 1 FROM dzoka.media_assets WHERE tenant_id=? AND id=? AND state='SANITIZED' AND NOT purge_pending AND derivative_sha256=? AND expires_at>clock_timestamp()",tenant,media)){
@@ -123,6 +137,7 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             s.setObject(3,lease);try(var r=s.executeQuery()){
                 if(!r.next())throw new Failures.NotFound();String sha=r.getString("input_sha256");int size=r.getInt("input_bytes");UUID media=r.getObject("media_id",UUID.class);
                 if(!mediaValid(c,tenant,media,sha))throw new Failures.NotFound();
+                if("TEXT_UTF8".equals(r.getString("input_type")))return new Input(sha,size,null,text(c,tenant,r.getObject("report_id",UUID.class),r.getInt("source_revision")));
                 if(media!=null)try(var m=q(c,"SELECT derivative_key FROM dzoka.media_assets WHERE tenant_id=? AND id=?",tenant,media);var row=m.executeQuery()){
                     if(!row.next())throw new Failures.NotFound();return new Input(sha,size,row.getString(1),null);
                 }
@@ -150,7 +165,7 @@ public final class JdbcPerceptionJobs implements PerceptionJobs {
             if(!result.profileKey().equals(profile.key())||!result.inputSha256().equals(r.getString("input_sha256"))
                     ||result.generatedAt().isAfter(Instant.now().plusSeconds(30))||result.generatedAt().isBefore(r.getTimestamp("created_at").toInstant().minusSeconds(5)))throw new IllegalArgumentException("Perception provenance mismatch");
             if(!mediaValid(c,tenant,r.getObject("media_id",UUID.class),result.inputSha256()))return false;
-            PerceptionEvidence.validate(profile.task(),result.evidence(),r.getInt("width"),r.getInt("height"),r.getInt("samples"));
+            PerceptionEvidence.validate(profile.task(),result.evidence(),r.getInt("width"),r.getInt("height"),r.getInt("samples"),profile.manifest());
             if(evidence.getBytes(java.nio.charset.StandardCharsets.UTF_8).length>60000)throw new IllegalArgumentException("Output exceeds bound");
             try(var insert=c.prepareStatement("INSERT INTO dzoka.perception_components(tenant_id,id,job_id,report_id,source_revision,profile_id,input_sha256,evidence,generated_at) VALUES(?,?,?,?,?,?,?,CAST(? AS jsonb),?)")){
                 insert.setObject(1,tenant);insert.setObject(2,UUID.randomUUID());insert.setObject(3,id);insert.setObject(4,j.reportId());insert.setInt(5,j.sourceRevision());insert.setObject(6,j.profileId());insert.setString(7,result.inputSha256());insert.setString(8,evidence);insert.setTimestamp(9,Timestamp.from(result.generatedAt()));insert.executeUpdate();

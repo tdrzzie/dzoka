@@ -11,7 +11,7 @@ $env:JAVA_HOME='C:\Program Files\Java\jdk-25.0.4'
 python tools/verify_local.py
 ```
 
-This requires every phase: source gate, M1 requirements/preservation, Python regressions, Maven integrity, text-native artifact/conformance, perception artifact identity, full actual-provider integration and database restore. The full integration now includes all four perception profiles and explicit multimodal activation; [setup/limits](../development/perception.md) apply. A missing provider, failed phase or changed source fails the run; no portable-contract fallback. Results/logs stay in ignored `.test-tmp/local-verification-*/`, binding code/lock inputs to SHA-256. Logs and synthetic archives are diagnostics, not material to publish.
+This requires every phase: source gate, M1 requirements/preservation, Python regressions, Maven integrity, text-native artifact/conformance, perception and joint/region artifact identities, full actual-provider integration and database restore. The full integration now includes the four earlier perception profiles plus paired Jina encoders, SSD detection, FCN semantic segmentation and explicit multimodal activation; [setup/limits](../development/perception.md) apply. A missing provider, failed phase or changed source fails the run; no portable-contract fallback. Results/logs stay in ignored `.test-tmp/local-verification-*/`, binding code/lock inputs to SHA-256. Logs and synthetic archives are diagnostics, not material to publish.
 
 For a reviewed native PostgreSQL route, add `--pg-bin 'C:\Program Files\PostgreSQL\18\bin' --maven 'D:\Projects\ai\dzoka\.audit-cache\apache-maven-3.9.16\bin\mvn.cmd'`. Docker is still required for the real decoder and, unless separately selected through the intake harness, private S3. Individual suites remain documented in the [foundation](../development/foundation.md), [intake](../development/intake-media.md) and [AI](../development/ai-text.md) guides.
 
@@ -20,12 +20,13 @@ For a reviewed native PostgreSQL route, add `--pg-bin 'C:\Program Files\PostgreS
 | Boundary | Selected implemented profile | Activation requirement |
 |---|---|---|
 | Java core | Spring Boot 4.1.2, Java 21 bytecode; local JDK 25.0.4 | Verify all 106 locked JAR/POM/license artifacts; compile/package before separate migrations |
-| Authoritative database | PostgreSQL 18.6; Flyway V1–V7 | Separate migrator and non-owner/non-BYPASSRLS `dzoka_app`; no API-owned migration credentials |
+| Authoritative database | PostgreSQL 18.6; Flyway V1–V8 | Separate migrator and non-owner/non-BYPASSRLS `dzoka_app`; no API-owned migration credentials |
 | API authentication/session | Stateless RS256 bearer JWT; exact issuer, audience, expiry and subject; local active membership | HTTPS issuer/JWKS outside explicit loopback tests; no cookie login/session or token-role authorization |
 | Private media | Explicitly enabled S3 profile, never-versioned private bucket, bounded PNG/JPEG | HTTPS outside loopback; bucket policy/ACL/versioning checks; no public object URLs |
 | Decoder | Reviewed digest-pinned external Temurin child | Only trusted sanitation worker has Docker access; child non-root, no network/credentials/socket, bounded resources |
 | Private text worker | Windows amd64 CPython 3.14.7; 21 locked wheels; quantized MiniLM ONNX/tokenizer | Check exact profile/model/runtime bytes; private service `ai:work` membership; no DB/S3 credentials |
 | Private perception worker | Same reviewed CPU runtime; pinned ResNet/Paddle/English CTC plus independently authored Harris patches | Exact six weight/dictionary and source/profile checks; leased sanitized PNG/strict PCM only; no DB/S3 credentials, redirects, proxy or runtime downloads |
+| Private joint/region worker | Same reviewed CPU runtime; Jina CLIP v1 paired encoders, SSD-MobileNetV1 and FCN-ResNet50 | Eight exact artifact checks and shared-space binding; leased sanitized PNG or current report text; [setup and bounded scope](../development/joint-vision.md) |
 | Worker scheduling | Explicit bounded commands, operator-controlled | No hidden daemon, Kafka adapter or scheduler exists; see procedures below |
 | HTTP ingress | API requires authentication; test harness binds loopback | A real deployment must configure TLS ingress, rate limits, network isolation and secret delivery; no production ingress artifact is approved by this local profile |
 

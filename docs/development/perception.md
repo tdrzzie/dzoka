@@ -75,3 +75,5 @@ python tools/test_intake.py --with-ai --with-perception --restore-drill
 ```
 
 `--with-perception` verifies exact artifacts, generates an entirely synthetic English WAV with the installed Windows speech synthesizer (test fixture only, no recording/voice-weight redistribution), then exercises all four real providers through HTTP/JWT/S3/decoder boundaries. No native fixture/provider is silently replaced if unavailable. Default portable CI runs lifecycle/validation contracts and explicitly excludes native models; other native platforms require adoption/conformance review. `tools/verify_local.py` now requests all these provider checks by default. See [STATUS](../../STATUS.md) for actual counts/results, not assumptions from this guide.
+
+Separate [joint image/text, detection and semantic segmentation profiles](joint-vision.md) extend this pipeline without changing the earlier profiles. The full local verifier now requires their separately reviewed artifacts too; use `--with-vision` when requesting them through the intake harness.

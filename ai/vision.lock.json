@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/dependencies/joint-vision-adoption.md",
+  "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+  "files": [
+    {
+      "group": "JOINT",
+      "repository": "jinaai/jina-clip-v1",
+      "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+      "path": "onnx/text_model_quantized.onnx",
+      "local": "joint-text.onnx",
+      "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2",
+      "bytes": 138070131,
+      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/onnx/text_model_quantized.onnx"
+    },
+    {
+      "group": "JOINT",
+      "repository": "jinaai/jina-clip-v1",
+      "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+      "path": "onnx/vision_model_quantized.onnx",
+      "local": "joint-image.onnx",
+      "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657",
+      "bytes": 87853512,
+      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/onnx/vision_model_quantized.onnx"
+    },
+    {
+      "group": "JOINT",
+      "repository": "jinaai/jina-clip-v1",
+      "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+      "path": "tokenizer.json",
+      "local": "joint-tokenizer.json",
+      "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7",
+      "bytes": 711827,
+      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/tokenizer.json"
+    },
+    {
+      "group": "JOINT",
+      "repository": "jinaai/jina-clip-v1",
+      "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+      "path": "preprocessor_config.json",
+      "local": "joint-preprocessor.json",
+      "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5",
+      "bytes": 527,
+      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/preprocessor_config.json"
+    },
+    {
+      "group": "JOINT",
+      "repository": "jinaai/jina-clip-v1",
+      "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+      "path": "config.json",
+      "local": "joint-config.json",
+      "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741",
+      "bytes": 1927,
+      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/config.json"
+    },
+    {
+      "group": "JOINT",
+      "repository": "jinaai/jina-clip-v1",
+      "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+      "path": "tokenizer_config.json",
+      "local": "joint-tokenizer-config.json",
+      "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007",
+      "bytes": 1243,
+      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/tokenizer_config.json"
+    },
+    {
+      "group": "DETECTION",
+      "repository": "onnxmodelzoo/ssd_mobilenet_v1_12",
+      "revision": "019281f3fcb151a90e491f3b2f0273f9f31bd6be",
+      "path": "ssd_mobilenet_v1_12.onnx",
+      "local": "detector.onnx",
+      "sha256": "b8fba5e404077d4048d27fcd1667e85e27e192eb9bf51e696c46a3acd7d21058",
+      "bytes": 29461455,
+      "url": "https://huggingface.co/onnxmodelzoo/ssd_mobilenet_v1_12/resolve/019281f3fcb151a90e491f3b2f0273f9f31bd6be/ssd_mobilenet_v1_12.onnx"
+    },
+    {
+      "group": "SEGMENTATION",
+      "repository": "onnxmodelzoo/fcn-resnet50-12",
+      "revision": "f2d2cd188853be0c07d4c11851279a6bd41e94b1",
+      "path": "fcn-resnet50-12.onnx",
+      "local": "segmenter.onnx",
+      "sha256": "eb5017d1b80372eb0b58552655274698817ba2e774437e2c2d3c0a613d2e99bd",
+      "bytes": 141193555,
+      "url": "https://huggingface.co/onnxmodelzoo/fcn-resnet50-12/resolve/f2d2cd188853be0c07d4c11851279a6bd41e94b1/fcn-resnet50-12.onnx"
+    }
+  ],
+  "sources": {
+    "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+    "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+    "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+    "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+  },
+  "jointSpace": {
+    "model": "jina-clip-v1-quantized-pair",
+    "dimensions": 768,
+    "metric": "COSINE",
+    "normalization": "L2",
+    "imageProcessing": "rgba-white-bilinear-halfpixel-short224-center224-clipnorm-v1",
+    "textProcessing": "serialized-bert-tokenizer-512-graph-pool-l2-v1",
+    "language": "en"
+  },
+  "configuration": {
+    "JOINT_IMAGE": {
+      "input": "IMAGE_PNG",
+      "output": "joint-embedding-v1"
+    },
+    "JOINT_TEXT": {
+      "input": "TEXT_UTF8",
+      "maxTokens": 512,
+      "maxCharacters": 8000,
+      "output": "joint-embedding-v1"
+    },
+    "DETECTION": {
+      "input": "IMAGE_PNG",
+      "processing": "rgb-u8-bilinear-300square-v1",
+      "threshold": 0.5,
+      "maxBoxes": 20,
+      "vocabulary": "coco-90"
+    },
+    "SEGMENTATION": {
+      "input": "IMAGE_PNG",
+      "processing": "rgb-bilinear-256square-imagenet-v1",
+      "maskGrid": [
+        64,
+        64
+      ],
+      "vocabulary": "pascal-voc-21"
+    }
+  }
+}

@@ -22,6 +22,7 @@ public final class PerceptionController {
     public record LeaseToken(UUID lease){public LeaseToken{Objects.requireNonNull(lease);}}
     public record Failure(UUID lease,String reason){}
     @PostMapping("/reports/{report}/perception/image") public Job image(@PathVariable UUID tenant,@PathVariable UUID report,@AuthenticationPrincipal Jwt jwt,@RequestBody Image body){return jobs.enqueue(actor(jwt),tenant,report,body.profileId(),body.mediaId(),null);}
+    @PostMapping("/reports/{report}/perception/text") public Job text(@PathVariable UUID tenant,@PathVariable UUID report,@AuthenticationPrincipal Jwt jwt,@RequestBody Profile body){return jobs.enqueue(actor(jwt),tenant,report,body.profileId(),null,null);}
     @PostMapping(value="/reports/{report}/perception/audio/{profile}",consumes="audio/wav") public Job audio(@PathVariable UUID tenant,@PathVariable UUID report,@PathVariable UUID profile,@AuthenticationPrincipal Jwt jwt,HttpServletRequest request)throws IOException{
         if(request.getContentLengthLong()>320044)throw new BoundedJsonInput.TooLarge();byte[] bytes=request.getInputStream().readNBytes(320045);
         if(bytes.length>320044)throw new BoundedJsonInput.TooLarge();return jobs.enqueue(actor(jwt),tenant,report,profile,null,bytes);
