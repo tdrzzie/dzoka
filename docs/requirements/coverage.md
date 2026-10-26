@@ -8,10 +8,10 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 2 | REQUIRED SOURCE AUDIT | Complete within declared static scopes: 29 pinned repositories and one edition-pinned standard; 176 evidence records; no pending mandatory audits. |
 | 3 | PROJECT IDENTITY | Temporary codename Dzoka retained. |
 | 4 | CORE ARCHITECTURAL PRINCIPLE | Specified; implementation and production validation pending. |
-| 5 | ITEM FINGERPRINT | First-class current view, immutable text components, source/model/config provenance and explicit modality availability implemented; full multimodal snapshots/migration promotion remain. |
-| 6 | MULTIMODAL INTAKE | M3 text/uncertain context and private PNG/JPEG intake implemented with immutable raw/normalized revisions; real-provider verification in STATUS. Audio/video/document/channel providers and production validation remain. |
+| 5 | ITEM FINGERPRINT | Text and explicitly pinned vision/local/OCR/speech components, full profile/input/output provenance, source-pixel regions, immutable cohort snapshots, measured coverage and atomic activation/rollback implemented; wider quality/profiles and larger/index migration remain. |
+| 6 | MULTIMODAL INTAKE | Text/uncertain context, private PNG/JPEG and strict short PCM16 WAV intake/leased inference implemented with exact raw preservation and governed erasure. Broader codecs/video/documents/channels and production quality remain. |
 | 7 | WHATSAPP-FIRST EXPERIENCE | Specified; implementation and production validation pending. |
-| 8 | AI PERCEPTION LAYER | Durable private text-inference jobs and one reviewed real local CPU embedding profile implemented; image/OCR/speech/LLM perception and production validation remain. |
+| 8 | AI PERCEPTION LAYER | Durable private text/ResNet/global signatures/classical local/Paddle OCR/English-CTC speech profiles run locally and can be explicitly snapshot-selected. Wider models/languages/LLM perception, representative quality and deployment hardening remain. |
 | 9 | SEARCH AND MATCHING PIPELINE | Specified; implementation and production validation pending. |
 | 10 | MATCH EVIDENCE MODEL | Specified; implementation and production validation pending. |
 | 11 | MISSING EVIDENCE RULE | Nullable source context and explicit fingerprint AVAILABLE/PENDING/UNAVAILABLE/FAILED states implemented; scoring-wide coverage/reliability remains. |
@@ -20,7 +20,7 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 14 | AI-GENERATED PRIVATE OWNERSHIP CHALLENGES | Specified; implementation and production validation pending. |
 | 15 | TRUST AND FRAUD ENGINE | Specified; implementation and production validation pending. |
 | 16 | PRIVACY ARCHITECTURE | Specified; implementation and production validation pending. |
-| 17 | DATABASE ARCHITECTURE | V1–V4 cover foundation, intake/media and AI jobs/spaces/components/quotas; full recovery schema and spatial/vector extensions remain. |
+| 17 | DATABASE ARCHITECTURE | V1–V7 cover foundation, private intake, text/perception jobs/profiles/components/shared quotas/raw-audio retention and immutable multimodal cohorts/activation history; full recovery schema and spatial/vector extensions remain. |
 | 18 | VECTOR SEARCH ABSTRACTION | Specified; implementation and production validation pending. |
 | 19 | EVENT-DRIVEN ARCHITECTURE | Transactional outbox/inbox and leased dispatch foundation implemented/tested; live Kafka adapter, scheduling, DLQ and operations remain. |
 | 20 | RECOVERY EVENT MODEL | Specified; implementation and production validation pending. |
@@ -97,7 +97,7 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 91 | DEPENDENCY GOVERNANCE | Foundation/media/text adoption, 106-JAR and 21-wheel/model integrity/license locks delivered; later models/platforms and expanded advisory/build inventory remain. |
 | 92 | LICENSE STRATEGY | MIT core and bounded foundation runtime/license review recorded; unresolved audited grants and later model/data licensing restrictions remain. |
 | 93 | NO README-DRIVEN CLAIMS | Canonical findings distinguish source inspection from claims. |
-| 94 | IMPLEMENTATION ORDER | M0–M3 and the first M4 asynchronous text slice delivered; remaining M4 modalities/snapshot promotion precede M5. Full scope retained. |
+| 94 | IMPLEMENTATION ORDER | M0–M3 and bounded M4 local text/perception/multimodal activation implemented; profile quality/production gates and full M5–M11 remain. No specification scope dropped. |
 | 95 | DO NOT OVERENGINEER THE WRONG PARTS | Specified; implementation and production validation pending. |
 | 96 | SUCCESS CRITERIA | Specified; implementation and production validation pending. |
 | 97 | REQUIRED FINAL DOCUMENTATION BEFORE DECLARING PRODUCTION READY | Specified; implementation and production validation pending. |

@@ -31,6 +31,8 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--native-s3',help='Reviewed native weed executable')
     p.add_argument('--pg-bin');p.add_argument('--maven');p.add_argument('--storage-only',action='store_true',help='Explicitly excludes Docker sandbox tests; never a production decoder fallback')
     p.add_argument('--with-ai',action='store_true',help='Also run the reviewed native Python/model provider; requires its installed artifact lock')
+    p.add_argument('--with-perception',action='store_true',help='Also run licensed native vision/local/OCR/speech profiles and synthetic voice fixture')
+    p.add_argument('--restore-drill',action='store_true',help='Verify database logical restore after the full passing suite')
     args=p.parse_args();run=ROOT/'.test-tmp'/('intake-'+str(uuid.uuid4()));run.mkdir(parents=True)
     access,secret=secrets.token_hex(12),secrets.token_urlsafe(32)
     credentials=run/'s3.json';credentials.write_text(json.dumps({'identities':[{'name':'synthetic-test','credentials':[{'accessKey':access,'secretKey':secret}],
@@ -73,16 +75,24 @@ def main():
             time.sleep(0.5)
         else:raise RuntimeError('Authenticated S3 readiness timeout')
         env['DZOKA_TEST_S3_ENDPOINT']=endpoint
-        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','StartupConfigurationIT']
+        classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','StartupConfigurationIT']
         if not args.storage_only:classes.append('SandboxMediaIT')
         if args.with_ai:
             subprocess.run([sys.executable,str(ROOT/'tools/ai_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
             classes.append('AiProviderIT')
         else:print('Explicit core/media/AI-contract suite: native model inference requires --with-ai.',flush=True)
+        if args.with_perception:
+            if args.storage_only:raise ValueError('Native image providers require the real sanitizer, not storage-only mode')
+            subprocess.run([sys.executable,str(ROOT/'tools/perception_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
+            audio=run/'synthetic-speech.wav'
+            subprocess.run([sys.executable,str(ROOT/'tools/perception_fixture.py'),'--output',str(audio)],cwd=ROOT,env=env,check=True)
+            env['DZOKA_TEST_SPEECH_WAV']=str(audio);classes.append('PerceptionProviderIT')
+        else:print('Explicit portable perception lifecycle scope; native vision/OCR/speech require --with-perception.',flush=True)
         env['DZOKA_IT_CLASSES']=','.join(classes)
         if args.storage_only:
             print('Explicit storage-only verification: Docker decoder tests excluded, no decoder fallback.',flush=True)
         command=[sys.executable,str(ROOT/('tools/test_foundation.py' if args.pg_bin else 'tools/test_foundation_container.py')),'--full']
+        if args.restore_drill:command.append('--restore-drill')
         if args.pg_bin:
             if not args.maven:raise RuntimeError('--maven is required with --pg-bin')
             command+=['--pg-bin',args.pg_bin,'--maven',args.maven]

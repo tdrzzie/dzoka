@@ -3,6 +3,7 @@ import java.util.UUID;
 import com.zaxxer.hikari.*;
 import org.dzoka.foundation.persistence.*;
 import org.dzoka.fingerprints.adapters.JdbcFingerprintJobs;
+import org.dzoka.fingerprints.adapters.JdbcPerceptionJobs;
 import org.dzoka.identity.domain.VerifiedIdentity;
 
 /** Trusted maintenance entry point; the private inference client never receives these credentials. */
@@ -14,6 +15,7 @@ public final class AiMaintenanceMain {
             new RuntimeDatabaseGuard(data).afterPropertiesSet();
             var actor=new VerifiedIdentity(required("DZOKA_WORKER_ISSUER"),required("DZOKA_WORKER_SUBJECT"));
             System.out.println("Erased AI components: "+new JdbcFingerprintJobs(new TenantTransactions(data)).purge(actor,UUID.fromString(required("DZOKA_WORKER_TENANT"))));
+            System.out.println("Erased perception components: "+new JdbcPerceptionJobs(new TenantTransactions(data),null).purge(actor,UUID.fromString(required("DZOKA_WORKER_TENANT"))));
         }
     }
 }

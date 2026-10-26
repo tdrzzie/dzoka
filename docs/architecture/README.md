@@ -1,6 +1,6 @@
 # Architecture documentation
 
-The [accepted baseline](baseline.md) and [24 technical ADRs](../adr/README.md) are the current design authority following the completed source audit. The six supplied views retain their complete original bodies with an authority notice; new views cover the remaining documentation areas required by specification section 66. The original root diagram is historical and does not override the baseline.
+The [accepted baseline](baseline.md), [M1's 24 technical ADRs and later implementation profiles](../adr/README.md) are the current design authority following the completed source audit. The six supplied views retain their complete original bodies with an authority notice; new views cover the remaining documentation areas required by specification section 66. The original root diagram is historical and does not override the baseline. The [M1 verification report](M1-VERIFICATION.md) distinguishes this design baseline from production validation and fully rewritten current views.
 
 | View | Status |
 |---|---|

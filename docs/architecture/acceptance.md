@@ -75,8 +75,40 @@ The M4-inclusive run passed 6 Java unit checks and 44 integration tests with act
 | A01, A03–A04 | Owner/service isolation, wrong tenant/worker rejection, natural concurrent revision/space idempotency, atomic job/audit/outbox rollback | Other modalities, broker orchestration and broader authority surfaces |
 | A07 | Expired/wrong lease and revised input cannot publish; exact completion replay is safe; finite normalized output and schema/provenance validation | Image/region task contracts and complete distributed scheduling |
 | A08 | Reviewed real nonconstant CPU model execution, model/tokenizer/installed-wheel integrity, corrupt/missing artifacts fail before activation; no vectors on unavailable input/provider | Other native platforms/providers, broader adversarial artifact corpus and quality evaluation |
-| A09 | Full space key includes artifact/tokenizer/preprocessing/runtime/configuration; same dimensions do not establish compatibility; immutable history/current revision separation | Whole-snapshot shadow coverage, promotion/rollback and index migration |
+| A09 | Full space key includes artifact/tokenizer/preprocessing/runtime/configuration; same dimensions do not establish compatibility; immutable history/current revision separation | Bounded text-cohort activation recorded below; multimodal/larger-cohort and index migration remain |
 | A24–A25 | Hold-aware component erasure, cancelled stale work, tenant-wide atomic queue reservations across actors, three-attempt/deadline bounds and exactly-once reservation release | Backup/replica/index erasure, production resource/egress limits, queue reconciliation and outage drills |
 | A27 | Private normalized input only on a service lease; no DB/S3 authority for the Python client; safe environment/redirect/proxy behavior; no text/vector/token event payload | Comprehensive telemetry/privacy/security assessment |
 
 `ItemFingerprint` is currently a view over immutable text components with explicit modality availability. It is not a complete multimodal snapshot, an accuracy/calibration result, proof of ownership or authority to release property.
+
+## Executed local database restore portion (2026-10-26)
+
+[restore_drill.py](../../tools/restore_drill.py) runs after a passing application suite, with API/worker contexts stopped. The Docker full-provider run passed 6 Java unit checks and 44 integration tests, then restored all 20 domain/public tables (729 synthetic rows). Complete row sets and Flyway history match; checked table/function owners and grants, column grants, forced row policies and constraints match. Runtime-role missing-context and wrong-actor reads deny; tenant A/B each see only their own synthetic organization; changing the source afterward cannot mutate the restored snapshot. The current local tool regression suite contains 40 passing tests. [Reproduction and limits](../operations/local-readiness.md) apply.
+
+This supplies a bounded A26 logical database restore result and A01–A02 restored row-policy checks. It does **not** complete A24/A26: no restored API/publisher starts, no external effects are replayed, roles/keys already exist in the same cluster, and object/replica/key recovery, independently journaled deletion/hold replay, physical/PITR restore and HA still require implementation and drills. No production RPO/RTO or capacity claim follows from it.
+
+The native PostgreSQL route independently passed the same full-provider 6-unit/44-integration suite and 20-table/729-row restore. Both routes use random synthetic credentials and leave production services untouched; native restore clients explicitly use their isolated cluster's selected port. [Verification record](../testing/local-readiness-2026-10-26.md) records both executions.
+
+## Executed bounded text-cohort lifecycle (2026-10-26)
+
+V5 and [FingerprintRolloutsIT](../../src/test/java/org/dzoka/FingerprintRolloutsIT.java) add seven real PostgreSQL/JWT/HTTP scenarios. The final native full-provider run passed **7 Java unit/51 integration tests**, plus 40 Python tests and expanded 27-table/1,001-row logical restore. [Execution record](../testing/m4-rollouts-2026-10-26.md) distinguishes the earlier Docker result and final native changes. Real model output was sealed/promoted unchanged in AiProviderIT.
+
+| Acceptance IDs | Verified portion | Still pending |
+|---|---|---|
+| A01–A04, A27 | Separate curator authority; tenant/source scope, no neighbor slots; plan/transition retry identity; transactional pointer/history/audit/outbox; no text/vector in management API | All later authority surfaces and full telemetry/export assessment |
+| A07–A09 | Immutable cohorts/manifests/component pins; terminal-slot completeness; separately measured available/unavailable coverage; hidden shadow results; exact versioned promotion and rollback | Image/local/OCR/speech and region contracts, representative quality evaluation, larger cohorts and index migration |
+| A09, A24 | Revised/expired/deleted source, disabled model or erased component blocks reactivation; concurrent disjoint-cohort reads never tear selected components/pointer; no fallback for noncohort/new revision | Independent backup tombstone replay and full replica/index erasure |
+
+The bounded profile is at most 100 explicit report revisions/16 text spaces. An evaluation-record hash is not independently verified accuracy evidence. No full A09/A24 or whole-M4 completion is claimed.
+
+## Executed local perception and multimodal pins (2026-10-26)
+
+V6/V7 add actual licensed vision/Paddle OCR/English CTC and independently authored classical local features, private sanitized/PCM input leases, shared queue/raw quotas and explicit multimodal pin activation. The final native full-provider run passed **8 Java unit/60 integration tests and 47 Python regressions**; logical restore matched **34 tables/1,498 synthetic rows**. [Execution record](../testing/m4-perception-2026-10-26.md) distinguishes actual inference from synthetic lifecycle assertions and records source/runtime/artifact identity.
+
+| Acceptance IDs | Newly executed portion | Still open |
+|---|---|---|
+| A01–A04, A07, A25, A27 | Protected raw/derivative leases, actor/tenant/revision/expiry guards, public WAV/chunked bounds, shared 32-job quota, storage reservation, retry/deadline, exact idempotency, atomic request/result/outbox and safe projections | Production scheduling/resource/egress/rate-limit and full telemetry/privacy assessment |
+| A08–A09 | Real four-provider output, exact checksummed manifests/source keys, tamper/corruption failure before activation; pixel/sample/finite shape bounds; immutable component pins selected atomically into ItemFingerprint | Representative quality/language/format coverage, learned/joint-space alternatives, larger cohorts/ANN index migration |
+| A24 | Holds preserve raw/output; expiry actually erases PCM/derived rows and releases storage once; erased selected references cascade and cannot reactivate | Independent backup deletion/hold journal, object/replica/key recovery and release of real restores |
+
+ResNet signatures are not CLIP; Harris patches are not learned descriptors; Paddle's bounded axis-aligned output is not blanket upstream equivalence; English CTC is not universal speech. Synthetic label/voice conformance is not a benchmark, ownership verification or production readiness.

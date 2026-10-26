@@ -1,0 +1,70 @@
+{
+  "description": "Original supplied document body hashes and authority-prefix byte offsets captured during initial inventory; bodies must remain unchanged.",
+  "files": [
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "originalSha256": "46273e92d89a855fc87b18d1008f0b2cd89d5d12ca7f8823795b733891b923b2",
+      "prefixBytes": 328
+    },
+    {
+      "path": "docs/DESIGN.md",
+      "originalSha256": "c08b38ca2f905124d9101b7ae916d0619258d0bf60870b92f993f18def90de83",
+      "prefixBytes": 328
+    },
+    {
+      "path": "docs/architecture/system-context.md",
+      "originalSha256": "80da488b03a4e590a2f808d4dd5ed24cd47d7e762cebc24fc3e2d11ac6b532e1",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/architecture/container-architecture.md",
+      "originalSha256": "8e82e042939da2f3d52bda2f244275b01cdd4f2501ff0ebd26fd632dd2f4b741",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/architecture/component-architecture.md",
+      "originalSha256": "d7a7fc79583933ca475691da2fced1e945d3526ec9462aa079f702eb189dc4bc",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/architecture/domain-architecture.md",
+      "originalSha256": "cf062b4dc655ea9f80da4809446ec7320e07beb2805be217b5e613c5cdda4f75",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/architecture/data-architecture.md",
+      "originalSha256": "79792379e6574ca0e8bf81bd0efef274ce55d662136375b055e34b742f237d7c",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/architecture/event-architecture.md",
+      "originalSha256": "bd9741f96364e9be4db1c2f617f195733d659968166b5e833d8bab6151e8156f",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/design/claim-workflow.md",
+      "originalSha256": "13f5375d9d389b8a941e53d3784187df5eaf311ed21325dd25901feb4350b54f",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/design/custody-state-machine.md",
+      "originalSha256": "8f081abd236fcc123aa624a6dfd97368d611f576189a2b19122d68288bd40867",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/design/item-fingerprint.md",
+      "originalSha256": "a818eb4e596f7a36686e534ef0da87923bd2975970b00a08823199fd9a1c7464",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/design/matching-engine.md",
+      "originalSha256": "af338736a9aa193eecbd7df159e8f0dd2771c3c2df395545cc1c777aeec249b3",
+      "prefixBytes": 331
+    },
+    {
+      "path": "docs/design/ownership-verification.md",
+      "originalSha256": "7ed748815a4a666a6dc452fae4b1a140800fe40a639e8766cdd943c6107c1b3f",
+      "prefixBytes": 331
+    }
+  ]
+}

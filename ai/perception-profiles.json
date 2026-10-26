@@ -1,0 +1,130 @@
+{
+  "VISION": {
+    "key": "6d0bb588bdc95437922fc984689e0c2e597a19b582289f7dc939b8e1add4b71d",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "VISION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "preprocessing": "bilinear-half-pixel-short256-center224-rgb-imagenet-v1",
+        "output": "logits1000-l2",
+        "threads": 2
+      },
+      "artifacts": [
+        {
+          "repository": "onnxmodelzoo/resnet18-v1-7",
+          "revision": "e7cb849a949bdceba02356b8b923d53cc01108e1",
+          "path": "resnet18-v1-7.onnx",
+          "bytes": 46820737,
+          "sha256": "4e8f8653e7a2222b3904cc3fe8e304cd8b339ce1d05fd24688162f86fb6df52c"
+        }
+      ]
+    }
+  },
+  "LOCAL_FEATURES": {
+    "key": "9b39dcbc11dcdd74afba3c05001bc432d62be5ac9bf797763e6e34e3401e5b61",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "LOCAL_FEATURES",
+      "provider": "numpy-harris",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "algorithm": "harris-k0.04-box3-nms8-patch16-block4-l2-v1",
+        "maxSide": 512,
+        "maxPoints": 16,
+        "descriptorDimensions": 16
+      },
+      "artifacts": []
+    }
+  },
+  "OCR": {
+    "key": "b5bde315d5e2ab21640bbfb6e0082cced97d21e0caf1405a71bb7c3a6d442dfd",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "OCR",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "preprocessing": "bgr-bilinear-stride32-max736-imagenet-v1",
+        "detection": "threshold0.2-grid4-bbox-pad4-max16",
+        "recognition": "bgr-height48-width160to640-bilinear-normalize0.5-ctc-v1"
+      },
+      "artifacts": [
+        {
+          "repository": "PaddlePaddle/PP-OCRv6_small_det_onnx",
+          "revision": "28fe5895c24fd108c19eb3e8479f4ab385fbfc62",
+          "path": "inference.onnx",
+          "bytes": 9880512,
+          "sha256": "d73e0058b7a8086bbd57f3d10b8bcd4ff95363f67e06e2762b5e814fe9c9410e"
+        },
+        {
+          "repository": "PaddlePaddle/PP-OCRv6_small_rec_onnx",
+          "revision": "b8f84f0b80c529de40b4fbb3544b84fa7233a513",
+          "path": "inference.onnx",
+          "bytes": 21159378,
+          "sha256": "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634"
+        },
+        {
+          "repository": "PaddlePaddle/PP-OCRv6_small_rec_onnx",
+          "revision": "b8f84f0b80c529de40b4fbb3544b84fa7233a513",
+          "path": "inference.yml",
+          "bytes": 150579,
+          "sha256": "ab078671bb49f06228eadccd34f1bb501e157f7a047095ffb943ba81512c77d1"
+        }
+      ]
+    }
+  },
+  "SPEECH": {
+    "key": "35c6d8433204ec9baea85b1d8362e58bbaf1109fe3b439a7986423b9d880421b",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "SPEECH",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "input": "wav-pcm16-mono16k-400to160000samples-v1",
+        "normalization": "zero-mean-var-eps1e-7",
+        "decoder": "ctc-greedy-blank0",
+        "language": "en",
+        "maxCharacters": 2048
+      },
+      "artifacts": [
+        {
+          "repository": "inference4j/wav2vec2-base-960h",
+          "revision": "a4f3a030e6d6126a40ab644672d6c86415242350",
+          "path": "model.onnx",
+          "bytes": 377887594,
+          "sha256": "e46614273f03ff4b87923a965e417fa72004825522cb007c9c25633b8475490d"
+        },
+        {
+          "repository": "inference4j/wav2vec2-base-960h",
+          "revision": "a4f3a030e6d6126a40ab644672d6c86415242350",
+          "path": "vocab.json",
+          "bytes": 358,
+          "sha256": "4178db26b3c7570f6a47f14ac6a1c7b32950b8c2800fb097287e53776934f1c5"
+        }
+      ]
+    }
+  }
+}

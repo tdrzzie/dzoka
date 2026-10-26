@@ -27,4 +27,4 @@ jobs:
       - name: Verify dependency bytes and license evidence
         run: python3 tools/dependency_lock.py
       - name: Test real core media and portable AI lifecycle contracts
-        run: python3 tools/test_intake.py
+        run: python3 tools/test_intake.py --restore-drill

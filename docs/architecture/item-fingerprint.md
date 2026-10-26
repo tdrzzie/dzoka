@@ -1,6 +1,6 @@
 # Versioned ItemFingerprint contract
 
-Accepted design, 2026-10-26. A first-class `ItemFingerprint` current view and immutable text components are implemented in the first M4 slice; [run guide](../development/ai-text.md) and [STATUS](../../STATUS.md) distinguish this from full multimodal snapshots and promotion/rollback. This view follows the [current baseline](baseline.md) and ADRs [0009](../adr/0009-model-provenance.md); [0010](../adr/0010-global-local-fingerprints.md). New runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. `ItemFingerprint` now selects immutable text and explicitly pinned vision/local/OCR/speech components through bounded multimodal cohort activation/rollback; [text](../development/ai-text.md), [perception](../development/perception.md), [rollout guide](../development/fingerprint-rollouts.md) and [STATUS](../../STATUS.md) record exact scope. This view follows the [current baseline](baseline.md) and ADRs [0009](../adr/0009-model-provenance.md); [0010](../adr/0010-global-local-fingerprints.md); [0028](../adr/0028-fingerprint-shadow-rollouts.md); [0029](../adr/0029-local-perception-providers.md). New runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
 ## Identity and provenance
 
@@ -13,6 +13,10 @@ Components include protected identifiers, category/brand/model/color/material/co
 EmbeddingSpace binds provider, model, artifact digest/revision, preprocessing version, dimensions, metric and normalization. Same dimensions alone are insufficient. Region descriptors also bind source image/derivative, coordinate system, crop bounds and extraction policy. Configuration/prompt/output schema versions accompany all non-vector inference.
 
 Append snapshots and results; never silently replace history. A versioned active pointer supports shadow re-embedding and rollback. Expiry/deletion revokes access and removes derived vectors/projections; minimal tombstones prevent stale workers/replays restoring erased evidence. A legal hold is explicit and scoped.
+
+V5 implements this for explicit cohorts of at most 100 report revisions/16 text spaces: complete terminal slots, separately measured available coverage, immutable manifests, explicit evaluation approval reference and tenant pointer compare-and-set. All activation/rollback rechecks current sources/spaces/components; after activation, shadow or noncohort results do not leak into current reads. It does not establish model quality, activate image/OCR/speech providers or migrate ANN indexes.
+
+V6 supplies licensed local perception profiles and protected input/jobs/results. V7 adds up to 64 explicit perception component pins to the source cohort, including perception-only plans. Selected manifests bind profile, input and output hashes; source-pixel boxes/descriptor schemas remain attached to their exact profile. Current coverage becomes AVAILABLE only for selected retained/current/enabled perception evidence, never merely because a worker completed. Empty observations are distinct from missing evidence. Representative quality, wider formats/languages, larger cohorts and ANN migration are not established by this bounded profile.
 
 ## Acceptance
 

@@ -22,3 +22,5 @@ jobs:
         run: python3 -m unittest discover -s tests -v
       - name: Require all mandatory source audits
         run: python3 tools/audit_registry.py gate
+      - name: Verify architecture requirements and preserved source bodies
+        run: python3 tools/verify_architecture.py

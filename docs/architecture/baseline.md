@@ -1,6 +1,6 @@
 # Architecture baseline
 
-Accepted design on 2026-10-26 after the mandatory source-audit gate passed. This document and [ADRs 0002–0027](../adr/README.md) govern implementation. At baseline acceptance no application existed. M2, scoped M3 and the first M4 asynchronous text-fingerprint slice are implemented; see [current status](../../STATUS.md) and [acceptance evidence](acceptance.md). Remaining scenarios are obligations rather than executed results. Exact runtime versions remain subject to [dependency adoption](dependency-adoption.md).
+Accepted design on 2026-10-26 after the mandatory source-audit gate passed. This document and [ADRs 0002–0029](../adr/README.md) govern implementation. At baseline acceptance no application existed. M2, scoped M3 and M4's local text/perception providers and bounded multimodal cohort activation are implemented; see [current status](../../STATUS.md) and [acceptance evidence](acceptance.md). Remaining scenarios are obligations rather than executed results. Exact runtime versions remain subject to [dependency adoption](dependency-adoption.md).
 
 ## Authority and supplied documents
 

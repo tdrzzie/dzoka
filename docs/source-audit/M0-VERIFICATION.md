@@ -30,6 +30,12 @@ The existing offline gate validates scope, document structure, pins, manifest ha
 
 M0 completion means bounded static source review. It does not mean upstream test suites ran, all dependencies/model weights were licensed, every repository is secure, benchmarks were reproduced or the product is production-ready. Nine unresolved project grants and one all-rights-reserved finding remain restrictions on reuse; they are completed review outcomes rather than permission to copy. Security contacts/response operations and production assurance remain explicitly deferred work.
 
+## Post-publication follow-up — 2026-10-26
+
+Commit `92be9a52d2ed3e4ff21aa09d3867f075223cb40d` is published on `origin/main`; its audit manifests match the registry bound to the 176-artifact verification. Registry integrity, the mandatory gate and all 32 current Python tests were rerun locally and passed.
+
+Remote CI is now checked rather than merely unknown. Both [Repository governance](https://github.com/tdrzzie/dzoka/actions/runs/40364136099) and [Core foundation](https://github.com/tdrzzie/dzoka/actions/runs/40364136142) report failure with zero executed steps. GitHub annotations identify an account-level restriction preventing job startup. This is not evidence that code/tests failed, and it is not a passing CI result. Account access must be restored and the workflows rerun before remote validation can be claimed. Local M0 research/governance artifacts are verified; remote CI acceptance remains blocked.
+
 ## Reproduce
 
 ```sh

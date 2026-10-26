@@ -20,6 +20,7 @@ def main():
     parser.add_argument('--pg-bin', default=os.environ.get('DZOKA_PG_BIN'))
     parser.add_argument('--maven', default=os.environ.get('DZOKA_MAVEN'))
     parser.add_argument('--full',action='store_true',help='Include live S3/sandbox tests; requires the intake infrastructure environment')
+    parser.add_argument('--restore-drill',action='store_true',help='After passing tests, verify a real logical restore in this disposable cluster')
     args = parser.parse_args()
     if not args.pg_bin or not args.maven:
         parser.error('--pg-bin and --maven (or DZOKA_PG_BIN / DZOKA_MAVEN) are required')
@@ -38,7 +39,7 @@ def main():
         reservation.bind(('127.0.0.1', 0))
         port = reservation.getsockname()[1]
     env = os.environ.copy()
-    env.update(PGPASSWORD=password, DZOKA_TEST_ADMIN_URL=f'jdbc:postgresql://127.0.0.1:{port}/dzoka_test',
+    env.update(PGPASSWORD=password, PGCLIENTENCODING='UTF8', DZOKA_TEST_ADMIN_URL=f'jdbc:postgresql://127.0.0.1:{port}/dzoka_test',
                DZOKA_TEST_ADMIN_USER='dzoka_control', DZOKA_TEST_ADMIN_PASSWORD=password,
                DZOKA_TEST_APP_PASSWORD=app_password, DZOKA_TEST_MIGRATION_USER='dzoka_migrator',
                DZOKA_TEST_MIGRATION_PASSWORD=migration_password)
@@ -50,7 +51,7 @@ def main():
                                       check=True, stdout=log, stderr=subprocess.STDOUT,
                                       text=True, timeout=60, **kwargs)
         return subprocess.run([str(pg / (name + executable)), *arguments], env=env, cwd=ROOT,
-                              check=True, capture_output=True, text=True, timeout=60, **kwargs)
+                              check=True, capture_output=True, text=True, encoding='utf-8', timeout=60, **kwargs)
     started = False
     try:
         command('initdb', '-D', str(data), '-U', 'dzoka_control', '--pwfile', str(pwfile),
@@ -69,11 +70,19 @@ def main():
         print('Fresh loopback PostgreSQL cluster ready; existing installations untouched.', flush=True)
         maven = [args.maven, '-B', '-ntp', '-Dmaven.repo.local=.audit-cache/m2', 'verify']
         if not args.full:
-            maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,StartupConfigurationIT')
+            maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,FingerprintRolloutsIT,PerceptionJobsIT,StartupConfigurationIT')
             print('Explicit database/API suite; live S3/sandbox tests require the full intake harness.',flush=True)
         elif env.get('DZOKA_IT_CLASSES'):
             maven.append('-Dit.test='+env['DZOKA_IT_CLASSES'])
         result = subprocess.run(maven, env=env, cwd=ROOT)
+        if result.returncode == 0 and args.restore_drill:
+            from restore_drill import drill
+            def restore_command(tool,*arguments,**kwargs):
+                # Never let PostgreSQL clients fall back to a host default port.
+                return command(tool,'-p',str(port),*arguments,**kwargs)
+            evidence=drill(restore_command,run/'synthetic-backup.dump')
+            (run/'restore-result.json').write_text(json.dumps(evidence,indent=2)+'\n',encoding='utf-8')
+            print('Synthetic restore evidence: '+str(run/'restore-result.json'),flush=True)
         return result.returncode
     except subprocess.CalledProcessError as error:
         # initdb/pg_ctl output has no credentials; never echo the role-provisioning SQL.

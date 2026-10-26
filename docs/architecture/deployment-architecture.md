@@ -4,7 +4,7 @@ Accepted design, 2026-10-26. Implementation is pending. This view follows the [c
 
 ## Profiles
 
-Small self-hosted nodes target Docker Compose with core API/worker roles, web, Python workers, PostgreSQL extensions, private object storage, Kafka-compatible events and a reviewed OIDC provider. Kubernetes/Helm supports larger deployments; development does not require it. Federation/edge, GPUs, Qdrant and Redis are optional profiles, not prerequisites for every installation. These manifests are future work.
+Small self-hosted nodes target Docker Compose with core API/worker roles, web, Python workers, PostgreSQL extensions, private object storage, Kafka-compatible events and a reviewed OIDC provider. Kubernetes/Helm supports larger deployments; development does not require it. Federation/edge, GPUs, Qdrant and Redis are optional profiles, not prerequisites for every installation. These manifests are future work. The [current local runtime/operations profile](../operations/local-readiness.md) records exact implemented runtime/authentication choices, executable real-provider verification and a database logical-restore drill; it does not approve production images or deploy the later modules.
 
 Pin runtime/build artifacts and image digests after adoption review. Fail closed on missing production secrets, authentication, tenant policy or model configuration; test providers require explicit test profiles. Keep database, broker, storage and inference private; expose only authenticated gateways with least-privilege network policy. Migration credentials are separate from application roles; readiness does not imply inference/models or all providers are usable.
 

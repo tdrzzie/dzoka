@@ -13,7 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public final class JdbcFingerprintJobs implements FingerprintJobs {
     private final TenantTransactions tx;
-    public JdbcFingerprintJobs(TenantTransactions tx){this.tx=tx;}
+    private final org.dzoka.fingerprints.ports.PerceptionJobs perception;
+    public JdbcFingerprintJobs(TenantTransactions tx){this(tx,null);}
+    @org.springframework.beans.factory.annotation.Autowired
+    public JdbcFingerprintJobs(TenantTransactions tx,org.dzoka.fingerprints.ports.PerceptionJobs perception){this.tx=tx;this.perception=perception;}
     private static void tenantLock(Connection c,UUID tenant) throws SQLException {
         try(var s=c.prepareStatement("SELECT pg_advisory_xact_lock(hashtextextended(?,0))")){s.setString(1,"ai:"+tenant);s.execute();}
     }
@@ -153,15 +156,28 @@ public final class JdbcFingerprintJobs implements FingerprintJobs {
     }
     @Override public List<FingerprintComponent> current(VerifiedIdentity actor,UUID tenant,UUID report){
         return tx.execute(actor,tenant,"reports:read",c->{
-            report(c,tenant,report,false);var found=new ArrayList<FingerprintComponent>();
-            try(var s=c.prepareStatement("SELECT f.* FROM dzoka.fingerprint_components f JOIN dzoka.reports r ON r.tenant_id=f.tenant_id AND r.id=f.report_id JOIN dzoka.embedding_spaces e ON e.tenant_id=f.tenant_id AND e.id=f.space_id WHERE f.tenant_id=? AND f.report_id=? AND f.source_revision=r.current_revision AND e.enabled ORDER BY f.received_at,f.id LIMIT 32")){
+            tenantLock(c,tenant);report(c,tenant,report,false);return selected(c,tenant,report);
+        });
+    }
+    private static List<FingerprintComponent> selected(Connection c,UUID tenant,UUID report)throws SQLException{
+            var found=new ArrayList<FingerprintComponent>();
+            try(var s=c.prepareStatement("""
+                SELECT f.* FROM dzoka.fingerprint_components f
+                JOIN dzoka.reports r ON r.tenant_id=f.tenant_id AND r.id=f.report_id
+                JOIN dzoka.embedding_spaces e ON e.tenant_id=f.tenant_id AND e.id=f.space_id
+                WHERE f.tenant_id=? AND f.report_id=? AND f.source_revision=r.current_revision AND e.enabled
+                AND (NOT EXISTS(SELECT 1 FROM dzoka.fingerprint_active a WHERE a.tenant_id=f.tenant_id)
+                OR EXISTS(SELECT 1 FROM dzoka.fingerprint_active a JOIN dzoka.fingerprint_snapshot_slots s
+                 ON s.tenant_id=a.tenant_id AND s.rollout_id=a.rollout_id
+                 WHERE a.tenant_id=f.tenant_id AND s.report_id=f.report_id AND s.component_id=f.id AND s.state='AVAILABLE'))
+                ORDER BY f.received_at,f.id LIMIT 32
+                """)){
                 s.setObject(1,tenant);s.setObject(2,report);try(var r=s.executeQuery()){while(r.next()){
                     Object[] values=(Object[])r.getArray("vector").getArray();double[] vector=Arrays.stream(values).mapToDouble(v->((Number)v).doubleValue()).toArray();
                     found.add(new FingerprintComponent(r.getObject("id",UUID.class),r.getObject("item_id",UUID.class),report,r.getInt("source_revision"),r.getString("input_sha256"),
                         space(c,tenant,r.getObject("space_id",UUID.class),false),r.getString("output_schema"),r.getTimestamp("generated_at").toInstant(),r.getTimestamp("received_at").toInstant(),vector,r.getInt("token_count"),r.getBoolean("truncated")));
                 }}
             }return List.copyOf(found);
-        });
     }
     @Override public int purge(VerifiedIdentity actor,UUID tenant){
         return tx.execute(actor,tenant,"reports:purge",c->{
@@ -179,23 +195,32 @@ public final class JdbcFingerprintJobs implements FingerprintJobs {
         });
     }
     @Override public ItemFingerprint snapshot(VerifiedIdentity actor,UUID tenant,UUID report){
-        var components=current(actor,tenant,report);
         return tx.execute(actor,tenant,"reports:read",c->{
-            report(c,tenant,report,false);
+            tenantLock(c,tenant);report(c,tenant,report,false);
+            // Hold the report lock across selection and metadata. Promotion also
+            // locks every cohort report, preventing torn pointer/component views.
+            var components=selected(c,tenant,report);UUID rollout=null;long activation=0;
+            try(var s=c.prepareStatement("SELECT rollout_id,version FROM dzoka.fingerprint_active WHERE tenant_id=?")){
+                s.setObject(1,tenant);try(var r=s.executeQuery()){if(r.next()){rollout=r.getObject(1,UUID.class);activation=r.getLong(2);}}
+            }
             UUID item;int revision;
             try(var s=c.prepareStatement("SELECT item_id,current_revision FROM dzoka.reports WHERE tenant_id=? AND id=?")){
                 s.setObject(1,tenant);s.setObject(2,report);try(var r=s.executeQuery()){r.next();item=r.getObject(1,UUID.class);revision=r.getInt(2);}
             }
             var matching=components.stream().filter(f->f.sourceRevision()==revision).toList();
             var text=matching.isEmpty()?ItemFingerprint.EvidenceState.UNAVAILABLE:ItemFingerprint.EvidenceState.AVAILABLE;
-            if(matching.isEmpty())try(var s=c.prepareStatement("SELECT j.state FROM dzoka.ai_jobs j JOIN dzoka.embedding_spaces e ON e.tenant_id=j.tenant_id AND e.id=j.space_id WHERE j.tenant_id=? AND j.report_id=? AND j.source_revision=? AND e.enabled ORDER BY j.created_at DESC LIMIT 32")){
+            if(matching.isEmpty()&&rollout==null)try(var s=c.prepareStatement("SELECT j.state FROM dzoka.ai_jobs j JOIN dzoka.embedding_spaces e ON e.tenant_id=j.tenant_id AND e.id=j.space_id WHERE j.tenant_id=? AND j.report_id=? AND j.source_revision=? AND e.enabled ORDER BY j.created_at DESC LIMIT 32")){
                 s.setObject(1,tenant);s.setObject(2,report);s.setInt(3,revision);try(var r=s.executeQuery()){while(r.next()){
                     String state=r.getString(1);if(Set.of("QUEUED","PROCESSING").contains(state)){text=ItemFingerprint.EvidenceState.PENDING;break;}
                     if(state.equals("FAILED"))text=ItemFingerprint.EvidenceState.FAILED;
                 }}
             }
             var unavailable=ItemFingerprint.EvidenceState.UNAVAILABLE;
-            return new ItemFingerprint(1,tenant,item,report,revision,matching,Map.of("text",text,"image",unavailable,"localFeatures",unavailable,"ocr",unavailable,"speech",unavailable));
+            if(perception==null)throw new IllegalStateException("Snapshot perception boundary unavailable");
+            var derived=perception.selected(actor,tenant,report);var coverage=new HashMap<String,ItemFingerprint.EvidenceState>();coverage.put("text",text);
+            for(var entry:Map.of("image","VISION","localFeatures","LOCAL_FEATURES","ocr","OCR","speech","SPEECH").entrySet())
+                coverage.put(entry.getKey(),derived.stream().anyMatch(f->f.task().equals(entry.getValue()))?ItemFingerprint.EvidenceState.AVAILABLE:unavailable);
+            return new ItemFingerprint(1,tenant,item,report,revision,matching,coverage,rollout,activation,derived);
         });
     }
 }

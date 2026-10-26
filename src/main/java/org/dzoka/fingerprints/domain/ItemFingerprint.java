@@ -3,11 +3,12 @@ import java.util.*;
 
 /** Current authorized view over immutable components; coverage is separate from similarity or identity. */
 public record ItemFingerprint(int schemaVersion,UUID tenantId,UUID itemId,UUID reportId,int sourceRevision,
-        List<FingerprintComponent> components,Map<String,EvidenceState> coverage) {
+        List<FingerprintComponent> components,Map<String,EvidenceState> coverage,UUID rolloutId,long activationVersion,List<Perception.Component> perceptionComponents) {
     public enum EvidenceState { AVAILABLE,PENDING,UNAVAILABLE,FAILED }
     public ItemFingerprint {
-        components=List.copyOf(components);coverage=Map.copyOf(coverage);
+        components=List.copyOf(components);coverage=Map.copyOf(coverage);perceptionComponents=List.copyOf(perceptionComponents);
         for(var component:components)if(!component.itemId().equals(itemId) || !component.reportId().equals(reportId) || component.sourceRevision()!=sourceRevision)
             throw new IllegalArgumentException("Mixed fingerprint sources");
+        for(var component:perceptionComponents)if(!component.reportId().equals(reportId)||component.sourceRevision()!=sourceRevision||!component.selection().equals("ACTIVE"))throw new IllegalArgumentException("Unselected perception source");
     }
 }

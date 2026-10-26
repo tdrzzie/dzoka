@@ -23,6 +23,7 @@ abstract class AiFixture extends IntegrationFixture {
         membership(A,"reporter","reports:read","reports:write");membership(A,"other","reports:read","reports:write");
         membership(A,"inference","ai:work");membership(A,"wrong-worker","ai:work");membership(B,"remote","ai:work","reports:read");
         membership(A,"purger","reports:purge");membership(A,"reviewer","reports:hold","reports:read","reports:read:any");
+        membership(A,"curator","fingerprints:manage");membership(B,"curator","fingerprints:manage");
         var n=new ObjectMapper().readTree(Files.readString(Path.of("ai/model.lock.json"))).get("space");
         profile=new EmbeddingSpace(primary,n.get("provider").asString(),n.get("model").asString(),n.get("artifactRevision").asString(),n.get("artifactSha256").asString(),
             n.get("tokenizerSha256").asString(),n.get("preprocessing").asString(),n.get("dimensions").asInt(),n.get("metric").asString(),n.get("normalization").asString(),n.get("configSha256").asString(),n.get("spaceKey").asString());
@@ -39,7 +40,10 @@ abstract class AiFixture extends IntegrationFixture {
     }
     @BeforeEach void cleanSyntheticJobs() throws Exception {
         try(var c=admin()){
-            for(String table:List.of("fingerprint_components","ai_jobs","ai_usage"))try(var s=c.prepareStatement("DELETE FROM dzoka."+table+" WHERE tenant_id=?")){s.setObject(1,A);s.executeUpdate();}
+            for(String table:List.of("fingerprint_perception_slots","fingerprint_rollout_perception_pins","perception_components","perception_audio","perception_jobs","perception_audio_usage",
+                    "fingerprint_activations","fingerprint_active","fingerprint_snapshot_slots","fingerprint_snapshots",
+                    "fingerprint_rollout_spaces","fingerprint_rollout_sources","fingerprint_rollouts","fingerprint_components","ai_jobs","ai_usage"))
+                try(var s=c.prepareStatement("DELETE FROM dzoka."+table+" WHERE tenant_id=?")){s.setObject(1,A);s.executeUpdate();}
         }
     }
     protected VerifiedIdentity who(String subject){return new VerifiedIdentity(issuer,subject);}

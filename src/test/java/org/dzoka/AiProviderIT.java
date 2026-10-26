@@ -28,5 +28,12 @@ class AiProviderIT extends AiFixture {
         assertEquals(0,child.exitValue(),Files.readString(log));assertEquals("SUCCEEDED",jobs().read(who("reporter"),A,job.id()).state());
         var fingerprint=jobs().current(who("reporter"),A,report).getFirst();assertEquals(384,fingerprint.vector().length);assertEquals(profile.spaceKey(),fingerprint.space().spaceKey());
         assertEquals(1,Arrays.stream(fingerprint.vector()).map(v->v*v).sum(),0.0001);assertTrue(Arrays.stream(fingerprint.vector()).filter(v->Math.abs(v)>0.001).count()>100);
+        var rollouts=app.getBean(org.dzoka.fingerprints.ports.FingerprintRollouts.class);
+        var plan=new org.dzoka.fingerprints.domain.FingerprintRollout.Plan(UUID.randomUUID(),
+            List.of(new org.dzoka.fingerprints.domain.FingerprintRollout.Source(report,1)),List.of(primary),10000,"d".repeat(64));
+        rollouts.create(who("curator"),A,plan);assertEquals(10000,rollouts.seal(who("curator"),A,plan.id()).coverageBps());
+        rollouts.activate(who("curator"),A,plan.id(),0,false);
+        var snapshot=jobs().snapshot(who("reporter"),A,report);assertEquals(plan.id(),snapshot.rolloutId());
+        assertArrayEquals(fingerprint.vector(),snapshot.components().getFirst().vector());
     }
 }

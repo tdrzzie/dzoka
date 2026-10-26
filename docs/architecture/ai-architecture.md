@@ -1,6 +1,6 @@
 # AI execution and governance
 
-Accepted design, 2026-10-26. M4's first text-job/provider slice is implemented; [ADR 0027](../adr/0027-local-text-inference.md), [run guide](../development/ai-text.md) and [STATUS](../../STATUS.md) record exact scope and executed evidence. Other AI modalities and complete migration/promotion remain pending. This view follows the [current baseline](baseline.md) and ADRs [0011](../adr/0011-ai-provider-ports.md); [0012](../adr/0012-asynchronous-ai.md); [0015](../adr/0015-python-ai-boundary.md). New runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. M4's text, vision/local-feature/OCR/English-speech providers and bounded multimodal cohort activation are implemented; [text ADR 0027](../adr/0027-local-text-inference.md), [rollout ADR 0028](../adr/0028-fingerprint-shadow-rollouts.md), [perception ADR 0029](../adr/0029-local-perception-providers.md), [perception run guide](../development/perception.md) and [STATUS](../../STATUS.md) record profiles and executed scope. Wider language/format coverage, representative quality evaluation, deployment isolation and larger-cohort/index migration remain separate work. This view follows the [current baseline](baseline.md) and ADRs [0011](../adr/0011-ai-provider-ports.md); [0012](../adr/0012-asynchronous-ai.md); [0015](../adr/0015-python-ai-boundary.md). New runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
 ## Request and result boundaries
 
