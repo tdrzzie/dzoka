@@ -1,0 +1,204 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/dependencies/shona-cpu-adoption.md",
+  "files": [
+    {
+      "group": "CT2_EN_SN",
+      "role": "model.bin",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "model.bin",
+      "local": "ct2_en_sn/model.bin",
+      "bytes": 77566675,
+      "sha256": "8fb57a9473ef0df4781c28879e7351f785574f1295108068bac44042e4f749fc",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/model.bin?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "config.json",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "config.json",
+      "local": "ct2_en_sn/config.json",
+      "bytes": 223,
+      "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/config.json?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "shared_vocabulary.json",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "shared_vocabulary.json",
+      "local": "ct2_en_sn/shared_vocabulary.json",
+      "bytes": 1099336,
+      "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/shared_vocabulary.json?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "source.spm",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "source.spm",
+      "local": "ct2_en_sn/source.spm",
+      "bytes": 824524,
+      "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/source.spm?download=true"
+    },
+    {
+      "group": "CT2_EN_SN",
+      "role": "target.spm",
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "path": "target.spm",
+      "local": "ct2_en_sn/target.spm",
+      "bytes": 832442,
+      "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+      "url": "https://huggingface.co/manancode/opus-mt-en-sn-ctranslate2-android/resolve/06794e0ec31c3f79287b57fa64edaaf52121bcff/target.spm?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "model.bin",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "model.bin",
+      "local": "ct2_sn_en/model.bin",
+      "bytes": 77566675,
+      "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/model.bin?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "config.json",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "config.json",
+      "local": "ct2_sn_en/config.json",
+      "bytes": 223,
+      "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/config.json?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "shared_vocabulary.json",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "shared_vocabulary.json",
+      "local": "ct2_sn_en/shared_vocabulary.json",
+      "bytes": 1099336,
+      "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/shared_vocabulary.json?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "source.spm",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "source.spm",
+      "local": "ct2_sn_en/source.spm",
+      "bytes": 832442,
+      "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/source.spm?download=true"
+    },
+    {
+      "group": "CT2_SN_EN",
+      "role": "target.spm",
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "path": "target.spm",
+      "local": "ct2_sn_en/target.spm",
+      "bytes": 824524,
+      "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+      "url": "https://huggingface.co/manancode/opus-mt-sn-en-ctranslate2-android/resolve/2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243/target.spm?download=true"
+    },
+    {
+      "group": "LID",
+      "role": "lid.onnx",
+      "repository": "TigreGotico/glotlid-onnx",
+      "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+      "path": "glotlid.int8.onnx",
+      "local": "lid.onnx",
+      "bytes": 418935890,
+      "sha256": "3b2c8c1fa4ffeb46f04280bf9f93d9949ff61320e9b1877d8d8f08bfeac2e84d",
+      "url": "https://huggingface.co/TigreGotico/glotlid-onnx/resolve/324ea6246b96c997c7eb63089ec5f272dc567b41/glotlid.int8.onnx?download=true"
+    },
+    {
+      "group": "LID",
+      "role": "lid-config.json",
+      "repository": "TigreGotico/glotlid-onnx",
+      "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+      "path": "config.json",
+      "local": "lid-config.json",
+      "bytes": 105,
+      "sha256": "d50dd161cd9d40e980fbd65c250a973e2667b17048736bc1bc4ed391ae3dfa45",
+      "url": "https://huggingface.co/TigreGotico/glotlid-onnx/resolve/324ea6246b96c997c7eb63089ec5f272dc567b41/config.json?download=true"
+    },
+    {
+      "group": "LID",
+      "role": "lid-labels.json",
+      "repository": "TigreGotico/glotlid-onnx",
+      "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+      "path": "labels.json",
+      "local": "lid-labels.json",
+      "bytes": 44142,
+      "sha256": "653f2e4c2a1b755b18889c7d821f8be648b2a974cd346279a772bf6633d6407f",
+      "url": "https://huggingface.co/TigreGotico/glotlid-onnx/resolve/324ea6246b96c997c7eb63089ec5f272dc567b41/labels.json?download=true"
+    },
+    {
+      "group": "LID",
+      "role": "lid-vocab.txt",
+      "repository": "TigreGotico/glotlid-onnx",
+      "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+      "path": "vocab.txt",
+      "local": "lid-vocab.txt",
+      "bytes": 5590445,
+      "sha256": "59fc76ddaae19c21c205467bd45ae65f3ecd8bd80404066fbf946ea53f182039",
+      "url": "https://huggingface.co/TigreGotico/glotlid-onnx/resolve/324ea6246b96c997c7eb63089ec5f272dc567b41/vocab.txt?download=true"
+    }
+  ],
+  "licenseEvidence": [
+    {
+      "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+      "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+      "license": "Apache-2.0",
+      "path": "README.md",
+      "sha256": "2e70845d26425dbcb34e081e20e24c73a1d812468d4a868c3cd93f0f7fcb9a61"
+    },
+    {
+      "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+      "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+      "license": "Apache-2.0",
+      "path": "README.md",
+      "sha256": "1d921623a84f187db0d67675fb9d1d4916992a5d0c872db706ef105fc95bd90f"
+    },
+    {
+      "repository": "Helsinki-NLP/opus-mt-en-sn",
+      "revision": "7313e969b1783060740e1ea49cf5ad0876e4792e",
+      "path": "README.md",
+      "license": "Apache-2.0",
+      "sha256": "2c143d471ee2b2cabe6224d6a3939c674384f709240c1eee5927652c8db5ba9a"
+    },
+    {
+      "repository": "Helsinki-NLP/opus-mt-sn-en",
+      "revision": "9fc9d70ed5584666e50ad1d43aa72317bfa6f5e2",
+      "path": "README.md",
+      "license": "Apache-2.0",
+      "sha256": "2e1eb2c8c9d9c1dcdb6bfcd5c961f4ab6742376040be4d3d05407a3b1b9364f6"
+    },
+    {
+      "repository": "cis-lmu/glotlid",
+      "revision": "85cd6716494360367b75f642b5bc78667605d0b4",
+      "path": "LICENSE",
+      "sha256": "0f817bb60691dd6b649d9602a9fe2134a99c43cc20815a3b73c66d8f76f99ccd",
+      "license": "Apache-2.0 plus retained notices"
+    },
+    {
+      "repository": "TigreGotico/glotlid-onnx",
+      "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+      "path": "README.md",
+      "sha256": "7f46a38c30672058527fe11c8f2b9b73a426e6394052b9a035a8b54ee545468c",
+      "license": "Apache-2.0 declared export"
+    }
+  ]
+}

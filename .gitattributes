@@ -25,3 +25,6 @@ docs/source-audit/README.md -text
 starter -text
 
 docs/dependencies/notices/shona/** -text
+
+docs/dependencies/notices/shona-cpu/** -text
+ai/shona_cpu_native/** text eol=lf

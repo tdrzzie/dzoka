@@ -49,9 +49,11 @@ def main():
            ('generative-artifacts',['tools/generative_runtime.py','check']),
            ('generative-installed-runtime',['tools/generative_runtime.py','runtime-check']),
            ('quality-artifacts',['tools/quality_runtime.py','check']),
+           ('shona-cpu-artifacts',['tools/shona_cpu_runtime.py','check']),
+           ('shona-cpu-native-probes',['tools/shona_cpu_runtime.py','probe']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]
-    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--restore-drill']
+    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--restore-drill']
     if args.pg_bin:integration+=['--pg-bin',args.pg_bin,'--maven',args.maven]
     steps.append(('real-provider-integration-and-restore',integration))
     run=ROOT/'.test-tmp'/('local-verification-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))

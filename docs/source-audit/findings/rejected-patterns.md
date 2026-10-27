@@ -34,3 +34,8 @@ These are source-level findings or identified consequences of inspected code, no
 | Require blockchain because an escrow reference uses it | [OpenEscrow](../recovery/openescrow.md) | Normal payment/ledger adapters by default; optional implementations need ADR |
 
 The [earlier catalogue](../../findings/rejected-patterns.md) remains intact. Additional historical claims are not automatically promoted.
+
+
+## Subsequent CPU Shona and unmarked-span extension (2026-10-27)
+
+[ADR 0035](../../adr/0035-license-compatible-shona-and-unmarked-spans.md), [separate closure review](../../dependencies/shona-cpu-adoption.md) and [operator guide](../../development/shona-cpu.md) and [execution evidence](../../testing/m4-shona-cpu-2026-10-27.md) add a source-built MIT CTranslate2/OpenBLAS CPU alternative and Apache-2.0-plus-notices GlotLID proposals. The new image avoids the preceding vendor-wheel limitation; that old adoption stays local-development-only. Five new immutable profiles retain separate provider/model/runtime/input provenance. Automatic English windows are source-grounded `AUTO_LANGUAGE_PROPOSAL_UNVERIFIED` copies, never caller annotations, calibrated confidence or release authority. The selected unmarked qualifier improves, while place-name and “bylack” errors remain. Mandatory audit scope and supplied bodies are unchanged. Representative/native-speaker acceptance and production hosts/registry/TLS/secrets remain external; broader language quality, portable host packaging, deployment/advisory/load work and annotation UX remain local engineering.

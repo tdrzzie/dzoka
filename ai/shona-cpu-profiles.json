@@ -1,0 +1,474 @@
+{
+  "CPU_EN_SN": {
+    "key": "01dc4b14477254ab4bae95895c944eff61f2428406c81102b107294a35d5df0a",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "en",
+        "targetLanguage": "sn",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marian-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "tokenCountScope": "SOURCE_MODEL_TOKENS_WITH_EOS",
+        "artifactGroup": "CT2_EN_SN"
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "8fb57a9473ef0df4781c28879e7351f785574f1295108068bac44042e4f749fc",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "source.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "target.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "CPU_SN_EN": {
+    "key": "7d0c15127272731272b241de59fe58999b131e7e7b87565075c4d1db10b971e0",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "sn",
+        "targetLanguage": "en",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marian-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "tokenCountScope": "SOURCE_MODEL_TOKENS_WITH_EOS",
+        "artifactGroup": "CT2_SN_EN"
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "source.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "target.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "CPU_EN_SN_KEEP": {
+    "key": "fd8de10b1fb5db428d9075b758ad0443bcde2a4799c074df3b073713627eced2",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "en",
+        "targetLanguage": "sn",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marked-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "artifactGroup": "CT2_EN_SN",
+        "protectionPolicy": "explicit-keep-utf16-v1",
+        "reservedPlaceholderPrefix": "982",
+        "maxPreservedSpans": 8,
+        "maxPreservedSpanUtf16": 256,
+        "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS"
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "8fb57a9473ef0df4781c28879e7351f785574f1295108068bac44042e4f749fc",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "source.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "target.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "CPU_SN_EN_KEEP": {
+    "key": "d5d2edfb042b9ec91b839869f01cebfe4dbf51a5411712ec3e47366d08e26477",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "sn",
+        "targetLanguage": "en",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marked-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "artifactGroup": "CT2_SN_EN",
+        "protectionPolicy": "explicit-keep-utf16-v1",
+        "reservedPlaceholderPrefix": "982",
+        "maxPreservedSpans": 8,
+        "maxPreservedSpanUtf16": 256,
+        "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS"
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "source.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "target.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "CPU_SN_EN_AUTO": {
+    "key": "8e2cbe3a4e82032edab078aba827e61527bd553709cbea933de3f753dcd93f7d",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "sn",
+        "targetLanguage": "en",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-auto-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS",
+        "artifactGroup": "CT2_SN_EN",
+        "proposalPolicy": "glotlid-english-window-v1",
+        "maxScanUtf16": 512,
+        "maxScanWords": 32,
+        "maxWindowWords": 3,
+        "wordScoreThreshold": 0.6,
+        "wordMarginThreshold": 0.15,
+        "windowScoreThreshold": 0.85,
+        "windowMarginThreshold": 0.2,
+        "proposalTrust": "AUTO_LANGUAGE_PROPOSAL_UNVERIFIED",
+        "maxProposedSpans": 8,
+        "maxProposedSpanUtf16": 256,
+        "reservedPlaceholderPrefix": "982"
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "source.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "target.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "target.spm"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "glotlid.int8.onnx",
+          "bytes": 418935890,
+          "sha256": "3b2c8c1fa4ffeb46f04280bf9f93d9949ff61320e9b1877d8d8f08bfeac2e84d",
+          "role": "lid.onnx"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "config.json",
+          "bytes": 105,
+          "sha256": "d50dd161cd9d40e980fbd65c250a973e2667b17048736bc1bc4ed391ae3dfa45",
+          "role": "lid-config.json"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "labels.json",
+          "bytes": 44142,
+          "sha256": "653f2e4c2a1b755b18889c7d821f8be648b2a974cd346279a772bf6633d6407f",
+          "role": "lid-labels.json"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "vocab.txt",
+          "bytes": 5590445,
+          "sha256": "59fc76ddaae19c21c205467bd45ae65f3ecd8bd80404066fbf946ea53f182039",
+          "role": "lid-vocab.txt"
+        }
+      ]
+    }
+  }
+}

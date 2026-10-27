@@ -1,0 +1,63 @@
+{
+  "schemaVersion": 1,
+  "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+  "imageId": "sha256:f0f8d3f807aa95e75523e9f8dba6f9fbfb11675c6371ed7903cb6dbcf359f890",
+  "platform": "linux/amd64",
+  "hostRuntimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+  "buildLockSha256": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+  "backend": "OpenBLAS pthread CPU float32; no vendor wheel, MKL, CUDA, cuDNN, oneDNN, Ruy or OpenMP",
+  "notices": [
+    {
+      "path": "docs/dependencies/notices/shona-cpu/avx-mathfun-notice.txt",
+      "sha256": "85ad62e479533f41102df2dac25df5b4ce6a086746bac11ae1eca7fa44479cca"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/base-libc6.txt",
+      "sha256": "40c7e1f2118531f038ca22999bd976901254e1bc5cd1b0f0211bdd064c599987"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/base-libstdc++6.txt",
+      "sha256": "da8191658b3452ce9caf31638ba61dab31a38c619fa39df119812e050f592fd3"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/BS-thread-pool-MIT.txt",
+      "sha256": "712a867cc12ebfcdecf6cea097f5aa7ec5acaa435a8f818c9f370960df35acbf"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/cpu_features--license.txt",
+      "sha256": "af272c1b4dd08dd61d43e001d3134119d03ca7a2b057a64f7355fdf27fbea3dd"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/ct2--LICENSE",
+      "sha256": "54aa79d9fe3c09e67a16dcd95b9e88676405a6ec174efda31036983cf7672ecb"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/fmt-MIT.txt",
+      "sha256": "825c9324e70f8c839c8ba910543dd4a7daee243b86ef960594c11381a19980b8"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/glotlid-LICENSE.txt",
+      "sha256": "0f817bb60691dd6b649d9602a9fe2134a99c43cc20815a3b73c66d8f76f99ccd"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/half-MIT.txt",
+      "sha256": "762b97c66d61482ee4e901418d28015ea2d5922763062170308df041718c9d07"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/libopenblas0-pthread.txt",
+      "sha256": "3a668a70e1d025a79e455e5b9a2268d5d262b108dff14ec70c77f19f929bc9b2"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/nlohmann-json-MIT.txt",
+      "sha256": "86b998c792894ccb911a1cb7994f7a9652894e7a094c0b5e45be2f553f45cf14"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/simd-utils-BSD.txt",
+      "sha256": "dfaa54b4188ffa0e6298ce7ea27c865d12edcf73d742e2200ce9812db6268c0f"
+    },
+    {
+      "path": "docs/dependencies/notices/shona-cpu/spdlog--license.txt",
+      "sha256": "a7241a379cb98d37788f82c2fc2e484c3ae85dae881fd3406f0637644850926f"
+    }
+  ]
+}

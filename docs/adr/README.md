@@ -44,4 +44,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0034 | [Add bounded bidirectional Shona and explicit copied spans](0034-bidirectional-shona-and-code-switching.md) | Accepted scoped local-development profile |
 
+| 0035 | [Source-built CPU Shona and unverified automatic spans](0035-license-compatible-shona-and-unmarked-spans.md) | Accepted scoped implementation profile |
+
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.
