@@ -19,3 +19,5 @@ The [artifact lock](../../dependencies.lock.json) records the combined applicati
 - [CPU Shona and unmarked proposals](shona-cpu-adoption.md): pinned MIT CTranslate2/OpenBLAS source build, exact Debian closure, unchanged 22-wheel host and Apache-2.0-plus-notices GlotLID. Separate service-license-compatible profiles; deployment and language acceptance remain required.
 
 - [Bounded private worker supervision](../adr/0036-bounded-private-worker-supervision.md): independently authored Python standard-library orchestration and built-in Windows Job Objects on the existing reviewed host. No new package/model/toolchain, provider key or database dependency is adopted.
+
+- [Docker/CPU Shona supervision](../adr/0037-owned-docker-shona-supervision.md): standard-library guardian/IPC on the unchanged reviewed Windows/22-wheel/pinned CPU image/model closure; no new package, image build or weight adoption. New versioned transport profiles preserve prior keys.

@@ -53,3 +53,8 @@ All 100 sections remain in [requirements coverage](../../requirements/coverage.m
 ## Subsequent bounded worker supervision (2026-11-01)
 
 [ADR 0036](../../adr/0036-bounded-private-worker-supervision.md) and [operator guide](../../development/worker-supervision.md) add explicit six-family local polling, scoped secret environments, source-bound invocations, failure cooldown and owned process-tree deadlines. This separate implementation does not expand the mandatory static review scope or alter supplied bodies. Shona daemon/vendor supervision, service packaging, distributed fairness/capacity and Kafka integration remain local engineering; production host/secret/policy acceptance remains external. Invocation counts do not certify job completion or model quality. [Actual execution evidence](../../testing/m4-worker-supervision-2026-11-01.md) records the real private jobs and bounded restore, not whole-M4 acceptance.
+
+
+## Subsequent local Docker/CPU Shona supervision (2026-11-01)
+
+[ADR 0037](../../adr/0037-owned-docker-shona-supervision.md) and [operator guide](../../development/docker-shona-supervision.md) add a seventh family, independent host guardian and durable, label/image-checked resource intents. This does not expand the mandatory source-review scope or change supplied research/model licenses. Local normal/timeout/parent-death/orphan cleanup is bounded; unavailable/late-create state is retained rather than guessed away. Vendor supervision, remote/Linux-host and daemon-wide failure/service-account/deployment work remain separate from permitted representative language data and institutional production acceptance.

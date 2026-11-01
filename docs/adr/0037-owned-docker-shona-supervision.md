@@ -1,0 +1,18 @@
+# 0037: Own Docker-backed Shona invocations through a host guardian
+
+- Status: Accepted scoped implementation
+- Date: 2026-11-01
+
+## Decision
+
+After the mandatory source gate, extend the local supervisor with an explicit CPU Shona family and a separately owned host guardian. Reuse the existing pinned CPU image, 22-wheel host and exact licensed models; append supervised profiles rather than changing any older inference profile/source/runtime key. No runtime dependency, image rebuild or model download is introduced. Windows/local Linux Docker daemon operation is the supported host scope; the vendor wheel stays local-development-only and excluded.
+
+The guardian starts outside the worker's kill-on-close Job Object. It has no core token, DB/S3 credentials or input files. An authenticated bounded loopback IPC channel permits only image checking, preparation of one fixed approved model container, and one bounded token translation. The supervisor alone holds a control-pipe writer; EOF after normal stop or parent death cancels/removes the guardian's container. A guardian lifetime and prepared-container deadline also bound abandoned work. No Docker socket reaches a container and no generic Docker command/entrypoint/image/mount is accepted from a worker or plan.
+
+Journal an intent before creation. A guardian holds an exclusive owner-file lock; recovery skips active owners. Removal requires exact journal name, invocation/resource labels and approved image reference. Inspect/list failures are unavailable, never evidence of absence. Preserve unresolved/unknown-create intents, fail closed, and reconcile on startup or explicit operator command. Never delete unrelated resources by prefix or prune the daemon. Ambiguous late creates cannot be certified absent without a confirmed creation outcome; retain that blocker rather than discarding an intent. A daemon/host outage that also kills the guardian needs later reconciliation; no cross-host HA guarantee follows.
+
+Create before start so the daemon-side resource is known/journaled before it can execute. Keep verified read-share-only model handles in the guardian through execution/cleanup; bind only the three approved files. Preserve non-root/read-only/no-network/no-capabilities/no-new-privileges and memory/CPU/PID/temp bounds. Disable container log storage; private tokens travel only in authenticated local IPC/stdin and responses. No raw text/tokens/service secrets enter journal records or Docker arguments. Actor/tenant authorization, leases/retries, exact input/profile hashes, unverified AI trust and release authority remain core decisions.
+
+## Evidence and limitations
+
+[ADR 0035](0035-license-compatible-shona-and-unmarked-spans.md) and [ADR 0036](0036-bounded-private-worker-supervision.md) remain governing; this extends their resource-lifecycle scope. Docker's [create](https://docs.docker.com/reference/cli/docker/container/create/) and [start](https://docs.docker.com/reference/cli/docker/container/start/) contracts were checked against the actual local engine. Test real normal/deadline/parent-death cleanup, active-owner exclusion, orphan reconciliation, unrelated-container preservation, IPC bounds/authentication, unavailable-daemon/unknown-create state, and real private supervised Shona jobs in both directions and marked/automatic modes. POSIX host packaging/parent-death behavior, remote daemons, service installation, distributed scheduling, daemon-wide failure drills, external identity/TLS/secret/policy ownership and representative language acceptance remain separate work. This is not full M4 or production readiness.

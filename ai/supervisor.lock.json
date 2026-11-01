@@ -2,7 +2,7 @@
   "schemaVersion": 1,
   "review": "docs/adr/0036-bounded-private-worker-supervision.md",
   "sources": {
-    "tools/ai_supervisor.py": "d75a758ba9bc689871c4dc405d88c43e43697d2aec976c530c8015a2596f7149",
+    "tools/ai_supervisor.py": "6059d5aade5603db8e1511d26bf9cb475c8c55ea842ada3f9a75fbddc7c25bd6",
     "tools/ai_supervisor_child.py": "a59f0c24085a33f44ff62ad050c1705b9e8d3e74f43809ace9282299bb0c9a88",
     "tools/worker_process.py": "fcb33d879a776246c2be639e5288a5f52bc57640dea13a0f33d05dd4ccc66ee6",
     "tools/ai_worker.py": "1b74ad72160843b8db0821f17b0cecde7713c9c8c5e1ac2ea82738d5d16b2f9f",
@@ -16,6 +16,19 @@
     "ai/vision_worker.py": "ccd932e9ef79958ca934b45ae8ae0c00855e39abf80af45d07513a08b9a3b0ef",
     "ai/language_worker.py": "bf82e2e658740a5a0a88c7761e03232aff6a8bf3da83c6d23f77eb9fdd2e9a0c",
     "ai/generative_worker.py": "f99cab5a27dca785855a717dee4ff37fa08a3d02e0dcbb4a7a8363814246d44f",
-    "ai/quality_worker.py": "f907d12ead83b5a393794b9c9d7f00c18ca24ad3cde0be3fda08d568e0efe2bb"
+    "ai/quality_worker.py": "f907d12ead83b5a393794b9c9d7f00c18ca24ad3cde0be3fda08d568e0efe2bb",
+    "ai/shona_supervised.py": "9664a3617b50b71cc46ba9746134f47422b6a91a154c421fa05d10c6b39c3d02",
+    "ai/shona_supervised_worker.py": "661b62beef7840e6071dea7a5e8942845ef81dfb775de5c82e3df88fd6f395fe",
+    "ai/docker_rpc.py": "f5a446106277271664228a60706bb1bc9f5fe37b6cc971db2075edbd969d0878",
+    "ai/shona-cpu.lock.json": "72575a7fc0668f7d5339a88d6cb2e708d8ac2ee3f192d1f0bae0a6cdecfc2ea0",
+    "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+    "tools/docker_guardian.py": "2890ac2932d609f419c89a6fd7b99390c0e113d310197a7544b8865d4bb2e4c8",
+    "tools/docker_owner.py": "e0503d3af32662e0850ac76aa1db0964b9cd6f17e779191544747d0178948101",
+    "tools/shona_supervised_worker.py": "757343c880868c436dabfbae9634dfb21a455b1b6c4bbcf28a33e31a4c2c00c9",
+    "ai/shona-supervised.lock.json": "190cf15835e154f289631d3024eb109ea2d0733f374d6138d9431b64deb555ac",
+    "ai/shona-supervised-profiles.json": "9d7dec360f8466fe48c6774a1fea1d2dafd35fcca2ac940b01acbf9cb59a74e0",
+    "tools/shona_supervised_runtime.py": "6140aa46ff5e780190db23d21a9ca0a8bd275f0c37cf55f5e10ec998c8ae0d46",
+    "tools/shona_supervised_profile.py": "a8427183026e810e31fd1f23627e01547a8d29fd20eaadb492a23120ac22328c",
+    "tools/verify_docker_guardian.py": "3f3dd6b8424bdfd9e387cdc1407c447a8e6c6766a9a3e459cb4ee66b39b655a2"
   }
 }

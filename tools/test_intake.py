@@ -30,6 +30,7 @@ def free_ports(count):
 def main():
     p=argparse.ArgumentParser();p.add_argument('--native-s3',help='Reviewed native weed executable')
     p.add_argument('--pg-bin');p.add_argument('--maven');p.add_argument('--storage-only',action='store_true',help='Explicitly excludes Docker sandbox tests; never a production decoder fallback')
+    p.add_argument('--with-docker-shona',action='store_true',help='Execute all appended supervised CPU Shona profiles')
     p.add_argument('--with-supervisor',action='store_true',help='Execute bounded private polling against real text/language jobs')
     p.add_argument('--with-ai',action='store_true',help='Also run the reviewed native Python/model provider; requires its installed artifact lock')
     p.add_argument('--with-perception',action='store_true',help='Also run licensed native vision/local/OCR/speech profiles and synthetic voice fixture')
@@ -88,6 +89,9 @@ def main():
         env['DZOKA_TEST_S3_ENDPOINT']=endpoint
         classes=['FoundationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','PerceptionJobsIT','VisionJobsIT','LanguageJobsIT','GenerativeJobsIT','QualityJobsIT','ShonaJobsIT','ShonaCpuJobsIT','StartupConfigurationIT']
         if not args.storage_only:classes.append('SandboxMediaIT')
+        if args.with_docker_shona:
+            subprocess.run([sys.executable,str(ROOT/'tools/shona_supervised_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
+            classes.append('DockerShonaSupervisorIT')
         if args.with_supervisor:classes.append('AiSupervisorIT')
         if args.with_ai:
             subprocess.run([sys.executable,str(ROOT/'tools/ai_runtime.py'),'check'],cwd=ROOT,env=env,check=True)

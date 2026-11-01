@@ -14,7 +14,7 @@ class SupervisorTests(unittest.TestCase):
    for key,value in [('coreUrl','http://remote.test'),('coreUrl','https://secret@core.test'),('coreUrl','https://core.test/path'),('pollSeconds',True),('backoffMaxSeconds',1),('entries',[]),('token','secret')]:
     bad=copy.deepcopy(valid);bad[key]=value;path.write_bytes(json.dumps(bad).encode())
     with self.assertRaises((ValueError,TypeError)):s.load_plan(path)
-   for key,value in [('family','shona-cpu'),('family','../../program'),('tokenEnvironment','PATH'),('tenant','not-uuid'),('modelDirectory','relative')]:
+   for key,value in [('family','shona-vendor'),('family','../../program'),('tokenEnvironment','PATH'),('tenant','not-uuid'),('modelDirectory','relative')]:
     bad=copy.deepcopy(valid);bad['entries'][0][key]=value;path.write_bytes(json.dumps(bad).encode())
     with self.assertRaises(ValueError):s.load_plan(path)
    for raw in ['{"schemaVersion":1,"schemaVersion":1}',json.dumps(valid).replace('"pollSeconds": 2','"pollSeconds": NaN'),' '*32769]:

@@ -22,7 +22,8 @@ FAMILIES={
  'vision':('vision_worker.py','DZOKA_AI_VISION_DIR','DZOKA_AI_PROFILE',110),
  'language':('language_worker.py','DZOKA_AI_LANGUAGE_DIR','DZOKA_AI_PROFILE',110),
  'generative':('generative_worker.py','DZOKA_AI_GENERATIVE_DIR','DZOKA_AI_PROFILE',290),
- 'quality':('quality_worker.py','DZOKA_AI_QUALITY_DIR','DZOKA_AI_PROFILE',290)}
+ 'quality':('quality_worker.py','DZOKA_AI_QUALITY_DIR','DZOKA_AI_PROFILE',290),
+ 'shona-cpu':('shona_supervised_worker.py','DZOKA_AI_SHONA_SUPERVISED_DIR','DZOKA_AI_PROFILE',290)}
 SAFE_ENV={'PATH','SYSTEMROOT','WINDIR','TEMP','TMP','HOME','LANG','LC_ALL','SSL_CERT_FILE','SSL_CERT_DIR'}
 
 def require(ok):
@@ -58,7 +59,10 @@ def load_plan(path):
     require(isinstance(plan['entries'],list) and 1<=len(plan['entries'])<=16)
     seen=set()
     for entry in plan['entries']:
-        require(isinstance(entry,dict) and set(entry)=={'family','tenant','profile','modelDirectory','tokenEnvironment'})
+        require(isinstance(entry,dict))
+        expected={'family','tenant','profile','modelDirectory','tokenEnvironment'}|({'dockerStateDirectory'} if entry.get('family')=='shona-cpu' else set())
+        require(set(entry)==expected)
+        if entry.get('family')=='shona-cpu':require(isinstance(entry['dockerStateDirectory'],str) and Path(entry['dockerStateDirectory']).is_absolute() and Path(entry['dockerStateDirectory']).is_dir() and Path(entry['dockerStateDirectory']).resolve()!=Path(entry['modelDirectory']).resolve())
         require(isinstance(entry['family'],str) and entry['family'] in FAMILIES)
         for field in ('tenant','profile'):require(isinstance(entry[field],str) and str(uuid.UUID(entry[field]))==entry[field])
         require(isinstance(entry['modelDirectory'],str) and len(entry['modelDirectory'])<=2048 and Path(entry['modelDirectory']).is_absolute() and Path(entry['modelDirectory']).is_dir())
@@ -73,6 +77,7 @@ def child_environment(plan,entry,environ):
     env={k:v for k,v in environ.items() if k in SAFE_ENV}
     env.update(PYTHONNOUSERSITE='1',PYTHONUTF8='1',DZOKA_AI_CORE_URL=plan['coreUrl'],DZOKA_AI_TOKEN=token,DZOKA_AI_TENANT=entry['tenant'])
     env[family[1]]=str(Path(entry['modelDirectory']).resolve());env[family[2]]=entry['profile']
+    if entry['family']=='shona-cpu':env['DZOKA_AI_DOCKER_STATE_DIR']=str(Path(entry['dockerStateDirectory']).resolve())
     if plan['allowInsecureLoopback']:env['DZOKA_AI_ALLOW_INSECURE_LOOPBACK']='true'
     return env
 
@@ -89,7 +94,11 @@ class Supervisor:
             if self.stop.is_set():break
             if self.clock()<state['due']:continue
             command=[sys.executable,'-I',str(ROOT/'tools/ai_supervisor_child.py'),entry['family'],self.identity]
-            try:code=self.invoke(command,env,ROOT,FAMILIES[entry['family']][3])
+            try:
+                if entry['family']=='shona-cpu':
+                    from docker_owner import invoke_owned_docker
+                    code=invoke_owned_docker(command,env,ROOT,FAMILIES[entry['family']][3],self.identity)
+                else:code=self.invoke(command,env,ROOT,FAMILIES[entry['family']][3])
             except (OSError,subprocess.SubprocessError):code=125
             launched+=1;state['invocations']+=1
             if code==0:state['successfulInvocations']+=1;state['consecutiveFailures']=0

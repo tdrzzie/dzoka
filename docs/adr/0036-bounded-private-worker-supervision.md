@@ -16,3 +16,7 @@ Shona vendor profiles remain manually invoked local-development-only; CPU Shona 
 ## Evidence and consequences
 
 [ADR 0011](0011-ai-provider-ports.md), [ADR 0012](0012-asynchronous-ai.md) and the governing baseline preserve provider and authority boundaries. Microsoft [Job Objects](https://learn.microsoft.com/en-us/windows/win32/procthread/job-objects) and [extended limits](https://learn.microsoft.com/en-us/windows/win32/api/winnt/ns-winnt-jobobject_extended_limit_information) document the built-in platform API used by an independent ctypes declaration; no upstream implementation is copied. POSIX process-group behavior requires separate host execution before claiming portability. Test actual descendant termination, startup failure, privacy/config rejection, backoff/fairness/stop behavior and real authenticated private jobs. This is local polling, not complete M4 or production orchestration.
+
+## Scoped extension
+
+[ADR 0037](0037-owned-docker-shona-supervision.md) subsequently adds a separately journaled host guardian and appended CPU Shona profiles. The earlier six-family/process-tree guarantees remain; vendor profiles are still excluded, and the new daemon ownership/recovery scope is explicit.
