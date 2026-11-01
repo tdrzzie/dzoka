@@ -17,3 +17,5 @@
 The [artifact lock](../../dependencies.lock.json) records the combined application/test graph and explicit license choices. Dependency hashes and license declarations are not a complete source audit or vulnerability certification. New runtime versions, providers, model weights and production distributions require their own bounded adoption decision before installation.
 
 - [CPU Shona and unmarked proposals](shona-cpu-adoption.md): pinned MIT CTranslate2/OpenBLAS source build, exact Debian closure, unchanged 22-wheel host and Apache-2.0-plus-notices GlotLID. Separate service-license-compatible profiles; deployment and language acceptance remain required.
+
+- [Bounded private worker supervision](../adr/0036-bounded-private-worker-supervision.md): independently authored Python standard-library orchestration and built-in Windows Job Objects on the existing reviewed host. No new package/model/toolchain, provider key or database dependency is adopted.

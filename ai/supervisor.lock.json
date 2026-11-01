@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/adr/0036-bounded-private-worker-supervision.md",
+  "sources": {
+    "tools/ai_supervisor.py": "d75a758ba9bc689871c4dc405d88c43e43697d2aec976c530c8015a2596f7149",
+    "tools/ai_supervisor_child.py": "a59f0c24085a33f44ff62ad050c1705b9e8d3e74f43809ace9282299bb0c9a88",
+    "tools/worker_process.py": "fcb33d879a776246c2be639e5288a5f52bc57640dea13a0f33d05dd4ccc66ee6",
+    "tools/ai_worker.py": "1b74ad72160843b8db0821f17b0cecde7713c9c8c5e1ac2ea82738d5d16b2f9f",
+    "tools/perception_worker.py": "a62495250b360e651201a27396359285f9effe02ab75657b7ad9480f62d4b8ab",
+    "tools/vision_worker.py": "267461bcabf9679265938f8439955ba9ac75d750d0093ea3697e070d65b3c427",
+    "tools/language_worker.py": "6cfd819c0721bd8a763be4b78d6bee027a77f718bf7795146caa2794b0a2ec7f",
+    "tools/generative_worker.py": "f4360bfd7c4e57abc03e4c38db23994a3206b37378b7f631f41e2eb900d2b7c0",
+    "tools/quality_worker.py": "9a2e82784974166859160e61fb9ce77c72a7876ea01201fb6a32f5491ae7c36a",
+    "ai/worker.py": "d432f4b9257c04312c603d54faa279efb926fc1bf12c9bbe2e06b01df6bd8fa7",
+    "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733",
+    "ai/vision_worker.py": "ccd932e9ef79958ca934b45ae8ae0c00855e39abf80af45d07513a08b9a3b0ef",
+    "ai/language_worker.py": "bf82e2e658740a5a0a88c7761e03232aff6a8bf3da83c6d23f77eb9fdd2e9a0c",
+    "ai/generative_worker.py": "f99cab5a27dca785855a717dee4ff37fa08a3d02e0dcbb4a7a8363814246d44f",
+    "ai/quality_worker.py": "f907d12ead83b5a393794b9c9d7f00c18ca24ad3cde0be3fda08d568e0efe2bb"
+  }
+}

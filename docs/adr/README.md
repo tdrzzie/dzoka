@@ -46,4 +46,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0035 | [Source-built CPU Shona and unverified automatic spans](0035-license-compatible-shona-and-unmarked-spans.md) | Accepted scoped implementation profile |
 
+| 0036 | [Bounded private AI worker supervision](0036-bounded-private-worker-supervision.md) | Accepted scoped implementation |
+
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.
