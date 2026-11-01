@@ -7,7 +7,7 @@ public record EmbeddingResult(UUID lease,String inputSha256,String spaceKey,Stri
     public EmbeddingResult {
         Objects.requireNonNull(lease);Objects.requireNonNull(generatedAt);
         if(inputSha256==null || !inputSha256.matches("[a-f0-9]{64}") || spaceKey==null || !spaceKey.matches("[a-f0-9]{64}")
-                || provider==null || !provider.equals("onnxruntime-cpu") || !"text-embedding-v1".equals(outputSchema)
+                || provider==null || !Set.of("onnxruntime-cpu","onnxruntime-appcontainer-cpu").contains(provider) || !"text-embedding-v1".equals(outputSchema)
                 || tokenCount<1 || tokenCount>128 || vector==null || vector.length<1 || vector.length>1024)throw new IllegalArgumentException("Invalid result");
         vector=vector.clone();double sum=0;
         for(double v:vector){if(!Double.isFinite(v))throw new IllegalArgumentException("Nonfinite vector");sum+=v*v;}

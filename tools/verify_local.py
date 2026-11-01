@@ -37,6 +37,7 @@ def main():
     parser.add_argument('--maven',help='Required with --pg-bin')
     args=parser.parse_args()
     if bool(args.pg_bin)!=bool(args.maven):parser.error('--pg-bin and --maven must be provided together')
+    if not all(os.environ.get(k) for k in ('DZOKA_TEST_BROKER_BUNDLE','DZOKA_TEST_BROKER_SHA256')):parser.error('Full verification requires an explicitly prepared private broker bundle and pinned receipt')
     steps=[('source-gate',['tools/audit_registry.py','gate']),
            ('architecture',['tools/verify_architecture.py']),
            ('python-regressions',['-m','unittest','discover','-s','tests','-q']),
@@ -54,14 +55,17 @@ def main():
            ('docker-guardian-lifecycle',['tools/verify_docker_guardian.py']),
            ('worker-service-recovery',['tools/verify_worker_service.py']),
            ('offline-boundary-and-archive',['tools/verify_worker_boundary.py']),
+           ('isolated-model-broker',['tools/verify_model_broker.py']),
+           ('broker-death-and-integrity',['tools/verify_broker_recovery.py']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]
-    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--with-supervisor','--with-docker-shona','--restore-drill']
+    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--with-supervisor','--with-broker','--with-docker-shona','--restore-drill']
     if args.pg_bin:integration+=['--pg-bin',args.pg_bin,'--maven',args.maven]
     steps.append(('real-provider-integration-and-restore',integration))
     run=ROOT/'.test-tmp'/('local-verification-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
     run.mkdir(parents=True)
     result={'startedAt':datetime.now(timezone.utc).isoformat(),'status':'IN_PROGRESS',
+            'brokerBundleSha256':os.environ['DZOKA_TEST_BROKER_SHA256'],
             'inputSha256':source_digest(ROOT),'phases':[],
             'scope':'Implemented foundation/intake/multimodal/generative slice; not full specification or production acceptance'}
     def save():
@@ -69,13 +73,16 @@ def main():
     save()
     for name,command in steps:
         print('Local verification: '+name,flush=True);start=time.monotonic()
+        # Protected broker service starts add real ACL/runtime checks to the
+        # expanded integration suite. This bounds the test suite, not a worker.
+        deadline=5400 if name=='real-provider-integration-and-restore' else 1800
         try:
             with (run/(name+'.log')).open('w',encoding='utf-8') as log:
                 completed=subprocess.run([sys.executable,*command],cwd=ROOT,env=os.environ.copy(),
-                                         stdout=log,stderr=subprocess.STDOUT,timeout=1800)
+                                         stdout=log,stderr=subprocess.STDOUT,timeout=deadline)
             code=completed.returncode
         except (OSError,subprocess.TimeoutExpired):code=-1
-        result['phases'].append({'name':name,'exitCode':code,'seconds':round(time.monotonic()-start,3)})
+        result['phases'].append({'name':name,'exitCode':code,'seconds':round(time.monotonic()-start,3),'timeoutSeconds':deadline})
         if code:
             result['status']='FAIL';save()
             print('FAIL: '+name+'; inspect ignored log at '+str(run/(name+'.log')),flush=True)

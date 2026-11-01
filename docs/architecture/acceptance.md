@@ -112,3 +112,16 @@ V6/V7 add actual licensed vision/Paddle OCR/English CTC and independently author
 | A24 | Holds preserve raw/output; expiry actually erases PCM/derived rows and releases storage once; erased selected references cascade and cannot reactivate | Independent backup deletion/hold journal, object/replica/key recovery and release of real restores |
 
 ResNet signatures are not CLIP; Harris patches are not learned descriptors; Paddle's bounded axis-aligned output is not blanket upstream equivalence; English CTC is not universal speech. Synthetic label/voice conformance is not a benchmark, ownership verification or production readiness.
+
+## M4 broker acceptance scope (2026-11-01)
+
+[ADR 0040](../adr/0040-brokered-model-processes.md), the [operator guide](../development/model-broker.md) and the [execution record](../testing/m4-model-broker-2026-11-01.md) govern the 34 appended isolated profiles. The execution record distinguishes individual native passes from the final full-gate outcome; this ledger does not promote an intermediate run into acceptance.
+
+| Acceptance IDs | Implemented extension and evidence boundary | Still required for full acceptance |
+|---|---|---|
+| A01–A04, A07, A27 | Credential-holding fixed-route broker; opaque model invocation and exact source/profile binding; no model core/DB/S3/daemon credentials; checked account/MIC and disjoint private state; existing core authorization/lease/retry/raw/retention authority remains | Installed identity/secret lifecycle, target core-egress/TLS/daemon policy, full telemetry/privacy assessment and institutional approval |
+| A08 | All 34 isolated profiles execute against licensed pinned local artifacts; actual token/job/no-exemption readback, outbound denial, strict bounded pipe operations, source/runtime/model receipts and corrupt/missing/extra/receipt failures; CPU tokens use only the approved exact-owner Session | Representative quality slices/thresholds, broader formats/languages where required, target OS/service and load acceptance |
+| A09 | New text and joint spaces have distinct source/runtime/configuration identities; paired joint modalities retain the same new shared key; the core explicitly adopts the isolated provider while binding completion to its registered space; existing snapshot/pin/rollback/erasure controls remain | Representative migration/evaluation approval, larger-cohort and retrieval-index rollout work; no inference from dimensions or synthetic coverage to accuracy |
+| A24–A25 | Atomic model-job ownership, bounded deadlines, broker-death termination and exact grant/profile recovery; normal startup reconciles tracked read grants before strict privacy and before claims; existing real running-container recovery and terminal archival drills remain | Installed SCM stop/restart/boot, daemon-wide/host/backup loss, archive retention automation, independent tombstone/replica recovery and HA |
+
+These are bounded local implementation and conformance portions of A01–A09/A24–A27. Full M4, system-wide acceptance and production readiness require the remaining evidence; AI output still cannot approve ownership or release.

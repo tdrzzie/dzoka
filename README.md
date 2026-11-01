@@ -54,6 +54,8 @@ The separate [CPU Shona runtime](docs/development/shona-cpu.md) adds source-buil
 
 [Owned Docker/CPU Shona supervision](docs/development/docker-shona-supervision.md) adds an independent host guardian, five appended profiles and scoped intent-based recovery. The full local gate includes real guardian lifecycle checks and `--with-docker-shona` core integration; vendor/remote/Linux-host/HA and representative language acceptance remain open.
 
+[Isolated model broker](docs/development/model-broker.md) adds 34 separately keyed profiles for seven worker families and checked schema-v3 service plans. The full local gate now requires an explicitly prepared private bundle: set `DZOKA_TEST_BROKER_BUNDLE` and `DZOKA_TEST_BROKER_SHA256` to its path and actual receipt. Its 22 phases include every isolated profile, native broker-death/integrity recovery and `--with-broker` real service/core integration. Model processes have no network capabilities or core/storage/daemon credentials; the trusted broker retains fixed authorized core operations. Earlier profiles remain unchanged. Target account/SCM/daemon/core-egress policy and representative quality acceptance are still required.
+
 Windows deployment and restart recovery: [worker service](docs/development/worker-service.md).
 
 Account assertions, offline isolation pilot and terminal history recovery: [guide](docs/development/account-egress-recovery.md).

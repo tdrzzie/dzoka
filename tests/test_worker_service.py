@@ -115,4 +115,44 @@ class WorkerServiceTests(unittest.TestCase):
             with self.assertRaises(ValueError):service.execute('unused',threading.Event(),lambda:None,require_account=True)
             limits.assert_not_called()
 
+    def test_broker_service_v3_validates_credentials_account_and_private_control_separation(self):
+        with tempfile.TemporaryDirectory(dir=ROOT/'.test-tmp') as directory:
+            root=Path(directory);state=root/'state';state.mkdir()
+            config={'schemaVersion':3,'plan':str(root/'plan.json'),'credentials':str(root/'credentials.json'),'stateDirectory':str(state),'accountSid':'S-1-5-21-1-2-3-1001','integrityRid':8192}
+            plan={'coreUrl':'https://core.example','allowInsecureLoopback':False,'pollSeconds':1,'backoffMaxSeconds':4,'entries':[{'bundle':str(root/'bundle'),'tokenEnvironment':'DZOKA_WORKER_TOKEN_ONE'}]}
+            (root/'plan.json').write_bytes(b'{}');(root/'service.json').write_bytes(json.dumps(config).encode())
+            with patch.object(service,'plain',side_effect=Path),patch.object(service,'check_acl'),patch.object(service,'check_tree') as runtime,patch.object(service,'identity',return_value={}),patch.object(service,'validate_account') as account,patch('broker_plan.load_plan',return_value=plan),patch.dict(os.environ,{'DATABASE_URL':'private-db','DZOKA_WORKER_TOKEN_OTHER':'sibling'}):
+                for credentials in ({},{'DZOKA_WORKER_TOKEN_ONE':'invalid token'},{'DZOKA_WORKER_TOKEN_ONE':'valid','extra':'secret'}):
+                    (root/'credentials.json').write_bytes(json.dumps(credentials).encode())
+                    with self.assertRaises(ValueError):service.deployment(root/'service.json')
+                (root/'credentials.json').write_bytes(b'{"DZOKA_WORKER_TOKEN_ONE":"synthetic-valid"}')
+                _,_,env=service.deployment(root/'service.json');self.assertEqual('synthetic-valid',env['DZOKA_WORKER_TOKEN_ONE']);self.assertNotIn('DATABASE_URL',env);self.assertNotIn('DZOKA_WORKER_TOKEN_OTHER',env)
+                account.assert_called_with({},config['accountSid'],8192)
+                runtime.assert_called_with(Path(sys.base_prefix))
+                with patch.object(service,'check_tree',side_effect=ValueError('Writable broker stdlib')),patch('broker_plan.load_plan') as load:
+                    with self.assertRaises(ValueError):service.deployment(root/'service.json')
+                    load.assert_not_called()
+                plan['entries'][0]['bundle']=str(root)
+                with self.assertRaises(ValueError):service.deployment(root/'service.json')
+
+    def test_broker_service_reconciles_before_claims_and_stops_without_next_poll(self):
+        with tempfile.TemporaryDirectory(dir=ROOT/'.test-tmp') as directory:
+            state=Path(directory);stop=threading.Event();events=[]
+            entry={'profileName':'ISO_TEXT','stateDirectory':str(state/'broker'),'bundle':str(state/'bundle'),'bundleSha256':'a'*64}
+            class Worker:
+                def __init__(self,*_,**__):events.append('initialize')
+                def tick(self):events.append('claim');stop.set()
+            with patch('model_broker.state_check',side_effect=lambda *_:events.append('recover')),patch('broker_supervisor.BrokerSupervisor',Worker):
+                self.assertEqual(0,service.ServiceLoop({'schemaVersion':3,'stateDirectory':state},{'entries':[entry]},{},stop).run())
+            self.assertEqual(['recover','initialize','claim'],events)
+            self.assertEqual('STOPPED',json.loads((state/'status.json').read_bytes())['phase'])
+
+    def test_broker_unresolved_state_prevents_service_start_and_claim(self):
+        with tempfile.TemporaryDirectory(dir=ROOT/'.test-tmp') as directory:
+            state=Path(directory);entry={'profileName':'ISO_TEXT','stateDirectory':str(state/'broker'),'bundle':str(state/'bundle'),'bundleSha256':'a'*64}
+            with patch('model_broker.state_check',side_effect=ValueError('Unresolved ownership')),patch('broker_supervisor.BrokerSupervisor') as factory:
+                with self.assertRaises(ValueError):service.ServiceLoop({'schemaVersion':3,'stateDirectory':state},{'entries':[entry]},{}).run()
+                factory.assert_not_called()
+            self.assertEqual('UNAVAILABLE',json.loads((state/'status.json').read_bytes())['phase'])
+
 if __name__=='__main__':unittest.main()

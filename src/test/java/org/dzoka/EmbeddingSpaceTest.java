@@ -17,4 +17,9 @@ class EmbeddingSpaceTest {
         var input=new double[]{1,0};var output=new EmbeddingResult(UUID.randomUUID(),"a".repeat(64),"b".repeat(64),"onnxruntime-cpu","text-embedding-v1",Instant.now(),input,3,false);
         input[0]=0;assertEquals(1,output.vector()[0]);var copy=output.vector();copy[0]=0;assertEquals(1,output.vector()[0]);
     }
+    @Test void isolatedProviderIsAnExplicitAdoptionAndUnknownProvidersStayUnavailable(){
+        var accepted=new EmbeddingResult(UUID.randomUUID(),"a".repeat(64),"b".repeat(64),"onnxruntime-appcontainer-cpu","text-embedding-v1",Instant.now(),new double[]{1,0},3,false);
+        assertEquals("onnxruntime-appcontainer-cpu",accepted.provider());
+        assertThrows(IllegalArgumentException.class,()->new EmbeddingResult(UUID.randomUUID(),"a".repeat(64),"b".repeat(64),"unreviewed-provider","text-embedding-v1",Instant.now(),new double[]{1,0},3,false));
+    }
 }

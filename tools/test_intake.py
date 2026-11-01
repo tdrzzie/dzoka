@@ -32,6 +32,7 @@ def main():
     p.add_argument('--pg-bin');p.add_argument('--maven');p.add_argument('--storage-only',action='store_true',help='Explicitly excludes Docker sandbox tests; never a production decoder fallback')
     p.add_argument('--with-docker-shona',action='store_true',help='Execute all appended supervised CPU Shona profiles')
     p.add_argument('--with-supervisor',action='store_true',help='Execute bounded private polling against real text/language jobs')
+    p.add_argument('--with-broker',action='store_true',help='Execute actual isolated broker profiles; requires explicit private bundle and receipt')
     p.add_argument('--with-ai',action='store_true',help='Also run the reviewed native Python/model provider; requires its installed artifact lock')
     p.add_argument('--with-perception',action='store_true',help='Also run licensed native vision/local/OCR/speech profiles and synthetic voice fixture')
     p.add_argument('--with-vision',action='store_true',help='Run reviewed joint image/text, detection and semantic segmentation models')
@@ -42,6 +43,7 @@ def main():
     p.add_argument('--with-generative',action='store_true',help='Run reviewed general draft and multilingual profiles in the separate native runtime')
     p.add_argument('--restore-drill',action='store_true',help='Verify database logical restore after the full passing suite')
     args=p.parse_args()
+    if args.with_broker and not all(os.environ.get(k) for k in ('DZOKA_TEST_BROKER_BUNDLE','DZOKA_TEST_BROKER_SHA256')):p.error('--with-broker requires the explicit prepared bundle and receipt environment')
     if args.with_supervisor and not(args.with_ai and args.with_language):p.error('--with-supervisor requires --with-ai and --with-language')
     run=ROOT/'.test-tmp'/('intake-'+str(uuid.uuid4()));run.mkdir(parents=True)
     access,secret=secrets.token_hex(12),secrets.token_urlsafe(32)
@@ -93,6 +95,7 @@ def main():
             subprocess.run([sys.executable,str(ROOT/'tools/shona_supervised_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
             classes.append('DockerShonaSupervisorIT')
         if args.with_supervisor:classes.append('AiSupervisorIT')
+        if args.with_broker:classes.append('BrokerProviderIT')
         if args.with_ai:
             subprocess.run([sys.executable,str(ROOT/'tools/ai_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
             classes.append('AiProviderIT')

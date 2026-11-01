@@ -52,4 +52,4 @@ The atomic `status.json` contains only opaque run ID, sequence, UTC timestamp an
 
 The [execution record](../testing/m4-worker-service-2026-11-01.md) contains final gate evidence, negative findings and the exact tested deployment boundary.
 
-[Account/egress and recovery extension](account-egress-recovery.md) records the separately tested offline AppContainer pilot and terminal-journal archival. The existing networked model workers still need a broker/new profile adoption before that boundary applies to them.
+[Account/egress and recovery extension](account-egress-recovery.md) records the earlier offline pilot and terminal-journal archival. [Model broker schema 3](model-broker.md) adds actual isolated model execution for seven supported families under new profile/space identities. Use the explicit schema-v3 broker path for that boundary; historical schema-1/2 networked workers and older profiles remain unchanged compatibility paths. SCM accepts checked schema 2 or 3, and still requires target-account/daemon/boot acceptance. Run a prepared private release with `-I -B` to preserve its byte receipt inventory.

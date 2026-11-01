@@ -37,9 +37,9 @@ def deployment(path):
         if key not in checked:check_acl(target,private,ancestor);checked.add(key)
     verify_release();path=plain(path);acl(path);acl(path.parent)
     config=read_json(path)
-    if type(config.get('schemaVersion')) is not int or config['schemaVersion'] not in (1,2):raise ValueError('Invalid service configuration')
-    if set(config)!=({'schemaVersion','plan','credentials','stateDirectory'}|({'accountSid','integrityRid'} if config['schemaVersion']==2 else set())):raise ValueError('Invalid service configuration')
-    if config['schemaVersion']==2:validate_account(identity(),config['accountSid'],config['integrityRid'])
+    if type(config.get('schemaVersion')) is not int or config['schemaVersion'] not in (1,2,3):raise ValueError('Invalid service configuration')
+    if set(config)!=({'schemaVersion','plan','credentials','stateDirectory'}|({'accountSid','integrityRid'} if config['schemaVersion']>=2 else set())):raise ValueError('Invalid service configuration')
+    if config['schemaVersion']>=2:validate_account(identity(),config['accountSid'],config['integrityRid'])
     for field in ('plan','credentials','stateDirectory'):
         config[field]=plain(config[field]);acl(config[field]);acl(config[field].parent)
     if not config['stateDirectory'].is_dir() or config['stateDirectory'] in (config['plan'].parent,config['credentials'].parent):raise ValueError('Separate service state required')
@@ -52,6 +52,22 @@ def deployment(path):
     for target in sorted(set(code)|{ROOT,ROOT/'tools',ROOT/'ai',Path(sys.executable)}):
         acl(target,private=False)
         for parent in target.parents:acl(parent,private=False,ancestor=True)
+    if config['schemaVersion']==3:
+        # The model's private runtime does not replace the trusted broker host's
+        # interpreter/stdlib. Protect that tree too, including writable leaves.
+        check_tree(Path(sys.base_prefix))
+        for parent in Path(sys.base_prefix).parents:acl(parent,private=False,ancestor=True)
+        from broker_plan import load_plan as broker_plan
+        plan=broker_plan(config['plan']);credentials=read_json(config['credentials'])
+        for entry in plan['entries']:
+            bundle=Path(entry['bundle']).resolve()
+            if any(private.resolve().is_relative_to(bundle) for private in (path,config['plan'],config['credentials'],config['stateDirectory'])):raise ValueError('Private service controls overlap model bundle')
+        expected={entry['tokenEnvironment'] for entry in plan['entries']}
+        if not isinstance(credentials,dict) or set(credentials)!=expected:raise ValueError('Broker credential references differ')
+        env={k:v for k,v in os.environ.items() if k in {'PATH','SYSTEMROOT','WINDIR','TEMP','TMP','HOME','LANG','SSL_CERT_FILE','SSL_CERT_DIR'}};env.update(credentials)
+        from broker_supervisor import BrokerSupervisor
+        BrokerSupervisor(plan,env) # Validate every credential before polling.
+        return config,plan,env
     plan,_=load_plan(config['plan']);credentials=read_json(config['credentials'])
     runtimes={ROOT/'.audit-cache'/('generative-venv' if e['family'] in ('generative','quality','shona-cpu') else 'ai-venv') for e in plan['entries']}
     # A replaceable interpreter/site package could execute before model integrity
@@ -88,12 +104,21 @@ class ServiceLoop:
         if not lock.acquire():raise OSError('Service instance already active')
         try:
             self.status('RECOVERING')
-            directories=sorted({e['dockerStateDirectory'] for e in self.plan['entries'] if e['family']=='shona-cpu'})
+            if self.config.get('schemaVersion')==3:
+                from model_broker import state_check
+                from broker_profiles import profiles
+                registry=profiles()
+                for entry in self.plan['entries']:state_check(entry['stateDirectory'],entry['bundle'],entry['bundleSha256'])
+                directories=sorted({str(Path(e['stateDirectory'])/'docker') for e in self.plan['entries'] if registry[e['profileName']]['family']=='shona-cpu'})
+            else:directories=sorted({e['dockerStateDirectory'] for e in self.plan['entries'] if e['family']=='shona-cpu'})
             if directories:self.prepare()
             for directory in directories:
                 result=self.recover(Path(directory))
                 if result['unresolved'] or result['active']:raise OSError('Docker recovery incomplete')
-            worker=self.factory(self.plan,self.environ,stop=self.stop)
+            if self.config.get('schemaVersion')==3:
+                from broker_supervisor import BrokerSupervisor
+                worker=BrokerSupervisor(self.plan,self.environ,stop=self.stop)
+            else:worker=self.factory(self.plan,self.environ,stop=self.stop)
             self.status('RUNNING');started()
             while not self.stop.is_set():
                 worker.tick();self.status('RUNNING');self.stop.wait(1)
@@ -117,7 +142,7 @@ def main():
 
 def execute(path,stop,started,require_account=False):
     config,plan,env=deployment(path)
-    if require_account and config['schemaVersion']!=2:raise ValueError('SCM requires checked account configuration')
+    if require_account and config['schemaVersion'] not in (2,3):raise ValueError('SCM requires checked account configuration')
     limits=HostLimits()
     return ServiceLoop(config,plan,env,stop).run(started)
 
