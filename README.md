@@ -53,3 +53,5 @@ The separate [CPU Shona runtime](docs/development/shona-cpu.md) adds source-buil
 [Private worker supervision](docs/development/worker-supervision.md) provides explicit bounded serial polling for six existing model families. It preserves core leases/authorization and old model identities; Shona Docker/vendor supervision, service installation and distributed production scheduling remain separate work. The full local harness includes `--with-supervisor` with real text/language jobs.
 
 [Owned Docker/CPU Shona supervision](docs/development/docker-shona-supervision.md) adds an independent host guardian, five appended profiles and scoped intent-based recovery. The full local gate includes real guardian lifecycle checks and `--with-docker-shona` core integration; vendor/remote/Linux-host/HA and representative language acceptance remain open.
+
+Windows deployment and restart recovery: [worker service](docs/development/worker-service.md).

@@ -42,3 +42,5 @@ Daemon inspection failure is unavailable, not evidence of absence. Unknown/late 
 ## Verification and remaining work
 
 The full local gate includes real preparation expiry, parent-only death, active-owner exclusion, orphan recovery, unrelated same-image preservation and IPC-denial checks. Unit fault injection tests unavailable-daemon/unknown-create behavior without restarting the shared Docker daemon. Real core integration exercises all five appended profiles under supervision. The execution record distinguishes actual execution from mocked fault paths. No daemon-wide restart/failover, Linux-host, service-installation, distributed scheduling or representative Shona quality result follows from these tests. Production host/secret/TLS/IdP/policy ownership and permitted representative/native-speaker data remain required.
+
+[Worker service deployment](worker-service.md) adds protected configuration/credential checks, inherited host resource limits, exclusive instance ownership and startup recovery. SCM activation and target-account isolation retain separate acceptance requirements.

@@ -58,3 +58,7 @@ All 100 sections remain in [requirements coverage](../../requirements/coverage.m
 ## Subsequent local Docker/CPU Shona supervision (2026-11-01)
 
 [ADR 0037](../../adr/0037-owned-docker-shona-supervision.md) and [operator guide](../../development/docker-shona-supervision.md) add a seventh family, independent host guardian and durable, label/image-checked resource intents. This does not expand the mandatory source-review scope or change supplied research/model licenses. Local normal/timeout/parent-death/orphan cleanup is bounded; unavailable/late-create state is retained rather than guessed away. Vendor supervision, remote/Linux-host and daemon-wide failure/service-account/deployment work remain separate from permitted representative language data and institutional production acceptance.
+
+## Scoped Windows service extension
+
+[ADR 0038](../../adr/0038-local-worker-service-and-recovery.md) adds source-pinned service hosting, conservative NTFS preflight, inherited Windows resource limits, exclusive ownership and startup Docker reconciliation without new model/runtime dependencies. This does not execute any upstream audit suites. SCM activation requires a local administrator token (current create-service access probe returns error 5) and a selected service identity. Same-account Docker privilege, service-logon endpoint access, host egress, boot/failover, archival and production infrastructure/policy/quality acceptance remain open.

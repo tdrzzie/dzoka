@@ -21,3 +21,5 @@ The [artifact lock](../../dependencies.lock.json) records the combined applicati
 - [Bounded private worker supervision](../adr/0036-bounded-private-worker-supervision.md): independently authored Python standard-library orchestration and built-in Windows Job Objects on the existing reviewed host. No new package/model/toolchain, provider key or database dependency is adopted.
 
 - [Docker/CPU Shona supervision](../adr/0037-owned-docker-shona-supervision.md): standard-library guardian/IPC on the unchanged reviewed Windows/22-wheel/pinned CPU image/model closure; no new package, image build or weight adoption. New versioned transport profiles preserve prior keys.
+
+[ADR 0038](../adr/0038-local-worker-service-and-recovery.md) uses existing Windows SCM, NTFS/PowerShell and Job Object APIs through standard-library declarations. No new runtime package/model/image is adopted; target service identity/host policy remains separate.
