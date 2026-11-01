@@ -10,12 +10,16 @@ The service manifest has exactly these fields (paths are examples, never secret 
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "accountSid": "S-1-5-21-111111111-222222222-333333333-1001",
+  "integrityRid": 8192,
   "plan": "C:\\Dzoka\\private\\plan.json",
   "credentials": "C:\\Dzoka\\private\\credentials.json",
   "stateDirectory": "C:\\Dzoka\\state"
 }
 ```
+
+Replace the synthetic SID with the accountable target identity and explicitly select its measured/approved integrity RID (4096 low, 8192 medium, 12288 high, 16384 system). SCM mode requires v2 and exact actual-token matching; shared built-in service identities and enabled administrator/elevated tokens are rejected. Integrity is not an account privilege: system-service MIC can differ from interactive MIC without making the account LocalSystem. A changed level fails instead of being silently accepted. This is an identity assertion, not a complete privilege inventory or account provisioning. Legacy v1 is retained only as the existing foreground development path and cannot activate SCM.
 
 The plan retains the existing schema, explicit tenant/profile assignments and `tokenEnvironment` references. The credentials file is a private JSON object containing exactly those reference names and operator-provisioned token values. Never commit it, include it in status/arguments, or use machine-wide environment variables. Startup snapshots it; rotation requires a controlled stop, replacement and restart. Core expiry/revocation rules still apply. State must be separate from the plan/credential directory and retained across restarts. The service does not register profiles, mint tokens, create jobs or authorize release.
 
@@ -47,3 +51,5 @@ Startup reconciles every distinct configured Docker-state directory **before pol
 The atomic `status.json` contains only opaque run ID, sequence, UTC timestamp and RECOVERING/RUNNING/STOPPED/UNAVAILABLE. It has no credentials, tenant/report IDs, private inputs, model paths or raw exceptions. It is a replaceable operational snapshot; durable resource histories and core audit/results retain authority. A stale RUNNING file never proves liveness and never overrides the kernel lock. SCM exit status is nonzero on startup/recovery/lifecycle failure; worker invocation failures retain the supervisor's capped retries/cooldown and do not falsely report completed jobs. Status can remain unchanged during one bounded invocation. Alerting, retention/archival, distributed fairness/capacity, live daemon restart and host-loss drills, Linux/remote deployment and full system disaster recovery remain separate engineering.
 
 The [execution record](../testing/m4-worker-service-2026-11-01.md) contains final gate evidence, negative findings and the exact tested deployment boundary.
+
+[Account/egress and recovery extension](account-egress-recovery.md) records the separately tested offline AppContainer pilot and terminal-journal archival. The existing networked model workers still need a broker/new profile adoption before that boundary applies to them.

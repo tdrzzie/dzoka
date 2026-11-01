@@ -53,6 +53,7 @@ def main():
            ('shona-cpu-native-probes',['tools/shona_cpu_runtime.py','probe']),
            ('docker-guardian-lifecycle',['tools/verify_docker_guardian.py']),
            ('worker-service-recovery',['tools/verify_worker_service.py']),
+           ('offline-boundary-and-archive',['tools/verify_worker_boundary.py']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]
     integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--with-supervisor','--with-docker-shona','--restore-drill']

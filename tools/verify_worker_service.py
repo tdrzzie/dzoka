@@ -12,6 +12,7 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'tools'))
 from service_host import check_acl,check_tree
 from worker_service import verify_release,INSTANCE
+from service_account import identity
 from docker_lifecycle import OwnerLock,Session,preflight,reconcile,lookup,cli
 
 def wait(predicate,seconds=20):
@@ -97,7 +98,7 @@ with Guardian(Path(sys.argv[2]),Path(sys.argv[3]),verify_sources()) as guardian:
         else:raise AssertionError('Writable runtime leaf accepted')
         subprocess.run(['icacls',str(runtime/'python.exe'),'/remove:g','*S-1-5-11'],check=True,stdout=subprocess.DEVNULL)
         state=stage/'state';state.mkdir();protect(state)
-        config={'schemaVersion':1,'plan':str(stage/'plan.json'),'credentials':str(stage/'credentials.json'),'stateDirectory':str(state)}
+        config={'schemaVersion':2,'accountSid':sid,'integrityRid':identity()['integrity'],'plan':str(stage/'plan.json'),'credentials':str(stage/'credentials.json'),'stateDirectory':str(state)}
         plan={'schemaVersion':1,'coreUrl':'https://127.0.0.1:1','allowInsecureLoopback':False,'pollSeconds':1,'backoffMaxSeconds':2,'entries':[{'family':'text','tenant':'11111111-1111-1111-1111-111111111111','profile':'22222222-2222-2222-2222-222222222222','modelDirectory':str(ROOT/'.audit-cache/ai-model'),'tokenEnvironment':'DZOKA_WORKER_TOKEN_FIXTURE'}]}
         # Only plan parsing is needed: use an existing directory; no inference claim.
         plan['entries'][0]['modelDirectory']=str(ROOT/'.audit-cache')

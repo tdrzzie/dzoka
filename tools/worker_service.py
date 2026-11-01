@@ -14,6 +14,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parent))
 from ai_supervisor import Supervisor,load_plan,verify_sources,unique_pairs,child_environment
 from docker_lifecycle import OwnerLock,preflight,reconcile
 from service_host import check_acl,check_tree,plain,HostLimits
+from service_account import identity,validate as validate_account
 ROOT=Path(__file__).resolve().parents[1]
 INSTANCE='00000000000000000000000000000001'
 
@@ -36,7 +37,9 @@ def deployment(path):
         if key not in checked:check_acl(target,private,ancestor);checked.add(key)
     verify_release();path=plain(path);acl(path);acl(path.parent)
     config=read_json(path)
-    if set(config)!={'schemaVersion','plan','credentials','stateDirectory'} or type(config['schemaVersion']) is not int or config['schemaVersion']!=1:raise ValueError('Invalid service configuration')
+    if type(config.get('schemaVersion')) is not int or config['schemaVersion'] not in (1,2):raise ValueError('Invalid service configuration')
+    if set(config)!=({'schemaVersion','plan','credentials','stateDirectory'}|({'accountSid','integrityRid'} if config['schemaVersion']==2 else set())):raise ValueError('Invalid service configuration')
+    if config['schemaVersion']==2:validate_account(identity(),config['accountSid'],config['integrityRid'])
     for field in ('plan','credentials','stateDirectory'):
         config[field]=plain(config[field]);acl(config[field]);acl(config[field].parent)
     if not config['stateDirectory'].is_dir() or config['stateDirectory'] in (config['plan'].parent,config['credentials'].parent):raise ValueError('Separate service state required')
@@ -104,7 +107,7 @@ def main():
     try:
         if args.scm:
             from windows_service import dispatch
-            return dispatch(lambda stop,started:execute(args.config,stop,started))
+            return dispatch(lambda stop,started:execute(args.config,stop,started,require_account=True))
         config,plan,env=deployment(args.config)
         if args.check:print('PASS: protected service deployment/source/configuration; no jobs claimed');return 0
         limits=HostLimits();stop=threading.Event()
@@ -112,8 +115,10 @@ def main():
         return ServiceLoop(config,plan,env,stop).run()
     except Exception:print('Worker service unavailable; inspect protected deployment and durable state',file=sys.stderr);return 1
 
-def execute(path,stop,started):
-    config,plan,env=deployment(path);limits=HostLimits()
+def execute(path,stop,started,require_account=False):
+    config,plan,env=deployment(path)
+    if require_account and config['schemaVersion']!=2:raise ValueError('SCM requires checked account configuration')
+    limits=HostLimits()
     return ServiceLoop(config,plan,env,stop).run(started)
 
 if __name__=='__main__':raise SystemExit(main())

@@ -23,3 +23,5 @@ The [artifact lock](../../dependencies.lock.json) records the combined applicati
 - [Docker/CPU Shona supervision](../adr/0037-owned-docker-shona-supervision.md): standard-library guardian/IPC on the unchanged reviewed Windows/22-wheel/pinned CPU image/model closure; no new package, image build or weight adoption. New versioned transport profiles preserve prior keys.
 
 [ADR 0038](../adr/0038-local-worker-service-and-recovery.md) uses existing Windows SCM, NTFS/PowerShell and Job Object APIs through standard-library declarations. No new runtime package/model/image is adopted; target service identity/host policy remains separate.
+
+[ADR 0039](../adr/0039-offline-account-boundary-and-journal-archive.md) reuses installed Windows AppContainer/token APIs and byte-checked temporary copies of the adopted Python host with its license; no new package/model/image/runtime dependency or inference identity is adopted. The temporary pilot is not a portable production runtime lock.

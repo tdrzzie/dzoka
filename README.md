@@ -55,3 +55,5 @@ The separate [CPU Shona runtime](docs/development/shona-cpu.md) adds source-buil
 [Owned Docker/CPU Shona supervision](docs/development/docker-shona-supervision.md) adds an independent host guardian, five appended profiles and scoped intent-based recovery. The full local gate includes real guardian lifecycle checks and `--with-docker-shona` core integration; vendor/remote/Linux-host/HA and representative language acceptance remain open.
 
 Windows deployment and restart recovery: [worker service](docs/development/worker-service.md).
+
+Account assertions, offline isolation pilot and terminal history recovery: [guide](docs/development/account-egress-recovery.md).

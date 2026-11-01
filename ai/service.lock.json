@@ -1,13 +1,18 @@
 {
   "schemaVersion": 1,
-  "review": "docs/adr/0038-local-worker-service-and-recovery.md",
+  "review": "docs/adr/0039-offline-account-boundary-and-journal-archive.md",
   "supervisorLockSha256": "2b5b719434c24caecf59286ee001061b836b529401c0d1e31736f4322877771b",
   "sources": {
-    "tools/worker_service.py": "5e488815cd72ea70a43379df0e9230f3baf6b8478832e3c281396102c9e5e77c",
+    "tools/worker_service.py": "c5200c648a689584775074832c3c519c189a8f06a036a02f280688c4e4447bea",
     "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
     "tools/service_acl.ps1": "b97a256271b33b077949c2e682ac7b2ac71fadc8e0dac220a82fd3168c4fdb18",
     "tools/windows_service.py": "d55761ac618e4cd2db47c8681c1d3d9a80082d5a46a416a497f5200f41817a9a",
-    "tools/verify_worker_service.py": "77384b533159d59f238c373b95740a16b1629e282643e74e7ce0c9c564966c0e",
-    "tools/verify_service_supervisor.py": "669949fb678c8ee11ba304e162748064c1825d367fa8d6d9eb38026dbda6d53d"
+    "tools/verify_worker_service.py": "aa705ac6369e5a46cf899255b929fcc99d711bba1382a0cff1344c9ea2c94f05",
+    "tools/verify_service_supervisor.py": "669949fb678c8ee11ba304e162748064c1825d367fa8d6d9eb38026dbda6d53d",
+    "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+    "tools/journal_archive.py": "17c0edd4e7b75360742eb8cabbdb2059c5af442f11a031e76031f5a90b4485c6",
+    "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+    "tools/offline_probe.py": "4c6d6b5de48cb3f03c19ed1d704937aa6b9259f434c59f6007ae0913aa7bb0a8",
+    "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02"
   }
 }

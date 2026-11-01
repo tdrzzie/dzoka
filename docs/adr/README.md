@@ -52,4 +52,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0038 | [Local worker service, host limits and restart recovery](0038-local-worker-service-and-recovery.md) | Accepted scoped implementation |
 
+| 0039 | [Offline account boundary and terminal journal archive](0039-offline-account-boundary-and-journal-archive.md) | Accepted scoped implementation |
+
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

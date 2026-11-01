@@ -62,3 +62,7 @@ All 100 sections remain in [requirements coverage](../../requirements/coverage.m
 ## Scoped Windows service extension
 
 [ADR 0038](../../adr/0038-local-worker-service-and-recovery.md) adds source-pinned service hosting, conservative NTFS preflight, inherited Windows resource limits, exclusive ownership and startup Docker reconciliation without new model/runtime dependencies. This does not execute any upstream audit suites. SCM activation requires a local administrator token (current create-service access probe returns error 5) and a selected service identity. Same-account Docker privilege, service-logon endpoint access, host egress, boot/failover, archival and production infrastructure/policy/quality acceptance remain open.
+
+## Scoped account, offline pilot and archive extension
+
+[ADR 0039](../../adr/0039-offline-account-boundary-and-journal-archive.md) adds declared service identity/MIC checks, a native no-capability AppContainer stdlib pilot and terminal-only journal archival. No mandatory upstream suite was executed or model/inference identity replaced. Actual package/file/TCP/process/profile checks do not establish a deployed model-worker broker or machine policy. SCM/account provisioning, full privilege/daemon/egress policy, broader protocol/host-loss recovery and storage/backup acceptance remain open; archive receipts preserve bytes but are not signatures or backup replication.

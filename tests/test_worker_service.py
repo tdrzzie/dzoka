@@ -110,4 +110,9 @@ class WorkerServiceTests(unittest.TestCase):
         with self.assertRaises(OSError):dispatch(lambda *_:calls.append('work'))
         self.assertEqual([],calls)
 
+    def test_scm_requires_checked_account_schema_before_applying_limits_or_polling(self):
+        with patch.object(service,'deployment',return_value=({'schemaVersion':1},{},{})),patch.object(service,'HostLimits') as limits:
+            with self.assertRaises(ValueError):service.execute('unused',threading.Event(),lambda:None,require_account=True)
+            limits.assert_not_called()
+
 if __name__=='__main__':unittest.main()
