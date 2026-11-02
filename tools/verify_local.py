@@ -38,6 +38,7 @@ def main():
     args=parser.parse_args()
     if bool(args.pg_bin)!=bool(args.maven):parser.error('--pg-bin and --maven must be provided together')
     if not all(os.environ.get(k) for k in ('DZOKA_TEST_BROKER_BUNDLE','DZOKA_TEST_BROKER_SHA256')):parser.error('Full verification requires an explicitly prepared private broker bundle and pinned receipt')
+    if not all(os.environ.get(k) for k in ('DZOKA_TEST_MANAGED_RELEASE','DZOKA_TEST_MANAGED_SHA256')):parser.error('Full verification requires a private management release and receipt')
     steps=[('source-gate',['tools/audit_registry.py','gate']),
            ('architecture',['tools/verify_architecture.py']),
            ('python-regressions',['-m','unittest','discover','-s','tests','-q']),
@@ -57,15 +58,17 @@ def main():
            ('offline-boundary-and-archive',['tools/verify_worker_boundary.py']),
            ('isolated-model-broker',['tools/verify_model_broker.py']),
            ('broker-death-and-integrity',['tools/verify_broker_recovery.py']),
+           ('managed-broker-operations',['tools/verify_managed_operations.py']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]
-    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--with-supervisor','--with-broker','--with-docker-shona','--restore-drill']
+    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--with-supervisor','--with-broker','--with-managed-broker','--with-docker-shona','--restore-drill']
     if args.pg_bin:integration+=['--pg-bin',args.pg_bin,'--maven',args.maven]
     steps.append(('real-provider-integration-and-restore',integration))
     run=ROOT/'.test-tmp'/('local-verification-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
     run.mkdir(parents=True)
     result={'startedAt':datetime.now(timezone.utc).isoformat(),'status':'IN_PROGRESS',
             'brokerBundleSha256':os.environ['DZOKA_TEST_BROKER_SHA256'],
+            'managedReleaseSha256':os.environ['DZOKA_TEST_MANAGED_SHA256'],
             'inputSha256':source_digest(ROOT),'phases':[],
             'scope':'Implemented foundation/intake/multimodal/generative slice; not full specification or production acceptance'}
     def save():

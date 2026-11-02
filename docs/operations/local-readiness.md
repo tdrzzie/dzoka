@@ -1,6 +1,6 @@
 # Local verification and deployment boundary
 
-2026-11-01. Operational profile for the **implemented foundation, private image/short-PCM intake, local text/perception providers and bounded multimodal activation**. It does not enable later product modules or approve production images. The [baseline](../architecture/baseline.md), [runtime adoptions](../dependencies/README.md) and [status](../../STATUS.md) govern scope.
+2026-11-02. Operational profile for the **implemented foundation, private image/short-PCM intake, local text/perception providers and bounded multimodal activation**. It does not enable later product modules or approve production images. The [baseline](../architecture/baseline.md), [runtime adoptions](../dependencies/README.md) and [status](../../STATUS.md) govern scope.
 
 ## Reproduce the local evidence
 
@@ -8,13 +8,15 @@ With the previously reviewed Java, Python, Maven dependencies, model/wheels and 
 
 ```powershell
 $env:JAVA_HOME='C:\Program Files\Java\jdk-25.0.4'
-# Prepare the private bundle as described in the model-broker guide first.
+# Prepare the private model bundle and management release using their guides first.
 $env:DZOKA_TEST_BROKER_BUNDLE='C:\DzokaPrivate\release-001'
 $env:DZOKA_TEST_BROKER_SHA256='<actual-manifest-sha256>'
+$env:DZOKA_TEST_MANAGED_RELEASE='C:\DzokaPrivate\management-001'
+$env:DZOKA_TEST_MANAGED_SHA256='<actual-management-receipt>'
 python -B tools/verify_local.py
 ```
 
-This requires every phase: source gate, M1 requirements/preservation, Python regressions, Maven integrity, text-native artifact/conformance, perception, joint/region and language artifact identities, generative artifacts/installed-runtime checks, full actual-provider integration and database restore (22 phases, including all 34 isolated model profiles, native broker-death/integrity recovery, account/offline-boundary/archive checks, Docker guardian lifecycle and worker-service recovery checks, quality/Shona artifacts, the separate Shona installed runtime, and CPU Shona artifact/native probes). The full integration now includes the four earlier perception profiles plus paired Jina encoders, SSD detection, FCN semantic segmentation, grounded QA attributes, French→English Marian translation, private cross-encoder reranking, the larger repetition-controlled draft model, dedicated Shona/Spanish/German→English alternatives and explicit multimodal activation plus real supervised text/language jobs and checked schema-v3 broker service jobs; [setup/limits](../development/perception.md) apply. A missing provider, failed phase or changed source fails the run; no portable-contract fallback. Results/logs stay in ignored `.test-tmp/local-verification-*/`, binding code/lock inputs to SHA-256. Logs and synthetic archives are diagnostics, not material to publish.
+This requires every phase: source gate, M1 requirements/preservation, Python regressions, Maven integrity, text-native artifact/conformance, perception, joint/region and language artifact identities, generative artifacts/installed-runtime checks, full actual-provider integration and database restore (23 phases, including managed archival/credential replacement/reference diagnostics, all 34 isolated model profiles, native broker-death/integrity recovery, account/offline-boundary/archive checks, Docker guardian lifecycle and worker-service recovery checks, quality/Shona artifacts, the separate Shona installed runtime, and CPU Shona artifact/native probes). The full integration now includes the four earlier perception profiles plus paired Jina encoders, SSD detection, FCN semantic segmentation, grounded QA attributes, French→English Marian translation, private cross-encoder reranking, the larger repetition-controlled draft model, dedicated Shona/Spanish/German→English alternatives and explicit multimodal activation plus real supervised text/language jobs and checked schema-v3 broker service jobs; [setup/limits](../development/perception.md) apply. A missing provider, failed phase or changed source fails the run; no portable-contract fallback. Results/logs stay in ignored `.test-tmp/local-verification-*/`, binding code/lock inputs to SHA-256. Logs and synthetic archives are diagnostics, not material to publish.
 
 For a reviewed native PostgreSQL route, add `--pg-bin 'C:\Program Files\PostgreSQL\18\bin' --maven 'D:\Projects\ai\dzoka\.audit-cache\apache-maven-3.9.16\bin\mvn.cmd'`. Docker is still required for the real decoder and, unless separately selected through the intake harness, private S3. Individual suites remain documented in the [foundation](../development/foundation.md), [intake](../development/intake-media.md) and [AI](../development/ai-text.md) guides.
 
@@ -79,3 +81,5 @@ These distinctions prevent unfinished local engineering from being labeled “wa
 The [account/egress/recovery extension](../development/account-egress-recovery.md) adds declared SID/MIC checks, a separately tested no-capability AppContainer pilot and loss-averse terminal Docker journal archival. The subsequent [model broker](../development/model-broker.md) provides 34 new isolated profiles and schema-v3 service plans for the supported seven families. Older networked profiles retain their earlier identities. Installed account/SCM/daemon/trusted-broker egress policy, broader formats/quality and target-host acceptance remain separate requirements.
 
 [Current broker verification](../testing/m4-model-broker-2026-11-01.md) passes all 22 phases: 132 Python, 22 Java unit and 92 integration tests, all 34 isolated profiles, nine native broker recovery/integrity cases and an exact 35-table/3,076-row logical restore. Installed service/account/target-policy and representative quality acceptance remain open.
+
+[Managed broker operations](../development/managed-broker.md) add scheduled terminal-profile archival with exact receipts, private credential replacement between polls and redacted per-run counters. A separate byte-pinned management code release preserves earlier model identities. Private hash-bound text-reference diagnostics leave approval NOT_ESTABLISHED. Direct historical service starts retain their original credential snapshot/capacity behavior. See the [current execution record](../testing/m4-managed-operations-2026-11-02.md) for verification results and limits.

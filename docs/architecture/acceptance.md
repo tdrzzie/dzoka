@@ -125,3 +125,15 @@ ResNet signatures are not CLIP; Harris patches are not learned descriptors; Padd
 | A24–A25 | Atomic model-job ownership, bounded deadlines, broker-death termination and exact grant/profile recovery; normal startup reconciles tracked read grants before strict privacy and before claims; existing real running-container recovery and terminal archival drills remain | Installed SCM stop/restart/boot, daemon-wide/host/backup loss, archive retention automation, independent tombstone/replica recovery and HA |
 
 These are bounded local implementation and conformance portions of A01–A09/A24–A27. Full M4, system-wide acceptance and production readiness require the remaining evidence; AI output still cannot approve ownership or release.
+
+## M4 managed operations scope (2026-11-02)
+
+[ADR 0041](../adr/0041-managed-broker-operations.md), the [management guide](../development/managed-broker.md) and [execution record](../testing/m4-managed-operations-2026-11-02.md) add a separate immutable management release without changing earlier model identities. Focused tests pass; consult the execution record for the final expanded-gate result.
+
+| Acceptance IDs | Added local evidence | Still pending |
+|---|---|---|
+| A01–A04, A27 | Protected exact-reference credential replacement between polls; invalid/insecure replacements pause claims; wrong-tenant rejection and two real completions; aggregate private status without credentials or tenant/job/input identifiers | Real IdP issuance/refresh/revocation, target service identity and core-egress policy, institutional privacy approval |
+| A24–A25 | Scheduled terminal-profile archival before capacity checks; exact bytes and flushed receipts, crash/retry and active-owner/pending-grant exclusion; four actual SDK records and real service/core archival | Archive storage/export/retention policy, installed SCM/host/daemon loss, replicas and HA |
+| A09 | Hash-bound private text-reference diagnostics, exact/WER/CER normalization and tamper/duplicate/path rejection before inference; one actual isolated translation diagnostic | Representative permissioned datasets, semantic/embedding/detection/segmentation/generative protocols, leakage/slices and native-speaker quality acceptance |
+
+Diagnostic results explicitly leave approval NOT_ESTABLISHED. These additions do not close whole-M4 acceptance or authorize ownership/recovery.

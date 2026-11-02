@@ -1,0 +1,16 @@
+# 0041: Maintain bounded broker state and rotate credentials between polls
+
+- Status: Accepted scoped implementation; execution evidence required
+- Date: 2026-11-02
+
+The source gate passed before implementation. ADR 0040 leaves a 1,000-profile journal limit, restart-only credential rotation and lifecycle-only status. Add a separately pinned management release around the existing broker contracts. Preserve all earlier inference sources, registries, runtime/model locks and identities. No dependency, image or model is adopted.
+
+Archive only protected, current-account, confirmed REMOVED profile records under an archiver lock and the exact owner lock. Preserve exact bytes and a flushed hash/length receipt before acknowledging the active-directory copy. Retain active, ambiguous and grant-bearing records; reject conflicts, reparse paths and malformed ownership. No SDK deletion, Docker pruning or retention expiration occurs in this archiver. Bounded archive capacity remains an explicit operational limit.
+
+Use an opt-in managed service entry point with a private policy referring to the existing schema-3 configuration. Validate account, protected controls and structural plan before maintenance; exclude concurrent instances before writes. Maintain terminal state before the historical recovery-capacity check, then execute the unchanged full deployment and Docker/profile recovery checks before polling. Runtime/model inputs and completion authorization remain the existing broker's decisions. Management code has its own source lock and protected release receipt, outside model-readable bundles.
+
+Reload exact credential references between serial invocations. Invalid or insecure replacements pause claims; they never fall back to the previous token. Replacing credentials preserves unaffected assignments' backoff and wakes changed credentials. Configuration/plan/policy changes require a checked restart. This supplies file rotation, not an IdP refresh protocol. Models still receive only their fixed credential-free environment and opaque input protocol.
+
+Publish redacted atomic operational snapshots with run/sequence/time, credential generation, aggregate acknowledged completions, idle polls, invocation failures, pauses and archival counts. No tenant/job/profile IDs, credentials, input/output or token hashes appear. Core job/result state remains authoritative; invocation failure is not proof a durable job failed. Installed SCM/account/daemon/network policy, representative quality and HA still require separate acceptance.
+
+Add private hash-bound reference diagnostics for OCR, speech and directed translation, with independently authored Unicode-normalized exact/edit metrics. Verify all input/evidence hashes and approved profiles before inference; omit raw text, references and outputs from result artifacts. Record dataset, evaluation-source, bundle, model/profile and input/output provenance. Documentary evidence is not proof of consent/license authority; every result explicitly leaves quality/promotion approval unestablished. The native fixture is authored, not representative training/evaluation data. General-draft quality, embeddings, boxes and masks need their own appropriate evaluation protocols rather than a text metric substituted for them.

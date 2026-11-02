@@ -1,0 +1,35 @@
+# M4 managed broker operations — 2026-11-02
+
+[ADR 0041](../adr/0041-managed-broker-operations.md) and the [operator guide](../development/managed-broker.md) govern this extension. The mandatory thirty-source gate passed before implementation. No model, wheel, image or runtime dependency was added. Earlier inference sources, registries and all model/runtime/service locks remain byte-identical. The new management code has a separate source lock and protected release receipt; model execution still uses the existing isolated broker contract.
+
+Implemented terminal profile archival preserves exact bytes and flushed receipts, refuses active/uncertain/grant-bearing records and detects corrupt/conflicting/orphaned copies. Scheduled maintenance runs before the historical recovery-capacity check and between serial polls. Credential replacement is accepted only through protected exact-reference files; invalid replacements pause claims without old-token fallback. Unaffected assignments keep their backoff. Redacted atomic snapshots distinguish acknowledged completions, idle claims, invocation failures, pauses and archival.
+
+Private hash-bound reference diagnostics add independently authored normalized exact, WER and CER metrics for OCR/speech/directed translation. Inputs/evidence are checked before inference and raw input/reference/output are excluded from result artifacts. Every result leaves approval NOT_ESTABLISHED. This is evaluation tooling, not representative dataset approval or model-quality improvement by itself.
+
+## Verification in progress
+
+All 150 Python regressions pass. The native managed phase passes ten checks, including actual private ACL denial, crash/retry receipts, four real SDK profile records, active-owner/pending-grant retention and one actual isolated translation diagnostic. The focused real-core scenario also passes (one integration test, zero failures/errors/skips): wrong-tenant refusal with the job still queued; atomic valid credential replacement with a real completion; invalid replacement pause with another job still queued; restoration with a second real completion; idle polling and automatic exact archival of both native profile records. The first expanded gate failed during integration under host resource pressure; no final full-gate PASS is claimed. A retry requires recovered host resources.
+
+## First expanded-gate failure and recovery
+
+The first run, ignored `.test-tmp/local-verification-20261102T014857953073Z/result.json`, is FAIL (result SHA-256 `a01626d255850fbe7694e2f3f2a1de5f4697ea0d5dc258c9653915841b0c014f`). All 22 prerequisite phases passed, including all 34 isolated profiles, nine broker recovery cases and the new ten-case managed phase. Java unit tests passed (22). Integration stopped with 14 executed tests, three failures and one error: a missing CPU result, native ACL subprocesses exceeding their unchanged 20-second bound, and the later Docker supervision failure. No restore was executed. The known failing test JVM was stopped to allow fixture cleanup; this run cannot establish whole-suite acceptance.
+
+Windows reported roughly 190 MiB free out of 32 GiB, with WSL holding about 16 GiB private allocation. Docker subsequently returned HTTP 500. The normal authorized restart timed out; targeted Docker-process/distribution recovery restored the engine, and the exact exited test S3 container/volume was removed after verifying its workspace bind mount. Ubuntu remained running. One-shot clean filesystem-cache reclamation recovered commit capacity but host available memory remained below 0.5 GiB. A full WSL restart requires permission to interrupt Ubuntu work; that permission is pending. No production limit, ACL check or model source was relaxed.
+
+Inspection also found that the older broker integration helper allows six minutes while its default test credential expires after five. Its scoped fixture now uses a fresh 20-minute test token, matching the managed fixture; wrong-tenant rejection, production JWT expiry validation, six-minute helper deadline, core leases and native model/ACL deadlines are unchanged. This repairs a provable fixture-window mismatch; it does not prove the cause of the missing result without a successful rerun. The corrected fixture compiles offline with a 512 MiB Maven heap (44 test sources, release 21; build success). The mandatory source gate and architecture/preservation checks pass again. Current post-fix code/lock input SHA-256 is `9f64199f7f453eb90c8ae957c3b630091d94ad6c543188d0f5f712c5434f197c`; a complete gate has not passed on that identity.
+
+## Evidence identity
+
+- Full-gate code/lock input SHA-256: `f3302fd3b02dc413d7100ae6230125096f2744f7c90c2fa7ae3761a9b15f757d` (first failed attempt).
+- Existing private model-bundle receipt: `c955b34be6cf201496d4515f1ee633b207d9124a35d43efa653419c833ee29fa`.
+- Separate management-release receipt: `72fc51f0fffa1f2beb10701001e183f3c92e83be6516756a4c58cc2957dbe158`; management source-lock SHA-256: `362b50aeff86146699445f787fecba0bb94f068378e1161860c18a9bff5e8fbb`. No mutable published bundle was reused for changed code.
+- Focused native ten-case result: ignored `.test-tmp/managed-operations-96595b6e5e814ca38c5c8454772ed1c9/result.json`, SHA-256 `eddf5bcc52f36b9d8f37cc5cf6e1bad7ab6cae040e862e8bc65884eb2ee14cfc`.
+- Focused core log: ignored `.test-tmp/managed-core-focused.log`, SHA-256 `3cea357cb97d8a5b4b84e33add890271b3a35830b73ac825659f3e38d9ad51bb`; Maven duration 13:15. Native ACL/release preflight occurs before claims; this duration is not inference throughput.
+
+The 1,001-terminal-record capacity regression uses authored metadata and real file/owner locks with mocked native ACL calls. The native phase uses four actual SDK-created profiles; it does not claim 1,001 SDK executions. The authored French reference diagnostic runs actual isolated translation and validates private result shape/metrics; it is not a representative accuracy benchmark. Tests inspect no real user data and do not issue ownership or recovery authorization. Private fixtures, signed ephemeral tokens, release files and model bytes are excluded from Git.
+
+## Remaining scope
+
+Representative instance/language/speech/query data, permission and institutional thresholds, and native-speaker Shona/code-switch review remain external acceptance requirements. Administrator-backed service logon, daemon/trusted-broker egress policy, installed SCM stop/restart/boot and production IdP/TLS/secret/registry/host acceptance remain unexecuted. File rotation does not issue or refresh IdP tokens.
+
+Wider/learned/instance profiles where needed, semantic/generative/embedding/box/mask quality protocols, dataset leakage/slice tooling, larger cohorts/index migration, portable/distributed scheduling, dashboards/advisory inventory and wider daemon/host/backup failure exercises remain local engineering. Archive capacity is bounded and history never expires automatically; storage/export/retention policy remains operational work. These gaps are not labeled unavailable infrastructure. Full M4 acceptance and production readiness are not claimed.

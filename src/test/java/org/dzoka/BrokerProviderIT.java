@@ -76,7 +76,8 @@ with private_fixture() as root:
  assert json.loads((root/'service/status.json').read_bytes())['phase']=='STOPPED'
 print('Checked broker service invocation completed')
 """;
-        var command=new ProcessBuilder("python","-I","-B","-c",script);var env=command.environment();String credential=token(subject);
+        // Cover protected startup and the six-minute helper window with a test-only token.
+        var command=new ProcessBuilder("python","-I","-B","-c",script);var env=command.environment();String credential=token(subject,issuer,"dzoka-core",java.time.Instant.now().plusSeconds(1200),key);
         env.put("DZOKA_AI_CORE_URL",base);env.put("DZOKA_AI_TOKEN",credential);env.put("DZOKA_AI_TENANT",A.toString());env.put("DZOKA_AI_PROFILE",PerceptionFixtures.id(name).toString());env.put("DZOKA_AI_BROKER_PROFILE",name);env.put("DZOKA_AI_ALLOW_INSECURE_LOOPBACK","true");env.put("DATABASE_URL","synthetic forbidden inherited credential");
         Path log=Path.of(".test-tmp","broker-http-"+UUID.randomUUID()+".log");command.redirectErrorStream(true).redirectOutput(log.toFile());var child=command.start();if(!child.waitFor(360,TimeUnit.SECONDS)){child.destroyForcibly();fail("Isolated broker deadline exceeded");}
         String output=Files.readString(log);assertEquals(expected,child.exitValue(),output);assertFalse(output.contains(credential));assertFalse(output.contains("synthetic forbidden inherited credential"));
