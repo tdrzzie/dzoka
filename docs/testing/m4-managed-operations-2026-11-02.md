@@ -6,7 +6,7 @@ Implemented terminal profile archival preserves exact bytes and flushed receipts
 
 Private hash-bound reference diagnostics add independently authored normalized exact, WER and CER metrics for OCR/speech/directed translation. Inputs/evidence are checked before inference and raw input/reference/output are excluded from result artifacts. Every result leaves approval NOT_ESTABLISHED. This is evaluation tooling, not representative dataset approval or model-quality improvement by itself.
 
-## Verification in progress
+## Verification results
 
 All 150 Python regressions pass. The native managed phase passes ten checks, including actual private ACL denial, crash/retry receipts, four real SDK profile records, active-owner/pending-grant retention and one actual isolated translation diagnostic. The focused real-core scenario also passes (one integration test, zero failures/errors/skips): wrong-tenant refusal with the job still queued; atomic valid credential replacement with a real completion; invalid replacement pause with another job still queued; restoration with a second real completion; idle polling and automatic exact archival of both native profile records. The first expanded gate failed during integration under host resource pressure; no final full-gate PASS is claimed. A retry requires recovered host resources.
 
