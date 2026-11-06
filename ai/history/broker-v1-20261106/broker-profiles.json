@@ -1,0 +1,3404 @@
+{
+  "ISO_TEXT": {
+    "family": "text",
+    "base": "TEXT",
+    "space": {
+      "provider": "onnxruntime-appcontainer-cpu",
+      "model": "sentence-transformers/paraphrase-multilingual-MiniLM-L12-v2",
+      "artifactRevision": "e8f8c211226b894fcb81acc59f3b34ba3efd5f42",
+      "artifactSha256": "98a01d88b7de996cdea58c32ca71208c09968d143798814b2ea09d3439dc334f",
+      "tokenizerSha256": "2c3387be76557bd40970cec13153b3bbf80407865484b209e655e5e4729076b8",
+      "preprocessing": "nfc-whitespace-v1:tokenizer-json:128:mask-mean:l2:quint8-v1",
+      "dimensions": 384,
+      "metric": "COSINE",
+      "normalization": "L2",
+      "configSha256": "0a631aa66ef8de87e84c2d8a6dae318c62bfa58df50af17c5008c2c16ef0fc08",
+      "spaceKey": "5c1ed9a77d681bf94d43c3b50440af9ffc988a22fa381986c6ceb177b55df5c7"
+    },
+    "key": "5c1ed9a77d681bf94d43c3b50440af9ffc988a22fa381986c6ceb177b55df5c7",
+    "boundary": {
+      "protocol": "model-pipe-v1",
+      "execution": "windows-appcontainer-no-capabilities",
+      "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+      "runtime": "reviewed-22-wheel",
+      "nativeCpu": "owned-fixed-session-v1"
+    }
+  },
+  "ISO_PERCEPTION_VISION": {
+    "family": "perception",
+    "base": "VISION",
+    "key": "b9ee8fdd6a6e750067e7ed5493d16945c0c4b486ae844b9d7e46ba950bf98bdf",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "VISION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "preprocessing": "bilinear-half-pixel-short256-center224-rgb-imagenet-v1",
+        "output": "logits1000-l2",
+        "threads": 2,
+        "baseProfileKey": "6d0bb588bdc95437922fc984689e0c2e597a19b582289f7dc939b8e1add4b71d",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "onnxmodelzoo/resnet18-v1-7",
+          "revision": "e7cb849a949bdceba02356b8b923d53cc01108e1",
+          "path": "resnet18-v1-7.onnx",
+          "bytes": 46820737,
+          "sha256": "4e8f8653e7a2222b3904cc3fe8e304cd8b339ce1d05fd24688162f86fb6df52c"
+        }
+      ]
+    }
+  },
+  "ISO_PERCEPTION_LOCAL_FEATURES": {
+    "family": "perception",
+    "base": "LOCAL_FEATURES",
+    "key": "b44fa5a4ae7e7100d11f47c31afb71cc95804f1a12aa8ab7e622f080ca70a0d3",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "LOCAL_FEATURES",
+      "provider": "numpy-harris-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "algorithm": "harris-k0.04-box3-nms8-patch16-block4-l2-v1",
+        "maxSide": 512,
+        "maxPoints": 16,
+        "descriptorDimensions": 16,
+        "baseProfileKey": "9b39dcbc11dcdd74afba3c05001bc432d62be5ac9bf797763e6e34e3401e5b61",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": []
+    }
+  },
+  "ISO_PERCEPTION_OCR": {
+    "family": "perception",
+    "base": "OCR",
+    "key": "0b588feacb879aaed69bd2493c2d081f887a3ea29bfd77363c6e56409a32b817",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "OCR",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "preprocessing": "bgr-bilinear-stride32-max736-imagenet-v1",
+        "detection": "threshold0.2-grid4-bbox-pad4-max16",
+        "recognition": "bgr-height48-width160to640-bilinear-normalize0.5-ctc-v1",
+        "baseProfileKey": "b5bde315d5e2ab21640bbfb6e0082cced97d21e0caf1405a71bb7c3a6d442dfd",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "PaddlePaddle/PP-OCRv6_small_det_onnx",
+          "revision": "28fe5895c24fd108c19eb3e8479f4ab385fbfc62",
+          "path": "inference.onnx",
+          "bytes": 9880512,
+          "sha256": "d73e0058b7a8086bbd57f3d10b8bcd4ff95363f67e06e2762b5e814fe9c9410e"
+        },
+        {
+          "repository": "PaddlePaddle/PP-OCRv6_small_rec_onnx",
+          "revision": "b8f84f0b80c529de40b4fbb3544b84fa7233a513",
+          "path": "inference.onnx",
+          "bytes": 21159378,
+          "sha256": "5435fd747c9e0efe15a96d0b378d5bd157e9492ed8fd80edf08f30d02fa24634"
+        },
+        {
+          "repository": "PaddlePaddle/PP-OCRv6_small_rec_onnx",
+          "revision": "b8f84f0b80c529de40b4fbb3544b84fa7233a513",
+          "path": "inference.yml",
+          "bytes": 150579,
+          "sha256": "ab078671bb49f06228eadccd34f1bb501e157f7a047095ffb943ba81512c77d1"
+        }
+      ]
+    }
+  },
+  "ISO_PERCEPTION_SPEECH": {
+    "family": "perception",
+    "base": "SPEECH",
+    "key": "538279ebac56b22ac4bf272bf43dbea2121dbbbe2a3c58e9aeba9139be0598fd",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "SPEECH",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "wav-pcm16-mono16k-400to160000samples-v1",
+        "normalization": "zero-mean-var-eps1e-7",
+        "decoder": "ctc-greedy-blank0",
+        "language": "en",
+        "maxCharacters": 2048,
+        "baseProfileKey": "35c6d8433204ec9baea85b1d8362e58bbaf1109fe3b439a7986423b9d880421b",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "inference4j/wav2vec2-base-960h",
+          "revision": "a4f3a030e6d6126a40ab644672d6c86415242350",
+          "path": "model.onnx",
+          "bytes": 377887594,
+          "sha256": "e46614273f03ff4b87923a965e417fa72004825522cb007c9c25633b8475490d"
+        },
+        {
+          "repository": "inference4j/wav2vec2-base-960h",
+          "revision": "a4f3a030e6d6126a40ab644672d6c86415242350",
+          "path": "vocab.json",
+          "bytes": 358,
+          "sha256": "4178db26b3c7570f6a47f14ac6a1c7b32950b8c2800fb097287e53776934f1c5"
+        }
+      ]
+    }
+  },
+  "ISO_VISION_JOINT_IMAGE": {
+    "family": "vision",
+    "base": "JOINT_IMAGE",
+    "key": "8a30f11d2e400d5c3826d98be95160b462b778c49e31c5b0619a07976b7b639a",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "JOINT_IMAGE",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "IMAGE_PNG",
+        "output": "joint-embedding-v1",
+        "baseProfileKey": "749fc45d4970bea668a5a334240440bd4cc08afafd7a8c064d05599182bda807",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/text_model.onnx",
+          "bytes": 547534356,
+          "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/vision_model_quantized.onnx",
+          "bytes": 87853512,
+          "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer.json",
+          "bytes": 711827,
+          "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "preprocessor_config.json",
+          "bytes": 527,
+          "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "config.json",
+          "bytes": 1927,
+          "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer_config.json",
+          "bytes": 1243,
+          "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+        }
+      ],
+      "sharedSpace": {
+        "key": "ee92174788ddd7e7fa321e574634ec09878dd4d5cc8e72b9f42d9ce80f78e0a0",
+        "definition": {
+          "artifacts": [
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/text_model.onnx",
+              "bytes": 547534356,
+              "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/vision_model_quantized.onnx",
+              "bytes": 87853512,
+              "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer.json",
+              "bytes": 711827,
+              "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "preprocessor_config.json",
+              "bytes": 527,
+              "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "config.json",
+              "bytes": 1927,
+              "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer_config.json",
+              "bytes": 1243,
+              "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+            }
+          ],
+          "configuration": {
+            "model": "jina-clip-v1-fp32-text-int8-image-v2",
+            "dimensions": 768,
+            "metric": "COSINE",
+            "normalization": "L2",
+            "imageProcessing": "rgba-white-bilinear-halfpixel-short224-center224-clipnorm-v1",
+            "textProcessing": "serialized-bert-tokenizer-512-graph-pool-l2-v1",
+            "language": "en"
+          },
+          "sources": {
+            "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+            "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+            "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+            "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+          },
+          "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+          "brokerBoundary": {
+            "protocol": "model-pipe-v1",
+            "execution": "windows-appcontainer-no-capabilities",
+            "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+            "runtime": "reviewed-22-wheel",
+            "nativeCpu": "owned-fixed-session-v1"
+          }
+        }
+      }
+    }
+  },
+  "ISO_VISION_JOINT_TEXT": {
+    "family": "vision",
+    "base": "JOINT_TEXT",
+    "key": "ac199ba84571bcb178d3b78a30ecc011643134522b102e5041a8c3d566aac1d2",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "JOINT_TEXT",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "TEXT_UTF8",
+        "maxTokens": 512,
+        "maxCharacters": 8000,
+        "output": "joint-embedding-v1",
+        "baseProfileKey": "001e123ddf8e7a23e0525a01f12b4bcbc32ffeff2b2990de5c34f73fbbbc9bb3",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/text_model.onnx",
+          "bytes": 547534356,
+          "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/vision_model_quantized.onnx",
+          "bytes": 87853512,
+          "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer.json",
+          "bytes": 711827,
+          "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "preprocessor_config.json",
+          "bytes": 527,
+          "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "config.json",
+          "bytes": 1927,
+          "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer_config.json",
+          "bytes": 1243,
+          "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+        }
+      ],
+      "sharedSpace": {
+        "key": "ee92174788ddd7e7fa321e574634ec09878dd4d5cc8e72b9f42d9ce80f78e0a0",
+        "definition": {
+          "artifacts": [
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/text_model.onnx",
+              "bytes": 547534356,
+              "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/vision_model_quantized.onnx",
+              "bytes": 87853512,
+              "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer.json",
+              "bytes": 711827,
+              "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "preprocessor_config.json",
+              "bytes": 527,
+              "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "config.json",
+              "bytes": 1927,
+              "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer_config.json",
+              "bytes": 1243,
+              "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+            }
+          ],
+          "configuration": {
+            "model": "jina-clip-v1-fp32-text-int8-image-v2",
+            "dimensions": 768,
+            "metric": "COSINE",
+            "normalization": "L2",
+            "imageProcessing": "rgba-white-bilinear-halfpixel-short224-center224-clipnorm-v1",
+            "textProcessing": "serialized-bert-tokenizer-512-graph-pool-l2-v1",
+            "language": "en"
+          },
+          "sources": {
+            "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+            "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+            "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+            "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+          },
+          "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+          "brokerBoundary": {
+            "protocol": "model-pipe-v1",
+            "execution": "windows-appcontainer-no-capabilities",
+            "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+            "runtime": "reviewed-22-wheel",
+            "nativeCpu": "owned-fixed-session-v1"
+          }
+        }
+      }
+    }
+  },
+  "ISO_VISION_DETECTION": {
+    "family": "vision",
+    "base": "DETECTION",
+    "key": "d60d593c223a3ea442ab3ae89cffeb0029e2026ee919aa32c3c5037acac1b288",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "DETECTION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "IMAGE_PNG",
+        "processing": "rgb-u8-bilinear-300square-v1",
+        "threshold": 0.5,
+        "maxBoxes": 20,
+        "vocabulary": "coco-90",
+        "baseProfileKey": "48b54a70eaf47cfbe11db3bfd6fcb43777980e64cd3922eeb27829ca52007039",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "onnxmodelzoo/ssd_mobilenet_v1_12",
+          "revision": "019281f3fcb151a90e491f3b2f0273f9f31bd6be",
+          "path": "ssd_mobilenet_v1_12.onnx",
+          "bytes": 29461455,
+          "sha256": "b8fba5e404077d4048d27fcd1667e85e27e192eb9bf51e696c46a3acd7d21058"
+        }
+      ]
+    }
+  },
+  "ISO_VISION_SEGMENTATION": {
+    "family": "vision",
+    "base": "SEGMENTATION",
+    "key": "ac55b616c85828259d2b8ac10246ad041b978d3360e70b6a9054f12cc24ff5dd",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "SEGMENTATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "IMAGE_PNG",
+        "processing": "rgb-bilinear-256square-imagenet-v1",
+        "maskGrid": [
+          64,
+          64
+        ],
+        "vocabulary": "pascal-voc-21",
+        "baseProfileKey": "86cc01e914b317795606e2d1ddd9af0b012cb042b6d4bf2c96e5804bc1b178c2",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "onnxmodelzoo/fcn-resnet50-12",
+          "revision": "f2d2cd188853be0c07d4c11851279a6bd41e94b1",
+          "path": "fcn-resnet50-12.onnx",
+          "bytes": 141193555,
+          "sha256": "eb5017d1b80372eb0b58552655274698817ba2e774437e2c2d3c0a613d2e99bd"
+        }
+      ]
+    }
+  },
+  "ISO_LANGUAGE_ATTRIBUTES": {
+    "family": "language",
+    "base": "ATTRIBUTES",
+    "key": "ac4a0b3815d66f34d8f1b2f037d6d889b529f9b743b7f3664d42fb83f13ea511",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "ATTRIBUTES",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/language.py": "9291cd671c8b009f56c63eedc6bc59db4b1e67f3bb0135549bf38e721b21ee0d",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "TEXT_UTF8",
+        "language": "en",
+        "questions": {
+          "category": "What item was lost or found?",
+          "brand": "What is the brand of the item?",
+          "colour": "What colour is the item?",
+          "location": "Where was the item lost or found?",
+          "time": "When was the item lost or found?"
+        },
+        "prompt": "{question}",
+        "maxInputTokens": 256,
+        "truncation": "only-second",
+        "maxSpanTokens": 16,
+        "nullMargin": 0,
+        "grounding": "unique-word-span-utf16-v1",
+        "colours": [
+          "beige",
+          "black",
+          "blue",
+          "brown",
+          "cream",
+          "gold",
+          "gray",
+          "green",
+          "grey",
+          "navy",
+          "orange",
+          "pink",
+          "purple",
+          "red",
+          "silver",
+          "white",
+          "yellow"
+        ],
+        "colourModifiers": [
+          "bright",
+          "dark",
+          "light",
+          "metallic",
+          "off",
+          "pale"
+        ],
+        "temporalPattern": "\\b(?:morning|afternoon|evening|night|noon|midnight|today|yesterday|tomorrow|week|month|year|monday|tuesday|wednesday|thursday|friday|saturday|sunday)\\b",
+        "output": "qa-source-spans-v1",
+        "locationPattern": "\\b(?:at|in|near|inside|outside|by|from|around)\\s+(?:(?:the|a|an)\\s+)?",
+        "timeQualifierPattern": "\\b(?:around|about|approximately|roughly|before|after|between)\\s+$",
+        "timeUncertainty": "UNINTERPRETED",
+        "padding": "none",
+        "baseProfileKey": "31ac796786dfad5e81bbef7d0a089dc7344125525524265931def72aed68df82",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+          "revision": "222ce933417187f06dd936952104aabfe889925c",
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 34005635,
+          "sha256": "96dcabad9c2b36daa35cbca3677ae2dbfdbab1bc88eb921aeaafe12e1a322c9e"
+        },
+        {
+          "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+          "revision": "222ce933417187f06dd936952104aabfe889925c",
+          "path": "tokenizer.json",
+          "bytes": 711661,
+          "sha256": "da0e79933b9ed51798a3ae27893d3c5fa4a201126cef75586296df9b4d2c62a0"
+        },
+        {
+          "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+          "revision": "222ce933417187f06dd936952104aabfe889925c",
+          "path": "config.json",
+          "bytes": 729,
+          "sha256": "eda9eafc99e5044cab133664b88e39174b4ea67d51db0eceec0b7a0b540af83d"
+        },
+        {
+          "repository": "onnx-community/all-MiniLM-L12-v2-qa-all-ONNX",
+          "revision": "222ce933417187f06dd936952104aabfe889925c",
+          "path": "tokenizer_config.json",
+          "bytes": 1464,
+          "sha256": "ccb4eb21a03e1442ee5c3f85431b9c307960a04579942537d74778dc8080a48c"
+        }
+      ]
+    }
+  },
+  "ISO_LANGUAGE_TRANSLATION": {
+    "family": "language",
+    "base": "TRANSLATION",
+    "key": "d35e006617ee4021e346c0976f0e831ce135ea062feeac73d8497a1ba6be8c6b",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/language.py": "9291cd671c8b009f56c63eedc6bc59db4b1e67f3bb0135549bf38e721b21ee0d",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "TEXT_UTF8",
+        "sourceLanguage": "fr",
+        "targetLanguage": "en",
+        "prompt": "{source}",
+        "maxInputTokens": 256,
+        "maxOutputTokens": 64,
+        "decoding": "full-prefix-greedy-cache-disabled-pad-suppressed-v1",
+        "output": "opus-fr-en-greedy-v1",
+        "padding": "none",
+        "baseProfileKey": "df9baf04d5ebef7b24d05886288f8b822f4813df78c215e88f674a21e9e246d3",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "Chortan/opus-mt-fr-en",
+          "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+          "path": "onnx/encoder_model_quantized.onnx",
+          "bytes": 50115843,
+          "sha256": "770772a8acf35c3eccee056185ec58b0b859d2888047477788efc56f0abd332c"
+        },
+        {
+          "repository": "Chortan/opus-mt-fr-en",
+          "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+          "path": "onnx/decoder_model_merged_quantized.onnx",
+          "bytes": 57468582,
+          "sha256": "228d9267cff58a2ebefa5e5a8192637f959e9a9880d8aad5cc1e3fcbae07c507"
+        },
+        {
+          "repository": "Chortan/opus-mt-fr-en",
+          "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+          "path": "tokenizer.json",
+          "bytes": 4199465,
+          "sha256": "8920f41b889048e5984470ca9caf40cce1476cad9aa9090db93cb8dd1d939042"
+        },
+        {
+          "repository": "Chortan/opus-mt-fr-en",
+          "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+          "path": "config.json",
+          "bytes": 1416,
+          "sha256": "b3be13d046d9899d7aab8cf4ed624d9a79f5776038ba793f6b4d2ce3e02192f7"
+        },
+        {
+          "repository": "Chortan/opus-mt-fr-en",
+          "revision": "47e3d984d65cc24010fe0f259ebc5b4a73a3a2fd",
+          "path": "generation_config.json",
+          "bytes": 293,
+          "sha256": "4956fb9a7caaad7579cf8bb789c1e578b8a1cf48a0a8b779fda2f95dd10bbaa5"
+        }
+      ]
+    }
+  },
+  "ISO_LANGUAGE_RERANK": {
+    "family": "language",
+    "base": "RERANK",
+    "key": "0612cb027bed06cddfb19a0c3b798988c423668003bae8866e728150093f0bb5",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "RERANK",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/language.py": "9291cd671c8b009f56c63eedc6bc59db4b1e67f3bb0135549bf38e721b21ee0d",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "input": "RERANK_JSON",
+        "language": "en",
+        "maxCandidates": 8,
+        "maxCandidateCharacters": 512,
+        "maxInputTokens": 512,
+        "output": "raw-logit-descending-client-id-tie-v1",
+        "padding": "none",
+        "baseProfileKey": "082062f9dcb9d4e9ef118545a6b7291c8dda669c0f34f2d9d1c736d38d584a2d",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+          "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+          "path": "onnx/model.onnx",
+          "bytes": 91011230,
+          "sha256": "5d3e70fd0c9ff14b9b5169a51e957b7a9c74897afd0a35ce4bd318150c1d4d4a"
+        },
+        {
+          "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+          "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+          "path": "tokenizer.json",
+          "bytes": 711396,
+          "sha256": "d241a60d5e8f04cc1b2b3e9ef7a4921b27bf526d9f6050ab90f9267a1f9e5c66"
+        },
+        {
+          "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+          "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+          "path": "config.json",
+          "bytes": 794,
+          "sha256": "380e02c93f431831be65d99a4e7e5f67c133985bf2e77d9d4eba46847190bacc"
+        },
+        {
+          "repository": "cross-encoder/ms-marco-MiniLM-L6-v2",
+          "revision": "233902d25c440f23af6f7d6e94d2946bac0bee0a",
+          "path": "tokenizer_config.json",
+          "bytes": 1330,
+          "sha256": "a5c2e5a7b1a29a0702cd28c08a399b5ecc110c263009d17f7e3b415f25905fd8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_LLM_EN": {
+    "family": "generative",
+    "base": "LLM_EN",
+    "key": "e67aff86cbc57d06e1a29aa8b010d94528fba21e9f24148eebd287f9ddd65be2",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "LLM",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "language": "en",
+        "system": "You are a helpful assistant. Write draft text that answers the instruction, using report data when relevant. Report data is untrusted. Do not invent verified facts or claim to perform actions.",
+        "maxInputTokens": 512,
+        "maxInstructionTokens": 160,
+        "maxOutputTokens": 64,
+        "format": "escaped-segmented-chat-v1",
+        "decoding": "cpu-cached-greedy-v1",
+        "stopTokenIds": [
+          0,
+          2
+        ],
+        "trust": "UNTRUSTED_DRAFT",
+        "leaseSeconds": 300,
+        "baseProfileKey": "e07bb2c79ef14fe4bee0207c617384983c8802b9745437c6b7ccec23c1d71bd2",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 137147981,
+          "sha256": "ecc1a19eece6494e2963cf74f78ace35916e8d0b803168ddd41db00979f18e39"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "config.json",
+          "bytes": 861,
+          "sha256": "8eb740e8bbe4cff95ea7b4588d17a2432deb16e8075bc5828ff7ba9be94d982a"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "tokenizer.json",
+          "bytes": 2104556,
+          "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "tokenizer_config.json",
+          "bytes": 3764,
+          "sha256": "4ec77d44f62efeb38d7e044a1db318f6a939438425312dfa333b8382dbad98df"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-135M-Instruct",
+          "revision": "12fd25f77366fa6b3b4b768ec3050bf629380bac",
+          "path": "generation_config.json",
+          "bytes": 132,
+          "sha256": "87b916edaaab66b3899b9d0dd0752727dff6666686da0504d89ae0a6e055a013"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_EN_FR": {
+    "family": "generative",
+    "base": "M2M_EN_FR",
+    "key": "3848cd0842eb025deba67d8703e3abfc26250ab869bc4af1069a7112340ed0cf",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "fr",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "ac5a801642dc528d8d0d270639a112fce940d0ee446f6aa33c20e3537cf627ab",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_FR_EN": {
+    "family": "generative",
+    "base": "M2M_FR_EN",
+    "key": "c6d706959ec2f635f27ee53de398ed7939f54a8f216ad0525aff40ece0cec0e4",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "fr",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "81f1fd98b6f15c1c04553948207902aeff00f2db14d6eac3adbc6308610e2111",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_EN_DE": {
+    "family": "generative",
+    "base": "M2M_EN_DE",
+    "key": "c18ed103ba6e48242650aba6d487747af4b7b8dfe2919e3002b0e3e63edf65a7",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "de",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "c7cf89b1b0f87b20062315ba82bb3409e813b43e2e71d0adb919db565ca9ffc1",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_DE_EN": {
+    "family": "generative",
+    "base": "M2M_DE_EN",
+    "key": "ba59c5ee90fa0ece297ed15811ee1deba5ec2e9a29f8180b016e8c4562764675",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "de",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "308d072dda1bee25187389433182f673159b076e15379a74961780d2eda0dfaf",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_EN_ES": {
+    "family": "generative",
+    "base": "M2M_EN_ES",
+    "key": "ae43134f62ed0eedefc8da2a9df3312812a1d1823ad8275229e06b97cd8def80",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "es",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "fd87e4b619a3c9056f70fcb9f945f36dec33296af7baad13c25cd6c8e2bab478",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_ES_EN": {
+    "family": "generative",
+    "base": "M2M_ES_EN",
+    "key": "c48cf559df20dfb01361183800ad840bba896953cfc3d6ebf40c4194c886bfbe",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "es",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "d5cc551f6cd26f3fe87ddeff0e068cb26d63987109ccfb393f1600287a7446d4",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_EN_AF": {
+    "family": "generative",
+    "base": "M2M_EN_AF",
+    "key": "65076fa1dd55bad1108ec218f60d05fcbd0603b1784195f21590b86bb2e2545e",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "af",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "4d069c6764a93bfe7b63ad0353e4da7d0dd9a66d104d97485a0da851a259b303",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_AF_EN": {
+    "family": "generative",
+    "base": "M2M_AF_EN",
+    "key": "3614719e22855c3e7c993e65078f959fbdb4cb252523fc840f5dd4f4787fec45",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "af",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "2a21a1e025c5b397dc2e161999205795e975f6a0c8a373fc322cca20dea4ab79",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_EN_ZU": {
+    "family": "generative",
+    "base": "M2M_EN_ZU",
+    "key": "ede084719297eea6eeac2ceda00d9e725cdf37c655d85e85f43550db2b0962a6",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "zu",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "809f5b550024c627c99220955005c4c38afa108ae86a344c51f64b235fec8827",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_ZU_EN": {
+    "family": "generative",
+    "base": "M2M_ZU_EN",
+    "key": "0ea20d45b3c1c04788b4f71e4508497b068f668ebe276c9ab9827c1b711ccd11",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "zu",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "d212d04c76ecdf791574bf4c1ba2e479a94c54264c5291c4f55a47127dfcf4f8",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_EN_XH": {
+    "family": "generative",
+    "base": "M2M_EN_XH",
+    "key": "97c88191466ad6bdb08d6799b026da33705470b27664ec3e4a89c3d68c801a2e",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "en",
+        "targetLanguage": "xh",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "7a88135e0568bbc590b34701e39c9d487f29ffd02713af95e0587bc1f33df1aa",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_GENERATIVE_M2M_XH_EN": {
+    "family": "generative",
+    "base": "M2M_XH_EN",
+    "key": "f95d0e59aeba168caee949362cdbe10ec3842d26385889ac603be4cf80d3e1f6",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "sourceLanguage": "xh",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "language-source-eos-v1",
+        "decoding": "forced-target-full-prefix-greedy-v1",
+        "leaseSeconds": 300,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "baseProfileKey": "8652404323f2a63c2ebc458471515cbd453aad74afa1183b225e9917750a683e",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 287221629,
+          "sha256": "b408b47bef2b0e9b2df6849c5a5ddb3d67c144234783285eeaeb9f91b4f46aa0"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 469378823,
+          "sha256": "7e296993d4a15a0141485edb309f7a50b54c885a6d2ba7b4862129b045d9900e"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "sentencepiece.bpe.model",
+          "bytes": 2423393,
+          "sha256": "d8f7c76ed2a5e0822be39f0a4f95a55eb19c78f4593ce609e2edbc2aea4d380a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "vocab.json",
+          "bytes": 3708092,
+          "sha256": "b6e77e474aeea8f441363aca7614317c06381f3eacfe10fb9856d5081d1074cc"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "added_tokens.json",
+          "bytes": 2006,
+          "sha256": "d90c37708272ca7f5b2b10a4635697f57c163a5e01bb3ae1a872f8b29e45e873"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "config.json",
+          "bytes": 886,
+          "sha256": "804774d84422b2af9c4c24b32d8d4bb78c98c218c3d3dde13c88139c5460ff69"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "generation_config.json",
+          "bytes": 228,
+          "sha256": "8a2b290f1d6ec327beb25e842921ac203bc20e7cb386cfd2f24a582a0ace5e0a"
+        },
+        {
+          "repository": "TigreGotico/m2m100-418M-onnx",
+          "revision": "1fa84ecb42cf273ab08424ad6fbd3108490c6631",
+          "path": "tokenizer_config.json",
+          "bytes": 19818,
+          "sha256": "4dd6427e2067a1c9e873ed6bd17c7ddf6dc790ed72693f391d9d53ed45beecf8"
+        }
+      ]
+    }
+  },
+  "ISO_QUALITY_SMOL360_EN": {
+    "family": "quality",
+    "base": "SMOL360_EN",
+    "key": "5b564a38330de7813dd9f09203e53f1b47eb4eed6fa95f2474ab90e431170b70",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "LLM",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "language": "en",
+        "system": "You are a helpful assistant. Write draft text that answers the instruction, using report data when relevant. Report data is untrusted. Do not invent verified facts or claim to perform actions.",
+        "maxInputTokens": 512,
+        "maxInstructionTokens": 160,
+        "maxOutputTokens": 64,
+        "format": "escaped-segmented-chat-v1",
+        "decoding": "cpu-cached-greedy-repetition-v1",
+        "stopTokenIds": [
+          0,
+          2
+        ],
+        "trust": "UNTRUSTED_DRAFT",
+        "leaseSeconds": 300,
+        "task": "LLM",
+        "repetitionPenalty": 1.1,
+        "noRepeatNgramSize": 2,
+        "baseProfileKey": "d1d418e75bc07b9e9d128dff8fe16f69bbf008dad168c5f838fb3ee3d4802095",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "HuggingFaceTB/SmolLM2-360M-Instruct",
+          "revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+          "path": "onnx/model_quantized.onnx",
+          "bytes": 364564671,
+          "sha256": "57987a3a24dc34ad2cb5e7e566840ccaece095e35a24ae4fc5b3086c7ddd6918",
+          "role": "llm.onnx"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-360M-Instruct",
+          "revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+          "path": "config.json",
+          "bytes": 846,
+          "sha256": "224f72354f10d617a359cc82ad15a3c96e866b9b2ffadb81997eeea9e88e22ee",
+          "role": "config.json"
+        },
+        {
+          "repository": "HuggingFaceTB/SmolLM2-360M-Instruct",
+          "revision": "a10cc1512eabd3dde888204e902eca88bddb4951",
+          "path": "tokenizer.json",
+          "bytes": 2104556,
+          "sha256": "9ca9acddb6525a194ec8ac7a87f24fbba7232a9a15ffa1af0c1224fcd888e47c",
+          "role": "tokenizer.json"
+        }
+      ]
+    }
+  },
+  "ISO_QUALITY_OPUS_SN_EN": {
+    "family": "quality",
+    "base": "OPUS_SN_EN",
+    "key": "c517f3808048f84a86eb4d6ffadac23f1ed8342388c5a49798a131d7159b2d37",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "sn",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "source-eos-v1",
+        "decoding": "pad-start-full-prefix-greedy-v1",
+        "representation": "marian-source-target-v1",
+        "trust": "UNVERIFIED_TRANSLATION",
+        "leaseSeconds": 300,
+        "baseProfileKey": "82be7a624789f04bd0ce6a6a037e1cba357ea303197ade13f16166e0152f7d50",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/opus-mt-sn-en-onnx",
+          "revision": "71a742161e59bc41dc63374979ffcf6ac1db02db",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 50751244,
+          "sha256": "2c815894cab5a9569f1d1917f896d739c9d652024f2e517ba556098554a5f142",
+          "role": "encoder.onnx"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-sn-en-onnx",
+          "revision": "71a742161e59bc41dc63374979ffcf6ac1db02db",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 88883046,
+          "sha256": "e31853be3917eb931ca4de85b2b9879a3d07eb8110757a4c2eca3f38148b6bc4",
+          "role": "decoder.onnx"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-sn-en-onnx",
+          "revision": "71a742161e59bc41dc63374979ffcf6ac1db02db",
+          "path": "config.json",
+          "bytes": 1298,
+          "sha256": "192024d37571ac9162cb7d28b37e4ade7e441a15b7062debfb558dbab5f75332",
+          "role": "config.json"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-sn-en-onnx",
+          "revision": "71a742161e59bc41dc63374979ffcf6ac1db02db",
+          "path": "source.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "source.spm"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-sn-en-onnx",
+          "revision": "71a742161e59bc41dc63374979ffcf6ac1db02db",
+          "path": "target.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "target.spm"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-sn-en-onnx",
+          "revision": "71a742161e59bc41dc63374979ffcf6ac1db02db",
+          "path": "vocab.json",
+          "bytes": 1516308,
+          "sha256": "dfe93b443b5d48f1e5a3a6d39e7e90ff28c061edeb3bd1521203e13e436e56f2",
+          "role": "vocab.json"
+        }
+      ]
+    }
+  },
+  "ISO_QUALITY_OPUS_ES_EN": {
+    "family": "quality",
+    "base": "OPUS_ES_EN",
+    "key": "7139bd9d9b10fe1b6001a7d41bfa2eada83c625f0dd19067fcc5ee20e13fdb9f",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "es",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "source-eos-v1",
+        "decoding": "pad-start-full-prefix-greedy-v1",
+        "representation": "marian-source-target-v1",
+        "trust": "UNVERIFIED_TRANSLATION",
+        "leaseSeconds": 300,
+        "baseProfileKey": "d05eadecc894979df8e85f62d065c313dd7584006ace8808e7e275e3031ccc85",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/opus-mt-es-en-onnx",
+          "revision": "aa1c7cbd25cee1758155696f099d41cedc7faf6d",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 52721414,
+          "sha256": "968a70f55d0249ac40c0e09861b556bc875ba0fe42f08aca7e2fcb3b5f960454",
+          "role": "encoder.onnx"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-es-en-onnx",
+          "revision": "aa1c7cbd25cee1758155696f099d41cedc7faf6d",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 59557443,
+          "sha256": "93cf7fcb42a7a17577574206f21069b67402701a0ea7456545d6136eeab36fb7",
+          "role": "decoder.onnx"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-es-en-onnx",
+          "revision": "aa1c7cbd25cee1758155696f099d41cedc7faf6d",
+          "path": "config.json",
+          "bytes": 1355,
+          "sha256": "b8b55591ec438d05a1a8e6b106e031da0f09a3edfc1481aa97bebaf4a5a86d65",
+          "role": "config.json"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-es-en-onnx",
+          "revision": "aa1c7cbd25cee1758155696f099d41cedc7faf6d",
+          "path": "source.spm",
+          "bytes": 825924,
+          "sha256": "e236ee6d866b635c0142114f8647f39831f9d92534aa2aad75c942f6a78ad0e3",
+          "role": "source.spm"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-es-en-onnx",
+          "revision": "aa1c7cbd25cee1758155696f099d41cedc7faf6d",
+          "path": "target.spm",
+          "bytes": 801636,
+          "sha256": "4dd547c24816a335e7b0b2e63376a8f1b3cbfc671eda5ab808dd44fdadaa8791",
+          "role": "target.spm"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-es-en-onnx",
+          "revision": "aa1c7cbd25cee1758155696f099d41cedc7faf6d",
+          "path": "vocab.json",
+          "bytes": 1720044,
+          "sha256": "b074b4cca0036ade5a39ea97faabd534e1015482c480fc2cb02c6481983eb163",
+          "role": "vocab.json"
+        }
+      ]
+    }
+  },
+  "ISO_QUALITY_OPUS_DE_EN": {
+    "family": "quality",
+    "base": "OPUS_DE_EN",
+    "key": "a7a8470cea5e0a490d6e855747c0dc272263f23660bfd5b035f4ad3a537a51ee",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "de",
+        "targetLanguage": "en",
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "sourceFormat": "source-eos-v1",
+        "decoding": "pad-start-full-prefix-greedy-v1",
+        "representation": "marian-source-target-v1",
+        "trust": "UNVERIFIED_TRANSLATION",
+        "leaseSeconds": 300,
+        "baseProfileKey": "b66c488cf4a85fc88103a699d5ab017e37d7c9e2d1470c40f5d239ae3431036d",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "TigreGotico/opus-mt-de-en-onnx",
+          "revision": "7d21e6010a23a7b2c38ace7f3b18e55ec73be4f3",
+          "path": "int8/encoder_model.onnx",
+          "bytes": 49188618,
+          "sha256": "5dfaa76bbbbcf4a0f291024ea498bf6bf8087085b3aa455481e72a5cf0bf7ee9",
+          "role": "encoder.onnx"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-de-en-onnx",
+          "revision": "7d21e6010a23a7b2c38ace7f3b18e55ec73be4f3",
+          "path": "int8/decoder_model.onnx",
+          "bytes": 55997038,
+          "sha256": "40c5d3e3a58cfb21946a7a260691c97d48560f117fcd38aa3c8b13d188a9e1ae",
+          "role": "decoder.onnx"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-de-en-onnx",
+          "revision": "7d21e6010a23a7b2c38ace7f3b18e55ec73be4f3",
+          "path": "config.json",
+          "bytes": 1298,
+          "sha256": "c5f8313d02676aacd1c99292b1af62273b3bb70a13f8ad415be92b21abfe1d80",
+          "role": "config.json"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-de-en-onnx",
+          "revision": "7d21e6010a23a7b2c38ace7f3b18e55ec73be4f3",
+          "path": "source.spm",
+          "bytes": 796845,
+          "sha256": "bbd1f495eea99c8e21ae086d9146e0fa7b096c3dfdd9ba07ab8b631889df5c9b",
+          "role": "source.spm"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-de-en-onnx",
+          "revision": "7d21e6010a23a7b2c38ace7f3b18e55ec73be4f3",
+          "path": "target.spm",
+          "bytes": 768489,
+          "sha256": "678f2a1177d8389f67b66299762dcc4fc567e89b07e212ba91b0c56daecf47ce",
+          "role": "target.spm"
+        },
+        {
+          "repository": "TigreGotico/opus-mt-de-en-onnx",
+          "revision": "7d21e6010a23a7b2c38ace7f3b18e55ec73be4f3",
+          "path": "vocab.json",
+          "bytes": 1389436,
+          "sha256": "d5acea957b265a78554999144459c5e391e0df525864edc8287bc090290baa44",
+          "role": "vocab.json"
+        }
+      ]
+    }
+  },
+  "ISO_SHONA_CPU_CPU_EN_SN": {
+    "family": "shona-cpu",
+    "base": "CPU_EN_SN",
+    "key": "32facee538a7ad6bf4bdad11df910f05edf169e9e429269eab02c60793b1f197",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu-appcontainer",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "en",
+        "targetLanguage": "sn",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marian-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "tokenCountScope": "SOURCE_MODEL_TOKENS_WITH_EOS",
+        "artifactGroup": "CT2_EN_SN",
+        "baseProfileKey": "01dc4b14477254ab4bae95895c944eff61f2428406c81102b107294a35d5df0a",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "8fb57a9473ef0df4781c28879e7351f785574f1295108068bac44042e4f749fc",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "source.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "target.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "ISO_SHONA_CPU_CPU_SN_EN": {
+    "family": "shona-cpu",
+    "base": "CPU_SN_EN",
+    "key": "8a9eaab4ed4567d80dc3db9ca5354b57904d3e789726c17769dd279295f2b7f2",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu-appcontainer",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "sn",
+        "targetLanguage": "en",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marian-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "tokenCountScope": "SOURCE_MODEL_TOKENS_WITH_EOS",
+        "artifactGroup": "CT2_SN_EN",
+        "baseProfileKey": "7d0c15127272731272b241de59fe58999b131e7e7b87565075c4d1db10b971e0",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "source.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "target.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "ISO_SHONA_CPU_CPU_EN_SN_KEEP": {
+    "family": "shona-cpu",
+    "base": "CPU_EN_SN_KEEP",
+    "key": "07f8e4b95ead4613ca754a1b53ff0e261be952257dd4c0fa6d22a747278a9d63",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu-appcontainer",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "en",
+        "targetLanguage": "sn",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marked-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "artifactGroup": "CT2_EN_SN",
+        "protectionPolicy": "explicit-keep-utf16-v1",
+        "reservedPlaceholderPrefix": "982",
+        "maxPreservedSpans": 8,
+        "maxPreservedSpanUtf16": 256,
+        "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS",
+        "baseProfileKey": "fd8de10b1fb5db428d9075b758ad0443bcde2a4799c074df3b073713627eced2",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "8fb57a9473ef0df4781c28879e7351f785574f1295108068bac44042e4f749fc",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "source.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-en-sn-ctranslate2-android",
+          "revision": "06794e0ec31c3f79287b57fa64edaaf52121bcff",
+          "path": "target.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "ISO_SHONA_CPU_CPU_SN_EN_KEEP": {
+    "family": "shona-cpu",
+    "base": "CPU_SN_EN_KEEP",
+    "key": "80b7afe9fe486a17a51f9d8cf8b6f097e48a5468f5aa44146e109456f015c586",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu-appcontainer",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "sn",
+        "targetLanguage": "en",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-marked-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "artifactGroup": "CT2_SN_EN",
+        "protectionPolicy": "explicit-keep-utf16-v1",
+        "reservedPlaceholderPrefix": "982",
+        "maxPreservedSpans": 8,
+        "maxPreservedSpanUtf16": 256,
+        "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS",
+        "baseProfileKey": "d5d2edfb042b9ec91b839869f01cebfe4dbf51a5411712ec3e47366d08e26477",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "source.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "target.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "target.spm"
+        }
+      ]
+    }
+  },
+  "ISO_SHONA_CPU_CPU_SN_EN_AUTO": {
+    "family": "shona-cpu",
+    "base": "CPU_SN_EN_AUTO",
+    "key": "11a5e981265ed4fa39cec7bc2e25d5cafefb54f75b318a2526ac72d2c3a324d2",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "MULTILINGUAL_TRANSLATION",
+      "provider": "ctranslate2-openblas-cpu-appcontainer",
+      "runtimeLockSha256": "9dae497502e78bf2a51b0f698256f12725f1c6fed403bc536cc3c740b6c797c9",
+      "sources": {
+        "ai/shona_cpu.py": "bc617a504d10c484f0233ff967bbcf8fa5d88b69ff3e9c44df45088f11bacb70",
+        "ai/shona_lid.py": "b3ca80bb9a67d6eb5df78d0b90b610979870c0aad2997f6b5f255750e6389752",
+        "ai/shona_cpu_worker.py": "945ae6d7bfb075992164660418c28f2985b235615453014a951a3c75e242c7f5",
+        "ai/shona_markup.py": "b9e6a3ceffec9e244ca1001b665544dd70ba7408a14d917b91dfc42b7e8ac51b",
+        "ai/shona_cpu_native/driver.cc": "d862903068ce9b75ce8512035a49192b2aa2205cb295a2069ea938fb93f06a3f",
+        "ai/shona_cpu_native/Dockerfile": "08c399510066664da6376aec4cc1c6e7ba90bce6e1fee863400502281ec75805",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/shona-cpu-build.lock.json": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+        "tools/shona_cpu_build.py": "9ecc0d228275803e32166ea62a9dbbe74f98d17e5a59d3cae3724b0d9b288c77",
+        "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+        "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "MULTILINGUAL_TRANSLATION",
+        "sourceLanguage": "sn",
+        "targetLanguage": "en",
+        "beamSize": 4,
+        "maxInputTokens": 128,
+        "maxOutputTokens": 32,
+        "representation": "ctranslate2-auto-v1",
+        "computeType": "float32",
+        "device": "cpu",
+        "threads": 2,
+        "trust": "UNVERIFIED_TRANSLATION",
+        "deploymentScope": "SERVICE_LICENSE_COMPATIBLE_REQUIRES_DEPLOYMENT_ACCEPTANCE",
+        "sourceFormat": "explicit-source-eos-v1",
+        "decoding": "openblas-float32-beam4-v1",
+        "disableUnknownOutput": true,
+        "tokenCountScope": "MASKED_MODEL_TOKENS_WITH_EOS",
+        "artifactGroup": "CT2_SN_EN",
+        "proposalPolicy": "glotlid-english-window-v1",
+        "maxScanUtf16": 512,
+        "maxScanWords": 32,
+        "maxWindowWords": 3,
+        "wordScoreThreshold": 0.6,
+        "wordMarginThreshold": 0.15,
+        "windowScoreThreshold": 0.85,
+        "windowMarginThreshold": 0.2,
+        "proposalTrust": "AUTO_LANGUAGE_PROPOSAL_UNVERIFIED",
+        "maxProposedSpans": 8,
+        "maxProposedSpanUtf16": 256,
+        "reservedPlaceholderPrefix": "982",
+        "baseProfileKey": "8e2cbe3a4e82032edab078aba827e61527bd553709cbea933de3f753dcd93f7d",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "model.bin",
+          "bytes": 77566675,
+          "sha256": "041a73d1dcc5a98e3e954b2da6ae66d779e71ec4b37be74906bd6b553c381e23",
+          "role": "model.bin"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "config.json",
+          "bytes": 223,
+          "sha256": "8f6496adfc930cbfecbe8281112197705c488fab47d34b4829b06d7f478909af",
+          "role": "config.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "shared_vocabulary.json",
+          "bytes": 1099336,
+          "sha256": "9b6ee28c59ba01be245e8ff58d826cb618f4287d3ed1f9762e7ae5756b1717c0",
+          "role": "shared_vocabulary.json"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "source.spm",
+          "bytes": 832442,
+          "sha256": "f5d489d5ea5b110265c030f69c6bfa8eeb6ec7f211cb63f763ef3ae617eed245",
+          "role": "source.spm"
+        },
+        {
+          "repository": "manancode/opus-mt-sn-en-ctranslate2-android",
+          "revision": "2ee5c6ef9d65bec9ccb177f904d2cc2aff78a243",
+          "path": "target.spm",
+          "bytes": 824524,
+          "sha256": "cba8bbfc4f9af2ac2fca0a6c0a9cda18c49193577b543ada20422d2b1f4bc3ab",
+          "role": "target.spm"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "glotlid.int8.onnx",
+          "bytes": 418935890,
+          "sha256": "3b2c8c1fa4ffeb46f04280bf9f93d9949ff61320e9b1877d8d8f08bfeac2e84d",
+          "role": "lid.onnx"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "config.json",
+          "bytes": 105,
+          "sha256": "d50dd161cd9d40e980fbd65c250a973e2667b17048736bc1bc4ed391ae3dfa45",
+          "role": "lid-config.json"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "labels.json",
+          "bytes": 44142,
+          "sha256": "653f2e4c2a1b755b18889c7d821f8be648b2a974cd346279a772bf6633d6407f",
+          "role": "lid-labels.json"
+        },
+        {
+          "repository": "TigreGotico/glotlid-onnx",
+          "revision": "324ea6246b96c997c7eb63089ec5f272dc567b41",
+          "path": "vocab.txt",
+          "bytes": 5590445,
+          "sha256": "59fc76ddaae19c21c205467bd45ae65f3ecd8bd80404066fbf946ea53f182039",
+          "role": "lid-vocab.txt"
+        }
+      ]
+    }
+  }
+}

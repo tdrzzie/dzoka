@@ -1,0 +1,12 @@
+# 0043: Version quality refinements and keep remote comparisons explicit
+
+- Status: Accepted scoped implementation plan; execution evidence pending
+- Date: 2026-11-06
+
+The thirty-source gate passes before this work. Public diagnostics identified short decoder budgets, weak narrowband transcription and missed small objects. Add independently versioned local translation, speech and region alternatives on the existing reviewed ONNX/NumPy/Tokenizers/SentencePiece runtime. Review each checkpoint/export separately before execution; do not install or execute upstream loaders. Preserve historical manifests and immutable releases. If broker source changes, declare a new broker generation with new profile identities and disabled registration, retaining the previous generation; never rewrite persisted components or implicitly activate replacements.
+
+Evaluate the retained diagnostics as an explicitly development/previously-seen set, then retain additional held-out cases separately. Report unavailable/truncated coverage and failures, including regressions. No improvement on previously inspected cases establishes representative quality. Outputs remain untrusted evidence; metrics do not grant ownership or release.
+
+The user also requested OpenRouter configuration for Dzoka. Add a standard-library optional host-side reference client, with owner-private credentials/configuration outside Git, fixed HTTPS origin, rejected redirects/proxies, bounded requests/responses, explicit model/provider allowlists, no automatic fallback/retry and append-only private results. Default disabled. The first integration supports only explicitly declared public-reference text translation; it cannot fetch tenant reports, verification answers, media, jobs or database/storage credentials. It is not a replacement for local providers or a production-private-data approval. Missing configuration fails closed. Authentication checks are separate from paid inference and can run while inference is disabled.
+
+Request deny-training/ZDR routing, but do not describe that as an absolute no-retention guarantee: current provider/account policies and documented safety/legal exceptions remain relevant. Remote outputs retain configured and returned model/provider, configuration/input hashes, request identity, timestamps and available token usage. Preserve local raw input separately. Provider results never approve themselves. No runtime dependency is added; official protocol evidence and local contract tests must distinguish mocked transport from live access.

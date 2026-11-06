@@ -22,7 +22,8 @@ class VisionTests(unittest.TestCase):
         old=json.loads((ROOT/'ai/history/joint-v1-20261106/broker-profiles.json').read_bytes())
         current=broker_profiles.profiles()
         self.assertEqual({'ISO_VISION_JOINT_IMAGE','ISO_VISION_JOINT_TEXT'},
-                         {name for name in old if old[name]!=current[name]})
+                         {name for name in old if old[name]['family']!='text' and
+                          old[name]['manifest']['configuration']['baseProfileKey']!=current[name]['manifest']['configuration']['baseProfileKey']})
 
     def test_pair_shares_exact_space_but_profiles_remain_distinct(self):
         profiles=vision.profiles()

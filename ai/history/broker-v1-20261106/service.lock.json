@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/adr/0040-brokered-model-processes.md",
+  "supervisorLockSha256": "2b5b719434c24caecf59286ee001061b836b529401c0d1e31736f4322877771b",
+  "sources": {
+    "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+    "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+    "tools/service_acl.ps1": "b97a256271b33b077949c2e682ac7b2ac71fadc8e0dac220a82fd3168c4fdb18",
+    "tools/windows_service.py": "d55761ac618e4cd2db47c8681c1d3d9a80082d5a46a416a497f5200f41817a9a",
+    "tools/verify_worker_service.py": "aa705ac6369e5a46cf899255b929fcc99d711bba1382a0cff1344c9ea2c94f05",
+    "tools/verify_service_supervisor.py": "669949fb678c8ee11ba304e162748064c1825d367fa8d6d9eb38026dbda6d53d",
+    "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+    "tools/journal_archive.py": "17c0edd4e7b75360742eb8cabbdb2059c5af442f11a031e76031f5a90b4485c6",
+    "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+    "tools/offline_probe.py": "4c6d6b5de48cb3f03c19ed1d704937aa6b9259f434c59f6007ae0913aa7bb0a8",
+    "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+    "ai/broker_profiles.py": "3df6833f26bb302ce9b8216b30b46e7eef5da41302ce4468f63d06c1a31f0bca",
+    "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+    "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+    "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+    "tools/model_broker.py": "c48c908d229a040bb452902d8bb292b8fe9c65530ecc48a7822d3de2c2109bd2",
+    "tools/broker_bundle.py": "a9347c5680e779cb3f07c72bd2beca851c5dc9b77410a984701c15a46e0c56ed",
+    "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+    "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+    "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+    "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+    "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733",
+    "ai/broker.lock.json": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
+    "ai/broker-profiles.json": "b6631a8dba3b3a91bd021537b5f1d1f1536d7da45fee301356304f1bda8a833a"
+  }
+}

@@ -1,0 +1,194 @@
+[
+  {
+    "repository": "onnx-community/whisper-tiny.en",
+    "revision": "2575352d61be1bf7225cf8f8b268a4678025fc58",
+    "file": "README.md",
+    "bytes": 537,
+    "sha256": "5f1d9253fc9a536c3cd05bcb20128963e6c545c32294bf3cc4e3b5c0bf570c96",
+    "lineRanges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "onnx-community/whisper-tiny.en",
+    "revision": "2575352d61be1bf7225cf8f8b268a4678025fc58",
+    "file": "config.json",
+    "bytes": 2197,
+    "sha256": "251ea843b5901a99efa58c0b99b8052c6019aa3e7d2baf46693a1128ff606233",
+    "lineRanges": [
+      [
+        1,
+        147
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "onnx-community/whisper-tiny.en",
+    "revision": "2575352d61be1bf7225cf8f8b268a4678025fc58",
+    "file": "preprocessor_config.json",
+    "bytes": 339,
+    "sha256": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "lineRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "onnx-community/whisper-tiny.en",
+    "revision": "2575352d61be1bf7225cf8f8b268a4678025fc58",
+    "file": "generation_config.json",
+    "bytes": 1646,
+    "sha256": "7b2e8451ed5f118e75fdd991409d72119d21d2fef1eba9723f68fb9c57fe5dc9",
+    "lineRanges": [
+      [
+        1,
+        150
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper-tiny.en",
+    "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+    "file": "README.md",
+    "bytes": 14861,
+    "sha256": "13627ce3d7dce389223eab7b6ed06738f0f1c786e5245e650b029e4e314c8ff1",
+    "lineRanges": [
+      [
+        1,
+        243
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper-tiny.en",
+    "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+    "file": "config.json",
+    "bytes": 1937,
+    "sha256": "b5366317df280f79e6cc366f259f379674f81a8721d458acf2e00680ccb10b1d",
+    "lineRanges": [
+      [
+        1,
+        138
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper-tiny.en",
+    "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+    "file": "preprocessor_config.json",
+    "bytes": 184990,
+    "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+    "lineRanges": [
+      [
+        1,
+        16256
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper-tiny.en",
+    "revision": "87c7102498dcde7456f24cfd30239ca606ed9063",
+    "file": "generation_config.json",
+    "bytes": 1621,
+    "sha256": "38744c19d5cede6ff4dab5079c6d6ddc02ca726960bbef208fb602ad5a030eab",
+    "lineRanges": [
+      [
+        1,
+        149
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "onnxmodelzoo/MaskRCNN-12",
+    "revision": "2447510ef23e65eabd5fa642cf59dd9e622586c5",
+    "file": "README.md",
+    "bytes": 7869,
+    "sha256": "61c4280b4e9b12c06694766402c8e8dc980955fc0e7a21aefb9edce8413a7134",
+    "lineRanges": [
+      [
+        1,
+        215
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper",
+    "branch": "main",
+    "revision": "86098128c0b4f24f0e2aa2994de830614b474227",
+    "file": "LICENSE",
+    "bytes": 1063,
+    "sha256": "b5d65a59060e68c4ff940e1eddfa6f94b2d68fdf58ed7f4dd57721c997e35e9d",
+    "lineRanges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper",
+    "branch": "main",
+    "revision": "86098128c0b4f24f0e2aa2994de830614b474227",
+    "file": "whisper/audio.py",
+    "bytes": 4945,
+    "sha256": "36ed287b2de3eaf40207cd2a44a8d45d57ea5c212a39df07401d4fcb4d5a5a1a",
+    "lineRanges": [
+      [
+        98,
+        157
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper",
+    "branch": "main",
+    "revision": "86098128c0b4f24f0e2aa2994de830614b474227",
+    "file": "whisper/decoding.py",
+    "bytes": 32155,
+    "sha256": "94084fedc5af74cabf8e1883a85552700057081f00ea669ad49435ecb29039db",
+    "lineRanges": [
+      [
+        270,
+        330
+      ],
+      [
+        390,
+        455
+      ],
+      [
+        510,
+        565
+      ],
+      [
+        690,
+        720
+      ]
+    ],
+    "inspection": "Static scoped review only; no upstream tests or loader executed"
+  },
+  {
+    "repository": "openai/whisper",
+    "branch": "main",
+    "revision": "86098128c0b4f24f0e2aa2994de830614b474227",
+    "file": "whisper/assets/mel_filters.npz",
+    "bytes": 4271,
+    "sha256": "7450ae70723a5ef9d341e3cee628c7cb0177f36ce42c44b7ed2bf3325f0f6d4c",
+    "inspection": "Binary NumPy coefficient asset; exact bytes hashed; no source lines"
+  }
+]

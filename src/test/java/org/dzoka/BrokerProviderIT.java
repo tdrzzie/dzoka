@@ -85,6 +85,21 @@ print('Checked broker service invocation completed')
     UUID report(String text,String language) {
         return app.getBean(IntakeService.class).submit(who("reporter"),A,null,null,new ReportDraft(ReportDraft.Kind.LOST,text,language,"UTC",null,null,null,null,null,null,null),text.getBytes(java.nio.charset.StandardCharsets.UTF_8),UUID.randomUUID().toString()).reportId();
     }
+    @Test void refinedTranslationAndSpeechCompleteWithExplicitNewRepresentations()throws Exception {
+        var jobs=app.getBean(PerceptionJobs.class);
+        String translation="ISO_REFINEMENT_OPUS_ES_EN",speech="ISO_REFINEMENT_WHISPER_EN";
+        UUID spanish=report("Perdí una bolsa negra.","es"),english=report("Synthetic authored speech reference").reportId();
+        var translated=jobs.enqueue(who("reporter"),A,spanish,PerceptionFixtures.id(translation),null,null);
+        run(translation,"inference",0);
+        var result=jobs.result(who("reporter"),A,translated.id()).orElseThrow();
+        assertEquals("marian-budget-v2",result.evidence().get("representation"));assertEquals("UNVERIFIED_TRANSLATION",result.evidence().get("trust"));assertEquals("SHADOW",result.selection());
+        byte[] raw=Files.readAllBytes(Path.of(required("DZOKA_TEST_SPEECH_WAV")));
+        var spoken=jobs.enqueue(who("reporter"),A,english,PerceptionFixtures.id(speech),null,raw);run(speech,"inference",0);
+        var transcription=jobs.result(who("reporter"),A,spoken.id()).orElseThrow();
+        assertEquals("whisper-en-greedy-v2",transcription.evidence().get("representation"));assertEquals("SHADOW",transcription.selection());
+        assertThrows(Failures.NotFound.class,()->jobs.result(who("other"),A,spoken.id()));
+        assertEquals(spoken.id(),jobs.enqueue(who("reporter"),A,english,PerceptionFixtures.id(speech),null,raw).id());
+    }
     @Test void actualIsolatedTextHasNewSpaceAndWrongTenantCannotClaim()throws Exception {
         UUID report=report("Synthetic private blue travel bag").reportId();var job=jobs().enqueue(who("reporter"),A,report,isolated.id());
         run("ISO_TEXT","remote",1);assertEquals("QUEUED",jobs().read(who("reporter"),A,job.id()).state());

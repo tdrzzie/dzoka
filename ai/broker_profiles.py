@@ -4,8 +4,8 @@ import json
 from pathlib import Path
 from perception import canonical,sha
 ROOT=Path(__file__).resolve().parents[1]
-FAMILIES={'perception':('perception','PerceptionProvider'),'vision':('vision','VisionProvider'),'language':('language','LanguageProvider'),'generative':('generative','GenerativeProvider'),'quality':('quality','QualityProvider'),'shona-cpu':('shona_cpu','ShonaCpuProvider')}
-MODEL_DIR={'text':'ai-model','perception':'perception-models','vision':'vision-models','language':'language-models','generative':'generative-models','quality':'quality-models','shona-cpu':'shona-cpu-models'}
+FAMILIES={'perception':('perception','PerceptionProvider'),'vision':('vision','VisionProvider'),'language':('language','LanguageProvider'),'generative':('generative','GenerativeProvider'),'quality':('quality','QualityProvider'),'shona-cpu':('shona_cpu','ShonaCpuProvider'),'refinement':('refinement','RefinementProvider')}
+MODEL_DIR={'text':'ai-model','perception':'perception-models','vision':'vision-models','language':'language-models','generative':'generative-models','quality':'quality-models','shona-cpu':'shona-cpu-models','refinement':'refinement-models'}
 
 def verify():
     raw=(ROOT/'ai/broker.lock.json').read_bytes();lock=json.loads(raw)

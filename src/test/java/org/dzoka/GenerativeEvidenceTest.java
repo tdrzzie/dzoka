@@ -4,6 +4,12 @@ import java.util.*;
 import org.dzoka.fingerprints.domain.*;
 import org.junit.jupiter.api.Test;
 class GenerativeEvidenceTest {
+    @Test void extendedTranslationBoundsRequireTheNewExplicitProfile(){
+        var config=new HashMap<String,Object>(Map.of("sourceLanguage","sn","targetLanguage","en","representation","marian-budget-v2","maxInputTokens",256,"maxOutputTokens",128,"suppressUnknownToken",true));
+        var manifest=Map.<String,Object>of("configuration",config);var e=translation("sn","en");e.put("representation","marian-budget-v2");e.put("inputTokenCount",256);e.put("outputTokenCount",128);e.put("outputTruncated",true);e.put("finishReason","OUTPUT_LIMIT");GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest);
+        assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,Map.of("configuration",Map.of("sourceLanguage","sn","targetLanguage","en","representation","marian-source-target-v1"))));
+        config.put("maxOutputTokens",129);assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));config.put("maxOutputTokens",128);e.put("outputTokenCount",129);assertThrows(IllegalArgumentException.class,()->GenerativeEvidence.validate("MULTILINGUAL_TRANSLATION",e,manifest));
+    }
     static Map<String,Object> draft(){return new HashMap<>(Map.of("text","A private draft.","inputTokenCount",40,"outputTokenCount",5,"inputTruncated",false,"instructionTruncated",false,"contextTruncated",false,"outputTruncated",false,"finishReason","EOS","trust","UNTRUSTED_DRAFT","representation","smollm2-draft-v1"));}
     static Map<String,Object> translation(String source,String target){var result=new HashMap<String,Object>(Map.of("text","A black bag.","sourceLanguage",source,"targetLanguage",target,"inputTokenCount",8,"inputUnknownTokenCount",0,"outputTokenCount",5,"inputTruncated",false,"outputTruncated",false,"finishReason","EOS","representation","m2m100-source-target-v1"));result.put("trust","UNVERIFIED_TRANSLATION");return result;}
     @Test void draftsCannotGainAuthorityOrHideTruncation(){

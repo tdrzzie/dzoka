@@ -29,3 +29,5 @@ docs/dependencies/notices/shona/** -text
 
 docs/dependencies/notices/shona-cpu/** -text
 ai/shona_cpu_native/** text eol=lf
+docs/dependencies/notices/refinement/** -text
+ai/history/broker-v1-20261106/** -text

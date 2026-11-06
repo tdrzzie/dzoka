@@ -35,20 +35,20 @@ public final class PerceptionEvidence {
         }
         if(task.equals("SPEECH")){
             keys(e,"text","samples","sampleRate","language","representation");text(e.get("text"),2048);require(integer(e.get("samples"))==samples&&integer(e.get("sampleRate"))==16000);
-            require("en".equals(e.get("language"))&&"wav2vec2-ctc-greedy-v1".equals(e.get("representation")));return;
+            require("en".equals(e.get("language"))&&representation(e,manifest,"wav2vec2-ctc-greedy-v1","whisper-en-greedy-v2"));return;
         }
         require(integer(e.get("width"))==width&&integer(e.get("height"))==height);
         switch(task){
             case "JOINT_IMAGE" -> keys(e,"width","height","vector","spaceKey","representation");
             case "DETECTION" -> {
                 keys(e,"width","height","detections","truncated","vocabulary","representation");
-                require("coco-90".equals(e.get("vocabulary"))&&"ssd-coco-boxes-v1".equals(e.get("representation"))&&e.get("truncated") instanceof Boolean);
+                require("coco-90".equals(e.get("vocabulary"))&&representation(e,manifest,"ssd-coco-boxes-v1","maskrcnn-coco-boxes-v2")&&e.get("truncated") instanceof Boolean);
                 for(var value:list(e.get("detections"),20)){var p=map(value);keys(p,"box","classId","modelScore");box(p.get("box"),width,height);
                     int label=integer(p.get("classId"));double score=number(p.get("modelScore"));require(label>=1&&label<=90&&score>=.5&&score<=1);}
             }
             case "SEGMENTATION" -> {
                 keys(e,"width","height","maskWidth","maskHeight","runs","vocabulary","representation");
-                require("pascal-voc-21".equals(e.get("vocabulary"))&&"semantic-mask-rle-v1".equals(e.get("representation"))&&integer(e.get("maskWidth"))==64&&integer(e.get("maskHeight"))==64);
+                require("pascal-voc-21".equals(e.get("vocabulary"))&&representation(e,manifest,"semantic-mask-rle-v1","maskrcnn-voc-union-rle-v2")&&integer(e.get("maskWidth"))==64&&integer(e.get("maskHeight"))==64);
                 int total=0,previous=-1;for(var value:list(e.get("runs"),4096)){var run=list(value,2);require(run.size()==2);int label=integer(run.get(0)),count=integer(run.get(1));require(label<=20&&label!=previous&&count>0&&count<=4096);total+=count;previous=label;}require(total==4096);
             }
             case "VISION" -> {keys(e,"width","height","vector","representation");require("resnet18-logits-l2-v1".equals(e.get("representation")));vector(e.get("vector"),1000);}
@@ -58,5 +58,9 @@ public final class PerceptionEvidence {
                 for(var value:list(e.get("regions"),16)){var p=map(value);keys(p,"box","text","modelScore");box(p.get("box"),width,height);text(p.get("text"),256);double score=number(p.get("modelScore"));require(score>=0&&score<=1);}}
             default -> throw new IllegalArgumentException("Unsupported task");
         }
+    }
+    private static boolean representation(Map<String,Object> evidence,Map<String,Object> manifest,String legacy,String alternative){
+        Object config=manifest.get("configuration");Object declared=config instanceof Map<?,?> values?values.get("outputRepresentation"):null;
+        return legacy.equals(evidence.get("representation"))&&(declared==null||legacy.equals(declared))||alternative.equals(declared)&&alternative.equals(evidence.get("representation"));
     }
 }

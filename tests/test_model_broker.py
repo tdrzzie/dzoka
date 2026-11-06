@@ -105,7 +105,8 @@ class BrokerTests(unittest.TestCase):
     def test_profile_identity_is_appended_and_joint_space_remains_paired(self):
         from broker_profiles import profiles
         from provider import load_profile
-        values=profiles();self.assertEqual(34,len(values))
+        from refinement import profiles as refinements
+        values=profiles();self.assertEqual(34+len(refinements()),len(values))
         self.assertNotEqual(values['ISO_TEXT']['key'],load_profile()['space']['spaceKey'])
         one=values['ISO_VISION_JOINT_IMAGE']['manifest']['sharedSpace']
         self.assertEqual(one,values['ISO_VISION_JOINT_TEXT']['manifest']['sharedSpace'])

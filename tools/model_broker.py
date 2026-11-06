@@ -79,7 +79,7 @@ def infer(bundle,receipt,state,name,raw,checked=False):
                 session=Session(Path(bundle)/'.audit-cache'/MODEL_DIR[family],state/'docker',owner,stop)
                 session.prepare(selected['manifest']['configuration']['artifactGroup'])
                 return session.native(pieces)
-            timeout=260 if family in ('generative','quality','shona-cpu') else 100
+            timeout=260 if family in ('generative','quality','shona-cpu') or family=='refinement' and selected['manifest']['task']=='MULTILINGUAL_TRANSLATION' else 100
             result=exchange(profile,bundle,{'version':1,'id':invocation,'profile':name,'inputSha256':digest,'data':base64.b64encode(raw).decode()},native,timeout=timeout)
             if result['profileKey']!=selected['key']:raise ValueError('Isolated profile changed')
             if not isinstance(result['output'],dict):raise ValueError('Invalid isolated evidence')

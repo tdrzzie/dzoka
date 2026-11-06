@@ -60,7 +60,7 @@ def prepare(target):
                     if parts.is_absolute() or '..' in parts.parts or '\\' in name or ':' in name:raise ValueError('Unsafe reviewed wheel path')
                     destination=site.joinpath(*parts.parts);destination.parent.mkdir(parents=True,exist_ok=True)
                     with destination.open('xb') as output:output.write(bundle.read(name))
-    locks={'text':'model.lock.json','perception':'perception.lock.json','vision':'vision.lock.json','language':'language.lock.json','generative':'generative.lock.json','quality':'quality.lock.json','shona-cpu':'shona-cpu-models.lock.json'}
+    locks={'text':'model.lock.json','perception':'perception.lock.json','vision':'vision.lock.json','language':'language.lock.json','generative':'generative.lock.json','quality':'quality.lock.json','shona-cpu':'shona-cpu-models.lock.json','refinement':'refinement.lock.json'}
     for family,lock in locks.items():
         for entry in json.loads((ROOT/'ai'/lock).read_bytes())['files']:
             copy_checked(ROOT/'.audit-cache'/MODEL_DIR[family]/entry['local'],target/'.audit-cache'/MODEL_DIR[family]/entry['local'],entry)
