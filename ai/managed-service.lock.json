@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "review": "docs/adr/0041-managed-broker-operations.md",
-  "baseServiceLockSha256": "1abbcfad613e34579cdb64fa004bba248a452104aa929fdb05963d14ea92da26",
+  "baseServiceLockSha256": "7d53ba626846097cdaa9d449bd6b13220dcc7060942b152a1fac08a03025b61d",
   "brokerLockSha256": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
   "sources": {
     "tools/profile_archive.py": "94acb313c0a52a70380702dcde281532edd5f7893646c17367b565903cb0f458",

@@ -1,6 +1,6 @@
 {
   "JOINT_IMAGE": {
-    "key": "f96246896f4b40f738ee56795168c3a329d6a848dcea8dc661a22219e3e33e5c",
+    "key": "749fc45d4970bea668a5a334240440bd4cc08afafd7a8c064d05599182bda807",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "JOINT_IMAGE",
@@ -20,9 +20,9 @@
         {
           "repository": "jinaai/jina-clip-v1",
           "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
-          "path": "onnx/text_model_quantized.onnx",
-          "bytes": 138070131,
-          "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+          "path": "onnx/text_model.onnx",
+          "bytes": 547534356,
+          "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
         },
         {
           "repository": "jinaai/jina-clip-v1",
@@ -61,15 +61,15 @@
         }
       ],
       "sharedSpace": {
-        "key": "75005919d8f198f8c1c6b1c813a4aa313ebf7ebedf3b7c7c2903917d7b44975f",
+        "key": "12f301c39371b36f3d3578a8154c12e80f77b70212a86ed3df57ceac4ec9b75e",
         "definition": {
           "artifacts": [
             {
               "repository": "jinaai/jina-clip-v1",
               "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
-              "path": "onnx/text_model_quantized.onnx",
-              "bytes": 138070131,
-              "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+              "path": "onnx/text_model.onnx",
+              "bytes": 547534356,
+              "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
             },
             {
               "repository": "jinaai/jina-clip-v1",
@@ -108,7 +108,7 @@
             }
           ],
           "configuration": {
-            "model": "jina-clip-v1-quantized-pair",
+            "model": "jina-clip-v1-fp32-text-int8-image-v2",
             "dimensions": 768,
             "metric": "COSINE",
             "normalization": "L2",
@@ -128,7 +128,7 @@
     }
   },
   "JOINT_TEXT": {
-    "key": "1b138b33826e6ff20e1ad51f9517f22d65355950a4f4f1fe7bd666dfb9e6a955",
+    "key": "001e123ddf8e7a23e0525a01f12b4bcbc32ffeff2b2990de5c34f73fbbbc9bb3",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "JOINT_TEXT",
@@ -150,9 +150,9 @@
         {
           "repository": "jinaai/jina-clip-v1",
           "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
-          "path": "onnx/text_model_quantized.onnx",
-          "bytes": 138070131,
-          "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+          "path": "onnx/text_model.onnx",
+          "bytes": 547534356,
+          "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
         },
         {
           "repository": "jinaai/jina-clip-v1",
@@ -191,15 +191,15 @@
         }
       ],
       "sharedSpace": {
-        "key": "75005919d8f198f8c1c6b1c813a4aa313ebf7ebedf3b7c7c2903917d7b44975f",
+        "key": "12f301c39371b36f3d3578a8154c12e80f77b70212a86ed3df57ceac4ec9b75e",
         "definition": {
           "artifacts": [
             {
               "repository": "jinaai/jina-clip-v1",
               "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
-              "path": "onnx/text_model_quantized.onnx",
-              "bytes": 138070131,
-              "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+              "path": "onnx/text_model.onnx",
+              "bytes": 547534356,
+              "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b"
             },
             {
               "repository": "jinaai/jina-clip-v1",
@@ -238,7 +238,7 @@
             }
           ],
           "configuration": {
-            "model": "jina-clip-v1-quantized-pair",
+            "model": "jina-clip-v1-fp32-text-int8-image-v2",
             "dimensions": 768,
             "metric": "COSINE",
             "normalization": "L2",

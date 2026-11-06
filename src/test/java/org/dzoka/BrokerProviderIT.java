@@ -96,10 +96,11 @@ print('Checked broker service invocation completed')
         assertThrows(IllegalArgumentException.class,()->jobs().complete(who("inference"),A,legacy.id(),wrong));assertTrue(jobs().current(who("reporter"),A,another).isEmpty());
     }
     @Test void actualIsolatedLanguageAndJointTextCanActivateWhilePrivateRerankingRemainsShadow()throws Exception {
-        var jobs=app.getBean(PerceptionJobs.class);UUID english=report("A black travel bag").reportId(),french=report("J'ai perdu un sac noir.","fr");var pins=new ArrayList<PerceptionPin>();
+        var jobs=app.getBean(PerceptionJobs.class);UUID english=report("A black travel bag with a silver buckle and a large front pocket, reported beside the main entrance.").reportId(),french=report("J'ai perdu un sac noir.","fr");var pins=new ArrayList<PerceptionPin>();
         for(var entry:List.of(Map.entry("ISO_LANGUAGE_ATTRIBUTES",english),Map.entry("ISO_LANGUAGE_TRANSLATION",french),Map.entry("ISO_VISION_JOINT_TEXT",english))) {
             var job=jobs.enqueue(who("reporter"),A,entry.getValue(),PerceptionFixtures.id(entry.getKey()),null,null);run(entry.getKey(),"inference",0);assertEquals("SUCCEEDED",jobs.read(who("reporter"),A,job.id()).state());var component=jobs.result(who("reporter"),A,job.id()).orElseThrow();pins.add(new PerceptionPin(entry.getValue(),component.id()));assertThrows(Failures.NotFound.class,()->jobs.result(who("other"),A,job.id()));
         }
+        assertTrue(((Number)jobs.result(who("reporter"),A,jobs.enqueue(who("reporter"),A,english,PerceptionFixtures.id("ISO_VISION_JOINT_TEXT"),null,null).id()).orElseThrow().evidence().get("tokenCount")).intValue()>16);
         UUID candidate=UUID.randomUUID();byte[] raw=new ObjectMapper().writeValueAsBytes(Map.of("profileId",PerceptionFixtures.id("ISO_LANGUAGE_RERANK"),"candidates",List.of(Map.of("id",candidate,"text","a black travel bag"))));
         var rerank=jobs.rerank(who("reporter"),A,english,raw);run("ISO_LANGUAGE_RERANK","inference",0);assertEquals("SHADOW",jobs.result(who("reporter"),A,rerank.id()).orElseThrow().selection());
         var plan=new Plan(UUID.randomUUID(),List.of(new Source(english,1),new Source(french,1)),List.of(),10000,"d".repeat(64),pins);var rollouts=app.getBean(FingerprintRollouts.class);rollouts.create(who("curator"),A,plan);assertEquals(3,rollouts.seal(who("curator"),A,plan.id()).availableSlots());rollouts.activate(who("curator"),A,plan.id(),0,false);

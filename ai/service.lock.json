@@ -26,6 +26,6 @@
     "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
     "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733",
     "ai/broker.lock.json": "8b32cbea0a7865af6fb1da803f155b2d39074d4b58d4144ac8c101297ed75aad",
-    "ai/broker-profiles.json": "69c0fafe3cc7e4ce25e3fe499f50bada08a84845bbf38d95539544f371f57f95"
+    "ai/broker-profiles.json": "b6631a8dba3b3a91bd021537b5f1d1f1536d7da45fee301356304f1bda8a833a"
   }
 }

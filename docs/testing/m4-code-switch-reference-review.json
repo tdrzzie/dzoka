@@ -1,0 +1,34 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-11-06",
+  "scope": "Bounded license and access review only; no datasets or upstream code adopted",
+  "candidates": [
+    {
+      "repository": "tarirozw/Zambezi_ECHO_v1",
+      "revision": "fd69dccb3963ba29f42ec7df23727cae61278242",
+      "metadataSha256": "dfe5df885731c922cf144d4531efea49c5a603fb5a4229f2cb8952cf30f8177c",
+      "declaredLicense": "cc-by-nc-sa-4.0",
+      "gated": false,
+      "disposition": "NOT_ADOPTED: noncommercial restriction and task/reference compatibility require separate review; no dataset fetched",
+      "readmeSha256": "d50255b1aa942b09c52ffc3c39e9dcb6eec4067884016e3060673bd8a662ad1b"
+    },
+    {
+      "repository": "intronhealth/AfriSwitch",
+      "revision": "c24748242a2b435392f9b4c38ac7d3a96fc82ef9",
+      "metadataSha256": "6ee97c7d1367736f2a51b806100bc8ca2d7d039fe50ed8b9e0a17817313a9b52",
+      "declaredLicense": "cc-by-nc-sa-4.0",
+      "gated": "manual",
+      "disposition": "NOT_ADOPTED: noncommercial restriction and task/reference compatibility require separate review; no dataset fetched",
+      "readmeHttpStatus": 401
+    },
+    {
+      "repository": "HappymoreMasoka/Working_with_shona-slang",
+      "branch": "main",
+      "revision": "854dc48eebef19fdc245cdc6c88696741143507d",
+      "file": "README.md",
+      "readmeSha256": "2f343e0b8e6dfb019ee9d132408e10e66d907304539d71306b0e502e530f239f",
+      "declaredLicense": null,
+      "disposition": "NOT_ADOPTED: no grant established by repository metadata/README; public visibility and citation request are insufficient; no dataset or upstream code fetched"
+    }
+  ]
+}

@@ -15,6 +15,19 @@ import sys
 import time
 
 ROOT=Path(__file__).resolve().parents[1]
+NATIVE_S3_SHA256='f3a9522f4900408d8e230f98516cd9c75fa90da3cfc96dc0fd9fbed380fc8001'
+
+
+def integration_command(pg_bin=None,maven=None,native_s3=None):
+    if bool(pg_bin)!=bool(maven):raise ValueError('Native PostgreSQL requires explicit Maven')
+    command=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--with-supervisor','--with-broker','--with-managed-broker','--with-docker-shona','--restore-drill']
+    if pg_bin:command+=['--pg-bin',str(pg_bin),'--maven',str(maven)]
+    if native_s3:
+        path=Path(native_s3).resolve(strict=True)
+        with path.open('rb') as source:digest=hashlib.file_digest(source,'sha256').hexdigest()
+        if digest!=NATIVE_S3_SHA256:raise ValueError('Reviewed native S3 executable changed')
+        command+=['--native-s3',str(path)]
+    return command
 
 
 def source_digest(root):
@@ -35,6 +48,7 @@ def main():
     parser=argparse.ArgumentParser()
     parser.add_argument('--pg-bin',help='Optional reviewed native PostgreSQL binaries; otherwise Docker')
     parser.add_argument('--maven',help='Required with --pg-bin')
+    parser.add_argument('--native-s3',help='Explicit reviewed SeaweedFS 4.51 executable; digest checked, no automatic fallback')
     args=parser.parse_args()
     if bool(args.pg_bin)!=bool(args.maven):parser.error('--pg-bin and --maven must be provided together')
     if not all(os.environ.get(k) for k in ('DZOKA_TEST_BROKER_BUNDLE','DZOKA_TEST_BROKER_SHA256')):parser.error('Full verification requires an explicitly prepared private broker bundle and pinned receipt')
@@ -59,16 +73,18 @@ def main():
            ('isolated-model-broker',['tools/verify_model_broker.py']),
            ('broker-death-and-integrity',['tools/verify_broker_recovery.py']),
            ('managed-broker-operations',['tools/verify_managed_operations.py']),
+           ('private-quality-protocols',['tools/verify_quality_protocols.py']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]
-    integration=['tools/test_intake.py','--with-ai','--with-perception','--with-vision','--with-language','--with-generative','--with-quality','--with-shona','--with-shona-cpu','--with-supervisor','--with-broker','--with-managed-broker','--with-docker-shona','--restore-drill']
-    if args.pg_bin:integration+=['--pg-bin',args.pg_bin,'--maven',args.maven]
+    integration=integration_command(args.pg_bin,args.maven,args.native_s3)
     steps.append(('real-provider-integration-and-restore',integration))
     run=ROOT/'.test-tmp'/('local-verification-'+datetime.now(timezone.utc).strftime('%Y%m%dT%H%M%S%fZ'))
     run.mkdir(parents=True)
     result={'startedAt':datetime.now(timezone.utc).isoformat(),'status':'IN_PROGRESS',
             'brokerBundleSha256':os.environ['DZOKA_TEST_BROKER_SHA256'],
             'managedReleaseSha256':os.environ['DZOKA_TEST_MANAGED_SHA256'],
+            's3Backend':'reviewed-native-4.51' if args.native_s3 else 'reviewed-docker-4.51',
+            'nativeS3Sha256':NATIVE_S3_SHA256 if args.native_s3 else None,
             'inputSha256':source_digest(ROOT),'phases':[],
             'scope':'Implemented foundation/intake/multimodal/generative slice; not full specification or production acceptance'}
     def save():

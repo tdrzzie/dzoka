@@ -3,6 +3,7 @@ import argparse
 from datetime import datetime,timezone
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import sys
@@ -46,7 +47,7 @@ def main():
     from perception_formats import png_rgba
     png_rgba(canonical);image.write_bytes(canonical)
     result={'scope':'All isolated profiles, authored synthetic conformance; not representative quality',
-            'bundleSha256':receipt,'startedAt':datetime.now(timezone.utc).isoformat(),'status':'IN_PROGRESS','rows':[]}
+            'bundleSha256':receipt,'startedAt':datetime.now(timezone.utc).isoformat(),'status':'IN_PROGRESS','rows':[],'regressions':[]}
     target=run/'result.json'
     def save():target.write_bytes((json.dumps(result,sort_keys=True,indent=2)+'\n').encode())
     save()
@@ -72,6 +73,18 @@ def main():
                 if 'text' in output:row['syntheticText']=output['text']
                 if 'vector' in output:row['dimensions']=len(output['vector'])
                 result['rows'].append(row);save();print('PASS: '+name,flush=True)
+                if name=='ISO_VISION_JOINT_TEXT':
+                    # The historical quantized export failed beyond 16 tokens.
+                    # Exercise the real isolated provider, including its limit.
+                    for words,tokens,truncated in [(15,17,False),(510,512,False),(511,512,True)]:
+                        evidence=infer(bundle,receipt,state,name,('bag '*words).encode(),checked=True)
+                        vector=evidence['vector']
+                        if (evidence['tokenCount']!=tokens or evidence['truncated']!=truncated or
+                            len(vector)!=768 or not all(math.isfinite(x) for x in vector) or
+                            abs(sum(x*x for x in vector)-1)>1e-5):
+                            raise ValueError('Joint text variable-length regression')
+                        result['regressions'].append({'profile':name,'words':words,'tokens':tokens,'truncated':truncated})
+                        save();print('PASS: joint text boundary '+str(words),flush=True)
             if not result['rows']:raise ValueError('No selected isolated profiles')
             state_check(state);resources=reconcile(state/'docker')
             if resources['active'] or resources['unresolved']:raise ValueError('Unresolved native resources')

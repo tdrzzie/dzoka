@@ -1,17 +1,17 @@
 {
   "schemaVersion": 1,
-  "review": "docs/dependencies/joint-vision-adoption.md",
+  "review": "docs/dependencies/joint-text-export-v2-adoption.md",
   "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
   "files": [
     {
       "group": "JOINT",
       "repository": "jinaai/jina-clip-v1",
       "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
-      "path": "onnx/text_model_quantized.onnx",
+      "path": "onnx/text_model.onnx",
       "local": "joint-text.onnx",
-      "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2",
-      "bytes": 138070131,
-      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/onnx/text_model_quantized.onnx"
+      "sha256": "d7b2e732e685dcaf5ca2a36e7f5d9169906859f4590766689dbf7b00b20da01b",
+      "bytes": 547534356,
+      "url": "https://huggingface.co/jinaai/jina-clip-v1/resolve/ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6/onnx/text_model.onnx"
     },
     {
       "group": "JOINT",
@@ -91,7 +91,7 @@
     "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
   },
   "jointSpace": {
-    "model": "jina-clip-v1-quantized-pair",
+    "model": "jina-clip-v1-fp32-text-int8-image-v2",
     "dimensions": 768,
     "metric": "COSINE",
     "normalization": "L2",

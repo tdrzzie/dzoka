@@ -11,6 +11,19 @@ sys.path.insert(0,str(ROOT/'ai'))
 import vision
 
 class VisionTests(unittest.TestCase):
+    def test_replacement_pair_cannot_reuse_historical_space_or_region_identity(self):
+        old=json.loads((ROOT/'ai/history/joint-v1-20261106/vision-profiles.json').read_bytes())
+        current=vision.profiles()
+        for task in ('JOINT_IMAGE','JOINT_TEXT'):
+            self.assertNotEqual(old[task]['key'],current[task]['key'])
+            self.assertNotEqual(old[task]['manifest']['sharedSpace']['key'],current[task]['manifest']['sharedSpace']['key'])
+        for task in ('DETECTION','SEGMENTATION'):self.assertEqual(old[task],current[task])
+        import broker_profiles
+        old=json.loads((ROOT/'ai/history/joint-v1-20261106/broker-profiles.json').read_bytes())
+        current=broker_profiles.profiles()
+        self.assertEqual({'ISO_VISION_JOINT_IMAGE','ISO_VISION_JOINT_TEXT'},
+                         {name for name in old if old[name]!=current[name]})
+
     def test_pair_shares_exact_space_but_profiles_remain_distinct(self):
         profiles=vision.profiles()
         self.assertEqual(profiles,json.loads((ROOT/'ai/vision-profiles.json').read_bytes()))

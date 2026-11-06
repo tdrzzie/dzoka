@@ -1,0 +1,324 @@
+{
+  "JOINT_IMAGE": {
+    "key": "f96246896f4b40f738ee56795168c3a329d6a848dcea8dc661a22219e3e33e5c",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "JOINT_IMAGE",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "input": "IMAGE_PNG",
+        "output": "joint-embedding-v1"
+      },
+      "artifacts": [
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/text_model_quantized.onnx",
+          "bytes": 138070131,
+          "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/vision_model_quantized.onnx",
+          "bytes": 87853512,
+          "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer.json",
+          "bytes": 711827,
+          "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "preprocessor_config.json",
+          "bytes": 527,
+          "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "config.json",
+          "bytes": 1927,
+          "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer_config.json",
+          "bytes": 1243,
+          "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+        }
+      ],
+      "sharedSpace": {
+        "key": "75005919d8f198f8c1c6b1c813a4aa313ebf7ebedf3b7c7c2903917d7b44975f",
+        "definition": {
+          "artifacts": [
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/text_model_quantized.onnx",
+              "bytes": 138070131,
+              "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/vision_model_quantized.onnx",
+              "bytes": 87853512,
+              "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer.json",
+              "bytes": 711827,
+              "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "preprocessor_config.json",
+              "bytes": 527,
+              "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "config.json",
+              "bytes": 1927,
+              "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer_config.json",
+              "bytes": 1243,
+              "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+            }
+          ],
+          "configuration": {
+            "model": "jina-clip-v1-quantized-pair",
+            "dimensions": 768,
+            "metric": "COSINE",
+            "normalization": "L2",
+            "imageProcessing": "rgba-white-bilinear-halfpixel-short224-center224-clipnorm-v1",
+            "textProcessing": "serialized-bert-tokenizer-512-graph-pool-l2-v1",
+            "language": "en"
+          },
+          "sources": {
+            "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+            "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+            "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+            "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+          },
+          "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133"
+        }
+      }
+    }
+  },
+  "JOINT_TEXT": {
+    "key": "1b138b33826e6ff20e1ad51f9517f22d65355950a4f4f1fe7bd666dfb9e6a955",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "JOINT_TEXT",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "input": "TEXT_UTF8",
+        "maxTokens": 512,
+        "maxCharacters": 8000,
+        "output": "joint-embedding-v1"
+      },
+      "artifacts": [
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/text_model_quantized.onnx",
+          "bytes": 138070131,
+          "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "onnx/vision_model_quantized.onnx",
+          "bytes": 87853512,
+          "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer.json",
+          "bytes": 711827,
+          "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "preprocessor_config.json",
+          "bytes": 527,
+          "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "config.json",
+          "bytes": 1927,
+          "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+        },
+        {
+          "repository": "jinaai/jina-clip-v1",
+          "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+          "path": "tokenizer_config.json",
+          "bytes": 1243,
+          "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+        }
+      ],
+      "sharedSpace": {
+        "key": "75005919d8f198f8c1c6b1c813a4aa313ebf7ebedf3b7c7c2903917d7b44975f",
+        "definition": {
+          "artifacts": [
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/text_model_quantized.onnx",
+              "bytes": 138070131,
+              "sha256": "bfc6462cbd3ebf12a802d3ee659e18814dc9de433a1b8b3784828bced2d519e2"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "onnx/vision_model_quantized.onnx",
+              "bytes": 87853512,
+              "sha256": "d81e0329d7b9285017d99d68e66002bc35c8c5dd0d61d6b6bb119cc910159657"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer.json",
+              "bytes": 711827,
+              "sha256": "b36ee0ed6d20d181de65ce729dea6169658a9cfa4dede6717ba9fa2e4fbd3bc7"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "preprocessor_config.json",
+              "bytes": 527,
+              "sha256": "96111755d7d85492e502e0667f52961a71f9f1397769c11a3139a2a3a5498ff5"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "config.json",
+              "bytes": 1927,
+              "sha256": "8f4bf3e79d6ecbebee3cfb84ff7121d5c78b1c3c41b7e54c2ac6c9abf643f741"
+            },
+            {
+              "repository": "jinaai/jina-clip-v1",
+              "revision": "ceb3e44ca4d6eceaa4f3fb58b1c1a5748b3f29b6",
+              "path": "tokenizer_config.json",
+              "bytes": 1243,
+              "sha256": "95ba08ef8e1932981fd3bf0720e576e87200613db15d9ab1c7e77f1312c99007"
+            }
+          ],
+          "configuration": {
+            "model": "jina-clip-v1-quantized-pair",
+            "dimensions": 768,
+            "metric": "COSINE",
+            "normalization": "L2",
+            "imageProcessing": "rgba-white-bilinear-halfpixel-short224-center224-clipnorm-v1",
+            "textProcessing": "serialized-bert-tokenizer-512-graph-pool-l2-v1",
+            "language": "en"
+          },
+          "sources": {
+            "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+            "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+            "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+            "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+          },
+          "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133"
+        }
+      }
+    }
+  },
+  "DETECTION": {
+    "key": "48b54a70eaf47cfbe11db3bfd6fcb43777980e64cd3922eeb27829ca52007039",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "DETECTION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "input": "IMAGE_PNG",
+        "processing": "rgb-u8-bilinear-300square-v1",
+        "threshold": 0.5,
+        "maxBoxes": 20,
+        "vocabulary": "coco-90"
+      },
+      "artifacts": [
+        {
+          "repository": "onnxmodelzoo/ssd_mobilenet_v1_12",
+          "revision": "019281f3fcb151a90e491f3b2f0273f9f31bd6be",
+          "path": "ssd_mobilenet_v1_12.onnx",
+          "bytes": 29461455,
+          "sha256": "b8fba5e404077d4048d27fcd1667e85e27e192eb9bf51e696c46a3acd7d21058"
+        }
+      ]
+    }
+  },
+  "SEGMENTATION": {
+    "key": "86cc01e914b317795606e2d1ddd9af0b012cb042b6d4bf2c96e5804bc1b178c2",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "SEGMENTATION",
+      "provider": "onnxruntime-cpu",
+      "runtimeLockSha256": "2d2191246ece768d7c05a4bdde4eaabc21c87c012a0012563ad74867c825b133",
+      "sources": {
+        "ai/vision.py": "415539dc79a5fbc4feab0c5e1330b89ec7449787ad2081a42761d7555405c4f9",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/perception_formats.py": "383d91bf4f34ec004ea2bdb8b43f4f3fb342681412e98372a6c73068b16b9e93",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522"
+      },
+      "configuration": {
+        "input": "IMAGE_PNG",
+        "processing": "rgb-bilinear-256square-imagenet-v1",
+        "maskGrid": [
+          64,
+          64
+        ],
+        "vocabulary": "pascal-voc-21"
+      },
+      "artifacts": [
+        {
+          "repository": "onnxmodelzoo/fcn-resnet50-12",
+          "revision": "f2d2cd188853be0c07d4c11851279a6bd41e94b1",
+          "path": "fcn-resnet50-12.onnx",
+          "bytes": 141193555,
+          "sha256": "eb5017d1b80372eb0b58552655274698817ba2e774437e2c2d3c0a613d2e99bd"
+        }
+      ]
+    }
+  }
+}

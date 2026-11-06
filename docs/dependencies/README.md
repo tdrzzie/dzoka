@@ -5,6 +5,8 @@
 - [Local text inference](ai-text-adoption.md): separately locked Python/native wheels, pinned multilingual model/tokenizer and private leased consumer.
 - [Local perception](perception-adoption.md): exact licensed ResNet/Paddle/Wav2Vec2 artifacts/dictionaries on the existing CPU runtime, plus independently authored classical local features; original/export terms retained separately.
 - [Joint/region profiles](joint-vision-adoption.md): official Apache-2.0 Jina CLIP v1 paired exports and Model Zoo SSD/FCN artifacts with both declared Apache-2.0/MIT obligations, exact immutable hashes and bounded processing.
+- [Joint text export v2](joint-text-export-v2-adoption.md): publisher-corrected full-precision text graph, retained quantized image graph, new paired identities and historical manifests/releases; original quantized text fails beyond 16 tokens.
+- [Public reference data](public-reference-data-review.md): separately licensed FLORES-200, FSDD and individually source-license-checked COCO diagnostics; no raw data or upstream loaders enter the MIT core.
 
 - [Structured attributes, translation and reranking](language-adoption.md): task-specific Apache-2.0 QA/Marian/official cross-encoder exports, independent native conformance and retained negative FLAN findings.
 

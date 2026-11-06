@@ -1,0 +1,201 @@
+{
+  "schemaVersion": 1,
+  "scope": "Public diagnostic reference provenance; no training independence or quality approval",
+  "review": "docs/dependencies/public-reference-data-review.md",
+  "referenceReviewSha256": "0d3b741b7c661fa81e2daa52f52797ff7a9839bbcca3cf0a58a46b33e61298c5",
+  "cocoReviewSha256": "05139216d04f1203ac55bf67ddad7d218d2a08ba384f560ea000200b56b25229",
+  "repositories": {
+    "facebookresearch/flores": {
+      "revision": "a6c830c6e1051fb4ac1a44b32358f00463f332bd",
+      "branch": "main",
+      "files": {
+        "README.md": {
+          "sha256": "0ba6a247bcc2a14825c8e69223c715276e44f9630bdb1bdbddbef9136acba7b5",
+          "bytes": 1671
+        },
+        "LICENSE_CC-BY-SA": {
+          "sha256": "fe38377ee0e52dc6c9c78554055a4e5e78781d73022df4508c9cf284e0f462e9",
+          "bytes": 65471
+        },
+        "flores200/README.md": {
+          "sha256": "74ccbbe29feba9d92cb3ee472387579ab2aa5c0299d47dcec7614b2c06cd49fc",
+          "bytes": 11883
+        }
+      }
+    },
+    "Jakobovski/free-spoken-digit-dataset": {
+      "revision": "26eb9aaf76e81b692f806f9140c2d2777410d7a1",
+      "branch": "master",
+      "files": {
+        "README.md": {
+          "sha256": "523de3cafa0f54707a0ab2760a2d32b640ccfe834a081d7d35c894f1fb6d79f5",
+          "bytes": 3977
+        }
+      }
+    }
+  },
+  "floresArchive": {
+    "url": "https://dl.fbaipublicfiles.com/nllb/flores200_dataset.tar.gz",
+    "sha256": "b8b0b76783024b85797e5cc75064eb83fc5288b41e9654dabc7be6ae944011f6",
+    "bytes": 25585843
+  },
+  "floresMembers": [
+    {
+      "member": "./flores200_dataset/devtest/fra_Latn.devtest",
+      "bytes": 165038,
+      "sha256": "82f5b000db419ef9254eea7857cce82943b361090942f17ed696e3dce2944f42"
+    },
+    {
+      "member": "./flores200_dataset/devtest/afr_Latn.devtest",
+      "bytes": 142305,
+      "sha256": "22eba71fe850e81efb9d0f62be52a58bca15477053137700051fac88df7ede7c"
+    },
+    {
+      "member": "./flores200_dataset/devtest/sna_Latn.devtest",
+      "bytes": 148655,
+      "sha256": "92cb2659b91ef2ad96b88b3816b5837816d29240cbb2ea4197c9ac090f4dd1bb"
+    },
+    {
+      "member": "./flores200_dataset/devtest/spa_Latn.devtest",
+      "bytes": 160955,
+      "sha256": "40fcb836b49b0a461a14c00b8bce1f03113f8d2668132af424e74b2421d18ce9"
+    },
+    {
+      "member": "./flores200_dataset/devtest/xho_Latn.devtest",
+      "bytes": 140258,
+      "sha256": "d22cec29816ab38780f791dd843e1d382a30a9b2edb38b41c637d862edc5ecfb"
+    },
+    {
+      "member": "./flores200_dataset/devtest/zul_Latn.devtest",
+      "bytes": 149616,
+      "sha256": "7a085420a8e0d0d9e920659c2f9cba60ae1d58d751dc90603dc8e1ead031aa53"
+    },
+    {
+      "member": "./flores200_dataset/devtest/deu_Latn.devtest",
+      "bytes": 157370,
+      "sha256": "9a1bfa90d153fedb7ff80047f4a63d493998888eddb056e8a28e24592f26e5f2"
+    },
+    {
+      "member": "./flores200_dataset/devtest/eng_Latn.devtest",
+      "bytes": 133108,
+      "sha256": "612e9fbe87997617c0fa8fa8929654a4f49b728d96738112c2b86ef6a1d78d88"
+    }
+  ],
+  "speechFiles": [
+    {
+      "path": "recordings/0_george_0.wav",
+      "gitBlobSha1": "963f9ae1bf5c2a5c7bdf3b7c4702f5b9d2a01882",
+      "originalSha256": "228ab63fccdf262d2e05817b6ec918b15e7d9e4bfb6bb20183c46ae088405240",
+      "derivedSha256": "902bf7719ccc35a9a5aa04bf23231b14de3d29c6a0f88847672cadce767a75aa"
+    },
+    {
+      "path": "recordings/0_jackson_0.wav",
+      "gitBlobSha1": "34be9abeba2b69198dbcc7b59c79aebf45bb26b2",
+      "originalSha256": "eea86018ce1730baaf7f5dd6ec88c1f727dd90203521a9115b489310a248ea05",
+      "derivedSha256": "e0cf39a3c0741910a782a631371dc0706a08e2b8020a6df1d2dae0cb8b9e7a9a"
+    },
+    {
+      "path": "recordings/0_lucas_0.wav",
+      "gitBlobSha1": "053869b160ff60f515dcfb7e262500c118f18ed7",
+      "originalSha256": "1d942e79c200ae1f84618314f2669d9c154718276b38ccf341630635073f7c06",
+      "derivedSha256": "0479dec918cf7c1b48613d7e51c1d34aae11cddbd4ca2c9607f90b9764446976"
+    },
+    {
+      "path": "recordings/0_nicolas_0.wav",
+      "gitBlobSha1": "69f00cbca904878c5be1b0e23a02f07fa1190e11",
+      "originalSha256": "527b1d27c2b931204b24995f035580dd248b908978a27756b4698ce0aa7e1aa8",
+      "derivedSha256": "f161821109d6db6a8e47598994d6716eba9f508456af107defdda5f4105be40e"
+    },
+    {
+      "path": "recordings/0_theo_0.wav",
+      "gitBlobSha1": "0df72e0ccfc1b9df4643db3140d7d7ee50fef04f",
+      "originalSha256": "d5833196a91e5da8703a8afe1f944cbf0d0bae55e5af6a4eb7e92e62070bf280",
+      "derivedSha256": "1c93acdcb58395d40ba02583a528651e78c50aa60033218cdcccaf011f917c01"
+    },
+    {
+      "path": "recordings/0_yweweler_0.wav",
+      "gitBlobSha1": "b36505dfc5946e1ac679cecc5c070a216f6496c7",
+      "originalSha256": "c2d53137898d6d32ae86e9703676bcaf595080a1f4e2e3efa5ede5a49f54b6a5",
+      "derivedSha256": "4aa1d238f9a73cb7a71c8c8c27c48fdad3dcd95eba65160e973a736a6d1d2531"
+    },
+    {
+      "path": "recordings/7_george_0.wav",
+      "gitBlobSha1": "766fbccfa3777dfb6caf0458a8ba7a57c41fb7a4",
+      "originalSha256": "645dc7b2bd40ca8bddb2b580de6877ddffaf041a94b72a87ab9274d5345581a0",
+      "derivedSha256": "e33e289fe3a7cdc3b1e494cca7f0aeba0c1ec5ff32221f0479154050eb28d4ac"
+    },
+    {
+      "path": "recordings/7_jackson_0.wav",
+      "gitBlobSha1": "853e9e26e0ed13d1acdde0ecc814c204fa029dd2",
+      "originalSha256": "bd4f5fa8db9a8a8d14a88236da314cd38fce2370cc406181b2485e03437d55d3",
+      "derivedSha256": "d696034b36eaba1409e8508d8bdc4f7c8c04e44eaecafb4f6ef44b7ee8e478a7"
+    },
+    {
+      "path": "recordings/7_lucas_0.wav",
+      "gitBlobSha1": "3cf10dc1f5b528956297f9114230c47aae320b8a",
+      "originalSha256": "d3dbe5d28532c1ba3a47b099477a9e0bc9697017b1d1d4458091fe54be014ee1",
+      "derivedSha256": "600078f5b2c19f20a35a2c423be039cff28a061f953ffd152b2919d556f66fbc"
+    },
+    {
+      "path": "recordings/7_nicolas_0.wav",
+      "gitBlobSha1": "41ca1705ac2fa4f5f5f9fb9f47e69bf08860db68",
+      "originalSha256": "615dc2a2ba6e915521151479bbec3724bd1f5e0c839bb57b693c45f897a174a3",
+      "derivedSha256": "418f3b474f8dcba762e41d21439926411f8d73179df9ff1756cebe806854655d"
+    },
+    {
+      "path": "recordings/7_theo_0.wav",
+      "gitBlobSha1": "3aca3e8391b8aacc2c9eb28d3913a9bf8a056b83",
+      "originalSha256": "3074f5a5db8a3588bc8616c5888fa25bbac2c71728d14a6b413baf89d779ef70",
+      "derivedSha256": "4cec910f179aba1c1fe6a827e87bb852c845320eec054b708d4758d4435f7df5"
+    },
+    {
+      "path": "recordings/7_yweweler_0.wav",
+      "gitBlobSha1": "0b91f61bcfce0cca27e1b7302debb40a68cdb55a",
+      "originalSha256": "1ade92413c587002f728dd262068ace084088a62a216c0003d300c0d3913ade6",
+      "derivedSha256": "1253f56723fe97f8cb913b6567da975c74e32744c940c2d04c6e30b330b4699e"
+    }
+  ],
+  "speechPreprocessingSourceSha256": "c0be9a3efb48fdef4913c818581ccc75e755a463b79db84eda5c2dca12d72b3b",
+  "cocoWebsiteRevision": "5e1c4da72464b1c6f068df0c02c91e3000ea62c4",
+  "cocoSourcePages": {
+    "dataset/termsofuse.htm": {
+      "url": "https://raw.githubusercontent.com/cocodataset/cocodataset.github.io/5e1c4da72464b1c6f068df0c02c91e3000ea62c4/dataset/termsofuse.htm",
+      "sha256": "bd019f88ee44c29b2f19c5b99888cf5bc2e7c16f57b6e52af8ed3a60462e8bdd"
+    },
+    "dataset/download.htm": {
+      "url": "https://raw.githubusercontent.com/cocodataset/cocodataset.github.io/5e1c4da72464b1c6f068df0c02c91e3000ea62c4/dataset/download.htm",
+      "sha256": "62e500d3e7be567d97c295f5f56c95a416618d0770dd334a0ab943a4c1e6954b"
+    }
+  },
+  "cocoArchive": {
+    "url": "https://s3.amazonaws.com/images.cocodataset.org/annotations/annotations_trainval2017.zip",
+    "bytes": 252907541,
+    "sha256": "113a836d90195ee1f884e704da6304dfaaecff1f023f49b6ca93c4aaae470268",
+    "independentChecksumUrl": "https://raw.githubusercontent.com/tensorflow/datasets/master/tensorflow_datasets/url_checksums/coco_captions.txt"
+  },
+  "cocoInstancesSha256": "e8c7f7908f1d7278341fae127d0da654f102f11bd7b21d8aeefa635b8c810b6f",
+  "cocoCaptionsSha256": "afe3b30e403dd7f228e2373023abbd60042a6e10ec6874d3652df034d289ebb9",
+  "cocoImages": [
+    {
+      "id": 1000,
+      "sha256": "24bb77a31928404e45a0454b06f6a0bd54a8db103590c9d7917288a1e0269f05",
+      "bytes": 321136,
+      "sourcePageSha256": "5301f9b1cb813613b76b372c94362b5664008855d2bcd7302300e50b2d0d0fd8",
+      "license": "CC-BY-2.0",
+      "licenseCheck": "Recorded dataset and original source explicit license anchor verified before inference",
+      "sanitizedSha256": "29991c514dad3f8dbac9106ff655eb9dd986ff32840c413b07fd701bb611af59",
+      "sanitizerReceiptSha256": "9f0a89d54bde143f797d12578485ec17c9abcf1f86c5c4778175ba1a0be5d40c"
+    },
+    {
+      "id": 20553,
+      "sha256": "739fee1c09f6d7c1670d2f558f70d2aea2ea6863a964c5a9582ca3bb70a55cb5",
+      "bytes": 140118,
+      "sourcePageSha256": "f7641673086c330039226a6dd749b3a56885a449496819da54d35551ab4a757c",
+      "license": "CC-BY-2.0",
+      "licenseCheck": "Recorded dataset and original source explicit license anchor verified before inference",
+      "sanitizedSha256": "55208b38ddd5a04da6e101d7f0b0d5eedd3d98524d0b9b2405bf1b7988b06290",
+      "sanitizerReceiptSha256": "914377e537150a332f0ab5196b4a4d85a3fb084a0df68a353481005007cef4bd"
+    }
+  ],
+  "cocoIndependentChecksumFileSha256": "4c5281d192beb7c6a77a7d2beaf8a4cd9cc45db1fe837f7cac255f8d61889a9a"
+}
