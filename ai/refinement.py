@@ -76,8 +76,18 @@ class RefinementProvider:
             if entry['group']!=self.config['artifactGroup']:continue
             path=Path(directory)/entry['local']
             with path.open('rb') as source:
-                if os.fstat(source.fileno()).st_size!=entry['bytes'] or hashlib.file_digest(source,'sha256').hexdigest()!=entry['sha256']:raise ValueError('Refinement artifact changed')
-            if self.task!='MULTILINGUAL_TRANSLATION':files[entry['local']]=path.read_bytes()
+                if os.fstat(source.fileno()).st_size != entry['bytes']:
+                    raise ValueError('Refinement artifact changed')
+                if self.task == 'MULTILINGUAL_TRANSLATION':
+                    digest = hashlib.file_digest(source, 'sha256').hexdigest()
+                else:
+                    payload = source.read(entry['bytes'] + 1)
+                    if len(payload) != entry['bytes']:
+                        raise ValueError('Refinement artifact changed')
+                    digest = sha(payload)
+                    files[entry['local']] = payload
+                if digest != entry['sha256']:
+                    raise ValueError('Refinement artifact changed')
         if self.task=='MULTILINGUAL_TRANSLATION':
             if self.config['baseFamily']=='generative':
                 from generative import GenerativeProvider
@@ -94,15 +104,18 @@ class RefinementProvider:
         import onnxruntime as ort
         self.np=np;os.environ.update(ORT_DISABLE_TELEMETRY='1',HF_HUB_OFFLINE='1',HF_HUB_DISABLE_TELEMETRY='1');ort.disable_telemetry_events()
         options=ort.SessionOptions();options.intra_op_num_threads=2;options.inter_op_num_threads=1;options.execution_mode=ort.ExecutionMode.ORT_SEQUENTIAL
-        names=['whisper-encoder','whisper-decoder'] if self.task=='SPEECH' else ['maskrcnn']
-        for model in names:
-            session=ort.InferenceSession(files[model+'.onnx'],sess_options=options,providers=['CPUExecutionProvider']);session.disable_fallback()
+        models = {'maskrcnn': 'maskrcnn.onnx'}
+        if self.task == 'SPEECH':
+            prefix = self.config.get('speechArtifactPrefix', 'whisper')
+            models = {f'whisper-{role}': f'{prefix}-{role}.onnx' for role in ('encoder', 'decoder')}
+        for model, filename in models.items():
+            session=ort.InferenceSession(files[filename],sess_options=options,providers=['CPUExecutionProvider']);session.disable_fallback()
             if session.get_providers()!=['CPUExecutionProvider']:raise ValueError('Unsupported refinement runtime')
             self.sessions[model]=session
         if self.task=='SPEECH':
             from tokenizers import Tokenizer
-            self.tokenizer=Tokenizer.from_str(files['whisper-tokenizer.json'].decode());self.tokenizer.no_truncation();self.tokenizer.no_padding()
-            self.generation=json.loads(files['whisper-generation.json']);self.model_config=json.loads(files['whisper-config.json'])
+            self.tokenizer=Tokenizer.from_str(files[f'{prefix}-tokenizer.json'].decode());self.tokenizer.no_truncation();self.tokenizer.no_padding()
+            self.generation=json.loads(files[f'{prefix}-generation.json']);self.model_config=json.loads(files[f'{prefix}-config.json'])
             import io
             with np.load(io.BytesIO(files['whisper-mel.npz']),allow_pickle=False) as archive:self.filters=archive['mel_80'].copy()
 
@@ -123,7 +136,11 @@ class RefinementProvider:
             source=raw.decode('utf-8')
             if not source.strip() or '\0' in source or len(source)>8000:raise ValueError('Source unavailable')
             return translation(self.delegate,self.config['decoderKind'],self.config,source)
-        if self.task=='SPEECH':return self.speech(raw)
+        if self.task == 'SPEECH':
+            if self.config.get('decoding') == 'cached-greedy-validated-cache-v1':
+                from whisper_speech import transcribe
+                return transcribe(self, raw, log_mel)
+            return self.speech(raw)
         width,height,pixels=png_rgba(raw);np=self.np;rgba=np.frombuffer(pixels,np.uint8).reshape(height,width,4).astype(np.float32);image=rgba[:,:,:3]*(rgba[:,:,3:4]/255)+255*(1-rgba[:,:,3:4]/255)
         scale=min(800/min(height,width),1333/max(height,width));h,w=int(height*scale),int(width*scale)
         if min(h,w)<32:raise ValueError('Unsupported region aspect ratio')

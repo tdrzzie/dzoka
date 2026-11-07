@@ -100,6 +100,24 @@ print('Checked broker service invocation completed')
         assertThrows(Failures.NotFound.class,()->jobs.result(who("other"),A,spoken.id()));
         assertEquals(spoken.id(),jobs.enqueue(who("reporter"),A,english,PerceptionFixtures.id(speech),null,raw).id());
     }
+    @Test void distilSpeechCompletesAsPrivateVersionedEvidence() throws Exception {
+        String name = "ISO_REFINEMENT_WHISPER_DISTIL_SMALL_EN";
+        byte[] audio = Files.readAllBytes(Path.of(required("DZOKA_TEST_SPEECH_WAV")));
+        UUID reportId = report("Synthetic authored speech reference").reportId();
+        var jobs = app.getBean(PerceptionJobs.class);
+        var job = jobs.enqueue(who("reporter"), A, reportId, PerceptionFixtures.id(name), null, audio);
+        run(name, "inference", 0);
+        assertEquals("SUCCEEDED", jobs.read(who("reporter"), A, job.id()).state());
+        var result = jobs.result(who("reporter"), A, job.id()).orElseThrow();
+        var profile = new ObjectMapper().readTree(Files.readString(Path.of("ai/broker-profiles.json"))).get(name);
+        assertEquals(profile.get("key").asString(), result.profileKey());
+        assertEquals(HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(audio)), result.inputSha256());
+        assertEquals("whisper-en-greedy-v2", result.evidence().get("representation"));
+        assertFalse(result.evidence().get("text").toString().isBlank());
+        assertEquals("SHADOW", result.selection());
+        assertThrows(Failures.NotFound.class, () -> jobs.result(who("other"), A, job.id()));
+    }
+
     @Test void actualIsolatedTextHasNewSpaceAndWrongTenantCannotClaim()throws Exception {
         UUID report=report("Synthetic private blue travel bag").reportId();var job=jobs().enqueue(who("reporter"),A,report,isolated.id());
         run("ISO_TEXT","remote",1);assertEquals("QUEUED",jobs().read(who("reporter"),A,job.id()).state());

@@ -1,0 +1,410 @@
+[
+  {
+    "repository": "distil-whisper/distil-small.en",
+    "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+    "path": "README.md",
+    "bytes": 26003,
+    "sha256": "4ba2ff9d83dc885bf781d24d4c93d51c7ee3e8ae01f01d0f9b095d170fb0b7cb",
+    "gitBlobSha1": "91b96cec72394bac495003390a963dfa030b8962",
+    "lineRanges": [
+      [
+        19,
+        19
+      ],
+      [
+        29,
+        29
+      ],
+      [
+        549,
+        549
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "distil-whisper/distil-small.en",
+    "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+    "path": "config.json",
+    "bytes": 2262,
+    "sha256": "077f053cb2c0f7163dd04048546a3588d55c2abce3055d5d119f5b2e2ef7bd73",
+    "gitBlobSha1": "515a3df5f273c89be144ce85aea02a73ac8867ca",
+    "lineRanges": [
+      [
+        1,
+        148
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "distil-whisper/distil-small.en",
+    "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+    "path": "generation_config.json",
+    "bytes": 1918,
+    "sha256": "dbb04007611af5ae0a7557f4392e8d9c37f149e33685f457765f6a522249f3db",
+    "gitBlobSha1": "f144e2deb25fb8c4597256428fdff70a1f5ee840",
+    "lineRanges": [
+      [
+        1,
+        188
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "distil-whisper/distil-small.en",
+    "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+    "path": "preprocessor_config.json",
+    "bytes": 339,
+    "sha256": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "gitBlobSha1": "91876762a536a746d268353c5cba57286e76b058",
+    "lineRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/distil-small.en",
+    "revision": "69be759f982d1d4c5b8a987d4140752742619bd0",
+    "path": "README.md",
+    "bytes": 553,
+    "sha256": "61df1c35289486bb8103dc3771e03d8265cd7b0504ee0e4c7d23e5e3f41918f8",
+    "gitBlobSha1": "2f7fdc9f316f9c322be223e2799f0a34e1570ded",
+    "lineRanges": [
+      [
+        2,
+        2
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/distil-small.en",
+    "revision": "69be759f982d1d4c5b8a987d4140752742619bd0",
+    "path": "config.json",
+    "bytes": 2209,
+    "sha256": "424d6e09098ea1c7753a675ec727f3adf540bb8591e2a20c4fdf6dca3b832673",
+    "gitBlobSha1": "68060fd9810ca6609b3bd4230b1721b496d8d404",
+    "lineRanges": [
+      [
+        1,
+        147
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/distil-small.en",
+    "revision": "69be759f982d1d4c5b8a987d4140752742619bd0",
+    "path": "generation_config.json",
+    "bytes": 1913,
+    "sha256": "ef5b12f82dfc48930897d96c7ab7cbc86e521078015e27052badc281bca52d63",
+    "gitBlobSha1": "54b3b79ccd03161013e15c9d9bd34e74302ffab5",
+    "lineRanges": [
+      [
+        1,
+        188
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/distil-small.en",
+    "revision": "69be759f982d1d4c5b8a987d4140752742619bd0",
+    "path": "preprocessor_config.json",
+    "bytes": 339,
+    "sha256": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "gitBlobSha1": "91876762a536a746d268353c5cba57286e76b058",
+    "lineRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-base.en",
+    "revision": "51eefc0af78b103839eda9e7e4f4186acc6517fe",
+    "path": "README.md",
+    "bytes": 537,
+    "sha256": "644cebfc4a5b85240019e90394e4eb9178728b7f873afe73a8cafe386e2fd990",
+    "gitBlobSha1": "510d02f2781cdf94761cfe071aa04e0448cbbffd",
+    "lineRanges": [
+      [
+        2,
+        2
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-base.en",
+    "revision": "51eefc0af78b103839eda9e7e4f4186acc6517fe",
+    "path": "config.json",
+    "bytes": 2197,
+    "sha256": "c8a0de5ed8a083565a4319db29d0c210fda35b4d6076c2d711cae53ae00f3cb1",
+    "gitBlobSha1": "1d26eef96852a247a15abeee24630b81de8c5835",
+    "lineRanges": [
+      [
+        1,
+        147
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-base.en",
+    "revision": "51eefc0af78b103839eda9e7e4f4186acc6517fe",
+    "path": "generation_config.json",
+    "bytes": 1556,
+    "sha256": "3479b1f44a07e41db799e22599222fee5816738036def94a39841cb9cdbb4120",
+    "gitBlobSha1": "84c050f8e56d93c2b29d9768be849360960483a7",
+    "lineRanges": [
+      [
+        1,
+        138
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-base.en",
+    "revision": "51eefc0af78b103839eda9e7e4f4186acc6517fe",
+    "path": "preprocessor_config.json",
+    "bytes": 339,
+    "sha256": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "gitBlobSha1": "91876762a536a746d268353c5cba57286e76b058",
+    "lineRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-small.en",
+    "revision": "482fb8ba081b6e906f92efe103622316b2a0cc69",
+    "path": "README.md",
+    "bytes": 539,
+    "sha256": "72d45ced24b6249688452bf4fc176dc8541fd3b5b3fb78d269deaf607a4e329e",
+    "gitBlobSha1": "1c7793eeace0a79bfe9f046fe1a7c88dc911a919",
+    "lineRanges": [
+      [
+        2,
+        2
+      ],
+      [
+        6,
+        6
+      ],
+      [
+        8,
+        8
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-small.en",
+    "revision": "482fb8ba081b6e906f92efe103622316b2a0cc69",
+    "path": "config.json",
+    "bytes": 2203,
+    "sha256": "8825c4174cb86f94d9fa67614942f8aa17bfbbdf2fae5426d4adfd0bc5893c43",
+    "gitBlobSha1": "addf243260366954f680bba396c6f8be6557d163",
+    "lineRanges": [
+      [
+        1,
+        147
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-small.en",
+    "revision": "482fb8ba081b6e906f92efe103622316b2a0cc69",
+    "path": "generation_config.json",
+    "bytes": 1956,
+    "sha256": "5490747ca976d6b3765280a0697d66489020c2afa6e754244d9cd093e1639331",
+    "gitBlobSha1": "5d992f09576afe6e961860bb4f97de33aba08f86",
+    "lineRanges": [
+      [
+        1,
+        193
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "onnx-community/whisper-small.en",
+    "revision": "482fb8ba081b6e906f92efe103622316b2a0cc69",
+    "path": "preprocessor_config.json",
+    "bytes": 339,
+    "sha256": "a6a76d28c93edb273669eb9e0b0636a2bddbb1272c3261e47b7ca6dfdbac1b8d",
+    "gitBlobSha1": "91876762a536a746d268353c5cba57286e76b058",
+    "lineRanges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-base.en",
+    "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "path": "README.md",
+    "bytes": 14846,
+    "sha256": "767c687e78cb62c9607ce6ff077ab3368dae8072cee8cab6aeaa1246fc6a021c",
+    "gitBlobSha1": "3ab94a9aa98899b9eac2e38231e0f36cea5760ef",
+    "lineRanges": [
+      [
+        45,
+        45
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-base.en",
+    "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "path": "config.json",
+    "bytes": 1937,
+    "sha256": "160c1df40a60d4ef5a6014d536fd845c33aabfd1f318458ac7f87cfe91ebbe76",
+    "gitBlobSha1": "0e9af059a5d452f97d3493ffb4da98712c8fd711",
+    "lineRanges": [
+      [
+        1,
+        138
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-base.en",
+    "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "path": "generation_config.json",
+    "bytes": 1531,
+    "sha256": "c5750f05d94777579e00ce26ef65e5d87c108439f90e3ac519df2587b9d5d41f",
+    "gitBlobSha1": "1cde9fc2a32ad94f4db760e67a2375e229215f58",
+    "lineRanges": [
+      [
+        1,
+        137
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-base.en",
+    "revision": "911407f4214e0e1d82085af863093ec0b66f9cd6",
+    "path": "preprocessor_config.json",
+    "bytes": 184990,
+    "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+    "gitBlobSha1": "c2048dfa9fd94a052e62e908d2c4dfb18534b4d2",
+    "lineRanges": [
+      [
+        1,
+        16256
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-small.en",
+    "revision": "e8727524f962ee844a7319d92be39ac1bd25655a",
+    "path": "README.md",
+    "bytes": 14834,
+    "sha256": "807abb3b3f445ece42d9a91cf724d34e81a2285c39e4baf27ad9072299023b56",
+    "gitBlobSha1": "308da69c2dcf276a2dcaead8214d80fe4275b3a7",
+    "lineRanges": [
+      [
+        45,
+        45
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-small.en",
+    "revision": "e8727524f962ee844a7319d92be39ac1bd25655a",
+    "path": "config.json",
+    "bytes": 1943,
+    "sha256": "3441094addfb2a31ef62ea117e95bd6e437bbad8e93d3697fe420a4a6d3603a5",
+    "gitBlobSha1": "441d82a4be08ee59609c374a4d5082641677466e",
+    "lineRanges": [
+      [
+        1,
+        138
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-small.en",
+    "revision": "e8727524f962ee844a7319d92be39ac1bd25655a",
+    "path": "generation_config.json",
+    "bytes": 1931,
+    "sha256": "aad4e18c0fb1d063c5b38b4080cec3c4c8cdfff95e1de4797013470654a5a72a",
+    "gitBlobSha1": "6b3e70541b0f1565a9d01901d0112abc19c88265",
+    "lineRanges": [
+      [
+        1,
+        192
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "openai/whisper-small.en",
+    "revision": "e8727524f962ee844a7319d92be39ac1bd25655a",
+    "path": "preprocessor_config.json",
+    "bytes": 184990,
+    "sha256": "9b5cd03a36fbb8a627c64d98a5b5b126ead95a77720723944487311f0110b666",
+    "gitBlobSha1": "c2048dfa9fd94a052e62e908d2c4dfb18534b4d2",
+    "lineRanges": [
+      [
+        1,
+        16256
+      ]
+    ],
+    "inspection": "Scoped static review. No publisher loaders or tests executed."
+  },
+  {
+    "repository": "huggingface/distil-whisper",
+    "branch": "main",
+    "revision": "cc96130f6e4cc74cab4545f3c6e7e5c204ced871",
+    "path": "LICENSE",
+    "bytes": 1122,
+    "sha256": "0de1441fdf0711ab7b919e10001d1ef6c7ccedfea0c55b0500e3b5429fd5df62",
+    "gitBlobSha1": "9f30164866c6dd37417b5f87206258974b567f84",
+    "lineRanges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "inspection": "Static MIT notice review."
+  }
+]

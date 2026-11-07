@@ -3404,7 +3404,7 @@
   "ISO_REFINEMENT_WHISPER_EN": {
     "family": "refinement",
     "base": "WHISPER_EN",
-    "key": "06d024bbd2462a2637706633321abb470bd3e1e2f8b1943e39ce25016af37505",
+    "key": "fa03f86cc1613b8e3867b2d3fd78bf33e08ffc50742500d1663d49cbcf332a48",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "SPEECH",
@@ -3417,8 +3417,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -3446,7 +3447,7 @@
         "maxOutputTokens": 128,
         "features": "original-mel80-nfft400-hop160-periodic-hann-reflect-center-30s-pad-v1",
         "decoding": "cached-greedy-suppress-no-timestamps-v1",
-        "baseProfileKey": "10c906b221954622a71064fee482722dc649662bbf0c4139a5e03c966bed0dad",
+        "baseProfileKey": "f464d20d82f0ae00d184d40c64b86043c03ccb3667fc5bb2fc1ef0dd315f8aef",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -3504,7 +3505,7 @@
   "ISO_REFINEMENT_MASK_DETECTION": {
     "family": "refinement",
     "base": "MASK_DETECTION",
-    "key": "0dccf4a3c86ca36d45e3ca3678c113f12e3e32b64cb3c2263723512c5d46cc1f",
+    "key": "1b8e6aa7f6d453e96b8e458c618531536abf226e76ee4d837f2d111fbae54713",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "DETECTION",
@@ -3517,8 +3518,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -3544,7 +3546,7 @@
         "scoreThreshold": 0.5,
         "maxDetections": 20,
         "vocabulary": "coco-90",
-        "baseProfileKey": "68d3e4608001b26a08a1942018c07148033c6c485c15ee9e3750367e3eb1b410",
+        "baseProfileKey": "26e5d90dcf1ee1c5bd21b7e89b06c018e3a9b9f762e1c63ab412c195aee38e5a",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -3567,7 +3569,7 @@
   "ISO_REFINEMENT_MASK_SEGMENTATION": {
     "family": "refinement",
     "base": "MASK_SEGMENTATION",
-    "key": "be93c40547981fd2fa4ee529c0c20495ff3873081c3d563249c254088111ff78",
+    "key": "37ba061bbd1513f8798a5654d76006a035c7e19720f31dc1d5572975c96a70de",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "SEGMENTATION",
@@ -3580,8 +3582,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -3612,7 +3615,7 @@
         "overlap": "descending-score-first-foreground",
         "vocabulary": "pascal-voc-21",
         "unsupportedClasses": "background",
-        "baseProfileKey": "148f697409cb9ddd9d73388fc00e915fe232ccaaffcc84d744d5c6d29983fb3c",
+        "baseProfileKey": "28bfb8eb9d25f373aa6ece76dd4e4f64062dee4e0a6310ad22981563c727d101",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -3635,7 +3638,7 @@
   "ISO_REFINEMENT_M2M_EN_FR": {
     "family": "refinement",
     "base": "M2M_EN_FR",
-    "key": "b39604b8bb968c51d8814c84a071c1a2fb7b0031cef36084b65b86c84a294a89",
+    "key": "e7e318ed8c5cb4cf7b1b6ada97430e6894d8b5db23d4c47381194acdc38b7949",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -3648,8 +3651,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -3682,7 +3686,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "0c53138b39cb042c2a652975effdca9e5f0a7e701c66ad37e57384c5eb15e716",
+        "baseProfileKey": "bf8b3bb916a3ffd45b43645d117bbf513838b73adf610a0178d26f05dd130999",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -3754,7 +3758,7 @@
   "ISO_REFINEMENT_M2M_FR_EN": {
     "family": "refinement",
     "base": "M2M_FR_EN",
-    "key": "29f372d35efda4624e2702d843764ad750c473b56ef08bf121cdd86c9e6535aa",
+    "key": "23817542cdd9dd4cea803a39a64b0f95be1d05eb80c4f7616a6c3ca09a019fbd",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -3767,8 +3771,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -3801,7 +3806,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "dedd1489b437971b7a03f2f1bcd7ffaaae5262c9412fe1dabaef2a4b07547381",
+        "baseProfileKey": "2e70991aa44ffadce3c93c9cc51006d0301a650a289a39044fb10c402ca0571c",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -3873,7 +3878,7 @@
   "ISO_REFINEMENT_M2M_EN_DE": {
     "family": "refinement",
     "base": "M2M_EN_DE",
-    "key": "39083bf45e848454c00b629899b404fcad08fcc47c32b680b753a7deff943ad7",
+    "key": "13fa38ab8f99a43ee3c0242333020962b7d05975e16f9de78de8035ffd6ce879",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -3886,8 +3891,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -3920,7 +3926,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "4052a577fa1c56f860d77a41a4f9ae4009f6e3710017b70c9a4d3018e7b56f5e",
+        "baseProfileKey": "8cd87a305cfc478aa7e627f9689050bdbe84911b3eb3dbe6c39bf2aa2e5f7e34",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -3992,7 +3998,7 @@
   "ISO_REFINEMENT_M2M_DE_EN": {
     "family": "refinement",
     "base": "M2M_DE_EN",
-    "key": "5024383f37f71b455e5773fd68152f6b1d7371cf95ca3c433978fad7418ac629",
+    "key": "a4c600f6f755a3c534f7b4e2133bdd9f8a9f0ce0e0c5326273d4f68a0d4fc4ad",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4005,8 +4011,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4039,7 +4046,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "c67c861e5843f4b2803bc37da588670f041bab7861e5f969e397167e54269e81",
+        "baseProfileKey": "840e795b2b066c6bb69332809d7d76d638bd8eb61e17fc85847c68d50c88cfcc",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4111,7 +4118,7 @@
   "ISO_REFINEMENT_M2M_EN_ES": {
     "family": "refinement",
     "base": "M2M_EN_ES",
-    "key": "7d416d86db59f39018194341b0ad39ac4859de407b7a0cc054a3a28651e2f98c",
+    "key": "58986ff6c0859f40acfc0c5d972cf36256265b11add5e62481eac45594286d6c",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4124,8 +4131,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4158,7 +4166,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "b97c0c82375a9d9589b854ce13e60373aef1effc2f28583ec95f39ae1de83b4b",
+        "baseProfileKey": "7090fc757c2b164ab5e58401a81e959f50ec0e67024a8686b6a698b6f7bb2612",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4230,7 +4238,7 @@
   "ISO_REFINEMENT_M2M_ES_EN": {
     "family": "refinement",
     "base": "M2M_ES_EN",
-    "key": "c2a24bd8202578bd3bf9f893faafe13f974a970ad0fec65498d0648d281891fc",
+    "key": "bb7bce583905e84bc658f54ab7b3e1c4e05f7096d9dbb100f23bf6cbef8d3062",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4243,8 +4251,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4277,7 +4286,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "2c532498e06ae39b07f4966981aba22347580c9ab31c76d10c785080e625cd5c",
+        "baseProfileKey": "f2ff8a9d3bcb22f96dbafb9c43a183ee4df9d722c314739cac2124d7e068a7a3",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4349,7 +4358,7 @@
   "ISO_REFINEMENT_M2M_EN_AF": {
     "family": "refinement",
     "base": "M2M_EN_AF",
-    "key": "10a6cfca8c89f07391bc63bbb00a7c7c2eb68aa0dc8906fa2f1ec1a054ccad77",
+    "key": "c06ffa47b58cfcb1ff7287f49d7bf09026b5bbaf9923e5c0b37229e17c155060",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4362,8 +4371,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4396,7 +4406,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "3af173e42b8dc2bacf2f015867774edf653b42e501047e63d732a1df7524f7e2",
+        "baseProfileKey": "9e4b903d903e38ad798c74cdffe0ba8c6b20dfaa25ffdf1de666a15b32fe78e1",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4468,7 +4478,7 @@
   "ISO_REFINEMENT_M2M_AF_EN": {
     "family": "refinement",
     "base": "M2M_AF_EN",
-    "key": "b1037f4dd097fac8190f0c6ce238ae00966d9c5cbf9528c777468940a549f80e",
+    "key": "cbd4cb2704acb1b763fd605a1ed662d715f4e2f730d9d5523e18764e67703498",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4481,8 +4491,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4515,7 +4526,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "974933d9c2d360a9cdf312de84963965c32c5d627d69c72bb7d706f35f18fd66",
+        "baseProfileKey": "a8bb4bcecedf055e26c5812fbb928d02d9f5ff4a5c23d4582bdd87271c393454",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4587,7 +4598,7 @@
   "ISO_REFINEMENT_M2M_EN_ZU": {
     "family": "refinement",
     "base": "M2M_EN_ZU",
-    "key": "3a329d76e028ba4aab959aad2ea2a980718869c6da6a98c88295ad79e4a08ee9",
+    "key": "5e6d9df7c46bb5b60685ca2a4b56bcb73b699da7834bbd83bc171fe10b2abcf0",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4600,8 +4611,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4634,7 +4646,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "9c2345cd412a3946593e8ce9bf957f9cc26b4f9b532c83d269aecac6e1079780",
+        "baseProfileKey": "a673e4cb0becc1b99c5f69227d850c3d2c826c70efc436fb3d2fc56311b6b416",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4706,7 +4718,7 @@
   "ISO_REFINEMENT_M2M_ZU_EN": {
     "family": "refinement",
     "base": "M2M_ZU_EN",
-    "key": "df40e90082194b21af907bd94ba1354ddaf60ad10bd5a1b0aef9b7462d66bef9",
+    "key": "0292347380cd65c6b685385fd2149e320a54c3de3d65f1b5736df354b58de47e",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4719,8 +4731,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4753,7 +4766,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "c8db2ad0cbb9bbf434397cbf1c2235bb9a1f2886fccc326487db1b16c669b42a",
+        "baseProfileKey": "f1f7b917a92726aecd66e390cf670bbbd08252b441d3e242b707bb181865562f",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4825,7 +4838,7 @@
   "ISO_REFINEMENT_M2M_EN_XH": {
     "family": "refinement",
     "base": "M2M_EN_XH",
-    "key": "5e2edc527514acba46997bcd2f1ca717a41cbcc68dbfc69af9646ba280db73aa",
+    "key": "e180e6600672b233b60506f4a0654e3d62854197c5290656af0d612274ca4638",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4838,8 +4851,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4872,7 +4886,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "f6667d05cdc764b6f6de4a0f5d1ab6ad1c24501d4ffabd7b0abb1deb36d82296",
+        "baseProfileKey": "b2e158f303b0a74b070db1e782b2056646a77e4583e97fce865f6cc507da007f",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -4944,7 +4958,7 @@
   "ISO_REFINEMENT_M2M_XH_EN": {
     "family": "refinement",
     "base": "M2M_XH_EN",
-    "key": "c962cd8add42d7730d0b113f1dabaf9110fe121ce270ea738c636c0e9a271004",
+    "key": "70a135c829efa466a5899f192547508c7d8893ce8b9dcfd10ec801bc3167c0ae",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -4957,8 +4971,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -4991,7 +5006,7 @@
         "representation": "m2m100-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "4d002de4c52e22c57959c19412aeeefdfeb109557be62262311d4ad9033743f4",
+        "baseProfileKey": "4fd8c1b616ca18b50433f47f460b208aceb717f0abb35035df9c6a8d1f594d2a",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -5063,7 +5078,7 @@
   "ISO_REFINEMENT_OPUS_SN_EN": {
     "family": "refinement",
     "base": "OPUS_SN_EN",
-    "key": "955411bda7b29325a2690de0090be6797ae5ae4193c3dab67b4bbee29a1d212f",
+    "key": "de2dab2a29aaccbde609ad79ad7c264760eb2d84316bcc3ab66b7204ce4dfbc0",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -5076,8 +5091,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -5110,7 +5126,7 @@
         "representation": "marian-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "225620590e7caba1cfdb733765ed216c76d240f1b961101287d55ee202a50f11",
+        "baseProfileKey": "0b6be740b727a19d87326d8ac846c0ad1b55f9e41ef64457a15359d3f49c6a52",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -5168,7 +5184,7 @@
   "ISO_REFINEMENT_OPUS_ES_EN": {
     "family": "refinement",
     "base": "OPUS_ES_EN",
-    "key": "c6569214da07c188893269c2552991cd9ff4e4ea5820375d5ab94732e1e5a8ff",
+    "key": "db0274c302031aedb8423fb3bf7796420cc6cf15f19fdc438a73365bd2fd73b7",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -5181,8 +5197,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -5215,7 +5232,7 @@
         "representation": "marian-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "aefc4c0ad791073f74e43d80061c30763ce5ace86986ac8ba4201a2740121949",
+        "baseProfileKey": "a83fcd1c8cf05f8badf91e43ee2447b2da5432c24b64756fbf5d8b3857747136",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -5273,7 +5290,7 @@
   "ISO_REFINEMENT_OPUS_DE_EN": {
     "family": "refinement",
     "base": "OPUS_DE_EN",
-    "key": "77adadfa99a0fd4d29218614ba5b8942603284b173f3b31e1f0571121325e413",
+    "key": "e506b5e1a632f211aceef03c0ad4f1c63a04106ebab6ee6618726c0360bf9cb3",
     "manifest": {
       "schema": "perception-profile-v1",
       "task": "MULTILINGUAL_TRANSLATION",
@@ -5286,8 +5303,9 @@
         "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
         "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
         "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-        "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
         "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
         "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
         "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
         "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
@@ -5320,7 +5338,7 @@
         "representation": "marian-budget-v2",
         "trust": "UNVERIFIED_TRANSLATION",
         "leaseSeconds": 300,
-        "baseProfileKey": "437f7fd19fa9ee495d9686c8ec9cafe12cab34d647ca35f032b9f8e2fa1f75d6",
+        "baseProfileKey": "e2646c856f085eed0f1c745a6b5c7e571c5bc4f2fe99a9825c6c8c7aeefe241f",
         "brokerBoundary": {
           "protocol": "model-pipe-v1",
           "execution": "windows-appcontainer-no-capabilities",
@@ -5371,6 +5389,108 @@
           "path": "vocab.json",
           "bytes": 1389436,
           "sha256": "d5acea957b265a78554999144459c5e391e0df525864edc8287bc090290baa44"
+        }
+      ]
+    }
+  },
+  "ISO_REFINEMENT_WHISPER_DISTIL_SMALL_EN": {
+    "family": "refinement",
+    "base": "WHISPER_DISTIL_SMALL_EN",
+    "key": "d9402dc5e2c6ae173402bb30b2aa77bd6ec11145ca896faf66371b733f393034",
+    "manifest": {
+      "schema": "perception-profile-v1",
+      "task": "SPEECH",
+      "provider": "onnxruntime-cpu-appcontainer",
+      "runtimeLockSha256": "9e3647b7899c9e771abba0622e00f25616cec91f7c0c125d645e244c64545c2e",
+      "sources": {
+        "ai/generative.py": "f564432c4e5040d880b4eb7b60bbaf8744f4f41db66adb4fd97d387d35d18874",
+        "ai/generative_integrity.py": "7e9b642ee271119abebd6a4f61f9d1f8bc91e41859db701651f7cb509b4e9ffc",
+        "ai/generative_model.py": "437e30dcfad8cde61b5425829fb5674ee345fd990456260dad7d7aac36302bbc",
+        "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
+        "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
+        "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
+        "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
+        "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+        "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01",
+        "ai/broker_profiles.py": "152d03f79dcaa8d7a8e348442c3054b45b2ead2b0bc59aa28bc5b1846efe13d1",
+        "ai/model_wire.py": "1a4c590f2d1f608edcf5997f64c8556efd8c96d9d4ac15e763f312897a300ef6",
+        "ai/offline_model.py": "4bb1f1e5771097e97f164ff501b2a600fd7207eb3ab0c05e23bcc970f1589544",
+        "tools/model_process.py": "f4b2b7ecee53f12e7c1f9af676e73b491ba3f93ce0f8d347482f5624ba66599e",
+        "tools/model_broker.py": "121d2a31be7d98a509c4ef60552e60293c13319ca648d6055c3a33cbdbbdb594",
+        "tools/broker_bundle.py": "8c5811bddf0fd3e9485faf6757210b4e7cf41a23a6782959c07fab32c0b7518e",
+        "tools/broker_plan.py": "e6438a5e249758f22ba4817a41609d2ef6a07ba9a370a4416debf4dca9046ab6",
+        "tools/broker_supervisor.py": "6fb07091a7a407381873ef04cdf9013905afcb26bc76b2242a351aae0ca33947",
+        "tools/broker_profile.py": "f70851cdc861b8f494e684dfd57303cfb9dc0abc65469d28cd385d2dd4202384",
+        "tools/appcontainer_boundary.py": "a301564e966f4ce274b9bc1844b98f392345396811a72a39654a85cd7f9af749",
+        "tools/service_account.py": "f89f74753be174872f94140b349e1125779173b3a2d48df9eda5bb2b34ee2748",
+        "tools/service_host.py": "6f6c07d50466f10ce44e96105f0d988f86ec33737410f52c49ef285c469b4916",
+        "tools/docker_lifecycle.py": "4a63603c3e1ad94e49db059bfe70a0bfd947b07db3a1aaac1f37f1591e583a9c",
+        "tools/worker_service.py": "765f7929e60405276a94de11cab9d83bd7b199f9282771c9b7ffca46caaeb446",
+        "tools/verify_worker_boundary.py": "bc8a7ca099271b241866170c2928521e290d3c00f4998e92b5fb26cbe2e5ec02",
+        "ai/perception_worker.py": "10ddb6fdf48b4b35801a76673da1bbdea2c48395a879e84d4be509bfc13a3733"
+      },
+      "configuration": {
+        "task": "SPEECH",
+        "artifactGroup": "WHISPER_DISTIL_SMALL_EN",
+        "outputRepresentation": "whisper-en-greedy-v2",
+        "language": "en",
+        "sampleRate": 16000,
+        "maxSamples": 160000,
+        "maxOutputTokens": 128,
+        "features": "original-mel80-nfft400-hop160-periodic-hann-reflect-center-30s-pad-v1",
+        "decoding": "cached-greedy-validated-cache-v1",
+        "speechArtifactPrefix": "distil",
+        "baseProfileKey": "1a92d7e8e0aebbd6989d9732aa3a45e35909899c8b55972de5578d2141655af3",
+        "brokerBoundary": {
+          "protocol": "model-pipe-v1",
+          "execution": "windows-appcontainer-no-capabilities",
+          "brokerLockSha256": "f6a35c6526ab8bd769b36279660411c70b13eba999b11006e5081afbd5e9a8c2",
+          "runtime": "reviewed-22-wheel",
+          "nativeCpu": "owned-fixed-session-v1"
+        }
+      },
+      "artifacts": [
+        {
+          "repository": "distil-whisper/distil-small.en",
+          "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+          "path": "onnx/encoder_model_quantized.onnx",
+          "bytes": 92324820,
+          "sha256": "3b5945b90be2ae313f688f5f8b2ccc28626961a423adcc1dabc0c3c5dcdaac99"
+        },
+        {
+          "repository": "distil-whisper/distil-small.en",
+          "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+          "path": "onnx/decoder_model_merged_quantized.onnx",
+          "bytes": 79750697,
+          "sha256": "c9b2f6ad89dfded7c52f2744accb15a413c425ba339ca560fd88d1c6187d6b43"
+        },
+        {
+          "repository": "distil-whisper/distil-small.en",
+          "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+          "path": "tokenizer.json",
+          "bytes": 2405466,
+          "sha256": "c9c77688528c0509abbd41873edab16384b8f041531b1d3092ab4d1d83a02a50"
+        },
+        {
+          "repository": "distil-whisper/distil-small.en",
+          "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+          "path": "config.json",
+          "bytes": 2262,
+          "sha256": "077f053cb2c0f7163dd04048546a3588d55c2abce3055d5d119f5b2e2ef7bd73"
+        },
+        {
+          "repository": "distil-whisper/distil-small.en",
+          "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+          "path": "generation_config.json",
+          "bytes": 1918,
+          "sha256": "dbb04007611af5ae0a7557f4392e8d9c37f149e33685f457765f6a522249f3db"
+        },
+        {
+          "repository": "openai/whisper",
+          "revision": "86098128c0b4f24f0e2aa2994de830614b474227",
+          "path": "whisper/assets/mel_filters.npz",
+          "bytes": 4271,
+          "sha256": "7450ae70723a5ef9d341e3cee628c7cb0177f36ce42c44b7ed2bf3325f0f6d4c"
         }
       ]
     }

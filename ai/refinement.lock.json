@@ -9,8 +9,9 @@
     "ai/integrity.py": "0601af3989a8227c1da681b107645a66e4ffbfe843b373922fafacc0d5f8e522",
     "ai/perception.py": "c2d1cea2ae626ea44d31cc60bf48527e4a33e2e131caf4a0467340d62337abc0",
     "ai/quality.py": "25e4bd2667d37dffa5c243952662101e32c4368a7a85e8bb4296c5b2e76559bc",
-    "ai/refinement.py": "7c63ec5fb273cb8dc5d031d98f85d29d83b93c08ad9c3b383390d3e61aeb1434",
-    "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff"
+    "ai/refinement.py": "0af13871a0c0b109be345236c35147c3608ea2e46bf6d9fe4084c68c2ada84ab",
+    "ai/refinement_worker.py": "832a43197f47c07b45ae47496a79fa0135ab0e3b70bc50b98a2d3f53fd192cff",
+    "ai/whisper_speech.py": "1c5bd4131a1146fa32279fe58ea2983bacaaf5cfa5587143bfb7935c609c7c01"
   },
   "files": [
     {
@@ -359,6 +360,65 @@
       "bytes": 1389436,
       "sha256": "d5acea957b265a78554999144459c5e391e0df525864edc8287bc090290baa44",
       "url": "https://huggingface.co/TigreGotico/opus-mt-de-en-onnx/resolve/7d21e6010a23a7b2c38ace7f3b18e55ec73be4f3/vocab.json?download=true"
+    },
+    {
+      "group": "WHISPER_DISTIL_SMALL_EN",
+      "repository": "distil-whisper/distil-small.en",
+      "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+      "path": "onnx/encoder_model_quantized.onnx",
+      "local": "distil-encoder.onnx",
+      "bytes": 92324820,
+      "sha256": "3b5945b90be2ae313f688f5f8b2ccc28626961a423adcc1dabc0c3c5dcdaac99",
+      "url": "https://huggingface.co/distil-whisper/distil-small.en/resolve/9e4a67ca4569c30be43a3fe7fba1621e504f0093/onnx/encoder_model_quantized.onnx"
+    },
+    {
+      "group": "WHISPER_DISTIL_SMALL_EN",
+      "repository": "distil-whisper/distil-small.en",
+      "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+      "path": "onnx/decoder_model_merged_quantized.onnx",
+      "local": "distil-decoder.onnx",
+      "bytes": 79750697,
+      "sha256": "c9b2f6ad89dfded7c52f2744accb15a413c425ba339ca560fd88d1c6187d6b43",
+      "url": "https://huggingface.co/distil-whisper/distil-small.en/resolve/9e4a67ca4569c30be43a3fe7fba1621e504f0093/onnx/decoder_model_merged_quantized.onnx"
+    },
+    {
+      "group": "WHISPER_DISTIL_SMALL_EN",
+      "repository": "distil-whisper/distil-small.en",
+      "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+      "path": "tokenizer.json",
+      "local": "distil-tokenizer.json",
+      "bytes": 2405466,
+      "sha256": "c9c77688528c0509abbd41873edab16384b8f041531b1d3092ab4d1d83a02a50",
+      "url": "https://huggingface.co/distil-whisper/distil-small.en/resolve/9e4a67ca4569c30be43a3fe7fba1621e504f0093/tokenizer.json"
+    },
+    {
+      "group": "WHISPER_DISTIL_SMALL_EN",
+      "repository": "distil-whisper/distil-small.en",
+      "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+      "path": "config.json",
+      "local": "distil-config.json",
+      "bytes": 2262,
+      "sha256": "077f053cb2c0f7163dd04048546a3588d55c2abce3055d5d119f5b2e2ef7bd73",
+      "url": "https://huggingface.co/distil-whisper/distil-small.en/resolve/9e4a67ca4569c30be43a3fe7fba1621e504f0093/config.json"
+    },
+    {
+      "group": "WHISPER_DISTIL_SMALL_EN",
+      "repository": "distil-whisper/distil-small.en",
+      "revision": "9e4a67ca4569c30be43a3fe7fba1621e504f0093",
+      "path": "generation_config.json",
+      "local": "distil-generation.json",
+      "bytes": 1918,
+      "sha256": "dbb04007611af5ae0a7557f4392e8d9c37f149e33685f457765f6a522249f3db",
+      "url": "https://huggingface.co/distil-whisper/distil-small.en/resolve/9e4a67ca4569c30be43a3fe7fba1621e504f0093/generation_config.json"
+    },
+    {
+      "repository": "openai/whisper",
+      "revision": "86098128c0b4f24f0e2aa2994de830614b474227",
+      "path": "whisper/assets/mel_filters.npz",
+      "local": "whisper-mel.npz",
+      "group": "WHISPER_DISTIL_SMALL_EN",
+      "bytes": 4271,
+      "sha256": "7450ae70723a5ef9d341e3cee628c7cb0177f36ce42c44b7ed2bf3325f0f6d4c"
     }
   ],
   "configuration": {
@@ -635,6 +695,18 @@
       "representation": "marian-budget-v2",
       "trust": "UNVERIFIED_TRANSLATION",
       "leaseSeconds": 300
+    },
+    "WHISPER_DISTIL_SMALL_EN": {
+      "task": "SPEECH",
+      "artifactGroup": "WHISPER_DISTIL_SMALL_EN",
+      "outputRepresentation": "whisper-en-greedy-v2",
+      "language": "en",
+      "sampleRate": 16000,
+      "maxSamples": 160000,
+      "maxOutputTokens": 128,
+      "features": "original-mel80-nfft400-hop160-periodic-hann-reflect-center-30s-pad-v1",
+      "decoding": "cached-greedy-validated-cache-v1",
+      "speechArtifactPrefix": "distil"
     }
   }
 }
