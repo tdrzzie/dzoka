@@ -1,0 +1,22 @@
+# Machine-wide worker deployment preparation
+
+Prepared November 15 at the user's request after the dedicated service token was denied access to the interactive Docker engine. The host runs Windows 11 Pro for Workstations and Docker Engine/CLI 29.9.2. Docker Desktop is installed beneath the interactive user's LocalAppData. The native `dockerDesktopLinuxEngine` pipe denied the restricted `NT SERVICE\DzokaWorkers` token with Win32 5. The inventory counted 875 containers, 268 distinct images and 618 volumes. No workload content was inspected and no shared daemon configuration or workload was changed.
+
+## Deployment choice and release barrier
+
+Use a dedicated machine-owned Linux engine host for unattended CPU-container service deployment, with its own storage and startup policy. Retain the current Desktop installation for existing interactive workloads until their backup and migration plan has been reviewed. The current Windows broker passes local drive paths to Docker bind mounts. A remote engine therefore requires explicit model staging on the engine host, a reviewed host-path mapping contract and fixed engine identity. Existing Windows AppContainer model isolation remains on Windows. These are implementation and verification requirements before adopting a remote topology.
+
+An all-users Docker Desktop installation can provide a machine-installed CLI and privileged helper. Docker documents that changing between per-user and all-users modes requires uninstall/reinstall, and that WSL2 containers/images are not shared between Windows accounts. The `--always-run-service` installer flag starts the privileged helper. Desktop application startup remains separate. A successful helper installation alone leaves engine startup before interactive login to verify. [Installation and flags](https://docs.docker.com/desktop/setup/install/windows-install/) · [Windows permissions and backends](https://docs.docker.com/desktop/setup/install/windows-permission-requirements/) · [Startup settings](https://docs.docker.com/desktop/settings-and-maintenance/settings/)
+
+## Required migration artifacts
+
+1. Inventory each workload owner and permitted maintenance window in private operational storage. Identify persistent volumes, bind-mounted directories, ports, external dependencies and restart policies without exposing credentials.
+2. Capture consistent application/database backups and volume contents. Retain exact image digests and required exported images, private configuration and appropriate secret-manager references. Verify at least one restore to independent storage. Count-only inventory cannot establish backup completeness.
+3. Select and review the target backend and exact installer/runtime artifact, publisher signature, hash, license and rollback artifact. Confirm capacity, storage location and engine ownership. Pin the chosen artifact before execution.
+4. Prepare a separate protected Dzoka release, runtime/model storage, service configuration, state and credentials. The dedicated service must declare its actual SID and measured integrity RID. The verified local account policy requires SCM privileges limited to `SeChangeNotifyPrivilege`; validate the actual token after every change.
+5. Establish a fixed engine endpoint, least-privilege access and a local-mount or reviewed remote-path contract. Confirm that the selected account can create the exact pinned, non-root, network-disabled, read-only CPU Shona container and remove only its owned resources.
+6. Run full core claim/input/inference/completion under the installed service. Test wrong-tenant rejection, lease expiry, retries, exclusive ownership, daemon loss and recovery, and source/model/runtime integrity. Apply and verify trusted broker core-egress restrictions.
+7. Review the concrete migration and rollback result with workload owners before stopping or replacing the current engine. Apply the selected installation only in that maintenance window.
+8. Verify automatic worker and engine startup after a scheduled host reboot and before interactive login. Restore a backup independently and retain deployment receipts. Enable deployment only after these checks pass.
+
+The November 15 temporary SCM acceptance service was removed after testing. Its actual adapter start/stop/crash-restart evidence is retained separately. This plan is prepared for review. Installer migration, workload backup/restore and unattended engine acceptance are pending. [Execution record](../testing/m4-openrouter-service-2026-11-15.md)

@@ -8,6 +8,8 @@
     "tools/managed_broker.py": "dabb93b42c56e96e03d3c0f7879e974d8b85756cc0f5874cad965d055b46065e",
     "tools/managed_release.py": "09894788e86e8134f1db8e7d29a19d84ce26ce865f22eb0634f725d2ff00b270",
     "tools/managed_state_acl.ps1": "367e416a10c3c7404cac97ab0664fbfdf6f45191bd4f80591224c3bbeaf25f36",
-    "tools/model_evaluation.py": "2200b809b49e893987d881f701682bb5156350ddbf29b674804620cf7f83d0c8"
+    "tools/model_evaluation.py": "2200b809b49e893987d881f701682bb5156350ddbf29b674804620cf7f83d0c8",
+    "tools/quality_protocols.py": "4195e3cb1810c7408f9b511b5334a869583f362eea1b672b95ecc24a3a7fb18b",
+    "tools/paired_quality.py": "58906f483faa2e783a037ba9abf5ea60b42dd7b0a5fac68385cd38d071d1ffb6"
   }
 }

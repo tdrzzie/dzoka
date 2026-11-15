@@ -12,6 +12,7 @@ from verify_worker_boundary import private_fixture
 from broker_bundle import protect,verify_bundle
 from model_broker import infer
 from broker_profiles import profiles
+from paired_quality import evaluate as evaluate_pair
 from quality_protocols import evaluate
 
 
@@ -51,15 +52,53 @@ def main():
         repeated=subprocess.run([sys.executable,'-I','-B',str(ROOT/'tools/quality_protocols.py'),
                         '--dataset',str(path),'--output',str(root/'result.json')],capture_output=True,timeout=120)
         assert repeated.returncode!=0;cases.append('existing_result_not_replaced')
+        paired_case = {field: case[field] for field in
+                       ('id', 'split', 'slice', 'inputSha256', 'entityGroup', 'institutionGroup', 'timeGroup')}
+        paired_case.update(reference=put('text-reference.json', 'red bag'), metric='wer', parameters={})
+        projection = case['projectionSourceSha256']
+        baseline_key = profiles()['ISO_PERCEPTION_SPEECH']['key']
+        candidate_key = profiles()['ISO_REFINEMENT_WHISPER_DISTIL_SMALL_EN']['key']
+        plan = {'schemaVersion': 1, 'scope': 'AUTHORED_DIAGNOSTIC', 'evidence': manifest['evidence'],
+                'profiles': {'baseline': {'profileKey': baseline_key, 'projectionSourceSha256': projection},
+                             'candidate': {'profileKey': candidate_key, 'projectionSourceSha256': projection}},
+                'cases': [paired_case]}
+        paired_path = dataset / 'observations.json'
+        plan_file = put('plan.json', plan)
+        put(paired_path.name, {'plan': plan_file, 'observations': {'authored': {
+            'baseline': {'profileKey': baseline_key, 'inputSha256': case['inputSha256'],
+                         'state': 'UNAVAILABLE', 'artifact': None},
+            'candidate': {'profileKey': candidate_key, 'inputSha256': case['inputSha256'],
+                          'state': 'TRUNCATED', 'artifact': put('text-actual.json', 'bag')},
+        }}})
+        paired_output = root / 'paired-result.json'
+        command = [sys.executable, '-I', '-B', str(ROOT / 'tools/paired_quality.py'),
+                   '--dataset', str(paired_path), '--plan-sha256', plan_file['sha256'], '--output', str(paired_output)]
+        subprocess.run(command, check=True, timeout=120)
+        receipt_bytes = paired_output.read_bytes()
+        paired = json.loads(receipt_bytes)
+        assert paired['approval'] == 'NOT_ESTABLISHED'
+        assert paired['coverage'][0]['pairedComplete'] == 0
+        assert paired['rows'][0]['baseline'] == {'state': 'UNAVAILABLE'}
+        assert paired['rows'][0]['candidate']['metrics']['value'] == 0.5
+        assert subprocess.run(command, capture_output=True, timeout=120).returncode != 0
+        assert paired_output.read_bytes() == receipt_bytes
+        cases.append('paired_private_cli_reports_coverage_and_refuses_overwrite')
         subprocess.run(['icacls',str(dataset/'actual.json'),'/grant','*S-1-5-11:(RX)'],check=True,stdout=subprocess.DEVNULL)
         try:
             try:evaluate(path)
             except (ValueError,subprocess.CalledProcessError):cases.append('broad_leaf_read_rejected')
             else:raise AssertionError('Broad leaf read accepted')
+            try:
+                evaluate_pair(paired_path, plan_file['sha256'])
+            except (ValueError, subprocess.CalledProcessError):
+                cases.append('paired_broad_leaf_read_rejected')
+            else:
+                raise AssertionError('Paired evaluator accepted broad leaf read')
         finally:subprocess.run(['icacls',str(dataset/'actual.json'),'/remove:g','*S-1-5-11'],check=True,stdout=subprocess.DEVNULL)
     run=ROOT/'.test-tmp'/('quality-protocols-'+uuid.uuid4().hex);run.mkdir()
     (run/'result.json').write_text(json.dumps({'status':'PASS','cases':cases,'bundleSha256':receipt,
-                                             'protocolSourceSha256':result['protocolSourceSha256']},indent=2)+'\n')
+                                             'protocolSourceSha256':result['protocolSourceSha256'],
+                                             'pairedSourceSha256':paired['comparisonSourceSha256']},indent=2)+'\n')
     print('PASS: private reference protocols; '+str(run/'result.json'),flush=True)
 
 

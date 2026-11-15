@@ -32,6 +32,9 @@ class BrokerProviderIT extends AiFixture {
         }
     }
     void run(String name,String subject,int expected)throws Exception {
+        run(name,subject,expected,false);
+    }
+    void run(String name,String subject,int expected,boolean exerciseRetry)throws Exception {
         // The private synthetic state is task-owned and removed only after a
         // successful invocation has confirmed native/profile cleanup.
         String script="""
@@ -57,12 +60,35 @@ from verify_worker_boundary import private_fixture
 from broker_bundle import protect
 from service_account import identity
 from worker_service import execute
-from broker_supervisor import BrokerSupervisor
-stop=threading.Event();original=BrokerSupervisor.tick
-def once(self):
- try:original(self)
- finally:stop.set()
-BrokerSupervisor.tick=once
+import broker_supervisor,model_broker
+
+stop=threading.Event()
+run_once=broker_supervisor.run_once
+attempts=0
+completed=False
+
+def observe_attempt(*args):
+ global attempts,completed
+ attempts+=1
+ try:
+  completed=run_once(*args)
+  return completed
+ except Exception as error:
+  print('Protected broker poll failed: '+type(error).__name__,flush=True)
+  raise
+ finally:
+  if completed or attempts>=3:
+   stop.set()
+
+broker_supervisor.run_once=observe_attempt
+if os.environ.get('DZOKA_TEST_BROKER_TRANSIENT')=='1':
+ infer=model_broker.infer
+ def fail_first_inference(*args,**kwargs):
+  model_broker.infer=infer
+  print('Injecting one post-claim provider failure',flush=True)
+  raise OSError('Authored transient inference failure')
+ model_broker.infer=fail_first_inference
+
 with private_fixture() as root:
  protect(root)
  for name in ('broker','broker/profiles','broker/docker','service'):
@@ -74,13 +100,17 @@ with private_fixture() as root:
   path=root/name;path.write_bytes(json.dumps(value).encode());protect(path)
  execute(root/'service.json',stop,lambda:None,require_account=True)
  assert json.loads((root/'service/status.json').read_bytes())['phase']=='STOPPED'
+assert completed, 'Protected broker did not complete the job within three polls'
 print('Checked broker service invocation completed')
 """;
-        // Cover protected startup and the six-minute helper window with a test-only token.
+        // Cover protected startup and the bounded three-poll helper with a test-only token.
         var command=new ProcessBuilder("python","-I","-B","-c",script);var env=command.environment();String credential=token(subject,issuer,"dzoka-core",java.time.Instant.now().plusSeconds(1200),key);
         env.put("DZOKA_AI_CORE_URL",base);env.put("DZOKA_AI_TOKEN",credential);env.put("DZOKA_AI_TENANT",A.toString());env.put("DZOKA_AI_PROFILE",PerceptionFixtures.id(name).toString());env.put("DZOKA_AI_BROKER_PROFILE",name);env.put("DZOKA_AI_ALLOW_INSECURE_LOOPBACK","true");env.put("DATABASE_URL","synthetic forbidden inherited credential");
-        Path log=Path.of(".test-tmp","broker-http-"+UUID.randomUUID()+".log");command.redirectErrorStream(true).redirectOutput(log.toFile());var child=command.start();if(!child.waitFor(360,TimeUnit.SECONDS)){child.destroyForcibly();fail("Isolated broker deadline exceeded");}
+        env.remove("DZOKA_TEST_BROKER_TRANSIENT");
+        if(exerciseRetry)env.put("DZOKA_TEST_BROKER_TRANSIENT","1");
+        Path log=Path.of(".test-tmp","broker-http-"+UUID.randomUUID()+".log");command.redirectErrorStream(true).redirectOutput(log.toFile());var child=command.start();if(!child.waitFor(expected==0?1020:360,TimeUnit.SECONDS)){child.destroyForcibly();fail("Isolated broker deadline exceeded for "+name);}
         String output=Files.readString(log);assertEquals(expected,child.exitValue(),output);assertFalse(output.contains(credential));assertFalse(output.contains("synthetic forbidden inherited credential"));
+        if(exerciseRetry)assertTrue(output.contains("Injecting one post-claim provider failure"));
     }
     UUID report(String text,String language) {
         return app.getBean(IntakeService.class).submit(who("reporter"),A,null,null,new ReportDraft(ReportDraft.Kind.LOST,text,language,"UTC",null,null,null,null,null,null,null),text.getBytes(java.nio.charset.StandardCharsets.UTF_8),UUID.randomUUID().toString()).reportId();
@@ -147,7 +177,13 @@ print('Checked broker service invocation completed')
         }
         for(String name:List.of("CPU_EN_SN","CPU_SN_EN","CPU_EN_SN_KEEP","CPU_SN_EN_KEEP","CPU_SN_EN_AUTO")) {
             String text=switch(name) {case "CPU_EN_SN"->"I lost my bag.";case "CPU_EN_SN_KEEP"->"I left a black bag in [[keep:Joina City]].";case "CPU_SN_EN_KEEP"->"Ndasiya [[keep:black Lenovo bag]] mu[[keep:Joina]] [[keep:around 2pm]].";default->"Ndasiya black Lenovo bag muJoina around 2pm.";};
-            UUID report=report(text,name.startsWith("CPU_EN")?"en":"sn-ZW");String isolatedName="ISO_SHONA_CPU_"+name;var job=jobs.enqueue(who("reporter"),A,report,PerceptionFixtures.id(isolatedName),null,null);run(isolatedName,"inference",0);var component=jobs.result(who("reporter"),A,job.id()).orElseThrow();assertEquals("UNVERIFIED_TRANSLATION",component.evidence().get("trust"));assertFalse(component.evidence().get("text").toString().isBlank());
+            UUID report=report(text,name.startsWith("CPU_EN")?"en":"sn-ZW");String isolatedName="ISO_SHONA_CPU_"+name;var job=jobs.enqueue(who("reporter"),A,report,PerceptionFixtures.id(isolatedName),null,null);
+            boolean exerciseRetry=name.equals("CPU_EN_SN");
+            run(isolatedName,"inference",0,exerciseRetry);
+            var state=jobs.read(who("reporter"),A,job.id());
+            assertEquals("SUCCEEDED",state.state(),isolatedName);
+            if(exerciseRetry)assertTrue(state.attempts()>=2,"The requeued job must be claimed again");
+            var component=jobs.result(who("reporter"),A,job.id()).orElseThrow();assertEquals("UNVERIFIED_TRANSLATION",component.evidence().get("trust"));assertFalse(component.evidence().get("text").toString().isBlank());
             try(var c=admin();var s=c.prepareStatement("SELECT raw_text FROM dzoka.report_revisions WHERE tenant_id=? AND report_id=? AND revision=1")){s.setObject(1,A);s.setObject(2,report);try(var r=s.executeQuery()){r.next();assertEquals(text,r.getString(1));}}
         }
     }
