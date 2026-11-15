@@ -1,6 +1,6 @@
 # Dzoka status
 
-Updated 2026-11-15. M4 acceptance remains OPEN. OpenRouter authentication and live inference passed. The private reference connection is enabled with Qwen3 235B through Nebius and a 512-token output cap. Installed SCM start, stop and crash restart passed under a restricted virtual service account. That account cannot open the per-user Docker engine pipe (Win32 5). The hosted Shona reference comparison also failed the declared diagnostic error ceilings. [Current results and remaining work](docs/testing/m4-openrouter-service-2026-11-15.md)
+Updated 2026-11-15. Continue local development and verification under the current Windows account with the existing Docker Desktop installation, as the user selected. The full local provider gate passes on this setup. M4 remains open for representative model quality and the recorded deployment acceptance. OpenRouter reference inference is enabled with Qwen3 235B through Nebius. The separate Gemini Flash comparison improved measured errors on common public references but had four unavailable calls and missed the diagnostic ceilings. [Current results](docs/testing/m4-openrouter-service-2026-11-15.md)
 
 **The requested production platform is not implemented or production-ready.** All 100 specification sections remain in scope; [coverage](docs/requirements/coverage.md) tracks delivery. The foundation is running code verified against real PostgreSQL and HTTP/JWT boundaries. The accepted architecture still includes many unimplemented product capabilities; supplied documents remain preserved under the baseline.
 
@@ -114,7 +114,7 @@ The new joint/region slice adds Jina CLIP v1 paired image/text embeddings, SSD o
 
 ## Next
 
-1. Continue representative model-quality improvements and review after the licensed local/hosted Shona comparisons failed their diagnostic ceilings. Execute the [prepared machine-wide deployment plan](docs/operations/machine-wide-docker-plan.md). Installed adapter start/stop/crash restart now pass; full core/model polling under the service, daemon access, core egress and boot-before-login checks remain. The current per-user engine holds 875 containers, 268 images and 618 volumes, so migration requires reviewed backups and a maintenance window.
+1. Continue M4 model-quality improvements and public-reference comparisons on the current account and Docker setup. The user selected this setup after reviewing the dedicated-account access limitation. The [machine-wide deployment plan](docs/operations/machine-wide-docker-plan.md) is retained for future deployment work. Installed adapter start/stop/crash restart pass; full service deployment, daemon access under its identity, core egress and boot-before-login acceptance remain future deployment requirements.
 2. Then proceed to M5 retrieval/scoring, preserving exact space compatibility and separate matching/ownership authority. Continue later capabilities in the [delivery sequence](docs/architecture/milestones.md); retain all 100 specification sections.
 
 ## Accepted architecture and open implementation decisions

@@ -33,3 +33,18 @@ The actual Docker executable is in the interactive user's per-user installation.
 | Lifecycle pass and exact daemon denial | `51fdee70db9cbf7214e32bc958d94eb24a2940155cf6f5b694c5ddebf41bfb0f` |
 
 The source and model identities for the passing November 8 24-phase gate still match the current implementation. Its 169 Python, 24 Java unit and 95 integration tests and exact 35-table/3,189-row restore remain the applicable full local evidence. November 15 adds live provider and installed adapter evidence. Full M4 acceptance remains open for the recorded model-quality and complete deployment requirements.
+
+## Continuing on the current setup
+
+The user selected continuing local development on the current Windows account with the existing Docker Desktop installation. Docker Engine 29.9.2 responded to a fresh version check under that account. The backup/migration preparation did not shut down workloads, copy the Docker disk or change the installation. Dedicated-account deployment remains future acceptance work.
+
+A separately protected OpenRouter configuration evaluated `google/gemini-3-flash-preview` through explicit provider `Google` (Vertex), requesting denied training, zero retention and no provider fallback. Each request was capped at 1,024 output tokens. The live endpoint listed $0.50 per million input tokens and $3 per million output tokens for the standard route. The default Qwen/Nebius configuration remains enabled. [Provider endpoints](https://openrouter.ai/api/v1/models/google/gemini-3-flash-preview/endpoints)
+
+| Slice | Gemini complete | Unavailable | Gemini median CER | Qwen median CER on the same complete inputs |
+|---|---:|---:|---:|---:|
+| Development 65–72 | 5/8 | 3/8 | 34.6% | 59.8% |
+| Additional 81–88 | 7/8 | 1/8 | 43.3% | 72.7% |
+
+All completed outputs ended normally. The worst additional CER was 69.3%. The candidate missed the declared coverage and error ceilings. One unavailable development input was manually replayed with a fresh result path and succeeded. Its metadata confirmed the expected model and provider, normal completion and zero reasoning tokens. The original four unavailable observations remain recorded, and their causes remain unconfirmed. These results support continued comparison. They leave Shona quality approval open.
+
+Private frozen plan SHA-256 is `fbafc500a06b31c41f0eee2639ad12676935da57de7c031edb35c875d62ea342`. The original Gemini comparison summary is `396c66bfa4d2bc9b3c667f8f6691bd93a2f45f22d97b842f611ac1e22de8ac6a`. The separate replay receipt is `4b6dcd45417303f3dd2aaa1955071660aa90566c781bbb0f49d13300c2da3936`. Model/provider identity and usage were retained for each completed call. The source and architecture gates passed after updating this working scope.

@@ -1,5 +1,7 @@
 # Machine-wide worker deployment preparation
 
+The user subsequently selected continuing with the current Windows account and Docker Desktop installation. Retain this plan for future unattended deployment. Local development and model verification proceed on the existing setup. No backup, uninstall, engine migration or workload shutdown was performed during preparation.
+
 Prepared November 15 at the user's request after the dedicated service token was denied access to the interactive Docker engine. The host runs Windows 11 Pro for Workstations and Docker Engine/CLI 29.9.2. Docker Desktop is installed beneath the interactive user's LocalAppData. The native `dockerDesktopLinuxEngine` pipe denied the restricted `NT SERVICE\DzokaWorkers` token with Win32 5. The inventory counted 875 containers, 268 distinct images and 618 volumes. No workload content was inspected and no shared daemon configuration or workload was changed.
 
 ## Deployment choice and release barrier

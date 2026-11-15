@@ -28,4 +28,6 @@ Run the full local gate with explicit pinned private model and management releas
 
 Deployment requires the chosen operator to provision least-privilege identity, secret/IdP lifecycle and protected configuration/state; install the service; apply reviewed broker/core/daemon network policy; then execute target-host startup/stop/restart/boot and failure recovery. Local foreground verification does not prove installed-service behavior. Provisioning defaults or guessing an institutional identity/retention/SLO policy cannot replace operator approval.
 
+The user selected continuing development on the current interactive account and existing Docker Desktop installation on November 15. That setup supplies the passing full local gate. Dedicated-account daemon access and boot-before-login tests remain acceptance requirements for unattended deployment. They do not block local implementation and quality comparisons.
+
 M4 stays open while these required acceptance inputs or results are absent. Future product/HA/index work remains tracked under its own milestone; external prerequisites do not excuse implementable local gaps.
