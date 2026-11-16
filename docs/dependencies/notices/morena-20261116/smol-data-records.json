@@ -1,0 +1,42 @@
+[
+  {
+    "repository": "google/smol",
+    "revision": "fdaff3a1a019f89fa30a562a85d7c1d3e9150444",
+    "path": "smolsent/en_sn.jsonl",
+    "gitBlob": "a3422596ee91c4daa50ce201092f5a22b4a29a03",
+    "sha256": "8726011841a3eb23532ee11385dc4c3106fbe3e026d935150c0b6fcf97a3decf",
+    "bytes": 228062,
+    "rows": 863,
+    "keys": [
+      "id",
+      "is_src_orig",
+      "sl",
+      "src",
+      "tl",
+      "trg"
+    ],
+    "license": "CC-BY-4.0",
+    "attribution": "Google; Caswell et al., SMOL (2025), https://arxiv.org/abs/2502.12301",
+    "trainingOverlap": "UNKNOWN"
+  },
+  {
+    "repository": "google/smol",
+    "revision": "fdaff3a1a019f89fa30a562a85d7c1d3e9150444",
+    "path": "smolsent/sn_en.jsonl",
+    "gitBlob": "cc341d77a609a4e8386b3669285262fd8cb16bc2",
+    "sha256": "a79080c195dc705c01ce9c4e1b800830d763f5f911c32664b4efe8db30d4053d",
+    "bytes": 228925,
+    "rows": 863,
+    "keys": [
+      "id",
+      "is_src_orig",
+      "sl",
+      "src",
+      "tl",
+      "trg"
+    ],
+    "license": "CC-BY-4.0",
+    "attribution": "Google; Caswell et al., SMOL (2025), https://arxiv.org/abs/2502.12301",
+    "trainingOverlap": "UNKNOWN"
+  }
+]

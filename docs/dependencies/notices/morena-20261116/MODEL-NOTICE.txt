@@ -1,0 +1,5 @@
+MORENA 1.5B instruct and GGUF: Isheanesu Misi, Vambo AI.
+Publisher vamboai/morena-1.5b-instruct@b9bebd76c5725e570d6186ba400eff87f3a2382b
+Export vamboai/morena-1.5b-instruct-gguf@ed64de7262b6edbe1af14c340ed4ea368a36349d
+Both publisher cards explicitly grant Apache-2.0, including commercial derivatives. Training corpus is not distributed or copied. Published metrics are not Dzoka verification.
+Runtime/library notices and reused offline Debian package notices: ../afrislm-20261116 and ../shona-cpu.

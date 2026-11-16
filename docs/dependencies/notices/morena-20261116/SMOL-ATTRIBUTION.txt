@@ -1,0 +1,22 @@
+SMOL: Professionally translated parallel data for 115 under-represented languages.
+Google; Isaac Caswell and coauthors (2025).
+Paper and complete author citation: https://arxiv.org/abs/2502.12301
+Pinned publisher card, attribution and license declaration:
+https://huggingface.co/datasets/google/smol/blob/fdaff3a1a019f89fa30a562a85d7c1d3e9150444/README.md
+Data revision: google/smol@fdaff3a1a019f89fa30a562a85d7c1d3e9150444
+License: Creative Commons Attribution 4.0 International (CC-BY-4.0).
+https://creativecommons.org/licenses/by/4.0/
+Legal code: https://creativecommons.org/licenses/by/4.0/legalcode.en
+
+Diagnostic transformations: select SmolSent Shona/English rows 1-8 per
+direction as additional tests and rows 257-259 per direction as separate
+three-shot context. Preserve each selected source/target string unchanged;
+encode context strings in a first-party length-framed binary asset.
+The two files are reverse-direction pairs, not independent translations.
+Exact whole-file, row-content and context hashes are retained in the data
+records/private manifest. No model fine-tuning or upstream loader is used.
+The corpus and generated translations are not redistributed in this archive.
+
+Retain the original license and attribution with any later permitted sharing.
+No Google/author endorsement, warranty, training-overlap independence or
+native-speaker quality approval is asserted.

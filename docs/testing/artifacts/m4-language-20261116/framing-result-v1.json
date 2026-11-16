@@ -1,0 +1,34 @@
+{
+  "results": [
+    {
+      "variant": "afrislm",
+      "imageId": "sha256:ab1038c1073d7b90505455a705f1830b6e93bb465c0634a872d2a151be5822ad",
+      "invalidFrames": 16,
+      "allRejectedBeforeModelLoad": true,
+      "noOutput": true
+    },
+    {
+      "variant": "afrislm4b",
+      "imageId": "sha256:8f8ddea50dc047922a634f6872fa45545db002ef6cb0f9943898d1a15d84e207",
+      "invalidFrames": 16,
+      "allRejectedBeforeModelLoad": true,
+      "noOutput": true
+    },
+    {
+      "variant": "morena",
+      "imageId": "sha256:67491b8fc7eb355d236ed97a1e37b3ccce443287a350e9a4949282ed25611f4b",
+      "invalidFrames": 16,
+      "allRejectedBeforeModelLoad": true,
+      "noOutput": true
+    },
+    {
+      "variant": "morena-fewshot",
+      "imageId": "sha256:e7ed95eeef69cb59b5d2834a4186af0ce64412b363e384f31a0dd20ac149812b",
+      "invalidFrames": 16,
+      "allRejectedBeforeModelLoad": true,
+      "noOutput": true
+    }
+  ],
+  "cases": 64,
+  "scope": "Actual native binary malformed-frame rejection; not model quality, upstream tests or application integration"
+}

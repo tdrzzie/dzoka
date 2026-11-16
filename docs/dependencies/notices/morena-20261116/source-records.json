@@ -1,0 +1,56 @@
+[
+  {
+    "repository": "vamboai/morena-1.5b-instruct-gguf",
+    "revision": "ed64de7262b6edbe1af14c340ed4ea368a36349d",
+    "path": "README.md",
+    "gitBlob": "2545e6c96f33d3235f65d28829941fb84b82a17e",
+    "sha256": "14adcb02d42183d82ac238ac6a1010f22ac824ea5fe532232cc52f21bf01da8d",
+    "bytes": 1878,
+    "lines": 62
+  },
+  {
+    "repository": "vamboai/morena-1.5b-instruct-gguf",
+    "revision": "ed64de7262b6edbe1af14c340ed4ea368a36349d",
+    "path": "SHA256SUMS",
+    "gitBlob": "67d48e1d014d4ff69e68582fee2789d13f6f1e59",
+    "sha256": "765c01af1910dd631f63023ee1562cb0930d5c3a6e6fa4d123931af04c79198d",
+    "bytes": 292,
+    "lines": 3
+  },
+  {
+    "repository": "vamboai/morena-1.5b-instruct",
+    "revision": "b9bebd76c5725e570d6186ba400eff87f3a2382b",
+    "path": "README.md",
+    "gitBlob": "ce60eb9a95ec67c7974ce64775497d60d6ebbec8",
+    "sha256": "a9fd73a174869f70d42c048293dca864e74e87ef1100227ab5e9c4d717f2af84",
+    "bytes": 7861,
+    "lines": 150
+  },
+  {
+    "repository": "vamboai/morena-1.5b-instruct",
+    "revision": "b9bebd76c5725e570d6186ba400eff87f3a2382b",
+    "path": "config.json",
+    "gitBlob": "c7b737565aa5294eb4ba619ed151df6604b53f73",
+    "sha256": "e46cbea0588ff434cc5ffec0f06d444579b1f55a47e93f11ce43658a04926391",
+    "bytes": 1813,
+    "lines": 44
+  },
+  {
+    "repository": "vamboai/morena-1.5b-instruct",
+    "revision": "b9bebd76c5725e570d6186ba400eff87f3a2382b",
+    "path": "tokenizer_config.json",
+    "gitBlob": "105f5ba50e6439110bccd62d4b18c77af3e536b0",
+    "sha256": "456f0570f7104e0b305e7650760427b83e89f30a7827ce5c17e6b0322d0a9e1e",
+    "bytes": 658,
+    "lines": 11
+  },
+  {
+    "repository": "google/smol",
+    "revision": "fdaff3a1a019f89fa30a562a85d7c1d3e9150444",
+    "path": "README.md",
+    "gitBlob": "70c9803549b93b8200f4b3fb3a0c893c114eeb36",
+    "sha256": "ed1996cb6e9b01b5f4588bd7d9ae5ed642d278d26d5795e20d176540b6a88b85",
+    "bytes": 114734,
+    "lines": 2656
+  }
+]

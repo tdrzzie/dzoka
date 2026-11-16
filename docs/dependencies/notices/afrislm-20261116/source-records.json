@@ -1,0 +1,306 @@
+{
+  "reviewedAt": "2026-11-16",
+  "upstreamTests": "NOT_EXECUTED",
+  "scope": "Selected source/license/configuration records, not exhaustive source review",
+  "records": [
+    {
+      "file": "export-README.md",
+      "source": "https://huggingface.co/qvac/TranslatePsy-AfriSLM-0.8B-Q8-GGUF/resolve/55220bcc74bed219ad9db9ab378f6aae31850974/README.md",
+      "bytes": 13413,
+      "sha256": "abc23ac049717cf4d34e69b233d92f780d2a58dff1c8452574f323dadd2a26a9",
+      "gitBlob": "201f5feb32f7e22720d5f9b7eb7669b0f90bcbf7",
+      "lines": 271
+    },
+    {
+      "file": "publisher-README.md",
+      "source": "https://huggingface.co/qvac/TranslatePsy-AfriSLM-0.8B/resolve/adcdad6b1424cd66125d0f6e1d6d8964cf7ed299/README.md",
+      "bytes": 13842,
+      "sha256": "d118add1e6e8d311673d259a520165b22cb14d26597562bf0ebf344a647d4476",
+      "gitBlob": "d2359e0deea51a2aa79249376426847defbf38f0",
+      "lines": 291
+    },
+    {
+      "file": "publisher-config.json",
+      "source": "https://huggingface.co/qvac/TranslatePsy-AfriSLM-0.8B/resolve/adcdad6b1424cd66125d0f6e1d6d8964cf7ed299/config.json",
+      "bytes": 2475,
+      "sha256": "8bc4d8402c648205c9908c224fb8245ff70aaddbec4557799e091f7de34a3632",
+      "gitBlob": "4a70395620fa9243c1e9982a0c2b810e4d2e8cb9",
+      "lines": 96
+    },
+    {
+      "file": "publisher-tokenizer_config.json",
+      "source": "https://huggingface.co/qvac/TranslatePsy-AfriSLM-0.8B/resolve/adcdad6b1424cd66125d0f6e1d6d8964cf7ed299/tokenizer_config.json",
+      "bytes": 1124,
+      "sha256": "66e427c470fe580fe8c7b5725d857af23d8417e37fae62667ec698306a19987b",
+      "gitBlob": "d1a20cc3a8838d08eca9de8a7b84d510d60a0524",
+      "lines": 32
+    },
+    {
+      "file": "base-LICENSE",
+      "source": "https://huggingface.co/Qwen/Qwen3.5-0.8B/resolve/2fc06364715b967f1860aea9cf38778875588b17/LICENSE",
+      "bytes": 11544,
+      "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+      "gitBlob": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+      "lines": 202
+    },
+    {
+      "file": "base-config.json",
+      "source": "https://huggingface.co/Qwen/Qwen3.5-0.8B/resolve/2fc06364715b967f1860aea9cf38778875588b17/config.json",
+      "bytes": 2907,
+      "sha256": "b90b86f35c8e6925ef74ee04d0e758f0a845c83a42089ad82bbaa948de9b4204",
+      "gitBlob": "715f0448b9d38103211f0ad88bbb4d6e4f4be8c9",
+      "lines": 96
+    },
+    {
+      "file": "runtime-tree.json",
+      "source": "https://api.github.com/repos/ggml-org/llama.cpp/git/trees/a06044b934db085e373286444e0c15b93635a20c?recursive=1",
+      "bytes": 1152358,
+      "sha256": "48a7d813e62fa00ad81cdf36d468de5a30fbf642d71f960bdcad9352b3abab4e",
+      "gitBlob": null,
+      "lines": 1
+    },
+    {
+      "file": "runtime-LICENSE",
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/a06044b934db085e373286444e0c15b93635a20c/LICENSE",
+      "bytes": 1078,
+      "sha256": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+      "gitBlob": "e7dca554bcb802f98408383a864404e3aa4eacca",
+      "lines": 21
+    },
+    {
+      "file": "runtime-CMakeLists.txt",
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/a06044b934db085e373286444e0c15b93635a20c/CMakeLists.txt",
+      "bytes": 11159,
+      "sha256": "ede5bbf33de939489087579c2b212a097d3bbb208146b12077d375ae5ee7dc58",
+      "gitBlob": "30aed5c914a901dd14dcff90f552d983bc6a6c27",
+      "lines": 322
+    },
+    {
+      "file": "runtime-ggml_CMakeLists.txt",
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/a06044b934db085e373286444e0c15b93635a20c/ggml/CMakeLists.txt",
+      "bytes": 22029,
+      "sha256": "d629bfb183a8ae0b823286ac31711f4414a7b0928e188c29dc8bace2f505576d",
+      "gitBlob": "03bdb03edae17dc4678c516d57f6447e727231a1",
+      "lines": 504
+    },
+    {
+      "file": "runtime-ggml_src_ggml-cpu_CMakeLists.txt",
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/a06044b934db085e373286444e0c15b93635a20c/ggml/src/ggml-cpu/CMakeLists.txt",
+      "bytes": 33159,
+      "sha256": "b69ed1a14063642c47c70b7b4c67177388e02ee3c27d2e7adfde9ed5ba5859bf",
+      "gitBlob": "8327c52e6daec622fc4462ba4eb12f270e4af621",
+      "lines": 731
+    },
+    {
+      "file": "runtime-tools_cli_CMakeLists.txt",
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/a06044b934db085e373286444e0c15b93635a20c/tools/cli/CMakeLists.txt",
+      "bytes": 772,
+      "sha256": "6094ef7727f29dc18d88765611a6771deb083f9e3acf3b5d18eca8706349c5a7",
+      "gitBlob": "8449cdbaffcd43e13ac875a049ad0083fdca5e05",
+      "lines": 27
+    },
+    {
+      "file": "runtime-tools_completion_CMakeLists.txt",
+      "source": "https://raw.githubusercontent.com/ggml-org/llama.cpp/a06044b934db085e373286444e0c15b93635a20c/tools/completion/CMakeLists.txt",
+      "bytes": 724,
+      "sha256": "e0d4a61bfa231df06803349aaffc4bfaa86d85ac1a6788a5c021c4b7a6099fbc",
+      "gitBlob": "a310251eff6e18c5ab09787066d7c76afa673e8f",
+      "lines": 25
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "include/llama.h",
+      "file": "runtime-include_llama.h",
+      "bytes": 90576,
+      "sha256": "c63d9b58fa9aac8f21715f45a47c18709f295efd36ebf04f4c4ad3a47521d34f",
+      "gitBlob": "3b2baa3bc41b9fca2dc6e06cc18ae195b9933a66",
+      "lines": 1755
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "examples/simple/simple.cpp",
+      "file": "runtime-examples_simple_simple.cpp",
+      "bytes": 7531,
+      "sha256": "5f3160b48b5c0adff984dfdc6ad39cf9ee113b4d63600596f2127f9a0b9a869e",
+      "gitBlob": "ebb1969fb5d5c53679087154c0d2dfae234865c9",
+      "lines": 238
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "src/CMakeLists.txt",
+      "file": "runtime-src_CMakeLists.txt",
+      "bytes": 2060,
+      "sha256": "3ad358fcd78137c551bdcd0b79698881d1515026ff2585693e898e3b85b3bec3",
+      "gitBlob": "426c487411eeead95e75076f936ab4c1e2518e2a",
+      "lines": 79
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "ggml/src/CMakeLists.txt",
+      "file": "runtime-ggml_src_CMakeLists.txt",
+      "bytes": 27628,
+      "sha256": "232b65acee5fd0f6f0b92a1ea4ff35e31235035d3d4f6b925e4cd200c08b6a48",
+      "gitBlob": "5ff78f240720f99e4c0c3d5f8ff719b746c2cb7e",
+      "lines": 648
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "vendor/CMakeLists.txt",
+      "file": "runtime-vendor_CMakeLists.txt",
+      "bytes": 265,
+      "sha256": "97242b05cf7d56231b05afa991036260025b9d6fe4f003dbc997dd7f5d2be06b",
+      "gitBlob": "4479dafcad0c1ccd59061b42c8bcbaa2c3ca72c7",
+      "lines": 11
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "ggml/src/ggml-cpu/ggml-cpu.cpp",
+      "file": "runtime-ggml_src_ggml-cpu_ggml-cpu.cpp",
+      "bytes": 25065,
+      "sha256": "546c66cfd06bd989c48a11afd0571a237bb19237a6e3f2e71a8b8be74cf046e2",
+      "gitBlob": "29783400186d0cc4b4b64ed85cea93e2b4c4ad34",
+      "lines": 720
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "ggml/src/ggml.c",
+      "file": "runtime-ggml_src_ggml.c",
+      "bytes": 260600,
+      "sha256": "1008000571b896a22dd3861731ca29e6ec3615898cdc15d9cb529fb171815dfc",
+      "gitBlob": "1fca258a531d89c7615e071c0f51c6ba73a749aa",
+      "lines": 8115
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "ggml/src/gguf.cpp",
+      "file": "runtime-ggml_src_gguf.cpp",
+      "bytes": 60086,
+      "sha256": "51bd966ab0494aa20d4087975f17d8b9b8ed9c4b63d7cbffe9315ed45de5dd78",
+      "gitBlob": "c80b682185cea2caebb5819d7f59a237ed7f342c",
+      "lines": 1755
+    },
+    {
+      "repository": "qvac/TranslatePsy-AfriSLM-0.8B",
+      "revision": "adcdad6b1424cd66125d0f6e1d6d8964cf7ed299",
+      "path": "chat_template.jinja",
+      "file": "publisher-chat_template.jinja",
+      "bytes": 7970,
+      "sha256": "89ecbd82b0b7c6012b479c5d1529706b9f459d094c754d16d56ffb5092908e62",
+      "gitBlob": "bde6aa1aa904dd0565ac8f5867d0a7df56d3d159",
+      "lines": 161
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "vendor/hash/CMakeLists.txt",
+      "bytes": 1010,
+      "sha256": "80d1dd6d096d84375b94290ce75e447a8ba5ce2d6664e4cc3104eb1f0ff02919",
+      "gitBlob": "1654eb1850a63b742e72b2d81bf40c442c29571c",
+      "lines": 38,
+      "inspectedRanges": [
+        [
+          1,
+          35
+        ]
+      ]
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "vendor/miniaudio/CMakeLists.txt",
+      "bytes": 245,
+      "sha256": "9a3543fefb18a888e3da5ef0d4d50a0cb966e6805b3be6dfbfe807bf481ea1ad",
+      "gitBlob": "8c706b62fa3cec7b7a43c7986dfbab3054e8ae5c",
+      "lines": 6,
+      "inspectedRanges": [
+        [
+          1,
+          6
+        ]
+      ]
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "vendor/nlohmann/CMakeLists.txt",
+      "bytes": 237,
+      "sha256": "1b8d383ce777413f3659548cd51b48af094b39134622ed08bbc474c406b621ce",
+      "gitBlob": "630b3748ac02b9950f2ecb5a41ffc375c0fbc743",
+      "lines": 6,
+      "inspectedRanges": [
+        [
+          1,
+          6
+        ]
+      ]
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "vendor/sheredom/CMakeLists.txt",
+      "bytes": 241,
+      "sha256": "a3fa72186159c3fe9760756f58563e4c7d653e5dc9f188be3e1ca254174ca34c",
+      "gitBlob": "f0c148500da2d4a4bd1afa9a24ec55cc5de46657",
+      "lines": 6,
+      "inspectedRanges": [
+        [
+          1,
+          6
+        ]
+      ]
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "vendor/stb/CMakeLists.txt",
+      "bytes": 333,
+      "sha256": "02786b5b71407d289165dc70e23c710e40fe2f7c98fb0900ed0940ac51938c54",
+      "gitBlob": "7eeb972d2db051f204ec8715872341274c2692f7",
+      "lines": 10,
+      "inspectedRanges": [
+        [
+          1,
+          10
+        ]
+      ]
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "ggml/src/ggml-cpu/ops.cpp",
+      "bytes": 428475,
+      "sha256": "e6b36a3745a3463e99b13488277effbe8bb365b183f9655393361c4f9c5199c5",
+      "gitBlob": "7c2542741fb3bde71fac4ebb7f5566873026a669",
+      "lines": 12448,
+      "inspectedRanges": [
+        [
+          6129,
+          6132
+        ]
+      ]
+    },
+    {
+      "repository": "ggml-org/llama.cpp",
+      "revision": "a06044b934db085e373286444e0c15b93635a20c",
+      "path": "src/llama-arch.cpp",
+      "bytes": 112032,
+      "sha256": "c24aaa93b04bd8db80cf167aa2a3ed4b3ea5d6416936a90cc617f49a6c9ddc66",
+      "gitBlob": "1869c1203b8f32ddad00166235393496a2dae269",
+      "lines": 1566,
+      "inspectedRanges": [
+        [
+          35,
+          48
+        ]
+      ]
+    }
+  ]
+}

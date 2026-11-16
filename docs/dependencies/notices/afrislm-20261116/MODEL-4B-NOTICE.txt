@@ -1,0 +1,5 @@
+TranslatePsy-AfriSLM-4B weights: Tether Data, S.A. de C.V.; Apache-2.0 as explicitly declared in the pinned publisher/export cards.
+Publisher qvac/TranslatePsy-AfriSLM-4B@4726b6a76c9e70d73efde521dc15717f8aac4795
+Export qvac/TranslatePsy-AfriSLM-4B-Q4-GGUF@82df4b20772a4a46f38b421a569a90d53a93f657
+Base Qwen/Qwen3.5-4B@851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a; Copyright 2026 Alibaba Cloud.
+The weight grant does not grant teacher/training-dataset reuse rights. No such corpus or teacher is copied or executed.

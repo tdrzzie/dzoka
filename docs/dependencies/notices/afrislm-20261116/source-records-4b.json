@@ -1,0 +1,62 @@
+[
+  {
+    "repository": "qvac/TranslatePsy-AfriSLM-4B-Q4-GGUF",
+    "revision": "82df4b20772a4a46f38b421a569a90d53a93f657",
+    "path": "README.md",
+    "gitBlob": "070391b8946986ce4b8e8867e56c0df6f6dcf351",
+    "sha256": "23a37ae308e617de5767e7efb952841ebdc5a47abda477e1fc4a3e0895c27edc",
+    "bytes": 13389,
+    "lines": 271,
+    "reviewedAt": "2026-11-16",
+    "upstreamTests": "NOT_EXECUTED",
+    "scope": "Model/base Apache license and selected translation geometry/configuration; no model-supplied code executed"
+  },
+  {
+    "repository": "qvac/TranslatePsy-AfriSLM-4B",
+    "revision": "4726b6a76c9e70d73efde521dc15717f8aac4795",
+    "path": "README.md",
+    "gitBlob": "f5f28913b5ea96f6505cbe45bff719f91adae688",
+    "sha256": "c0da03d4102d15a2c1dfe172611e93df9d8651decdb9bb9d81d76a39cc388ad3",
+    "bytes": 13814,
+    "lines": 291,
+    "reviewedAt": "2026-11-16",
+    "upstreamTests": "NOT_EXECUTED",
+    "scope": "Model/base Apache license and selected translation geometry/configuration; no model-supplied code executed"
+  },
+  {
+    "repository": "qvac/TranslatePsy-AfriSLM-4B",
+    "revision": "4726b6a76c9e70d73efde521dc15717f8aac4795",
+    "path": "config.json",
+    "gitBlob": "dfb56f2eb4234284e51ce68b3a82a1968bf619ef",
+    "sha256": "011287a35c0df617959180126aa5af8854f3db369c988da63e152aaeb32b0cb3",
+    "bytes": 2680,
+    "lines": 104,
+    "reviewedAt": "2026-11-16",
+    "upstreamTests": "NOT_EXECUTED",
+    "scope": "Model/base Apache license and selected translation geometry/configuration; no model-supplied code executed"
+  },
+  {
+    "repository": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "path": "LICENSE",
+    "gitBlob": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+    "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "bytes": 11544,
+    "lines": 202,
+    "reviewedAt": "2026-11-16",
+    "upstreamTests": "NOT_EXECUTED",
+    "scope": "Model/base Apache license and selected translation geometry/configuration; no model-supplied code executed"
+  },
+  {
+    "repository": "Qwen/Qwen3.5-4B",
+    "revision": "851bf6e806efd8d0a36b00ddf55e13ccb7b8cd0a",
+    "path": "config.json",
+    "gitBlob": "557d961b205319c6a7da5f757f565b69b3967b7d",
+    "sha256": "ddc63e1c717afa86c865bb5e01313d89d72bb53b97ad4a8a03ba8510c0621670",
+    "bytes": 3161,
+    "lines": 104,
+    "reviewedAt": "2026-11-16",
+    "upstreamTests": "NOT_EXECUTED",
+    "scope": "Model/base Apache license and selected translation geometry/configuration; no model-supplied code executed"
+  }
+]

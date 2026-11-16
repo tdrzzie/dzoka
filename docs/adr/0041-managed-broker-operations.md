@@ -1,7 +1,9 @@
 # 0041: Maintain bounded broker state and rotate credentials between polls
 
-- Status: Accepted scoped implementation; execution evidence required
+- Status: Accepted scoped implementation; local execution verified, production acceptance open
 - Date: 2026-11-02
+
+Execution update 2026-11-16: the [full serial verification](../testing/m4-language-alternatives-2026-11-16.md) passes all 24 phases on the recorded unchanged application source, including managed operations, real broker/core completion and exact restore. This satisfies local conformance evidence; deployment and representative quality acceptance remain separate.
 
 The source gate passed before implementation. ADR 0040 leaves a 1,000-profile journal limit, restart-only credential rotation and lifecycle-only status. Add a separately pinned management release around the existing broker contracts. Preserve all earlier inference sources, registries, runtime/model locks and identities. No dependency, image or model is adopted.
 

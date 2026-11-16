@@ -1,0 +1,98 @@
+{
+  "reviewedAt": "2026-11-16",
+  "disposition": "APPROVED_BOUNDED_LOCAL_DIAGNOSTIC_BUILD",
+  "baseImage": "python@sha256:593bd06efe90efa80dc4eee3948be7c0fde4134606dd40d8dd8dbcade98e669c",
+  "packageClosureLockSha256": "7bc919d8e61894f0fb1a360b7673741741ba6a265722a23536d7eac19cb243c2",
+  "runtimePackages": [
+    "libc6",
+    "libc-bin"
+  ],
+  "inheritedRuntimePackages": {
+    "gcc-12-base": "12.2.0-14+deb12u1",
+    "libgcc-s1": "12.2.0-14+deb12u1",
+    "libstdc++6": "12.2.0-14+deb12u1"
+  },
+  "baseRuntimeMetadataSha256": "b12eb436e4d13c1ae5405f1385a254378ddb039bb9396381cef3ca584edaa9c5",
+  "supersedesPlanningClosureSha256": "ff8fe2f31537f7290d4671e079cd0e9123e4f9d2470180501b7214c6be9163dc",
+  "runtimeSource": {
+    "repository": "ggml-org/llama.cpp",
+    "revision": "a06044b934db085e373286444e0c15b93635a20c",
+    "archiveSha256": "28655dc00d27a9a11c51236ee520ee0f0f55fdc75b31e0b42aba7b72df2c67a8",
+    "archiveBytes": 39157873,
+    "selectedRegularFiles": 1897,
+    "selectedBytes": 37083298,
+    "allSelectedGitBlobsVerified": true,
+    "scope": "Data extraction and source identity verification only; no build or upstream tests executed"
+  },
+  "driverSha256": "51ed4537cbbbbe87a93e5f4dcbd21d42bbf2083b9bc17fe15699c2965fa022cf",
+  "cmakeFlags": {
+    "LLAMA_BUILD_COMMON": "OFF",
+    "LLAMA_BUILD_TESTS": "OFF",
+    "LLAMA_BUILD_TOOLS": "OFF",
+    "LLAMA_BUILD_EXAMPLES": "OFF",
+    "LLAMA_BUILD_SERVER": "OFF",
+    "LLAMA_BUILD_APP": "OFF",
+    "LLAMA_BUILD_UI": "OFF",
+    "LLAMA_BUILD_MTMD": "OFF",
+    "LLAMA_CONNECT": "OFF",
+    "LLAMA_OPENSSL": "OFF",
+    "LLAMA_SUBPROCESS": "OFF",
+    "LLAMA_LLGUIDANCE": "OFF",
+    "BUILD_SHARED_LIBS": "ON",
+    "GGML_BACKEND_DL": "OFF",
+    "GGML_NATIVE": "OFF",
+    "GGML_OPENMP": "OFF",
+    "GGML_OPENMP_FETCH": "OFF",
+    "GGML_CPU_KLEIDIAI": "OFF",
+    "GGML_CPU_HBM": "OFF",
+    "GGML_LLAMAFILE": "OFF",
+    "GGML_BLAS": "OFF",
+    "GGML_CUDA": "OFF",
+    "GGML_VULKAN": "OFF",
+    "GGML_METAL": "OFF",
+    "GGML_AVX": "ON",
+    "GGML_AVX2": "ON",
+    "GGML_FMA": "ON",
+    "GGML_F16C": "ON",
+    "GGML_AVX512": "OFF",
+    "GGML_AVX512_VBMI": "OFF",
+    "GGML_AVX512_VNNI": "OFF",
+    "GGML_AVX512_BF16": "OFF",
+    "GGML_AMX_TILE": "OFF",
+    "GGML_AMX_INT8": "OFF",
+    "GGML_AMX_BF16": "OFF",
+    "GGML_CCACHE": "OFF",
+    "LLAMA_USE_PREBUILT_UI": "OFF",
+    "GGML_BUILD_TESTS": "OFF",
+    "GGML_BUILD_EXAMPLES": "OFF"
+  },
+  "buildTarget": "llama",
+  "noUpstreamTestsExecuted": true,
+  "scope": "Selected static CPU/API/license/build-boundary review; CMake compiler probes may execute during build. No exhaustive algorithm/security or production quality certification.",
+  "parentCpuLibraryClosureSha256": "700d6be315291f755071b3dcc56869d6d4452157572edba17edf78168400c37a",
+  "modelVariant": {
+    "repository": "vamboai/morena-1.5b-instruct-gguf",
+    "revision": "ed64de7262b6edbe1af14c340ed4ea368a36349d",
+    "bytes": 1580378784,
+    "sha256": "2b7905b1f0d70efeaa7f95ae1829ffb640dcfce748f9e20e45185359b4933203",
+    "geometry": {
+      "architecture": "llama",
+      "layers": 28,
+      "embeddingSize": 2048
+    },
+    "memoryBytes": 4294967296,
+    "cpuThreads": 2
+  },
+  "promptVersion": "morena-translation-3shot-v2",
+  "examples": {
+    "bytes": 1136,
+    "sha256": "e9b7b046b61d7500ed1aa83305171549572f037d78a8e9af2a41f739e86f6125",
+    "datasetRevision": "google/smol@fdaff3a1a019f89fa30a562a85d7c1d3e9150444",
+    "rowsPerDirection": [
+      257,
+      258,
+      259
+    ],
+    "license": "CC-BY-4.0"
+  }
+}

@@ -54,8 +54,13 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0039 | [Offline account boundary and terminal journal archive](0039-offline-account-boundary-and-journal-archive.md) | Accepted scoped implementation |
 
+| 0040 | [Brokered model processes](0040-brokered-model-processes.md) | Local native/core conformance verified; quality/deployment open |
+| 0041 | [Managed broker operations](0041-managed-broker-operations.md) | Local execution verified; production acceptance open |
+| 0042 | [Private reference quality protocols](0042-private-reference-quality-protocols.md) | Implemented protocols; representative acceptance open |
+| 0043 | [Versioned refinements and optional reference API](0043-versioned-quality-refinements-and-optional-reference-api.md) | Local execution verified; quality/deployment open |
 | 0044 | [MADLAD INT8 CPU diagnostic](0044-madlad-int8-cpu-diagnostic.md) | Accepted diagnostic; executed, quality screen failed |
 
-| 0045 | [Small African translation CPU diagnostic](0045-small-african-translation-cpu-diagnostic.md) | Accepted model diagnostic plan; native build closure pending |
+| 0045 | [Small African translation CPU diagnostic](0045-small-african-translation-cpu-diagnostic.md) | Executed scoped CPU diagnostics; general quality screen failed |
+| 0046 | [MORENA Shona CPU diagnostic](0046-morena-shona-cpu-diagnostic.md) | Executed zero/three-shot diagnostics; general quality screen failed |
 
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

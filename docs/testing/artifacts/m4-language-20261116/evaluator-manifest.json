@@ -1,0 +1,13 @@
+{
+  "scope": "Exact first-party diagnostic snapshots; immutable attempt names and local cache prerequisites, not a portable application CLI. MORENA zero-shot wrapper also reads the archived AfriSLM evaluator; neither upstream code nor raw public reference files are copied.",
+  "files": {
+    "afrislm-evaluate-20261116.py": "e5e5f5e6503015c777a9ac40c6758fd58c46874e834294ba8222f9620d77841b",
+    "afrislm4b-evaluate-20261116.py": "6d35f2219bb5c0429e91728b23d4c0ec21b10dcab098af879e5904e573b2035c",
+    "morena-evaluate-20261116.py": "3a0b40b4f1f448198954539a4298718d625a729a1e190285cba31ff94ea40b09",
+    "morena-fewshot-evaluate-resolved-20261116.py": "dcc355cef099840ea36ae8c16533b90383497933abc86611aba9424860e87590",
+    "framing-test.py": "5bc82117f420c3d7060074d08695171cdc23ec3cf3d68844315f75d200c78710",
+    "framing-result.json": "558a32042bcfd90bd7eceb4db8b914fc095dfa0f980b4eeb397aaf7c25153b6f",
+    "framing-test-v1.py": "8a5717965a9e5d9da28a7889a4dcce640eb69226367848f4e8ae49ff37ab75c0",
+    "framing-result-v1.json": "805e6fe8e18f4ae52b35ef22fb7bd07c42002c15ea23559cd723fbde64aafffd"
+  }
+}

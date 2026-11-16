@@ -1,0 +1,5 @@
+TranslatePsy-AfriSLM model weights: Tether Data, S.A. de C.V.; Apache-2.0, as explicitly declared in the pinned publisher/export cards.
+Publisher qvac/TranslatePsy-AfriSLM-0.8B@adcdad6b1424cd66125d0f6e1d6d8964cf7ed299
+Export qvac/TranslatePsy-AfriSLM-0.8B-Q8-GGUF@55220bcc74bed219ad9db9ab378f6aae31850974
+Base Qwen/Qwen3.5-0.8B@2fc06364715b967f1860aea9cf38778875588b17; Copyright 2026 Alibaba Cloud.
+The Apache weight grants do not grant dataset or teacher reuse rights. The publisher separately discloses a CC-BY-NC-4.0 NLLB teacher and synthetic mix; those artifacts are neither copied nor executed here.

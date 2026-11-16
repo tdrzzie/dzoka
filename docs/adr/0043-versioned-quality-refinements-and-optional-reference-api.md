@@ -1,7 +1,9 @@
 # 0043: Version quality refinements and keep remote comparisons explicit
 
-- Status: Accepted scoped implementation plan; execution evidence pending
+- Status: Accepted scoped implementation; local execution verified, quality/deployment acceptance open
 - Date: 2026-11-06
+
+Execution update 2026-11-16: the [full serial verification](../testing/m4-language-alternatives-2026-11-16.md) passes all 24 phases, including all 53 isolated profiles, boundary regressions, real HTTP provider jobs and restore. The optional public-reference route authenticates and completes recorded comparisons. Actual failed model-quality screens and earlier unavailable calls remain retained; local conformance does not approve production quality or deployment.
 
 The thirty-source gate passes before this work. Public diagnostics identified short decoder budgets, weak narrowband transcription and missed small objects. Add independently versioned local translation, speech and region alternatives on the existing reviewed ONNX/NumPy/Tokenizers/SentencePiece runtime. Review each checkpoint/export separately before execution; do not install or execute upstream loaders. Preserve historical manifests and immutable releases. If broker source changes, declare a new broker generation with new profile identities and disabled registration, retaining the previous generation; never rewrite persisted components or implicitly activate replacements.
 

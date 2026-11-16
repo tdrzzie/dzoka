@@ -32,4 +32,7 @@ ai/shona_cpu_native/** text eol=lf
 docs/dependencies/notices/refinement/** -text
 docs/dependencies/notices/speech-20261107/** -text
 docs/dependencies/notices/madlad-20261115/** -text
+docs/dependencies/notices/afrislm-20261116/** -text
+docs/dependencies/notices/morena-20261116/** -text
+docs/testing/artifacts/m4-language-20261116/** -text
 ai/history/broker-v1-20261106/** -text
