@@ -54,4 +54,8 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0039 | [Offline account boundary and terminal journal archive](0039-offline-account-boundary-and-journal-archive.md) | Accepted scoped implementation |
 
+| 0044 | [MADLAD INT8 CPU diagnostic](0044-madlad-int8-cpu-diagnostic.md) | Accepted diagnostic; executed, quality screen failed |
+
+| 0045 | [Small African translation CPU diagnostic](0045-small-african-translation-cpu-diagnostic.md) | Accepted model diagnostic plan; native build closure pending |
+
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

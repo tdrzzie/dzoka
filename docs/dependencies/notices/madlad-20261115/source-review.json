@@ -1,0 +1,104 @@
+[
+  {
+    "repository": "google/madlad400-3b-mt",
+    "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094",
+    "path": "README.md",
+    "bytes": 9666,
+    "sha256": "7579fd7a40ebb96bc9098b1c817825c572a20763aa8fc80c5261a0517e224979",
+    "gitBlob": "84e2e5f6294c6a4394b9ad57e84e67510f6df61a",
+    "lines": 633,
+    "reviewedAt": "2026-11-15",
+    "upstreamTests": "NOT_EXECUTED",
+    "revisionSelection": "Pinned publisher/export revision, no branch HEAD claim",
+    "inspectedRanges": [
+      [
+        1,
+        15
+      ],
+      [
+        100,
+        125
+      ],
+      [
+        450,
+        480
+      ]
+    ]
+  },
+  {
+    "repository": "google/madlad400-3b-mt",
+    "revision": "fa184c675da0b5c9e1c8694fccd4e12e2d422094",
+    "path": "config.json",
+    "bytes": 749,
+    "sha256": "cad399cab799b99409a6ec2d90d72552257c2bb752861261d2016691e0643e7c",
+    "gitBlob": "11c12599ab543aec9dca774479345e610b24a60a",
+    "lines": 29,
+    "reviewedAt": "2026-11-15",
+    "upstreamTests": "NOT_EXECUTED",
+    "revisionSelection": "Pinned publisher/export revision, no branch HEAD claim",
+    "inspectedRanges": [
+      [
+        1,
+        29
+      ]
+    ]
+  },
+  {
+    "repository": "Zoowr/madlad400-3b-mt-ct2-int8",
+    "revision": "dc87a252892a42d835675f68543d574709d1d8f1",
+    "path": "README.md",
+    "bytes": 3643,
+    "sha256": "da6508217164a227b38c23ce8052c8affd63e9e20badd76351a6c39403e75838",
+    "gitBlob": "dae54ce5673ff53d80a925be7679227caa8bf790",
+    "lines": 83,
+    "reviewedAt": "2026-11-15",
+    "upstreamTests": "NOT_EXECUTED",
+    "revisionSelection": "Pinned publisher/export revision, no branch HEAD claim",
+    "inspectedRanges": [
+      [
+        1,
+        10
+      ],
+      [
+        23,
+        43
+      ]
+    ]
+  },
+  {
+    "repository": "Zoowr/madlad400-3b-mt-ct2-int8",
+    "revision": "dc87a252892a42d835675f68543d574709d1d8f1",
+    "path": "LICENSE",
+    "bytes": 11358,
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "gitBlob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+    "lines": 202,
+    "reviewedAt": "2026-11-15",
+    "upstreamTests": "NOT_EXECUTED",
+    "revisionSelection": "Pinned publisher/export revision, no branch HEAD claim",
+    "inspectedRanges": [
+      [
+        1,
+        202
+      ]
+    ]
+  },
+  {
+    "repository": "Zoowr/madlad400-3b-mt-ct2-int8",
+    "revision": "dc87a252892a42d835675f68543d574709d1d8f1",
+    "path": "config.json",
+    "bytes": 234,
+    "sha256": "5b74d87fd940afd7074813842dd5ca399fe288381e5a35d73fdef957cb6083b9",
+    "gitBlob": "f046421ed0e1937eba922ec16def85318165ac88",
+    "lines": 10,
+    "reviewedAt": "2026-11-15",
+    "upstreamTests": "NOT_EXECUTED",
+    "revisionSelection": "Pinned publisher/export revision, no branch HEAD claim",
+    "inspectedRanges": [
+      [
+        1,
+        10
+      ]
+    ]
+  }
+]

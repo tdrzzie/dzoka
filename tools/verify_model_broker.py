@@ -25,6 +25,21 @@ SAMPLES={'en':'I lost a black bag.','fr':"J'ai perdu un sac noir.",'de':'Ich hab
          'zu':'Ngilahlekelwe isikhwama esimnyama.','xh':'Ndilahlekelwe yingxowa emnyama.',
          'sn':'Ndarasa bhegi rangu.'}
 
+
+def checked_inference(bundle, receipt, state, name, raw):
+    """Retain bounded availability retries only after integrity and cleanup checks."""
+    for attempt in range(1, 4):
+        try:
+            return infer(bundle, receipt, state, name, raw, checked=True), attempt
+        except ValueError as error:
+            if type(error) is not ValueError or str(error) != 'Isolated model protocol unavailable':
+                raise
+            print('UNAVAILABLE: '+name+' protocol attempt '+str(attempt), flush=True)
+            if attempt == 3:
+                raise
+            state_check(state, bundle, receipt)
+            verify_bundle(bundle, receipt)
+
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--profile',help='Explicit narrower diagnostic, never full acceptance')
     args=parser.parse_args();bundle=Path(os.environ['DZOKA_TEST_BROKER_BUNDLE']);receipt=os.environ['DZOKA_TEST_BROKER_SHA256']
@@ -66,8 +81,9 @@ def main():
                     from shona_cpu_runtime import SAMPLES as cpu_samples
                     raw=cpu_samples[profile['base']][0].encode()
                 else:raw=SAMPLES[profile.get('manifest',{}).get('configuration',{}).get('sourceLanguage','fr' if task=='TRANSLATION' else 'en')].encode()
-                start=time.monotonic();output=infer(bundle,receipt,state,name,raw,checked=True)
+                start=time.monotonic();output,attempts=checked_inference(bundle,receipt,state,name,raw)
                 row={'profile':name,'profileKey':profile['key'],'seconds':round(time.monotonic()-start,3),
+                     'attempts':attempts,
                      'inputSha256':hashlib.sha256(raw).hexdigest(),'evidenceSha256':hashlib.sha256(json.dumps(output,sort_keys=True).encode()).hexdigest(),
                      'outputFields':sorted(output),'boundary':'actual token zero capabilities, no loopback exemption; documentation-network native capability denial'}
                 if 'text' in output:row['syntheticText']=output['text']
@@ -77,13 +93,13 @@ def main():
                     # The historical quantized export failed beyond 16 tokens.
                     # Exercise the real isolated provider, including its limit.
                     for words,tokens,truncated in [(15,17,False),(510,512,False),(511,512,True)]:
-                        evidence=infer(bundle,receipt,state,name,('bag '*words).encode(),checked=True)
+                        evidence,attempts=checked_inference(bundle,receipt,state,name,('bag '*words).encode())
                         vector=evidence['vector']
                         if (evidence['tokenCount']!=tokens or evidence['truncated']!=truncated or
                             len(vector)!=768 or not all(math.isfinite(x) for x in vector) or
                             abs(sum(x*x for x in vector)-1)>1e-5):
                             raise ValueError('Joint text variable-length regression')
-                        result['regressions'].append({'profile':name,'words':words,'tokens':tokens,'truncated':truncated})
+                        result['regressions'].append({'profile':name,'words':words,'tokens':tokens,'truncated':truncated,'attempts':attempts})
                         save();print('PASS: joint text boundary '+str(words),flush=True)
             if not result['rows']:raise ValueError('No selected isolated profiles')
             state_check(state);resources=reconcile(state/'docker')

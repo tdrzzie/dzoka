@@ -1,0 +1,155 @@
+{
+  "reviewType": "STATIC_LICENSE_AND_BUILD_BOUNDARY",
+  "upstreamTests": "NOT_EXECUTED",
+  "runtimeSources": [
+    {
+      "repository": "google/ruy",
+      "revision": "363f252289fb7a1fba1703d99196524698cb884d",
+      "archiveSha256": "3c2181c9134896784d5d0494e2638c43127de4da2ddf81b3a64c06311fb17432",
+      "archiveBytes": 282512
+    },
+    {
+      "repository": "pytorch/cpuinfo",
+      "revision": "082deffc80ce517f81dc2f3aebe6ba671fcd09c9",
+      "archiveSha256": "4379348ec3127b37e854a0a66f85ea1d3c606e5f3a6dce235dc9c69ce663c026",
+      "archiveBytes": 3503935
+    }
+  ],
+  "files": [
+    {
+      "file": "LICENSE",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "lines": 202,
+      "inspectedScope": "Ruy full license",
+      "repository": "google/ruy",
+      "revision": "363f252289fb7a1fba1703d99196524698cb884d",
+      "path": "LICENSE",
+      "gitBlob": "d645695673349e3947e8e5ae42332d0ac3164cd7",
+      "inspectedRanges": [
+        [
+          1,
+          202
+        ]
+      ]
+    },
+    {
+      "file": "CMakeLists.txt",
+      "sha256": "db32cdd94283e5d0d8d538c294f33e65fd704acf07dfdedee545d7c3c99ca66f",
+      "lines": 117,
+      "inspectedScope": "Ruy build, cpuinfo and disabled tests",
+      "repository": "google/ruy",
+      "revision": "363f252289fb7a1fba1703d99196524698cb884d",
+      "path": "CMakeLists.txt",
+      "gitBlob": "f4fe8934be4d1d624d3cdf7266da2eeb49ad8bad",
+      "inspectedRanges": [
+        [
+          31,
+          96
+        ]
+      ]
+    },
+    {
+      "file": "ruy-cmake_ruy_cc_library.cmake",
+      "sha256": "5442c868bf1483cb78a030449515ef663b4f6cb40ffb64565584f7de06d697e0",
+      "lines": 96,
+      "inspectedScope": "Runtime library construction",
+      "repository": "google/ruy",
+      "revision": "363f252289fb7a1fba1703d99196524698cb884d",
+      "path": "cmake/ruy_cc_library.cmake",
+      "gitBlob": "3f3a062c5265e076f1d3e77b3f43bdfce2e269bf",
+      "inspectedRanges": [
+        [
+          1,
+          96
+        ]
+      ]
+    },
+    {
+      "file": "ruy-cmake_ruy_cc_test.cmake",
+      "sha256": "8d4522ba1f434534433ae1e419cee39d9b036995935e355fb7cbdbcbf55bfbfd",
+      "lines": 76,
+      "inspectedScope": "Minimal-build test exclusion",
+      "repository": "google/ruy",
+      "revision": "363f252289fb7a1fba1703d99196524698cb884d",
+      "path": "cmake/ruy_cc_test.cmake",
+      "gitBlob": "6ad247e6b6780a0573a995daa38566ec5292bf44",
+      "inspectedRanges": [
+        [
+          1,
+          76
+        ]
+      ]
+    },
+    {
+      "file": "cpuinfo-LICENSE",
+      "sha256": "8e7e60636c3aa0cb03571a1a841ce5697f9551ff92b3c426c2561613d15ade70",
+      "lines": 27,
+      "inspectedScope": "cpuinfo full license",
+      "repository": "pytorch/cpuinfo",
+      "revision": "082deffc80ce517f81dc2f3aebe6ba671fcd09c9",
+      "path": "LICENSE",
+      "gitBlob": "3f9a4f020cec01f29e5b9dce6630e02d82f2118d",
+      "inspectedRanges": [
+        [
+          1,
+          27
+        ]
+      ]
+    },
+    {
+      "file": "cpuinfo-CMakeLists.txt",
+      "sha256": "2807e89fd1018271b525005b53ddcc91f5e368da8b737c0ab37a4b507d759c25",
+      "lines": 874,
+      "inspectedScope": "Lines 95-115,252-264 optional downloads and bundled clog",
+      "repository": "pytorch/cpuinfo",
+      "revision": "082deffc80ce517f81dc2f3aebe6ba671fcd09c9",
+      "path": "CMakeLists.txt",
+      "gitBlob": "7c287618beb5bdf684232f803d230dfdf91b1a88",
+      "inspectedRanges": [
+        [
+          95,
+          115
+        ],
+        [
+          252,
+          264
+        ]
+      ]
+    },
+    {
+      "file": "cpuinfo-deps_clog_LICENSE",
+      "sha256": "68a14c3e79add023eecd83d611e73f05b8bf1d16852efeb7eb4033a96736da9e",
+      "lines": 26,
+      "inspectedScope": "clog full license",
+      "repository": "pytorch/cpuinfo",
+      "revision": "082deffc80ce517f81dc2f3aebe6ba671fcd09c9",
+      "path": "deps/clog/LICENSE",
+      "gitBlob": "306de3d8f1628f0bf0c9f5c5f9dcff2265ca092b",
+      "inspectedRanges": [
+        [
+          1,
+          26
+        ]
+      ]
+    },
+    {
+      "file": "cpuinfo-deps_clog_CMakeLists.txt",
+      "sha256": "39a4e63dded52dc0142ce2d5db0e105ac7b7f94a9d51b475fdb1777192139b54",
+      "lines": 97,
+      "inspectedScope": "Test-only download exclusion",
+      "repository": "pytorch/cpuinfo",
+      "revision": "082deffc80ce517f81dc2f3aebe6ba671fcd09c9",
+      "path": "deps/clog/CMakeLists.txt",
+      "gitBlob": "4f34d23ce5cf9a2171e3e8dc8979bfcfac7c9e30",
+      "inspectedRanges": [
+        [
+          1,
+          97
+        ]
+      ]
+    }
+  ],
+  "reviewedAt": "2026-11-16",
+  "revisionSelection": "Parent-pinned submodules; no branch HEAD claim",
+  "limitations": "Selected license/build boundaries only; no exhaustive algorithm review, upstream test execution or performance certification"
+}

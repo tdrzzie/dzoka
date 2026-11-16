@@ -1,0 +1,17 @@
+# Small African translation CPU candidate review
+
+Review date November 16, 2026. Scope: model/source inspection and permitted download for a bounded local diagnostic, under [ADR 0045](../adr/0045-small-african-translation-cpu-diagnostic.md). The mandatory audit gate passes. Existing runtime/provider/model identities remain unchanged.
+
+## Weight and configuration evidence
+
+The export `qvac/TranslatePsy-AfriSLM-0.8B-Q8-GGUF` is pinned at `55220bcc74bed219ad9db9ab378f6aae31850974`. The publisher model is `qvac/TranslatePsy-AfriSLM-0.8B@adcdad6b1424cd66125d0f6e1d6d8964cf7ed299`; its base is `Qwen/Qwen3.5-0.8B@2fc06364715b967f1860aea9cf38778875588b17`. Both model cards declare Apache-2.0. The base's complete license retains Copyright 2026 Alibaba Cloud and Apache-2.0. Cards, configurations, base license and chat template were downloaded as data and checked against pinned Git blob identities before execution. [Pinned export](https://huggingface.co/qvac/TranslatePsy-AfriSLM-0.8B-Q8-GGUF/tree/55220bcc74bed219ad9db9ab378f6aae31850974) · [Publisher](https://huggingface.co/qvac/TranslatePsy-AfriSLM-0.8B/tree/adcdad6b1424cd66125d0f6e1d6d8964cf7ed299) · [Base license](https://huggingface.co/Qwen/Qwen3.5-0.8B/blob/2fc06364715b967f1860aea9cf38778875588b17/LICENSE)
+
+The export card lists Shona at line 61, its intended translation use at 101–106, a strict prompt example at 139–180 and limitations at 233–246. Lines 249–250 explicitly license these weights under Apache-2.0 while separately disclosing the CC-BY-NC-4.0 NLLB teacher/synthetic mix and other training datasets. Do not infer permission to reuse, train on or redistribute that mix/teacher from the weight grant. The review relies on the publisher's explicit weight grant; it does not certify training-data rights or inherit published evaluation claims. Native-speaker/domain review remains necessary. The multimodal base capability is outside scope.
+
+The selected file is `TranslatePsy-AfriSLM-0.8B-Q8_0-imat.gguf`, 1,082,015,808 bytes, LFS SHA-256 `b5056635be0c9bb832f0c964dc063bd4b4462e253f9f9d94eebf0aa0960b7798`. The export describes Q8_0 quantization with an importance matrix; this conversion is not independently rerun. No pickle, upstream Python model loader or training/conversion code is executed. The GGUF must pass its complete digest before any bounded native evaluation.
+
+## Runtime review in progress
+
+Proposed llama.cpp revision: `a06044b934db085e373286444e0c15b93635a20c`, independently resolved from upstream master on November 16. The complete MIT license retains the ggml authors' copyright. Initial selected source inspection covers root/ggml/CPU build options, public C APIs, core library linking, vendor build declarations, the GGUF reader and a simple public-API example. This is selected static inspection, not upstream test execution or exhaustive algorithm review. [Pinned runtime](https://github.com/ggml-org/llama.cpp/tree/a06044b934db085e373286444e0c15b93635a20c)
+
+No runtime build or installation is approved until the minimal library closure, complete notices, disabled optional components and actual source hashes are recorded. The plan excludes the networked CLI/server/common stack and uses an independently authored fixed driver, with no model-selected paths, commands or endpoints. Model download approval above is separate from native-runtime adoption. Actual inference, resource and quality results remain pending.
