@@ -97,7 +97,7 @@ def main():
         print('Local verification: '+name,flush=True);start=time.monotonic()
         # Protected broker service starts add real ACL/runtime checks to the
         # expanded integration suite. This bounds the test suite, not a worker.
-        deadline=5400 if name=='real-provider-integration-and-restore' else 2700 if name=='current-account-interactive-deployment' else 1800
+        deadline=9000 if name=='real-provider-integration-and-restore' else 2700 if name=='current-account-interactive-deployment' else 1800
         try:
             with (run/(name+'.log')).open('w',encoding='utf-8') as log:
                 completed=subprocess.run([sys.executable,*command],cwd=ROOT,env=os.environ.copy(),

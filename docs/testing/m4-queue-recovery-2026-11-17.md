@@ -1,0 +1,23 @@
+# Current-account queue burst and crash recovery
+
+The complete 27-phase gate passes on unchanged source `0c9fa31b41465dc2ebe24103221aa75f05262d0d14579584d8987c205a89f8e9`. This closes the scoped local queue/backpressure/post-claim recovery acceptance gap. M4 remains open for its other acceptance work and deferred Shona quality.
+
+[ADR 0051](../adr/0051-current-account-queue-recovery-acceptance.md) adds an actual authenticated HTTP burst at the existing 32-job quota, a rejected overflow request, natural idempotency, an independent tenant, exact registered-worker post-claim termination, natural lease/watchdog recovery, and real isolated ISO_TEXT inference for 33 jobs including one replenished admission. Persisted components, attempts, tenant isolation and reservation release must all pass. The observer records queue-to-first-observed completion with a 500 ms polling interval. Authored English fixtures establish operational behavior; semantic quality and production SLO remain separate.
+
+The first focused attempt used source `983dca73fdc2cfaa2dab85fceeefac2c555c99f03a02ef2d98d719dc54bab382`. It reached the post-claim crash and a new RUNNING generation, with at least five observed acknowledgements before the session interruption. Its Java/core/controller disappeared while its independently scheduled task survived. There is no terminal acceptance receipt: disposition **INTERRUPTED**, never PASS. The exact task was subsequently stopped and removed through the receipt-verified controller, and its model state reconciled. Private evidence remains at `C:\Users\nyash\dzoka-offline-41b_m68e`; raw private controls and credentials are excluded from Git. The original test and source inventory are retained under [attempt-v1](artifacts/m4-queue-20261117/attempt-v1/).
+
+The revised diagnostic permits 4,200 seconds after readiness for 33 fully protected invocations, with per-job progress, a 6,000-second controller bound and a separately bounded cleanup opportunity. The full integration/restore phase now allows 9,000 seconds to include this workload alongside all earlier providers. These are diagnostic bounds, not achieved SLOs or changes to production lease/token policy. A synthetic test JWT covers the bounded scenario only.
+
+All 224 Python regressions pass under the normal account. The full 27-phase gate is running with unchanged model receipt `2382b945fbe3532f6253246d969a41d7d51623b2cc737630c64a09f49738b027` and new immutable management release `C:\Users\nyash\DzokaManagedRelease-20261117-v7`, receipt `46e2af3a7d0882da28ccdc6270a91b94719518fcbeb509ac463c473ca21033f9`. No full-gate, queue-drain or restore success is claimed until its terminal receipts are checked.
+
+## Verified final execution — November 18 local time
+
+All **27 phases pass**, with **224 Python/24 Java unit/97 integration tests**, zero failures/errors/skips. The restore matches **35 tables/3,686 rows**, with row/catalog equality, restored tenant isolation and independent source snapshots. Both actual 33-job queue executions pass; their timings are separate observations, not a performance-improvement claim. The final integration phase took 3,808.586 seconds. The model and management releases remain unchanged throughout both complete attempts.
+
+The first complete gate is retained as [FAIL](artifacts/m4-queue-20261117/failed-gate-receipt.json): 26 passing prerequisites, the passing queue test, then one MediaStoreIT outbox insertion exceeded the original 10-second statement timeout. Restore did not run. A fresh focused MediaStoreIT replay passed, followed by the complete unchanged-source pass. No production timeout, retry or assertion was weakened; the cause of that transient timeout is not established or claimed fixed.
+
+Retained receipts: [final gate](artifacts/m4-queue-20261117/gate-receipt.json), [restore](artifacts/m4-queue-20261117/restore-receipt.json), [final queue](artifacts/m4-queue-20261117/queue-receipt.json), [earlier passing queue](artifacts/m4-queue-20261117/first-queue-receipt.json). Raw fixture inputs, private credentials and host state remain outside Git.
+
+## Remaining work
+
+Shona quality research remains owner-deferred. Representative non-Shona quality comparisons and task-specific review projections remain local acceptance work; this authored operational test does not close them. Startup-delay diagnosis and the transient database timeout remain local operational debt. Unattended boot-before-login/dedicated daemon access and target identity/egress policy need a different deployment context than the selected interactive setup. The historical remote-CI account billing lock is separate from local verification. Full M4 is not marked complete.

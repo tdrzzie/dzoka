@@ -1,0 +1,175 @@
+{
+  "startedAt": "2026-11-17T20:29:28.832491+00:00",
+  "status": "PASS",
+  "brokerBundleSha256": "2382b945fbe3532f6253246d969a41d7d51623b2cc737630c64a09f49738b027",
+  "managedReleaseSha256": "46e2af3a7d0882da28ccdc6270a91b94719518fcbeb509ac463c473ca21033f9",
+  "s3Backend": "reviewed-native-4.51",
+  "nativeS3Sha256": "f3a9522f4900408d8e230f98516cd9c75fa90da3cfc96dc0fd9fbed380fc8001",
+  "inputSha256": "0c9fa31b41465dc2ebe24103221aa75f05262d0d14579584d8987c205a89f8e9",
+  "phases": [
+    {
+      "name": "source-gate",
+      "exitCode": 0,
+      "seconds": 0.728,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "architecture",
+      "exitCode": 0,
+      "seconds": 0.517,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "python-regressions",
+      "exitCode": 0,
+      "seconds": 27.566,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "java-artifact-lock",
+      "exitCode": 0,
+      "seconds": 1.636,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "native-model-artifacts",
+      "exitCode": 0,
+      "seconds": 0.325,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "native-model-conformance",
+      "exitCode": 0,
+      "seconds": 3.926,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "perception-artifacts",
+      "exitCode": 0,
+      "seconds": 0.639,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "joint-region-artifacts",
+      "exitCode": 0,
+      "seconds": 1.082,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "language-artifacts",
+      "exitCode": 0,
+      "seconds": 0.383,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "generative-artifacts",
+      "exitCode": 0,
+      "seconds": 0.772,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "generative-installed-runtime",
+      "exitCode": 0,
+      "seconds": 1.598,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "quality-artifacts",
+      "exitCode": 0,
+      "seconds": 0.787,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-cpu-artifacts",
+      "exitCode": 0,
+      "seconds": 0.479,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-cpu-native-probes",
+      "exitCode": 0,
+      "seconds": 34.583,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "docker-guardian-lifecycle",
+      "exitCode": 0,
+      "seconds": 15.767,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "worker-service-recovery",
+      "exitCode": 0,
+      "seconds": 51.673,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "offline-boundary-and-archive",
+      "exitCode": 0,
+      "seconds": 12.9,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "isolated-model-broker",
+      "exitCode": 0,
+      "seconds": 787.485,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "broker-death-and-integrity",
+      "exitCode": 0,
+      "seconds": 70.677,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "managed-broker-operations",
+      "exitCode": 0,
+      "seconds": 49.163,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "current-account-interactive-deployment",
+      "exitCode": 0,
+      "seconds": 507.525,
+      "timeoutSeconds": 2700
+    },
+    {
+      "name": "private-quality-protocols",
+      "exitCode": 0,
+      "seconds": 41.826,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "private-english-semantic-review",
+      "exitCode": 0,
+      "seconds": 51.916,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "bounded-non-shona-model-capacity",
+      "exitCode": 0,
+      "seconds": 156.536,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-artifacts",
+      "exitCode": 0,
+      "seconds": 0.429,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-installed-runtime",
+      "exitCode": 0,
+      "seconds": 2.165,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "real-provider-integration-and-restore",
+      "exitCode": 0,
+      "seconds": 3808.586,
+      "timeoutSeconds": 9000
+    }
+  ],
+  "scope": "Implemented foundation/intake/multimodal/generative slice; not full specification or production acceptance",
+  "finishedAt": "2026-11-17T22:03:30.543315+00:00"
+}

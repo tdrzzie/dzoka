@@ -1,0 +1,10 @@
+# 0051. Verify real queue backpressure and post-claim recovery on the selected setup
+
+- Status: Accepted scoped test implementation; two real queue runs and complete 27-phase gate verified
+- Date: 2026-11-17
+
+Keep the user-selected current interactive account and Docker Desktop. Add an integration acceptance scenario using the existing licensed, pinned ISO_TEXT provider and installed Task Scheduler worker. No runtime dependencies, model identities, production lease/quota policy or release authority change. The source audit gate passed before implementation. Shona quality research remains deferred.
+
+Admit 32 authored English jobs through authenticated HTTP, reject a 33rd at the tenant boundary, and verify natural replay reserves nothing. A separate tenant can still admit work. Crash only the exact registered worker generation after the first real claim, using the existing handle-bound test helper. Require the unacknowledged job to remain PROCESSING, then let the existing watchdog and natural 120-second lease recover it. Do not edit database deadlines, fake completions, shorten leases or replace inference. Drain all 32 through real confined inference, admit one replacement as capacity is released, and drain that too. Assert one persisted component per job, exact space provenance, retry counts, tenant separation, idempotency and exact quota release. Clean up only task-owned resources through the existing context manager.
+
+Record bounded first-observed enqueue-to-completion times, readiness observations and explicit coverage. The 500 ms observer interval plus database/application scheduling adds observation delay. The worker remains serial; this is a fixed burst at the existing admission boundary, not a concurrent inference scheduler or population tail estimate. The fixture supplies no semantic labels, production load mix or approved SLO. Preserve original failures, then require the full unchanged provider/regression/restore gate on the final source before claiming local verification.

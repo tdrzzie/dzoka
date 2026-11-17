@@ -1,0 +1,174 @@
+{
+  "startedAt": "2026-11-17T18:37:21.583627+00:00",
+  "status": "FAIL",
+  "brokerBundleSha256": "2382b945fbe3532f6253246d969a41d7d51623b2cc737630c64a09f49738b027",
+  "managedReleaseSha256": "46e2af3a7d0882da28ccdc6270a91b94719518fcbeb509ac463c473ca21033f9",
+  "s3Backend": "reviewed-native-4.51",
+  "nativeS3Sha256": "f3a9522f4900408d8e230f98516cd9c75fa90da3cfc96dc0fd9fbed380fc8001",
+  "inputSha256": "0c9fa31b41465dc2ebe24103221aa75f05262d0d14579584d8987c205a89f8e9",
+  "phases": [
+    {
+      "name": "source-gate",
+      "exitCode": 0,
+      "seconds": 0.361,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "architecture",
+      "exitCode": 0,
+      "seconds": 0.92,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "python-regressions",
+      "exitCode": 0,
+      "seconds": 39.638,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "java-artifact-lock",
+      "exitCode": 0,
+      "seconds": 9.166,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "native-model-artifacts",
+      "exitCode": 0,
+      "seconds": 0.895,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "native-model-conformance",
+      "exitCode": 0,
+      "seconds": 30.032,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "perception-artifacts",
+      "exitCode": 0,
+      "seconds": 1.017,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "joint-region-artifacts",
+      "exitCode": 0,
+      "seconds": 1.738,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "language-artifacts",
+      "exitCode": 0,
+      "seconds": 0.709,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "generative-artifacts",
+      "exitCode": 0,
+      "seconds": 1.336,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "generative-installed-runtime",
+      "exitCode": 0,
+      "seconds": 18.628,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "quality-artifacts",
+      "exitCode": 0,
+      "seconds": 1.296,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-cpu-artifacts",
+      "exitCode": 0,
+      "seconds": 1.15,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-cpu-native-probes",
+      "exitCode": 0,
+      "seconds": 55.352,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "docker-guardian-lifecycle",
+      "exitCode": 0,
+      "seconds": 17.504,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "worker-service-recovery",
+      "exitCode": 0,
+      "seconds": 82.209,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "offline-boundary-and-archive",
+      "exitCode": 0,
+      "seconds": 18.529,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "isolated-model-broker",
+      "exitCode": 0,
+      "seconds": 826.764,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "broker-death-and-integrity",
+      "exitCode": 0,
+      "seconds": 68.914,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "managed-broker-operations",
+      "exitCode": 0,
+      "seconds": 57.315,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "current-account-interactive-deployment",
+      "exitCode": 0,
+      "seconds": 450.26,
+      "timeoutSeconds": 2700
+    },
+    {
+      "name": "private-quality-protocols",
+      "exitCode": 0,
+      "seconds": 45.171,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "private-english-semantic-review",
+      "exitCode": 0,
+      "seconds": 96.878,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "bounded-non-shona-model-capacity",
+      "exitCode": 0,
+      "seconds": 188.612,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-artifacts",
+      "exitCode": 0,
+      "seconds": 0.299,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-installed-runtime",
+      "exitCode": 0,
+      "seconds": 22.136,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "real-provider-integration-and-restore",
+      "exitCode": 1,
+      "seconds": 4270.731,
+      "timeoutSeconds": 9000
+    }
+  ],
+  "scope": "Implemented foundation/intake/multimodal/generative slice; not full specification or production acceptance"
+}

@@ -98,7 +98,7 @@ def main():
             classes.append('DockerShonaSupervisorIT')
         if args.with_supervisor:classes.append('AiSupervisorIT')
         if args.with_broker:classes.append('BrokerProviderIT')
-        if args.with_managed_broker:classes.extend(['ManagedBrokerIT','CurrentSetupWorkerIT'])
+        if args.with_managed_broker:classes.extend(['ManagedBrokerIT','CurrentSetupWorkerIT','CurrentSetupQueueIT'])
         if args.with_ai:
             subprocess.run([sys.executable,str(ROOT/'tools/ai_runtime.py'),'check'],cwd=ROOT,env=env,check=True)
             classes.append('AiProviderIT')
