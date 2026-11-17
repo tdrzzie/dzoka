@@ -2,6 +2,8 @@
 
 [ADR 0042](../adr/0042-private-reference-quality-protocols.md) adds `tools/quality_protocols.py` to the earlier [text diagnostics](managed-broker.md). It uses no new model or dependency and makes no inference request. An authorized operator supplies projected JSON artifacts and independently established references in one protected directory. Keep datasets within their authorized tenant/institutional scope; never commit private references or source artifacts.
 
+The separate [English semantic-review protocol](semantic-review.md) now records source-bound grounding, uncertainty, privacy and safety reviews, incomplete coverage, disagreement and explicit adjudication. It complements these numeric measurements; neither tool establishes reviewer qualifications or model approval.
+
 Each manifest has `schemaVersion: 1`, `scope` (`AUTHORED_DIAGNOSTIC` or `REFERENCE_EVALUATION`), `evidence` (basename `path` and SHA-256), and 1–128 `cases`. Each case has these exact fields:
 
 ```json

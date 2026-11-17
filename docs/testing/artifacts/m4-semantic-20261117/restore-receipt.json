@@ -1,0 +1,158 @@
+{
+  "status": "PASS",
+  "tables": 35,
+  "rows": 3223,
+  "rowAndCatalogEquality": true,
+  "restoredTenantIsolation": true,
+  "sourceSnapshotIndependence": true,
+  "snapshot": {
+    "tables": {
+      "dzoka.ai_jobs": {
+        "sha256": "0bce1cb5323bf28a49aaaf29d38d8292761d41cd51e1c7b8f2b21b269119674a",
+        "rows": 7
+      },
+      "dzoka.ai_usage": {
+        "sha256": "190c59c64ad742c88864579d8ef12fd2c1764a7b5b6c67c9fadceed44f0dc62f",
+        "rows": 22
+      },
+      "dzoka.audit_events": {
+        "sha256": "3776d099ba50efa942886a2d6cb8f0164b6285de9c716971ac5c9f2af430580d",
+        "rows": 636
+      },
+      "dzoka.embedding_spaces": {
+        "sha256": "c9c7a0b6f2d72c7c0785704ccce96a044267a270ea5f3a3f4f96e9c319182224",
+        "rows": 62
+      },
+      "dzoka.fingerprint_activations": {
+        "sha256": "3fc0e22eef84f01b460fd9116f3e71a68316705de38dcec9e50d37560829115e",
+        "rows": 11
+      },
+      "dzoka.fingerprint_active": {
+        "sha256": "67c613e283ab7318781c14074c646451534a6cc49dfcf24a1ddbace45a50bfda",
+        "rows": 11
+      },
+      "dzoka.fingerprint_components": {
+        "sha256": "a9105758f3b95a3cf4b08dd29240be961125010c8e31bff87ebc9262c580bca1",
+        "rows": 6
+      },
+      "dzoka.fingerprint_perception_slots": {
+        "sha256": "1856bddeeb7a05f55dc991aadbf0e84a58541fa3a00d6e942a04ab0cea858ec2",
+        "rows": 30
+      },
+      "dzoka.fingerprint_rollout_perception_pins": {
+        "sha256": "1856bddeeb7a05f55dc991aadbf0e84a58541fa3a00d6e942a04ab0cea858ec2",
+        "rows": 30
+      },
+      "dzoka.fingerprint_rollout_sources": {
+        "sha256": "a1933ffbe56029f223accd6037d8dcdd94b4947139c093a59fbf0c545a8e9e44",
+        "rows": 24
+      },
+      "dzoka.fingerprint_rollout_spaces": {
+        "sha256": "85f01db0c93619196941df5ab121f4b3b45659c8280d30ce4abcf65c95c6f971",
+        "rows": 2
+      },
+      "dzoka.fingerprint_rollouts": {
+        "sha256": "903c5afb1db83a714aabe1e1183e58c13c7cf7ea18437b7739400cb56fbba6ea",
+        "rows": 11
+      },
+      "dzoka.fingerprint_snapshot_slots": {
+        "sha256": "0c2cfe2d46ca40a31a757bb88965df06bee290a5b907916c0cf0f78315a6795e",
+        "rows": 2
+      },
+      "dzoka.fingerprint_snapshots": {
+        "sha256": "f2a7ae847fa5cb3a0302ef67c104abb1c1dfe9be6896b7c807bdbd04540b7c73",
+        "rows": 24
+      },
+      "dzoka.idempotency": {
+        "sha256": "4c946cb9a7a79b7100c3aa64c31c7a7c653b2d98f0d201456b184f42dd31a4c5",
+        "rows": 8
+      },
+      "dzoka.inbox": {
+        "sha256": "19bac098b3584916f4352f9f4efc385d184ff5d14738c9571048409d4e036967",
+        "rows": 2
+      },
+      "dzoka.intake_commands": {
+        "sha256": "e87dfb27edccd2955e777862a0a449a35cc8c4937ad3bcde26addd7f326e63e8",
+        "rows": 203
+      },
+      "dzoka.items": {
+        "sha256": "b3438b62f150c4f387793e3fa699338c5286fc07073ef7812e5c386f47746c8e",
+        "rows": 191
+      },
+      "dzoka.media_assets": {
+        "sha256": "cc844826435d99a3f25edcd38a25caa80a7a350f95ab71d1a435a66b27df2e58",
+        "rows": 6
+      },
+      "dzoka.media_usage": {
+        "sha256": "32b7ff34044fb61c5474e1a2668daebfcb3c0fa9bf7c8053b6d3ed5084cc3434",
+        "rows": 5
+      },
+      "dzoka.memberships": {
+        "sha256": "6976d65698e08ed9bba0c2781955d613e5d54137a556298a47b3cd5c00ff781b",
+        "rows": 358
+      },
+      "dzoka.organizations": {
+        "sha256": "7bb99da477ba353ae6c7982f7c5584dfb3587e833c943dd078fa7af43305f15d",
+        "rows": 10
+      },
+      "dzoka.outbox": {
+        "sha256": "5e2199fc94220d7306aef946d35ae0f53148931bc9fe32f7710f16972ca94836",
+        "rows": 625
+      },
+      "dzoka.perception_audio": {
+        "sha256": "9c00303ed55b0e783f3b1d4f145c445b52149841208fde8f822da254e32d52f9",
+        "rows": 2
+      },
+      "dzoka.perception_audio_usage": {
+        "sha256": "d551898d89ae8da7a62e658b38b7d2900ef24ab285c9282235840d97326181f7",
+        "rows": 7
+      },
+      "dzoka.perception_components": {
+        "sha256": "795b7a723bd24e2fa973098ff678d325a14b770cf73c1ec202c85c2084257ce7",
+        "rows": 47
+      },
+      "dzoka.perception_jobs": {
+        "sha256": "abc64f2f1ed8e25b53b4b58827e21cdd03de300381f1dbcc3ae782dbc075ee73",
+        "rows": 50
+      },
+      "dzoka.perception_profiles": {
+        "sha256": "fc5812122bb5e760f0734b7fb6f7ba20f67a4352e6f2e36adaeb7382e533b211",
+        "rows": 174
+      },
+      "dzoka.perception_rerank_inputs": {
+        "sha256": "4db632aea98160db8c26e05bf2e442cc9e334247b42c59606d69d1dbcd5a21ee",
+        "rows": 5
+      },
+      "dzoka.recovery_cases": {
+        "sha256": "bbbf9b2b1010a351f319b17ca792101b00a1b0f2c1dc90209c9a1e249c9150f8",
+        "rows": 191
+      },
+      "dzoka.report_revisions": {
+        "sha256": "f5ce0f6881af37f2ad1c7d68618f87b4c2dd56132b62cfc66dbf9cb1b5d795a2",
+        "rows": 202
+      },
+      "dzoka.reports": {
+        "sha256": "66db5895303211ac54a49269253eac916592dd48b6b79261bf667c70c7376a58",
+        "rows": 191
+      },
+      "dzoka.tenants": {
+        "sha256": "658c1c1443a04daf50e9c5c64228dd63d921968efa66e30aa48891f687f84845",
+        "rows": 56
+      },
+      "dzoka.test_effects": {
+        "sha256": "4d10f2c4d10aaa95de6309b08e01f8f3a00a317045639caecd2c459fe44cfe77",
+        "rows": 2
+      },
+      "public.flyway_schema_history": {
+        "sha256": "78e761ad78cf0a0c2832ca74e80549823c5eee844949e6d871f93cf70b991aa7",
+        "rows": 10
+      }
+    },
+    "catalogSha256": "4af8e8a1b571622f1b018d648c0e946f19786222401842613a579b400f0ccc79"
+  },
+  "limits": [
+    "same-cluster logical restore; roles pre-exist",
+    "no object-store backup, tombstone replay or external effects",
+    "not production RPO/RTO, HA or point-in-time recovery"
+  ]
+}

@@ -1,0 +1,9 @@
+# Exact executed-source line endings
+
+`source-overlay.json` records three pre-existing differences between Git index bytes and the executed working copy. These are unchanged Java fixture files and `dependencies.lock.json`; every difference is exactly LF to CRLF. All new/changed source bytes match the index. No source content, dependency declaration or model/provider identity is changed by this record.
+
+To reproduce the whole-source receipt on Windows, materialize the commit's exact Git blob bytes for the inventory defined by `tools/verify_local.py:source_digest`, rather than relying on checkout newline conversion. Its digest must equal `indexedSourceSha256`. In a separate reproduction copy, verify each listed file's `indexSha256`, replace each LF byte with CRLF, and verify `executedSha256`. Leave every other source byte unchanged. The inventory digest must then equal `executedSourceSha256` (`a5109127...`). Already transformed files must match that exact executed digest; do not convert them a second time. Retain the original Git files.
+
+The reconstruction was checked against every staged source blob and the actual execution inventory before publication. This is a byte-reproduction record, not a different test run, performance result or acceptance approval. Private release receipts and actual test/restore evidence remain in the [execution record](../../m4-semantic-review-2026-11-17.md).
+
+The three `*-receipt.json` files are byte-preserved actual gate, restore and native semantic-review summaries. They contain hashes, counts and conformance checks, without credentials, raw rows, model outputs or reviewer data. Restore remains same-cluster logical recovery with pre-existing roles, excluding object backup/tombstone replay/HA/PITR. The native review summary covers actual English inference plus authored review fixtures, not qualified human acceptance. Git attributes preserve their original raw bytes and receipt hashes.

@@ -75,6 +75,7 @@ def main():
            ('managed-broker-operations',['tools/verify_managed_operations.py']),
            ('current-account-interactive-deployment',['tools/verify_current_setup.py']),
            ('private-quality-protocols',['tools/verify_quality_protocols.py']),
+           ('private-english-semantic-review',['tools/verify_semantic_review.py']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]
     integration=integration_command(args.pg_bin,args.maven,args.native_s3)

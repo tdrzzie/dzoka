@@ -1,0 +1,26 @@
+{
+  "schemaVersion": 1,
+  "scope": "Exact pre-existing working-copy line endings; no code or lock content change",
+  "indexedSourceSha256": "cdeea9dd67c20af56561989b11a50bcbede5aa642f4cd5363d67d5b6d36cc23f",
+  "executedSourceSha256": "a51091279192cc2be7d159621cb276f2ac410e59d7bf22586e54d0753d0516a8",
+  "files": [
+    {
+      "path": "dependencies.lock.json",
+      "indexSha256": "3c7b92ab9b585abd2b8efbad48ade079693c286fca141439cb428e6fe4188e85",
+      "executedSha256": "a98720966dcd65097853d6c41e4dabd94f456cccf0e2ee1db71468c02e767cbf",
+      "transform": "LF_TO_CRLF"
+    },
+    {
+      "path": "src/test/java/org/dzoka/FoundationIT.java",
+      "indexSha256": "92a50ac57ddce0fb4145add18c0a02993f9b243d546a8a0180cc0a01fc140683",
+      "executedSha256": "81cb79163ee5e34fce33aa47a63dd8aec279cfdf404c89bd1c7115c7f8757163",
+      "transform": "LF_TO_CRLF"
+    },
+    {
+      "path": "src/test/java/org/dzoka/IntegrationFixture.java",
+      "indexSha256": "39b8d5c60cd0df61195da88d04e82210015be420455944dbf1b44d2443183513",
+      "executedSha256": "53865a1c7598a4960fe7a4323afba019a9a59ea25aa40650fa2ca8f21614beb6",
+      "transform": "LF_TO_CRLF"
+    }
+  ]
+}

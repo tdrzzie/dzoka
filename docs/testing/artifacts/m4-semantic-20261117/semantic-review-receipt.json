@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "cases": [
+    "protected_receipt_verified_cli",
+    "review_disagreement_adjudication_and_incomplete_coverage",
+    "redacted_result_never_grants_approval",
+    "actual_isolated_english_outputs_preserve_input_profile_truncation_and_unreviewed_state",
+    "exclusive_result_preserves_prior_evidence",
+    "native_broad_leaf_read_rejected",
+    "owned_inference_resources_cleaned"
+  ],
+  "managementReceiptSha256": "fb0b1697a08f95e2341c805512a07c457b9e3dcd5248b4e735947488ed69a1c3",
+  "protocolSourceSha256": "ff2e2c1facfc4e964453cc4cbae465fac70eeb1dbc794325ba4be609a9b5f74d",
+  "scope": "Actual English inference and authored review-protocol conformance; no human quality approval"
+}
