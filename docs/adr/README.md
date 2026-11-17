@@ -62,5 +62,7 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0045 | [Small African translation CPU diagnostic](0045-small-african-translation-cpu-diagnostic.md) | Executed scoped CPU diagnostics; general quality screen failed |
 | 0046 | [MORENA Shona CPU diagnostic](0046-morena-shona-cpu-diagnostic.md) | Executed zero/three-shot diagnostics; general quality screen failed |
+| 0047 | [Current-account interactive worker deployment](0047-current-account-interactive-worker-deployment.md) | Implemented; fourteen native checks, real installed-task core job and full 25-phase gate pass |
+| 0048 | [Larger Qwen CPU translation diagnostic](0048-larger-qwen-cpu-translation-diagnostic.md) | Q4 resource-blocked; IQ2 32-case comparison completed and rejected for quality |
 
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

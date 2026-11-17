@@ -1,0 +1,35 @@
+{
+  "scope": "Exact prior adapter bytes plus reconstructed regression files verified against the complete prior source digest; no private configuration or credentials",
+  "files": [
+    {
+      "source": "tools/current_setup_worker.py",
+      "file": "current_setup_worker.py",
+      "bytes": 11462,
+      "sha256": "74ce269a940ca2a621b659b11a7d81a1c559c7ce605828762007565ca4903466"
+    },
+    {
+      "source": "tools/current_task.ps1",
+      "file": "current_task.ps1",
+      "bytes": 4552,
+      "sha256": "ed230f1518eb0809d06fa533c9f74d58999bf0ba457557582aa206f843dcc277"
+    },
+    {
+      "source": "ai/interactive-deployment.lock.json",
+      "file": "interactive-deployment.lock.json",
+      "bytes": 1416,
+      "sha256": "7b1ee4e7e80bef38e0b032647c06493dbf8f7a22b39e373759262361beb27f49"
+    },
+    {
+      "source": "tests/test_current_setup.py",
+      "file": "test_current_setup.py",
+      "bytes": 2871,
+      "sha256": "63bae5ed4175b525974cc109abc2248b1acd2258668c0d369f344e28795621eb"
+    },
+    {
+      "source": "tests/test_openrouter_connection.py",
+      "file": "test_openrouter_connection.py",
+      "bytes": 9554,
+      "sha256": "a720cc5b26927e583b917896fd33561bc7727423fc028a5183895bd160c7477e"
+    }
+  ]
+}

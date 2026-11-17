@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "review": "docs/adr/0047-current-account-interactive-worker-deployment.md",
+  "managementLockSha256": "d5144743c16354a1c476549b439ab41afd16f504c857da4e19f614d4f49f7f2b",
+  "hostVersion": "3.14.7",
+  "hostFiles": {
+    "python.exe": {
+      "bytes": 106208,
+      "sha256": "4942b86a6597e5aee0128daa00050ed79bc21f6e709a78eb19cbfeb0c2f39ac9"
+    },
+    "python314.dll": {
+      "bytes": 6785760,
+      "sha256": "0f9857ffdfe010fe6b99328d58c2e3c7472ce75f336bf9c2ad9bd5bca3bce700"
+    },
+    "python3.dll": {
+      "bytes": 73952,
+      "sha256": "6c45910e7c82617ca6360820de861699cc99f9efee434df290aa4c6e38f39886"
+    },
+    "vcruntime140.dll": {
+      "bytes": 178616,
+      "sha256": "d1f4225df2cd877dbf130d5668a021dce3f94118455ff5ec952061c30afc9ce7"
+    },
+    "vcruntime140_1.dll": {
+      "bytes": 50112,
+      "sha256": "a7146c08f89fe5b04541ab507cdb59ff7b44534d4ba3c668a426c6450a03434e"
+    },
+    "LICENSE.txt": {
+      "bytes": 35407,
+      "sha256": "935cf13e19f8c31b497d20b05d73623431a226b230c3599bc30fa3348979bc68"
+    },
+    "pythonw.exe": {
+      "bytes": 104672,
+      "sha256": "c197268f7e7cf2848b8c1ae59bbd0e0c14defe668a2d365302137ea929b47769"
+    }
+  },
+  "sources": {
+    "tools/current_setup_worker.py": "74ce269a940ca2a621b659b11a7d81a1c559c7ce605828762007565ca4903466",
+    "tools/current_task.ps1": "ed230f1518eb0809d06fa533c9f74d58999bf0ba457557582aa206f843dcc277"
+  }
+}

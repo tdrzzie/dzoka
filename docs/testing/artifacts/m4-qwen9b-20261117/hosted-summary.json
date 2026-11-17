@@ -1,0 +1,170 @@
+{
+  "FLASH": {
+    "planSha256": "b2e125baca896b68eeed2b2dd3ce2704faee60aa291dd5f9b16b211ae9575ae7",
+    "resultSha256": "57493e6cfb2b25c3960cf9bfa213dd8da692d95a143de1f75fc4a3b3424cc984",
+    "counts": {
+      "AVAILABLE": 20,
+      "TRUNCATED": 0,
+      "UNAVAILABLE": 0
+    },
+    "slices": {
+      "sn-en/development": {
+        "planned": 8,
+        "complete": 8,
+        "medianCer": 0.23985981308411214,
+        "worstCer": 0.6504854368932039,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "sn-en/additional": {
+        "planned": 8,
+        "complete": 8,
+        "medianCer": 0.45962585327918426,
+        "worstCer": 0.6190476190476191,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "en-sn/additional": {
+        "planned": 4,
+        "complete": 4,
+        "medianCer": 0.3428220648698036,
+        "worstCer": 0.5074626865671642,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      }
+    },
+    "usage": {
+      "prompt_tokens": 1652,
+      "completion_tokens": 662,
+      "total_tokens": 2314
+    }
+  },
+  "PRO_DEFAULT": {
+    "planSha256": "c7b6755d2211702a2ea9c98a705f5d48070b7716574a652f03ce9dce28810794",
+    "resultSha256": "564b1e49fae7d6a57946fb3067de552ea276e7337745349a201ea1cbcc309e40",
+    "counts": {
+      "AVAILABLE": 23,
+      "TRUNCATED": 9,
+      "UNAVAILABLE": 0
+    },
+    "slices": {
+      "sn-en/development": {
+        "planned": 8,
+        "complete": 7,
+        "medianCer": 0.3184713375796178,
+        "worstCer": 0.5639097744360902,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "sn-en/additional": {
+        "planned": 8,
+        "complete": 5,
+        "medianCer": 0.4019607843137255,
+        "worstCer": 0.6363636363636364,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "en-sn/additional": {
+        "planned": 8,
+        "complete": 3,
+        "medianCer": 0.39,
+        "worstCer": 0.5454545454545454,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "sn-en/authored-code-switch": {
+        "planned": 8,
+        "complete": 8,
+        "medianCer": 0.0,
+        "worstCer": 0.2,
+        "literalMatched": 20,
+        "literalTotal": 20,
+        "screenPass": true
+      }
+    },
+    "usage": {
+      "prompt_tokens": 2465,
+      "completion_tokens": 25724,
+      "total_tokens": 28189
+    },
+    "matchedAgainstFLASH": {
+      "sameInputReferenceCases": 8,
+      "completePairs": 7,
+      "better": 1,
+      "ties": 1,
+      "worse": 5
+    }
+  },
+  "PRO_LOW": {
+    "planSha256": "bc6b183e326104d2d1829add1e565e963f51752d2e21a61b8a373c78985a1f25",
+    "resultSha256": "faf31d6eee4530fe72b477e16262e17ed2180947aec3c7f8de91ae3eba43ae4e",
+    "counts": {
+      "AVAILABLE": 30,
+      "TRUNCATED": 0,
+      "UNAVAILABLE": 2
+    },
+    "slices": {
+      "sn-en/development": {
+        "planned": 8,
+        "complete": 6,
+        "medianCer": 0.37332579320197634,
+        "worstCer": 0.5263157894736842,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "sn-en/additional": {
+        "planned": 8,
+        "complete": 8,
+        "medianCer": 0.4006875477463713,
+        "worstCer": 0.6272727272727273,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "en-sn/additional": {
+        "planned": 8,
+        "complete": 8,
+        "medianCer": 0.4891082220966129,
+        "worstCer": 0.644808743169399,
+        "literalMatched": 0,
+        "literalTotal": 0,
+        "screenPass": false
+      },
+      "sn-en/authored-code-switch": {
+        "planned": 8,
+        "complete": 8,
+        "medianCer": 0.0,
+        "worstCer": 0.043478260869565216,
+        "literalMatched": 19,
+        "literalTotal": 20,
+        "screenPass": false
+      }
+    },
+    "usage": {
+      "prompt_tokens": 2304,
+      "completion_tokens": 15998,
+      "total_tokens": 18302
+    },
+    "matchedAgainstFLASH": {
+      "sameInputReferenceCases": 8,
+      "completePairs": 6,
+      "better": 3,
+      "ties": 0,
+      "worse": 3
+    },
+    "matchedAgainstPRO_DEFAULT": {
+      "sameInputReferenceCases": 32,
+      "completePairs": 21,
+      "better": 6,
+      "ties": 9,
+      "worse": 6
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "results": [
+    {
+      "variant": "qwen9b",
+      "imageId": "sha256:9c86ecf855ade68c92aca7fedb993a330456e2442a1695a33aced491c5d839bc",
+      "validFrameReachedModelLoader": true,
+      "invalidFrames": 16,
+      "allRejectedBeforeModelLoad": true,
+      "noOutput": true
+    }
+  ],
+  "cases": 16,
+  "scope": "Actual native binary malformed-frame rejection; not model quality, upstream tests or application integration"
+}

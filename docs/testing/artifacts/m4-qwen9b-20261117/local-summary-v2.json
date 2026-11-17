@@ -1,0 +1,192 @@
+{
+  "DzokaAfriSlmBaseline-20261116-v1": {
+    "planSha256": "af3701f018d424fc3689a2efd3fdbff8ef110070113eeafec793646cdd226e94",
+    "resultSha256": "319c856b1e9fa97d043eb7efd1dc936f85f75fb798838dc6a398179bcfdb1abb",
+    "counts": {
+      "AVAILABLE": 20,
+      "TRUNCATED": 12,
+      "UNAVAILABLE": 0
+    },
+    "slices": {
+      "sn-en/development": {
+        "total": 8,
+        "complete": 4,
+        "medianCer": 0.4436792916871618,
+        "worstCer": 0.61,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/additional": {
+        "total": 8,
+        "complete": 4,
+        "medianCer": 0.5243097238895558,
+        "worstCer": 0.6818181818181818,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "en-sn/additional": {
+        "total": 8,
+        "complete": 4,
+        "medianCer": 0.5845671723135617,
+        "worstCer": 0.7727272727272727,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/authored-code-switch": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.11916264090177134,
+        "worstCer": 0.52,
+        "literalFragmentsMatched": 17,
+        "literalFragmentsTotal": 20
+      }
+    }
+  },
+  "DzokaAfriSlmDiagnostic-20261116-v1": {
+    "planSha256": "a9491ca648c772cbf8c8727fab6e36e61827053e185002c48c77e816e242c276",
+    "resultSha256": "32adff97476b2a76b93e2a721fc68f63429afb5a3d2bc6e2cbc8eb91c88ae4a3",
+    "counts": {
+      "AVAILABLE": 32,
+      "TRUNCATED": 0,
+      "UNAVAILABLE": 0
+    },
+    "slices": {
+      "sn-en/development": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.2974766355140187,
+        "worstCer": 0.5939849624060151,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/additional": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.4960604425256341,
+        "worstCer": 0.6666666666666666,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "en-sn/additional": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.5250188886599354,
+        "worstCer": 0.7486338797814208,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/authored-code-switch": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.06703703703703703,
+        "worstCer": 0.14,
+        "literalFragmentsMatched": 18,
+        "literalFragmentsTotal": 20
+      }
+    },
+    "matchedComplete": {
+      "count": 20,
+      "better": 15,
+      "ties": 0,
+      "worse": 5
+    }
+  },
+  "DzokaAfriSlm4BDiagnostic-20261116-v1": {
+    "planSha256": "81d1da323f4147d485c2d4c1ca47f5f7fefccdc0bd0ccdc037d38e261f29a4f9",
+    "resultSha256": "3ed0f9ab218fe5f5cdb90c6455a5455818614cfc8b1313e3b98115b539b1dce5",
+    "counts": {
+      "AVAILABLE": 32,
+      "TRUNCATED": 0,
+      "UNAVAILABLE": 0
+    },
+    "slices": {
+      "sn-en/development": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.2793027360988526,
+        "worstCer": 0.53,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/additional": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.47289080769922653,
+        "worstCer": 0.5909090909090909,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "en-sn/additional": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.4922387929909996,
+        "worstCer": 0.7715355805243446,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/authored-code-switch": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.07585470085470086,
+        "worstCer": 0.32608695652173914,
+        "literalFragmentsMatched": 18,
+        "literalFragmentsTotal": 20
+      }
+    },
+    "matchedComplete": {
+      "count": 20,
+      "better": 16,
+      "ties": 1,
+      "worse": 3
+    }
+  },
+  "DzokaQwen9BLowMemoryDiagnostic-20261117-v1": {
+    "planSha256": "56646ecaedd07d53a7b15b0cb90363a316ee0dcdb95498288e075236e53a6d77",
+    "resultSha256": "f4086fc0b673cede60754b89dbf11d6b48271f340d1f46f1afa9057ca1c4dd74",
+    "counts": {
+      "AVAILABLE": 24,
+      "TRUNCATED": 6,
+      "UNAVAILABLE": 2
+    },
+    "slices": {
+      "sn-en/development": {
+        "total": 8,
+        "complete": 7,
+        "medianCer": 0.740909090909091,
+        "worstCer": 1.0902255639097744,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/additional": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.6959043560606061,
+        "worstCer": 0.8272727272727273,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "en-sn/additional": {
+        "total": 8,
+        "complete": 1,
+        "medianCer": 0.39,
+        "worstCer": 0.39,
+        "literalFragmentsMatched": 0,
+        "literalFragmentsTotal": 0
+      },
+      "sn-en/authored-code-switch": {
+        "total": 8,
+        "complete": 8,
+        "medianCer": 0.2523209549071618,
+        "worstCer": 0.6170212765957447,
+        "literalFragmentsMatched": 15,
+        "literalFragmentsTotal": 20
+      }
+    },
+    "matchedComplete": {
+      "count": 16,
+      "better": 5,
+      "ties": 0,
+      "worse": 11
+    }
+  }
+}

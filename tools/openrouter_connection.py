@@ -63,6 +63,10 @@ def settings(path):
             temperature = v['temperature']
             if temperature is not None and (type(temperature) not in (int,float) or not 0 <= temperature <= 2):
                 raise ValueError('Explicit sampling temperature required')
+        if 'reasoningEffort' in v:
+            fields.add('reasoningEffort')
+            if not isinstance(v['reasoningEffort'],str) or v['reasoningEffort'] not in ('low','medium','high'):
+                raise ValueError('Explicit reasoning effort required')
     if set(v) != fields:
         raise ValueError('Connection settings unavailable')
     if type(v['enabled']) is not bool or v['requireZdr'] is not True or v['referenceOnly'] is not True:
@@ -143,6 +147,8 @@ def reference(path,input_path):
           'provider':{'only':config['providers'],'allow_fallbacks':False,'require_parameters':True,'data_collection':'deny','zdr':True}}
     if config.get('temperature',0) is not None:
         body['temperature'] = config.get('temperature',0)
+    if 'reasoningEffort' in config:
+        body['reasoning'] = {'effort':config['reasoningEffort'],'exclude':True}
     value=exchange('/chat/completions',key(path),body,timeout=config.get('transportTimeoutSeconds',60))
     choices=value.get('choices');provider=value.get('provider');model=value.get('model');identity=value.get('id')
     if not isinstance(choices,list) or len(choices)!=1 or not isinstance(choices[0],dict) or not isinstance(provider,str) or provider.casefold() not in {x.casefold() for x in config['providers']} or model!=config['model'] or not isinstance(identity,str) or not 1<=len(identity)<=256:raise ReferenceUnavailable('PROVIDER_IDENTITY_MISMATCH')

@@ -1,0 +1,5 @@
+Qwen3.5-9B base: Qwen / Alibaba Cloud, Apache-2.0 under the pinned model license.
+Base Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a
+GGUF export: Unsloth, explicitly Apache-2.0, unsloth/Qwen3.5-9B-GGUF@3885219b6810b007914f3a7950a8d1b469d598a5
+No Unsloth library/converter or vision projector is adopted or executed.
+Runtime source/library attribution and offline Debian/GNU notices: ../afrislm-20261116 and ../shona-cpu.

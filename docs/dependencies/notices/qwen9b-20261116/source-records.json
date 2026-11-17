@@ -1,0 +1,38 @@
+[
+  {
+    "repository": "unsloth/Qwen3.5-9B-GGUF",
+    "revision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+    "path": "README.md",
+    "gitBlob": "b876513d670a4d8a0b63b2f3016dea1a5659b245",
+    "sha256": "e50f8066e39c38cbc2da5dd94b9a9a2712b64c4921f107a5adb4b3ca5b6bbac0",
+    "bytes": 78888,
+    "lines": 1199
+  },
+  {
+    "repository": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "path": "README.md",
+    "gitBlob": "0f3972cb2c995a86bde9ac92440da530fe2b2c68",
+    "sha256": "c5f5a8c2dddab69cfbf05279235aa5fddb137939a06539c4c7637aa900fef6d0",
+    "bytes": 77643,
+    "lines": 1173
+  },
+  {
+    "repository": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "path": "LICENSE",
+    "gitBlob": "f938136e3adacfd92be087f6e113b5d6d97f678f",
+    "sha256": "bbedc3fda3305820b977265f01b8619d87570a6739de3a5582c3464840f1e57a",
+    "bytes": 11544,
+    "lines": 202
+  },
+  {
+    "repository": "Qwen/Qwen3.5-9B",
+    "revision": "c202236235762e1c871ad0ccb60c8ee5ba337b9a",
+    "path": "config.json",
+    "gitBlob": "273ce437e01baf96a07cd9eb3d5f48bac8d7c657",
+    "sha256": "d0883072e01861ed0b2d47be3c16c36a8e81c224c7ffaa310c6558fb3f932b05",
+    "bytes": 3126,
+    "lines": 103
+  }
+]

@@ -1,0 +1,16 @@
+{
+  "reviewedAt": "2026-11-17",
+  "disposition": "APPROVED_BOUNDED_DIAGNOSTIC_BEFORE_DOWNLOAD_EXECUTION",
+  "repository": "unsloth/Qwen3.5-9B-GGUF",
+  "revision": "3885219b6810b007914f3a7950a8d1b469d598a5",
+  "file": "Qwen3.5-9B-UD-IQ2_M.gguf",
+  "bytes": 3649365216,
+  "sha256": "a31b6b4c603ddd66b5496ee065c9dd13b2b6de77dce9e5d59609aef8d39868e7",
+  "metadataSha256": "0cef368cba5338908ef6a109d6c09385fb74a5c03c57f1477ca4e5ddb0823678",
+  "license": "Apache-2.0; existing exact export/base review and retained complete base license",
+  "imageId": "sha256:9c86ecf855ade68c92aca7fedb993a330456e2442a1695a33aced491c5d839bc",
+  "memoryBytes": 5368709120,
+  "memoryPlusSwapBytes": 5368709120,
+  "upstreamTests": "NOT_EXECUTED",
+  "scope": "Separate evaluation weight identity; preserve original Q4 build closure and failed memory preflight; not application activation"
+}

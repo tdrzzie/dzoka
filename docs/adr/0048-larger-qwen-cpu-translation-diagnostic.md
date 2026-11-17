@@ -1,0 +1,26 @@
+# 0048. Evaluate a larger ungated Qwen CPU translation candidate
+
+- Status: Bounded diagnostic completed; Q4 resource-blocked, separate IQ2 run fails quality
+- Date: 2026-11-16
+
+Prior MADLAD, TranslatePsy and MORENA configurations execute but fail general Shona translation screens. Test a larger model instead of promoting those failed results or lowering their thresholds. No application model identity, activation or release authority changes in this diagnostic. The mandatory source gate passes.
+
+The Sunbird 9B publisher snapshot `3d2cf2c07c792dcfd931f5875fd07b44361609bf` declares Apache-2.0 in public metadata but is gated; selected file reads returned HTTP 401. No gated weights/code were downloaded, no terms were accepted and no access control was bypassed. Preserve this limitation and use a separately ungated alternative.
+
+Approve `unsloth/Qwen3.5-9B-GGUF@3885219b6810b007914f3a7950a8d1b469d598a5`, `Qwen3.5-9B-Q4_K_M.gguf`, exactly 5,680,522,464 bytes and SHA-256 `03b74727a860a56338e042c4420bb3f04b2fec5734175f4cb9fa853daf52b7e8`. The export card explicitly declares Apache-2.0 and links the base license. The ungated base `Qwen/Qwen3.5-9B@c202236235762e1c871ad0ccb60c8ee5ba337b9a` supplies its complete Apache-2.0 license and config; selected files are independently Git-blob-verified. This does not reproduce conversion or establish which moving base revision the exporter originally used. Verify the full export digest before inference, preserve attribution, and adopt no model-supplied Python, converter, server or installer.
+
+Reuse only ADR 0045's exact reviewed llama.cpp CPU library, pinned offline Debian closure and independently authored fixed translation driver. The text config requires Qwen3.5, 32 layers and 4,096 embedding dimensions. No vision projector or image path is downloaded/executed. Pin a separate driver/build closure before building; retain CPU-only execution, two threads, 2,048 context, ≤1,536 prompt/256 output tokens, one output-logit slot and disabled extra weight repacking. Require an eight-GiB ceiling, no network, non-root/read-only execution, dropped capabilities, no new privileges, bounded process/output/deadline and exact owned cleanup. Check available guest memory before heavy inference; never stop unrelated workloads or change the shared engine to make room.
+
+Freeze the same 32 input/reference cases used by TranslatePsy before inference. Record source/prompt/model/runtime identities, unavailable/truncated coverage and exact common populations. Published broad language coverage is not verified Shona quality. Preserve all earlier images/profiles/results and unchanged screens. Do not run heavy model comparisons alongside the complete application gate. A passing native call or improved synthetic median does not establish quality or broker/core integration.
+
+Evidence: [pinned export](https://huggingface.co/unsloth/Qwen3.5-9B-GGUF/tree/3885219b6810b007914f3a7950a8d1b469d598a5), [base license/config](https://huggingface.co/Qwen/Qwen3.5-9B/tree/c202236235762e1c871ad0ccb60c8ee5ba337b9a), separate [model/source review](../dependencies/qwen9b-cpu-review.md).
+
+## November 17 resource-limited alternative
+
+The complete application gate passes before the original Q4 attempt, but its eight-GiB availability preflight fails before model inference. A separate read-only probe observes guest total 16,764,338,176 bytes and available 6,020,374,528 bytes. Preserve the failed attempt and full Q4 weights; do not stop other workloads or increase the engine allocation.
+
+Before download or execution, approve a separately pinned lower-memory diagnostic using `Qwen3.5-9B-UD-IQ2_M.gguf` from the same exact ungated export revision and Apache-2.0 license review: 3,649,365,216 bytes, LFS SHA-256 `a31b6b4c603ddd66b5496ee065c9dd13b2b6de77dce9e5d59609aef8d39868e7`. Verify the complete file before use. Quantization differs; the unexecuted Q4 configuration is not its measured baseline, and no quality equivalence is assumed.
+
+Reuse the exact existing inspected CPU binary/image and driver geometry under a separate evaluation plan binding this weight digest. The original image-build closure remains unchanged and describes its original Q4 build intent. No new library or converter executes. Existing pinned llama.cpp includes IQ2 CPU dequantization; the additional bounded static inspection covers `ggml/src/ggml-quants.c` lines 2504–2593, SHA-256 `bcda33625707fdfcb1367cdd2bb1a2f017430162ec9623abc84ad17459698f73`, including fixed block/grid/sign decoding. This is not executed upstream testing or a complete quantization audit.
+
+Keep two CPUs, original context/prompt/output budgets, frozen 32 cases, unchanged quality screens and all prior isolation/cleanup constraints. Require at least five GiB available before the new run, cap both memory and memory-plus-swap at five GiB, and retain any OOM/unavailable result rather than increasing limits or borrowing host swap. Use a new private result root and append new evaluator/result identities. The 3.40-GiB weight file leaves bounded runtime headroom within that cap; only actual execution can establish compatibility. This is evaluation permission, not production model adoption or quality approval.

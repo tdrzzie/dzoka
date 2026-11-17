@@ -1,0 +1,109 @@
+{
+  "files": [
+    {
+      "file": "Dockerfile",
+      "bytes": 2220,
+      "sha256": "6938cbcaeacc8e66808aad2d113198b7cfc09e0f26956542209fd00a6445bc24"
+    },
+    {
+      "file": "driver.cc",
+      "bytes": 7201,
+      "sha256": "2612651bd5a0dbf34fcbd9adeef9d6afc4723a6828cdb94480fa9e3fab1267a1"
+    },
+    {
+      "file": "evaluator.py",
+      "bytes": 9975,
+      "sha256": "7307b4d23ba295ff3deaf27b52439c88697513337fb49fd3c4ca635ef13e5901"
+    },
+    {
+      "file": "framing-test.py",
+      "bytes": 4468,
+      "sha256": "f7967cc783774d9b819f2f599ce7db483ac1e9602dd4ad345e775edcb1f44424"
+    },
+    {
+      "file": "summary.py",
+      "bytes": 2495,
+      "sha256": "e2ec008554622bfd1f5b870a1488ebe9b502c4b47b3eb6a6891ff81430630b48"
+    },
+    {
+      "file": "low-memory-evaluator.py",
+      "bytes": 10166,
+      "sha256": "54abba6543f42fa6ba866b98972bdb0abfbbfc7ff7a4088bba6a79b20b9c4eb3"
+    },
+    {
+      "file": "low-memory-summary.py",
+      "bytes": 2484,
+      "sha256": "23b30b78fe46fba9cf155cbf5e64205f2467e31cc46e1a9847840701244f868c"
+    },
+    {
+      "file": "framing-result.json",
+      "bytes": 442,
+      "sha256": "944d57d6946f5c1cbe0ada1f65d6d5f071232a335d95a8ed40b86bf4b787d126"
+    },
+    {
+      "file": "hosted-pro-evaluator.py",
+      "bytes": 6285,
+      "sha256": "c8489c2ae5942de9ac7c9b29bc0602a68d48c4aeb90c52190cec7ed0d5ea62cc"
+    },
+    {
+      "file": "public-reference-client-before-reasoning.py",
+      "bytes": 14007,
+      "sha256": "40f09f7af8ff13815f63ee8a8494c19609a7e8a7ab646bcd04f4b334399ca1e1"
+    },
+    {
+      "file": "hosted-pro-low-evaluator.py",
+      "bytes": 6361,
+      "sha256": "7dc473e049a078bf2d42093104001bb8583e9d3653f6053da0e556574e56b367"
+    },
+    {
+      "file": "public-reference-client-reasoning.py",
+      "bytes": 14383,
+      "sha256": "f26e9198b6a87c7150e909aeb830521ddf238f082b0ca00fe8738502e52b0c42"
+    },
+    {
+      "file": "hosted-pro-low-replay.py",
+      "bytes": 6549,
+      "sha256": "9b47678429e45e4af7efc1a80622e0ac7c5b9a622d163ceedc39a8c7486330d0"
+    },
+    {
+      "file": "low-memory-summary-v2.py",
+      "bytes": 2885,
+      "sha256": "99a24f50fbe3144123b06eb7619d7cc1790eda545f4d171d9066a6239a6f7cf0"
+    },
+    {
+      "file": "local-summary-v2.json",
+      "bytes": 5567,
+      "sha256": "958f6cf68337b8cdeabec964f6dc5dad76cae45ab83b11fc9b00a3cc4eea3422"
+    },
+    {
+      "file": "hosted-summary.py",
+      "bytes": 3435,
+      "sha256": "20438c610734a306c108746429ab538833414c3fc46c5d544056dae7b977d214"
+    },
+    {
+      "file": "hosted-summary.json",
+      "bytes": 4578,
+      "sha256": "23b6733a22a45ca56c439007c8bbdd8356f468a99f55477024f7e3586a4edc09"
+    }
+  ],
+  "imageId": "sha256:9c86ecf855ade68c92aca7fedb993a330456e2442a1695a33aced491c5d839bc",
+  "runtimeClosureSha256": "d24f25d78456f31c16bab910e74228438b60b5506bd2ce3b3ea6d7034dbb6f05",
+  "scope": "Exact diagnostics and verified aggregate summaries; Q4 preflight blocked, IQ2 fails quality, hosted low improves completion but fails general quality; no application model activation or upstream tests",
+  "binarySha256": {
+    "/usr/local/bin/dzoka-afri-translate": "5c22918ee08e4d868b9b10a9e73d90fa7831cc052f05e11b7a544a631918d3df",
+    "/opt/llama/libggml-cpu.so.1": "83bace4c41a940d6ebdd0aee386621cd79be92c46533bcbd4a9e5d7e5c209d82",
+    "/opt/llama/libggml.so": "59648289dd8f19809bb7d9f68d3f7e53f9c373e791166cb6dbe686f4d296a7e2",
+    "/opt/llama/libggml.so.1": "59648289dd8f19809bb7d9f68d3f7e53f9c373e791166cb6dbe686f4d296a7e2",
+    "/opt/llama/libggml-cpu.so": "83bace4c41a940d6ebdd0aee386621cd79be92c46533bcbd4a9e5d7e5c209d82",
+    "/opt/llama/libllama.so.1.0.0": "998a529e92d829d5b00315abfd329464a4979a8b3d3c5846aba2060c3e402bd8",
+    "/opt/llama/libggml-base.so.1.0.0": "ac8f63b1ee0133d97d1a8d3896bd5b19be89e05a739b0e65af70fc0fdc6e245c",
+    "/opt/llama/libggml.so.1.0.0": "59648289dd8f19809bb7d9f68d3f7e53f9c373e791166cb6dbe686f4d296a7e2",
+    "/opt/llama/libllama.so.1": "998a529e92d829d5b00315abfd329464a4979a8b3d3c5846aba2060c3e402bd8",
+    "/opt/llama/libggml-base.so": "ac8f63b1ee0133d97d1a8d3896bd5b19be89e05a739b0e65af70fc0fdc6e245c",
+    "/opt/llama/libggml-base.so.1": "ac8f63b1ee0133d97d1a8d3896bd5b19be89e05a739b0e65af70fc0fdc6e245c",
+    "/opt/llama/libggml-cpu.so.1.0.0": "83bace4c41a940d6ebdd0aee386621cd79be92c46533bcbd4a9e5d7e5c209d82",
+    "/opt/llama/libllama.so": "998a529e92d829d5b00315abfd329464a4979a8b3d3c5846aba2060c3e402bd8"
+  },
+  "systemPackages": "gcc-12-base:amd64\t12.2.0-14+deb12u1\nlibc-bin\t2.36-9+deb12u14\nlibc6:amd64\t2.36-9+deb12u14\nlibgcc-s1:amd64\t12.2.0-14+deb12u1\nlibstdc++6:amd64\t12.2.0-14+deb12u1\n",
+  "upstreamTests": "NOT_EXECUTED"
+}

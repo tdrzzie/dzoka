@@ -73,6 +73,7 @@ def main():
            ('isolated-model-broker',['tools/verify_model_broker.py']),
            ('broker-death-and-integrity',['tools/verify_broker_recovery.py']),
            ('managed-broker-operations',['tools/verify_managed_operations.py']),
+           ('current-account-interactive-deployment',['tools/verify_current_setup.py']),
            ('private-quality-protocols',['tools/verify_quality_protocols.py']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]

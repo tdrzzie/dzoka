@@ -1,0 +1,29 @@
+{
+  "priorSourceSha256": "18ad8ad9124eb753dc74389a02d9b57097cfce0044cd326e56c327125b73cc32",
+  "finalSourceSha256": "64bb1f5c77d23de455466c699aa1a6a8992e7f2aa2dbdba2fdce291d394781ac",
+  "algorithm": "tools/verify_local.py source_digest, exact included paths and bytes",
+  "verified": true,
+  "method": "Apply the five historical source overrides to final source; the entire prior digest matches exactly. Regression method removal/newline reconstruction was accepted only after that full cryptographic match.",
+  "overrides": {
+    "tools/current_setup_worker.py": {
+      "artifact": "docs/testing/artifacts/m4-current-account-20261117-v1/current_setup_worker.py",
+      "sha256": "74ce269a940ca2a621b659b11a7d81a1c559c7ce605828762007565ca4903466"
+    },
+    "ai/interactive-deployment.lock.json": {
+      "artifact": "docs/testing/artifacts/m4-current-account-20261117-v1/interactive-deployment.lock.json",
+      "sha256": "7b1ee4e7e80bef38e0b032647c06493dbf8f7a22b39e373759262361beb27f49"
+    },
+    "tools/openrouter_connection.py": {
+      "artifact": "docs/testing/artifacts/m4-qwen9b-20261117/public-reference-client-before-reasoning.py",
+      "sha256": "40f09f7af8ff13815f63ee8a8494c19609a7e8a7ab646bcd04f4b334399ca1e1"
+    },
+    "tests/test_current_setup.py": {
+      "artifact": "docs/testing/artifacts/m4-current-account-20261117-v1/test_current_setup.py",
+      "sha256": "63bae5ed4175b525974cc109abc2248b1acd2258668c0d369f344e28795621eb"
+    },
+    "tests/test_openrouter_connection.py": {
+      "artifact": "docs/testing/artifacts/m4-current-account-20261117-v1/test_openrouter_connection.py",
+      "sha256": "a720cc5b26927e583b917896fd33561bc7727423fc028a5183895bd160c7477e"
+    }
+  }
+}

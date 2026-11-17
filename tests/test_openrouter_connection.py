@@ -125,4 +125,29 @@ class OpenRouterConnectionTests(unittest.TestCase):
             with patch.object(client,'read_private',return_value={**config,'temperature':value}),self.assertRaises(ValueError):
                 client.settings('settings')
 
+    def test_reasoning_effort_is_opt_in_bounded_and_preserves_private_input_denial(self):
+        base={**self.config,'schemaVersion':2,'transportTimeoutSeconds':180}
+        configurations=[base,{**base,'reasoningEffort':'low'}]
+        bodies=[];digests=[]
+        for config in configurations:
+            with patch.object(client,'read_private',side_effect=lambda p,*a:config if str(p)=='settings' else self.source),patch.object(client,'key',return_value='synthetic'),patch.object(client,'exchange',return_value=self.response) as send:
+                result=client.reference('settings','source')
+            bodies.append(send.call_args.args[2]);digests.append(result['configurationSha256'])
+        self.assertNotIn('reasoning',bodies[0])
+        self.assertEqual({'effort':'low','exclude':True},bodies[1]['reasoning'])
+        self.assertEqual(bodies[0]['max_tokens'],bodies[1]['max_tokens'])
+        self.assertEqual(bodies[0]['provider'],bodies[1]['provider'])
+        self.assertNotEqual(digests[0],digests[1])
+        private_source={**self.source,'classification':'TENANT_PRIVATE'}
+        with patch.object(client,'read_private',side_effect=lambda p,*a:configurations[1] if str(p)=='settings' else private_source),patch.object(client,'exchange') as send,self.assertRaises(ValueError):
+            client.reference('settings','source')
+        send.assert_not_called()
+
+    def test_reasoning_effort_rejects_unreviewed_values_and_legacy_schema(self):
+        for value in (True,None,[],{},'none','LOW','low\n',1024):
+            with self.subTest(value=value),patch.object(client,'read_private',return_value={**self.config,'schemaVersion':2,'transportTimeoutSeconds':180,'reasoningEffort':value}),self.assertRaises(ValueError):
+                client.settings('settings')
+        with patch.object(client,'read_private',return_value={**self.config,'reasoningEffort':'low'}),self.assertRaises(ValueError):
+            client.settings('settings')
+
 if __name__=='__main__':unittest.main()
