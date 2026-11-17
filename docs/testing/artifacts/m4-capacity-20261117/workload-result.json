@@ -1,0 +1,184 @@
+{
+  "status": "RECORDED",
+  "ledgerSha256": "1bbee2b0b7848f7b1fc4a2acfde229383028d99a67de8563791a2168ed935630",
+  "planSha256": "f50bd62763586aaf1077a97fe60c79f60e14e4789c8fa345bf0692c291de9923",
+  "hostEvidenceSha256": "27e61a24e0c0e036a440f4150f7fd3c7926592e9a8c5a6a5c7db7fc5eaa886db",
+  "managementReceiptSha256": "20f71912c8908a297e7773333a26a066608a65eec77bcee9d75303f1bcefdd16",
+  "protocolSourceSha256": "d98d38bb887ad0183cfcef119db489cf30408211339ac68e9347fd2ffea3824b",
+  "results": [
+    {
+      "profile": "ISO_GENERATIVE_LLM_EN",
+      "profileKey": "febe93b70e22d221c47b7871ba02c76bac5ec15cfeb7c21d2771c071a133be77",
+      "inputSha256": "05bd67cfd8a2a7b32cbc7268eb637c49bcb4cb5536bd7916de6d95f908d85cc3",
+      "warmup": {
+        "available": 1,
+        "availableMaxMs": 20920.6866,
+        "availableMinMs": 20920.6866,
+        "availableP50Ms": 20920.6866,
+        "availableP95Ms": 20920.6866,
+        "availableP99Ms": 20920.6866,
+        "not_dispatched": 0,
+        "planned": 1,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "measured": {
+        "available": 2,
+        "availableMaxMs": 23886.8375,
+        "availableMinMs": 23371.4707,
+        "availableP50Ms": 23371.4707,
+        "availableP95Ms": 23886.8375,
+        "availableP99Ms": 23886.8375,
+        "not_dispatched": 0,
+        "planned": 2,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "truncation": {
+        "inputTruncated": {
+          "true": 0,
+          "false": 2,
+          "unknown": 0
+        },
+        "outputTruncated": {
+          "true": 0,
+          "false": 2,
+          "unknown": 0
+        }
+      }
+    },
+    {
+      "profile": "ISO_QUALITY_SMOL360_EN",
+      "profileKey": "fd52904d48eb5eb21855ae662aa3c7b67cfe22844a6c16fedce03753c2d1f28d",
+      "inputSha256": "05bd67cfd8a2a7b32cbc7268eb637c49bcb4cb5536bd7916de6d95f908d85cc3",
+      "warmup": {
+        "available": 1,
+        "availableMaxMs": 23193.178,
+        "availableMinMs": 23193.178,
+        "availableP50Ms": 23193.178,
+        "availableP95Ms": 23193.178,
+        "availableP99Ms": 23193.178,
+        "not_dispatched": 0,
+        "planned": 1,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "measured": {
+        "available": 2,
+        "availableMaxMs": 34246.5775,
+        "availableMinMs": 27606.2915,
+        "availableP50Ms": 27606.2915,
+        "availableP95Ms": 34246.5775,
+        "availableP99Ms": 34246.5775,
+        "not_dispatched": 0,
+        "planned": 2,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "truncation": {
+        "inputTruncated": {
+          "true": 0,
+          "false": 2,
+          "unknown": 0
+        },
+        "outputTruncated": {
+          "true": 0,
+          "false": 2,
+          "unknown": 0
+        }
+      }
+    },
+    {
+      "profile": "ISO_PERCEPTION_SPEECH",
+      "profileKey": "da00a1b148e05b600d537f3abc048b3874a57acafaca33aab2da7fb8fe3f093f",
+      "inputSha256": "784136a1bbb9f7c78a714979eca536a3cb3f2a8a56a04914310eb4baf4ff4157",
+      "warmup": {
+        "available": 1,
+        "availableMaxMs": 25787.6882,
+        "availableMinMs": 25787.6882,
+        "availableP50Ms": 25787.6882,
+        "availableP95Ms": 25787.6882,
+        "availableP99Ms": 25787.6882,
+        "not_dispatched": 0,
+        "planned": 1,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "measured": {
+        "available": 2,
+        "availableMaxMs": 29374.3498,
+        "availableMinMs": 27880.0596,
+        "availableP50Ms": 27880.0596,
+        "availableP95Ms": 29374.3498,
+        "availableP99Ms": 29374.3498,
+        "not_dispatched": 0,
+        "planned": 2,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "truncation": {
+        "inputTruncated": {
+          "true": 0,
+          "false": 0,
+          "unknown": 2
+        },
+        "outputTruncated": {
+          "true": 0,
+          "false": 0,
+          "unknown": 2
+        }
+      }
+    },
+    {
+      "profile": "ISO_REFINEMENT_WHISPER_DISTIL_SMALL_EN",
+      "profileKey": "d9402dc5e2c6ae173402bb30b2aa77bd6ec11145ca896faf66371b733f393034",
+      "inputSha256": "784136a1bbb9f7c78a714979eca536a3cb3f2a8a56a04914310eb4baf4ff4157",
+      "warmup": {
+        "available": 1,
+        "availableMaxMs": 29758.0586,
+        "availableMinMs": 29758.0586,
+        "availableP50Ms": 29758.0586,
+        "availableP95Ms": 29758.0586,
+        "availableP99Ms": 29758.0586,
+        "not_dispatched": 0,
+        "planned": 1,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "measured": {
+        "available": 2,
+        "availableMaxMs": 28224.0601,
+        "availableMinMs": 26590.2652,
+        "availableP50Ms": 26590.2652,
+        "availableP95Ms": 28224.0601,
+        "availableP99Ms": 28224.0601,
+        "not_dispatched": 0,
+        "planned": 2,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "truncation": {
+        "inputTruncated": {
+          "true": 0,
+          "false": 0,
+          "unknown": 2
+        },
+        "outputTruncated": {
+          "true": 0,
+          "false": 0,
+          "unknown": 2
+        }
+      }
+    }
+  ],
+  "cleanupConfirmed": true,
+  "scope": "Authored shared-host standalone serial calls; managed-parent envelope, queue/load and quality excluded; no SLO or model approval"
+}

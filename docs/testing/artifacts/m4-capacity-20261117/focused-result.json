@@ -1,0 +1,84 @@
+{
+  "status": "PASS",
+  "checks": [
+    "actual_isolated_text_warmup_and_two_measured_calls",
+    "actual_invalid_utf8_is_unavailable_not_retried",
+    "receipt_profile_input_and_output_provenance",
+    "available_only_percentiles_and_separate_coverage",
+    "redacted_flushed_hash_chain_never_grants_slo_or_release",
+    "exclusive_output_preserves_previous_execution",
+    "native_broad_input_read_rejected_before_dispatch",
+    "actual_state_owner_lock_excludes_competing_dispatch",
+    "real_call_exhausts_admission_budget_without_false_zero_latency",
+    "owned_profiles_and_bundle_grants_confirmed_clean"
+  ],
+  "managementReceiptSha256": "f79dc31dff0b5a1b8645cf4b552b4ac0ba859208c332a65a0068ee050a60a8bf",
+  "protocolSourceSha256": "d98d38bb887ad0183cfcef119db489cf30408211339ac68e9347fd2ffea3824b",
+  "ledgerSha256": "0fffa138fe0c86683100eccb3bc5539a090c2c95299ce94b5a7f8600148c4e1b",
+  "budgetLedgerSha256": "f8afda6fe0c6a8ca0a1cf4f09edcbad983e45a4516c1a6a0409bd00c78208797",
+  "measuredEntries": [
+    {
+      "entry": 0,
+      "inputSha256": "992f5d7e5ffe03f9cdd91530d5da30fa2c51b90485aae2f79a3ac2e165f6a93f",
+      "measured": {
+        "available": 2,
+        "availableMaxMs": 50123.2909,
+        "availableMinMs": 27792.3111,
+        "availableP50Ms": 27792.3111,
+        "availableP95Ms": 50123.2909,
+        "availableP99Ms": 50123.2909,
+        "not_dispatched": 0,
+        "planned": 2,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "profileKey": "aca5f9783a33461812802b3749103b4c940a32cfb7b8630949db7c020b34647a",
+      "warmup": {
+        "available": 1,
+        "availableMaxMs": 45053.0164,
+        "availableMinMs": 45053.0164,
+        "availableP50Ms": 45053.0164,
+        "availableP95Ms": 45053.0164,
+        "availableP99Ms": 45053.0164,
+        "not_dispatched": 0,
+        "planned": 1,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      }
+    },
+    {
+      "entry": 1,
+      "inputSha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "measured": {
+        "available": 0,
+        "availableMaxMs": null,
+        "availableMinMs": null,
+        "availableP50Ms": null,
+        "availableP95Ms": null,
+        "availableP99Ms": null,
+        "not_dispatched": 0,
+        "planned": 1,
+        "unavailable": 1,
+        "unconfirmed": 0,
+        "unobserved": 0
+      },
+      "profileKey": "aca5f9783a33461812802b3749103b4c940a32cfb7b8630949db7c020b34647a",
+      "warmup": {
+        "available": 0,
+        "availableMaxMs": null,
+        "availableMinMs": null,
+        "availableP50Ms": null,
+        "availableP95Ms": null,
+        "availableP99Ms": null,
+        "not_dispatched": 0,
+        "planned": 0,
+        "unavailable": 0,
+        "unconfirmed": 0,
+        "unobserved": 0
+      }
+    }
+  ],
+  "scope": "Serial fresh-process model path on a shared host; authored inputs; no HTTP/DB queue, saturation, quality or production SLO acceptance"
+}

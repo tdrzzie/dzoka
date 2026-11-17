@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "executedSourceSha256": "8833ea2e3941c754c919b0a707ab9ceeb23af20184b01ef291b2875a5e7e9b13",
+  "gateSha256": "548c08690cd3935499575593243a2e1bbe21d21919f5d156a2ef523710048289",
+  "overrides": {
+    "tools/verify_current_setup.py": {
+      "file": "verify_current_setup.py",
+      "sha256": "a898328ed1eabb790aa5a0cf6c55261bb06d02f61e7d6a79246ba51f2ef82130"
+    },
+    "tools/verify_local.py": {
+      "file": "verify_local.py",
+      "sha256": "7ad455049ba6e5d842810c31f6acc3433ce1215a1c3b5cdad8c80f22c445358a"
+    },
+    "src/test/java/org/dzoka/CurrentSetupWorkerIT.java": {
+      "file": "CurrentSetupWorkerIT.java",
+      "sha256": "461917fcf1954437be44d35fdb14d9d97a6f46adea0585fb3387fd89bbc67273"
+    }
+  },
+  "excludeFromNewerSource": [
+    "tests/test_current_setup_verifier.py"
+  ],
+  "scope": "Failed combined 360-second explicit restart startup wait; 20 preceding phases pass; no integration/restore execution"
+}

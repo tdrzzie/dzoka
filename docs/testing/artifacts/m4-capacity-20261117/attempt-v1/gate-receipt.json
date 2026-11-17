@@ -1,0 +1,138 @@
+{
+  "startedAt": "2026-11-17T13:54:29.966378+00:00",
+  "status": "FAIL",
+  "brokerBundleSha256": "2382b945fbe3532f6253246d969a41d7d51623b2cc737630c64a09f49738b027",
+  "managedReleaseSha256": "f79dc31dff0b5a1b8645cf4b552b4ac0ba859208c332a65a0068ee050a60a8bf",
+  "s3Backend": "reviewed-native-4.51",
+  "nativeS3Sha256": "f3a9522f4900408d8e230f98516cd9c75fa90da3cfc96dc0fd9fbed380fc8001",
+  "inputSha256": "8833ea2e3941c754c919b0a707ab9ceeb23af20184b01ef291b2875a5e7e9b13",
+  "phases": [
+    {
+      "name": "source-gate",
+      "exitCode": 0,
+      "seconds": 0.329,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "architecture",
+      "exitCode": 0,
+      "seconds": 0.27,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "python-regressions",
+      "exitCode": 0,
+      "seconds": 31.261,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "java-artifact-lock",
+      "exitCode": 0,
+      "seconds": 5.468,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "native-model-artifacts",
+      "exitCode": 0,
+      "seconds": 0.574,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "native-model-conformance",
+      "exitCode": 0,
+      "seconds": 24.521,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "perception-artifacts",
+      "exitCode": 0,
+      "seconds": 0.765,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "joint-region-artifacts",
+      "exitCode": 0,
+      "seconds": 1.303,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "language-artifacts",
+      "exitCode": 0,
+      "seconds": 0.538,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "generative-artifacts",
+      "exitCode": 0,
+      "seconds": 0.906,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "generative-installed-runtime",
+      "exitCode": 0,
+      "seconds": 14.53,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "quality-artifacts",
+      "exitCode": 0,
+      "seconds": 1.23,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-cpu-artifacts",
+      "exitCode": 0,
+      "seconds": 0.599,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "shona-cpu-native-probes",
+      "exitCode": 0,
+      "seconds": 44.92,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "docker-guardian-lifecycle",
+      "exitCode": 0,
+      "seconds": 18.558,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "worker-service-recovery",
+      "exitCode": 0,
+      "seconds": 68.662,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "offline-boundary-and-archive",
+      "exitCode": 0,
+      "seconds": 18.567,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "isolated-model-broker",
+      "exitCode": 0,
+      "seconds": 1130.683,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "broker-death-and-integrity",
+      "exitCode": 0,
+      "seconds": 77.587,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "managed-broker-operations",
+      "exitCode": 0,
+      "seconds": 73.663,
+      "timeoutSeconds": 1800
+    },
+    {
+      "name": "current-account-interactive-deployment",
+      "exitCode": 1,
+      "seconds": 825.616,
+      "timeoutSeconds": 1800
+    }
+  ],
+  "scope": "Implemented foundation/intake/multimodal/generative slice; not full specification or production acceptance"
+}

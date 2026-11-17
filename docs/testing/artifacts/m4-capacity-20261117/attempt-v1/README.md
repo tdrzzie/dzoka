@@ -1,0 +1,7 @@
+# Failed first full attempt
+
+`gate-receipt.json` preserves the actual FAIL receipt: twenty phases pass, then the installed-task explicit restart does not reach observable readiness within the original combined 360-second wait. Integration/restore did not run. No failing phase is relabeled PASS. The private fixture remains outside Git; no credentials or private configuration are copied here.
+
+`manifest.json` binds exact prior `verify_current_setup.py`, `verify_local.py` and `CurrentSetupWorkerIT.java` bytes. To reproduce executed source `8833ea2e...` from the later corrected working inventory, override those paths with the retained bytes and exclude the subsequently added `tests/test_current_setup_verifier.py`. Verify all per-file hashes and the whole digest. `canonical-source-overlay.json` separately records that attempt's original canonical Git baseline and three pre-existing LF→CRLF working-copy differences. These are historical source/receipt records, not runtime patches or evidence of a successful later attempt.
+
+The correction strengthens generation/ownership/terminal-state observations and explicitly bounds slow initial/explicit startup in the test harness. It changes no actual deployed worker code, task policy, restart budget, provider identity or checksum/ACL check. Wider diagnostic wait bounds do not establish a production startup SLO or identify/repair the original delay cause. See the [investigation](../../../m4-model-capacity-2026-11-17.md).

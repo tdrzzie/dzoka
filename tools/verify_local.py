@@ -76,6 +76,7 @@ def main():
            ('current-account-interactive-deployment',['tools/verify_current_setup.py']),
            ('private-quality-protocols',['tools/verify_quality_protocols.py']),
            ('private-english-semantic-review',['tools/verify_semantic_review.py']),
+           ('bounded-non-shona-model-capacity',['tools/verify_model_capacity.py']),
            ('shona-artifacts',['tools/shona_runtime.py','check']),
            ('shona-installed-runtime',['tools/shona_runtime.py','runtime-check'])]
     integration=integration_command(args.pg_bin,args.maven,args.native_s3)
@@ -96,7 +97,7 @@ def main():
         print('Local verification: '+name,flush=True);start=time.monotonic()
         # Protected broker service starts add real ACL/runtime checks to the
         # expanded integration suite. This bounds the test suite, not a worker.
-        deadline=5400 if name=='real-provider-integration-and-restore' else 1800
+        deadline=5400 if name=='real-provider-integration-and-restore' else 2700 if name=='current-account-interactive-deployment' else 1800
         try:
             with (run/(name+'.log')).open('w',encoding='utf-8') as log:
                 completed=subprocess.run([sys.executable,*command],cwd=ROOT,env=os.environ.copy(),

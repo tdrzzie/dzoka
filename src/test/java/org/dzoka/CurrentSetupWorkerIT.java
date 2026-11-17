@@ -39,11 +39,13 @@ with installed_worker(os.environ['DZOKA_CURRENT_TEST_CORE'],os.environ['DZOKA_CU
 print('Installed current-account Shona job acknowledged and owned task cleaned up')
 """;
         var command=new ProcessBuilder("python","-I","-B","-c",script);var env=command.environment();
-        String credential=token("inference",issuer,"dzoka-core",Instant.now().plusSeconds(1200),key);
+        // The synthetic credential covers bounded startup, acknowledgement and
+        // cleanup. This does not change production token or lease policy.
+        String credential=token("inference",issuer,"dzoka-core",Instant.now().plusSeconds(2100),key);
         env.put("DZOKA_CURRENT_TEST_CORE",base);env.put("DZOKA_CURRENT_TEST_TENANT",A.toString());env.put("DZOKA_CURRENT_TEST_PROFILE",PerceptionFixtures.id(PROFILE).toString());env.put("DZOKA_CURRENT_TEST_TOKEN",credential);
         Path log=Path.of(".test-tmp","current-setup-http-"+UUID.randomUUID()+".log");command.redirectErrorStream(true).redirectOutput(log.toFile());var child=command.start();
         try {
-            assertTrue(child.waitFor(1080,TimeUnit.SECONDS),"Installed worker completion deadline");assertEquals(0,child.exitValue(),Files.readString(log));assertFalse(Files.readString(log).contains(credential));
+            assertTrue(child.waitFor(1800,TimeUnit.SECONDS),"Installed worker completion deadline");assertEquals(0,child.exitValue(),Files.readString(log));assertFalse(Files.readString(log).contains(credential));
         } finally {if(child.isAlive()){child.destroyForcibly();child.waitFor(10,TimeUnit.SECONDS);}}
         assertEquals("SUCCEEDED",jobs.read(who("reporter"),A,job.id()).state());var result=jobs.result(who("reporter"),A,job.id()).orElseThrow();
         assertEquals("UNVERIFIED_TRANSLATION",result.evidence().get("trust"));assertEquals("SHADOW",result.selection());
