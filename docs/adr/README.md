@@ -67,4 +67,7 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 | 0049 | [Private semantic-review evidence](0049-private-semantic-review-evidence.md) | Implemented; fifteen focused regressions, seven native checks and full 26-phase local gate pass |
 | 0050 | [Bounded local model-capacity diagnostics](0050-bounded-local-model-capacity-diagnostics.md) | Implemented; twelve capacity/seven readiness regressions, ten capacity native cases and full 27-phase local gate pass |
 
+| 0051 | [Current-account queue and recovery acceptance](0051-current-account-queue-recovery-acceptance.md) | Two installed-worker queue runs and the complete local gate pass |
+| 0052 | [Direct OpenAI public-reference connection](0052-direct-openai-public-reference-connection.md) | Enabled for public translation diagnostics |
+
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

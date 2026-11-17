@@ -1,0 +1,388 @@
+{
+  "evidence": {
+    "planSha256": "acd874d8082123e418eaa7f4fe86eb09b329c614595a6d860dd5371a5338b9a0",
+    "privateSummarySha256": "6d4b7ba6dcfb186031a5c04094fad11fb2335188c8ed3adb832ee9cf4c494741",
+    "clientSha256": "b415f43aa69006ba1d1068bb184b7a4e2f175b56a44396ebab60beedd6a3ed64",
+    "configurationSha256": "7d8c3a249c7092aabb80d15c56ff935533e9c82260b0a1770823c8eb5f993ec7",
+    "runnerSha256": "f01e80bf8806321d2ca1a9535f57500582d4c03f4a2461fc5afb3fb9bb311dfe",
+    "scorerSha256": "2200b809b49e893987d881f701682bb5156350ddbf29b674804620cf7f83d0c8",
+    "localComparisons": {
+      "CPU baseline": {
+        "resultSha256": "319c856b1e9fa97d043eb7efd1dc936f85f75fb798838dc6a398179bcfdb1abb",
+        "planSha256": "af3701f018d424fc3689a2efd3fdbff8ef110070113eeafec793646cdd226e94"
+      },
+      "TranslatePsy 0.8B": {
+        "resultSha256": "32adff97476b2a76b93e2a721fc68f63429afb5a3d2bc6e2cbc8eb91c88ae4a3",
+        "planSha256": "a9491ca648c772cbf8c8727fab6e36e61827053e185002c48c77e816e242c276"
+      },
+      "TranslatePsy 4B": {
+        "resultSha256": "3ed0f9ab218fe5f5cdb90c6455a5455818614cfc8b1313e3b98115b539b1dce5",
+        "planSha256": "81d1da323f4147d485c2d4c1ca47f5f7fefccdc0bd0ccdc037d38e261f29a4f9"
+      },
+      "MORENA zero-shot": {
+        "resultSha256": "1b3c41a080b3959fcd00fe7f8a9212904ef7d00a000a0149cc65e94dd3936f1b",
+        "planSha256": "637ce6f68c5f403686edc14956fcd59b6c3ebb827fcd683a794395cd081aa318"
+      },
+      "MORENA three-shot": {
+        "resultSha256": "619e5e5f7812f6acfcb200887e4b5a75485b1d747f3a807c96a420db75fca505",
+        "planSha256": "e2ba9f08e9a9fe5ca872b811b83a50968e1c8af4257d7bd09fca46f852ec19f5"
+      }
+    }
+  },
+  "openai": {
+    "planSha256": "acd874d8082123e418eaa7f4fe86eb09b329c614595a6d860dd5371a5338b9a0",
+    "overall": {
+      "counts": {
+        "AVAILABLE": 48
+      },
+      "medianCer": 0.39163852539749544,
+      "worstCer": 0.948051948051948,
+      "literalMatched": 16
+    },
+    "slices": {
+      "sn-en/development": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.29439252336448596,
+        "worstCer": 0.6090225563909775,
+        "literalMatched": 0,
+        "screenPassed": false
+      },
+      "sn-en/additional": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.3538406188163339,
+        "worstCer": 0.6262626262626263,
+        "literalMatched": 0,
+        "screenPassed": false
+      },
+      "en-sn/additional": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.5171908660060318,
+        "worstCer": 0.8014981273408239,
+        "literalMatched": 0,
+        "screenPassed": false
+      },
+      "sn-en/authored-code-switch": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.039230769230769236,
+        "worstCer": 0.14285714285714285,
+        "literalMatched": 16,
+        "screenPassed": false
+      },
+      "en-sn/smol-additional": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.6723208623969563,
+        "worstCer": 0.948051948051948,
+        "literalMatched": 0,
+        "screenPassed": false
+      },
+      "sn-en/smol-additional": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.41625,
+        "worstCer": 0.686046511627907,
+        "literalMatched": 0,
+        "screenPassed": false
+      }
+    },
+    "pairs": {
+      "CPU baseline": {
+        "count": 20,
+        "lowerCer": 17,
+        "ties": 1,
+        "higherCer": 2,
+        "slices": {
+          "sn-en/development": {
+            "counts": {
+              "AVAILABLE": 4,
+              "TRUNCATED": 4
+            },
+            "medianCer": 0.4436792916871618,
+            "worstCer": 0.61,
+            "literalMatched": 0
+          },
+          "sn-en/additional": {
+            "counts": {
+              "TRUNCATED": 4,
+              "AVAILABLE": 4
+            },
+            "medianCer": 0.5243097238895558,
+            "worstCer": 0.6818181818181818,
+            "literalMatched": 0
+          },
+          "en-sn/additional": {
+            "counts": {
+              "TRUNCATED": 4,
+              "AVAILABLE": 4
+            },
+            "medianCer": 0.5845671723135617,
+            "worstCer": 0.7727272727272727,
+            "literalMatched": 0
+          },
+          "sn-en/authored-code-switch": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.11916264090177134,
+            "worstCer": 0.52,
+            "literalMatched": 17
+          }
+        }
+      },
+      "TranslatePsy 0.8B": {
+        "count": 32,
+        "lowerCer": 22,
+        "ties": 1,
+        "higherCer": 9,
+        "slices": {
+          "sn-en/development": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.2974766355140187,
+            "worstCer": 0.5939849624060151,
+            "literalMatched": 0
+          },
+          "sn-en/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.4960604425256341,
+            "worstCer": 0.6666666666666666,
+            "literalMatched": 0
+          },
+          "en-sn/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.5250188886599354,
+            "worstCer": 0.7486338797814208,
+            "literalMatched": 0
+          },
+          "sn-en/authored-code-switch": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.06703703703703703,
+            "worstCer": 0.14,
+            "literalMatched": 18
+          }
+        }
+      },
+      "TranslatePsy 4B": {
+        "count": 32,
+        "lowerCer": 21,
+        "ties": 1,
+        "higherCer": 10,
+        "slices": {
+          "sn-en/development": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.2793027360988526,
+            "worstCer": 0.53,
+            "literalMatched": 0
+          },
+          "sn-en/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.47289080769922653,
+            "worstCer": 0.5909090909090909,
+            "literalMatched": 0
+          },
+          "en-sn/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.4922387929909996,
+            "worstCer": 0.7715355805243446,
+            "literalMatched": 0
+          },
+          "sn-en/authored-code-switch": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.07585470085470086,
+            "worstCer": 0.32608695652173914,
+            "literalMatched": 18
+          }
+        }
+      },
+      "MORENA zero-shot": {
+        "count": 48,
+        "lowerCer": 46,
+        "ties": 0,
+        "higherCer": 2,
+        "slices": {
+          "sn-en/development": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.7841588785046729,
+            "worstCer": 1.203883495145631,
+            "literalMatched": 0
+          },
+          "sn-en/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.8676470588235294,
+            "worstCer": 1.103896103896104,
+            "literalMatched": 0
+          },
+          "en-sn/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.681610857714985,
+            "worstCer": 1.0601092896174864,
+            "literalMatched": 0
+          },
+          "sn-en/authored-code-switch": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 1.2133333333333334,
+            "worstCer": 1.58,
+            "literalMatched": 19
+          },
+          "en-sn/smol-additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 1.1710370895346092,
+            "worstCer": 1.4675324675324675,
+            "literalMatched": 0
+          },
+          "sn-en/smol-additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 1.116349303849304,
+            "worstCer": 1.4698795180722892,
+            "literalMatched": 0
+          }
+        }
+      },
+      "MORENA three-shot": {
+        "count": 48,
+        "lowerCer": 31,
+        "ties": 1,
+        "higherCer": 16,
+        "slices": {
+          "sn-en/development": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.35228070175438597,
+            "worstCer": 0.849624060150376,
+            "literalMatched": 0
+          },
+          "sn-en/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.5279119318181817,
+            "worstCer": 0.8226299694189603,
+            "literalMatched": 0
+          },
+          "en-sn/additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.5635375494071146,
+            "worstCer": 0.7377049180327869,
+            "literalMatched": 0
+          },
+          "sn-en/authored-code-switch": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.044642857142857144,
+            "worstCer": 0.36,
+            "literalMatched": 19
+          },
+          "en-sn/smol-additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.5313630306491528,
+            "worstCer": 0.8311688311688312,
+            "literalMatched": 0
+          },
+          "sn-en/smol-additional": {
+            "counts": {
+              "AVAILABLE": 8
+            },
+            "medianCer": 0.5865427927927929,
+            "worstCer": 0.8192771084337349,
+            "literalMatched": 0
+          }
+        }
+      }
+    },
+    "usage": {
+      "input_tokens": 3834,
+      "output_tokens": 3068,
+      "total_tokens": 6902
+    },
+    "qualityApproval": "NOT_ESTABLISHED"
+  },
+  "hostedComparisons": {
+    "Gemini 3 Flash Preview": {
+      "summarySha256": "57493e6cfb2b25c3960cf9bfa213dd8da692d95a143de1f75fc4a3b3424cc984",
+      "matchedCases": 8,
+      "historicalComplete": 8,
+      "commonComplete": 8,
+      "openaiLowerCer": 2,
+      "equalCer": 2,
+      "openaiHigherCer": 4,
+      "openaiMedianOnPairs": 0.29439252336448596,
+      "historicalMedianOnPairs": 0.23985981308411214
+    },
+    "Qwen 235B": {
+      "summarySha256": "08964e714038a65745ce4ad5b1c9d140ca732f473fe80007784fe9813ae379ec",
+      "matchedCases": 8,
+      "historicalComplete": 8,
+      "commonComplete": 8,
+      "openaiLowerCer": 7,
+      "equalCer": 1,
+      "openaiHigherCer": 0,
+      "openaiMedianOnPairs": 0.29439252336448596,
+      "historicalMedianOnPairs": 0.4874271844660194
+    },
+    "Gemini Pro medium": {
+      "summarySha256": "564b1e49fae7d6a57946fb3067de552ea276e7337745349a201ea1cbcc309e40",
+      "matchedCases": 32,
+      "historicalComplete": 23,
+      "commonComplete": 23,
+      "openaiLowerCer": 11,
+      "equalCer": 4,
+      "openaiHigherCer": 8,
+      "openaiMedianOnPairs": 0.19387755102040816,
+      "historicalMedianOnPairs": 0.25
+    },
+    "Gemini Pro low": {
+      "summarySha256": "faf31d6eee4530fe72b477e16262e17ed2180947aec3c7f8de91ae3eba43ae4e",
+      "matchedCases": 32,
+      "historicalComplete": 30,
+      "commonComplete": 30,
+      "openaiLowerCer": 10,
+      "equalCer": 5,
+      "openaiHigherCer": 15,
+      "openaiMedianOnPairs": 0.30808265186915884,
+      "historicalMedianOnPairs": 0.38068524903095113
+    }
+  }
+}

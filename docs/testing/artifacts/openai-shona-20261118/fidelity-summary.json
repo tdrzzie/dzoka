@@ -1,0 +1,223 @@
+{
+  "planSha256": "f13904eb79f4bb0520b8ea8c41b5d14811d1594471d4684ae150651e6176bb83",
+  "selected": 12,
+  "observed": 12,
+  "complete": 12,
+  "rows": [
+    {
+      "ordinal": 0,
+      "direction": "sn-en",
+      "slice": "development",
+      "row": 65,
+      "beforeCer": 0.6090225563909775,
+      "status": "AVAILABLE",
+      "afterCer": 0.5112781954887218,
+      "literalMatched": 0,
+      "beforeLiteralMatched": 0,
+      "usage": {
+        "input_tokens": 181,
+        "output_tokens": 31,
+        "total_tokens": 212
+      },
+      "evidenceSha256": "9e8596afdcf3d1367914e732fcdbe7ca8d0d9d0cc50e270a293de067180caf14"
+    },
+    {
+      "ordinal": 12,
+      "direction": "sn-en",
+      "slice": "additional",
+      "row": 197,
+      "beforeCer": 0.6262626262626263,
+      "status": "AVAILABLE",
+      "afterCer": 0.6414141414141414,
+      "literalMatched": 0,
+      "beforeLiteralMatched": 0,
+      "usage": {
+        "input_tokens": 185,
+        "output_tokens": 109,
+        "total_tokens": 294
+      },
+      "evidenceSha256": "5ad49ea1d7841920545bba8691aca5562ca3f2d94802b1b9363ad311708724b7"
+    },
+    {
+      "ordinal": 16,
+      "direction": "en-sn",
+      "slice": "additional",
+      "row": 193,
+      "beforeCer": 0.5071090047393365,
+      "status": "AVAILABLE",
+      "afterCer": 0.5308056872037915,
+      "literalMatched": 0,
+      "beforeLiteralMatched": 0,
+      "usage": {
+        "input_tokens": 158,
+        "output_tokens": 70,
+        "total_tokens": 228
+      },
+      "evidenceSha256": "51ef0427b02d99d03deb601e499b95f4692d7f47682284cd8e43121be920a6e5"
+    },
+    {
+      "ordinal": 17,
+      "direction": "en-sn",
+      "slice": "additional",
+      "row": 194,
+      "beforeCer": 0.39492753623188404,
+      "status": "AVAILABLE",
+      "afterCer": 0.4855072463768116,
+      "literalMatched": 0,
+      "beforeLiteralMatched": 0,
+      "usage": {
+        "input_tokens": 178,
+        "output_tokens": 99,
+        "total_tokens": 277
+      },
+      "evidenceSha256": "4888c086d83388b45b1534181b123c8a80a6b3a5184d64dc9f9c8cc302fdbef1"
+    },
+    {
+      "ordinal": 24,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 1,
+      "beforeCer": 0.043478260869565216,
+      "status": "AVAILABLE",
+      "afterCer": 0.0,
+      "literalMatched": 3,
+      "beforeLiteralMatched": 2,
+      "usage": {
+        "input_tokens": 137,
+        "output_tokens": 41,
+        "total_tokens": 178
+      },
+      "evidenceSha256": "a730eb0b03d73cca5a4f0a632a38fb0ca020852f82a5cd8d7ef2fb970e93b142"
+    },
+    {
+      "ordinal": 25,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 2,
+      "beforeCer": 0.08,
+      "status": "AVAILABLE",
+      "afterCer": 0.04,
+      "literalMatched": 3,
+      "beforeLiteralMatched": 3,
+      "usage": {
+        "input_tokens": 136,
+        "output_tokens": 16,
+        "total_tokens": 152
+      },
+      "evidenceSha256": "672fcc4e8a94b32385a74de76e5fa4a5e440794e9c1ceea1267e3242d3e61ae8"
+    },
+    {
+      "ordinal": 26,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 3,
+      "beforeCer": 0.038461538461538464,
+      "status": "AVAILABLE",
+      "afterCer": 0.0,
+      "literalMatched": 2,
+      "beforeLiteralMatched": 1,
+      "usage": {
+        "input_tokens": 141,
+        "output_tokens": 20,
+        "total_tokens": 161
+      },
+      "evidenceSha256": "2d5746c241c77eb8fa8e43aa2461314d4193a2f5f4c78d56de69225b12d16bf3"
+    },
+    {
+      "ordinal": 27,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 4,
+      "beforeCer": 0.04,
+      "status": "AVAILABLE",
+      "afterCer": 0.0,
+      "literalMatched": 2,
+      "beforeLiteralMatched": 1,
+      "usage": {
+        "input_tokens": 137,
+        "output_tokens": 53,
+        "total_tokens": 190
+      },
+      "evidenceSha256": "b9463ad3c3ce0de7249cf13a05ae4a0e370b367c66e0244ce8f68d60b14b6a32"
+    },
+    {
+      "ordinal": 28,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 5,
+      "beforeCer": 0.017241379310344827,
+      "status": "AVAILABLE",
+      "afterCer": 0.017241379310344827,
+      "literalMatched": 4,
+      "beforeLiteralMatched": 4,
+      "usage": {
+        "input_tokens": 137,
+        "output_tokens": 18,
+        "total_tokens": 155
+      },
+      "evidenceSha256": "2c9c74e203f4b56c53061d5c2f27d2728fc8e7a0e75386e7eb8dbff13f77b675"
+    },
+    {
+      "ordinal": 29,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 6,
+      "beforeCer": 0.0,
+      "status": "AVAILABLE",
+      "afterCer": 0.0,
+      "literalMatched": 2,
+      "beforeLiteralMatched": 2,
+      "usage": {
+        "input_tokens": 137,
+        "output_tokens": 15,
+        "total_tokens": 152
+      },
+      "evidenceSha256": "f5f018ef921d2be2b416a3e5816326b142b2fa0dd7b48e32c192afa265280440"
+    },
+    {
+      "ordinal": 30,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 7,
+      "beforeCer": 0.037037037037037035,
+      "status": "AVAILABLE",
+      "afterCer": 0.037037037037037035,
+      "literalMatched": 2,
+      "beforeLiteralMatched": 2,
+      "usage": {
+        "input_tokens": 134,
+        "output_tokens": 16,
+        "total_tokens": 150
+      },
+      "evidenceSha256": "55b1e929c5ca5be69acd7b180aca6c4686a5d26293a47781b8f78ff9b77e3a18"
+    },
+    {
+      "ordinal": 31,
+      "direction": "sn-en",
+      "slice": "authored-code-switch",
+      "row": 8,
+      "beforeCer": 0.14285714285714285,
+      "status": "AVAILABLE",
+      "afterCer": 0.14285714285714285,
+      "literalMatched": 1,
+      "beforeLiteralMatched": 1,
+      "usage": {
+        "input_tokens": 140,
+        "output_tokens": 21,
+        "total_tokens": 161
+      },
+      "evidenceSha256": "a3d5393e33f4fc7c10d0c569089c947e53c37c3b6d5777f8bd0a6eea2ba37c50"
+    }
+  ],
+  "lowerCer": 5,
+  "equalCer": 4,
+  "higherCer": 3,
+  "codeSwitch": {
+    "matchedComplete": 8,
+    "beforeMedianCer": 0.039230769230769236,
+    "afterMedianCer": 0.008620689655172414,
+    "beforeLiteralMatched": 16,
+    "afterLiteralMatched": 19
+  },
+  "qualityApproval": "NOT_ESTABLISHED"
+}
