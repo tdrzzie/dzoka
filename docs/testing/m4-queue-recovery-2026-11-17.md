@@ -21,3 +21,7 @@ Retained receipts: [final gate](artifacts/m4-queue-20261117/gate-receipt.json), 
 ## Remaining work
 
 Shona quality research remains owner-deferred. Representative non-Shona quality comparisons and task-specific review projections remain local acceptance work; this authored operational test does not close them. Startup-delay diagnosis and the transient database timeout remain local operational debt. Unattended boot-before-login/dedicated daemon access and target identity/egress policy need a different deployment context than the selected interactive setup. The historical remote-CI account billing lock is separate from local verification. Full M4 is not marked complete.
+
+## Publication verification
+
+Implementation commit `49114ecb98d634bf8829db5475cc0f8d8faf9564` is pushed to origin/main. [Core foundation](https://github.com/tdrzzie/dzoka/actions/runs/44186756978) and [Repository governance](https://github.com/tdrzzie/dzoka/actions/runs/44186756723) each fail with zero executed steps. Fresh public annotations for jobs 134405223128 and 134405223437 state that the account is locked due to billing. This is an external account-owner blocker, not an executed test failure or a remote pass. The following documentation-only commit records that observation without changing the locally verified source.
