@@ -11,10 +11,13 @@ import uuid
 
 ROOT = Path(__file__).resolve().parents[1]
 IMAGE = 'postgres@sha256:9770878138a2e83abcb10856d30cc3f24dae0d317bb956db6ab9159de6c3c80d'
+PGVECTOR_DIAGNOSTIC = 'pgvector/pgvector@sha256:a5b06db72c44033b10fde7f303aad2a543e87a314dd6c2a680848067defd3760'
 
 def main():
     parser=argparse.ArgumentParser();parser.add_argument('--full',action='store_true')
-    parser.add_argument('--restore-drill',action='store_true');args=parser.parse_args()
+    parser.add_argument('--restore-drill',action='store_true')
+    parser.add_argument('--with-pgvector',action='store_true',help='Use the pinned disposable matching conformance image')
+    args=parser.parse_args()
     name='dzoka-foundation-'+str(uuid.uuid4())
     password,app_password=secrets.token_urlsafe(32),secrets.token_urlsafe(32)
     migration_password=secrets.token_urlsafe(32)
@@ -33,7 +36,7 @@ def main():
         created=True
         docker('run','--detach','--name',name,'--publish','127.0.0.1::5432',
                '--env','POSTGRES_PASSWORD','--env','POSTGRES_USER','--env','POSTGRES_DB',
-               '--env','POSTGRES_INITDB_ARGS',IMAGE)
+               '--env','POSTGRES_INITDB_ARGS',PGVECTOR_DIAGNOSTIC if args.with_pgvector else IMAGE)
         for _ in range(60):
             ready=subprocess.run(['docker','exec',name,'pg_isready','-h','127.0.0.1','-U','dzoka_control'],
                                  env=env,capture_output=True,timeout=10)
@@ -46,9 +49,23 @@ def main():
                '-v','ON_ERROR_STOP=1',input=f"CREATE ROLE dzoka_app LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOBYPASSRLS PASSWORD '{app_password}';\n"
                f"CREATE ROLE dzoka_migrator LOGIN NOSUPERUSER NOCREATEDB NOCREATEROLE NOINHERIT NOBYPASSRLS PASSWORD '{migration_password}';\n"
                "CREATE DATABASE dzoka_test OWNER dzoka_migrator;\n")
+        if args.with_pgvector:
+            docker('exec','-i','--env','PGPASSWORD',name,'psql','-h','127.0.0.1','-U','dzoka_control','-d','dzoka_test',
+                   '-v','ON_ERROR_STOP=1',input="CREATE EXTENSION vector WITH SCHEMA public VERSION '0.8.7';\n")
+            env.update(DZOKA_TEST_MATCHING_BACKEND='pgvector',DZOKA_TEST_MATCHING_ROUTE='PGVECTOR_EXACT')
+            result=docker('exec','-i','--env','PGPASSWORD',name,'psql','-X','-qAt','-h','127.0.0.1',
+                          '-U','dzoka_control','-d','dzoka_test','-v','ON_ERROR_STOP=1',
+                          input=(ROOT/'tools/m5_pgvector_recall.sql').read_text(encoding='utf-8'))
+            recall=json.loads(result.stdout)
+            if (recall['exactCount'],recall['indexCount'],recall['overlap'],recall['filterViolations'])!=(10,10,10,0):
+                raise RuntimeError('Scoped HNSW recall fixture differs from exact baseline')
+            output=ROOT/'.test-tmp'/('pgvector-recall-'+str(uuid.uuid4())+'.json')
+            output.parent.mkdir(exist_ok=True)
+            output.write_text(json.dumps(recall,indent=2)+'\n',encoding='utf-8')
+            print('Synthetic pgvector recall evidence: '+str(output),flush=True)
         print('Digest-pinned disposable PostgreSQL ready; random test credentials, loopback only.',flush=True)
         maven=[sys.executable,str(ROOT/'tools/maven.py'),'verify']
-        if not args.full:maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,FingerprintRolloutsIT,PerceptionJobsIT,VisionJobsIT,LanguageJobsIT,GenerativeJobsIT,QualityJobsIT,ShonaJobsIT,StartupConfigurationIT')
+        if not args.full:maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,FingerprintRolloutsIT,MatchingIT,PerceptionJobsIT,VisionJobsIT,LanguageJobsIT,GenerativeJobsIT,QualityJobsIT,ShonaJobsIT,StartupConfigurationIT')
         elif env.get('DZOKA_IT_CLASSES'):maven.append('-Dit.test='+env['DZOKA_IT_CLASSES'])
         result=subprocess.run(maven,cwd=ROOT,env=env)
         if result.returncode==0 and args.restore_drill:

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "state": "DRAFT_EVALUATED",
+  "approval": "NOT_ESTABLISHED",
+  "planSha256": "1bc6cd121ff6fb944d33c8a56615189fda43636db1f515d9ffcabaadbe561da9",
+  "datasetSha256": "6b17b8fcc411a533c822a5117e33cf73fa6766739d7d36ac86dc4bea883af4fe",
+  "scoringVersion": "bounded-evidence-v1",
+  "spaceKey": "3f49dbbfe051cb20cc038923424fedf8d18307cc805e1520e4168e9360e2eb38",
+  "method": "fixed-five-bins-v1",
+  "minimumCoverage": 0.3,
+  "fitCount": 8,
+  "holdoutCount": 8,
+  "supportedHoldout": 7,
+  "excluded": {
+    "fit": 0,
+    "holdout": 0
+  },
+  "bins": [
+    {
+      "fitCount": 4,
+      "observedFrequency": 0.0
+    },
+    {
+      "fitCount": 0,
+      "observedFrequency": null
+    },
+    {
+      "fitCount": 0,
+      "observedFrequency": null
+    },
+    {
+      "fitCount": 0,
+      "observedFrequency": null
+    },
+    {
+      "fitCount": 4,
+      "observedFrequency": 1.0
+    }
+  ],
+  "holdoutBrier": 0.0,
+  "rawScoreBrierOnSameRows": 0.0144,
+  "recordedAt": "2026-11-18T02:31:54.588145+00:00"
+}

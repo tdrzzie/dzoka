@@ -1,0 +1,5 @@
+# Qdrant M5 local conformance dependency
+
+The mandatory source gate passed. The [Qdrant source audit](../source-audit/retrieval/qdrant.md) informs the tenant and space filter contract. The [official v1.20.0 server release](https://github.com/qdrant/qdrant/releases/tag/v1.20.0) uses the Apache-2.0 license. The official tag resolves to OCI index `sha256:9bfc89f9914fc14876a88c05270685921a55b8877b254a98bcc1cc2f0a424cd2`. Pin its Linux amd64 manifest `sha256:2d1b0bfd0a961275481ea09400fc98008216ae54e1b52ed7d24520d63050c644` for disposable synthetic tests. The application uses the [v1.20 Query Points HTTP contract](https://api.qdrant.tech/api-reference/search/query-points) through its existing JDK and JSON dependencies.
+
+Scope is conformance only, with random credentials, loopback publication, disabled telemetry and no host mounts or shared Docker changes. Only the explicit same-host route is available in the application. Production projection lifecycle, approved configuration, upstream notices and advisories, authenticated target TLS, and disaster recovery remain deployment review items. Dzoka does not redistribute the image or its packages.

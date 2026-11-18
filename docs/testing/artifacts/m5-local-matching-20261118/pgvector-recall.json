@@ -1,0 +1,11 @@
+{
+  "scope": "SYNTHETIC_FILTERED_INDEX_RECALL",
+  "pool": 1200,
+  "k": 10,
+  "planUsesHnsw": true,
+  "extensionVersion": "0.8.7",
+  "exactCount": 10,
+  "indexCount": 10,
+  "overlap": 10,
+  "filterViolations": 0
+}

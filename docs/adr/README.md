@@ -69,5 +69,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 
 | 0051 | [Current-account queue and recovery acceptance](0051-current-account-queue-recovery-acceptance.md) | Two installed-worker queue runs and the complete local gate pass |
 | 0052 | [Direct OpenAI public-reference connection](0052-direct-openai-public-reference-connection.md) | Enabled for public translation diagnostics |
+| 0053 | [Bounded matching and vector backends](0053-bounded-matching-and-vector-backends.md) | Implemented bounded routes and local conformance scope |
 
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

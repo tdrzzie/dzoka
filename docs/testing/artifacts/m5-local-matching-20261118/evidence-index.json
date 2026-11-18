@@ -1,0 +1,38 @@
+{
+  "m5-intake-final.log": {
+    "sha256": "cecb8845eabb217e9f2ea70848c07250bc6b14eb93935f8184a7544048f5cc6b"
+  },
+  "m5-native-final.log": {
+    "sha256": "a8e87550e68117aa41fdf3821fe25cd6ef84629085feab7b8bc7ace15fc82cc2"
+  },
+  "m5-pgvector-final.log": {
+    "sha256": "74fd64239d1c6a385009f13d354e0e5e9db02ade334790f9dbab90a79ae3b7b3"
+  },
+  "m5-python-final.log": {
+    "sha256": "2b520d9f451ac345152311f7f021007a03be1c03bcad5893884b6be1289d025b"
+  },
+  "m5-qdrant-final.log": {
+    "sha256": "e378a339b879cdfd4730e1618a667d6242a72a4eac2fb6656ca8af57dc3cd669"
+  },
+  "m5-vector-outage-final.log": {
+    "sha256": "b57455a89ce97bfde412cc438f0e86175708162b977704cce109fa4a38412992"
+  },
+  "calibration-draft.json": {
+    "sha256": "737956e9e33af4bd751fe2a69dff68c39d858d0ddb874797b19f002660845533"
+  },
+  "intake-restore.json": {
+    "sha256": "eee6c3275c8bab6638829e9273dfb4674d251834c6183edfd2d88e4ebd469422"
+  },
+  "native-restore.json": {
+    "sha256": "12d5433fbe2548f349f1430550566a8fdc43dcef99ff3622ac6d600940cc626d"
+  },
+  "pgvector-recall.json": {
+    "sha256": "840c725f68bd1383910440440e8829b831410653258507da23b83c054ad876d8"
+  },
+  "pgvector-restore.json": {
+    "sha256": "f2cc5501cb2033987be0d6a51b632863e7de87283dce06d1a674cbf2359f1e52"
+  },
+  "qdrant-postgres-restore.json": {
+    "sha256": "cb7860c80d1468f580be7efc6ceab905af70b9e77f1531ee5c6dedfb22f34706"
+  }
+}
