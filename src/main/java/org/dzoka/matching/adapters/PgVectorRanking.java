@@ -47,7 +47,7 @@ final class PgVectorRanking {
         }
     }
 
-    private static void verifyExtension(Connection connection) throws SQLException {
+    static void verifyExtension(Connection connection) throws SQLException {
         try (var query=connection.prepareStatement("""
                 SELECT extversion FROM pg_catalog.pg_extension e JOIN pg_catalog.pg_namespace n ON e.extnamespace=n.oid
                 WHERE extname='vector' AND n.nspname='public'

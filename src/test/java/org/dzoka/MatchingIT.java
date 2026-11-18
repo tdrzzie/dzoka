@@ -24,10 +24,22 @@ class MatchingIT extends AiFixture {
     @Override protected void initializeProviders() throws Exception {
         super.initializeProviders();
         membership(A,"matcher","reports:read","reports:read:any","matches:read");
+        membership(A,"second-matcher","reports:read","reports:read:any","matches:read");
+        membership(A,"projection-maintainer","reports:read","reports:read:any","matches:maintain-projection");
+        membership(A,"history-maintainer","matches:maintain-history");
         membership(A,"verifier","reports:read:any","matches:attest-identifiers");
         membership(A,"limited","reports:read","matches:read","fingerprints:manage");
         membership(B,"matcher","reports:read","reports:read:any","matches:read");
         membership(B,"remote-reporter","reports:write");
+        if ("pgvector-indexed".equals(System.getenv("DZOKA_TEST_MATCHING_BACKEND"))) {
+            try(var db=admin();var sql=db.createStatement()) {
+                String ddl=java.nio.file.Files.readString(java.nio.file.Path.of("tools/m5_install_pgvector_index.sql"));
+                int creation=ddl.indexOf("CREATE INDEX CONCURRENTLY");
+                assertTrue(creation>=0);
+                sql.execute(ddl.substring(0,creation));
+                sql.execute(ddl.substring(creation));
+            }
+        }
     }
 
     private UUID submit(UUID tenant, String actor, ReportDraft.Kind kind, String text) {
@@ -67,7 +79,15 @@ class MatchingIT extends AiFixture {
             var partial=json.readTree(missing.body());
             assertEquals("FAILED",partial.get("routes").get(3).get("state").asString());
             assertEquals(positive.toString(),partial.get("candidates").get(0).get("report").asString());
-            seedQdrant(positive,negative);
+            var stale=seedQdrant();
+            String projection="/internal/matching/projections/"+primary;
+            assertEquals(403,api("PUT",A,projection,"matcher",null).statusCode());
+            var rebuilt=api("PUT",A,projection,"projection-maintainer",null);
+            assertEquals(200,rebuilt.statusCode(),rebuilt.body());
+            assertEquals(3,json.readTree(rebuilt.body()).get("activeComponents").asInt());
+            assertEquals(200,api("PUT",A,projection,"projection-maintainer",null).statusCode());
+            assertFalse(qdrantPointExists(stale.get(0)));
+            assertTrue(qdrantPointExists(stale.get(1)));
         }
         assertEquals(403,api("GET",A,search,"reporter",null).statusCode());
         assertEquals(404,api("GET",B,search,"matcher",null).statusCode());
@@ -87,31 +107,85 @@ class MatchingIT extends AiFixture {
         String expected=System.getenv().getOrDefault("DZOKA_TEST_MATCHING_ROUTE","EXACT_ROUTE");
         assertEquals(expected,route.get("reason").asString());
         assertEquals(!expected.endsWith("_UNAVAILABLE"),candidates.get(1).get("ranks").has("EXACT_VECTOR"));
-        assertEquals(expected.endsWith("_UNAVAILABLE")?"FAILED":"COMPLETE",route.get("state").asString());
+        assertEquals(expected.endsWith("_UNAVAILABLE")?"FAILED":expected.equals("PGVECTOR_HNSW")?"APPROXIMATE":"COMPLETE",route.get("state").asString());
         var incompatible=api("GET",A,path(query)+"/candidates?spaceId="+alternate,"matcher",null);
         assertEquals(200,incompatible.statusCode());
         assertFalse(json.readTree(incompatible.body()).get("candidates").get(0).get("ranks").has("EXACT_VECTOR"));
+        UUID runId=UUID.randomUUID();
+        String run=path(query)+"/runs/"+runId;
+        String request="{\"spaceId\":\""+primary+"\",\"limit\":10}";
+        var stored=api("PUT",A,run,"matcher",request);
+        assertEquals(200,stored.statusCode(),stored.body());
+        assertEquals(json.readTree(stored.body()),json.readTree(api("GET",A,run,"matcher",null).body()));
+        assertEquals(json.readTree(stored.body()),json.readTree(api("PUT",A,run,"matcher",request).body()));
+        assertEquals(404,api("GET",A,run,"second-matcher",null).statusCode());
+        assertEquals(404,api("GET",B,run,"matcher",null).statusCode());
+        assertEquals(409,api("PUT",A,run,"matcher",request.replace("10}","9}")).statusCode());
         try(var db=admin();var update=db.prepareStatement("UPDATE dzoka.reports SET deleted_at=clock_timestamp() WHERE tenant_id=? AND id=?")) {
             update.setObject(1,A);update.setObject(2,negative);assertEquals(1,update.executeUpdate());
         }
         assertFalse(api("GET",A,search,"matcher",null).body().contains(negative.toString()));
+        assertEquals(404,api("GET",A,run,"matcher",null).statusCode());
         assertEquals(400,api("GET",A,search+"&limit=21","matcher",null).statusCode());
+        String prune="/internal/matching/history/prune";
+        assertEquals(403,api("POST",A,prune,"matcher",null).statusCode());
+        assertEquals(0,json.readTree(api("POST",A,prune,"history-maintainer",null).body()).get("removed").asInt());
+        try(var db=admin();var age=db.prepareStatement("UPDATE dzoka.match_search_runs SET created_at=clock_timestamp()-interval '25 hours' WHERE tenant_id=? AND id=?")) {
+            age.setObject(1,A);age.setObject(2,runId);assertEquals(1,age.executeUpdate());
+        }
+        var expired=api("POST",A,prune,"history-maintainer",null);
+        assertEquals(200,expired.statusCode(),expired.body());
+        assertEquals(1,json.readTree(expired.body()).get("removed").asInt());
+        String live=path(query)+"/runs/"+UUID.randomUUID();
+        assertEquals(200,api("PUT",A,live,"matcher",request).statusCode());
+        if ("pgvector-indexed".equals(System.getenv("DZOKA_TEST_MATCHING_BACKEND"))) {
+            addUnindexedReports(positive);
+            var overflow=api("GET",A,search,"matcher",null);
+            assertEquals(200,overflow.statusCode(),overflow.body());
+            var result=json.readTree(overflow.body());
+            assertTrue(result.get("partial").asBoolean());
+            assertEquals("CAPACITY_EXCEEDED",result.get("routes").get(1).get("state").asString());
+            assertEquals("PGVECTOR_HNSW",result.get("routes").get(3).get("reason").asString());
+            assertEquals(1,result.get("candidates").size());
+            assertEquals(positive.toString(),result.get("candidates").get(0).get("report").asString());
+        }
     }
 
-    private void seedQdrant(UUID... reports) throws Exception {
+    private List<UUID> seedQdrant() throws Exception {
         var points=new ArrayList<Map<String,Object>>();
         double[] vector=new double[384];vector[0]=1;
-        for (UUID report:reports) {
-            var component=jobs().current(who("other"),A,report).getFirst();
-            points.add(Map.of("id",component.id().toString(),"vector",vector,
-                    "payload",Map.of("tenant",A.toString(),"space",profile.spaceKey())));
-        }
         // A stale projection entry can satisfy both payload predicates. The explicit component allowlist must still exclude it.
-        points.add(Map.of("id",UUID.randomUUID().toString(),"vector",vector,
-                "payload",Map.of("tenant",A.toString(),"space",profile.spaceKey())));
+        UUID stale=UUID.randomUUID(),foreign=UUID.randomUUID();
+        points.add(Map.of("id",stale.toString(),"vector",vector,"payload",Map.of("tenant",A.toString(),"space",profile.spaceKey())));
+        points.add(Map.of("id",foreign.toString(),"vector",vector,"payload",Map.of("tenant",B.toString(),"space",profile.spaceKey())));
         String path="/collections/dzoka_"+profile.spaceKey();
         qdrantPut(path,Map.of("vectors",Map.of("size",384,"distance","Cosine")));
         qdrantPut(path+"/points?wait=true",Map.of("points",points));
+        return List.of(stale,foreign);
+    }
+
+    private boolean qdrantPointExists(UUID point) throws Exception {
+        var request=java.net.http.HttpRequest.newBuilder(java.net.URI.create(System.getenv("DZOKA_MATCHING_QDRANT_ORIGIN")+
+                "/collections/dzoka_"+profile.spaceKey()+"/points/"+point))
+                .timeout(java.time.Duration.ofSeconds(5)).header("api-key",System.getenv("DZOKA_MATCHING_QDRANT_API_KEY")).GET().build();
+        int status=http.send(request,java.net.http.HttpResponse.BodyHandlers.discarding()).statusCode();
+        assertTrue(status==200 || status==404);
+        return status==200;
+    }
+
+    private void addUnindexedReports(UUID template) throws Exception {
+        try(var db=admin();var sql=db.prepareStatement("""
+                WITH new_reports AS (
+                  INSERT INTO dzoka.reports(tenant_id,id,case_id,item_id,owner_ref,kind,current_revision,expires_at)
+                  SELECT r.tenant_id,gen_random_uuid(),r.case_id,r.item_id,r.owner_ref,r.kind,1,r.expires_at
+                  FROM dzoka.reports r CROSS JOIN generate_series(1,513) WHERE r.tenant_id=? AND r.id=?
+                  RETURNING tenant_id,id,owner_ref
+                ) INSERT INTO dzoka.report_revisions(tenant_id,report_id,revision,raw_request,raw_sha256,
+                                                      normalization_version,language,timezone,actor_ref)
+                SELECT tenant_id,id,1,''::bytea,repeat('a',64),'fixture','en','UTC',owner_ref FROM new_reports
+                """)) {
+            sql.setObject(1,A);sql.setObject(2,template);assertEquals(513,sql.executeUpdate());
+        }
     }
 
     private void qdrantPut(String path, Map<String,?> value) throws Exception {

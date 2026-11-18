@@ -11,7 +11,7 @@ public final class Matching {
     private Matching() {}
 
     public enum Route { IDENTIFIER, LEXICAL, SPATIAL_TIME, EXACT_VECTOR }
-    public enum RouteState { COMPLETE, TRUNCATED, UNAVAILABLE, FAILED, CAPACITY_EXCEEDED }
+    public enum RouteState { COMPLETE, APPROXIMATE, TRUNCATED, UNAVAILABLE, FAILED, CAPACITY_EXCEEDED }
     public record RouteStatus(Route route, RouteState state, int returned, String reason) {}
     public record Position(double latitude, double longitude, double uncertainty) {}
     public record Identifier(int keyVersion, String scopeDigest, String digest, UUID attestation) {}
@@ -38,17 +38,22 @@ public final class Matching {
 
     public static Search search(Observation source, List<Observation> pool, Long activationVersion, int limit,
                                 VectorRoute externalVector) {
+        return search(source,pool,activationVersion,limit,externalVector,false);
+    }
+
+    public static Search search(Observation source, List<Observation> pool, Long activationVersion, int limit,
+                                VectorRoute externalVector, boolean indexedOnly) {
         if (limit < 1 || limit > ROUTE_LIMIT) throw new IllegalArgumentException("Matching limit out of range");
-        if (pool.size() > POOL_LIMIT) {
-            var states = Arrays.stream(Route.values()).map(route ->
-                    new RouteStatus(route, RouteState.CAPACITY_EXCEEDED, 0, "EXACT_POOL_LIMIT")).toList();
-            return new Search(source.report(),source.revision(),activationVersion,EvidenceScoring.VERSION,true,false,states,List.of());
-        }
+        if (pool.size() > POOL_LIMIT) return overCapacity(source,activationVersion);
         Set<String> sourceTokens = tokens(source.text());
         var assessed = pool.stream().map(row -> compare(source, sourceTokens, row, externalVector)).toList();
         Map<UUID,Map<Route,Integer>> ranking = new HashMap<>();
         List<RouteStatus> statuses = new ArrayList<>();
         for (Route route : Route.values()) {
+            if (indexedOnly && route!=Route.EXACT_VECTOR && route!=Route.IDENTIFIER) {
+                statuses.add(new RouteStatus(route,RouteState.CAPACITY_EXCEEDED,0,"EXACT_POOL_LIMIT"));
+                continue;
+            }
             if (route==Route.EXACT_VECTOR && externalVector!=null && externalVector.failed()) {
                 statuses.add(new RouteStatus(route,RouteState.FAILED,0,externalVector.backend()+"_UNAVAILABLE"));
                 continue;
@@ -67,8 +72,9 @@ public final class Matching {
             }
             boolean truncated = ordered.size()>count;
             String backend = route==Route.EXACT_VECTOR && externalVector!=null ? externalVector.backend() : "EXACT_ROUTE";
-            statuses.add(new RouteStatus(route,truncated?RouteState.TRUNCATED:RouteState.COMPLETE,
-                    count,truncated?"ROUTE_LIMIT":backend));
+            RouteState state=truncated?RouteState.TRUNCATED:backend.equals("PGVECTOR_HNSW")?RouteState.APPROXIMATE:RouteState.COMPLETE;
+            statuses.add(new RouteStatus(route,state,
+                    count,truncated?backend+"_ROUTE_LIMIT":backend));
         }
         var fused = assessed.stream().filter(row -> ranking.containsKey(row.observation().report())).map(row -> {
             Map<Route,Integer> ranks = ranking.get(row.observation().report());
@@ -85,6 +91,12 @@ public final class Matching {
         return new Search(source.report(),source.revision(),activationVersion,EvidenceScoring.VERSION,
                 statuses.stream().anyMatch(status -> status.state()!=RouteState.COMPLETE),
                 fused.size()>count,List.copyOf(statuses),List.copyOf(reranked.subList(0,count)));
+    }
+
+    public static Search overCapacity(Observation source, Long activationVersion) {
+        var states = Arrays.stream(Route.values()).map(route ->
+                new RouteStatus(route, RouteState.CAPACITY_EXCEEDED, 0, "EXACT_POOL_LIMIT")).toList();
+        return new Search(source.report(),source.revision(),activationVersion,EvidenceScoring.VERSION,true,false,states,List.of());
     }
 
     private static boolean routeApplicable(Observation source, Set<String> words, Route route) {

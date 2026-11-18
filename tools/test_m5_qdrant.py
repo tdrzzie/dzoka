@@ -44,6 +44,7 @@ def main():
         else:
             raise RuntimeError('Qdrant test startup failed')
         env.update(DZOKA_MATCHING_QDRANT_ORIGIN=origin,DZOKA_MATCHING_QDRANT_API_KEY=key,
+                   DZOKA_MATCHING_QDRANT_WRITE_KEY=key,
                    DZOKA_TEST_MATCHING_BACKEND='qdrant',DZOKA_TEST_MATCHING_ROUTE='QDRANT_EXACT',
                    DZOKA_IT_CLASSES='FoundationIT,MatchingIT')
         return subprocess.run([sys.executable,'-B','tools/test_foundation.py','--full','--restore-drill',

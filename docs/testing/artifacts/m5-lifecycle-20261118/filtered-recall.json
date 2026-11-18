@@ -1,0 +1,61 @@
+{
+  "scope": "SYNTHETIC_FILTERED_INDEX_RECALL",
+  "pool": 1200,
+  "k": 10,
+  "planUsesHnsw": true,
+  "extensionVersion": "0.8.7",
+  "exactCount": 10,
+  "indexCount": 10,
+  "overlap": 10,
+  "filterViolations": 0,
+  "additionalQueries": [
+    {
+      "tenant": 0,
+      "angle": 0.0234,
+      "k": 1,
+      "found": 1,
+      "overlap": 1,
+      "scoped": true
+    },
+    {
+      "tenant": 0,
+      "angle": 0.4424,
+      "k": 5,
+      "found": 5,
+      "overlap": 5,
+      "scoped": true
+    },
+    {
+      "tenant": 1,
+      "angle": 0.6704,
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    },
+    {
+      "tenant": 1,
+      "angle": 1.1904,
+      "k": 5,
+      "found": 5,
+      "overlap": 5,
+      "scoped": true
+    },
+    {
+      "tenant": 2,
+      "angle": 0.1924,
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    },
+    {
+      "tenant": 2,
+      "angle": 0.9524,
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    }
+  ]
+}

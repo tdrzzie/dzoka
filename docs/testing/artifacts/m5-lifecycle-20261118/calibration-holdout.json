@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 1,
+  "state": "DRAFT_EVALUATED",
+  "approval": "NOT_ESTABLISHED",
+  "planSha256": "ba02c0e2b38c40f4079f3330990c15144513679f010c7c6def7c64a586da06bc",
+  "datasetSha256": "2abcfbeea306b01ccfa7fddea065a98cdc6548ce1b762069d9299961bba4526a",
+  "scoringVersion": "bounded-evidence-v1",
+  "spaceKey": "8f0f5a3309fc6b61dbe8d5c6bdbd49eaad89f3c09fa373fcfb9cbaa77d7ac9b8",
+  "method": "fixed-five-bins-v1",
+  "minimumCoverage": 0.5,
+  "fitCount": 200,
+  "holdoutCount": 200,
+  "supportedHoldout": 200,
+  "excluded": {
+    "fit": 5,
+    "holdout": 5
+  },
+  "bins": [
+    {
+      "fitCount": 40,
+      "observedFrequency": 0.05
+    },
+    {
+      "fitCount": 40,
+      "observedFrequency": 0.2
+    },
+    {
+      "fitCount": 40,
+      "observedFrequency": 0.35
+    },
+    {
+      "fitCount": 40,
+      "observedFrequency": 0.55
+    },
+    {
+      "fitCount": 40,
+      "observedFrequency": 0.75
+    }
+  ],
+  "holdoutBrier": 0.17400000000000002,
+  "rawScoreBrierOnSameRows": 0.2,
+  "fixture": "AUTHORED_FIXED_PER_BIN_FREQUENCIES"
+}

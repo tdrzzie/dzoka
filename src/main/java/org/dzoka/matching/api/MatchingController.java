@@ -24,6 +24,19 @@ public final class MatchingController {
     }
 
     public record Attestation(int revision,int keyVersion,String scopeDigest,String digest,UUID attestationId) {}
+    public record SearchRequest(UUID spaceId,int limit) {}
+
+    @PutMapping("/runs/{run}")
+    public Search record(@PathVariable UUID tenant,@PathVariable UUID report,@PathVariable UUID run,
+            @RequestBody SearchRequest request,@AuthenticationPrincipal Jwt jwt) {
+        return matching.recordSearch(identity(jwt),tenant,report,request.spaceId(),request.limit(),run);
+    }
+
+    @GetMapping("/runs/{run}")
+    public Search previous(@PathVariable UUID tenant,@PathVariable UUID report,@PathVariable UUID run,
+            @AuthenticationPrincipal Jwt jwt) {
+        return matching.readSearch(identity(jwt),tenant,report,run);
+    }
 
     @PostMapping("/identifier-attestations")
     @ResponseStatus(HttpStatus.NO_CONTENT)

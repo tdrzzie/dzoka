@@ -17,7 +17,9 @@ def main():
     parser=argparse.ArgumentParser();parser.add_argument('--full',action='store_true')
     parser.add_argument('--restore-drill',action='store_true')
     parser.add_argument('--with-pgvector',action='store_true',help='Use the pinned disposable matching conformance image')
+    parser.add_argument('--matching-index',action='store_true',help='Exercise the actual authoritative expression index')
     args=parser.parse_args()
+    if args.matching_index and not args.with_pgvector:parser.error('--matching-index requires --with-pgvector')
     name='dzoka-foundation-'+str(uuid.uuid4())
     password,app_password=secrets.token_urlsafe(32),secrets.token_urlsafe(32)
     migration_password=secrets.token_urlsafe(32)
@@ -53,12 +55,17 @@ def main():
             docker('exec','-i','--env','PGPASSWORD',name,'psql','-h','127.0.0.1','-U','dzoka_control','-d','dzoka_test',
                    '-v','ON_ERROR_STOP=1',input="CREATE EXTENSION vector WITH SCHEMA public VERSION '0.8.7';\n")
             env.update(DZOKA_TEST_MATCHING_BACKEND='pgvector',DZOKA_TEST_MATCHING_ROUTE='PGVECTOR_EXACT')
+            if args.matching_index:
+                env.update(DZOKA_TEST_MATCHING_BACKEND='pgvector-indexed',DZOKA_TEST_MATCHING_ROUTE='PGVECTOR_HNSW')
             result=docker('exec','-i','--env','PGPASSWORD',name,'psql','-X','-qAt','-h','127.0.0.1',
                           '-U','dzoka_control','-d','dzoka_test','-v','ON_ERROR_STOP=1',
                           input=(ROOT/'tools/m5_pgvector_recall.sql').read_text(encoding='utf-8'))
             recall=json.loads(result.stdout)
             if (recall['exactCount'],recall['indexCount'],recall['overlap'],recall['filterViolations'])!=(10,10,10,0):
                 raise RuntimeError('Scoped HNSW recall fixture differs from exact baseline')
+            if len(recall['additionalQueries'])!=6 or any(
+                    not x['scoped'] or x['found']!=x['k'] or x['overlap']!=x['k'] for x in recall['additionalQueries']):
+                raise RuntimeError('Multi-query filtered recall differs from exact baseline')
             output=ROOT/'.test-tmp'/('pgvector-recall-'+str(uuid.uuid4())+'.json')
             output.parent.mkdir(exist_ok=True)
             output.write_text(json.dumps(recall,indent=2)+'\n',encoding='utf-8')

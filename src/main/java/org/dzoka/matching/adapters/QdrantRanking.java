@@ -86,4 +86,51 @@ final class QdrantRanking {
     }
 
     private static VectorRoute failure() { return new VectorRoute(BACKEND,Map.of(),true); }
+
+    void reconcile(UUID tenant, String space, List<Vector> vectors, String writeKey) throws IOException {
+        if(!space.matches("[0-9a-f]{64}") || !writeKey.matches("[A-Za-z0-9_-]{24,256}")) {
+            throw new IOException("Projection write configuration unavailable");
+        }
+        var retained=new ArrayList<UUID>();
+        var batch=new ArrayList<Map<String,Object>>();
+        String path="/collections/dzoka_"+space+"/points";
+        for(Vector vector:vectors) {
+            retained.add(vector.component());
+            batch.add(Map.of("id",vector.component(),"vector",vector.values(),
+                    "payload",Map.of("tenant",tenant.toString(),"space",space)));
+            if(batch.size()==32) {
+                mutate("PUT",path+"?wait=true&timeout=2",Map.of("points",batch),writeKey);
+                batch.clear();
+            }
+        }
+        if(!batch.isEmpty()) mutate("PUT",path+"?wait=true&timeout=2",Map.of("points",batch),writeKey);
+        var filter=new HashMap<String,Object>();
+        filter.put("must",List.of(Map.of("key","tenant","match",Map.of("value",tenant.toString())),
+                Map.of("key","space","match",Map.of("value",space))));
+        if(!retained.isEmpty()) filter.put("must_not",List.of(Map.of("has_id",retained)));
+        mutate("POST",path+"/delete?wait=true&timeout=2",Map.of("filter",filter),writeKey);
+    }
+
+    private void mutate(String method,String path,Map<String,?> request,String writeKey) throws IOException {
+        byte[] bytes=json.writeValueAsBytes(request);
+        if(bytes.length>1024*1024) throw new IOException("Projection batch exceeds the transport bound");
+        var connection=(HttpURLConnection)origin.resolve(path).toURL().openConnection(Proxy.NO_PROXY);
+        try {
+            connection.setInstanceFollowRedirects(false);connection.setConnectTimeout(1000);connection.setReadTimeout(2500);
+            connection.setRequestMethod(method);connection.setRequestProperty("api-key",writeKey);
+            connection.setRequestProperty("Content-Type","application/json");connection.setDoOutput(true);
+            connection.setFixedLengthStreamingMode(bytes.length);
+            try(var sink=connection.getOutputStream()) { sink.write(bytes); }
+            if(connection.getResponseCode()!=200) throw new IOException("Projection mutation unavailable");
+            try(var body=connection.getInputStream()) {
+                byte[] raw=body.readNBytes(4097);
+                if(raw.length>4096) throw new IOException("Projection mutation exceeded response bound");
+                var result=json.readTree(raw);
+                if(!"ok".equals(result.path("status").asString()) ||
+                        !"completed".equals(result.path("result").path("status").asString())) {
+                    throw new IOException("Projection mutation was not acknowledged");
+                }
+            }
+        } finally { connection.disconnect(); }
+    }
 }
