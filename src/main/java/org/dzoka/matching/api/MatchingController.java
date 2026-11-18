@@ -19,17 +19,18 @@ public final class MatchingController {
     @GetMapping("/candidates")
     public Search candidates(@PathVariable UUID tenant,@PathVariable UUID report,
             @RequestParam(required=false) UUID spaceId,@RequestParam(defaultValue="10") int limit,
+            @RequestParam(required=false) String category,
             @AuthenticationPrincipal Jwt jwt) {
-        return matching.search(identity(jwt),tenant,report,spaceId,limit);
+        return matching.search(identity(jwt),tenant,report,spaceId,limit,category);
     }
 
     public record Attestation(int revision,int keyVersion,String scopeDigest,String digest,UUID attestationId) {}
-    public record SearchRequest(UUID spaceId,int limit) {}
+    public record SearchRequest(UUID spaceId,int limit,String category) {}
 
     @PutMapping("/runs/{run}")
     public Search record(@PathVariable UUID tenant,@PathVariable UUID report,@PathVariable UUID run,
             @RequestBody SearchRequest request,@AuthenticationPrincipal Jwt jwt) {
-        return matching.recordSearch(identity(jwt),tenant,report,request.spaceId(),request.limit(),run);
+        return matching.recordSearch(identity(jwt),tenant,report,request.spaceId(),request.limit(),request.category(),run);
     }
 
     @GetMapping("/runs/{run}")

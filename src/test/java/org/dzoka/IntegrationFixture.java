@@ -105,6 +105,13 @@ abstract class IntegrationFixture {
         jwt.sign(new RSASSASigner(signing));return jwt.serialize();
     }
     protected String token(String subject) throws Exception { return token(subject,issuer,"dzoka-core",Instant.now().plusSeconds(300),key); }
+    protected HttpResponse<String> api(String method,UUID tenant,String path,String subject,String body) throws Exception {
+        var request=HttpRequest.newBuilder(URI.create(base+"/api/v1/tenants/"+tenant+path))
+                .timeout(Duration.ofSeconds(15)).header("Authorization","Bearer "+token(subject))
+                .header("Idempotency-Key",UUID.randomUUID().toString()).header("Content-Type","application/json")
+                .method(method,body==null?HttpRequest.BodyPublishers.noBody():HttpRequest.BodyPublishers.ofString(body)).build();
+        return http.send(request,HttpResponse.BodyHandlers.ofString());
+    }
     protected HttpResponse<String> request(String method,UUID tenant,String subject,String body,String idem) throws Exception {
         return rawRequest(method,tenant,subject==null?null:token(subject),body,idem);
     }

@@ -27,6 +27,10 @@ class MatchingIT extends AiFixture {
         membership(A,"second-matcher","reports:read","reports:read:any","matches:read");
         membership(A,"projection-maintainer","reports:read","reports:read:any","matches:maintain-projection");
         membership(A,"history-maintainer","matches:maintain-history");
+        membership(A,"quota-matcher","reports:read","reports:read:any","matches:read");
+        membership(A,"calibration-author","matches:propose-calibration","matches:review-calibration","reports:read","reports:read:any");
+        membership(A,"calibration-reviewer","matches:review-calibration","reports:read","reports:read:any");
+        membership(B,"calibration-reviewer","matches:review-calibration","reports:read","reports:read:any");
         membership(A,"verifier","reports:read:any","matches:attest-identifiers");
         membership(A,"limited","reports:read","matches:read","fingerprints:manage");
         membership(B,"matcher","reports:read","reports:read:any","matches:read");
@@ -43,8 +47,13 @@ class MatchingIT extends AiFixture {
     }
 
     private UUID submit(UUID tenant, String actor, ReportDraft.Kind kind, String text) {
+        return submit(tenant,actor,kind,text,-17.8,31.05,30.0);
+    }
+
+    private UUID submit(UUID tenant,String actor,ReportDraft.Kind kind,String text,
+                        Double latitude,Double longitude,Double uncertainty) {
         return app.getBean(IntakeService.class).submit(who(actor),tenant,null,null,
-                new ReportDraft(kind,text,"en","UTC",null,null,-17.8,31.05,30.0,null,null),
+                new ReportDraft(kind,text,"en","UTC",null,null,latitude,longitude,uncertainty,null,null),
                 "{}".getBytes(java.nio.charset.StandardCharsets.UTF_8),UUID.randomUUID().toString()).reportId();
     }
 
@@ -108,6 +117,7 @@ class MatchingIT extends AiFixture {
         assertEquals(expected,route.get("reason").asString());
         assertEquals(!expected.endsWith("_UNAVAILABLE"),candidates.get(1).get("ranks").has("EXACT_VECTOR"));
         assertEquals(expected.endsWith("_UNAVAILABLE")?"FAILED":expected.equals("PGVECTOR_HNSW")?"APPROXIMATE":"COMPLETE",route.get("state").asString());
+        if (!expected.endsWith("_UNAVAILABLE")) verifyCalibration(query,search,positive,negative,expected);
         var incompatible=api("GET",A,path(query)+"/candidates?spaceId="+alternate,"matcher",null);
         assertEquals(200,incompatible.statusCode());
         assertFalse(json.readTree(incompatible.body()).get("candidates").get(0).get("ranks").has("EXACT_VECTOR"));
@@ -130,7 +140,7 @@ class MatchingIT extends AiFixture {
         String prune="/internal/matching/history/prune";
         assertEquals(403,api("POST",A,prune,"matcher",null).statusCode());
         assertEquals(0,json.readTree(api("POST",A,prune,"history-maintainer",null).body()).get("removed").asInt());
-        try(var db=admin();var age=db.prepareStatement("UPDATE dzoka.match_search_runs SET created_at=clock_timestamp()-interval '25 hours' WHERE tenant_id=? AND id=?")) {
+        try(var db=admin();var age=db.prepareStatement("UPDATE dzoka.match_search_runs SET created_at=clock_timestamp()-interval '25 hours' WHERE tenant_id=? AND client_id=?")) {
             age.setObject(1,A);age.setObject(2,runId);assertEquals(1,age.executeUpdate());
         }
         var expired=api("POST",A,prune,"history-maintainer",null);
@@ -138,17 +148,155 @@ class MatchingIT extends AiFixture {
         assertEquals(1,json.readTree(expired.body()).get("removed").asInt());
         String live=path(query)+"/runs/"+UUID.randomUUID();
         assertEquals(200,api("PUT",A,live,"matcher",request).statusCode());
-        if ("pgvector-indexed".equals(System.getenv("DZOKA_TEST_MATCHING_BACKEND"))) {
-            addUnindexedReports(positive);
-            var overflow=api("GET",A,search,"matcher",null);
-            assertEquals(200,overflow.statusCode(),overflow.body());
-            var result=json.readTree(overflow.body());
-            assertTrue(result.get("partial").asBoolean());
-            assertEquals("CAPACITY_EXCEEDED",result.get("routes").get(1).get("state").asString());
-            assertEquals("PGVECTOR_HNSW",result.get("routes").get(3).get("reason").asString());
-            assertEquals(1,result.get("candidates").size());
-            assertEquals(positive.toString(),result.get("candidates").get(0).get("report").asString());
+        assertEquals(200,api("PUT",A,live,"second-matcher",request.replace("10}","9}")).statusCode());
+        assertEquals(200,api("PUT",A,live,"matcher",request).statusCode());
+        UUID lexical=submit(A,"other",ReportDraft.Kind.FOUND,"blue backpack",null,null,null);
+        UUID context=submit(A,"other",ReportDraft.Kind.FOUND,"thermos");
+        addUnindexedReports(positive);
+        var overflow=api("GET",A,search,"matcher",null);
+        assertEquals(200,overflow.statusCode(),overflow.body());
+        var result=json.readTree(overflow.body());
+        assertTrue(result.get("partial").asBoolean());
+        assertEquals("APPROXIMATE",result.get("routes").get(1).get("state").asString(),overflow.body());
+        assertEquals("SPATIAL_TIME_INDEX",result.get("routes").get(2).get("reason").asString(),overflow.body());
+        assertEquals(expected,result.get("routes").get(3).get("reason").asString(),overflow.body());
+        var found=new java.util.HashMap<String,JsonNode>();
+        result.get("candidates").forEach(candidate -> found.put(candidate.get("report").asString(),candidate.get("ranks")));
+        assertEquals(java.util.Set.of(positive.toString(),lexical.toString(),context.toString()),found.keySet());
+        assertEquals(1,found.get(lexical.toString()).size());
+        assertTrue(found.get(lexical.toString()).has("LEXICAL"));
+        assertEquals(1,found.get(context.toString()).size());
+        assertTrue(found.get(context.toString()).has("SPATIAL_TIME"));
+        verifyCategoryScope();
+        verifyTemporalScope();
+        verifyHistoryAccounting(query);
+    }
+
+    private void verifyHistoryAccounting(UUID activeReport) throws Exception {
+        UUID stale=submit(A,"reporter",ReportDraft.Kind.LOST,"initial report");
+        UUID remembered;
+        try(var db=admin();var seed=db.prepareStatement("""
+                WITH rows AS (
+                  INSERT INTO dzoka.match_search_runs
+                    (tenant_id,id,client_id,actor_ref,report_id,revision,requested_limit,candidate_count,summary)
+                  SELECT ?,gen_random_uuid(),gen_random_uuid(),?,?,1,1,0,'{}'::jsonb FROM generate_series(1,100)
+                  RETURNING tenant_id,id,actor_ref,client_id
+                ), tracked AS (
+                  INSERT INTO dzoka.match_search_quota(tenant_id,id,actor_ref) SELECT tenant_id,id,actor_ref FROM rows
+                ) SELECT client_id FROM rows LIMIT 1
+                """)) {
+            seed.setObject(1,A);seed.setString(2,who("quota-matcher").reference());seed.setObject(3,stale);
+            try(var ids=seed.executeQuery()) { assertTrue(ids.next());remembered=ids.getObject(1,UUID.class); }
         }
+        app.getBean(IntakeService.class).submit(who("reporter"),A,stale,1,
+                new ReportDraft(ReportDraft.Kind.LOST,"superseding report","en","UTC",null,null,null,null,null,null,null),
+                "{}".getBytes(java.nio.charset.StandardCharsets.UTF_8),UUID.randomUUID().toString());
+        assertEquals(404,api("GET",A,path(stale)+"/runs/"+remembered,"quota-matcher",null).statusCode());
+        String run=path(activeReport)+"/runs/"+UUID.randomUUID();
+        assertEquals(409,api("PUT",A,run,"quota-matcher","{\"limit\":2}").statusCode());
+        try(var db=admin();var expire=db.prepareStatement("""
+                UPDATE dzoka.match_search_runs SET created_at=now()-interval '25 hours' WHERE tenant_id=? AND client_id=?
+                """)) {
+            expire.setObject(1,A);expire.setObject(2,remembered);assertEquals(1,expire.executeUpdate());
+        }
+        assertEquals(200,api("PUT",A,run,"quota-matcher","{\"limit\":2}").statusCode());
+    }
+
+    private void verifyTemporalScope() throws Exception {
+        var when=java.time.Instant.parse("2026-10-01T10:15:00.453Z");
+        UUID source=submitTimed(ReportDraft.Kind.LOST,when);
+        UUID close=submitTimed(ReportDraft.Kind.FOUND,when.plusSeconds(22*3600));
+        UUID far=submitTimed(ReportDraft.Kind.FOUND,when.plusSeconds(24*3600));
+        var response=api("GET",A,path(source)+"/candidates","matcher",null);
+        assertEquals(200,response.statusCode(),response.body());
+        var result=json.readTree(response.body());
+        assertEquals("SPATIAL_TIME_INDEX",result.get("routes").get(2).get("reason").asString());
+        assertEquals(1,result.get("candidates").size());
+        assertEquals(close.toString(),result.get("candidates").get(0).get("report").asString());
+        assertFalse(response.body().contains(far.toString()));
+    }
+
+    private UUID submitTimed(ReportDraft.Kind kind,java.time.Instant when) {
+        return app.getBean(IntakeService.class).submit(who("reporter"),A,null,null,
+                new ReportDraft(kind,null,"en","UTC",null,null,null,null,null,when,when),
+                "{}".getBytes(java.nio.charset.StandardCharsets.UTF_8),UUID.randomUUID().toString()).reportId();
+    }
+
+    private void verifyCategoryScope() throws Exception {
+        UUID source=submitCategorized(A,"reporter",ReportDraft.Kind.LOST,"green folding umbrella","UMBRELLA");
+        UUID relevant=submitCategorized(A,"other",ReportDraft.Kind.FOUND,"green folding umbrella","UMBRELLA");
+        UUID sameCategory=submitCategorized(A,"other",ReportDraft.Kind.FOUND,null,"UMBRELLA");
+        UUID wrongCategory=submitCategorized(A,"other",ReportDraft.Kind.FOUND,"green folding umbrella","BAG");
+        UUID anotherTenant=submitCategorized(B,"remote-reporter",ReportDraft.Kind.FOUND,"green folding umbrella","UMBRELLA");
+        String endpoint=path(source)+"/candidates?category=UMBRELLA";
+        var filtered=api("GET",A,endpoint,"matcher",null);
+        assertEquals(200,filtered.statusCode(),filtered.body());
+        var rows=json.readTree(filtered.body()).get("candidates");
+        assertEquals(2,rows.size(),filtered.body());
+        assertEquals(relevant.toString(),rows.get(0).get("report").asString());
+        assertEquals(sameCategory.toString(),rows.get(1).get("report").asString());
+        assertEquals("INSUFFICIENT_EVIDENCE",rows.get(1).get("score").get("disposition").asString());
+        assertFalse(filtered.body().contains(wrongCategory.toString()));
+        assertFalse(filtered.body().contains(anotherTenant.toString()));
+        assertEquals(400,api("GET",A,endpoint.replace("UMBRELLA","Umbrella"),"matcher",null).statusCode());
+        addUnindexedReports(relevant,"UMBRELLA");
+        var overflow=api("GET",A,endpoint,"matcher",null);
+        assertEquals(200,overflow.statusCode(),overflow.body());
+        var result=json.readTree(overflow.body());
+        assertEquals(relevant.toString(),result.get("candidates").get(0).get("report").asString());
+        assertEquals("CATEGORY_INDEX_ROUTE_LIMIT",result.get("routes").get(4).get("reason").asString());
+        assertFalse(overflow.body().contains(wrongCategory.toString()));
+        var run=path(source)+"/runs/"+UUID.randomUUID();
+        assertEquals(200,api("PUT",A,run,"matcher","{\"limit\":3,\"category\":\"UMBRELLA\"}").statusCode());
+        assertEquals(409,api("PUT",A,run,"matcher","{\"limit\":3,\"category\":\"BAG\"}").statusCode());
+    }
+
+    private UUID submitCategorized(UUID tenant,String actor,ReportDraft.Kind kind,String text,String category) {
+        return app.getBean(IntakeService.class).submit(who(actor),tenant,null,null,
+                new ReportDraft(kind,text,"en","UTC",null,null,null,null,null,null,null,category),
+                "{}".getBytes(java.nio.charset.StandardCharsets.UTF_8),UUID.randomUUID().toString()).reportId();
+    }
+
+    private void verifyCalibration(UUID query,String search,UUID positive,UUID negative,String backend) throws Exception {
+        String path="/internal/matching/calibrations/"+UUID.randomUUID();
+        var draft=Map.ofEntries(Map.entry("spaceId",primary),Map.entry("spaceKey",profile.spaceKey()),
+                Map.entry("activationVersion",1),Map.entry("sourceKind","LOST"),Map.entry("scoringVersion","bounded-evidence-v1"),
+                Map.entry("vectorBackend",backend),
+                Map.entry("planSha256","e".repeat(64)),Map.entry("datasetSha256","f".repeat(64)),
+                Map.entry("minimumCoverage",0.25),Map.entry("holdoutCount",20),Map.entry("supportedHoldout",20),
+                Map.entry("holdoutBrier",0.12),Map.entry("rawScoreBrierOnSameRows",0.20),
+                Map.entry("bins",java.util.Collections.nCopies(5,Map.of("fitCount",10,"observedFrequency",0.84))));
+        String body=json.writeValueAsString(draft);
+        assertEquals(403,api("PUT",A,path,"matcher",body).statusCode());
+        var proposal=api("PUT",A,path,"calibration-author",body);
+        assertEquals(204,proposal.statusCode(),proposal.body());
+        assertEquals(204,api("PUT",A,path,"calibration-author",body).statusCode());
+        assertEquals(404,api("GET",B,path,"calibration-reviewer",null).statusCode());
+        assertEquals(200,api("GET",A,path,"calibration-reviewer",null).statusCode());
+        assertTrue(json.readTree(api("GET",A,search,"matcher",null).body()).get("candidates").get(0).get("confidence").isNull());
+        String approval=json.writeValueAsString(Map.of("reviewSha256","d".repeat(64),"maximumBrier",0.14,
+                "minimumBinSupport",3,"validHours",1));
+        assertEquals(403,api("PUT",A,path+"/approval","calibration-author",approval).statusCode());
+        assertEquals(409,api("PUT",A,path+"/approval","calibration-reviewer",approval.replace("0.14","0.11")).statusCode());
+        var approved=api("PUT",A,path+"/approval","calibration-reviewer",approval);
+        assertEquals(204,approved.statusCode(),approved.body());
+        assertEquals(204,api("PUT",A,path+"/approval","calibration-reviewer",approval).statusCode());
+        String run=path(query)+"/runs/"+UUID.randomUUID();
+        var recorded=api("PUT",A,run,"matcher","{\"spaceId\":\""+primary+"\",\"limit\":10}");
+        assertEquals(200,recorded.statusCode(),recorded.body());
+        var candidates=json.readTree(recorded.body()).get("candidates");
+        assertEquals(positive.toString(),candidates.get(0).get("report").asString());
+        assertEquals(0.84,candidates.get(0).get("confidence").get("probability").asDouble());
+        assertEquals(negative.toString(),candidates.get(1).get("report").asString());
+        assertTrue(candidates.get(1).get("confidence").isNull());
+        assertEquals(json.readTree(recorded.body()),json.readTree(api("GET",A,run,"matcher",null).body()));
+        assertTrue(json.readTree(api("GET",A,search.replace(primary.toString(),alternate.toString()),"matcher",null)
+                .body()).get("candidates").get(0).get("confidence").isNull());
+        String revocation="{\"reviewSha256\":\""+"c".repeat(64)+"\"}";
+        assertEquals(403,api("PUT",A,path+"/revocation","matcher",revocation).statusCode());
+        assertEquals(204,api("PUT",A,path+"/revocation","calibration-reviewer",revocation).statusCode());
+        assertTrue(json.readTree(api("GET",A,search,"matcher",null).body()).get("candidates").get(0).get("confidence").isNull());
+        assertTrue(json.readTree(api("GET",A,run,"matcher",null).body()).get("candidates").get(0).get("confidence").isNull());
     }
 
     private List<UUID> seedQdrant() throws Exception {
@@ -174,6 +322,10 @@ class MatchingIT extends AiFixture {
     }
 
     private void addUnindexedReports(UUID template) throws Exception {
+        addUnindexedReports(template,null);
+    }
+
+    private void addUnindexedReports(UUID template,String category) throws Exception {
         try(var db=admin();var sql=db.prepareStatement("""
                 WITH new_reports AS (
                   INSERT INTO dzoka.reports(tenant_id,id,case_id,item_id,owner_ref,kind,current_revision,expires_at)
@@ -181,10 +333,10 @@ class MatchingIT extends AiFixture {
                   FROM dzoka.reports r CROSS JOIN generate_series(1,513) WHERE r.tenant_id=? AND r.id=?
                   RETURNING tenant_id,id,owner_ref
                 ) INSERT INTO dzoka.report_revisions(tenant_id,report_id,revision,raw_request,raw_sha256,
-                                                      normalization_version,language,timezone,actor_ref)
-                SELECT tenant_id,id,1,''::bytea,repeat('a',64),'fixture','en','UTC',owner_ref FROM new_reports
+                                                      normalization_version,language,timezone,actor_ref,category)
+                SELECT tenant_id,id,1,''::bytea,repeat('a',64),'fixture','en','UTC',owner_ref,? FROM new_reports
                 """)) {
-            sql.setObject(1,A);sql.setObject(2,template);assertEquals(513,sql.executeUpdate());
+            sql.setObject(1,A);sql.setObject(2,template);sql.setString(3,category);assertEquals(513,sql.executeUpdate());
         }
     }
 

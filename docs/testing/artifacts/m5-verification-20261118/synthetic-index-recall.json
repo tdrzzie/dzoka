@@ -1,0 +1,94 @@
+{
+  "scope": "SYNTHETIC_FILTERED_INDEX_RECALL",
+  "pool": 1200,
+  "k": 10,
+  "planUsesHnsw": true,
+  "extensionVersion": "0.8.7",
+  "exactCount": 10,
+  "indexCount": 10,
+  "overlap": 10,
+  "filterViolations": 0,
+  "additionalQueries": [
+    {
+      "tenant": 0,
+      "angle": 0.0234,
+      "category": null,
+      "k": 1,
+      "found": 1,
+      "overlap": 1,
+      "scoped": true
+    },
+    {
+      "tenant": 0,
+      "angle": 0.0424,
+      "category": "BAG",
+      "k": 5,
+      "found": 5,
+      "overlap": 5,
+      "scoped": true
+    },
+    {
+      "tenant": 0,
+      "angle": 0.4424,
+      "category": null,
+      "k": 5,
+      "found": 5,
+      "overlap": 5,
+      "scoped": true
+    },
+    {
+      "tenant": 1,
+      "angle": 0.6704,
+      "category": null,
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    },
+    {
+      "tenant": 1,
+      "angle": 0.6784,
+      "category": "UMBRELLA",
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    },
+    {
+      "tenant": 1,
+      "angle": 1.1904,
+      "category": null,
+      "k": 5,
+      "found": 5,
+      "overlap": 5,
+      "scoped": true
+    },
+    {
+      "tenant": 2,
+      "angle": 0.1924,
+      "category": null,
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    },
+    {
+      "tenant": 2,
+      "angle": 0.9524,
+      "category": null,
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    },
+    {
+      "tenant": 2,
+      "angle": 1.1724,
+      "category": "BAG",
+      "k": 10,
+      "found": 10,
+      "overlap": 10,
+      "scoped": true
+    }
+  ]
+}

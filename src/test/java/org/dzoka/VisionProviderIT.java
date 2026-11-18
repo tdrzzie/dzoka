@@ -9,6 +9,9 @@ import java.util.*;
 import java.util.concurrent.TimeUnit;
 import javax.imageio.ImageIO;
 import org.dzoka.fingerprints.ports.PerceptionJobs;
+import org.dzoka.fingerprints.domain.FingerprintRollout.*;
+import org.dzoka.intake.application.IntakeService;
+import org.dzoka.intake.domain.ReportDraft;
 import org.dzoka.media.application.MediaService;
 import org.junit.jupiter.api.Test;
 
@@ -16,6 +19,7 @@ class VisionProviderIT extends S3Fixture {
     @Override protected void initializeProviders()throws Exception{
         super.initializeProviders();membership(A,"inference","ai:work");membership(A,"wrong-worker","ai:work");
         membership(A,"curator","fingerprints:manage");
+        membership(A,"matcher","matches:read","reports:read","reports:read:any","matches:attest-identifiers");
         try(var c=admin()){VisionJobsIT.profiles(c,A);}
     }
     private void runWorker(UUID profile)throws Exception{
@@ -46,12 +50,43 @@ class VisionProviderIT extends S3Fixture {
         assertEquals(imageVector.evidence().get("spaceKey"),textVector.evidence().get("spaceKey"));assertNotEquals(imageVector.evidence().get("vector"),textVector.evidence().get("vector"));
         var segment=components.stream().filter(c->c.task().equals("SEGMENTATION")).findFirst().orElseThrow();assertEquals(64,((Number)segment.evidence().get("maskWidth")).intValue());
         assertThrows(org.dzoka.foundation.application.Failures.NotFound.class,()->jobs.current(who("other"),A,report));
+        UUID lost=app.getBean(IntakeService.class).submit(who("owner"),A,null,null,
+                new ReportDraft(ReportDraft.Kind.LOST,"blue travel backpack","en","UTC",null,null,null,null,null,null,null),
+                "{}".getBytes(java.nio.charset.StandardCharsets.UTF_8),UUID.randomUUID().toString()).reportId();
+        var lostJob=jobs.enqueue(who("owner"),A,lost,PerceptionFixtures.id("JOINT_TEXT"),null,null);
+        runWorker(PerceptionFixtures.id("JOINT_TEXT"));
+        var lostText=jobs.result(who("owner"),A,lostJob.id()).orElseThrow();
+        String matching="/internal/matching/reports/"+lost;
+        var json=app.getBean(tools.jackson.databind.ObjectMapper.class);
+        assertTrue(json.readTree(api("GET",A,matching+"/candidates","matcher",null).body()).get("candidates").isEmpty());
         var rollouts=app.getBean(org.dzoka.fingerprints.ports.FingerprintRollouts.class);
-        var plan=new org.dzoka.fingerprints.domain.FingerprintRollout.Plan(UUID.randomUUID(),java.util.List.of(new org.dzoka.fingerprints.domain.FingerprintRollout.Source(report,1)),java.util.List.of(),10000,"e".repeat(64),
-            components.stream().map(c->new org.dzoka.fingerprints.domain.FingerprintRollout.PerceptionPin(report,c.id())).toList());
-        rollouts.create(who("curator"),A,plan);assertEquals(4,rollouts.seal(who("curator"),A,plan.id()).availableSlots());rollouts.activate(who("curator"),A,plan.id(),0,false);
+        var pins=new ArrayList<>(components.stream().map(c->new PerceptionPin(report,c.id())).toList());
+        pins.add(new PerceptionPin(lost,lostText.id()));
+        var plan=new Plan(UUID.randomUUID(),java.util.List.of(new Source(report,1),new Source(lost,1)),
+                java.util.List.of(),10000,"e".repeat(64),pins);
+        rollouts.create(who("curator"),A,plan);assertEquals(5,rollouts.seal(who("curator"),A,plan.id()).availableSlots());rollouts.activate(who("curator"),A,plan.id(),0,false);
         var selected=app.getBean(org.dzoka.fingerprints.ports.FingerprintJobs.class).snapshot(who("owner"),A,report);
         assertEquals(4,selected.perceptionComponents().size());assertEquals(plan.id(),selected.rolloutId());
         for(String modality:java.util.List.of("jointImage","jointText","detection","segmentation"))assertEquals(org.dzoka.fingerprints.domain.ItemFingerprint.EvidenceState.AVAILABLE,selected.coverage().get(modality));
+        for(UUID id:java.util.List.of(lost,report)) {
+            String attestation=json.writeValueAsString(Map.of("revision",1,"keyVersion",1,"scopeDigest","a".repeat(64),
+                    "digest",(id.equals(lost)?"b":"c").repeat(64),"attestationId",UUID.randomUUID()));
+            assertEquals(204,api("POST",A,"/internal/matching/reports/"+id+"/identifier-attestations","matcher",attestation).statusCode());
+        }
+        String run=matching+"/runs/"+UUID.randomUUID();
+        var matched=api("PUT",A,run,"matcher","{\"limit\":5}");
+        assertEquals(200,matched.statusCode(),matched.body());
+        var candidate=json.readTree(matched.body()).get("candidates").get(0);
+        assertEquals("CONFLICT",candidate.get("score").get("disposition").asString());
+        assertEquals(1,candidate.get("ranks").get("JOINT_VECTOR").asInt());
+        assertEquals(lostText.id().toString(),candidate.get("jointEvidence").get("sourceComponent").asString());
+        assertEquals(imageVector.id().toString(),candidate.get("jointEvidence").get("candidateComponent").asString());
+        assertFalse(matched.body().contains("\"vector\":"));
+        assertEquals(200,api("GET",A,run,"matcher",null).statusCode());
+        try(var db=admin();var expire=db.prepareStatement("UPDATE dzoka.media_assets SET expires_at=now()-interval '1 second' WHERE tenant_id=? AND id=?")) {
+            expire.setObject(1,A);expire.setObject(2,media.id());assertEquals(1,expire.executeUpdate());
+        }
+        assertEquals(404,api("GET",A,run,"matcher",null).statusCode());
+        assertTrue(json.readTree(api("GET",A,matching+"/candidates","matcher",null).body()).get("candidates").isEmpty());
     }
 }

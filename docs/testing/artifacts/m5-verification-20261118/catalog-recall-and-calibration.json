@@ -1,0 +1,307 @@
+{
+  "galleryCount": 593,
+  "queryCount": 36,
+  "languageCounts": {
+    "ar_AE": 3,
+    "hi_IN": 18,
+    "fr_CA": 2,
+    "zh_TW": 1,
+    "es_US": 3,
+    "cs_CZ": 1,
+    "de_DE": 8
+  },
+  "allIndexedPlansVerified": true,
+  "extensionVersion": "0.8.7",
+  "metrics": [
+    {
+      "category": "ALL",
+      "filtered": false,
+      "k": 1,
+      "queries": 36,
+      "neighbors_overlap": 36,
+      "exact_listing_hits": 16,
+      "indexed_listing_hits": 16,
+      "scope_violations": 0
+    },
+    {
+      "category": "ALL",
+      "filtered": false,
+      "k": 5,
+      "queries": 36,
+      "neighbors_overlap": 179,
+      "exact_listing_hits": 32,
+      "indexed_listing_hits": 33,
+      "scope_violations": 0
+    },
+    {
+      "category": "ALL",
+      "filtered": false,
+      "k": 10,
+      "queries": 36,
+      "neighbors_overlap": 359,
+      "exact_listing_hits": 34,
+      "indexed_listing_hits": 34,
+      "scope_violations": 0
+    },
+    {
+      "category": "ALL",
+      "filtered": true,
+      "k": 1,
+      "queries": 36,
+      "neighbors_overlap": 36,
+      "exact_listing_hits": 16,
+      "indexed_listing_hits": 16,
+      "scope_violations": 0
+    },
+    {
+      "category": "ALL",
+      "filtered": true,
+      "k": 5,
+      "queries": 36,
+      "neighbors_overlap": 180,
+      "exact_listing_hits": 33,
+      "indexed_listing_hits": 33,
+      "scope_violations": 0
+    },
+    {
+      "category": "ALL",
+      "filtered": true,
+      "k": 10,
+      "queries": 36,
+      "neighbors_overlap": 360,
+      "exact_listing_hits": 34,
+      "indexed_listing_hits": 34,
+      "scope_violations": 0
+    },
+    {
+      "category": "CHAIR",
+      "filtered": false,
+      "k": 1,
+      "queries": 12,
+      "neighbors_overlap": 12,
+      "exact_listing_hits": 5,
+      "indexed_listing_hits": 5,
+      "scope_violations": 0
+    },
+    {
+      "category": "CHAIR",
+      "filtered": false,
+      "k": 5,
+      "queries": 12,
+      "neighbors_overlap": 59,
+      "exact_listing_hits": 10,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "CHAIR",
+      "filtered": false,
+      "k": 10,
+      "queries": 12,
+      "neighbors_overlap": 119,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "CHAIR",
+      "filtered": true,
+      "k": 1,
+      "queries": 12,
+      "neighbors_overlap": 12,
+      "exact_listing_hits": 5,
+      "indexed_listing_hits": 5,
+      "scope_violations": 0
+    },
+    {
+      "category": "CHAIR",
+      "filtered": true,
+      "k": 5,
+      "queries": 12,
+      "neighbors_overlap": 60,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "CHAIR",
+      "filtered": true,
+      "k": 10,
+      "queries": 12,
+      "neighbors_overlap": 120,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "HANDBAG",
+      "filtered": false,
+      "k": 1,
+      "queries": 12,
+      "neighbors_overlap": 12,
+      "exact_listing_hits": 5,
+      "indexed_listing_hits": 5,
+      "scope_violations": 0
+    },
+    {
+      "category": "HANDBAG",
+      "filtered": false,
+      "k": 5,
+      "queries": 12,
+      "neighbors_overlap": 60,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "HANDBAG",
+      "filtered": false,
+      "k": 10,
+      "queries": 12,
+      "neighbors_overlap": 120,
+      "exact_listing_hits": 12,
+      "indexed_listing_hits": 12,
+      "scope_violations": 0
+    },
+    {
+      "category": "HANDBAG",
+      "filtered": true,
+      "k": 1,
+      "queries": 12,
+      "neighbors_overlap": 12,
+      "exact_listing_hits": 5,
+      "indexed_listing_hits": 5,
+      "scope_violations": 0
+    },
+    {
+      "category": "HANDBAG",
+      "filtered": true,
+      "k": 5,
+      "queries": 12,
+      "neighbors_overlap": 60,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "HANDBAG",
+      "filtered": true,
+      "k": 10,
+      "queries": 12,
+      "neighbors_overlap": 120,
+      "exact_listing_hits": 12,
+      "indexed_listing_hits": 12,
+      "scope_violations": 0
+    },
+    {
+      "category": "SHOES",
+      "filtered": false,
+      "k": 1,
+      "queries": 12,
+      "neighbors_overlap": 12,
+      "exact_listing_hits": 6,
+      "indexed_listing_hits": 6,
+      "scope_violations": 0
+    },
+    {
+      "category": "SHOES",
+      "filtered": false,
+      "k": 5,
+      "queries": 12,
+      "neighbors_overlap": 60,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "SHOES",
+      "filtered": false,
+      "k": 10,
+      "queries": 12,
+      "neighbors_overlap": 120,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "SHOES",
+      "filtered": true,
+      "k": 1,
+      "queries": 12,
+      "neighbors_overlap": 12,
+      "exact_listing_hits": 6,
+      "indexed_listing_hits": 6,
+      "scope_violations": 0
+    },
+    {
+      "category": "SHOES",
+      "filtered": true,
+      "k": 5,
+      "queries": 12,
+      "neighbors_overlap": 60,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    },
+    {
+      "category": "SHOES",
+      "filtered": true,
+      "k": 10,
+      "queries": 12,
+      "neighbors_overlap": 120,
+      "exact_listing_hits": 11,
+      "indexed_listing_hits": 11,
+      "scope_violations": 0
+    }
+  ],
+  "calibration": {
+    "schemaVersion": 1,
+    "state": "DRAFT_EVALUATED",
+    "approval": "NOT_ESTABLISHED",
+    "planSha256": "0d93385e527757afb9b411d86367478f2d478e77f6a06215b6075933b2c5f475",
+    "datasetSha256": "c5e7723f4a4afa3da4f35c497ab30ac0f8ee5b3e473ec0ffa897511e127e9324",
+    "scoringVersion": "bounded-evidence-v1",
+    "spaceKey": "a01282708ed6f57914db80532838b9949aeebd53437c87fa9f23e33ad2bb2301",
+    "method": "fixed-five-bins-v1",
+    "minimumCoverage": 0.3,
+    "fitCount": 95,
+    "holdoutCount": 85,
+    "supportedHoldout": 85,
+    "excluded": {
+      "fit": 0,
+      "holdout": 0
+    },
+    "bins": [
+      {
+        "fitCount": 0,
+        "observedFrequency": null
+      },
+      {
+        "fitCount": 1,
+        "observedFrequency": 0.0
+      },
+      {
+        "fitCount": 39,
+        "observedFrequency": 0.15384615384615385
+      },
+      {
+        "fitCount": 40,
+        "observedFrequency": 0.2
+      },
+      {
+        "fitCount": 15,
+        "observedFrequency": 0.3333333333333333
+      }
+    ],
+    "holdoutBrier": 0.15728970878292148,
+    "rawScoreBrierOnSameRows": 0.39648916172217097,
+    "scope": "PUBLIC_CATALOG_VECTOR_ONLY_WITH_FOUR_MINED_NEGATIVES_PER_QUERY",
+    "identityOverlap": 0
+  },
+  "scope": "PUBLIC_CATALOG_MULTILINGUAL_PROXY",
+  "source": "https://amazon-berkeley-objects.s3.amazonaws.com/listings/metadata/listings_0.json.gz",
+  "sourceSha256": "c5e7723f4a4afa3da4f35c497ab30ac0f8ee5b3e473ec0ffa897511e127e9324",
+  "license": "CC-BY-4.0",
+  "spaceKey": "a01282708ed6f57914db80532838b9949aeebd53437c87fa9f23e33ad2bb2301",
+  "image": "pgvector/pgvector@sha256:a5b06db72c44033b10fde7f303aad2a543e87a314dd6c2a680848067defd3760"
+}

@@ -10,7 +10,7 @@ import tools.jackson.databind.node.ObjectNode;
 
 final class MatchingHistory {
     private static final ObjectMapper JSON=new ObjectMapper();
-    record Stored(UUID space, int limit, Search result) {}
+    record Stored(UUID space, int limit,String category, Search result) {}
     private MatchingHistory() {}
 
     static void lockAndClean(Connection connection, UUID tenant, String actor) throws SQLException {
@@ -41,10 +41,10 @@ final class MatchingHistory {
         try(var query=connection.prepareStatement("""
                 SELECT r.space_id,r.requested_limit,r.candidate_count,r.summary::text,
                        COALESCE(jsonb_agg(c.evidence ORDER BY c.ordinal)
-                           FILTER (WHERE c.ordinal IS NOT NULL),'[]'::jsonb)::text
+                           FILTER (WHERE c.ordinal IS NOT NULL),'[]'::jsonb)::text,r.requested_category
                 FROM dzoka.match_search_runs r LEFT JOIN dzoka.match_search_candidates c
                   ON (c.tenant_id,c.run_id)=(r.tenant_id,r.id)
-                WHERE r.tenant_id=? AND r.report_id=? AND r.id=?
+                WHERE r.tenant_id=? AND r.report_id=? AND r.client_id=? AND r.actor_ref=dzoka.current_actor_ref()
                   AND r.created_at>statement_timestamp()-interval '24 hours'
                 GROUP BY r.tenant_id,r.id
                 """)) {
@@ -55,26 +55,33 @@ final class MatchingHistory {
                 if(candidates.size()!=row.getInt(3)) throw new Failures.NotFound();
                 var summary=(ObjectNode)JSON.readTree(row.getString(4));
                 summary.set("candidates",candidates);
-                return new Stored(row.getObject(1,UUID.class),row.getInt(2),JSON.treeToValue(summary,Search.class));
+                return new Stored(row.getObject(1,UUID.class),row.getInt(2),row.getString(6),JSON.treeToValue(summary,Search.class));
             }
         }
     }
 
-    static void write(Connection connection, UUID tenant, String actor, UUID space, int limit, UUID run, Search result) throws SQLException {
+    static void write(Connection connection, UUID tenant, String actor, UUID space, int limit,String category,
+                      UUID clientId, Search result) throws SQLException {
+        UUID run=UUID.randomUUID();
         var summary=(ObjectNode)JSON.valueToTree(result);
         summary.remove("candidates");
         try(var insert=connection.prepareStatement("""
                 INSERT INTO dzoka.match_search_runs
-                  (tenant_id,id,actor_ref,report_id,revision,space_id,requested_limit,candidate_count,summary)
-                SELECT ?,?,?,?,?,?,?,?,CAST(? AS jsonb)
-                WHERE (SELECT count(*) FROM dzoka.match_search_runs WHERE tenant_id=? AND actor_ref=?)<100
+                  (tenant_id,id,actor_ref,report_id,revision,space_id,requested_limit,candidate_count,summary,requested_category,client_id)
+                SELECT ?,?,?,?,?,?,?,?,CAST(? AS jsonb),?,?
+                WHERE (SELECT count(*) FROM dzoka.match_search_quota WHERE tenant_id=? AND actor_ref=?)<100
                 ON CONFLICT DO NOTHING
                 """)) {
             insert.setObject(1,tenant);insert.setObject(2,run);insert.setString(3,actor);
             insert.setObject(4,result.report());insert.setInt(5,result.revision());insert.setObject(6,space,java.sql.Types.OTHER);
             insert.setInt(7,limit);insert.setInt(8,result.candidates().size());insert.setString(9,summary.toString());
-            insert.setObject(10,tenant);insert.setString(11,actor);
+            insert.setString(10,category);insert.setObject(11,clientId);insert.setObject(12,tenant);insert.setString(13,actor);
             if(insert.executeUpdate()!=1) throw new Failures.Conflict();
+        }
+        try(var quota=connection.prepareStatement(
+                "INSERT INTO dzoka.match_search_quota(tenant_id,id,actor_ref) VALUES(?,?,?)")) {
+            quota.setObject(1,tenant);quota.setObject(2,run);quota.setString(3,actor);
+            quota.executeUpdate();
         }
         try(var insert=connection.prepareStatement("""
                 INSERT INTO dzoka.match_search_candidates(tenant_id,run_id,ordinal,report_id,revision,evidence)

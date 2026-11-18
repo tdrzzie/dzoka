@@ -5,8 +5,12 @@ import java.time.*;
 
 public record ReportDraft(Kind kind, String rawText, String language, String timezone,
         String rawLocation, String rawTime, Double latitude, Double longitude, Double uncertaintyMeters,
-        Instant occurredAfter, Instant occurredBefore) {
+        Instant occurredAfter, Instant occurredBefore, String category) {
     public enum Kind { LOST, FOUND }
+    public ReportDraft(Kind kind,String rawText,String language,String timezone,String rawLocation,String rawTime,
+                       Double latitude,Double longitude,Double uncertaintyMeters,Instant occurredAfter,Instant occurredBefore) {
+        this(kind,rawText,language,timezone,rawLocation,rawTime,latitude,longitude,uncertaintyMeters,occurredAfter,occurredBefore,null);
+    }
     public ReportDraft {
         if(kind==null || language==null || !language.matches("[A-Za-z]{2,8}(-[A-Za-z0-9]{1,8})*")
                 || timezone==null) throw new IllegalArgumentException("Invalid report context");
@@ -21,6 +25,7 @@ public record ReportDraft(Kind kind, String rawText, String language, String tim
             throw new IllegalArgumentException("Invalid position");
         if(occurredAfter!=null && occurredBefore!=null && occurredAfter.isAfter(occurredBefore))
             throw new IllegalArgumentException("Invalid time interval");
+        if(category!=null && !category.matches("[A-Z][A-Z0-9_]{0,47}")) throw new IllegalArgumentException("Invalid category code");
     }
     public String normalizedText() {
         return rawText==null?null:Normalizer.normalize(rawText,Normalizer.Form.NFC).replaceAll("(?U)\\s+"," ").strip();

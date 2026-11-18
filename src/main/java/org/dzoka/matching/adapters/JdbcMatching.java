@@ -49,11 +49,16 @@ public final class JdbcMatching implements MatchingUseCases {
         ), pool AS (
           SELECT r.tenant_id,r.id,r.kind,r.current_revision,false AS is_source
           FROM dzoka.reports r JOIN selected s ON s.tenant_id=r.tenant_id AND s.kind<>r.kind
+          CROSS JOIN (SELECT ?::text AS category) filter
           WHERE r.deleted_at IS NULL AND r.expires_at>statement_timestamp()
             AND (r.owner_ref=dzoka.current_actor_ref() OR dzoka.permitted('reports:read:any'))
+            AND (filter.category IS NULL OR EXISTS (
+              SELECT 1 FROM dzoka.report_revisions cv WHERE
+                (cv.tenant_id,cv.report_id,cv.revision)=(r.tenant_id,r.id,r.current_revision)
+                AND cv.category=filter.category))
           LIMIT ?
         ), visible AS (SELECT * FROM selected UNION ALL SELECT * FROM pool)
-        SELECT r.id,r.is_source,r.current_revision,v.normalized_text,v.latitude,v.longitude,v.uncertainty_meters,
+        SELECT r.id,r.is_source,r.current_revision,v.category,v.normalized_text,v.latitude,v.longitude,v.uncertainty_meters,
                v.occurred_after,v.occurred_before,i.key_version,i.scope_digest,i.digest,i.attestation_id,
                a.version AS activation_version,c.id AS component_id,e.space_key,c.vector
         FROM visible r JOIN dzoka.report_revisions v
@@ -71,26 +76,28 @@ public final class JdbcMatching implements MatchingUseCases {
           AND c.source_revision=r.current_revision AND cardinality(c.vector)=e.dimensions AND NOT c.truncated
         """;
 
-    @Override public Search search(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit) {
-        checkLimit(limit);
+    @Override public Search search(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit,String category) {
+        checkRequest(limit,category);
         return transactions.execute(actor,tenant,"matches:read",connection -> {
             requireReportRead(connection);
-            return search(connection,tenant,report,space,limit);
+            return searchWithConfidence(connection,tenant,report,space,limit,category);
         });
     }
 
-    @Override public Search recordSearch(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit, UUID run) {
-        checkLimit(limit);
+    @Override public Search recordSearch(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit,
+                                         String category,UUID run) {
+        checkRequest(limit,category);
         return transactions.execute(actor,tenant,"matches:read",connection -> {
             requireReportRead(connection);
             MatchingHistory.lockAndClean(connection,tenant,actor.reference());
             var previous=MatchingHistory.read(connection,tenant,report,run);
             if (previous!=null) {
-                if (previous.limit()!=limit || !Objects.equals(previous.space(),space)) throw new Failures.Conflict();
-                return previous.result();
+                if (previous.limit()!=limit || !Objects.equals(previous.space(),space)
+                        || !Objects.equals(previous.category(),category)) throw new Failures.Conflict();
+                return replay(connection,tenant,previous);
             }
-            var result=search(connection,tenant,report,space,limit);
-            MatchingHistory.write(connection,tenant,actor.reference(),space,limit,run,result);
+            var result=searchWithConfidence(connection,tenant,report,space,limit,category);
+            MatchingHistory.write(connection,tenant,actor.reference(),space,limit,category,run,result);
             return result;
         });
     }
@@ -100,16 +107,32 @@ public final class JdbcMatching implements MatchingUseCases {
             requireReportRead(connection);
             var record=MatchingHistory.read(connection,tenant,report,run);
             if (record==null) throw new Failures.NotFound();
-            return record.result();
+            return replay(connection,tenant,record);
         });
+    }
+
+    private static Search replay(Connection db,UUID tenant,MatchingHistory.Stored stored) throws SQLException {
+        Search result=stored.result();
+        if (result.candidates().stream().anyMatch(candidate -> candidate.jointEvidence()!=null)) {
+            var source=snapshot(db,tenant,result.report(),stored.space(),stored.category(),java.util.Set.of()).source();
+            var available=JointRanking.rank(db,tenant,source,result.activationVersion(),stored.category());
+            for (var candidate:result.candidates()) {
+                var current=available.matches().get(candidate.report());
+                if (candidate.jointEvidence()!=null && (current==null || !candidate.jointEvidence().equals(current.evidence()))) {
+                    throw new Failures.NotFound();
+                }
+            }
+        }
+        return JdbcCalibration.assess(db,tenant,stored.space(),result,true);
     }
 
     @Override public int pruneHistory(VerifiedIdentity actor, UUID tenant) {
         return transactions.execute(actor,tenant,"matches:maintain-history",connection -> MatchingHistory.prune(connection,tenant));
     }
 
-    private static void checkLimit(int limit) {
+    private static void checkRequest(int limit,String category) {
         if (limit<1 || limit>Matching.ROUTE_LIMIT) throw new IllegalArgumentException("Matching limit out of range");
+        if (category!=null && !category.matches("[A-Z][A-Z0-9_]{0,47}")) throw new IllegalArgumentException("Invalid category code");
     }
 
     @Override public Projection reconcile(VerifiedIdentity actor, UUID tenant, UUID space) {
@@ -167,72 +190,132 @@ public final class JdbcMatching implements MatchingUseCases {
         }
     }
 
-    private Search search(Connection connection, UUID tenant, UUID report, UUID space, int limit) throws SQLException {
-        boolean indexOnly=indexed && largePool(connection,tenant,report);
-        Snapshot snapshot=snapshot(connection,tenant,report,space,indexOnly?java.util.Set.of():null);
+    private Search searchWithConfidence(Connection db,UUID tenant,UUID report,UUID space,int limit,String category)
+            throws SQLException {
+        Search result=search(db,tenant,report,space,limit,category);
+        return category==null?JdbcCalibration.assess(db,tenant,space,result,false):result;
+    }
+
+    private Search search(Connection connection, UUID tenant, UUID report, UUID space, int limit,String category) throws SQLException {
+        boolean indexOnly=largePool(connection,tenant,report,category);
+        Snapshot snapshot=snapshot(connection,tenant,report,space,category,indexOnly?java.util.Set.of():null);
         Observation source=snapshot.source();
         Long activation=snapshot.activation();
+        JointRoute joint=JointRanking.rank(connection,tenant,source,activation,category);
         var pool=snapshot.pool();
         VectorRoute ranking=null;
         boolean overflow=indexOnly || pool.size()>Matching.POOL_LIMIT;
         if (indexed && source.vector()!=null && activation!=null) {
-            ranking=PgVectorIndexed.rank(connection,tenant,source,space,activation);
+            ranking=PgVectorIndexed.rank(connection,tenant,source,space,activation,category);
         } else if (source.vector()!=null && !overflow) {
-            if (pgvector) ranking=PgVectorRanking.rank(connection,source.vector(),pool);
-            if (qdrant!=null) ranking=qdrant.rank(tenant,source.vector(),pool);
+            ranking=rankVectors(connection,tenant,source,pool);
         }
-        if(indexed && overflow) {
-            var selected=new java.util.HashSet<>(identifierCandidates(connection,tenant,source));
-            if(ranking!=null) selected.addAll(ranking.similarities().keySet());
-            Snapshot indexedSnapshot=snapshot(connection,tenant,report,space,selected);
+        if(overflow) {
+            var routes=java.util.Map.of(Route.IDENTIFIER,ReportRanking.identifiers(connection,tenant,source,category),
+                    Route.LEXICAL,ReportRanking.lexical(connection,tenant,source,category),
+                    Route.SPATIAL_TIME,ReportRanking.context(connection,tenant,source,category),
+                    Route.CATEGORY,ReportRanking.categories(connection,tenant,source,category));
+            var selected=new java.util.HashSet<UUID>();
+            routes.values().forEach(result -> selected.addAll(result.revisions().keySet()));
+            selected.addAll(joint.matches().keySet());
+            if (!indexed && source.vector()!=null && activation!=null)
+                ranking=rankActiveVectorPool(connection,tenant,source,space,activation,category);
+            if(ranking!=null) {
+                ranking=ranking.shortlist();
+                selected.addAll(ranking.similarities().keySet());
+            }
+            Snapshot indexedSnapshot=snapshot(connection,tenant,report,space,category,selected);
             Observation current=indexedSnapshot.source();
             if(Objects.equals(activation,indexedSnapshot.activation()) && current.revision()==source.revision()
                     && Objects.equals(component(source),component(current)) && Objects.equals(current.identifier(),source.identifier())) {
-                return Matching.search(current,indexedSnapshot.pool(),activation,limit,ranking,true);
+                return Matching.search(current,indexedSnapshot.pool(),activation,limit,ranking,routes,joint);
             }
         }
-        return overflow?Matching.overCapacity(source,activation):Matching.search(source,pool,activation,limit,ranking);
+        return overflow?Matching.overCapacity(source,activation)
+                :Matching.search(source,pool,activation,limit,ranking,java.util.Map.of(),joint);
     }
 
     private static UUID component(Observation source) {
         return source.vector()==null?null:source.vector().component();
     }
 
-    private static java.util.List<UUID> identifierCandidates(Connection db, UUID tenant, Observation source) throws SQLException {
-        Identifier identifier=source.identifier();
-        if(identifier==null) return java.util.List.of();
+    private VectorRoute rankVectors(Connection db,UUID tenant,Observation source,java.util.List<Observation> pool)
+            throws SQLException {
+        if (pgvector) return PgVectorRanking.rank(db,source.vector(),pool);
+        if (qdrant!=null) return qdrant.rank(tenant,source.vector(),pool);
+        return null;
+    }
+
+    private VectorRoute rankActiveVectorPool(Connection db,UUID tenant,Observation source,UUID space,
+                                             long activation,String category) throws SQLException {
+        var saved=db.setSavepoint();
+        VectorRoute result;
+        try {
+            var candidates=vectorCandidates(db,tenant,source.report(),space,activation,category);
+            if (candidates.size()>Matching.POOL_LIMIT) {
+                result=new VectorRoute("ACTIVE_VECTOR_POOL_LIMIT",java.util.Map.of(),true);
+            } else {
+                var pool=snapshot(db,tenant,source.report(),space,category,candidates).pool();
+                result=rankVectors(db,tenant,source,pool);
+                if (result==null) result=Matching.exactVectorRoute(source,pool);
+            }
+        } catch (SQLException failure) {
+            db.rollback(saved);
+            result=new VectorRoute("ACTIVE_VECTOR_LOOKUP",java.util.Map.of(),true);
+        }
+        db.releaseSavepoint(saved);
+        return result;
+    }
+
+    private static java.util.Set<UUID> vectorCandidates(Connection db, UUID tenant, UUID source, UUID space,
+                                                        long activation,String category) throws SQLException {
         try(var query=db.prepareStatement("""
-                SELECT i.report_id FROM dzoka.match_identifiers i
-                JOIN dzoka.reports r ON (r.tenant_id,r.id,r.current_revision)=(i.tenant_id,i.report_id,i.revision)
-                JOIN dzoka.reports s ON s.tenant_id=i.tenant_id AND s.id=? AND s.kind<>r.kind
-                WHERE i.tenant_id=? AND i.key_version=? AND i.scope_digest=? AND i.digest=?
-                ORDER BY i.report_id LIMIT 21
+                SELECT r.id FROM dzoka.fingerprint_active a
+                JOIN dzoka.fingerprint_snapshot_slots slot ON (slot.tenant_id,slot.rollout_id)=(a.tenant_id,a.rollout_id)
+                JOIN dzoka.fingerprint_components c
+                  ON (c.tenant_id,c.id,c.report_id,c.space_id)=(slot.tenant_id,slot.component_id,slot.report_id,slot.space_id)
+                JOIN dzoka.reports r ON (r.tenant_id,r.id,r.current_revision)=(c.tenant_id,c.report_id,c.source_revision)
+                JOIN dzoka.reports s ON s.tenant_id=r.tenant_id AND s.id=? AND s.kind<>r.kind
+                CROSS JOIN (SELECT ?::text AS category) filter
+                WHERE a.tenant_id=? AND a.version=? AND slot.space_id=? AND slot.state='AVAILABLE' AND NOT c.truncated
+                  AND r.deleted_at IS NULL AND r.expires_at>statement_timestamp()
+                  AND (r.owner_ref=dzoka.current_actor_ref() OR dzoka.permitted('reports:read:any'))
+                  AND (filter.category IS NULL OR EXISTS (
+                    SELECT 1 FROM dzoka.report_revisions cv WHERE
+                      (cv.tenant_id,cv.report_id,cv.revision)=(r.tenant_id,r.id,r.current_revision)
+                      AND cv.category=filter.category))
+                LIMIT 513
                 """)) {
-            query.setObject(1,source.report());query.setObject(2,tenant);query.setInt(3,identifier.keyVersion());
-            query.setString(4,identifier.scopeDigest());query.setString(5,identifier.digest());query.setQueryTimeout(2);
-            var found=new ArrayList<UUID>();
+            query.setObject(1,source);query.setString(2,category);query.setObject(3,tenant);
+            query.setLong(4,activation);query.setObject(5,space);query.setQueryTimeout(2);
+            var found=new java.util.HashSet<UUID>();
             try(var rows=query.executeQuery()) { while(rows.next()) found.add(rows.getObject(1,UUID.class)); }
             return found;
         }
     }
 
-    private static boolean largePool(Connection db, UUID tenant, UUID source) throws SQLException {
+    private static boolean largePool(Connection db, UUID tenant, UUID source,String category) throws SQLException {
         try(var query=db.prepareStatement("""
                 SELECT count(*)>512 FROM (
-                  SELECT c.id FROM dzoka.reports s JOIN dzoka.reports c ON c.tenant_id=s.tenant_id AND c.kind<>s.kind
-                  WHERE s.tenant_id=? AND s.id=? AND c.deleted_at IS NULL AND c.expires_at>statement_timestamp()
-                    AND (c.owner_ref=dzoka.current_actor_ref() OR dzoka.permitted('reports:read:any'))
+                  SELECT r.id FROM dzoka.reports s JOIN dzoka.reports r ON r.tenant_id=s.tenant_id AND r.kind<>s.kind
+                  CROSS JOIN (SELECT ?::text AS category) filter
+                  WHERE s.tenant_id=? AND s.id=? AND r.deleted_at IS NULL AND r.expires_at>statement_timestamp()
+                    AND (r.owner_ref=dzoka.current_actor_ref() OR dzoka.permitted('reports:read:any'))
+                    AND (filter.category IS NULL OR EXISTS (
+                      SELECT 1 FROM dzoka.report_revisions cv WHERE
+                        (cv.tenant_id,cv.report_id,cv.revision)=(r.tenant_id,r.id,r.current_revision)
+                        AND cv.category=filter.category))
                   LIMIT 513
                 ) bounded
                 """)) {
-            query.setObject(1,tenant);query.setObject(2,source);query.setQueryTimeout(3);
+            query.setString(1,category);query.setObject(2,tenant);query.setObject(3,source);query.setQueryTimeout(3);
             try(var row=query.executeQuery()) { return row.next() && row.getBoolean(1); }
         }
     }
 
     private record Snapshot(Observation source, Long activation, java.util.List<Observation> pool) {}
 
-    private static Snapshot snapshot(Connection connection, UUID tenant, UUID report, UUID space,
+    private static Snapshot snapshot(Connection connection, UUID tenant, UUID report, UUID space,String category,
                                      java.util.Set<UUID> selection) throws SQLException {
         Observation source=null;
         Long activation=null;
@@ -240,10 +323,10 @@ public final class JdbcMatching implements MatchingUseCases {
         String sql=selection==null?SEARCH:SEARCH.replace("LIMIT ?","AND r.id=ANY(?) LIMIT ?");
         var ids=selection==null?null:connection.createArrayOf("uuid",selection.toArray());
         try (var query=connection.prepareStatement(sql)) {
-            query.setObject(1,tenant);query.setObject(2,report);
-            if(ids==null) {query.setInt(3,Matching.POOL_LIMIT+1);query.setObject(4,space,java.sql.Types.OTHER);}
+            query.setObject(1,tenant);query.setObject(2,report);query.setString(3,category);
+            if(ids==null) {query.setInt(4,Matching.POOL_LIMIT+1);query.setObject(5,space,java.sql.Types.OTHER);}
             else {
-                query.setArray(3,ids);query.setInt(4,Matching.POOL_LIMIT+1);query.setObject(5,space,java.sql.Types.OTHER);
+                query.setArray(4,ids);query.setInt(5,Matching.POOL_LIMIT+1);query.setObject(6,space,java.sql.Types.OTHER);
             }
             query.setQueryTimeout(3);
             try (var rows=query.executeQuery()) {
@@ -299,7 +382,7 @@ public final class JdbcMatching implements MatchingUseCases {
         Identifier identifier=digest==null?null:new Identifier(row.getInt("key_version"),row.getString("scope_digest"),digest,
                 row.getObject("attestation_id",UUID.class));
         return new Observation(row.getObject("id",UUID.class),row.getInt("current_revision"),row.getString("normalized_text"),
-                position,instant(row,"occurred_after"),instant(row,"occurred_before"),identifier,readVector(row));
+                position,instant(row,"occurred_after"),instant(row,"occurred_before"),identifier,readVector(row),row.getString("category"));
     }
 
     private static Vector readVector(ResultSet row) throws SQLException {

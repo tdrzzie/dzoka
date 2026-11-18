@@ -2,7 +2,7 @@
 
 Design accepted 2026-10-26. This view follows the [current baseline](baseline.md) and ADRs [0006](../adr/0006-retrieval-scoring.md); [0008](../adr/0008-missing-evidence.md); [0010](../adr/0010-global-local-fingerprints.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
-November 18 implementation update. The bounded local matching path, protected serial comparison and three exact backends are implemented under [ADR 0053](../adr/0053-bounded-matching-and-vector-backends.md). The [M5 acceptance record](../testing/m5-local-matching-2026-11-18.md) tracks verification and the remaining design requirements.
+November 18 implementation update. The matching path, protected serial comparison, database indexes, Qdrant projection, multimodal pins, durable history and calibration lifecycle are implemented under [ADR 0053](../adr/0053-bounded-matching-and-vector-backends.md), [ADR 0054](../adr/0054-indexed-matching-and-durable-history.md) and [ADR 0055](../adr/0055-scoped-matching-indexes-and-calibration.md). The [M5 execution record](../testing/m5-verification-2026-11-18.md) tracks current verification and open target acceptance.
 
 ## Pipeline
 

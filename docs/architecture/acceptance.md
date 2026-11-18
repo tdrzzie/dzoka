@@ -145,3 +145,14 @@ The preceding dated tables retain their historical evidence boundaries. [ADR 004
 These implement additional A09/A29 evaluation tooling; they do not independently label semantic correctness, identify undeclared leakage, calibrate confidence or select institutional acceptance thresholds. The [M4 acceptance checklist](../testing/m4-acceptance-checklist.md) specifies reference/human review and target-service sign-off still required. The evaluator never grants fingerprint promotion or property release authority.
 
 The subsequent [licensed public-reference pilot](../testing/m4-public-reference-pilot-2026-11-06.md) records actual FLORES/FSDD/COCO failures, truncation and geometry metrics. It exposed the Jina text export's failure beyond 16 tokens. A publisher-hash-verified full-precision replacement has new joint/shared/isolated identities and retained historical manifests/releases; other 32 isolated profiles stay unchanged. The exact failed caption now succeeds in isolated execution. The dated execution record confirms post-fix full 24-phase and long-report HTTP acceptance: 157 Python, 22 Java unit and 93 integration tests pass with exact restore of 35 tables/3,123 rows. Public-reference execution and conformance still do not supply institutional quality approval.
+
+## M5 local retrieval and evidence (2026-11-18)
+
+| Acceptance | Executed | Remaining |
+|---|---|---|
+| A09–A11 | Active compatible text and joint pins, missing and correlated evidence, report and media expiry, serial contradiction at cosine 1.0 | Independent operating-population review of conflict and modality coverage |
+| A12, A25 | Independent bounded routes over 512 reports, category and tenant exclusion, actual pgvector and Qdrant HTTP routes, explicit unavailable projection and measured exact-baseline recall on authored and public catalog fixtures | Target latency, failure drills and recovery-case recall under target traffic and modality mix |
+| A24, A26–A27 | Actor-private durable histories, replay and expiry, populated V12 upgrade, real logical restore with index definitions and extension versions, opaque component provenance | Deployment restore and retention rehearsal |
+| A29 | Identity-disjoint catalog proxy, authored sparse diagnostic, gated and revocable calibration in the HTTP path | Representative case labels, approved scope and error thresholds |
+
+See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownership and release remain separately governed under A13–A16; A20 remains part of federation.

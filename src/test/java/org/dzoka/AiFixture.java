@@ -1,8 +1,6 @@
 package org.dzoka;
 
 import static org.junit.jupiter.api.Assertions.*;
-import java.net.URI;
-import java.net.http.*;
 import java.nio.file.*;
 import java.sql.*;
 import java.time.*;
@@ -54,8 +52,4 @@ abstract class AiFixture extends IntegrationFixture {
         new ReportDraft(ReportDraft.Kind.LOST,text,"en","UTC",null,null,null,null,null,null,null),text.getBytes(),UUID.randomUUID().toString());}
     protected EmbeddingResult result(LeasedInput input){double[] vector=new double[384];vector[0]=1;
         return new EmbeddingResult(input.lease(),input.inputSha256(),input.space().spaceKey(),"onnxruntime-cpu","text-embedding-v1",Instant.now(),vector,5,false);}
-    protected HttpResponse<String> api(String method,UUID tenant,String path,String subject,String body) throws Exception {
-        return http.send(HttpRequest.newBuilder(URI.create(base+"/api/v1/tenants/"+tenant+path)).header("Authorization","Bearer "+token(subject)).header("Idempotency-Key",UUID.randomUUID().toString())
-            .header("Content-Type","application/json").method(method,body==null?HttpRequest.BodyPublishers.noBody():HttpRequest.BodyPublishers.ofString(body)).build(),HttpResponse.BodyHandlers.ofString());
-    }
 }

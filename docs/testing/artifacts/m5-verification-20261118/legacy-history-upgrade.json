@@ -1,0 +1,27 @@
+{
+  "clientIdPreserved": true,
+  "quotaRestored": true,
+  "payloadPreserved": true,
+  "categoryAbsent": true,
+  "status": "PASS",
+  "scope": "SYNTHETIC_V12_TO_V16_SQL",
+  "differentActorDenied": true,
+  "migrations": {
+    "V1__tenant_foundation.sql": "b7c8308ea75966a11f89959c9a5ca0bea346a42db9ad0eab68a07445a6719d91",
+    "V2__actor_bound_idempotency.sql": "141ba1c8a1fd33eb3ccd245c1dbae5547393a668a04afdaeb90af42c3cfbec9c",
+    "V3__intake_and_private_media.sql": "8fc25082d8478ee6e79c9e073928f7f9002948ed85c8527c4deb0fbef5c7e3d9",
+    "V4__ai_jobs_and_fingerprints.sql": "d01b35b12c347efca423f5a505f3d82774e90e2cb53f0aeaec450bf461a2a864",
+    "V5__fingerprint_rollouts.sql": "14c370c8f8af2fb2798d750121f77f3a8ad1857a7bd3293681bcbc4b4f7c0bcd",
+    "V6__private_perception.sql": "85f77e06f1656e49b7a589643d74bb9536779ad4a9b4a03bccbfcc462c57a9e9",
+    "V7__multimodal_snapshot_pins.sql": "27f0e145713d69d5aa94ce0602e9423f45608f898cb8f7e81b429d90be12e616",
+    "V8__joint_vision.sql": "6d453b311b197aed7517667f981b2178a8ed9c2cd62e533be772c9d9f35a8512",
+    "V9__private_language_jobs.sql": "2a3deb6a32cd9e8e77c55396ef9495ace4e5032093b143974f91ce63060e1e39",
+    "V10__general_drafts_and_multilingual.sql": "ac6eb6df80924072c37d5afae0a217d88d9a42a9eea183118428da3a1d0ea3fe",
+    "V11__protected_matching_identifiers.sql": "2a7d8db150f130d052bb0242b23366853ab0968bb11178b594becd3f31ee5f74",
+    "V12__matching_search_history.sql": "84373c7036e8a2ab9b900cafa5f0efe3db7be4d9f05d9d7405f4afe43ff97267",
+    "V13__matching_report_indexes.sql": "a81e230ca6564d9952ac7834f630349be7f1c58b5663ce826f0bf167edf2a136",
+    "V14__matching_calibration_registry.sql": "bcdeac0e74b380230416b61b41dd0afbdb0a637f07ca6dce6f1ec273d563ff9f",
+    "V15__matching_categories.sql": "28690b0abde8ea899085297bb7f858c64a5434e3afb726f6823f961ab692ff72",
+    "V16__matching_history_accounting.sql": "20fe675c8fde7a1a2af03dfbf81e4f56a24c8b3d4d313d0c0469e2ddcb48131a"
+  }
+}

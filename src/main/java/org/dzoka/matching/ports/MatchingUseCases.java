@@ -5,8 +5,8 @@ import org.dzoka.identity.domain.VerifiedIdentity;
 import org.dzoka.matching.domain.Matching.Search;
 
 public interface MatchingUseCases {
-    Search search(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit);
-    Search recordSearch(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit, UUID run);
+    Search search(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit,String category);
+    Search recordSearch(VerifiedIdentity actor, UUID tenant, UUID report, UUID space, int limit,String category,UUID run);
     Search readSearch(VerifiedIdentity actor, UUID tenant, UUID report, UUID run);
     record Projection(UUID space, Long activationVersion, int activeComponents) {}
     Projection reconcile(VerifiedIdentity actor, UUID tenant, UUID space);

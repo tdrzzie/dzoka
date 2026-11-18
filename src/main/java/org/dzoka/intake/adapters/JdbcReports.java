@@ -58,14 +58,14 @@ public final class JdbcReports implements Reports {
             try(var s=c.prepareStatement("""
                 INSERT INTO dzoka.report_revisions(tenant_id,report_id,revision,raw_request,raw_sha256,raw_text,
                  normalized_text,normalization_version,language,timezone,raw_location,raw_time,latitude,longitude,
-                 uncertainty_meters,occurred_after,occurred_before,actor_ref)
-                VALUES(?,?,?,?,?,?,?,'unicode-nfc-whitespace-v1',?,?,?,?,?,?,?,?,?,?)
+                 uncertainty_meters,occurred_after,occurred_before,actor_ref,category)
+                VALUES(?,?,?,?,?,?,?,'unicode-nfc-whitespace-v1',?,?,?,?,?,?,?,?,?,?,?)
                 """)){
                 s.setObject(1,tenant);s.setObject(2,reportId);s.setInt(3,version);s.setBytes(4,raw);s.setString(5,digest);
                 s.setString(6,draft.rawText());s.setString(7,draft.normalizedText());s.setString(8,draft.language());s.setString(9,draft.timezone());
                 s.setString(10,draft.rawLocation());s.setString(11,draft.rawTime());s.setObject(12,draft.latitude());s.setObject(13,draft.longitude());
                 s.setObject(14,draft.uncertaintyMeters());s.setTimestamp(15,timestamp(draft.occurredAfter()));s.setTimestamp(16,timestamp(draft.occurredBefore()));
-                s.setString(17,actor.reference());s.executeUpdate();
+                s.setString(17,actor.reference());s.setString(18,draft.category());s.executeUpdate();
             }
             try(var s=c.prepareStatement("UPDATE dzoka.intake_commands SET report_id=?,case_id=?,item_id=?,result_revision=? WHERE tenant_id=? AND actor_ref=? AND operation=? AND key_hash=?")){
                 s.setObject(1,reportId);s.setObject(2,caseId);s.setObject(3,itemId);s.setInt(4,version);s.setObject(5,tenant);
@@ -102,7 +102,8 @@ public final class JdbcReports implements Reports {
                     return new ReportView(header.caseId(),header.itemId(),report,r.getInt("revision"),ReportDraft.Kind.valueOf(header.kind()),
                         r.getString("raw_text"),r.getString("normalized_text"),r.getString("normalization_version"),r.getString("language"),r.getString("timezone"),
                         r.getString("raw_location"),r.getString("raw_time"),(Double)r.getObject("latitude"),(Double)r.getObject("longitude"),(Double)r.getObject("uncertainty_meters"),
-                        instant(r.getTimestamp("occurred_after")),instant(r.getTimestamp("occurred_before")),r.getTimestamp("expires_at").toInstant(),r.getBoolean("legal_hold"));
+                        instant(r.getTimestamp("occurred_after")),instant(r.getTimestamp("occurred_before")),
+                        r.getTimestamp("expires_at").toInstant(),r.getBoolean("legal_hold"),r.getString("category"));
                 }
             }
         });

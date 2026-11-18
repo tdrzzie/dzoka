@@ -63,7 +63,8 @@ def main():
             recall=json.loads(result.stdout)
             if (recall['exactCount'],recall['indexCount'],recall['overlap'],recall['filterViolations'])!=(10,10,10,0):
                 raise RuntimeError('Scoped HNSW recall fixture differs from exact baseline')
-            if len(recall['additionalQueries'])!=6 or any(
+            if len(recall['additionalQueries'])!=9 or sum(
+                    query['category'] is not None for query in recall['additionalQueries'])!=3 or any(
                     not x['scoped'] or x['found']!=x['k'] or x['overlap']!=x['k'] for x in recall['additionalQueries']):
                 raise RuntimeError('Multi-query filtered recall differs from exact baseline')
             output=ROOT/'.test-tmp'/('pgvector-recall-'+str(uuid.uuid4())+'.json')

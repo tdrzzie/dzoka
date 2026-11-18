@@ -62,6 +62,12 @@ SELECT jsonb_build_object(
    (SELECT c.relname table_name,k.conname,pg_get_constraintdef(k.oid) definition,k.convalidated
     FROM pg_constraint k JOIN pg_class c ON c.oid=k.conrelid
     JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='dzoka') x),
+ 'indexes',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.relname) FROM
+   (SELECT c.relname,pg_get_userbyid(c.relowner) owner,pg_get_indexdef(c.oid) definition,i.indisready,i.indisvalid
+    FROM pg_index i JOIN pg_class c ON c.oid=i.indexrelid
+    JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='dzoka') x),
+ 'extensions',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.extname) FROM
+   (SELECT e.extname,e.extversion,n.nspname FROM pg_extension e JOIN pg_namespace n ON n.oid=e.extnamespace) x),
  'functions',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.signature) FROM
    (SELECT p.oid::regprocedure::text signature,pg_get_userbyid(p.proowner) owner,p.proacl,
            pg_get_functiondef(p.oid) definition
@@ -94,7 +100,7 @@ COMMIT;
     command('pg_restore', '-h', '127.0.0.1', '-U', 'dzoka_control', '-d', restored,
             '--exit-on-error', '--single-transaction', str(archive))
     after = snapshot(restored)
-    require_equal(before, after, 'all rows, migration history, owners, grants, policies and constraints')
+    require_equal(before, after, 'rows, migration history, owners, grants, policies, constraints, indexes and extensions')
 
     def visible(tenant=None, subject=None):
         context = ''
