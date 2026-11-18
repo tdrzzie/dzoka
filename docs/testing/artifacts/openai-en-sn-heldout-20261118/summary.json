@@ -1,0 +1,577 @@
+{
+  "planSha256": "b6885d77ec75851d537815accc8801dfcea4e8ed7af69dfbc710ffbc6b58bda9",
+  "qualityApproval": "NOT_ESTABLISHED",
+  "slices": {
+    "FLORES": {
+      "baseline": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.5336053674422254,
+        "worstCer": 0.8181818181818182,
+        "medianWer": 0.7625,
+        "screenPassed": false
+      },
+      "candidate": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.5636599050496331,
+        "worstCer": 0.8,
+        "medianWer": 0.8291666666666666,
+        "screenPassed": false
+      },
+      "pairs": {
+        "complete": 8,
+        "candidateLower": 5,
+        "equal": 0,
+        "candidateHigher": 3
+      }
+    },
+    "SmolSent": {
+      "baseline": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.5774345335515548,
+        "worstCer": 0.7407407407407407,
+        "medianWer": 0.8947368421052632,
+        "screenPassed": false
+      },
+      "candidate": {
+        "counts": {
+          "AVAILABLE": 8
+        },
+        "medianCer": 0.5571581196581197,
+        "worstCer": 1.035294117647059,
+        "medianWer": 0.8901098901098901,
+        "screenPassed": false
+      },
+      "pairs": {
+        "complete": 8,
+        "candidateLower": 3,
+        "equal": 1,
+        "candidateHigher": 4
+      }
+    }
+  },
+  "observations": [
+    {
+      "dataset": "FLORES",
+      "row": 241,
+      "inputSha256": "7a8198a064ebfd99c2e4af55fa1b22baaf99ad7348d29c53272e7556125fd017",
+      "referenceSha256": "338fccd6a4ff6914dd6339b8ced3b335ea4ec01cdbcfa6273abcf03e5f124781",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.4818181818181818,
+      "wer": 0.75,
+      "evidenceSha256": "1b5f93a96e4d862308a7dca5f3be25be8fd41fa772355ae481afe54e965cf3ee",
+      "usage": {
+        "input_tokens": 80,
+        "output_tokens": 117,
+        "total_tokens": 197
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 241,
+      "inputSha256": "7a8198a064ebfd99c2e4af55fa1b22baaf99ad7348d29c53272e7556125fd017",
+      "referenceSha256": "338fccd6a4ff6914dd6339b8ced3b335ea4ec01cdbcfa6273abcf03e5f124781",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.4636363636363636,
+      "wer": 0.7857142857142857,
+      "evidenceSha256": "46eb32b01f169778d993917a3a9319eee14bd4eb850ac892a45bfce4a11ccac9",
+      "usage": {
+        "input_tokens": 193,
+        "output_tokens": 112,
+        "total_tokens": 305
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 242,
+      "inputSha256": "d0abed443cecd2672f8f516e45f1692ed737de890431640603f6c6c70b6f53ca",
+      "referenceSha256": "890ed36d897e27234736cd841255ab6d7c4ea33baf375cfd98484486d2dc3f02",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.5714285714285714,
+      "wer": 0.875,
+      "evidenceSha256": "a0f8f40be6c9d169871c15d38315dad4b906a4e14400ddee843dd12f75c4508e",
+      "usage": {
+        "input_tokens": 184,
+        "output_tokens": 161,
+        "total_tokens": 345
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 242,
+      "inputSha256": "d0abed443cecd2672f8f516e45f1692ed737de890431640603f6c6c70b6f53ca",
+      "referenceSha256": "890ed36d897e27234736cd841255ab6d7c4ea33baf375cfd98484486d2dc3f02",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.2857142857142857,
+      "wer": 0.4375,
+      "evidenceSha256": "47f881de389d85fdf09f9a0c4d378da62e412738c7664fea52a3db3cec213180",
+      "usage": {
+        "input_tokens": 71,
+        "output_tokens": 46,
+        "total_tokens": 117
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 243,
+      "inputSha256": "1a521a4552f4374a55d947706b5c3973be7ee430580fb4755d67546a64c79297",
+      "referenceSha256": "d8035ba71bd7d5a855805fe009e32a2b2ae623df7b767a88a713c11bd8e4adbc",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.8181818181818182,
+      "wer": 1.0,
+      "evidenceSha256": "d5ecab6df5e9f4c0a104549a757938d520757fcccfccdfa3cb523b5fd1aacf1e",
+      "usage": {
+        "input_tokens": 71,
+        "output_tokens": 90,
+        "total_tokens": 161
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 243,
+      "inputSha256": "1a521a4552f4374a55d947706b5c3973be7ee430580fb4755d67546a64c79297",
+      "referenceSha256": "d8035ba71bd7d5a855805fe009e32a2b2ae623df7b767a88a713c11bd8e4adbc",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.8,
+      "wer": 1.0,
+      "evidenceSha256": "f49ccb604d2367b281d0ed6efd4a8d7affd224c1c7bd76df890044110537cc4e",
+      "usage": {
+        "input_tokens": 184,
+        "output_tokens": 99,
+        "total_tokens": 283
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 244,
+      "inputSha256": "90850ae4cfa07aeda054d7f6a735ea23a38e021101d09158f512a746f388ab07",
+      "referenceSha256": "66ac482fa902cc41b156217cf1b63bb41ae6e8b643e6c6b28b65bce5e9a92b6c",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.6373626373626373,
+      "wer": 0.8333333333333334,
+      "evidenceSha256": "6478751f52229df77e59a1e91e57fea716a721572fccb8e3de908dbbc374130e",
+      "usage": {
+        "input_tokens": 180,
+        "output_tokens": 99,
+        "total_tokens": 279
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 244,
+      "inputSha256": "90850ae4cfa07aeda054d7f6a735ea23a38e021101d09158f512a746f388ab07",
+      "referenceSha256": "66ac482fa902cc41b156217cf1b63bb41ae6e8b643e6c6b28b65bce5e9a92b6c",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.7692307692307693,
+      "wer": 1.0,
+      "evidenceSha256": "1c253bfbc0cd9b1e1504580f104e1dad43e687a5199b655c4c4d4f50fd132d27",
+      "usage": {
+        "input_tokens": 67,
+        "output_tokens": 102,
+        "total_tokens": 169
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 245,
+      "inputSha256": "a9ec0d8510e326ad98a11da2d2b9d2ffaeed7bab829fdac092ae1322c302ffbe",
+      "referenceSha256": "414e7aba4fabc4ed56590e96beb98ee63a04a1c1be8250463a324a9040059b06",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.5324675324675324,
+      "wer": 0.6875,
+      "evidenceSha256": "ea89752fb5a5487e400dde6c8d7815e0808802869d9c9a95b144b697be8bbd3e",
+      "usage": {
+        "input_tokens": 73,
+        "output_tokens": 60,
+        "total_tokens": 133
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 245,
+      "inputSha256": "a9ec0d8510e326ad98a11da2d2b9d2ffaeed7bab829fdac092ae1322c302ffbe",
+      "referenceSha256": "414e7aba4fabc4ed56590e96beb98ee63a04a1c1be8250463a324a9040059b06",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.512987012987013,
+      "wer": 0.75,
+      "evidenceSha256": "38cfda66a856374ed1b0fd0fe66d06cc87c3186bf964c397737cc595acb52fbb",
+      "usage": {
+        "input_tokens": 186,
+        "output_tokens": 174,
+        "total_tokens": 360
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 246,
+      "inputSha256": "5783115ab3daa9db3b0cc4f2dc71d00e0cd055c991622f10e38b1894e7af6284",
+      "referenceSha256": "8e394da2d3b48ccb12e759d858d7d596c8ff5ef462dd4586a92734f593021387",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.5357142857142857,
+      "wer": 0.9,
+      "evidenceSha256": "6784028a5c0732687f957ab14110640b3701a96e0650f3b680f3585d815f6f9c",
+      "usage": {
+        "input_tokens": 176,
+        "output_tokens": 152,
+        "total_tokens": 328
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 246,
+      "inputSha256": "5783115ab3daa9db3b0cc4f2dc71d00e0cd055c991622f10e38b1894e7af6284",
+      "referenceSha256": "8e394da2d3b48ccb12e759d858d7d596c8ff5ef462dd4586a92734f593021387",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.5595238095238095,
+      "wer": 0.9,
+      "evidenceSha256": "2626e9546e9f7353370b9a485b346ed33fc9101479c05517e119623a7cff945e",
+      "usage": {
+        "input_tokens": 63,
+        "output_tokens": 117,
+        "total_tokens": 180
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 247,
+      "inputSha256": "6c97481b779e47a5ed2924fafe4b90d15ee0656b20ac7092198c6f6c8f400e67",
+      "referenceSha256": "949c8cf18b0de70e42c49920a08bf8e729dca70942a80778cb7c7369aa1af70e",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.5080645161290323,
+      "wer": 0.625,
+      "evidenceSha256": "bfcf703537d9c3a773e658722e9772d4f2e6f8f0ea8ac3314f675f39e93f421b",
+      "usage": {
+        "input_tokens": 73,
+        "output_tokens": 102,
+        "total_tokens": 175
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 247,
+      "inputSha256": "6c97481b779e47a5ed2924fafe4b90d15ee0656b20ac7092198c6f6c8f400e67",
+      "referenceSha256": "949c8cf18b0de70e42c49920a08bf8e729dca70942a80778cb7c7369aa1af70e",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.6370967741935484,
+      "wer": 0.6875,
+      "evidenceSha256": "bf1a9e5f77a0ab7c61a51105343dcb8614c408928b9081eca02188fbfb7516cc",
+      "usage": {
+        "input_tokens": 186,
+        "output_tokens": 122,
+        "total_tokens": 308
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 248,
+      "inputSha256": "b27ad80a1c38c4953383ef370bc7cc7e7e5a70ccb084b03a55ca3f504304a41f",
+      "referenceSha256": "87b54cd4a6ed2ff0104e3e12a8c1ab540b6b91864b1c8209711c9a19b80b479a",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.5558912386706949,
+      "wer": 0.825,
+      "evidenceSha256": "368088732da8cf6f936fd3709c3d00e6ca06e7a4700e4a1b146f8e509c0c2ea4",
+      "usage": {
+        "input_tokens": 225,
+        "output_tokens": 175,
+        "total_tokens": 400
+      }
+    },
+    {
+      "dataset": "FLORES",
+      "row": 248,
+      "inputSha256": "b27ad80a1c38c4953383ef370bc7cc7e7e5a70ccb084b03a55ca3f504304a41f",
+      "referenceSha256": "87b54cd4a6ed2ff0104e3e12a8c1ab540b6b91864b1c8209711c9a19b80b479a",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.5347432024169184,
+      "wer": 0.775,
+      "evidenceSha256": "d39a15fb79ffa16dd5f2a44fe89e9d94da3e3a2b26fec5eb56ef752688d1080e",
+      "usage": {
+        "input_tokens": 112,
+        "output_tokens": 160,
+        "total_tokens": 272
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 33,
+      "inputSha256": "412d3874d0960032b9fe0bcbaaf76526ef46c36dbc902b98967ffccaccd32818",
+      "referenceSha256": "3fa047e0fd1b1bada7f481626e7af12bf44c6f41468ad52a789bfdb180af987b",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.7294117647058823,
+      "wer": 1.0,
+      "evidenceSha256": "d9290cf212bd1bc4b5529acdebb41149d65fbbbd3dc7ee6e79acf0b2383192ca",
+      "usage": {
+        "input_tokens": 67,
+        "output_tokens": 217,
+        "total_tokens": 284
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 33,
+      "inputSha256": "412d3874d0960032b9fe0bcbaaf76526ef46c36dbc902b98967ffccaccd32818",
+      "referenceSha256": "3fa047e0fd1b1bada7f481626e7af12bf44c6f41468ad52a789bfdb180af987b",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 1.035294117647059,
+      "wer": 1.4444444444444444,
+      "evidenceSha256": "95bb4c321399191695c5abf2a2613fb82b4813f7d9d110d3b0a1635e6dd920ba",
+      "usage": {
+        "input_tokens": 180,
+        "output_tokens": 50,
+        "total_tokens": 230
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 34,
+      "inputSha256": "9b996f4eeb8e5d130224ded58aec126574e82cfba32dd43d5d99fc0af41542d3",
+      "referenceSha256": "44adcf60d3e3adf63eaf3fbba3d0f1b57c3c893ac5b16208ec36a37d4267e617",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.40625,
+      "wer": 0.6666666666666666,
+      "evidenceSha256": "b48308bd9b87e0920bed488236baa567a34e3e8de5ea64b7ab142dc4118eef6a",
+      "usage": {
+        "input_tokens": 182,
+        "output_tokens": 104,
+        "total_tokens": 286
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 34,
+      "inputSha256": "9b996f4eeb8e5d130224ded58aec126574e82cfba32dd43d5d99fc0af41542d3",
+      "referenceSha256": "44adcf60d3e3adf63eaf3fbba3d0f1b57c3c893ac5b16208ec36a37d4267e617",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.3984375,
+      "wer": 0.6666666666666666,
+      "evidenceSha256": "64390d6be20fdf0206c63d861c8f2610690b1bbed0bcf643f4834fea74d4d7b5",
+      "usage": {
+        "input_tokens": 69,
+        "output_tokens": 35,
+        "total_tokens": 104
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 35,
+      "inputSha256": "68d34be41003422701cac9e4f77f555ce4cf5dc719cc41ebf79409517c04a134",
+      "referenceSha256": "65da46e2822f337a58417ac6dd9c5085ea0b26eee433d20dad1f0219a3e2067d",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.5106382978723404,
+      "wer": 0.7894736842105263,
+      "evidenceSha256": "743199d9f1b8c145bfae4bf6bd33cb14cbb71ffa25c08cdbc39a093c2a1f49fe",
+      "usage": {
+        "input_tokens": 66,
+        "output_tokens": 51,
+        "total_tokens": 117
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 35,
+      "inputSha256": "68d34be41003422701cac9e4f77f555ce4cf5dc719cc41ebf79409517c04a134",
+      "referenceSha256": "65da46e2822f337a58417ac6dd9c5085ea0b26eee433d20dad1f0219a3e2067d",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.6329787234042553,
+      "wer": 0.9473684210526315,
+      "evidenceSha256": "fa305a564d5a6f122274d188e60907117494af4c56737a7a50d9ceefc0e1908f",
+      "usage": {
+        "input_tokens": 179,
+        "output_tokens": 116,
+        "total_tokens": 295
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 36,
+      "inputSha256": "57b00335544a36f652310c4af0a2de6ca11ec8f50c06b758dc3cb009b055d097",
+      "referenceSha256": "c7442c3a2fedde69196ac37b6c88663864efa27b006800de31f950304f0b615a",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.38461538461538464,
+      "wer": 0.5555555555555556,
+      "evidenceSha256": "5d7066fd2338b7e2adffdc9a4ce9e66bcc8a12517980eaade68e6526667c02bb",
+      "usage": {
+        "input_tokens": 179,
+        "output_tokens": 28,
+        "total_tokens": 207
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 36,
+      "inputSha256": "57b00335544a36f652310c4af0a2de6ca11ec8f50c06b758dc3cb009b055d097",
+      "referenceSha256": "c7442c3a2fedde69196ac37b6c88663864efa27b006800de31f950304f0b615a",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.38461538461538464,
+      "wer": 0.5555555555555556,
+      "evidenceSha256": "301f35d52673f480d6b597584a215a0485ae6e346e9f9fd05b92048f26095f9e",
+      "usage": {
+        "input_tokens": 66,
+        "output_tokens": 29,
+        "total_tokens": 95
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 37,
+      "inputSha256": "cf9636c0304e22561675189c3cdc4b6e0c334673965454c2494bf85e78ab1d93",
+      "referenceSha256": "d47f070f6cc254c7f041986485c67b5c594a7982076d917ccf828ce69eefa11b",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.6976744186046512,
+      "wer": 1.5,
+      "evidenceSha256": "931109d64fb54d5f9df8c53e5ee0eb998e3f862b4f9e6aa0eb2498c3f357367f",
+      "usage": {
+        "input_tokens": 62,
+        "output_tokens": 36,
+        "total_tokens": 98
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 37,
+      "inputSha256": "cf9636c0304e22561675189c3cdc4b6e0c334673965454c2494bf85e78ab1d93",
+      "referenceSha256": "d47f070f6cc254c7f041986485c67b5c594a7982076d917ccf828ce69eefa11b",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.686046511627907,
+      "wer": 1.625,
+      "evidenceSha256": "beb2f3911eb26e7fa4353c2c60433e3b869e5c20bc22157097a892c2aab09d7a",
+      "usage": {
+        "input_tokens": 175,
+        "output_tokens": 160,
+        "total_tokens": 335
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 38,
+      "inputSha256": "6e5cca7d0d61272bb28a0717bfb76f92cf9be3e22930abe0db1d86417683a137",
+      "referenceSha256": "079bab01bbbf915db92847317375d9ddb79dcb4f3ebd7ea269761edbbf2a367a",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.5865384615384616,
+      "wer": 0.8571428571428571,
+      "evidenceSha256": "dde7fa4ab8b443b7403bf0d26a4d8765ea628743bcf55c5aa0255e8e977559ad",
+      "usage": {
+        "input_tokens": 180,
+        "output_tokens": 180,
+        "total_tokens": 360
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 38,
+      "inputSha256": "6e5cca7d0d61272bb28a0717bfb76f92cf9be3e22930abe0db1d86417683a137",
+      "referenceSha256": "079bab01bbbf915db92847317375d9ddb79dcb4f3ebd7ea269761edbbf2a367a",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.6442307692307693,
+      "wer": 1.0,
+      "evidenceSha256": "0a95337945084cceab34b6a05ae28cbbeec1b72f02c503ac257821469fee7023",
+      "usage": {
+        "input_tokens": 67,
+        "output_tokens": 45,
+        "total_tokens": 112
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 39,
+      "inputSha256": "e84fd479ba4c40bde639721e25ee701f6424f3395b4895fae807f8a14a77e17e",
+      "referenceSha256": "5f3436003a85af652994323fb44e27a4f4c09dbace1f7f6eced31b62ceda691f",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.7407407407407407,
+      "wer": 1.0769230769230769,
+      "evidenceSha256": "b5b55b6a26f56d7fd39b2f512d17db78b08c759e70376c94a924a54af29587ac",
+      "usage": {
+        "input_tokens": 69,
+        "output_tokens": 51,
+        "total_tokens": 120
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 39,
+      "inputSha256": "e84fd479ba4c40bde639721e25ee701f6424f3395b4895fae807f8a14a77e17e",
+      "referenceSha256": "5f3436003a85af652994323fb44e27a4f4c09dbace1f7f6eced31b62ceda691f",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.5277777777777778,
+      "wer": 0.9230769230769231,
+      "evidenceSha256": "29c6379a911b9605a550c8f65d19098613acfd62f89bc6852fe00547fe72b739",
+      "usage": {
+        "input_tokens": 182,
+        "output_tokens": 130,
+        "total_tokens": 312
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 40,
+      "inputSha256": "f746888d0ef80eed491ca4b0ce7578233c0fc1d0a23499e925b79316d69a5778",
+      "referenceSha256": "f83d4466a0a8dd64e0976f3e69032fb7e39f298a4051492cffd5e47f62e73a03",
+      "configuration": "candidate",
+      "status": "AVAILABLE",
+      "cer": 0.4375,
+      "wer": 0.7,
+      "evidenceSha256": "6707a021bacba104354a12d0c4de0a45edfcd2352ee89525551777a9d8dc90b5",
+      "usage": {
+        "input_tokens": 174,
+        "output_tokens": 102,
+        "total_tokens": 276
+      }
+    },
+    {
+      "dataset": "SmolSent",
+      "row": 40,
+      "inputSha256": "f746888d0ef80eed491ca4b0ce7578233c0fc1d0a23499e925b79316d69a5778",
+      "referenceSha256": "f83d4466a0a8dd64e0976f3e69032fb7e39f298a4051492cffd5e47f62e73a03",
+      "configuration": "baseline",
+      "status": "AVAILABLE",
+      "cer": 0.3375,
+      "wer": 0.6,
+      "evidenceSha256": "1cd55473415efa8a2c0c21face0f0805823a009899b18393ff42c18052fb3fd6",
+      "usage": {
+        "input_tokens": 61,
+        "output_tokens": 30,
+        "total_tokens": 91
+      }
+    }
+  ],
+  "usage": {
+    "input_tokens": 4082,
+    "output_tokens": 3252,
+    "total_tokens": 7334
+  }
+}

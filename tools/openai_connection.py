@@ -20,6 +20,7 @@ DEFAULT=Path.home()/'DzokaOpenAI'/'settings.json'
 MODEL='gpt-6.1-terra'
 LEGACY_PROMPT='openai-named-languages-v1'
 FIDELITY_PROMPT='openai-shona-fidelity-v2'
+TARGET_SHONA_PROMPT='openai-english-to-shona-v3'
 
 def settings(path):
     v=read_private(path)
@@ -28,7 +29,7 @@ def settings(path):
     if v['schemaVersion']==2:
         fields.add('promptVersion')
     if set(v)!=fields or type(v['enabled']) is not bool or v['referenceOnly'] is not True or v['store'] is not False:raise ValueError('Reference policy required')
-    if v['schemaVersion']==2 and v['promptVersion']!=FIDELITY_PROMPT:raise ValueError('Unknown reference prompt')
+    if v['schemaVersion']==2 and v['promptVersion'] not in (FIDELITY_PROMPT,TARGET_SHONA_PROMPT):raise ValueError('Unknown reference prompt')
     if not isinstance(v['model'],str) or not re.fullmatch(r'gpt-[a-zA-Z0-9_.-]{1,80}',v['model']):raise ValueError('Explicit model required')
     if type(v['maxOutputTokens']) is not int or not 128<=v['maxOutputTokens']<=2048:raise ValueError('Bounded output required')
     if type(v['transportTimeoutSeconds']) is not int or not 10<=v['transportTimeoutSeconds']<=180:raise ValueError('Bounded timeout required')
@@ -81,6 +82,15 @@ def reference(path,input_path):
                  "Preserve whether a statement is mandatory, optional, reported or uncertain. Preserve quoted meaning, "
                  "proper names, brands, identifiers, numbers and times. Do not infer a cause, death, ownership or other "
                  "outcome from context alone. Keep any negation attached to the same action or claim.")
+    elif prompt_version==TARGET_SHONA_PROMPT:
+        if (v['sourceLanguage'],v['targetLanguage'])!=('en','sn'):
+            raise ValueError('English to Shona direction required for the target-language prompt')
+        prompt+=(" Write natural, standard written Zimbabwean Shona (chiShona). Translate whole clauses idiomatically "
+                 "rather than copying English word order or translating words one by one. Use Shona noun-class agreement "
+                 "and familiar Shona wording where meaning is clear. Preserve the speaker and actor, tense, negation, "
+                 "and whether a claim is reported, uncertain, or required. Keep proper names, identifiers and numerical "
+                 "values intact. Use a neutral paraphrase for an unfamiliar term instead of adding unsupported detail. "
+                 "Silently check that each source clause is represented before giving the Shona translation.")
     body={'model':config['model'],'instructions':prompt,'input':v['text'],'max_output_tokens':config['maxOutputTokens'],'reasoning':{'effort':config['reasoningEffort']},'store':False,'stream':False,'tools':[],'truncation':'disabled'}
     started=datetime.now(timezone.utc).isoformat();value=exchange('/responses',key(path),body,config['transportTimeoutSeconds'])
     if value.get('model')!=config['model'] or not isinstance(value.get('id'),str) or not 1<=len(value['id'])<=256:raise ReferenceUnavailable('MODEL_IDENTITY_MISMATCH')

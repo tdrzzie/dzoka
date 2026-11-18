@@ -66,6 +66,18 @@ class OpenAIConnectionTests(unittest.TestCase):
         with self.assertRaises(ValueError):client.NoRedirect().redirect_request(None,None,302,'',{},'https://evil')
         for raw in ('{"x":1,"x":2}','{"x":NaN}'):
             with self.assertRaises(ValueError):client.parse(raw)
+    def test_target_shona_prompt_is_directional_and_keeps_request_controls(self):
+        legacy, baseline = self.run_reference()
+        self.config.update(schemaVersion=2,promptVersion=client.TARGET_SHONA_PROMPT)
+        result, candidate = self.run_reference()
+        old_body, new_body = baseline.args[2].copy(), candidate.args[2].copy()
+        self.assertIn('Zimbabwean Shona',new_body.pop('instructions'))
+        old_body.pop('instructions')
+        self.assertEqual(old_body,new_body)
+        self.assertEqual(client.TARGET_SHONA_PROMPT,result['promptVersion'])
+        self.assertNotEqual(legacy['promptSha256'],result['promptSha256'])
+        self.source.update(sourceLanguage='sn',targetLanguage='en')
+        with self.assertRaises(ValueError):self.run_reference()
     def test_http_error_is_safe_and_not_retried(self):
         error=urllib.error.HTTPError(client.ORIGIN+'/responses',401,'private provider body',{},None)
         with patch.object(client.urllib.request,'build_opener') as make:
