@@ -66,6 +66,10 @@ SELECT jsonb_build_object(
    (SELECT c.relname,pg_get_userbyid(c.relowner) owner,pg_get_indexdef(c.oid) definition,i.indisready,i.indisvalid
     FROM pg_index i JOIN pg_class c ON c.oid=i.indexrelid
     JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='dzoka') x),
+ 'triggers',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.table_name,x.trigger_name) FROM
+   (SELECT c.relname table_name,t.tgname trigger_name,t.tgenabled,pg_get_triggerdef(t.oid) definition
+    FROM pg_trigger t JOIN pg_class c ON c.oid=t.tgrelid JOIN pg_namespace n ON n.oid=c.relnamespace
+    WHERE n.nspname='dzoka' AND NOT t.tgisinternal) x),
  'extensions',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.extname) FROM
    (SELECT e.extname,e.extversion,n.nspname FROM pg_extension e JOIN pg_namespace n ON n.oid=e.extnamespace) x),
  'functions',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.signature) FROM
@@ -100,7 +104,7 @@ COMMIT;
     command('pg_restore', '-h', '127.0.0.1', '-U', 'dzoka_control', '-d', restored,
             '--exit-on-error', '--single-transaction', str(archive))
     after = snapshot(restored)
-    require_equal(before, after, 'rows, migration history, owners, grants, policies, constraints, indexes and extensions')
+    require_equal(before, after, 'rows, migration history, owners, grants, policies, constraints, indexes, triggers and extensions')
 
     def visible(tenant=None, subject=None):
         context = ''

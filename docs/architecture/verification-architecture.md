@@ -1,6 +1,6 @@
 # Private ownership verification
 
-Accepted design, 2026-10-26. Implementation is pending. This view follows the [current baseline](baseline.md) and ADRs [0007](../adr/0007-matching-ownership.md); [0021](../adr/0021-pii-local.md); [0022](../adr/0022-release-authorization.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. The Core now implements private claims, staff-attested challenges, independent review and in-person pickup. This view follows the current baseline and the matching, privacy and release decisions. [Baseline](baseline.md), [matching and ownership](../adr/0007-matching-ownership.md), [local PII](../adr/0021-pii-local.md), [release authorization](../adr/0022-release-authorization.md), [M6 implementation decision](../adr/0056-private-claims-and-accountable-pickup.md).
 
 ## Evidence and challenges
 
@@ -18,4 +18,4 @@ A successful assessment is an input to current release authorization, not a cust
 
 A13–A16 and A27; verify challenge leakage, repeated guessing, stale sessions, role spoofing, representative entitlement and concurrent claims.
 
-Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.
+The verification record reports the executed local scenarios and outstanding deployment evidence. [Acceptance ledger](acceptance.md), [M6 verification](../testing/m6-verification-2026-11-18.md).

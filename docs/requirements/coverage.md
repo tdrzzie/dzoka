@@ -16,14 +16,14 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 10 | MATCH EVIDENCE MODEL | Specified; implementation and production validation pending. |
 | 11 | MISSING EVIDENCE RULE | Nullable source context and explicit fingerprint AVAILABLE/PENDING/UNAVAILABLE/FAILED states implemented; scoring-wide coverage/reliability remains. |
 | 12 | HARD CONFLICT ENGINE | Specified; implementation and production validation pending. |
-| 13 | OWNERSHIP VERIFICATION ENGINE | Specified; implementation and production validation pending. |
-| 14 | AI-GENERATED PRIVATE OWNERSHIP CHALLENGES | Specified; implementation and production validation pending. |
-| 15 | TRUST AND FRAUD ENGINE | Specified; implementation and production validation pending. |
+| 13 | OWNERSHIP VERIFICATION ENGINE | Claimant-bound private assessment, staff-attested facts, representative entitlement and independent review are implemented. Institutional evidence adapters and target acceptance remain. |
+| 14 | AI-GENERATED PRIVATE OWNERSHIP CHALLENGES | Safe challenge selection from verified private facts is implemented. Automated proposals for private distinguishing features remain open. |
+| 15 | TRUST AND FRAUD ENGINE | Item and actor limits, competing claim checks, fraud rejection, holds and reviewer-only risk signals are implemented. Device, geography, and identity-provider risk integrations remain. |
 | 16 | PRIVACY ARCHITECTURE | Specified; implementation and production validation pending. |
 | 17 | DATABASE ARCHITECTURE | V1–V10 cover foundation, private intake, text/perception jobs/profiles/components/shared quotas/raw-audio and rerank/prompt-input retention and immutable multimodal cohorts/activation history; full recovery schema and spatial/vector extensions remain. |
 | 18 | VECTOR SEARCH ABSTRACTION | Specified; implementation and production validation pending. |
 | 19 | EVENT-DRIVEN ARCHITECTURE | Transactional outbox/inbox and leased dispatch foundation implemented/tested; live Kafka adapter, scheduling, DLQ and operations remain. |
-| 20 | RECOVERY EVENT MODEL | Specified; implementation and production validation pending. |
+| 20 | RECOVERY EVENT MODEL | A redacted recovery return event commits with custody and audit state. The wider event catalogue remains open. |
 | 21 | RECOVERY KNOWLEDGE GRAPH | Specified; implementation and production validation pending. |
 | 22 | CCTV / EDGE VISION SUBSYSTEM | Specified; implementation and production validation pending. |
 | 23 | OBJECT TRACKING | Specified; implementation and production validation pending. |
@@ -33,8 +33,8 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 27 | FEDERATION PRIVACY | Specified; implementation and production validation pending. |
 | 28 | MULTI-TENANCY | Organization/intake/media HTTP/SQL isolation, active memberships, tenant-qualified keys and forced row policies implemented/tested; AI/cache/vector/federation surfaces remain. |
 | 29 | SELF-HOSTED + SAAS DEPLOYMENT | Specified; implementation and production validation pending. |
-| 30 | RECOVERY / CUSTODY ENGINE | Specified; implementation and production validation pending. |
-| 31 | SECURE HANDOVER | Specified; implementation and production validation pending. |
+| 30 | RECOVERY / CUSTODY ENGINE | Found intake and staffed return have accountable custody records. Wider storage, transfer, dispatch and disposal states remain open. |
+| 31 | SECURE HANDOVER | Audience-bound one-time pickup tokens, confirmed recipient and receipt replay are implemented. Delivery channels and physical signature capture remain open. |
 | 32 | COURIER ORCHESTRATION | Specified; implementation and production validation pending. |
 | 33 | REWARD SYSTEM | Specified; implementation and production validation pending. |
 | 34 | QR / NFC ITEM REGISTRATION | Specified; implementation and production validation pending. |

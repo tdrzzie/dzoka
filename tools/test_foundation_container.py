@@ -73,7 +73,7 @@ def main():
             print('Synthetic pgvector recall evidence: '+str(output),flush=True)
         print('Digest-pinned disposable PostgreSQL ready; random test credentials, loopback only.',flush=True)
         maven=[sys.executable,str(ROOT/'tools/maven.py'),'verify']
-        if not args.full:maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,FingerprintRolloutsIT,MatchingIT,PerceptionJobsIT,VisionJobsIT,LanguageJobsIT,GenerativeJobsIT,QualityJobsIT,ShonaJobsIT,StartupConfigurationIT')
+        if not args.full:maven.append('-Dit.test=FoundationIT,IntakeIT,MediaStoreIT,AiJobsIT,FingerprintRolloutsIT,MatchingIT,RecoveryIT,PerceptionJobsIT,VisionJobsIT,LanguageJobsIT,GenerativeJobsIT,QualityJobsIT,ShonaJobsIT,StartupConfigurationIT')
         elif env.get('DZOKA_IT_CLASSES'):maven.append('-Dit.test='+env['DZOKA_IT_CLASSES'])
         result=subprocess.run(maven,cwd=ROOT,env=env)
         if result.returncode==0 and args.restore_drill:

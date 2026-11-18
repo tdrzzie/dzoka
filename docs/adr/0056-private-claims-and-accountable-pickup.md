@@ -1,0 +1,14 @@
+# 0056. Private claims and accountable in-person pickup
+
+- Status: Implemented for the local Core and PostgreSQL runtime
+- Date: 2026-11-18
+
+Use an opaque recovery intake reference registered by an authorized custodian against a live found report and a pickup site. Claim entitlement is a distinct state machine. The report, matcher, vector score, challenge result and asserted JWT roles supply no release authority. A claimant submits either as owner or as representative. A representative requires a policy that permits representation and independently reviewed proof bound to the claimant.
+
+Use fixed, safe challenge templates with a staff-confirmed observation at the current report revision. Bind the evidence source hash, actor and secret answer to the tenant and intake. Reject known disclosed values across the report's retained revisions. A staff withdrawal prevents further use of the fact and its existing sessions. The database retains a keyed answer digest and the provenance reference. Keep raw answers out of state, events and logs. A single answer can resolve a session. Cross-session actor and item budgets limit verification attempts and disclosures. Missing eligible evidence leaves the claim unresolved.
+
+Serialize recovery mutations within a tenant. Share a report transaction lock with version, revision, hold, expiry and deletion changes at the database boundary. Recheck active holds, competing claims and exact policy, report, session and evidence versions. Require an independent human reviewer for all releases. Policies can require a second independent reviewer with separate corroborating evidence. Holds, revoked facts, superseded policy and report versions invalidate prior authority. A partial unique index enforces one approved entitlement per item.
+
+Issue a high-entropy token bound to the tenant, grant, claim and independently authenticated pickup desk. Persist a keyed verifier and a random nonce for authorized issuance retries. The pickup desk sees only the site and expected opaque recipient after presenting the token. Staff confirm the actual recipient and supply a hash reference to their confirmation. Token consumption, the immutable return, audit and redacted outbox event commit in one transaction. Retry the same return ID and matching presentation to read the original receipt. The idempotent retry and failed attempts create audit entries independently of custody.
+
+No runtime dependency or AI authorization path is introduced. Target institutions provide the verified role assignments, custody records, narrow evidence access, and local key and retention policy. The in-person workflow leaves courier, notifications, physical signature capture, and institutional evidence integrations to their respective milestones. [Release decision](0022-release-authorization.md), [verification acceptance](../architecture/acceptance.md), [operation](../development/recovery.md).

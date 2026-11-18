@@ -156,3 +156,14 @@ The subsequent [licensed public-reference pilot](../testing/m4-public-reference-
 | A29 | Identity-disjoint catalog proxy, authored sparse diagnostic, gated and revocable calibration in the HTTP path | Representative case labels, approved scope and error thresholds |
 
 See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownership and release remain separately governed under A13–A16; A20 remains part of federation.
+
+## M6 local claims, verification and staffed pickup (2026-11-18)
+
+| Acceptance | Executed local scope | Target evidence |
+|---|---|---|
+| A13 | JWT role claims and claimant permissions grant no review or custody authority. Matching remains independent. Own, foreign-actor and foreign-tenant claims are isolated. | Institutional roles and physical custody authorization |
+| A14 | Known public answers are rejected. Withdrawn secrets invalidate sessions. Single attempts and shared actor/item budgets bound guessing. HTTP responses and persisted events omit private answers and pickup tokens. | Institutional evidence intake and retention audit |
+| A15 | Competing approvals fail closed. Reviewers are independent, and configured dual control requires distinct corroboration. Representative authority, item and report holds, revocation, policy changes and expiry constrain release. | Target policy review with consented staff workflow |
+| A16 | Pickup requires the configured audience, exact recipient and live grant. Concurrent redemption commits one return and one outbox event. Same-request replay returns the receipt. | Staffed site trial and target restore rehearsal |
+
+[Executed M6 evidence](../testing/m6-verification-2026-11-18.md).
