@@ -1,0 +1,32 @@
+{
+  "implementationCommit": "1d846067711b9f7baa0f77b0266020b86801d287",
+  "gateInputSha256": "e0e068bfb3edf1b035533ec9484e14d4d1e4110a8b1c54c070b2ceecc8968e8e",
+  "committedSourceSha256": "29a99ca110073964c981ae5fb066018cfef1c94a307252a5cb5e8615c2f4206e",
+  "lineEndingsOnly": [
+    {
+      "path": "AGENTS.md",
+      "workingSha256": "02645446369138c6a819c3fce29bad6b50f222c0033ea8fd54a47940bcfa9ea5",
+      "committedSha256": "7f8b4a34ffc7a2682bf7e0fdbec922428e332a156bfd120bf9251b4b9190a91a"
+    },
+    {
+      "path": "ai/requirements.lock.txt",
+      "workingSha256": "8536bfcdcabda0a0744cb73a75eebe34eeb77ce5b86dcf5396b455b2c6a03bf7",
+      "committedSha256": "6b61e491e9eb3c2717cc3d933e85d25853e4c92219c071298b4fcdd11c2945e7"
+    },
+    {
+      "path": "dependencies.lock.json",
+      "workingSha256": "a98720966dcd65097853d6c41e4dabd94f456cccf0e2ee1db71468c02e767cbf",
+      "committedSha256": "3c7b92ab9b585abd2b8efbad48ade079693c286fca141439cb428e6fe4188e85"
+    },
+    {
+      "path": "src/test/java/org/dzoka/FoundationIT.java",
+      "workingSha256": "81cb79163ee5e34fce33aa47a63dd8aec279cfdf404c89bd1c7115c7f8757163",
+      "committedSha256": "92a50ac57ddce0fb4145add18c0a02993f9b243d546a8a0180cc0a01fc140683"
+    },
+    {
+      "path": "src/test/java/org/dzoka/IntegrationFixture.java",
+      "workingSha256": "82df0655dc3fa88936f08f4bc540b80392a0ce44b38c220b3b6639c085d7c1d1",
+      "committedSha256": "dfa485aeaab89e636a371b35dd4076cc32b8cc6cc1d5b71f6f76a43de2d0afb0"
+    }
+  ]
+}
