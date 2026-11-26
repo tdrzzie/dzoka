@@ -19,7 +19,9 @@ import software.amazon.awssdk.services.s3.S3Client;
 
 abstract class S3Fixture extends IntegrationFixture {
     protected String endpoint,bucket,access,secret;protected S3Client s3;
+    protected boolean needsS3(){return true;}
     @Override protected void initializeProviders() throws Exception {
+        if(!needsS3() && System.getenv("DZOKA_TEST_S3_ENDPOINT")==null)return;
         endpoint=required("DZOKA_TEST_S3_ENDPOINT");access=required("DZOKA_TEST_S3_ACCESS_KEY");secret=required("DZOKA_TEST_S3_SECRET_KEY");bucket="dzoka-"+UUID.randomUUID();
         s3=S3Client.builder().endpointOverride(URI.create(endpoint)).region(Region.US_EAST_1).forcePathStyle(true)
             .httpClientBuilder(UrlConnectionHttpClient.builder())
@@ -29,11 +31,12 @@ abstract class S3Fixture extends IntegrationFixture {
         membership(B,"remote","reports:write","reports:read");membership(A,"processor","media:process");
         membership(A,"purger","media:purge","reports:purge");membership(A,"reviewer","reports:read","reports:read:any","reports:hold");
     }
-    @Override protected List<String> extraOptions(){return List.of("--dzoka.media.enabled=true","--dzoka.media.endpoint="+endpoint,
+    @Override protected List<String> extraOptions(){return s3==null?List.of():List.of("--dzoka.media.enabled=true","--dzoka.media.endpoint="+endpoint,
         "--dzoka.media.region=us-east-1","--dzoka.media.bucket="+bucket,"--dzoka.media.access-key="+access,
         "--dzoka.media.secret-key="+secret,"--dzoka.media.allow-insecure-loopback=true");}
     @AfterAll void closeS3(){if(s3!=null)s3.close();}
     @BeforeEach void clearOnlySyntheticMedia() throws Exception {
+        if(s3==null)return;
         var objects=app.getBean(PrivateObjects.class);
         try(var c=admin();var s=c.prepareStatement("SELECT source_key,derivative_key FROM dzoka.media_assets WHERE tenant_id=?")){
             s.setObject(1,A);try(var r=s.executeQuery()){while(r.next()){objects.delete(r.getString(1));objects.delete(r.getString(2));}}

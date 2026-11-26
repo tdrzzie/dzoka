@@ -11,7 +11,10 @@ public interface RecoveryOperations {
     void fact(VerifiedIdentity actor,UUID tenant,UUID intake,UUID fact,FactKind kind,String sourceSha,String answer,boolean privateConfirmed);
     void withdrawFact(VerifiedIdentity actor,UUID tenant,UUID intake,UUID fact,FactWithdrawal reason);
     Claim submit(VerifiedIdentity actor,UUID tenant,UUID intake,UUID claim,Capacity capacity);
+    Claim submitMatch(VerifiedIdentity actor,UUID tenant,UUID intake,UUID claim,Capacity capacity,UUID candidate,int revision);
     Claim read(VerifiedIdentity actor,UUID tenant,UUID intake,UUID claim);
+    String pickupMessage(VerifiedIdentity actor,UUID tenant,UUID intake,UUID claim,boolean acknowledge);
+    java.util.List<PickupMessage> pickupMessages(VerifiedIdentity actor,UUID tenant,UUID intake);
     Claim withdraw(VerifiedIdentity actor,UUID tenant,UUID intake,UUID claim);
     Challenge challenge(VerifiedIdentity actor,UUID tenant,UUID intake,UUID claim,UUID session);
     Assessment answer(VerifiedIdentity actor,UUID tenant,UUID intake,UUID claim,UUID session,String answer);

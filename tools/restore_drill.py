@@ -80,7 +80,7 @@ SELECT jsonb_build_object(
    (SELECT c.relname,a.attname,a.attacl FROM pg_attribute a JOIN pg_class c ON c.oid=a.attrelid
     JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='dzoka' AND a.attnum>0 AND NOT a.attisdropped) x)
 );""")
-        return {'tables': hashes, 'catalogSha256': hashlib.sha256(catalog.encode()).hexdigest()}
+        return {'tables': hashes, 'catalogSha256': hashlib.sha256(catalog.encode()).hexdigest()}, json.loads(catalog)
 
     # Explicit fixtures prove restored authorization, rather than relying on
     # whichever fixtures happen to survive the application integration suite.
@@ -95,7 +95,7 @@ INSERT INTO dzoka.organizations(tenant_id,id,name,version) VALUES
  ('{a}','{org_a}','Synthetic restore A',1),('{b}','{org_b}','Synthetic restore B',1);
 COMMIT;
 """)
-    before = snapshot(source)
+    before, source_catalog = snapshot(source)
     command('pg_dump', '-h', '127.0.0.1', '-U', 'dzoka_control', '-d', source,
             '--format=custom', '--file=' + str(archive))
     # New empty DB; original owner and ACLs intentionally retained. Never use
@@ -103,8 +103,13 @@ COMMIT;
     sql('postgres', f'CREATE DATABASE {identifier(restored)} OWNER dzoka_migrator;')
     command('pg_restore', '-h', '127.0.0.1', '-U', 'dzoka_control', '-d', restored,
             '--exit-on-error', '--single-transaction', str(archive))
-    after = snapshot(restored)
-    require_equal(before, after, 'rows, migration history, owners, grants, policies, constraints, indexes, triggers and extensions')
+    after, restored_catalog = snapshot(restored)
+    differing_tables = sorted(name for name in before['tables'].keys() | after['tables'].keys()
+                              if before['tables'].get(name) != after['tables'].get(name))
+    differing_catalog = sorted(section for section in source_catalog.keys() | restored_catalog.keys()
+                               if source_catalog.get(section) != restored_catalog.get(section))
+    require_equal([], differing_tables, 'row hashes in ' + ', '.join(differing_tables))
+    require_equal([], differing_catalog, 'catalog sections ' + ', '.join(differing_catalog))
 
     def visible(tenant=None, subject=None):
         context = ''
@@ -129,7 +134,7 @@ COMMIT;
     require_equal(['0','0'], unsafe.splitlines(), 'runtime role remains unprivileged/non-owner')
     # Prove this is an independent snapshot, not a connection back to source.
     sql(source, f"UPDATE dzoka.organizations SET name='Synthetic changed after backup' WHERE id='{org_a}';")
-    require_equal(after, snapshot(restored), 'source changes cannot mutate restored snapshot')
+    require_equal(after, snapshot(restored)[0], 'source changes cannot mutate restored snapshot')
     result = {'status': 'PASS', 'tables': len(after['tables']),
               'rows': sum(t['rows'] for t in after['tables'].values()),
               'rowAndCatalogEquality': True, 'restoredTenantIsolation': True,

@@ -167,3 +167,14 @@ See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownersh
 | A16 | Pickup requires the configured audience, exact recipient and live grant. Concurrent redemption commits one return and one outbox event. Same-request replay returns the receipt. | Staffed site trial and target restore rehearsal |
 
 [Executed M6 evidence](../testing/m6-verification-2026-11-18.md).
+
+## M7 local channels and custody (2026-11-26)
+
+| Acceptance | Executed local scope | Target evidence |
+|---|---|---|
+| A16 | Claimant pickup request and acknowledgment wrap the existing staff-authorized return and atomic notice | Staff site trial |
+| A17 | Recipient-bound signed delivery reconciliation, stable operation IDs, throttled retry, and monotone delivery status | Live provider callbacks, courier and payment scenarios |
+| A27 | Signed inbound scope, encrypted phone routes and session replies, hash-bound private attachments, staff-published offer matching and participant-only relay | Target telemetry and privacy audit |
+| A28 | Concurrent transfer acceptance chooses one authoritative location and retains the stale event as an offline conflict | Site and offline client rehearsal |
+
+[M7 execution evidence](../testing/m7-verification-2026-11-26.md).

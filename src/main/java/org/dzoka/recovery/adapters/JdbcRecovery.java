@@ -160,6 +160,11 @@ final class JdbcRecovery implements RecoveryOperations {
     }
 
     @Override public Claim submit(VerifiedIdentity actor,UUID tenant,UUID id,UUID claim,Capacity capacity) {
+        return submitMatch(actor,tenant,id,claim,capacity,null,0);
+    }
+
+    @Override public Claim submitMatch(VerifiedIdentity actor,UUID tenant,UUID id,UUID claim,Capacity capacity,
+                                      UUID candidate,int revision) {
         required(capacity);
         return transactions.execute(actor,tenant,SUBMIT,db -> {
             Intake item=locked(db,tenant,id);
@@ -168,7 +173,9 @@ final class JdbcRecovery implements RecoveryOperations {
                 if (!existing.actor().equals(actor.reference()) || existing.view().capacity()!=capacity) throw new Failures.Conflict();
                 return existing.view();
             }
-            available(db,id,item);
+            Report report=available(db,id,item);
+            if(candidate!=null && (!item.report().equals(candidate) || report.revision()!=revision))
+                throw new Failures.Conflict();
             Policy policy=requirePolicy(db,tenant);
             if ((capacity==Capacity.REPRESENTATIVE && !policy.allowRepresentatives())
                     || limited(db,tenant,null,actor.reference(),"CLAIM_OPENED",10)
@@ -185,6 +192,48 @@ final class JdbcRecovery implements RecoveryOperations {
 
     @Override public Claim read(VerifiedIdentity actor,UUID tenant,UUID id,UUID claim) {
         return transactions.execute(actor,tenant,SUBMIT,db -> owned(db,tenant,id,claim,actor).view());
+    }
+
+    @Override public String pickupMessage(VerifiedIdentity actor,UUID tenant,UUID id,UUID claim,boolean acknowledge) {
+        return transactions.execute(actor,tenant,SUBMIT,db -> {
+            Intake item=locked(db,tenant,id);
+            StoredClaim subject=owned(db,tenant,id,claim,actor);
+            if(item.returned()) {
+                try(var query=q(db,"SELECT 1 WHERE dzoka.channel_return_confirmed(?,?)",id,claim)) {
+                    if(!exists(query)) return "CLOSED";
+                    if(acknowledge) appendPickup(db,tenant,id,claim,actor,"ACKNOWLEDGMENT");
+                    return acknowledge?"ACKNOWLEDGED":"RETURNED";
+                }
+            }
+            if(acknowledge) return "UNAVAILABLE";
+            if(!"APPROVED".equals(subject.view().state())) return subject.view().state();
+            try { available(db,id,item); }
+            catch(Failures.Conflict denied) { return "UNAVAILABLE"; }
+            appendPickup(db,tenant,id,claim,actor,"REQUEST");
+            return "CONTACT_DESK";
+        });
+    }
+
+    private static void appendPickup(Connection db,UUID tenant,UUID intake,UUID claim,VerifiedIdentity actor,String kind)
+            throws SQLException {
+        execute(db,"""
+                INSERT INTO dzoka.pickup_messages(tenant_id,intake_id,claim_id,actor_ref,kind)
+                VALUES(?,?,?,?,?) ON CONFLICT DO NOTHING
+                """,tenant,intake,claim,actor.reference(),kind);
+    }
+
+    @Override public java.util.List<PickupMessage> pickupMessages(VerifiedIdentity actor,UUID tenant,UUID intake) {
+        return transactions.execute(actor,tenant,HANDOVER,db -> {
+            intake(db,tenant,intake);
+            var messages=new java.util.ArrayList<PickupMessage>();
+            try(var query=q(db,"""
+                    SELECT claim_id,kind,created_at FROM dzoka.pickup_messages
+                    WHERE tenant_id=? AND intake_id=? ORDER BY created_at DESC,claim_id,kind LIMIT 50
+                    """,tenant,intake);var rows=query.executeQuery()) {
+                while(rows.next()) messages.add(new PickupMessage(rows.getObject(1,UUID.class),rows.getString(2),instant(rows,3)));
+            }
+            return java.util.List.copyOf(messages);
+        });
     }
 
     @Override public Claim withdraw(VerifiedIdentity actor,UUID tenant,UUID id,UUID claim) {

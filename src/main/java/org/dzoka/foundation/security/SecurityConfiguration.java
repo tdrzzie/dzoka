@@ -45,7 +45,10 @@ public class SecurityConfiguration {
                 .httpBasic(AbstractHttpConfigurer::disable).formLogin(AbstractHttpConfigurer::disable)
                 .logout(AbstractHttpConfigurer::disable)
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(a -> a.anyRequest().authenticated())
+                .authorizeHttpRequests(a -> a
+                        .requestMatchers(org.springframework.http.HttpMethod.GET,"/api/v1/hooks/whatsapp").permitAll()
+                        .requestMatchers(org.springframework.http.HttpMethod.POST,"/api/v1/hooks/whatsapp").permitAll()
+                        .anyRequest().authenticated())
                 .oauth2ResourceServer(o -> o.jwt(j -> {})).build();
     }
 }

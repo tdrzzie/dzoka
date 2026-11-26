@@ -131,6 +131,7 @@ class RecoveryIT extends IntegrationFixture {
         }
         expectState("RETURNED",api("GET",tenant,owner,"owner",null));
         assertEquals(1,count("recovery_returns",tenant));
+        assertEquals(1,count("channel_alerts",tenant));
         assertEquals(1,countRecoveryOutbox(item.report()));
         try (var db=admin();var sql=db.prepareStatement("""
                 SELECT count(*) FROM dzoka.recovery_activity WHERE tenant_id=? AND event='REDEEM_THROTTLED'

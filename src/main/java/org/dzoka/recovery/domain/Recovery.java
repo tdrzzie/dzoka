@@ -41,6 +41,7 @@ public final class Recovery {
     public record Receipt(UUID id,Instant returnedAt) {}
     public record Redemption(boolean accepted,Receipt receipt) {}
     public record PickupContext(UUID site,String recipientRef,Capacity capacity) {}
+    public record PickupMessage(UUID claim,String kind,Instant at) {}
 
     public static boolean digest(String value) { return value!=null && value.matches("[0-9a-f]{64}"); }
     public static String normalize(String value) {

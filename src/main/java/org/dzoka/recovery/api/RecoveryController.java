@@ -141,6 +141,12 @@ public final class RecoveryController {
         return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(result.receipt());
     }
 
+    @GetMapping(ITEM+"/pickup-messages")
+    public ResponseEntity<java.util.List<PickupMessage>> pickupMessages(@PathVariable UUID tenant,@PathVariable UUID intake,
+                                                                        @AuthenticationPrincipal Jwt jwt) {
+        return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(recovery.pickupMessages(identity(jwt),tenant,intake));
+    }
+
     private static boolean flag(Boolean value) {
         if (value==null) throw new IllegalArgumentException("Required recovery choice");
         return value;

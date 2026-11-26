@@ -108,7 +108,8 @@ public final class JdbcMediaStore implements MediaStore {
             }
             try(var s=c.prepareStatement("""
                 SELECT m.* FROM dzoka.media_assets m JOIN dzoka.reports r ON r.tenant_id=m.tenant_id AND r.id=m.report_id
-                WHERE m.tenant_id=? AND r.deleted_at IS NULL AND r.expires_at>clock_timestamp() AND m.retry_budget_used<3 AND (
+                WHERE m.tenant_id=? AND r.deleted_at IS NULL AND r.expires_at>clock_timestamp() AND m.retry_budget_used<3
+                  AND m.declared_type IN ('image/png','image/jpeg') AND (
                   m.state='QUARANTINED' OR (m.state='PROCESSING' AND m.lease_until<clock_timestamp())
                   OR (m.state='UPLOADING' AND m.created_at<clock_timestamp()-interval '30 seconds'))
                 ORDER BY m.created_at,m.id LIMIT 1 FOR UPDATE OF m SKIP LOCKED
