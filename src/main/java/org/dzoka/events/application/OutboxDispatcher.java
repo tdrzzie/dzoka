@@ -17,7 +17,9 @@ public final class OutboxDispatcher {
         var claimed = outbox.claim(worker, tenant, Duration.ofSeconds(30));
         if (claimed.isEmpty()) return false;
         var delivery = claimed.get();
-        transport.publish(delivery.event()); // outside the transaction; an ambiguous failure leaves the lease.
-        return outbox.acknowledge(worker, delivery);
+        try(var scope=new org.dzoka.operations.TraceContext(delivery.event().traceparent())) {
+            transport.publish(delivery.event()); // outside the transaction; an ambiguous failure leaves the lease.
+            return outbox.acknowledge(worker, delivery);
+        }
     }
 }

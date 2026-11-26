@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "mlflow": "3.18.0",
+  "image": "ghcr.io/mlflow/mlflow@sha256:19f9de44741318515fc3a992429f177420c32d40d971a25f6ae4621a1b9c8516",
+  "runs": 1,
+  "registeredModels": 1,
+  "metrics": 11,
+  "nativeActivationMirrored": true,
+  "nativeRevocationMirrored": true,
+  "otlpProtobufValidation": {
+    "status": "PASS",
+    "signals": [
+      "/v1/logs",
+      "/v1/metrics",
+      "/v1/traces"
+    ],
+    "payloads": 27
+  },
+  "scope": "synthetic digest-only model/dataset metadata; no artifact execution"
+}

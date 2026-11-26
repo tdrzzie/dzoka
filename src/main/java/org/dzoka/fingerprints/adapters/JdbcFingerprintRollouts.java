@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 @Component
 public final class JdbcFingerprintRollouts implements org.dzoka.fingerprints.ports.FingerprintRollouts {
     private final TenantTransactions tx;
+    @org.springframework.beans.factory.annotation.Value("${dzoka.learning.allow-legacy-rollouts:false}") private boolean allowLegacyRollouts;
     public JdbcFingerprintRollouts(TenantTransactions tx){this.tx=tx;}
     private static String digest(String value){return ContentDigest.sha256(value.getBytes(StandardCharsets.UTF_8));}
     private static void lock(Connection c,UUID tenant)throws SQLException{
@@ -190,6 +191,10 @@ public final class JdbcFingerprintRollouts implements org.dzoka.fingerprints.por
         if(expectedVersion<0)throw new IllegalArgumentException("Invalid activation version");
         return tx.execute(actor,tenant,"fingerprints:manage",c->{
             lock(c,tenant);UUID previous=null;long version=0;
+            org.dzoka.learning.Learning.lock(c,tenant);
+            try(var gate=org.dzoka.learning.Learning.q(c,"SELECT dzoka.learning_rollout_allowed(?) AND (? OR dzoka.learning_gate_configured())",id,allowLegacyRollouts);var row=gate.executeQuery()) {
+                row.next();if(!row.getBoolean(1))throw new Failures.Conflict();
+            }
             try(var s=c.prepareStatement("SELECT rollout_id,version FROM dzoka.fingerprint_active WHERE tenant_id=?")){
                 s.setObject(1,tenant);try(var r=s.executeQuery()){if(r.next()){previous=r.getObject(1,UUID.class);version=r.getLong(2);}}
             }

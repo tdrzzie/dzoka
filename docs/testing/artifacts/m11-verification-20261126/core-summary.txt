@@ -1,0 +1,90 @@
+[INFO] Running org.dzoka.AutomaticShonaEvidenceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.066 s -- in org.dzoka.AutomaticShonaEvidenceTest
+[INFO] Running org.dzoka.CanonicalPngTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.083 s -- in org.dzoka.CanonicalPngTest
+[INFO] Running org.dzoka.DomainTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.070 s -- in org.dzoka.DomainTest
+[INFO] Running org.dzoka.EdgeWindowTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.017 s -- in org.dzoka.EdgeWindowTest
+[INFO] Running org.dzoka.EmbeddingSpaceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in org.dzoka.EmbeddingSpaceTest
+[INFO] Running org.dzoka.FingerprintRolloutTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.dzoka.FingerprintRolloutTest
+[INFO] Running org.dzoka.foundation.security.SecurityConfigurationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.006 s -- in org.dzoka.foundation.security.SecurityConfigurationTest
+[INFO] Running org.dzoka.FulfillmentPolicyTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.282 s -- in org.dzoka.FulfillmentPolicyTest
+[INFO] Running org.dzoka.GenerativeEvidenceTest
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.016 s -- in org.dzoka.GenerativeEvidenceTest
+[INFO] Running org.dzoka.LanguageEvidenceTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.010 s -- in org.dzoka.LanguageEvidenceTest
+[INFO] Running org.dzoka.LearningEvaluationTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.dzoka.LearningEvaluationTest
+[INFO] Running org.dzoka.MatchingTest
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.036 s -- in org.dzoka.MatchingTest
+[INFO] Running org.dzoka.ModuleBoundaryTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.102 s -- in org.dzoka.ModuleBoundaryTest
+[INFO] Running org.dzoka.OperationalTransportTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.306 s -- in org.dzoka.OperationalTransportTest
+[INFO] Running org.dzoka.PerceptionEvidenceTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.dzoka.PerceptionEvidenceTest
+[INFO] Running org.dzoka.ReportDraftTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.dzoka.ReportDraftTest
+[INFO] Running org.dzoka.ShonaEvidenceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.007 s -- in org.dzoka.ShonaEvidenceTest
+[INFO] Running org.dzoka.traceability.EpcisProjectionTest
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in org.dzoka.traceability.EpcisProjectionTest
+[INFO] Running org.dzoka.VisionEvidenceTest
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.005 s -- in org.dzoka.VisionEvidenceTest
+[INFO] Tests run: 36, Failures: 0, Errors: 0, Skipped: 0
+[INFO] Running org.dzoka.AiJobsIT
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.11 s -- in org.dzoka.AiJobsIT
+[INFO] Running org.dzoka.ChannelsIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.720 s -- in org.dzoka.ChannelsIT
+[INFO] Running org.dzoka.EdgeIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.809 s -- in org.dzoka.EdgeIT
+[INFO] Running org.dzoka.FederationIT
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.934 s -- in org.dzoka.FederationIT
+[INFO] Running org.dzoka.FingerprintRolloutsIT
+[INFO] Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 6.924 s -- in org.dzoka.FingerprintRolloutsIT
+[INFO] Running org.dzoka.FoundationIT
+[INFO] Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 9.025 s -- in org.dzoka.FoundationIT
+[INFO] Running org.dzoka.FulfillmentIT
+[INFO] Tests run: 15, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.584 s -- in org.dzoka.FulfillmentIT
+[INFO] Running org.dzoka.GenerativeJobsIT
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.287 s -- in org.dzoka.GenerativeJobsIT
+[INFO] Running org.dzoka.IntakeIT
+[INFO] Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.692 s -- in org.dzoka.IntakeIT
+[INFO] Running org.dzoka.LanguageJobsIT
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.821 s -- in org.dzoka.LanguageJobsIT
+[INFO] Running org.dzoka.LearningIT
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.115 s -- in org.dzoka.LearningIT
+[INFO] Running org.dzoka.MatchingIT
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 13.82 s -- in org.dzoka.MatchingIT
+[INFO] Running org.dzoka.MediaStoreIT
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.999 s -- in org.dzoka.MediaStoreIT
+[INFO] Running org.dzoka.OperationsIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.685 s -- in org.dzoka.OperationsIT
+[INFO] Running org.dzoka.PerceptionJobsIT
+[INFO] Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.806 s -- in org.dzoka.PerceptionJobsIT
+[INFO] Running org.dzoka.QualityJobsIT
+[INFO] Tests run: 2, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.551 s -- in org.dzoka.QualityJobsIT
+[INFO] Running org.dzoka.RecoveryIT
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.383 s -- in org.dzoka.RecoveryIT
+[INFO] Running org.dzoka.S3StorageIT
+[INFO] Tests run: 6, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.256 s -- in org.dzoka.S3StorageIT
+[INFO] Running org.dzoka.SandboxMediaIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 10.86 s -- in org.dzoka.SandboxMediaIT
+[INFO] Running org.dzoka.ShonaCpuJobsIT
+[INFO] Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.193 s -- in org.dzoka.ShonaCpuJobsIT
+[INFO] Running org.dzoka.ShonaJobsIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.973 s -- in org.dzoka.ShonaJobsIT
+[INFO] Running org.dzoka.StartupConfigurationIT
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.356 s -- in org.dzoka.StartupConfigurationIT
+[INFO] Running org.dzoka.TraceabilityIT
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.638 s -- in org.dzoka.TraceabilityIT
+[INFO] Running org.dzoka.VisionJobsIT
+[INFO] Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.378 s -- in org.dzoka.VisionJobsIT
+[INFO] Tests run: 111, Failures: 0, Errors: 0, Skipped: 0
+[INFO] BUILD SUCCESS
+PASS: logical restore, exact rows/catalog, runtime-role and two-tenant isolation (105 tables)

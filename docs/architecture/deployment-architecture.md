@@ -19,3 +19,7 @@ Choose RPO/RTO and capacity from deployment needs, then test failover/restore, s
 A24–A28 plus reproducible clean deployment, no default credentials, key rotation, restore/failover drills and observed capacity measurements.
 
 Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.
+
+## Implemented M11 profile (2026-11-26)
+
+The historical pending statements above are superseded for the bounded current-account implementation by [M11 execution](../testing/m11-verification-2026-11-26.md), [ADR 0065](../adr/0065-governed-feedback-and-operational-boundaries.md) and the [runbook](../operations/m11-runbook.md). Target production/HA/quality acceptance remains separate; preserve the historical design and its constraints.

@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "profile": "ISOLATED_CURRENT_ACCOUNT_COMPOSE",
+  "replicas": 2,
+  "concurrentIdenticalRequests": 12,
+  "logicalCreates": 1,
+  "raceElapsedSeconds": 0.801,
+  "anonymousDenied": true,
+  "survivingReplica": true,
+  "coreRestart": true,
+  "databaseOutage503": true,
+  "databaseRecovery": true,
+  "nonrootReadonlyCapDrop": true,
+  "coreImageId": "sha256:a95d5d0c4d24844d6f5f82b5b76850e135473faff9b98c7d10986a86019657ab",
+  "limits": [
+    "ephemeral loopback test issuer",
+    "single-host database; no HA/PITR claim",
+    "synthetic small race; no capacity/SLO claim",
+    "no external providers or funds"
+  ],
+  "diagnosticReadLoad": {
+    "scope": "100 authenticated reads of one synthetic organization across two replicas",
+    "concurrency": 6,
+    "requests": 100,
+    "elapsedSeconds": 1.074,
+    "medianMs": 33.73,
+    "p95Ms": 175.86,
+    "p99Ms": 184.79
+  }
+}

@@ -41,9 +41,10 @@ class RecoveryIT extends IntegrationFixture {
         }
         membership(tenant,"registrar","reports:write","reports:hold","recovery:manage");
         membership(tenant,"observer","reports:read:any","recovery:verify","recovery:review");
-        membership(tenant,"first-reviewer","recovery:review");
+        membership(tenant,"first-reviewer","recovery:review","analytics:adjudicate");
         membership(tenant,"second-reviewer","recovery:review");
-        membership(tenant,"owner","claims:submit","recovery:review");
+        membership(tenant,"owner","claims:submit","recovery:review","analytics:adjudicate");
+        membership(tenant,"outcome-auditor","analytics:adjudicate","analytics:read");
         membership(tenant,"other","claims:submit");
         membership(tenant,"guesser","claims:submit");
         membership(tenant,"desk","recovery:handover");
@@ -93,6 +94,16 @@ class RecoveryIT extends IntegrationFixture {
         expectState("PENDING",post(owner+"/reviews/"+UUID.randomUUID(),"second-reviewer",review));
         expectState("APPROVED",post(owner+"/reviews/"+UUID.randomUUID(),"second-reviewer",
                 review(session,"APPROVE","INDEPENDENT_EVIDENCE",'c','e')));
+        String outcomePath="/operations/outcomes/"+owner.substring(owner.lastIndexOf('/')+1);UUID outcomeId=UUID.randomUUID();
+        var auditContext=ok(api("GET",tenant,outcomePath,"outcome-auditor",null));assertTrue(auditContext.get("independent").asBoolean());
+        var outcome=Map.of("revision",1,"sourceSha",auditContext.get("sourceSha").asString(),"ownerTruth","OWNER","fraudFinding","NO_FRAUD","contribution","LOCAL","evidenceSha",digest('e'));
+        assertEquals(403,post(outcomePath+"/audits/"+outcomeId,"owner",outcome).statusCode());
+        assertEquals(403,post(outcomePath+"/audits/"+outcomeId,"first-reviewer",outcome).statusCode());
+        assertEquals(200,post(outcomePath+"/audits/"+outcomeId,"outcome-auditor",outcome).statusCode());
+        assertEquals(200,post(outcomePath+"/audits/"+outcomeId,"outcome-auditor",outcome).statusCode());
+        assertFalse(json.writeValueAsString(outcome).contains(PRIVATE));
+        var audited=app.getBean(org.dzoka.operations.Operations.class).analytics(identity("outcome-auditor"),tenant,java.time.Instant.now().minusSeconds(3600));
+        assertEquals(1,audited.get("independentlyAuditedClaims").asInt());assertTrue(audited.get("ownershipFalsePositiveRate").isNull());
         UUID grant=UUID.randomUUID();
         var grantResponse=post(owner+"/grants/"+grant,"first-reviewer",audience("desk"));
         var grantBody=ok(grantResponse);
@@ -155,6 +166,19 @@ class RecoveryIT extends IntegrationFixture {
                 }
             }
         }
+    }
+    @Test void independentlyAuditedDecisionRatesUseKnownDenominatorsAndSuppressWithdrawnTruth() throws Exception {
+        policy(1,false,false);var audits=app.getBean(org.dzoka.operations.OutcomeAudits.class);UUID lastClaim=null;String lastSource=null;
+        for(int n=0;n<5;n++){
+            String actor="quality-claimant-"+n;membership(tenant,actor,"claims:submit");var item=enroll();attest(item);String path=claim(item,actor,"OWNER");UUID assessment=pass(path,actor);
+            expectState("APPROVED",post(path+"/reviews/"+UUID.randomUUID(),"first-reviewer",review(assessment,"APPROVE","INDEPENDENT_EVIDENCE",'b',null)));
+            UUID claim=UUID.fromString(path.substring(path.lastIndexOf('/')+1));String source=audits.context(identity("outcome-auditor"),tenant,claim).get("sourceSha").asString();
+            audits.record(identity("outcome-auditor"),tenant,claim,UUID.randomUUID(),new org.dzoka.operations.OutcomeAudits.Audit(1,source,"NOT_OWNER",n<2?"CONFIRMED_FRAUD":"NO_FRAUD","UNAVAILABLE",digest('e')));lastClaim=claim;lastSource=source;
+        }
+        var operations=app.getBean(org.dzoka.operations.Operations.class);var metrics=operations.analytics(identity("outcome-auditor"),tenant,java.time.Instant.now().minusSeconds(3600));
+        assertEquals(5,metrics.get("independentlyAuditedClaims").asInt());assertEquals(1.0,metrics.get("ownershipFalsePositiveRate").asDouble());assertEquals(.4,metrics.get("adjudicatedFraudRate").asDouble());assertTrue(metrics.get("federationMatchContribution").isNull());
+        audits.record(identity("outcome-auditor"),tenant,lastClaim,UUID.randomUUID(),new org.dzoka.operations.OutcomeAudits.Audit(2,lastSource,"UNAVAILABLE","UNAVAILABLE","UNAVAILABLE",digest('f')));
+        metrics=operations.analytics(identity("outcome-auditor"),tenant,java.time.Instant.now().minusSeconds(3600));assertTrue(metrics.get("ownershipFalsePositiveRate").isNull());assertTrue(metrics.get("adjudicatedFraudRate").isNull());
     }
 
     @Test void disclosedFactsCannotValidateExistingSessionsAndItemBudgetSpansActors() throws Exception {

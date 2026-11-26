@@ -37,7 +37,7 @@ public final class JdbcOutbox implements Outbox {
                             r.getString("event_type"), r.getInt("schema_version"),
                             r.getObject("aggregate_id", UUID.class), r.getLong("aggregate_version"),
                             r.getObject("correlation_id", UUID.class), r.getObject("causation_id", UUID.class),
-                            r.getTimestamp("occurred_at").toInstant(), r.getString("payload"));
+                            r.getTimestamp("occurred_at").toInstant(), r.getString("payload"),r.getString("traceparent"));
                     return Optional.of(new Delivery(event, token));
                 }
             }

@@ -1,0 +1,7 @@
+**
+!target/
+!target/core-layer/
+!target/core-layer/BOOT-INF/
+!target/core-layer/BOOT-INF/**
+!LICENSE
+!dependencies.lock.json

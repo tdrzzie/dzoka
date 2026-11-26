@@ -7,6 +7,8 @@ import hashlib
 import json
 import re
 import uuid
+from pathlib import Path
+import shutil
 
 
 def require_equal(before, after, label):
@@ -101,6 +103,19 @@ COMMIT;
     before, source_catalog = snapshot(source)
     command('pg_dump', '-h', '127.0.0.1', '-U', 'dzoka_control', '-d', source,
             '--format=custom', '--file=' + str(archive))
+    bundle = None
+    if Path(archive).is_file():
+        from backup_bundle import seal, verify
+        staged = Path(archive).parent / 'backup-checkpoint'
+        staged.mkdir()
+        shutil.copyfile(archive, staged/'postgres.dump')
+        (staged/'objects.json').write_text(json.dumps({'scope':'SYNTHETIC_EMPTY_OBJECT_SNAPSHOT','objects':[]}),encoding='utf-8')
+        (staged/'configuration.json').write_text(json.dumps({'schemaMigrations':25,'runtimeRole':'dzoka_app','scope':'SYNTHETIC_RESTORE'}),encoding='utf-8')
+        (staged/'tombstones.json').write_text(sql(source,"SELECT coalesce(jsonb_agg(to_jsonb(j) ORDER BY tenant_id,report_id),'[]') FROM dzoka.erasure_journal j;"),encoding='utf-8')
+        inventory=[{'kind':kind,'name':name} for kind,name in [('postgres','postgres.dump'),('objects','objects.json'),('configuration','configuration.json'),('tombstones','tombstones.json')]]
+        checkpoint=hashlib.sha256(json.dumps(before,sort_keys=True).encode()).hexdigest()
+        manifest=seal(staged,inventory,checkpoint,hashlib.sha256(b'SYNTHETIC_TEST_ROLES_PRE_EXIST').hexdigest())
+        bundle=verify(staged,manifest)
     # New empty DB; original owner and ACLs intentionally retained. Never use
     # --no-owner/--no-acl to make a failing restore appear to work.
     sql('postgres', f'CREATE DATABASE {identifier(restored)} OWNER dzoka_migrator;')
@@ -141,9 +156,9 @@ COMMIT;
     result = {'status': 'PASS', 'tables': len(after['tables']),
               'rows': sum(t['rows'] for t in after['tables'].values()),
               'rowAndCatalogEquality': True, 'restoredTenantIsolation': True,
-              'sourceSnapshotIndependence': True, 'snapshot': after,
+              'sourceSnapshotIndependence': True, 'backupBundle': bundle, 'snapshot': after,
               'limits': ['same-cluster logical restore; roles pre-exist',
-                         'no object-store backup, tombstone replay or external effects',
+                         'object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects',
                          'not production RPO/RTO, HA or point-in-time recovery']}
     print('PASS: logical restore, exact rows/catalog, runtime-role and two-tenant isolation (' +
           str(result['tables']) + ' tables)', flush=True)

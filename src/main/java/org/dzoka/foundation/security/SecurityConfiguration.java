@@ -46,6 +46,7 @@ public class SecurityConfiguration {
                 .logout(AbstractHttpConfigurer::disable)
                 .sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(a -> a
+                        .requestMatchers(org.springframework.http.HttpMethod.GET,"/health/live","/health/ready").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.GET,"/api/v1/hooks/whatsapp").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.POST,"/api/v1/hooks/whatsapp").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.POST,"/api/v1/hooks/fulfillment").permitAll()

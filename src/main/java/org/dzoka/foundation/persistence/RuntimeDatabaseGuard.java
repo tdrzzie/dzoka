@@ -20,6 +20,7 @@ public final class RuntimeDatabaseGuard implements InitializingBean {
                     OR EXISTS (SELECT 1 FROM pg_class t JOIN pg_namespace n ON n.oid=t.relnamespace
                         WHERE n.nspname='dzoka' AND t.relkind='r' AND (NOT t.relrowsecurity OR NOT t.relforcerowsecurity))
                     OR to_regclass('dzoka.organizations') IS NULL
+                    OR to_regclass('dzoka.restore_barriers') IS NULL
                     OR current_user <> 'dzoka_app'
                 FROM pg_roles r WHERE r.rolname=current_user
                 """)) {

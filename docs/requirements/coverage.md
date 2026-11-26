@@ -46,10 +46,10 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 40 | SEARCH SCALE | Specified; implementation and production validation pending. |
 | 41 | MODEL PROVIDER ARCHITECTURE | Private leased Python consumer with a locked local ONNX text profile and strict result boundary implemented; other providers and production isolation remain. |
 | 42 | MODEL GOVERNANCE | Specified; implementation and production validation pending. |
-| 43 | ML FEEDBACK LOOP | Specified; implementation and production validation pending. |
-| 44 | MLFLOW | Specified; implementation and production validation pending. |
-| 45 | OBSERVABILITY | Specified; implementation and production validation pending. |
-| 46 | SECURITY | Signed JWT, local permissions, safe SQL/input/error boundaries and runtime-role guard implemented; full security assessment/hardening remains. |
+| 43 | ML FEEDBACK LOOP | M11 native/declared feedback, independent labels, immutable source-bound paired datasets, split checks and governed evaluation/promotion implemented; representative qualified outcomes remain open. |
+| 44 | MLFLOW | M11 optional real MLflow REST tracking/model metadata, backend-bound reconciliation and descriptive native activation/rollback mirror verified on 3.18.0; target server/auth/storage and artifact resolver acceptance remain. |
+| 45 | OBSERVABILITY | M11 bounded privacy-filtered OTLP traces/metrics/logs, core/event/job context and lifecycle export verified against generated protobuf schemas; target collector and internal third-party SDK spans remain separate. |
+| 46 | SECURITY | Native auth/tenant RLS, bounded HTTP/input/error boundaries, independent governance/outcome review, secret-file packaging and adversarial/outage checks implemented; target security/privacy assessment and full runtime/base-image review remain. |
 | 47 | POLICY ENGINE | Active memberships plus intake retention/quotas and media legal-hold enforcement implemented; full versioned release/legal policy engine remains. |
 | 48 | AUTHENTICATION AND IDENTITY | Real JWT resource-server validation and issuer/subject local memberships implemented; production IdP/admin/account lifecycle remains. |
 | 49 | API DESIGN | Versioned organization/report/reference/media APIs with explicit auth, bounds, revisions, idempotency and safe errors; broader recovery APIs remain. |
@@ -62,7 +62,7 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 56 | TESTING | 28 Python, 6 Java unit/architecture/configuration and 44 real PostgreSQL/S3/sandbox/model integration tests pass; complete product/security/load suites remain. |
 | 57 | BENCHMARKS | Specified; implementation and production validation pending. |
 | 58 | DATASETS | Specified; implementation and production validation pending. |
-| 59 | ANALYTICS | Specified; implementation and production validation pending. |
+| 59 | ANALYTICS | M11 tenant/cohort analytics, coarse suppressed groups and independently audited ownership/fraud/attribution denominators implemented; representative permitted outcomes and qualified review remain. |
 | 60 | PREDICTIVE PREVENTION | Specified; implementation and production validation pending. |
 | 61 | EDGE / IoT EXTENSIBILITY | Specified; implementation and production validation pending. |
 | 62 | DISPOSAL / UNCLAIMED PROPERTY | Specified; implementation and production validation pending. |
@@ -73,13 +73,13 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 67 | ADRs | Process ADR 0001, design ADRs 0002–0025 and scoped intake/media/text-inference ADRs 0026–0027 accepted; later artifact adoption remains. |
 | 68 | ROOT REPOSITORY DOCUMENTATION | Root governance documents added; ongoing maintenance required. |
 | 69 | STATUS.md | Factual STATUS.md added. |
-| 70 | PRODUCTION CONFIGURATION | Required DB/OIDC configuration fails closed, separate migration credentials, reviewed local/test runtime; production deployment/config hardening remains. |
-| 71 | DATABASE MIGRATIONS | Flyway V1–V4 foundation/intake/media/AI migrations applied, rerun and validated against real PostgreSQL; full schema/upgrade/restore coverage remains. |
-| 72 | BACKUP AND RESTORE | Specified; implementation and production validation pending. |
-| 73 | HIGH AVAILABILITY | Specified; implementation and production validation pending. |
-| 74 | RATE LIMITING AND ABUSE PREVENTION | Specified; implementation and production validation pending. |
-| 75 | DATA RETENTION | Bounded tenant report/image retention, legal holds and explicit expiry/purge workers implemented; scheduling, broader policy and production validation remain. |
-| 76 | DATA DELETION | Intake tombstones/raw erasure, current preview revocation and actual object purge tested; backup/restore/replica/orphan reconciliation and broader domains remain. |
+| 70 | PRODUCTION CONFIGURATION | M11 separate migration/app secret files, fail-closed governance/configuration, packaged Compose/Helm profiles, probes and resource/network controls implemented; target identity/TLS/network/secrets acceptance remains. |
+| 71 | DATABASE MIGRATIONS | Flyway V1–V25 applied/rerun/validated and all 105 tables restored with exact row/catalog/tenant checks; incompatible older binaries require fenced cutover, target compatible upgrade/PITR acceptance remains. |
+| 72 | BACKUP AND RESTORE | M11 coordinated-checkpoint integrity tooling, real logical restore, erasure replay/barriers, real old-object cleanup regression and configuration/key/event/DR procedures implemented; target coordinated snapshots, escrow/PITR/RPO/RTO rehearsal remains. |
+| 73 | HIGH AVAILABILITY | M11 HA options/runbook, actual two-core survival/restart and DB recovery, Helm replicas/spread/disruption policy implemented; multi-host stateful failover and target CNI/availability acceptance remain. |
+| 74 | RATE LIMITING AND ABUSE PREVENTION | M11 persisted actor/tenant report budgets supplement claim/answer, upload, messaging, federation and fulfillment quotas; identity-provider login/OTP/reset and target ingress protections remain deployment responsibilities. |
+| 75 | DATA RETENTION | Versioned report/learning retention, source/derived maintenance and legal-hold-aware dataset purge implemented with a bounded worker; target class policies, storage/collector retention and scheduling acceptance remain. |
+| 76 | DATA DELETION | Canonical tombstones/raw erasure, derived/object cleanup acknowledgments, closed restore/replay and independent-source reviews verified; target replica/federation/versioned-storage/key recovery acceptance remains. |
 | 77 | SEARCH PRIVACY | Specified; implementation and production validation pending. |
 | 78 | PUBLIC API | Specified; implementation and production validation pending. |
 | 79 | CONNECTOR FRAMEWORK | Specified; implementation and production validation pending. |
@@ -97,7 +97,7 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 91 | DEPENDENCY GOVERNANCE | Foundation/media/text adoption, 106-JAR and 21-wheel/model integrity/license locks delivered; later models/platforms and expanded advisory/build inventory remain. |
 | 92 | LICENSE STRATEGY | MIT core and bounded foundation runtime/license review recorded; unresolved audited grants and later model/data licensing restrictions remain. |
 | 93 | NO README-DRIVEN CLAIMS | Canonical findings distinguish source inspection from claims. |
-| 94 | IMPLEMENTATION ORDER | M0–M3 and bounded M4 local text/perception/multimodal activation implemented; profile quality/production gates and full M5–M11 remain. No specification scope dropped. |
+| 94 | IMPLEMENTATION ORDER | M0–M11 have bounded local implementation records, including current-account M11 learning/analytics/operations. Representative quality, target deployment/HA/security and earlier deferred acceptance remain open; see the milestone ledger and M11 execution. No specification scope dropped. |
 | 95 | DO NOT OVERENGINEER THE WRONG PARTS | Specified; implementation and production validation pending. |
 | 96 | SUCCESS CRITERIA | Specified; implementation and production validation pending. |
 | 97 | REQUIRED FINAL DOCUMENTATION BEFORE DECLARING PRODUCTION READY | Specified; implementation and production validation pending. |

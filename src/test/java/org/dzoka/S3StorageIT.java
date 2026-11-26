@@ -13,6 +13,24 @@ import org.junit.jupiter.api.Test;
 import tools.jackson.databind.ObjectMapper;
 
 class S3StorageIT extends S3Fixture {
+    @Test void restoredPrivateObjectCannotReopenBeforePostBackupErasureIsApplied() throws Exception {
+        membership(A,"restore-worker","retention:recover","operations:read","reports:purge","media:purge");
+        UUID report=report();byte[] original=png();var response=upload(report,original,"image/png",UUID.randomUUID().toString());assertEquals(200,response.statusCode());
+        UUID id=app.getBean(ObjectMapper.class).readValue(response.body(),MediaView.class).id();var asset=app.getBean(MediaStore.class).read(who("owner"),A,id);var objects=app.getBean(PrivateObjects.class);
+        byte[] backup=objects.get(asset.sourceKey(),asset.sourceSha(),asset.sourceBytes(),5*1024*1024);assertArrayEquals(original,backup);
+        var operations=app.getBean(org.dzoka.operations.Operations.class);String evidence="e".repeat(64);operations.close(who("restore-worker"),A,evidence);
+        String manifest=operations.replay(who("restore-worker"),A,new org.dzoka.operations.Operations.Replay(evidence,List.of(new org.dzoka.operations.Operations.Erasure(report,10))));
+        // Restore an older real S3 object snapshot while tenant serving remains closed.
+        objects.delete(asset.sourceKey());objects.put(asset.sourceKey(),backup,asset.sourceSha(),"image/png");
+        var reviews=new org.dzoka.operations.Operations.Open(manifest,evidence,evidence);
+        assertThrows(Failures.Conflict.class,()->operations.open(who("restore-worker"),A,reviews));
+        app.getBean(org.dzoka.intake.ports.Reports.class).expire(who("restore-worker"),A);
+        assertThrows(Failures.Conflict.class,()->operations.open(who("restore-worker"),A,reviews));
+        assertTrue(worker().purgeOne(who("restore-worker"),A));
+        assertThrows(Failures.Unavailable.class,()->objects.get(asset.sourceKey(),asset.sourceSha(),asset.sourceBytes(),5*1024*1024));
+        operations.open(who("restore-worker"),A,reviews);assertEquals(404,media(A,id,"owner","/preview").statusCode());
+        assertTrue(operations.erasures(who("restore-worker"),A,null).stream().anyMatch(e->e.report().equals(report)));
+    }
     @Test void realPrivateUploadIsIdempotentAndQuarantineCannotBePreviewed() throws Exception {
         UUID report=report();byte[] png=png();String key=UUID.randomUUID().toString();
         var first=upload(report,png,"image/png",key);assertEquals(200,first.statusCode(),new String(first.body()));

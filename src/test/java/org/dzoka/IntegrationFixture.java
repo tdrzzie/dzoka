@@ -78,6 +78,7 @@ abstract class IntegrationFixture {
                 "--spring.datasource.url="+url, "--spring.datasource.username=dzoka_app",
                 "--spring.datasource.password="+required("DZOKA_TEST_APP_PASSWORD"),
                 "--spring.datasource.hikari.maximum-pool-size=6",
+                "--dzoka.learning.allow-legacy-rollouts="+legacyRolloutFixture(),
                 "--dzoka.security.issuer="+issuer, "--dzoka.security.jwk-set-uri="+issuer+"/jwks",
                 "--dzoka.security.audience=dzoka-core", "--dzoka.security.allow-insecure-loopback=true"));
         options.addAll(extraOptions());
@@ -132,4 +133,6 @@ abstract class IntegrationFixture {
     }
     protected void initializeProviders() throws Exception {}
     protected List<String> extraOptions(){return List.of();}
+    /** Earlier milestone fixture cohorts predate governed learning; production defaults never enable this. */
+    protected boolean legacyRolloutFixture(){return true;}
 }

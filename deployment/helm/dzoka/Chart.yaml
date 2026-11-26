@@ -1,0 +1,6 @@
+apiVersion: v2
+name: dzoka
+description: Stateless Dzoka core with externally managed stateful services and secrets
+type: application
+version: 0.1.0
+appVersion: 0.1.0

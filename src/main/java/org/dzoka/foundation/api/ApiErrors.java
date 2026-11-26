@@ -8,6 +8,9 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 @RestControllerAdvice
 public class ApiErrors {
+    @ExceptionHandler(Failures.RateLimited.class) ResponseEntity<ProblemDetail> rateLimited() {
+        return ResponseEntity.status(HttpStatus.TOO_MANY_REQUESTS).header("Retry-After","3600").cacheControl(CacheControl.noStore()).body(ProblemDetail.forStatusAndDetail(HttpStatus.TOO_MANY_REQUESTS,"Tenant request budget exhausted"));
+    }
     @ExceptionHandler(Failures.NotFound.class) ResponseEntity<ProblemDetail> notFound() {
         return problem(HttpStatus.NOT_FOUND, "Resource unavailable");
     }

@@ -1,0 +1,176 @@
+---
+# Source: dzoka/templates/core.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: dzoka-core
+spec:
+  podSelector:
+    matchLabels: {app: dzoka-core}
+  policyTypes: [Ingress, Egress]
+  ingress:
+    - from:
+        - podSelector:
+            matchLabels:
+              dzoka-api-gateway: "true"
+      ports: [{protocol: TCP, port: 8080}]
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: kube-system}
+      ports: [{protocol: UDP, port: 53}, {protocol: TCP, port: 53}]
+---
+# Source: dzoka/templates/core.yaml
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: dzoka-core
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels: {app: dzoka-core}
+---
+# Source: dzoka/templates/core.yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: dzoka-core
+automountServiceAccountToken: false
+---
+# Source: dzoka/templates/core.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: dzoka-core
+spec:
+  type: ClusterIP
+  selector: {app: dzoka-core}
+  ports: [{name: http, port: 8080, targetPort: http}]
+---
+# Source: dzoka/templates/core.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dzoka-core
+spec:
+  replicas: 2
+  revisionHistoryLimit: 3
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels: {app: dzoka-core}
+  template:
+    metadata:
+      labels: {app: dzoka-core}
+    spec:
+      serviceAccountName: dzoka-core
+      automountServiceAccountToken: false
+      terminationGracePeriodSeconds: 45
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        fsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: kubernetes.io/hostname
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels: {app: dzoka-core}
+      containers:
+        - name: core
+          image: "example.invalid/dzoka@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          imagePullPolicy: IfNotPresent
+          ports: [{name: http, containerPort: 8080}]
+          env:
+            - {name: SPRING_CONFIG_IMPORT, value: "configtree:/run/config/"}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          resources:
+            limits:
+              cpu: "2"
+              memory: 768Mi
+            requests:
+              cpu: 250m
+              memory: 384Mi
+          startupProbe:
+            httpGet: {path: /health/ready, port: http}
+            periodSeconds: 5
+            failureThreshold: 30
+          readinessProbe:
+            httpGet: {path: /health/ready, port: http}
+            periodSeconds: 10
+            timeoutSeconds: 7
+          livenessProbe:
+            httpGet: {path: /health/live, port: http}
+            periodSeconds: 15
+          volumeMounts:
+            - {name: config, mountPath: /run/config, readOnly: true}
+            - {name: tmp, mountPath: /tmp}
+      volumes:
+        - name: config
+          secret: {secretName: dzoka-app, defaultMode: 0440}
+        - name: tmp
+          emptyDir: {medium: Memory, sizeLimit: 64Mi}
+---
+# Source: dzoka/templates/core.yaml
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: dzoka-migrate
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+    helm.sh/hook-weight: "-10"
+    helm.sh/hook-delete-policy: before-hook-creation
+spec:
+  podSelector:
+    matchLabels: {app: dzoka-migrate}
+  policyTypes: [Ingress, Egress]
+  ingress: []
+  egress:
+    - to:
+        - namespaceSelector:
+            matchLabels: {kubernetes.io/metadata.name: kube-system}
+      ports: [{protocol: UDP, port: 53}, {protocol: TCP, port: 53}]
+---
+# Source: dzoka/templates/core.yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dzoka-migrate-1
+  annotations:
+    helm.sh/hook: pre-install,pre-upgrade
+    helm.sh/hook-weight: "-5"
+    helm.sh/hook-delete-policy: before-hook-creation,hook-succeeded
+spec:
+  backoffLimit: 0
+  activeDeadlineSeconds: 300
+  template:
+    metadata:
+      labels: {app: dzoka-migrate}
+    spec:
+      automountServiceAccountToken: false
+      restartPolicy: Never
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 10001
+        runAsGroup: 10001
+        seccompProfile: {type: RuntimeDefault}
+      containers:
+        - name: migrate
+          image: "example.invalid/dzoka@sha256:aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+          args: [org.dzoka.foundation.persistence.MigrateDatabase]
+          envFrom:
+            - secretRef: {name: dzoka-migration}
+          securityContext:
+            allowPrivilegeEscalation: false
+            readOnlyRootFilesystem: true
+            capabilities: {drop: [ALL]}
+          resources: {requests: {cpu: 250m, memory: 256Mi}, limits: {cpu: "1", memory: 512Mi}}
+          volumeMounts: [{name: tmp, mountPath: /tmp}]
+      volumes:
+        - name: tmp
+          emptyDir: {medium: Memory, sizeLimit: 64Mi}

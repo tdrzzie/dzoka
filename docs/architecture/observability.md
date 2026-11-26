@@ -19,3 +19,7 @@ Define service objectives and alert thresholds from actual deployment requiremen
 A24–A29, telemetry export inspection, trace continuity during retries and an outage exercise proving alerts are actionable without exposing private data.
 
 Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.
+
+## Implemented M11 profile (2026-11-26)
+
+The historical pending statements above are superseded for the bounded current-account implementation by [M11 execution](../testing/m11-verification-2026-11-26.md), [ADR 0065](../adr/0065-governed-feedback-and-operational-boundaries.md) and the [runbook](../operations/m11-runbook.md). Target production/HA/quality acceptance remains separate; preserve the historical design and its constraints.

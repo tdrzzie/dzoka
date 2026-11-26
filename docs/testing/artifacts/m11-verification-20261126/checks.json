@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "reviewDate": "2026-11-26",
+  "status": "PASS",
+  "python": 267,
+  "javaUnit": 36,
+  "coreIntegration": 111,
+  "integrationSkips": 0,
+  "restoreTables": 105,
+  "restoreRows": 5937,
+  "realPrivateObjectRestoreErasure": true,
+  "realMlflow": true,
+  "otlpProtobufValidation": true,
+  "packagedLayerMatchesJar": true,
+  "layerEntries": 492,
+  "helmLintRender": true,
+  "helmUnsafeConfigurationsRejected": 4,
+  "publicMavenAdvisoryScreen": {
+    "packages": 106,
+    "packagesWithReportedAdvisories": 0
+  },
+  "logProvenance": {
+    "coreSha256": "cb93c581668884833f46e7dd73aa3c856f5631c103ca45ac077aca6d97899a2b",
+    "pythonSha256": "e2c78684666844ed38b237ae3af4bf8246f8a21c09516b0be73748314041a03a",
+    "mlflowIntegrationSha256": "f9733e2ef92b58adedd4933c1adaa4a3e7922beda0219bb99d2bc2e9c22dbebd"
+  },
+  "limits": [
+    "Current-account synthetic conformance, not all-spec production acceptance",
+    "Core/media matrix excludes all-profile model inference and external provider/site acceptance",
+    "Helm rendered/linted; no target cluster/CNI execution",
+    "OSV exact Maven-coordinate screen only",
+    "Remote parent workflows blocked before start by account billing"
+  ],
+  "crossTenantRestoreReadUpdateReplayDenied": true,
+  "policyRemovalStatusSuspended": true
+}

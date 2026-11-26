@@ -1,0 +1,90 @@
+name: dzoka
+x-core: &core
+  image: ${DZOKA_CORE_IMAGE:?Set a locally built image or approved registry image digest}
+  user: "10001:10001"
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 128
+  mem_limit: 768m
+  cpus: 2
+  tmpfs: ["/tmp:size=64m,mode=1777"]
+  networks: [private]
+  volumes:
+    - type: bind
+      source: ${DZOKA_APP_CONFIG_DIR:?Set the private app configuration directory}
+      target: /run/config
+      read_only: true
+  environment:
+    SPRING_CONFIG_IMPORT: configtree:/run/config/
+    DZOKA_DB_URL: jdbc:postgresql://db:5432/dzoka
+    DZOKA_DB_USER: dzoka_app
+    DZOKA_OIDC_ISSUER: ${DZOKA_OIDC_ISSUER:?Set the approved HTTPS issuer}
+    DZOKA_OIDC_JWK_SET_URI: ${DZOKA_OIDC_JWK_SET_URI:?Set the approved HTTPS JWKS URI}
+    DZOKA_OIDC_AUDIENCE: ${DZOKA_OIDC_AUDIENCE:?Set the API audience}
+  healthcheck:
+    test: [CMD, java, -cp, /app/BOOT-INF/classes:/app/BOOT-INF/lib/*, org.dzoka.operations.HealthProbe]
+    interval: 15s
+    timeout: 8s
+    start_period: 30s
+    retries: 3
+  depends_on:
+    migrate: {condition: service_completed_successfully}
+  restart: unless-stopped
+
+services:
+  db:
+    image: postgres@sha256:9770878138a2e83abcb10856d30cc3f24dae0d317bb956db6ab9159de6c3c80d
+    environment:
+      POSTGRES_USER: dzoka_control
+      POSTGRES_DB: postgres
+      POSTGRES_PASSWORD_FILE: /run/db-secrets/control
+      POSTGRES_INITDB_ARGS: --auth-host=scram-sha-256
+    volumes:
+      - database:/var/lib/postgresql
+      - ./postgres-init.sh:/docker-entrypoint-initdb.d/10-dzoka.sh:ro
+      - ${DZOKA_DB_SECRETS_DIR:?Set the private DB secret directory}:/run/db-secrets:ro
+    networks: [private]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U dzoka_control -d postgres]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+    mem_limit: 768m
+    pids_limit: 128
+  migrate:
+    image: ${DZOKA_CORE_IMAGE:?Set the core image}
+    user: "10001:10001"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    tmpfs: ["/tmp:size=64m,mode=1777"]
+    pids_limit: 64
+    mem_limit: 512m
+    command: [org.dzoka.foundation.persistence.MigrateDatabase]
+    environment:
+      DZOKA_MIGRATION_URL: jdbc:postgresql://db:5432/dzoka
+      DZOKA_MIGRATION_USER: dzoka_migrator
+      DZOKA_MIGRATION_PASSWORD_FILE: /run/db-secrets/migrator
+    volumes:
+      - ${DZOKA_DB_SECRETS_DIR:?Set the private DB secret directory}/migrator:/run/db-secrets/migrator:ro
+    networks: [private]
+    depends_on:
+      db: {condition: service_healthy}
+    restart: "no"
+  core:
+    <<: *core
+    ports: ["127.0.0.1:${DZOKA_HTTP_PORT:-8080}:8080"]
+  core-secondary:
+    <<: *core
+    profiles: [replicas]
+    ports: ["127.0.0.1:${DZOKA_SECOND_HTTP_PORT:-8081}:8080"]
+
+networks:
+  private:
+    ipam:
+      config:
+        - subnet: ${DZOKA_NETWORK_SUBNET:?Set a reviewed unused private subnet for this deployment}
+volumes:
+  database: {}

@@ -35,6 +35,7 @@ public final class JdbcReports implements Reports {
                 }
             }
             UUID caseId,itemId,reportId;int version;long aggregateVersion;
+            try(var budget=c.prepareStatement("SELECT dzoka.consume_report_budget()");var rows=budget.executeQuery()){rows.next();if(!rows.getBoolean(1))throw new Failures.RateLimited();}
             if(target==null){
                 caseId=UUID.randomUUID();itemId=UUID.randomUUID();reportId=UUID.randomUUID();version=1;aggregateVersion=1;
                 try(var s=c.prepareStatement("INSERT INTO dzoka.recovery_cases(tenant_id,id) VALUES(?,?)")){

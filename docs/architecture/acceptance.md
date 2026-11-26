@@ -212,3 +212,14 @@ See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownersh
 | A28 | Courier custody and owner/staff returns remain authoritative distinct facts; stale receipt snapshots require independent review | Target recovery/operational trial |
 
 [M10 final execution and remaining acceptance](../testing/m10-verification-2026-11-26.md).
+
+## M11 current-account operations (2026-11-26)
+
+| Acceptance | Executed scope | Remaining target evidence |
+|---|---|---|
+| A24 | Restore barrier/in-flight locking, later tombstone replay, real old-object cleanup acknowledgment, legal holds and expired learning membership | Coordinated target snapshots, key/config escrow, target deletion propagation and recovery rehearsal |
+| A25–A26 | Full Core/private-S3/raster regression, exact 105-table/5,937-row restore, two packaged API replicas, signed auth, cross-replica replay, API/DB restart and unavailable-response behavior | Target stateful failover/fencing, CNI, compatible upgrades, external-effect reconciliation and measured RPO/RTO |
+| A27 | Actual privacy-filtered traces/metrics/logs validated against generated protobuf schemas; digest-only real MLflow 3.18.0 integration; bounded fixed-origin transport and separate secret files | Target collector/ingress/retention and deployed security/privacy assessment |
+| A29 | Separate pair/ownership/fraud decisions, independent source-bound outcome audits, known-denominator suppression, dataset source/split/dedup checks, independent thresholds and default fail-closed model governance | Permitted representative cohorts, qualified reviewers, approved thresholds and calibration |
+
+Final current-account checks pass 267 Python, 36 Java unit and 111 Core/private-S3/raster integrations with zero skips. [M11 scope, receipts and blockers](../testing/m11-verification-2026-11-26.md). All-specification production acceptance and earlier explicit deferrals remain open.

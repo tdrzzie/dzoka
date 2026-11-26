@@ -20,6 +20,7 @@ import org.springframework.stereotype.Component;
 @Component
 public final class JdbcMatching implements MatchingUseCases {
     private final TenantTransactions transactions;
+    @Value("${dzoka.learning.allow-legacy-rollouts:false}") private boolean allowLegacyRollouts;
     private final boolean pgvector;
     private final boolean indexed;
     private final QdrantRanking qdrant;
@@ -80,6 +81,7 @@ public final class JdbcMatching implements MatchingUseCases {
         checkRequest(limit,category);
         return transactions.execute(actor,tenant,"matches:read",connection -> {
             requireReportRead(connection);
+            requireModelApproval(connection,allowLegacyRollouts);
             return searchWithConfidence(connection,tenant,report,space,limit,category);
         });
     }
@@ -89,6 +91,7 @@ public final class JdbcMatching implements MatchingUseCases {
         checkRequest(limit,category);
         return transactions.execute(actor,tenant,"matches:read",connection -> {
             requireReportRead(connection);
+            requireModelApproval(connection,allowLegacyRollouts);
             MatchingHistory.lockAndClean(connection,tenant,actor.reference());
             var previous=MatchingHistory.read(connection,tenant,report,run);
             if (previous!=null) {
@@ -105,6 +108,7 @@ public final class JdbcMatching implements MatchingUseCases {
     @Override public Search readSearch(VerifiedIdentity actor, UUID tenant, UUID report, UUID run) {
         return transactions.execute(actor,tenant,"matches:read",connection -> {
             requireReportRead(connection);
+            requireModelApproval(connection,allowLegacyRollouts);
             var record=MatchingHistory.read(connection,tenant,report,run);
             if (record==null) throw new Failures.NotFound();
             return replay(connection,tenant,record);
@@ -124,6 +128,14 @@ public final class JdbcMatching implements MatchingUseCases {
             }
         }
         return JdbcCalibration.assess(db,tenant,stored.space(),result,true);
+    }
+    private static void requireModelApproval(Connection db,boolean allowLegacy)throws SQLException {
+        try(var statement=db.prepareStatement("SELECT pg_advisory_xact_lock_shared(hashtextextended('learning:'||dzoka.current_tenant()::text,25))")){statement.execute();}
+        try(var statement=db.prepareStatement("SELECT dzoka.learning_active_allowed() AND (? OR NOT EXISTS(SELECT 1 FROM dzoka.fingerprint_active) OR dzoka.learning_gate_configured())")) {
+            statement.setBoolean(1,allowLegacy);try(var row=statement.executeQuery()) {
+            row.next();if(!row.getBoolean(1))throw new Failures.Conflict();
+            }
+        }
     }
 
     @Override public int pruneHistory(VerifiedIdentity actor, UUID tenant) {

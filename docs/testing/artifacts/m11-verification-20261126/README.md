@@ -1,0 +1,7 @@
+# M11 execution receipts
+
+These are synthetic current-account execution records, not production approval. `checks.json` records the final 267 Python, 36 Java unit and 111 integration pass, and the exact 105-table/5,937-row restore. `core-summary.txt` and `python-summary.txt` are selected console result lines; original ignored console logs are bound by their hashes in `checks.json`. They are not fabricated full logs.
+
+`compose-result.json` records the real packaged replica/auth/race/outage diagnostic. `mlflow-result.json`, `mlflow-packages.json` and `otlp-payloads.json` record the real server and protocol validation. Model references are metadata, not uploaded/executed weights. `advisory-inventory.json` is the bounded public Maven-coordinate OSV lookup. `helm-rendered.yaml` deliberately uses synthetic image/secret names for lint/render only; it is not a deployment-ready target manifest. `helm-negative.json` records rejected unsafe fixture configurations. `ci-observation.json` records prior jobs prevented from starting, not M11 remote tests.
+
+`verification-manifest.json` binds normalized-LF source/configuration inputs, the actual packaged JAR and exact evidence bytes. No private credentials, token files, signing keys, DB backups, source images, ownership answers or real customer data are included. Raw protected test state remains in ignored `.test-tmp`. [Scope and external acceptance](../../m11-verification-2026-11-26.md).
