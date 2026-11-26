@@ -41,7 +41,23 @@ public final class EdgeInvestigations {
         }
     }
     public record Completion(UUID token,List<Observation> observations) {}
-    public record Result(String state,List<Observation> observations) {}
+    public record Window(Instant after,Instant before,String lastSeenSourceSha,String notObservedSourceSha,
+                         String processorSha,String hypothesis) {}
+    public record Result(String state,List<Observation> observations,List<Window> windows) {}
+    public static List<Window> windows(List<Observation> observations) {
+        var result=new ArrayList<Window>();
+        Observation previous=null;
+        for(var current:observations) {
+            if(previous!=null && "PRESENT".equals(previous.status()) && "NOT_OBSERVED".equals(current.status())
+                    && !previous.gap() && !current.gap() && previous.after().equals(previous.before())
+                    && current.after().equals(current.before()) && previous.before().isBefore(current.after())
+                    && previous.processorSha().equals(current.processorSha()))
+                result.add(new Window(previous.before(),current.after(),previous.sourceSha(),current.sourceSha(),
+                        current.processorSha(),"POSSIBLE_DISAPPEARANCE"));
+            previous=current;
+        }
+        return List.copyOf(result);
+    }
     public record Crop(UUID token,int width,int height,byte[] pixels) {
         @Override public String toString() { return "PrivateEdgeCrop"; }
     }
@@ -253,7 +269,8 @@ public final class EdgeInvestigations {
             try(var query=q(db,"SELECT grant_id,actor_ref,state,result::text FROM dzoka.edge_jobs WHERE id=?",job);var row=query.executeQuery()) {
                 if(!row.next()) throw new Failures.NotFound();
                 scope(db,row.getObject(1,UUID.class),actor.reference());
-                return new Result(row.getString(3),row.getString(4)==null?List.of():List.of(json.readValue(row.getString(4),Observation[].class)));
+                var observations=row.getString(4)==null?List.<Observation>of():List.of(json.readValue(row.getString(4),Observation[].class));
+                return new Result(row.getString(3),observations,windows(observations));
             }
         });
     }

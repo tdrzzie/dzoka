@@ -1,0 +1,23 @@
+{
+  "date": "2026-11-26",
+  "id": "ex055-pick-up-object",
+  "url": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex055-pick-up-object.mp4",
+  "sha256": "0d1c297b79a8646ae8c58640a9d76da06531689c67ead1948ea56f5ab7a097cf",
+  "bytes": 5989035,
+  "license": "CC-BY-4.0",
+  "attribution": "Kitware Inc. and IARPA",
+  "inspectedOffsets": [
+    0,
+    2,
+    4,
+    6
+  ],
+  "inspectedSourceRegion": [
+    1120,
+    320,
+    280,
+    200
+  ],
+  "decision": "UNSCORED_UNRESOLVED_ITEM_LABEL",
+  "reason": "Specific picked item cannot be identified confidently through occlusion and publisher annotation overlays. No removal score or holdout claim."
+}

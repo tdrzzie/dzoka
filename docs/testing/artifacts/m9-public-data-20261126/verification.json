@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-26",
+  "python": {
+    "tests": 250,
+    "skipped": 0,
+    "sandboxEnabled": true,
+    "logSha256": "0378c4619bc214d23a414626f1289029329fbc6ff6d378ee229f0b8c60bc2e7c"
+  },
+  "focusedNative": {
+    "javaUnitTests": 28,
+    "edgeIntegrations": 3,
+    "logSha256": "baf1dd2ecb3e3ef45a70f090b2fc6d8ca0944081116b0e14ec0e5cae47ae9c8e"
+  },
+  "fullNative": {
+    "javaUnitTests": 28,
+    "integrations": 78,
+    "logSha256": "6521748b5f8dfd3d010dc778493b2fb6e5bb8e93e15e09b97b6ce50e16a5486e",
+    "scope": "Native database/API suite with pinned edge worker enabled; not the full external-provider/model matrix"
+  },
+  "checks": [
+    "mandatory source audit gate",
+    "architecture verification",
+    "106 pinned dependency artifacts",
+    "whitespace diff check"
+  ],
+  "sources": {
+    "tools/edge_vision.py": "055b04547540f36a791282fddb758b6c9759600fb21d17ecf8d62ec6a41141e4",
+    "tools/edge_public_evaluation.py": "291b031faf10813931790b227edf0bb3838caa3bc3cdab93edf960552ea5ed03",
+    "tests/test_edge_vision.py": "5d34c470bb632d6d5ceb8cc6dabf5164281efb8850d055affc874bba72a86ecc",
+    "tests/test_edge_public_evaluation.py": "6728722b297f6cb3782b3ed01378a54d67310eab0858b6028c47808967de659b",
+    "ai/edge-runtime.lock.json": "bfa5c420044a5ad544669e50a9473a551364b00e73c6a24d2d03d3017dd59633"
+  }
+}

@@ -45,7 +45,8 @@ class EdgeIT extends IntegrationFixture {
         }
         byte[] manifest=json.writeValueAsBytes(Map.of("schema",1,"camera",camera,"frames",entries));
         byte[] plan=json.writeValueAsBytes(Map.of("camera",camera,"referenceSha",org.dzoka.foundation.application.ContentDigest.sha256(reference),
-                "referenceBox",List.of(4,4,6,6),"searchBox",List.of(0,0,24,18),"threshold",0.04,"purpose","LOST_PROPERTY_SEARCH"));
+                "referenceBox",List.of(4,4,6,6),"searchBox",List.of(0,0,24,18),"threshold",0.04,"purpose","LOST_PROPERTY_SEARCH",
+                "disclosureMask",List.of("000000","011110","011110","011110","011110","000000")));
         java.nio.file.Files.write(directory.resolve("manifest.json"),manifest);
         java.nio.file.Files.write(directory.resolve("plan.json"),plan);
         UUID report=app.getBean(IntakeService.class).submit(actor("investigator"),A,null,null,
@@ -70,6 +71,21 @@ class EdgeIT extends IntegrationFixture {
         assertEquals("NOT_OBSERVED",result.observations().getLast().status());
         assertFalse(result.observations().getLast().gap());
         assertFalse(result.observations().getFirst().gap());
+        assertEquals(1,result.windows().size());
+        assertEquals(start.plusSeconds(10),result.windows().getFirst().after());
+        assertEquals(start.plusSeconds(20),result.windows().getFirst().before());
+        assertEquals("POSSIBLE_DISAPPEARANCE",result.windows().getFirst().hypothesis());
+        try(var db=admin();var query=db.prepareStatement("SELECT id FROM dzoka.edge_evidence WHERE job_id=? ORDER BY created_at,id")) {
+            query.setObject(1,job);
+            try(var row=query.executeQuery()) {
+                assertTrue(row.next());
+                UUID evidence=row.getObject(1,UUID.class);
+                assertThrows(Failures.NotFound.class,()->edge.evidence(actor("investigator"),A,job,evidence,false));
+                var crop=javax.imageio.ImageIO.read(new java.io.ByteArrayInputStream(edge.evidence(actor("edge-reviewer"),A,job,evidence,true)));
+                assertEquals(0,crop.getRGB(0,0)&0xffffff);
+                assertNotEquals(0,crop.getRGB(2,2)&0xffffff);
+            }
+        }
     }
     @Test void grantRevocationStopsCompletionAndReadAndPreservesTenantIsolation() throws Exception {
         var service=app.getBean(EdgeInvestigations.class);

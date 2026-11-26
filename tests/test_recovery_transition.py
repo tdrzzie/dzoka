@@ -14,6 +14,38 @@ def rows():
 
 
 class RecoveryTransitionTests(unittest.TestCase):
+    def test_probability_errors_unseen_targets_and_unavailable_states_keep_coverage(self):
+        data = rows()
+        model = train(data, "2026-11-02T00:00:00Z", "author", "a" * 64)
+        test = []
+        for i, (source, target) in enumerate([("bus", "depot"), ("bus", "other"), ("unknown", "depot")]):
+            test.append({"item": f"test-{i}", "institution": "institution-b", "from": source, "to": target,
+                         "before": "2026-11-03T12:00:00Z", "after": "2026-11-03T12:01:00Z",
+                         "recorded": "2026-11-03T12:02:00Z", "sourceSha": f"{i + 10:064x}"})
+        result = evaluate(model, data, test)
+        self.assertEqual(2, result["available"])
+        self.assertEqual(2 / 3, result["coverage"])
+        self.assertEqual(.5, result["top1"])
+        self.assertEqual(1, result["multiclassBrier"])
+        self.assertEqual(1, result["unseenDestinationCases"])
+        self.assertIsNone(result["bySourceState"]["unknown"]["multiclassBrier"])
+        self.assertEqual(1, result["timeErrorCases"])
+        self.assertEqual("UNAVAILABLE_COMPLETED_TRANSITIONS_ONLY", result["censoringEvaluation"])
+
+    def test_relabelled_source_and_future_model_cutoff_cannot_evade_split(self):
+        data = rows()
+        model = train(data, "2026-11-02T00:00:00Z", "author", "a" * 64)
+        test = [{**data[0], "item": "new", "institution": "new", "before": "2026-11-03T12:00:00Z",
+                 "after": "2026-11-03T12:01:00Z", "recorded": "2026-11-03T12:02:00Z"}]
+        with self.assertRaisesRegex(ValueError, "source evidence"):
+            evaluate(model, data, test)
+        test[0]["sourceSha"] = "f" * 64
+        future = train(data, "2026-11-04T00:00:00Z", "author", "a" * 64)
+        with self.assertRaisesRegex(ValueError, "cutoff"):
+            evaluate(future, data, test)
+        with self.assertRaises(ValueError):
+            train(data, "2026-11-02T00:00:00Z", "author", "z" * 64)
+
     def test_versioned_frequency_and_elapsed_time_preserve_sparse_uncertainty(self):
         data = rows()
         model = train(data, "2026-11-02T00:00:00Z", "author", "a" * 64)

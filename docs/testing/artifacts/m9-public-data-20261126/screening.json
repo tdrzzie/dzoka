@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-26",
+  "license": "CC-BY-4.0",
+  "attribution": "Kitware Inc. and IARPA",
+  "clips": [
+    {
+      "id": "ex054-pick-up-object",
+      "sourceUrl": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex054-pick-up-object.mp4",
+      "sha256": "9ce0ba725897e175d6f800f97eda3b12930acf169051ca1193478c44803b2e45",
+      "bytes": 6239134,
+      "inspectedOffsets": [
+        0,
+        4
+      ],
+      "decision": "EXCLUDED_UNRESOLVED_ITEM_BOX",
+      "reason": "Visual inspection could not confidently label the tiny or occluded target item at the supported decode resolution. No label or accuracy score inferred from publisher activity overlays."
+    },
+    {
+      "id": "ex066-set-down-object",
+      "sourceUrl": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex066-set-down-object.mp4",
+      "sha256": "76cc4c546d712510f788e3088dbdd21637d19ec9ed04dfee2cd11bcf95d64cb7",
+      "bytes": 5300863,
+      "inspectedOffsets": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "decision": "EXCLUDED_UNRESOLVED_ITEM_BOX",
+      "reason": "Visual inspection could not confidently label the tiny or occluded target item at the supported decode resolution. No label or accuracy score inferred from publisher activity overlays."
+    },
+    {
+      "id": "ex056-pick-up-object",
+      "sourceUrl": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex056-pick-up-object.mp4",
+      "sha256": "b4519cf83ebc04dc3151698155e9095a1d245e0c27a3b5e8614ce9fd10aae67b",
+      "bytes": 7310437,
+      "inspectedOffsets": [
+        0,
+        2,
+        4,
+        6
+      ],
+      "decision": "EXCLUDED_UNRESOLVED_ITEM_BOX",
+      "reason": "Visual inspection could not confidently label the tiny or occluded target item at the supported decode resolution. No label or accuracy score inferred from publisher activity overlays."
+    }
+  ]
+}

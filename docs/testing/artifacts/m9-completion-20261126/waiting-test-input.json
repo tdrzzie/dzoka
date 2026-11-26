@@ -1,0 +1,35 @@
+{
+  "test": [
+    {
+      "item": "item-11",
+      "institution": "institution-b",
+      "from": "bus",
+      "before": "2026-11-03T12:00:00+00:00",
+      "recorded": "2026-11-03T12:02:00+00:00",
+      "sourceSha": "b0cc15bad0ae068a9ae434892877f6806da70628af34c9230642aede073dc137",
+      "to": "depot",
+      "after": "2026-11-03T12:00:10+00:00"
+    },
+    {
+      "item": "item-12",
+      "institution": "institution-b",
+      "from": "bus",
+      "before": "2026-11-03T12:00:00+00:00",
+      "recorded": "2026-11-03T12:02:00+00:00",
+      "sourceSha": "41289ed98da9114818bf94229e079ff18ddbdcde83b787b9ac72c4e5bedc36e3",
+      "to": "depot",
+      "after": "2026-11-03T12:00:20+00:00"
+    }
+  ],
+  "testCensored": [
+    {
+      "item": "item-13",
+      "institution": "institution-b",
+      "from": "bus",
+      "before": "2026-11-03T12:00:00+00:00",
+      "recorded": "2026-11-03T12:02:00+00:00",
+      "sourceSha": "bd8d712515b475f0706e9db0b6842279a46eaf360b29368dc83617019217bf3b",
+      "through": "2026-11-03T12:00:05+00:00"
+    }
+  ]
+}

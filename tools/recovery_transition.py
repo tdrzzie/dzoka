@@ -12,6 +12,10 @@ def digest(value):
     return hashlib.sha256(json.dumps(value, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).hexdigest()
 
 
+def evidence_digest(value):
+    return isinstance(value, str) and len(value) == 64 and all(c in "0123456789abcdef" for c in value)
+
+
 def validate(rows):
     if not isinstance(rows, list) or not 1 <= len(rows) <= 10000:
         raise ValueError("Bounded, purpose-approved transitions required")
@@ -34,7 +38,7 @@ def validate(rows):
 
 def train(rows, cutoff, author, purpose_sha):
     validate(rows)
-    if not isinstance(author, str) or not author or not isinstance(purpose_sha, str) or len(purpose_sha) != 64:
+    if not isinstance(author, str) or not author or not evidence_digest(purpose_sha):
         raise ValueError("Author and purpose evidence required")
     as_of = utc(cutoff)
     if any(utc(row["recorded"]) > as_of for row in rows):
@@ -75,26 +79,53 @@ def evaluate(model, train_rows, test_rows):
     validate(test_rows)
     if model["datasetSha"] != digest(train_rows):
         raise ValueError("Training provenance mismatch")
+    predict(model, "__integrity_check__")
+    if {row["sourceSha"] for row in train_rows} & {row["sourceSha"] for row in test_rows}:
+        raise ValueError("Evaluation split leaks source evidence")
     for field in ("item", "institution"):
         if {row[field] for row in train_rows} & {row[field] for row in test_rows}:
             raise ValueError("Evaluation split leaks " + field)
     if max(utc(row["recorded"]) for row in train_rows) >= min(utc(row["before"]) for row in test_rows):
         raise ValueError("Evaluation time split leaks future observations")
+    if utc(model["cutoff"]) >= min(utc(row["before"]) for row in test_rows):
+        raise ValueError("Model as-of cutoff exceeds evaluation window")
     available = correct = 0
     errors = []
+    brier = []
+    slices = {}
+    unseen = 0
     for row in test_rows:
         result = predict(model, row["from"])
         if not result["available"]:
+            slices.setdefault(row["from"], {"cases": 0, "available": 0, "correct": 0, "brierSum": 0.0})["cases"] += 1
             continue
         available += 1
         selected = sorted(result["distribution"], key=lambda value: (-value["frequency"], value["state"]))[0]
         correct += selected["state"] == row["to"]
+        probabilities = {entry["state"]: entry["frequency"] for entry in result["distribution"]}
+        unseen += row["to"] not in probabilities
+        score = sum((probabilities.get(state, 0) - (state == row["to"])) ** 2
+                    for state in set(probabilities) | {row["to"]})
+        brier.append(score)
+        group = slices.setdefault(row["from"], {"cases": 0, "available": 0, "correct": 0, "brierSum": 0.0})
+        group["cases"] += 1
+        group["available"] += 1
+        group["correct"] += selected["state"] == row["to"]
+        group["brierSum"] += score
         if selected["state"] == row["to"]:
             seconds = (utc(row["after"]) - utc(row["before"])).total_seconds()
             errors.append(abs(selected["medianSeconds"] - seconds))
-    return {"modelSha": model["modelSha"], "testSha": digest(test_rows), "cases": len(test_rows),
+    per_state = {state: {"cases": group["cases"], "available": group["available"],
+                        "top1": group["correct"] / group["available"] if group["available"] else None,
+                        "multiclassBrier": group["brierSum"] / group["available"] if group["available"] else None}
+                 for state, group in sorted(slices.items())}
+    return {"evaluationVersion": "recovery-transition-evaluation-v2", "modelSha": model["modelSha"], "testSha": digest(test_rows), "cases": len(test_rows),
             "available": available, "top1": None if not available else correct / available,
+            "coverage": available / len(test_rows), "unseenDestinationCases": unseen,
+            "multiclassBrier": sum(brier) / len(brier) if brier else None, "bySourceState": per_state,
             "medianTimeAbsoluteErrorSeconds": None if not errors else median(errors),
+            "timeErrorCases": len(errors), "timeErrorScope": "CORRECT_TOP1_COMPLETED_TRANSITIONS_ONLY",
+            "censoringEvaluation": "UNAVAILABLE_COMPLETED_TRANSITIONS_ONLY",
             "calibration": "UNAVAILABLE", "promotion": "REQUIRES_REVIEW"}
 
 
@@ -102,7 +133,7 @@ def approve(model, evaluation, reviewer, acceptance_sha):
     predict(model, "__integrity_check__")
     if not reviewer or reviewer == model["author"] or evaluation["modelSha"] != model["modelSha"]:
         raise ValueError("Independent review required")
-    if not isinstance(acceptance_sha, str) or len(acceptance_sha) != 64:
+    if not evidence_digest(acceptance_sha):
         raise ValueError("Protected acceptance evidence required")
     return {"modelSha": model["modelSha"], "evaluationSha": digest(evaluation), "reviewer": reviewer,
             "acceptanceSha": acceptance_sha, "state": "APPROVED_FOR_ASSISTED_SEARCH"}

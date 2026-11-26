@@ -39,3 +39,15 @@ class EdgeVideoTests(unittest.TestCase):
             self.assertEqual(1, len(result["windows"]))
             self.assertTrue((directory / "clip.mkv").exists())
             self.assertNotIn("pixels", json.dumps(result))
+            # Same source and offset, separately authorized source coordinates.
+            cropped = [{**entries[0], "sourceRegion": [2, 2, 16, 14]}]
+            zoomed = FrameArchive(directory, "camera", {"schema": 1, "camera": "camera", "frames": cropped})
+            decoded = zoomed.read(zoomed.frames[0], lambda: None)
+            self.assertEqual((16, 14), decoded[:2])
+            expected = b"".join(reference.split(b"\n", 3)[3][((row + 2) * 24 + 2) * 3:((row + 2) * 24 + 18) * 3]
+                                for row in range(14))
+            self.assertEqual(expected, decoded[2])
+            invalid = FrameArchive(directory, "camera", {"schema": 1, "camera": "camera",
+                                   "frames": [{**entries[0], "sourceRegion": [20, 0, 16, 14]}]})
+            with self.assertRaises(ValueError):
+                invalid.read(invalid.frames[0], lambda: None)

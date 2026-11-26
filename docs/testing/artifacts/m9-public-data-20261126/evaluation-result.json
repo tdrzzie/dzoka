@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "executedAt": "2026-11-26T16:06:27.161862+00:00",
+  "scope": "MANUALLY_LABELLED_PUBLIC_EXAMPLE_DIAGNOSTIC",
+  "manifestSha": "139bf56459e84d07c40233c61652c0c074b495b93e90d46df29df7d1447657bb",
+  "evaluatorSha": "291b031faf10813931790b227edf0bb3838caa3bc3cdab93edf960552ea5ed03",
+  "providerSha": "055b04547540f36a791282fddb758b6c9759600fb21d17ecf8d62ec6a41141e4",
+  "runtimeLockSha": "bfa5c420044a5ad544669e50a9473a551364b00e73c6a24d2d03d3017dd59633",
+  "decoderLockSha": "30ff00c43f1afb5c55b3295040439117db6705ba1e36a4075deb3e87d7c6dafa",
+  "clips": [
+    {
+      "id": "ex000-abandon-package",
+      "sourceSha": "558bb3611c8e9d308d61071faf0a469f978ab6922d17df0eaf46b487e8ec9c59",
+      "profile": "0b85f30c3a4854e66196cc316cf8daae2aead461c39902b2c84f57d120fee761",
+      "referenceSha": "1fcadeb947621cca8be6a781e6bc681d7b9894bc6cbead5a03fede30b7e0f077",
+      "metrics": {
+        "tp": 3,
+        "fp": 0,
+        "tn": 3,
+        "fn": 0,
+        "abstained": 0,
+        "uncertainLabels": 1,
+        "labelled": 6,
+        "decisionCoverage": 1.0,
+        "recallIncludingAbstentions": 1.0,
+        "meanBoxIoU": 0.875
+      },
+      "samples": [
+        {
+          "offset": 0,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI",
+          "frameSha": "15655b8e7b5c0ef036a832fe6a0d4523526d1e315ca402d3096f44b71fd9f448",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 1.56,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI",
+          "frameSha": "d6aa3889f38177a04979db529dbe3f1e182c7a1c7eb7e8dbecbaf40b9a6b0858",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 3.12,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI",
+          "frameSha": "73b1f18f60073ba630b396497c4b49e52bfc0a476bbc628a9f70806bd16fff5d",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 4.68,
+          "label": "UNKNOWN",
+          "note": "Target and hand overlap; partial occlusion and appearance change",
+          "frameSha": "0aad0816296acfdd9c235dc64e4a7eac745188e5a2aff2d872a3a822e940e96e",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 7,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box",
+          "frameSha": "7b1917e47def57027a5871a3ed0155b3e0c1594787953bd40c22c696defd5a74",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              270,
+              72,
+              15,
+              16
+            ],
+            "continued": false,
+            "pixelUncertainty": 2,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "0b85f30c3a4854e66196cc316cf8daae"
+          }
+        },
+        {
+          "offset": 7.8,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box",
+          "frameSha": "c229a007d1c525d5411470bd5439b81ab7340f484738b5c21223103c41738aa0",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              270,
+              72,
+              15,
+              16
+            ],
+            "continued": true,
+            "pixelUncertainty": 2,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "0b85f30c3a4854e66196cc316cf8daae"
+          }
+        },
+        {
+          "offset": 9,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box",
+          "frameSha": "1592ca798868d80cabcf71d4933548b84bed902fe5723457d7302bdd4e6ff11d",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              268,
+              72,
+              15,
+              16
+            ],
+            "continued": true,
+            "pixelUncertainty": 2,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "0b85f30c3a4854e66196cc316cf8daae"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ex054-pick-up-object",
+      "sourceSha": "9ce0ba725897e175d6f800f97eda3b12930acf169051ca1193478c44803b2e45",
+      "excluded": "Item too small or occluded for reliable manual item-box ground truth at the supported 320x180 decode. Inspected source samples, no accuracy score assigned."
+    },
+    {
+      "id": "ex066-set-down-object",
+      "sourceSha": "76cc4c546d712510f788e3088dbdd21637d19ec9ed04dfee2cd11bcf95d64cb7",
+      "excluded": "Item too small or occluded for reliable manual item-box ground truth at the supported 320x180 decode. Inspected source samples, no accuracy score assigned."
+    }
+  ]
+}

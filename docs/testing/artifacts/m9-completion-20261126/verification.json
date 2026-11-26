@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-26",
+  "scope": "CURRENT_SETUP_EDGE_AND_OFFLINE_BASELINES_NOT_PRODUCTION_ACCEPTANCE",
+  "python": {
+    "tests": 259,
+    "skipped": 0,
+    "edgeSandboxEnabled": true,
+    "logSha256": "78b36597651c26a0ed18b15d8d002e2fa1bc2bfd808d6e5f30deddb1ca5c50da"
+  },
+  "native": {
+    "javaUnitTests": 30,
+    "databaseApiIntegrations": 78,
+    "skipped": 0,
+    "edgeSandboxEnabled": true,
+    "logSha256": "70fce957b2db16a2b1a9ba094673d010140e8ed6eb6fb79ec114e76139f05e36"
+  },
+  "restore": {
+    "tables": 74,
+    "rows": 4671,
+    "rowAndCatalogEquality": true,
+    "tenantIsolation": true,
+    "receiptSha256": "6533dfa7cb17703c07601c3508c41c30d61876d308f2836d9777c01f5c8fd1a3"
+  },
+  "sources": {
+    "src/main/java/org/dzoka/edge/EdgeInvestigations.java": "47ea829d065fd184f77a7aa086a7db5ae1897399bca3a462a3ca452e714ee414",
+    "src/test/java/org/dzoka/EdgeIT.java": "1d3ebe8b3fd412a0e74f10206a1c86565672d7d565b80532a7dae491ffb25cd2",
+    "src/test/java/org/dzoka/EdgeWindowTest.java": "93d6bd62a0d5f5e18b4810e5407be81913b19cff209ede4a307d8d1e540baa6b",
+    "tools/edge_vision.py": "991ab748d3ca0eb2b3584876bf2c098b7ce8593f39812786771c85af617ce78f",
+    "tools/edge_worker.py": "50d41df837b04959c91f420dd7b72321dda022f5d8d5d4f3bc4519617718ce14",
+    "tools/edge_public_evaluation.py": "dbccb30d71c70b1b41b88b239c34b3275296549d02f5d51ed53de2ae3add17fd",
+    "tools/recovery_transition.py": "87ddd8411055d53d0e423ada8e981f9a3a0a6221cad59c840cc669fce3dc9edd",
+    "tools/recovery_survival.py": "b05d9038d6e57094d36fbc2698a1e27e94b44d3c2abad6d45452ecfb2306e752",
+    "ai/edge-runtime.lock.json": "39a1d9179f1c2cb536260368091cd8b3f7c9d776797540919810fba0b90bb116",
+    "tests/test_edge_video.py": "1f4cca965c0465a81c75b7e0f1aecde87d44684f8df8c0eb351cd55001e994d0",
+    "tests/test_edge_vision.py": "3aa0bd5d4ee3f8727b7bcf95ed70944b64b5960fef1c12b4d317b17de8e559b3",
+    "tests/test_edge_public_evaluation.py": "6728722b297f6cb3782b3ed01378a54d67310eab0858b6028c47808967de659b",
+    "tests/test_recovery_transition.py": "5174b1eb771f100ab9911a82348e865f70e88f2a64d966a6bdd5c5918a547800",
+    "tests/test_recovery_survival.py": "97d647d4bb68f20ac6fe9469fda824ec248992713ebcbb4fff2751e56f6604a0"
+  },
+  "checks": [
+    "mandatory source audit gate",
+    "architecture verification",
+    "106-artifact dependency integrity",
+    "whitespace diff check"
+  ],
+  "externalProviderMatrixRepeated": false
+}

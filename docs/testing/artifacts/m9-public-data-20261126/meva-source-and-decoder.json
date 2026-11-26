@@ -1,0 +1,30 @@
+{
+  "clip.mp4": {
+    "url": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex000-abandon-package.mp4",
+    "bytes": 4216365,
+    "sha256": "558bb3611c8e9d308d61071faf0a469f978ab6922d17df0eaf46b487e8ec9c59"
+  },
+  "license.txt": {
+    "url": "https://mevadata.org/resources/MEVA-data-license.txt",
+    "bytes": 19055,
+    "sha256": "bdeedfb765049c87f92a2450369ad70882fca3371190b2a6b7e560e103c922e8"
+  },
+  "license": "CC-BY-4.0",
+  "attribution": "Multiview Extended Video with Activities (MEVA), Kitware Inc. and IARPA",
+  "checkedAt": "2026-11-26",
+  "decoderSamples": [
+    {
+      "offsetSeconds": 0,
+      "width": 320,
+      "height": 180,
+      "rgbSha256": "15655b8e7b5c0ef036a832fe6a0d4523526d1e315ca402d3096f44b71fd9f448"
+    },
+    {
+      "offsetSeconds": 2,
+      "width": 320,
+      "height": 180,
+      "rgbSha256": "3797be72aed03a7271445e96f2438b8b12e5ef00d325569f24875813a6bd119f"
+    }
+  ],
+  "scope": "PUBLIC_REFERENCE_DECODER_CHECK; tracking and disappearance quality not evaluated"
+}

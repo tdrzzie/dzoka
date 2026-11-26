@@ -10,7 +10,7 @@ from urllib.parse import urlsplit
 import uuid
 import base64
 
-from edge_vision import FrameArchive, IsolatedTemplateTracker, search
+from edge_vision import FrameArchive, IsolatedTemplateTracker, search, disclosure_mask, redacted_crop
 
 
 def api(base, token, method, path, body=None):
@@ -59,7 +59,8 @@ def run_once(base, token, tenant, archive_path, manifest_path, reference_path, p
     if hashlib.sha256(plan_raw).hexdigest() != lease["authorizationSha"]:
         raise ValueError("Reviewer-approved search plan changed")
     plan = json.loads(plan_raw)
-    if set(plan) != {"camera", "referenceSha", "referenceBox", "searchBox", "threshold", "purpose"}:
+    required = {"camera", "referenceSha", "referenceBox", "searchBox", "threshold", "purpose"}
+    if set(plan) not in (required, required | {"disclosureMask"}):
         raise ValueError("Invalid search plan")
     if plan["camera"] != lease["camera"] or plan["purpose"] != "LOST_PROPERTY_SEARCH":
         raise ValueError("Plan outside grant")
@@ -68,6 +69,9 @@ def run_once(base, token, tenant, archive_path, manifest_path, reference_path, p
         raise ValueError("Reference object changed")
     archive = FrameArchive(archive_path, lease["camera"], json.loads(manifest_raw))
     provider = IsolatedTemplateTracker(reference, plan["referenceBox"], plan["threshold"])
+    mask = plan.get("disclosureMask")
+    if "disclosureMask" in plan:
+        disclosure_mask(mask, plan["referenceBox"][2:])
     job = str(uuid.UUID(lease["job"]))
 
     def authorize():
@@ -78,13 +82,12 @@ def run_once(base, token, tenant, archive_path, manifest_path, reference_path, p
     result = search(archive, provider, lease["start"], lease["end"], plan["searchBox"], lease["budget"], authorize)
     evidence = []
     for observation in result["observations"]:
-        if observation["state"] != "PRESENT" or len(evidence) >= 4:
+        if mask is None or observation["state"] != "PRESENT" or len(evidence) >= 4:
             continue
         frame = next(frame for frame in archive.frames if frame.time == observation["time"])
         width, height, pixels = archive.read(frame, authorize)
         x, y, crop_width, crop_height = observation["box"]
-        cropped = b"".join(pixels[((y + row) * width + x) * 3:((y + row) * width + x + crop_width) * 3]
-                           for row in range(crop_height))
+        cropped = redacted_crop((width, height, pixels), observation["box"], mask)
         evidence_id = str(uuid.uuid5(uuid.UUID(job), frame.digest + ":" + frame.time))
         api(base, token, "PUT", root + f"/jobs/{job}/evidence/{evidence_id}",
             {"token": lease["token"], "width": crop_width, "height": crop_height, "pixels": base64.b64encode(cropped).decode()})

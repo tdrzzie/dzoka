@@ -1,0 +1,116 @@
+{
+  "model": {
+    "author": "local-diagnostic",
+    "calibration": "UNAVAILABLE",
+    "configuration": {
+      "extrapolation": "UNAVAILABLE",
+      "minimumDistinctItems": 3,
+      "ties": "EVENTS_BEFORE_CENSOR_WITHDRAWAL"
+    },
+    "createdAt": "2026-11-26T16:28:12.646284+00:00",
+    "cutoff": "2026-11-02T00:00:00Z",
+    "datasetSha": "bf269b38656e0ff30f9a7602ac35d42680f602949378bec075e240a815cc4568",
+    "implementationSha": "b05d9038d6e57094d36fbc2698a1e27e94b44d3c2abad6d45452ecfb2306e752",
+    "modelSha": "89864049247cd9851847cd9ccb3644148ad109fd91690a64de944d5755beb9c7",
+    "provider": "DZOKA_ORIGINAL_STDLIB",
+    "purposeSha": "a7d4c1cf3e2365659efd778109b176348b936589dfd1ac58b356f82541e3228f",
+    "rollout": "REQUIRES_INDEPENDENT_REVIEW",
+    "runtime": "CPython-3.14.7",
+    "states": {
+      "bus": {
+        "curve": [
+          {
+            "atRisk": 3,
+            "censored": 0,
+            "events": 1,
+            "seconds": 10.0,
+            "survival": 0.6666666666666667
+          },
+          {
+            "atRisk": 2,
+            "censored": 1,
+            "events": 0,
+            "seconds": 20.0,
+            "survival": 0.6666666666666667
+          },
+          {
+            "atRisk": 1,
+            "censored": 0,
+            "events": 1,
+            "seconds": 30.0,
+            "survival": 0.0
+          }
+        ],
+        "support": 3
+      }
+    },
+    "version": "recovery-wait-kaplan-meier-v1"
+  },
+  "training": [
+    {
+      "item": "item-1",
+      "institution": "institution-a",
+      "from": "bus",
+      "before": "2026-11-01T12:00:00+00:00",
+      "recorded": "2026-11-01T12:02:00+00:00",
+      "sourceSha": "ca16a0d0ebbe32efc70cfe992b9da5e24484653df1523c7b453b828a40929661",
+      "to": "depot",
+      "after": "2026-11-01T12:00:10+00:00"
+    },
+    {
+      "item": "item-2",
+      "institution": "institution-a",
+      "from": "bus",
+      "before": "2026-11-01T12:00:00+00:00",
+      "recorded": "2026-11-01T12:02:00+00:00",
+      "sourceSha": "26d7fc28f5b8463737d4252c756769a284c8622b4a2d83e965c2698b7ad6b632",
+      "to": "depot",
+      "after": "2026-11-01T12:00:30+00:00"
+    }
+  ],
+  "trainingCensored": [
+    {
+      "item": "item-3",
+      "institution": "institution-a",
+      "from": "bus",
+      "before": "2026-11-01T12:00:00+00:00",
+      "recorded": "2026-11-01T12:02:00+00:00",
+      "sourceSha": "fc287233a2466cc4e62d61279da855529157ab22acf09e57ccfd675ca10fbb0c",
+      "through": "2026-11-01T12:00:20+00:00"
+    }
+  ],
+  "test": [
+    {
+      "item": "item-11",
+      "institution": "institution-b",
+      "from": "bus",
+      "before": "2026-11-03T12:00:00+00:00",
+      "recorded": "2026-11-03T12:02:00+00:00",
+      "sourceSha": "b0cc15bad0ae068a9ae434892877f6806da70628af34c9230642aede073dc137",
+      "to": "depot",
+      "after": "2026-11-03T12:00:10+00:00"
+    },
+    {
+      "item": "item-12",
+      "institution": "institution-b",
+      "from": "bus",
+      "before": "2026-11-03T12:00:00+00:00",
+      "recorded": "2026-11-03T12:02:00+00:00",
+      "sourceSha": "41289ed98da9114818bf94229e079ff18ddbdcde83b787b9ac72c4e5bedc36e3",
+      "to": "depot",
+      "after": "2026-11-03T12:00:20+00:00"
+    }
+  ],
+  "testCensored": [
+    {
+      "item": "item-13",
+      "institution": "institution-b",
+      "from": "bus",
+      "before": "2026-11-03T12:00:00+00:00",
+      "recorded": "2026-11-03T12:02:00+00:00",
+      "sourceSha": "bd8d712515b475f0706e9db0b6842279a46eaf360b29368dc83617019217bf3b",
+      "through": "2026-11-03T12:00:05+00:00"
+    }
+  ],
+  "horizonSeconds": 15
+}

@@ -1,0 +1,314 @@
+{
+  "status": "PASS",
+  "tables": 74,
+  "rows": 4671,
+  "rowAndCatalogEquality": true,
+  "restoredTenantIsolation": true,
+  "sourceSnapshotIndependence": true,
+  "snapshot": {
+    "tables": {
+      "dzoka.ai_jobs": {
+        "sha256": "30fd8d82d9a803cbb268b76202fb35ff3122ee40a72a02a4031c52b718ab69b6",
+        "rows": 5
+      },
+      "dzoka.ai_usage": {
+        "sha256": "107935c92a7a392579cf998a6b699b341b2b1afd5174b4521d8ab60b546e0c55",
+        "rows": 9
+      },
+      "dzoka.audit_events": {
+        "sha256": "6f5861687726d71d15050e41337b2fe38642bc19eb7948c175b2481bdbf591d0",
+        "rows": 412
+      },
+      "dzoka.channel_alerts": {
+        "sha256": "bbb42a4164683e74050b9e5be02623833e053ddf2f9ef99d9d854e4229572d45",
+        "rows": 4
+      },
+      "dzoka.channel_contacts": {
+        "sha256": "d0620f6f4ef09215a5210662d8adfb981cb49b6ecf1ce370e5ac5916ad886977",
+        "rows": 2
+      },
+      "dzoka.channel_events": {
+        "sha256": "7deb98d0d1d16e4100b2ea9e738eb6e61b94b30a911991992d38653bda481d66",
+        "rows": 16
+      },
+      "dzoka.channel_match_notifications": {
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rows": 0
+      },
+      "dzoka.channel_match_offers": {
+        "sha256": "2654a457721017517c72c567f6059e2cb1d4e42e474b06511dfbcdae5507f122",
+        "rows": 1
+      },
+      "dzoka.channel_match_runs": {
+        "sha256": "e84ed9cde06c230fbaa24a0248ef1f072b7c251fa64e6c809f69d22207b6c67e",
+        "rows": 1
+      },
+      "dzoka.channel_match_watches": {
+        "sha256": "6c7b6e0adbff327d455bbf88f8f4523eda52ccc7f602d1226afd7e6ad28664fb",
+        "rows": 2
+      },
+      "dzoka.channel_operations": {
+        "sha256": "0fe1a34bc69442a88a152506c30a12ef7ed3780073438b8ec0a323d020489295",
+        "rows": 18
+      },
+      "dzoka.edge_cameras": {
+        "sha256": "344469d659cb26a4936b78ad1bf370fc2e1f9b307410a23a1b511e9169856c65",
+        "rows": 2
+      },
+      "dzoka.edge_evidence": {
+        "sha256": "7cf511839cfb163893040be5b83dd9a0aec9e273fcaf144804ee157429f141c9",
+        "rows": 2
+      },
+      "dzoka.edge_jobs": {
+        "sha256": "a6a4010c91058168bc0e042b14a5677c76d1b29bd1443b64b8af0c4dd6abba8c",
+        "rows": 3
+      },
+      "dzoka.embedding_spaces": {
+        "sha256": "1ca2d498fbeba4675eadecd91e1f726dd9e6eeed5ff8413d4e8977ef3afe4177",
+        "rows": 27
+      },
+      "dzoka.epcis_projections": {
+        "sha256": "269254ffa311341390be592ce464cf367094389355ae036d0817cd286988909b",
+        "rows": 4
+      },
+      "dzoka.federation_keys": {
+        "sha256": "defbc4cda0d95d8d45d504668dde0d91bf0211d847c8ac13d5cfc77e5d798428",
+        "rows": 3
+      },
+      "dzoka.federation_offers": {
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+        "rows": 0
+      },
+      "dzoka.federation_peers": {
+        "sha256": "0f15dd937159745f5275ae3a9f886cdd32c27c86cc7a8365379efa50b7059346",
+        "rows": 3
+      },
+      "dzoka.federation_traffic": {
+        "sha256": "23942c8cc0438f0103e00910a42eeec065cbf069de5ff4ed8ad6b00e5ca9e99c",
+        "rows": 8
+      },
+      "dzoka.fingerprint_activations": {
+        "sha256": "d9a59978c0d294acbf4b9718b641c56327493fb46ad53903f419511bc158ae0b",
+        "rows": 3
+      },
+      "dzoka.fingerprint_active": {
+        "sha256": "7c680f33227fe059d2a232e10b21745ffd9d9fb4d223dc460b163fee9f2c34bf",
+        "rows": 3
+      },
+      "dzoka.fingerprint_components": {
+        "sha256": "598fd0c81848a83e9b3afdaad01dc2ee377aebd370f2216cfbd64d8249124706",
+        "rows": 4
+      },
+      "dzoka.fingerprint_perception_slots": {
+        "sha256": "e5486fe9a45b45a80ce94896464791a969eff2b460f1ce1fc615fa6dab430136",
+        "rows": 1
+      },
+      "dzoka.fingerprint_rollout_perception_pins": {
+        "sha256": "e5486fe9a45b45a80ce94896464791a969eff2b460f1ce1fc615fa6dab430136",
+        "rows": 1
+      },
+      "dzoka.fingerprint_rollout_sources": {
+        "sha256": "105613ce40241827d2c6d2eddda50db8304c890590cae56d7f45c6488e479a15",
+        "rows": 5
+      },
+      "dzoka.fingerprint_rollout_spaces": {
+        "sha256": "a734c14e19d57a3e44f081e94b459958c0397719983a466614a9e0d0a20441c4",
+        "rows": 2
+      },
+      "dzoka.fingerprint_rollouts": {
+        "sha256": "120af7ad1ef7a098426a07f82122a18de6166e906ee26d011ee73d1042abd51f",
+        "rows": 3
+      },
+      "dzoka.fingerprint_snapshot_slots": {
+        "sha256": "008a4164b4b1db3c0126d5f8cfe0404bdc47dbdc3578f8054d06b54fc96b1ce7",
+        "rows": 4
+      },
+      "dzoka.fingerprint_snapshots": {
+        "sha256": "db9a9cd7a8b88836466e0ee5690f3086f5542e540032b6c64e2e2ce9e06d5724",
+        "rows": 5
+      },
+      "dzoka.handover_grants": {
+        "sha256": "ed6dcd60f16e10421c88307cc12f93b9eaf1830745d8459fc327ecc72b666733",
+        "rows": 4
+      },
+      "dzoka.idempotency": {
+        "sha256": "59cb2a308f44f347d320f6b0a24b61ba32dc368105cbfc6cec75c47759c0f516",
+        "rows": 8
+      },
+      "dzoka.inbox": {
+        "sha256": "1fa5f7d1e6a04fc5f2fab82b7dbc44ad8299c3af913820d8f074632c417cd8be",
+        "rows": 2
+      },
+      "dzoka.intake_commands": {
+        "sha256": "ba2cfe8b031fb504efb16dba36ac29c6ab9717daaf88e69f1cf1a70849b6d1ae",
+        "rows": 170
+      },
+      "dzoka.investigation_grants": {
+        "sha256": "873262461ad3072e61f3a673fc018ea54917cbb1d9e33f98bc8ae3ecef780e3f",
+        "rows": 3
+      },
+      "dzoka.items": {
+        "sha256": "30cd1d600d25c78b0ff5f6154e35a90eee21c0f651b7f2d6daf6f04056511373",
+        "rows": 156
+      },
+      "dzoka.match_calibration_approvals": {
+        "sha256": "64f62d4d8e77835ac440559e064bef184fd1f9b0551083989a48b2457a75b796",
+        "rows": 1
+      },
+      "dzoka.match_calibration_drafts": {
+        "sha256": "12af1919dde5f7bb5d235689e3db5390980ea5544e4516b963a86ee2aa6074b2",
+        "rows": 1
+      },
+      "dzoka.match_calibration_revocations": {
+        "sha256": "b85de634c46769d7e94ff5e74e0016410562fa47a414def707336ab0e76f2de7",
+        "rows": 1
+      },
+      "dzoka.match_identifiers": {
+        "sha256": "d1acd46a3e01d7d810d59a56f892f921e23995dae73df5070e655de5bc6bbd3f",
+        "rows": 3
+      },
+      "dzoka.match_search_candidates": {
+        "sha256": "0f2a1ac58ceec0cd4eccdfcfd438e76a35cb1be0552892a33fcbfa57c722a2a8",
+        "rows": 9
+      },
+      "dzoka.match_search_quota": {
+        "sha256": "f2b3205d67094c9227006db36713200b851ba34dca229ac13a2f9c3e2b73f412",
+        "rows": 104
+      },
+      "dzoka.match_search_runs": {
+        "sha256": "d6d8b9ec9e796c0e8a7fa9f483ec188191d5e8c9d0193372a70062b0232fe3e7",
+        "rows": 104
+      },
+      "dzoka.media_assets": {
+        "sha256": "fbd934f96a7d3a466c147763443509751125162e28d99781e9238d176b32ae9d",
+        "rows": 2
+      },
+      "dzoka.media_usage": {
+        "sha256": "afc92cf3ea51ef932db5fb980de86ffbc4b98d9ff01ba76789284cb5d9361cfa",
+        "rows": 1
+      },
+      "dzoka.memberships": {
+        "sha256": "9b5354ed3b6f5caf5d97890b27399fae9c20dfc975fd2c40b36bf4cfc78f5efb",
+        "rows": 239
+      },
+      "dzoka.organizations": {
+        "sha256": "1acb3567392d74fe8ea68ab4bd1e74f99e1690f85a0b2e3f921c03196c738f34",
+        "rows": 10
+      },
+      "dzoka.outbox": {
+        "sha256": "21be03c4289a468bc402c36aad64196d155a08979489310ed21033b0348cd1f6",
+        "rows": 410
+      },
+      "dzoka.ownership_claims": {
+        "sha256": "bad20f9f07736d6a9dcf3124825b5a1475ad98e2f94fbeb65ebea840339716a8",
+        "rows": 12
+      },
+      "dzoka.ownership_sessions": {
+        "sha256": "33780d67a7c65d3eace51e046165f94437b17b076b537268600c2e3ce7b64aeb",
+        "rows": 18
+      },
+      "dzoka.perception_audio": {
+        "sha256": "bd8e23510740678cea7162669749dbbb61130c8cc09f5285c02d93f9f0d0bdae",
+        "rows": 1
+      },
+      "dzoka.perception_audio_usage": {
+        "sha256": "7619727e224874cfa1cc971a5dda3a47c61620467355a45343f48f7c81ae3d57",
+        "rows": 2
+      },
+      "dzoka.perception_components": {
+        "sha256": "99263771e1fc940654daae8987d79df13aaafb77446e99e9c90926048539611f",
+        "rows": 4
+      },
+      "dzoka.perception_jobs": {
+        "sha256": "92ea7c19940ae19385160884ac6eb24f587bbb8d338692236d4fe797085a474e",
+        "rows": 7
+      },
+      "dzoka.perception_profiles": {
+        "sha256": "c9c1567b3cf1b0eca77158216ed31f562c04272c47ed43746dc7c806d913ca3e",
+        "rows": 64
+      },
+      "dzoka.perception_rerank_inputs": {
+        "sha256": "b7cdc49b4b37983a391eb4b29b76828133c964d1eaca73293bef3f3c7a700d9e",
+        "rows": 1
+      },
+      "dzoka.pickup_messages": {
+        "sha256": "0abb9af64008e7587fddb2a9dbd45e921eedea4f6d2bf3421c3f7116326a8806",
+        "rows": 2
+      },
+      "dzoka.private_recovery_facts": {
+        "sha256": "bc332c541008e71fd92a0a5942776fef017586cb69e1a43d7f0ff8b8a7fd701a",
+        "rows": 7
+      },
+      "dzoka.recovery_activity": {
+        "sha256": "6b291ad6e44f4bc4b25d5ba88b8c4c15902aa187577f695ac3b0e243ebada0c2",
+        "rows": 131
+      },
+      "dzoka.recovery_cases": {
+        "sha256": "6f6f7a0b6374ad09cf65e5182bbcf1ea152be199c2d68638e892b9b38c1ba7a1",
+        "rows": 156
+      },
+      "dzoka.recovery_fact_withdrawals": {
+        "sha256": "bdf155f8514a27fe1eb2f3a37e4eeb1a6a6371810a3b206a4bddd6027ab5732e",
+        "rows": 1
+      },
+      "dzoka.recovery_intakes": {
+        "sha256": "e017fe3533c7d9fc7bf7ed89be7231f1f3ce5ac1e0961c38c063ef07d5674527",
+        "rows": 12
+      },
+      "dzoka.recovery_policies": {
+        "sha256": "b9549006b9ea8c8b356fc951ffea8f3daac539334d3def88ac58cd14824e31ad",
+        "rows": 5
+      },
+      "dzoka.recovery_returns": {
+        "sha256": "a93ca1012db2470682a52ed3a70ff78075df594b2734327c3bc91a09a2c2e679",
+        "rows": 2
+      },
+      "dzoka.recovery_reviews": {
+        "sha256": "3af1a72397462b7dd5bf77139337846f623b4764966d965adcc100de88fb2aca",
+        "rows": 8
+      },
+      "dzoka.relay_entries": {
+        "sha256": "0cb072126ca115e526060c63589d8dd554fc4d2e2645db2a912bd163f212c425",
+        "rows": 2
+      },
+      "dzoka.relay_threads": {
+        "sha256": "cd48a0716d6a0f3ccda2daeaddbf971051b70996b16e5ccb8bada746b26d5e30",
+        "rows": 1
+      },
+      "dzoka.report_revisions": {
+        "sha256": "9c8c9055c0f6c85318ce691d3b06ee5d5c7c1d5fc4e7187022b6285bfa7ab440",
+        "rows": 1195
+      },
+      "dzoka.reports": {
+        "sha256": "738dbbaec48d6817c6e706c0dd32e385dacd6dda2d2a23388062cf89771bc661",
+        "rows": 1182
+      },
+      "dzoka.staff_custody_events": {
+        "sha256": "ec94697e6f61fe8d1af032d0025d6961b4f164314e97bb1c73775b1660c188d6",
+        "rows": 12
+      },
+      "dzoka.tenants": {
+        "sha256": "95068f3b1f2ee43c39655d9639a8846c55e81a38ce91ad88ac7f3e127650c72d",
+        "rows": 39
+      },
+      "dzoka.test_effects": {
+        "sha256": "a8462f8273fb6e21104835c61e1ac6b93ccaafae02ca1f0ce79e8fb6e7959897",
+        "rows": 2
+      },
+      "dzoka.traceability_objects": {
+        "sha256": "5df430163981ad9afbc672b5bbfd266cddfaab1efbd805e7c49e215fdf1b372c",
+        "rows": 1
+      },
+      "public.flyway_schema_history": {
+        "sha256": "40c4471c907b4dfbb449ea85113da0c56b261e6f97f5db0f31d0606c17fe7cf3",
+        "rows": 23
+      }
+    },
+    "catalogSha256": "ca1863c951ebe92da9cc32ea4317a9c240d9a996cc1b33978499fb574553dcbe"
+  },
+  "limits": [
+    "same-cluster logical restore; roles pre-exist",
+    "no object-store backup, tombstone replay or external effects",
+    "not production RPO/RTO, HA or point-in-time recovery"
+  ]
+}

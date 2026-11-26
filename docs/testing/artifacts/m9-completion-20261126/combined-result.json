@@ -1,0 +1,401 @@
+{
+  "schema": 1,
+  "executedAt": "2026-11-26T16:27:41.250922+00:00",
+  "scope": "MANUALLY_LABELLED_PUBLIC_EXAMPLE_DIAGNOSTIC",
+  "manifestSha": "6833de8c391548895337ab1e8524aa7b92ce8945f6e5b5e6f14e9f78693dc7ac",
+  "evaluatorSha": "dbccb30d71c70b1b41b88b239c34b3275296549d02f5d51ed53de2ae3add17fd",
+  "providerSha": "991ab748d3ca0eb2b3584876bf2c098b7ce8593f39812786771c85af617ce78f",
+  "runtimeLockSha": "39a1d9179f1c2cb536260368091cd8b3f7c9d776797540919810fba0b90bb116",
+  "decoderLockSha": "30ff00c43f1afb5c55b3295040439117db6705ba1e36a4075deb3e87d7c6dafa",
+  "clips": [
+    {
+      "id": "ex000-abandon-package",
+      "sourceSha": "558bb3611c8e9d308d61071faf0a469f978ab6922d17df0eaf46b487e8ec9c59",
+      "sourceRegion": null,
+      "profile": "d835cf04ac2d4dc24368ce5accafafc3fd9d953417d40aa056b90a37d11d4eb1",
+      "referenceSha": "1fcadeb947621cca8be6a781e6bc681d7b9894bc6cbead5a03fede30b7e0f077",
+      "metrics": {
+        "tp": 3,
+        "fp": 0,
+        "tn": 3,
+        "fn": 0,
+        "abstained": 0,
+        "uncertainLabels": 1,
+        "labelled": 6,
+        "decisionCoverage": 1.0,
+        "recallIncludingAbstentions": 1.0,
+        "meanBoxIoU": 0.875
+      },
+      "samples": [
+        {
+          "offset": 0,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI",
+          "frameSha": "15655b8e7b5c0ef036a832fe6a0d4523526d1e315ca402d3096f44b71fd9f448",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 1.56,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI",
+          "frameSha": "d6aa3889f38177a04979db529dbe3f1e182c7a1c7eb7e8dbecbaf40b9a6b0858",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 3.12,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI",
+          "frameSha": "73b1f18f60073ba630b396497c4b49e52bfc0a476bbc628a9f70806bd16fff5d",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 4.68,
+          "label": "UNKNOWN",
+          "note": "Target and hand overlap; partial occlusion and appearance change",
+          "frameSha": "0aad0816296acfdd9c235dc64e4a7eac745188e5a2aff2d872a3a822e940e96e",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 7,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box",
+          "frameSha": "7b1917e47def57027a5871a3ed0155b3e0c1594787953bd40c22c696defd5a74",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              270,
+              72,
+              15,
+              16
+            ],
+            "continued": false,
+            "pixelUncertainty": 2,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "d835cf04ac2d4dc24368ce5accafafc3"
+          }
+        },
+        {
+          "offset": 7.8,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box",
+          "frameSha": "c229a007d1c525d5411470bd5439b81ab7340f484738b5c21223103c41738aa0",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              270,
+              72,
+              15,
+              16
+            ],
+            "continued": true,
+            "pixelUncertainty": 2,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "d835cf04ac2d4dc24368ce5accafafc3"
+          }
+        },
+        {
+          "offset": 9,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box",
+          "frameSha": "1592ca798868d80cabcf71d4933548b84bed902fe5723457d7302bdd4e6ff11d",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              268,
+              72,
+              15,
+              16
+            ],
+            "continued": true,
+            "pixelUncertainty": 2,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "d835cf04ac2d4dc24368ce5accafafc3"
+          }
+        }
+      ],
+      "possibleDisappearanceIntervalsSeconds": []
+    },
+    {
+      "id": "ex054-pick-up-object",
+      "sourceSha": "9ce0ba725897e175d6f800f97eda3b12930acf169051ca1193478c44803b2e45",
+      "excluded": "Item too small or occluded for reliable manual item-box ground truth at the supported 320x180 decode. Inspected source samples, no accuracy score assigned."
+    },
+    {
+      "id": "ex066-set-down-object",
+      "sourceSha": "76cc4c546d712510f788e3088dbdd21637d19ec9ed04dfee2cd11bcf95d64cb7",
+      "excluded": "Item too small or occluded for reliable manual item-box ground truth at the supported 320x180 decode. Inspected source samples, no accuracy score assigned."
+    },
+    {
+      "id": "ex036-object-transfer-stationary-bottle-control",
+      "sourceSha": "02790c7b7417b9d05eebb6e451dc68e0ac7b2b4cf264d92d7baed22b6b47c892",
+      "sourceRegion": null,
+      "profile": "5844091510a23c2e41419d9c131819341f7b507f9d8c089edf9f02d085520923",
+      "referenceSha": "7c8fcde72e89ff1a1b7d1cc380feab98263329b56846463d06ce7b7e20d6d04d",
+      "metrics": {
+        "tp": 3,
+        "fp": 0,
+        "tn": 0,
+        "fn": 0,
+        "abstained": 0,
+        "uncertainLabels": 0,
+        "labelled": 3,
+        "decisionCoverage": 1.0,
+        "recallIncludingAbstentions": 1.0,
+        "meanBoxIoU": 1.0
+      },
+      "samples": [
+        {
+          "offset": 2,
+          "label": "PRESENT",
+          "box": [
+            44,
+            130,
+            11,
+            20
+          ],
+          "note": "Stationary orange bottle on foreground table. Independent camera scene with moving background people, no ownership or activity inference.",
+          "frameSha": "63e00a5fc87b864ddc9b34a7e2291edc6a5fb51db89cdedd9834bb74ec7982cd",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              44,
+              130,
+              11,
+              20
+            ],
+            "continued": false,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "5844091510a23c2e41419d9c13181934"
+          }
+        },
+        {
+          "offset": 4,
+          "label": "PRESENT",
+          "box": [
+            44,
+            130,
+            11,
+            20
+          ],
+          "note": "Stationary orange bottle on foreground table. Independent camera scene with moving background people, no ownership or activity inference.",
+          "frameSha": "3b49593ad92bcdcee6b59f7127d565a50682156e9ba9373cff169f72024887e0",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              44,
+              130,
+              11,
+              20
+            ],
+            "continued": true,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "5844091510a23c2e41419d9c13181934"
+          }
+        },
+        {
+          "offset": 6,
+          "label": "PRESENT",
+          "box": [
+            44,
+            130,
+            11,
+            20
+          ],
+          "note": "Stationary orange bottle on foreground table. Independent camera scene with moving background people, no ownership or activity inference.",
+          "frameSha": "66d4cf82ce962ece34df431789ef5d96c04f0209c30dd677cb54ba3442f7d759",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              44,
+              130,
+              11,
+              20
+            ],
+            "continued": true,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "5844091510a23c2e41419d9c13181934"
+          }
+        }
+      ],
+      "possibleDisappearanceIntervalsSeconds": []
+    },
+    {
+      "id": "ex056-pick-up-object-source-region",
+      "sourceSha": "b4519cf83ebc04dc3151698155e9095a1d245e0c27a3b5e8614ce9fd10aae67b",
+      "sourceRegion": [
+        400,
+        660,
+        300,
+        240
+      ],
+      "profile": "32ccb62fec5680341dbf768fa6249f818bf90668fc54c9e8bcc08d409be02b5f",
+      "referenceSha": "dcbf18a76788ae5fa57ab67b0615b8bd68b878ef7e4e546dcd2717f70bea145b",
+      "metrics": {
+        "tp": 3,
+        "fp": 0,
+        "tn": 2,
+        "fn": 0,
+        "abstained": 0,
+        "uncertainLabels": 0,
+        "labelled": 5,
+        "decisionCoverage": 1.0,
+        "recallIncludingAbstentions": 1.0,
+        "meanBoxIoU": 1.0
+      },
+      "samples": [
+        {
+          "offset": 0,
+          "label": "PRESENT",
+          "box": [
+            48,
+            100,
+            18,
+            18
+          ],
+          "note": "Ball visible in original bench region",
+          "frameSha": "57828886d5a86b541457373a265a120b4ccd6a4d9efce8f8d5a7c843815d8a65",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              48,
+              100,
+              18,
+              18
+            ],
+            "continued": false,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "32ccb62fec5680341dbf768fa6249f81"
+          },
+          "maskedCrop": {
+            "sha256": "8f6a61964c2173f5a59ea0143dffa2780f0af37f3a566359b23660e1fba2efcf",
+            "suppressedPixels": 168,
+            "permittedPixels": 156
+          }
+        },
+        {
+          "offset": 2,
+          "label": "PRESENT",
+          "box": [
+            48,
+            100,
+            18,
+            18
+          ],
+          "note": "Ball visible in original bench region",
+          "frameSha": "37de98beef1ed71dc777b60fb06c9b760680e1477300711e10529eabfee78acf",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              48,
+              100,
+              18,
+              18
+            ],
+            "continued": true,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "32ccb62fec5680341dbf768fa6249f81"
+          },
+          "maskedCrop": {
+            "sha256": "fbef91eab8e98d79bdf6533217ee08bd1e7140359909d3e11d6e5b0502a83b25",
+            "suppressedPixels": 168,
+            "permittedPixels": 156
+          }
+        },
+        {
+          "offset": 4,
+          "label": "PRESENT",
+          "box": [
+            48,
+            100,
+            18,
+            18
+          ],
+          "note": "Ball visible in original bench region",
+          "frameSha": "23f029deb4ae803b5b4c69917721d22947351195313d8656c56a44f1a06a205a",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              48,
+              100,
+              18,
+              18
+            ],
+            "continued": true,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "32ccb62fec5680341dbf768fa6249f81"
+          },
+          "maskedCrop": {
+            "sha256": "a73baf1174e66808e39738ee478fac85d93ea82865c3d7a56f9e68048dc68aa3",
+            "suppressedPixels": 168,
+            "permittedPixels": 156
+          }
+        },
+        {
+          "offset": 6,
+          "label": "NOT_OBSERVED",
+          "note": "Bench ball removed from original region; visibly carried elsewhere in source crop",
+          "frameSha": "d8d962e38b0180e93215d5b7d118a904feee6e2de0f4576a73839693e3932d4b",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 8,
+          "label": "NOT_OBSERVED",
+          "note": "Bench ball removed from original region; visibly carried elsewhere in source crop",
+          "frameSha": "cb32f49994287bb8dc8f6b749371452c52cd31c5978406fa65ec9ccfe0ec3571",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        }
+      ],
+      "possibleDisappearanceIntervalsSeconds": [
+        {
+          "afterOffset": 4,
+          "beforeOffset": 6,
+          "lastSeenFrameSha": "23f029deb4ae803b5b4c69917721d22947351195313d8656c56a44f1a06a205a",
+          "notObservedFrameSha": "d8d962e38b0180e93215d5b7d118a904feee6e2de0f4576a73839693e3932d4b",
+          "hypothesis": "POSSIBLE_DISAPPEARANCE"
+        }
+      ]
+    }
+  ]
+}

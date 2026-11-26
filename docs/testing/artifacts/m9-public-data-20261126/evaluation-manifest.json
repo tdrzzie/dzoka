@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "dataset": "MEVA examples, Kitware Inc. and IARPA, accessed 2026-11-26",
+  "license": {
+    "file": "license.txt",
+    "sha256": "bdeedfb765049c87f92a2450369ad70882fca3371190b2a6b7e560e103c922e8",
+    "url": "https://mevadata.org/resources/MEVA-data-license.txt",
+    "spdx": "CC-BY-4.0"
+  },
+  "annotation": "Agent visual review at 960x540; boxes in decoded 320x180 coordinates. Fixed-region item visibility, not global absence. Samples selected after exploratory execution. Not a blind holdout; no threshold tuning. Burned-in publisher overlays present.",
+  "clips": [
+    {
+      "id": "ex000-abandon-package",
+      "file": "clip.mp4",
+      "sha256": "558bb3611c8e9d308d61071faf0a469f978ab6922d17df0eaf46b487e8ec9c59",
+      "url": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex000-abandon-package.mp4",
+      "referenceOffset": 6.24,
+      "referenceBox": [
+        269,
+        72,
+        15,
+        16
+      ],
+      "roi": [
+        258,
+        62,
+        42,
+        40
+      ],
+      "threshold": 0.08,
+      "samples": [
+        {
+          "offset": 0,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI"
+        },
+        {
+          "offset": 1.56,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI"
+        },
+        {
+          "offset": 3.12,
+          "label": "NOT_OBSERVED",
+          "note": "Target not visible in the fixed bench ROI"
+        },
+        {
+          "offset": 4.68,
+          "label": "UNKNOWN",
+          "note": "Target and hand overlap; partial occlusion and appearance change"
+        },
+        {
+          "offset": 7,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box"
+        },
+        {
+          "offset": 7.8,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box"
+        },
+        {
+          "offset": 9,
+          "label": "PRESENT",
+          "box": [
+            269,
+            72,
+            15,
+            16
+          ],
+          "note": "Stationary bag at right bench; manual approximate box"
+        }
+      ]
+    },
+    {
+      "id": "ex054-pick-up-object",
+      "file": "pickup.mp4",
+      "sha256": "9ce0ba725897e175d6f800f97eda3b12930acf169051ca1193478c44803b2e45",
+      "url": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex054-pick-up-object.mp4",
+      "excluded": "Item too small or occluded for reliable manual item-box ground truth at the supported 320x180 decode. Inspected source samples, no accuracy score assigned."
+    },
+    {
+      "id": "ex066-set-down-object",
+      "file": "setdown.mp4",
+      "sha256": "76cc4c546d712510f788e3088dbdd21637d19ec9ed04dfee2cd11bcf95d64cb7",
+      "url": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex066-set-down-object.mp4",
+      "excluded": "Item too small or occluded for reliable manual item-box ground truth at the supported 320x180 decode. Inspected source samples, no accuracy score assigned."
+    },
+    {
+      "id": "ex036-object-transfer-stationary-bottle-control",
+      "file": "transfer.mp4",
+      "sha256": "02790c7b7417b9d05eebb6e451dc68e0ac7b2b4cf264d92d7baed22b6b47c892",
+      "url": "https://mevadata-public-01.s3.amazonaws.com/examples/videos/ex036-object-transfer.mp4",
+      "referenceOffset": 0,
+      "referenceBox": [
+        44,
+        130,
+        11,
+        20
+      ],
+      "roi": [
+        36,
+        122,
+        32,
+        38
+      ],
+      "threshold": 0.08,
+      "samples": [
+        {
+          "offset": 2,
+          "label": "PRESENT",
+          "box": [
+            44,
+            130,
+            11,
+            20
+          ],
+          "note": "Stationary orange bottle on foreground table. Independent camera scene with moving background people, no ownership or activity inference."
+        },
+        {
+          "offset": 4,
+          "label": "PRESENT",
+          "box": [
+            44,
+            130,
+            11,
+            20
+          ],
+          "note": "Stationary orange bottle on foreground table. Independent camera scene with moving background people, no ownership or activity inference."
+        },
+        {
+          "offset": 6,
+          "label": "PRESENT",
+          "box": [
+            44,
+            130,
+            11,
+            20
+          ],
+          "note": "Stationary orange bottle on foreground table. Independent camera scene with moving background people, no ownership or activity inference."
+        }
+      ]
+    }
+  ]
+}

@@ -193,9 +193,11 @@ See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownersh
 
 | Acceptance | Executed scope | External evidence |
 | --- | --- | --- |
-| A22 | Actual isolated frame worker, camera/index/plan bindings, grant expiry/revocation checks, observation budgets, distinct unknown/not-observed states, reviewed crop access and purging | Institution-approved footage, camera hardware integration and quality evaluation |
+| A22 | Actual isolated worker, source-region decoding and rejection of out-of-source regions, approved pixel masks, durable disappearance hypotheses, camera/index/plan bindings, revocation, budgets, distinct unknown/not-observed states, reviewed access and purge; real public pickup diagnostic | Institution-authorized camera deployment and independently accepted quality/privacy policy |
 | A23 | Native custody graph classifies observations separately from unconfirmed events. Predicted transition artifacts retain provenance and cannot mutate custody | Representative transition quality and deployment policy |
 | A28 | Existing staffed custody conflict checks run alongside edge tests. Edge observations remain separate from custody mutations | Offline camera/site trial |
-| A29 | Model evaluation rejects future data, item and institution overlap and self-approval. Sparse support and calibration remain unavailable | Representative held-out outcomes, thresholds and calibration approval |
+| A29 | Probability/slice evaluation rejects source, future-model-cutoff, item and institution leakage. Separate waiting-time fixtures verify censoring, risk sets, tied events, unavailable extrapolation and unknown horizon outcomes. Sparse support and calibration remain explicit | Representative completed/censored recovery cohorts, reviewed assumptions, thresholds and calibration approval |
 
 [M9 verification](../testing/m9-verification-2026-11-26.md).
+
+[Current edge, public-removal and censored-baseline execution](../testing/m9-completion-2026-11-26.md).

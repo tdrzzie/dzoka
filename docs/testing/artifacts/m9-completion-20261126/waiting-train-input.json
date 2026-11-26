@@ -1,0 +1,38 @@
+{
+  "completed": [
+    {
+      "item": "item-1",
+      "institution": "institution-a",
+      "from": "bus",
+      "before": "2026-11-01T12:00:00+00:00",
+      "recorded": "2026-11-01T12:02:00+00:00",
+      "sourceSha": "ca16a0d0ebbe32efc70cfe992b9da5e24484653df1523c7b453b828a40929661",
+      "to": "depot",
+      "after": "2026-11-01T12:00:10+00:00"
+    },
+    {
+      "item": "item-2",
+      "institution": "institution-a",
+      "from": "bus",
+      "before": "2026-11-01T12:00:00+00:00",
+      "recorded": "2026-11-01T12:02:00+00:00",
+      "sourceSha": "26d7fc28f5b8463737d4252c756769a284c8622b4a2d83e965c2698b7ad6b632",
+      "to": "depot",
+      "after": "2026-11-01T12:00:30+00:00"
+    }
+  ],
+  "censored": [
+    {
+      "item": "item-3",
+      "institution": "institution-a",
+      "from": "bus",
+      "before": "2026-11-01T12:00:00+00:00",
+      "recorded": "2026-11-01T12:02:00+00:00",
+      "sourceSha": "fc287233a2466cc4e62d61279da855529157ab22acf09e57ccfd675ca10fbb0c",
+      "through": "2026-11-01T12:00:20+00:00"
+    }
+  ],
+  "cutoff": "2026-11-02T00:00:00Z",
+  "author": "local-diagnostic",
+  "purposeSha": "a7d4c1cf3e2365659efd778109b176348b936589dfd1ac58b356f82541e3228f"
+}

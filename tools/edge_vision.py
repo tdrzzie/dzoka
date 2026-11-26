@@ -33,6 +33,15 @@ class Frame:
     name: str
     digest: str
     offset: float | None = None
+    source_region: tuple | None = None
+
+
+def source_region(value):
+    if (not isinstance(value, (list, tuple)) or len(value) != 4 or any(type(v) is not int for v in value)
+            or min(value[:2]) < 0 or min(value[2:]) < 2 or max(value) > 16384
+            or value[2] * value[3] > 4096 * 4096):
+        raise ValueError("Bounded source-pixel region required")
+    return tuple(value)
 
 
 def ppm(raw):
@@ -70,7 +79,8 @@ class FrameArchive:
         self.cache = {}
         previous = None
         for entry in entries:
-            if set(entry) not in ({"time", "name", "sha256"}, {"time", "name", "sha256", "offset"}):
+            if set(entry) not in ({"time", "name", "sha256"}, {"time", "name", "sha256", "offset"},
+                                 {"time", "name", "sha256", "offset", "sourceRegion"}):
                 raise ValueError("Invalid frame entry")
             name, digest = entry["name"], entry["sha256"]
             if not isinstance(name, str) or not name or Path(name).name != name or any(c in name for c in "/\\:"):
@@ -84,13 +94,14 @@ class FrameArchive:
             offset = entry.get("offset")
             if offset is not None and (type(offset) not in (int, float) or not math.isfinite(offset) or not 0 <= offset <= 86400):
                 raise ValueError("Bounded clip offset required")
-            self.frames.append(Frame(entry["time"], name, digest, offset))
+            region = source_region(entry["sourceRegion"]) if "sourceRegion" in entry else None
+            if region is not None and offset is None:
+                raise ValueError("Source region requires a compressed clip")
+            self.frames.append(Frame(entry["time"], name, digest, offset, region))
 
     def read(self, frame, authorize):
         authorize()  # Recheck remotely before each local read.
-        cache_key = (frame.digest, frame.offset)
-        if cache_key in self.cache:
-            return self.cache[cache_key]
+        cache_key = (frame.digest, frame.offset, frame.source_region)
         path = self.directory / frame.name
         if not path.exists():
             raise FileNotFoundError("Indexed frame missing")
@@ -101,6 +112,8 @@ class FrameArchive:
                 raw = stream.read(MAX_PIXELS * 3 + 65)
             if sha256(raw).hexdigest() != frame.digest:
                 raise ValueError("Frame content changed")
+            if cache_key in self.cache:
+                return self.cache[cache_key]
             decoded = ppm(raw)
         else:
             if path.stat().st_size > 64 * 1024 * 1024:
@@ -108,25 +121,34 @@ class FrameArchive:
             with path.open("rb") as stream:
                 if __import__("hashlib").file_digest(stream, "sha256").hexdigest() != frame.digest:
                     raise ValueError("Clip content changed")
-            decoded = decode_video_frame(path, frame.offset)
+            if cache_key in self.cache:
+                return self.cache[cache_key]
+            decoded = decode_video_frame(path, frame.offset, frame.source_region)
         if len(self.cache) < MAX_FRAMES:
             self.cache[cache_key] = decoded
         return decoded
 
 
-def decode_video_frame(path, offset):
+def decode_video_frame(path, offset, region=None):
     root = Path(__file__).resolve().parents[1]
     lock = json.loads((root / "ai/edge-video.lock.json").read_bytes())
     image = lock["imageId"]
     if not isinstance(image, str) or not image.startswith("sha256:") or len(image) != 71:
         raise ValueError("Pinned decoder image required")
     name = "dzoka-edge-video-" + uuid.uuid4().hex
+    filters = []
+    if region is not None:
+        x, y, w, h = source_region(region)
+        # FFmpeg otherwise clamps an out-of-bounds crop silently. Make invalid
+        # source coordinates fail instead of changing the approved region.
+        filters.append(f"crop=w='if(gte(iw,{x + w})*gte(ih,{y + h}),{w},0)':h={h}:x={x}:y={y}:exact=1")
+    filters.append("scale=w='min(320,iw)':h='min(240,ih)':force_original_aspect_ratio=decrease")
     command = ["docker", "run", "--rm", "--name", name, "--network", "none", "--read-only",
                "--user", "65534:65534", "--cap-drop", "ALL", "--security-opt", "no-new-privileges",
                "--memory", "256m", "--cpus", "1", "--pids-limit", "32",
                "--mount", f"type=bind,src={path},dst=/input.clip,readonly", image,
                "-nostdin", "-v", "error", "-threads", "1", "-ss", str(offset), "-i", "/input.clip",
-               "-frames:v", "1", "-an", "-sn", "-vf", "scale=w='min(320,iw)':h='min(240,ih)':force_original_aspect_ratio=decrease",
+               "-frames:v", "1", "-an", "-sn", "-vf", ",".join(filters),
                "-f", "image2pipe", "-vcodec", "ppm", "-"]
     try:
         result = subprocess.run(command, capture_output=True, timeout=15)
@@ -170,6 +192,7 @@ class TemplateTracker:
         if min(left, top) < 0 or min(rw, rh) < 1 or left + rw > width or top + rh > height:
             raise ValueError("Search ROI outside frame")
         if w > rw or h > rh:
+            self.last = None
             return {"state": "UNKNOWN", "reason": "ROI_TOO_SMALL"}
         # At most 512 candidate locations. Exact position is deliberately uncertain.
         stride = max(1, math.ceil(math.sqrt((rw - w + 1) * (rh - h + 1) / 512)))
@@ -236,6 +259,33 @@ class IsolatedTemplateTracker:
             subprocess.run(["docker", "rm", "--force", name], capture_output=True, timeout=10)
 
 
+def disclosure_mask(mask, size):
+    """Validate the exact reviewer-approved object mask, relative to the crop."""
+    w, h = size
+    if (not isinstance(mask, list) or len(mask) != h or not 2 <= w <= 64 or not 2 <= h <= 64
+            or any(not isinstance(row, str) or len(row) != w or set(row) - {"0", "1"} for row in mask)
+            or not any("1" in row for row in mask)):
+        raise ValueError("Bounded nonempty disclosure mask required")
+    return mask
+
+
+def redacted_crop(frame, box, mask):
+    """Suppress every pixel outside the approved mask before leaving the edge."""
+    width, height, pixels = frame
+    x, y, w, h = box
+    disclosure_mask(mask, (w, h))
+    if min(x, y) < 0 or x + w > width or y + h > height or len(pixels) != width * height * 3:
+        raise ValueError("Crop outside decoded frame")
+    output = bytearray(w * h * 3)
+    for row in range(h):
+        for column in range(w):
+            if mask[row][column] == "1":
+                source = ((y + row) * width + x + column) * 3
+                target = (row * w + column) * 3
+                output[target:target + 3] = pixels[source:source + 3]
+    return bytes(output)
+
+
 def search(archive, provider, start, end, roi, budget, authorize):
     if not 1 <= budget <= MAX_FRAMES:
         raise ValueError("Frame budget outside grant")
@@ -273,9 +323,18 @@ def search(archive, provider, start, end, roi, budget, authorize):
         inspect((left + right) // 2)
     authorize()  # A revoked grant invalidates the result before export.
     ordered = sorted(sampled)
+    # Refinement reads can run backwards in time. Continuity must describe the
+    # chronological evidence, never the provider's inspection order.
+    previous = None
+    for index in ordered:
+        observation = sampled[index]
+        if "continued" in observation:
+            observation["continued"] = (previous is not None and index == previous + 1
+                                        and sampled[previous]["state"] == "PRESENT")
+        previous = index
     windows = [{"after": frames[left].time, "before": frames[right].time, "hypothesis": "POSSIBLE_DISAPPEARANCE"}
                for left, right in zip(ordered, ordered[1:])
-               if sampled[left]["state"] == "PRESENT" and sampled[right]["state"] != "PRESENT"]
+               if sampled[left]["state"] == "PRESENT" and sampled[right]["state"] == "NOT_OBSERVED"]
     return {"profile": provider.profile, "state": "COMPLETE", "coverage": len(sampled) / len(frames),
             "observations": [sampled[index] for index in ordered], "windows": windows}
 

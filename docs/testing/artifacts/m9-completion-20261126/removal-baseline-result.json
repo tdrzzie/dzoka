@@ -1,0 +1,133 @@
+{
+  "schema": 1,
+  "executedAt": "2026-11-26T16:18:22.765148+00:00",
+  "scope": "MANUALLY_LABELLED_PUBLIC_EXAMPLE_DIAGNOSTIC",
+  "manifestSha": "1dfb101e3b06544f5801c57af8bf7dda96bdc963095ad73a449323c020010e9b",
+  "evaluatorSha": "bb766ec2a827c8cf5fa5d8ac69e11b29c789f7860fc12d762dfd3279ed1597bc",
+  "providerSha": "991ab748d3ca0eb2b3584876bf2c098b7ce8593f39812786771c85af617ce78f",
+  "runtimeLockSha": "4a84573ffe43bd5cb66fa29c253a9d577f2dfbe25c38ee41cb281988a4f71960",
+  "decoderLockSha": "30ff00c43f1afb5c55b3295040439117db6705ba1e36a4075deb3e87d7c6dafa",
+  "clips": [
+    {
+      "id": "ex056-pick-up-object-source-region",
+      "sourceSha": "b4519cf83ebc04dc3151698155e9095a1d245e0c27a3b5e8614ce9fd10aae67b",
+      "sourceRegion": [
+        400,
+        660,
+        300,
+        240
+      ],
+      "profile": "32ccb62fec5680341dbf768fa6249f818bf90668fc54c9e8bcc08d409be02b5f",
+      "referenceSha": "dcbf18a76788ae5fa57ab67b0615b8bd68b878ef7e4e546dcd2717f70bea145b",
+      "metrics": {
+        "tp": 3,
+        "fp": 0,
+        "tn": 2,
+        "fn": 0,
+        "abstained": 0,
+        "uncertainLabels": 0,
+        "labelled": 5,
+        "decisionCoverage": 1.0,
+        "recallIncludingAbstentions": 1.0,
+        "meanBoxIoU": 1.0
+      },
+      "samples": [
+        {
+          "offset": 0,
+          "label": "PRESENT",
+          "box": [
+            48,
+            100,
+            18,
+            18
+          ],
+          "note": "Ball visible in original bench region",
+          "frameSha": "57828886d5a86b541457373a265a120b4ccd6a4d9efce8f8d5a7c843815d8a65",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              48,
+              100,
+              18,
+              18
+            ],
+            "continued": false,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "32ccb62fec5680341dbf768fa6249f81"
+          }
+        },
+        {
+          "offset": 2,
+          "label": "PRESENT",
+          "box": [
+            48,
+            100,
+            18,
+            18
+          ],
+          "note": "Ball visible in original bench region",
+          "frameSha": "37de98beef1ed71dc777b60fb06c9b760680e1477300711e10529eabfee78acf",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              48,
+              100,
+              18,
+              18
+            ],
+            "continued": true,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "32ccb62fec5680341dbf768fa6249f81"
+          }
+        },
+        {
+          "offset": 4,
+          "label": "PRESENT",
+          "box": [
+            48,
+            100,
+            18,
+            18
+          ],
+          "note": "Ball visible in original bench region",
+          "frameSha": "23f029deb4ae803b5b4c69917721d22947351195313d8656c56a44f1a06a205a",
+          "observation": {
+            "state": "PRESENT",
+            "box": [
+              48,
+              100,
+              18,
+              18
+            ],
+            "continued": true,
+            "pixelUncertainty": 1,
+            "reason": "REFERENCE_APPEARANCE",
+            "track": "32ccb62fec5680341dbf768fa6249f81"
+          }
+        },
+        {
+          "offset": 6,
+          "label": "NOT_OBSERVED",
+          "note": "Bench ball removed from original region; visibly carried elsewhere in source crop",
+          "frameSha": "d8d962e38b0180e93215d5b7d118a904feee6e2de0f4576a73839693e3932d4b",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        },
+        {
+          "offset": 8,
+          "label": "NOT_OBSERVED",
+          "note": "Bench ball removed from original region; visibly carried elsewhere in source crop",
+          "frameSha": "cb32f49994287bb8dc8f6b749371452c52cd31c5978406fa65ec9ccfe0ec3571",
+          "observation": {
+            "state": "NOT_OBSERVED",
+            "reason": "OCCLUSION_OR_ABSENCE"
+          }
+        }
+      ]
+    }
+  ]
+}
