@@ -24,13 +24,13 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 18 | VECTOR SEARCH ABSTRACTION | Specified; implementation and production validation pending. |
 | 19 | EVENT-DRIVEN ARCHITECTURE | Transactional outbox/inbox and leased dispatch foundation implemented/tested; live Kafka adapter, scheduling, DLQ and operations remain. |
 | 20 | RECOVERY EVENT MODEL | A redacted recovery return event commits with custody and audit state. The wider event catalogue remains open. |
-| 21 | RECOVERY KNOWLEDGE GRAPH | Specified; implementation and production validation pending. |
-| 22 | CCTV / EDGE VISION SUBSYSTEM | Specified; implementation and production validation pending. |
-| 23 | OBJECT TRACKING | Specified; implementation and production validation pending. |
-| 24 | LOST-OBJECT MOVEMENT / RECOVERY PREDICTION | Specified; implementation and production validation pending. |
-| 25 | FEDERATION | Specified; implementation and production validation pending. |
-| 26 | FEDERATED SEARCH | Specified; implementation and production validation pending. |
-| 27 | FEDERATION PRIVACY | Specified; implementation and production validation pending. |
+| 21 | RECOVERY KNOWLEDGE GRAPH | Live tenant-authorized native custody graph includes observed and unconfirmed edges, source references, cutoff and report-availability checks. Rebuild is a fresh native query. |
+| 22 | CCTV / EDGE VISION SUBSYSTEM | Optional registered P6 archive profile binds reference appearance, ROI and purpose to reviewer grants. Isolated bounded processing performs coarse sampling, disappearance-window refinement, explicit gap handling and reviewed item-crop export. Institutional quality and deployment acceptance remain. |
+| 23 | OBJECT TRACKING | Replaceable edge appearance provider supports bounded template detection, local reference reidentification, continuity and ambiguous/occluded observations. Learned tracking and other video codecs need separate provider adoption. |
+| 24 | LOST-OBJECT MOVEMENT / RECOVERY PREDICTION | Native distinct-item transition counts and elapsed-time estimates plus versioned frequency-model artifacts and leakage-aware evaluation are implemented. Sparse states and calibration remain explicitly unavailable. Representative accuracy and production approval remain open. |
+| 25 | FEDERATION | Explicit tenant trust, Ed25519 envelopes, version and capability exchange, replay controls, quotas, circuit state and bounded parallel fan-out are implemented. Independent institution deployment and physical transfer reconciliation remain open. |
+| 26 | FEDERATED SEARCH | Published-category discovery produces origin-attributed peer ranks and explicit partial results. The profile conveys uncalibrated evidence. Target policy and representativeness remain to verify. |
+| 27 | FEDERATION PRIVACY | The coarse publication projection keeps raw reports, contacts, ownership evidence, precise locations and credentials outside peer requests and responses. Tenant boundaries, withdrawal and key revocation apply to discovery. |
 | 28 | MULTI-TENANCY | Organization/intake/media HTTP/SQL isolation, active memberships, tenant-qualified keys and forced row policies implemented/tested; AI/cache/vector/federation surfaces remain. |
 | 29 | SELF-HOSTED + SAAS DEPLOYMENT | Specified; implementation and production validation pending. |
 | 30 | RECOVERY / CUSTODY ENGINE | Found intake, staff storage, dual-operator transfers, incident holds, offline conflict capture and staffed returns have accountable custody records. Courier, federation and disposal states remain open. |

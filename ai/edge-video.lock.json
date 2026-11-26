@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "scope": "ISOLATED_LOCAL_VIDEO_FRAMES",
+  "imageId": "sha256:95f304ec25c4eee51e07f6cb48987fec4b99312cf1e95c084a352a49158978d1",
+  "platform": "linux/amd64",
+  "dockerfileSha256": "57b96cbf1f44b4aa0c78fbcdf01b0d8c5e88a2c92db4e9f7f00e43f65cad18fc",
+  "packagesSha256": "598ad0ef666e8dfbd933ce3b24d262c59bb294039527fc07ce98bb5841c30fd0",
+  "noticeSha256": "7447a836ec8522b699ba022d5de6c9ab39cd1682054facf550ce84589f161e2a",
+  "review": "docs/adr/0061-isolated-video-frame-decoder.md"
+}

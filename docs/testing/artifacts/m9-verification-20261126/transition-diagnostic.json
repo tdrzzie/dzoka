@@ -1,0 +1,34 @@
+{
+  "scope": "AUTHORED_DIAGNOSTIC_ONLY",
+  "trainingCases": 3,
+  "heldOutCases": 1,
+  "model": {
+    "version": "recovery-transition-frequency-v1",
+    "cutoff": "2026-11-02T00:00:00Z",
+    "author": "synthetic-author",
+    "purposeSha": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "datasetSha": "cde84a45520006926ebfdaafa1108d261118caf4e27ae6d876db32af51092fa8",
+    "states": {
+      "bus": [
+        {
+          "state": "depot",
+          "support": 3,
+          "frequency": 1.0,
+          "medianSeconds": 60.0
+        }
+      ]
+    },
+    "calibration": "UNAVAILABLE",
+    "modelSha": "daf2270c8c4343053659846e89277d0a8e269dbc2d21e67a51529d6aec073f1d"
+  },
+  "evaluation": {
+    "modelSha": "daf2270c8c4343053659846e89277d0a8e269dbc2d21e67a51529d6aec073f1d",
+    "testSha": "1602ab696a4db2fe4f435aec4f40bad544af23b9df3bc2d9238882fa98bbcef1",
+    "cases": 1,
+    "available": 1,
+    "top1": 1.0,
+    "medianTimeAbsoluteErrorSeconds": 0.0,
+    "calibration": "UNAVAILABLE",
+    "promotion": "REQUIRES_REVIEW"
+  }
+}

@@ -18,8 +18,16 @@ public final class BoundedJsonInput extends RequestBodyAdviceAdapter {
     }
     @Override public HttpInputMessage beforeBodyRead(HttpInputMessage input, MethodParameter method,
             Type target, Class<? extends HttpMessageConverter<?>> converter) throws IOException {
-        final int limit=method.getDeclaringClass().getName().equals("org.dzoka.fingerprints.api.PerceptionController")
-                && method.getMethod()!=null && method.getMethod().getName().equals("complete")?64*1024:LIMIT;
+        int allowed=LIMIT;
+        if(method.getMethod()!=null) {
+            if(method.getDeclaringClass().getName().equals("org.dzoka.fingerprints.api.PerceptionController")
+                    && method.getMethod().getName().equals("complete")) allowed=64*1024;
+            if(method.getDeclaringClass().getName().equals("org.dzoka.edge.EdgeController")
+                    && method.getMethod().getName().equals("evidence")) allowed=20*1024;
+            if(method.getDeclaringClass().getName().equals("org.dzoka.edge.EdgeController")
+                    && method.getMethod().getName().equals("complete")) allowed=64*1024;
+        }
+        final int limit=allowed;
         if (input.getHeaders().getContentLength() > limit) throw new TooLarge();
         var bounded = new FilterInputStream(input.getBody()) {
             private int consumed;

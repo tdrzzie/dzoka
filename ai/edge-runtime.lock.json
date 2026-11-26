@@ -1,0 +1,17 @@
+{
+  "schema": 1,
+  "scope": "PORTABLE_P6_EDGE",
+  "image": "python@sha256:d13fa0424035d290decef3d575cea23d1b7d5952cdf429df8f5542c71e961576",
+  "architecture": "linux/amd64",
+  "runtimeLicense": "PSF-2.0 and historical Python license stack; Debian system package licenses",
+  "review": "docs/adr/0060-portable-edge-frame-runtime.md",
+  "sources": {
+    "tools/edge_vision.py": "d36361e318e58bded8f92408749136fe7b4f8de17c3e405c6f7ecfbfab575ce0",
+    "tools/edge_worker.py": "f61472332daac5ccb94a7df5d6a9b323c16b4f126a375d1bf81051db668b1bce",
+    "tools/edge_runtime.py": "e9e5837a8546978448535f215c78a2c84ee5db77f5376211c9fd9eb18801e013",
+    "ai/edge-video.lock.json": "30ff00c43f1afb5c55b3295040439117db6705ba1e36a4075deb3e87d7c6dafa",
+    "deployment/edge-video.Dockerfile": "57b96cbf1f44b4aa0c78fbcdf01b0d8c5e88a2c92db4e9f7f00e43f65cad18fc",
+    "docs/dependencies/notices/edge-video/ffmpeg-copyright.txt": "7447a836ec8522b699ba022d5de6c9ab39cd1682054facf550ce84589f161e2a",
+    "docs/dependencies/notices/edge-video/packages.txt": "598ad0ef666e8dfbd933ce3b24d262c59bb294039527fc07ce98bb5841c30fd0"
+  }
+}

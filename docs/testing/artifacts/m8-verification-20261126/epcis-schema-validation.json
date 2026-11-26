@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "documents": 3,
+  "validator": "jsonschema 4.26.0 Draft 7 with format checking",
+  "schema": "https://ref.gs1.org/standards/epcis/2.0.0/epcis-json-schema.json",
+  "schemaSha256": "cfabd8620cc4dd67a53e6aa397bc26379f8b05bb9147c8a37a60bbec69a62572",
+  "documentsSha256": "0a38bf77cc31136802f18f98797b450d7fe879dc5022cfebaac1e4e524cfd452"
+}

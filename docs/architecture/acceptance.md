@@ -178,3 +178,24 @@ See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownersh
 | A28 | Concurrent transfer acceptance chooses one authoritative location and retains the stale event as an offline conflict | Site and offline client rehearsal |
 
 [M7 execution evidence](../testing/m7-verification-2026-11-26.md).
+
+## M8 federation and traceability (2026-11-26)
+
+| Acceptance | Local conformance | Target evidence |
+| --- | --- | --- |
+| A19 | Core instances with independent databases exchange signed capabilities and searches. Tests cover replay, audience swap, expiry, tampering, key rotation, revocation, withdrawal and partial fan-out. | Institution key exchange, ingress and egress policy, availability and audit review |
+| A20 | Discovery interleaves attributed ranks and labels evidence uncalibrated. A signed response carrying an unauthorized score fails schema validation. | Institution review of the publication vocabulary and disclosure policy |
+| A21 | Native observations queue outside the custody transaction. Duplicate requests return one projection. Correction appends a declaration and replacement. Tests cover capture polling, uncertain sends, reconciliation and revocation. | Approved EPCIS repository, institution capture, query and disclosure review |
+
+[M8 execution evidence](../testing/m8-verification-2026-11-26.md).
+
+## M9 local edge profile (2026-11-26)
+
+| Acceptance | Executed scope | External evidence |
+| --- | --- | --- |
+| A22 | Actual isolated frame worker, camera/index/plan bindings, grant expiry/revocation checks, observation budgets, distinct unknown/not-observed states, reviewed crop access and purging | Institution-approved footage, camera hardware integration and quality evaluation |
+| A23 | Native custody graph classifies observations separately from unconfirmed events. Predicted transition artifacts retain provenance and cannot mutate custody | Representative transition quality and deployment policy |
+| A28 | Existing staffed custody conflict checks run alongside edge tests. Edge observations remain separate from custody mutations | Offline camera/site trial |
+| A29 | Model evaluation rejects future data, item and institution overlap and self-approval. Sparse support and calibration remain unavailable | Representative held-out outcomes, thresholds and calibration approval |
+
+[M9 verification](../testing/m9-verification-2026-11-26.md).

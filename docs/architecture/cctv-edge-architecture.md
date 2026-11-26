@@ -1,6 +1,6 @@
 # Authorized coarse-to-fine edge vision
 
-Accepted design, 2026-10-26. Implementation is pending. This view follows the [current baseline](baseline.md) and ADRs [0016](../adr/0016-detector-licensing.md); [0023](../adr/0023-cctv-coarse-fine.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. The M9 local profile is implemented with its [verified execution scope](../testing/m9-verification-2026-11-26.md). This view follows the [current baseline](baseline.md) and ADRs [0016](../adr/0016-detector-licensing.md); [0023](../adr/0023-cctv-coarse-fine.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
 ## Investigation scope
 
@@ -14,6 +14,6 @@ Task-scoped credentials allow only approved inputs. Decode/inference is isolated
 
 ## Acceptance
 
-A06–A08, A22, A27–A28. Demonstrate grant expiry mid-job, camera/time rejection, cancellation, real gaps/occlusion, resource limits, redaction and deletion. Actual camera accuracy and compute cost remain unmeasured.
+A06â€“A08, A22, A27â€“A28. Demonstrate grant expiry mid-job, camera/time rejection, cancellation, real gaps/occlusion, resource limits, redaction and deletion. Actual camera accuracy and compute cost remain unmeasured.
 
-Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.
+The [implementation acceptance ledger](acceptance.md) and [M9 verification](../testing/m9-verification-2026-11-26.md) record executed local checks and external acceptance requirements.

@@ -1,6 +1,6 @@
 # Recovery state-transition intelligence
 
-Accepted design, 2026-10-26. Implementation is pending. This view follows the [current baseline](baseline.md) and ADRs [0024](../adr/0024-movement-state-models.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. The M9 local profile is implemented with its [verified execution scope](../testing/m9-verification-2026-11-26.md). This view follows the [current baseline](baseline.md) and ADRs [0024](../adr/0024-movement-state-models.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
 ## Target and baseline
 
@@ -18,4 +18,4 @@ Predictions may prioritize authorized search or staff review. They cannot identi
 
 A23, A27 and A29, including future-data leakage fixtures, sparse histories, unseen institutions, temporal shift and deterministic rollback. No recovery prediction accuracy has been measured.
 
-Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.
+The [implementation acceptance ledger](acceptance.md) and [M9 verification](../testing/m9-verification-2026-11-26.md) record executed local checks and external acceptance requirements.

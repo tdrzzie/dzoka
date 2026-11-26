@@ -1,6 +1,6 @@
 # Independent node federation
 
-Accepted design, 2026-10-26. Implementation is pending. This view follows the [current baseline](baseline.md) and ADRs [0019](../adr/0019-federated-nodes.md); [0020](../adr/0020-federation-score-semantics.md); [0021](../adr/0021-pii-local.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. The M8 discovery profile implements signed scope-limited search and capabilities. The [wire contract](../adr/0058-federation-wire-and-epcis-projection.md) fixes its supported version and evidence fields. This view follows the [current baseline](baseline.md) and ADRs [0019](../adr/0019-federated-nodes.md), [0020](../adr/0020-federation-score-semantics.md) and [0021](../adr/0021-pii-local.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
 ## Protocol boundary
 
@@ -18,4 +18,4 @@ Transfer uses a shared operation ID and local pending/accepted/committed/dispute
 
 A19–A20 and A28, including two-node partitions, key rotation/revocation, replay, cancellation, schema downgrade and PII projection inspection.
 
-Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.
+The [implementation acceptance ledger](acceptance.md) records the scope of execution. Cross-node physical custody exchange remains a separate workflow from M8 discovery.

@@ -48,6 +48,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(a -> a
                         .requestMatchers(org.springframework.http.HttpMethod.GET,"/api/v1/hooks/whatsapp").permitAll()
                         .requestMatchers(org.springframework.http.HttpMethod.POST,"/api/v1/hooks/whatsapp").permitAll()
+                        .requestMatchers(org.springframework.http.HttpMethod.POST,"/api/v1/federation/peer").permitAll()
                         .anyRequest().authenticated())
                 .oauth2ResourceServer(o -> o.jwt(j -> {})).build();
     }
