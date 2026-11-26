@@ -1,6 +1,6 @@
 # Rewards and ledger-based escrow
 
-Accepted design, 2026-10-26. Implementation is pending. This view follows the [current baseline](baseline.md) and ADRs [0018](../adr/0018-no-default-blockchain.md); [0022](../adr/0022-release-authorization.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. The M10 voluntary reward and gateway profile is implemented; see its [contract](../development/fulfillment.md) and [verification](../testing/m10-verification-2026-11-26.md). This view follows the [current baseline](baseline.md) and ADRs [0018](../adr/0018-no-default-blockchain.md); [0022](../adr/0022-release-authorization.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
 ## Financial boundary
 
@@ -16,6 +16,6 @@ Normal payment rails are the default; no blockchain is required. Any optional ch
 
 ## Acceptance
 
-A15–A18, A24 and A27: balance conservation, same-key/different-body conflict, duplicate callbacks, release/refund race, unknown settlement and dispute resolution. No financial integration exists yet.
+A15–A18, A24 and A27: local execution covers balance conservation, immutable transfers, duplicate callbacks, release/refund races, unknown reserves, disputes and compensating payout/fee reversals. The integration uses the versioned gateway contract with synthetic HTTP payment effects. Real payment-rail and target financial acceptance remain open.
 
 Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.

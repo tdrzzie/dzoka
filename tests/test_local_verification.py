@@ -30,9 +30,10 @@ class LocalVerificationTests(unittest.TestCase):
         with self.assertRaises(ValueError):local.integration_command(pg_bin='pg')
 
     def test_restore_changed_rows_or_policy_cannot_pass(self):
-        original={'data':'original','catalog':'rls-enabled'}
+        original={'data':'original','catalog':'rls-enabled','views':{'reward_ledger':{'security_invoker':True}}}
         restore.require_equal(original,dict(original),'unchanged')
-        for changed in ({**original,'data':'missing'},{**original,'catalog':'rls-disabled'}):
+        for changed in ({**original,'data':'missing'},{**original,'catalog':'rls-disabled'},
+                        {**original,'views':{'reward_ledger':{'security_invoker':False}}}):
             with self.assertRaisesRegex(RuntimeError,'Restore verification differs'):
                 restore.require_equal(original,changed,'injected integrity failure')
 

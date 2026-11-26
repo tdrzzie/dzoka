@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-26",
+  "scope": "LOCAL_M10_CONFORMANCE_NOT_COMMERCIAL_PROVIDER_OR_SITE_ACCEPTANCE",
+  "baseCommit": "0eeec4dc6353c5d3e1813018f009e293d7f8fbf5",
+  "runtime": {
+    "python": "3.14.7",
+    "sqlite": "3.50.4",
+    "java": "25.0.4",
+    "postgresql": "18.6"
+  },
+  "python": {
+    "tests": 264,
+    "skipped": 0,
+    "edgeSandboxEnabled": true,
+    "logSha256": "fe101ec623d2856553b83580c272f1a3bcbe567424d8c068934643a1c0e7f352"
+  },
+  "native": {
+    "javaUnitTests": 33,
+    "integrations": 93,
+    "m10Integrations": 15,
+    "skipped": 0,
+    "edgeSandboxEnabled": true,
+    "logSha256": "74582dba5ab7a69e66187470e178a71d2d6133ccc33a7f508e7cf18855d91f81"
+  },
+  "restore": {
+    "tables": 91,
+    "rows": 5243,
+    "rowAndCatalogEquality": true,
+    "tenantIsolation": true,
+    "catalogIncludesViewDefinitionsAndSecurityOptions": true,
+    "receiptSha256": "cc619dfa43c8fb861a77104649f953d5a3763fbde69e7a1e2d31ae82ffec9b1b"
+  },
+  "checks": [
+    "mandatory source audit gate",
+    "architecture link/preservation verification",
+    "106-artifact dependency integrity",
+    "whitespace diff check"
+  ],
+  "sources": {
+    "src/main/java/org/dzoka/edge/RecoveryIntelligence.java": "ddbecc430c5b4fe0a3754813454b807c8d0f02a34cf2d57e5875825b5d8d9e26",
+    "src/main/java/org/dzoka/foundation/security/SecurityConfiguration.java": "4a071dbb20ccca8b3ff38715e238b11b4c95ad2398dbdc7d94079a54c38b23f0",
+    "src/main/java/org/dzoka/fulfillment/FulfillmentController.java": "9f40377faf923b703b72758a92ed26cb59ce72918e0b6d2d618391d6a5f0806d",
+    "src/main/java/org/dzoka/fulfillment/FulfillmentGateway.java": "7d04d2b4a768d0e9771a389c1596d7d1ae20491d00c79ff9756acb64155ad622",
+    "src/main/java/org/dzoka/fulfillment/FulfillmentOperations.java": "fe3adebf7f42d75d10ff4486f879dec1d450e1084cffc4d0960baa1aaf70bf48",
+    "src/main/java/org/dzoka/fulfillment/FulfillmentWebhook.java": "b46bd6b7e8a91337f98c9b245a2151fdc3b06d0cb278d2889db67d3007fcacf4",
+    "src/main/java/org/dzoka/fulfillment/GatewayHttp.java": "ebf5a849c175897a1e20149e96f4d00b7a030c6669b6a23d43a65c66a8658830",
+    "src/main/java/org/dzoka/fulfillment/OperationJournal.java": "b80730e91c1d25a0508952766364dc02e68399243d5d9a5f28be66074aa790da",
+    "src/main/java/org/dzoka/fulfillment/RecoveryContext.java": "98077486ffbd3ad7d50395fd62ba614f45f70e97e1ffd7fd532492b77bde7567",
+    "src/main/java/org/dzoka/fulfillment/Sql.java": "39a79ef55ed45165274a4af0b4036ddc5082377dae2e9ca08851a36a61671959",
+    "src/main/java/org/dzoka/logistics/CourierProvider.java": "5aa37e1b64f875a519798d5d3ca8597a8428e2a18f12137d487aa6ec9ee247bf",
+    "src/main/java/org/dzoka/logistics/Logistics.java": "34d700827edff80b6d97a7fa874042f4488526b258f252b1d5221c1f5704ac6b",
+    "src/main/java/org/dzoka/passports/ItemIdentityProvider.java": "553aea6278f83521b058b944e144cc87c37a4dca38971b05749e30e5dc0d360a",
+    "src/main/java/org/dzoka/passports/LocalItemIdentity.java": "aff27cfb80bdc1c7dd50aca9b9875e3ac20b543b5f55a25b81d73711bd6902e9",
+    "src/main/java/org/dzoka/passports/Passports.java": "0d05d748375f953ff3942b3a8537bda935444d0975ccd200255b3d108f6a002d",
+    "src/main/java/org/dzoka/recovery/adapters/JdbcRecovery.java": "9e4d593eee32ec30fff1e118b99228f4121128f697c1df633bfd3ff26c0c350e",
+    "src/main/java/org/dzoka/rewards/PaymentProvider.java": "44cb0f90a5547c5d63ec859556451c8760a6d09e376e9feec66457bf31aa6be3",
+    "src/main/java/org/dzoka/rewards/RewardEscrowProvider.java": "62324ab0c68cac4f45fae4e62f4c5f63c3452124bdac75c705c82e04c83eb0c1",
+    "src/main/java/org/dzoka/rewards/Rewards.java": "7ead727830e7e540c503bb5fca7d407d2309e08510ebe8e34caf212371452492",
+    "src/main/resources/db/migration/V24__fulfillment_rewards_passports.sql": "1aad5bc9bae6f79e81b084cb1eb68c219311fd671d44409d9568f6bd587878b5",
+    "src/test/java/org/dzoka/FulfillmentIT.java": "a09fc69a9b34164057bae5e01c3fcc9bf572b08cf2a8f89c9f119ff5e0bf78bf",
+    "src/test/java/org/dzoka/FulfillmentPolicyTest.java": "fabfe332dc4f0f7557b4bcfc79d1b3c9857965a05f2416494e8d66951af4b6db",
+    "src/test/java/org/dzoka/ModuleBoundaryTest.java": "ed6961b30c5b3711731e4bbb79e437237b3f39ecf94d4d00c8682b462b319eda",
+    "tests/test_fulfillment_sandbox.py": "bf7699dfc4c86dcc49397b5d8f91300538f006f0f59010a4e0a908fe9950fa5c",
+    "tests/test_local_verification.py": "bc7f8e864ba11df5019f4533b7e84d8287925625f1df970f77a81365e01f761c",
+    "tools/fulfillment_sandbox.py": "69c108160a86a352ff22281b2bb163a4b85230830343c39ce42215763e34236a",
+    "tools/fulfillment_worker.py": "15c0fc2e751148bc2c2b08ce8281c1dc147f5181a2b5aeb028d5bad3ea799b33",
+    "tools/restore_drill.py": "d4e71252a32641065dde8e1d5395eb71791bc113d5c6462dc50989b873cf3d39",
+    "tools/test_foundation.py": "7a7d56553f8e6c10c48c1bbbd39d4d0ec35b715c9bf8fda2462c53b857926873"
+  },
+  "externalModelMatrixRepeated": false,
+  "liveMoneyOrShipping": false,
+  "commercialProviderAcceptance": "OPEN_PROVIDER_SELECTION_AND_TARGET_CONFIGURATION_REQUIRED"
+}

@@ -1,0 +1,65 @@
+{
+  "scope": "REAL_CORE_POSTGRESQL_WITH_LOCAL_HTTP_GATEWAY",
+  "cases": [
+    {
+      "case": "registeredTagsKeepOwnerPrivateAndNeverCreateOwnershipEvidence",
+      "status": "PASS"
+    },
+    {
+      "case": "disputeFreezesFundsAndRecoveryDoesNotDependOnReward",
+      "status": "PASS"
+    },
+    {
+      "case": "callbackSignatureExpiryReplayAndChangedPayloadAreEnforced",
+      "status": "PASS"
+    },
+    {
+      "case": "passportAssertionsStayPrivateAndExpiredRelayMessagesArePurged",
+      "status": "PASS"
+    },
+    {
+      "case": "postSettlementDisputeUsesCompensatingEntriesAndDoesNotRewriteHistory",
+      "status": "PASS"
+    },
+    {
+      "case": "earlyTrackingSurvivesHandoffAndHeldReceiptNeedsIndependentReview",
+      "status": "PASS"
+    },
+    {
+      "case": "holdOrRevocationPreventsNewBookingAndPhysicalDispatch",
+      "status": "PASS"
+    },
+    {
+      "case": "withdrawnAddressConsentStopsDispatchAndTheActualWorkerDrainsCoreJobs",
+      "status": "PASS"
+    },
+    {
+      "case": "lostBookingReplyReconcilesOnceAndDeliveryNeedsOwnerReceipt",
+      "status": "PASS"
+    },
+    {
+      "case": "courierQuoteBudgetIsCommittedBeforeExternalRequests",
+      "status": "PASS"
+    },
+    {
+      "case": "currencyDecimalsAndFailedTagGuessesCannotBypassBoundaryControls",
+      "status": "PASS"
+    },
+    {
+      "case": "unknownPaymentReconcilesWithoutInventingLedgerFundsAndCancelIsDurable",
+      "status": "PASS"
+    },
+    {
+      "case": "courierReturnToStaffDoesNotBecomeOwnerRecoveryOrRewardEligibility",
+      "status": "PASS"
+    },
+    {
+      "case": "immutableBalancedEscrowAllowsOneReleaseOrRefundUnderRace",
+      "status": "PASS"
+    },
+    {
+      "case": "unsentDisputedPaymentResumesAfterReviewAndUnknownPaymentCannotBeCancelled",
+      "status": "PASS"
+    }
+  ]
+}

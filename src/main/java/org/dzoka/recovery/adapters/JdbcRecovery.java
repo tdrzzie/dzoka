@@ -607,7 +607,7 @@ final class JdbcRecovery implements RecoveryOperations {
     }
 
     private static Report report(Connection db,UUID id) throws SQLException {
-        try (var sql=q(db,"SELECT revision,version,available FROM dzoka.recovery_report_status(?)",id);
+        try (var sql=q(db,"SELECT revision,version,available AND NOT EXISTS(SELECT 1 FROM dzoka.courier_custody cc WHERE cc.intake_id=? AND NOT cc.closed) FROM dzoka.recovery_report_status(?)",id,id);
              var rows=sql.executeQuery()) {
             if (!rows.next()) throw new Failures.NotFound();
             return new Report(rows.getInt(1),rows.getLong(2),rows.getBoolean(3));

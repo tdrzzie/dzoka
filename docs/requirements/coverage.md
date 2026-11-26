@@ -35,10 +35,10 @@ All 100 top-level sections of the supplied specification remain in scope. This i
 | 29 | SELF-HOSTED + SAAS DEPLOYMENT | Specified; implementation and production validation pending. |
 | 30 | RECOVERY / CUSTODY ENGINE | Found intake, staff storage, dual-operator transfers, incident holds, offline conflict capture and staffed returns have accountable custody records. Courier, federation and disposal states remain open. |
 | 31 | SECURE HANDOVER | Audience-bound one-time pickup tokens, confirmed recipient and receipt replay are implemented. Claimants can request pickup and acknowledge a recorded return through WhatsApp. Physical signature capture remains open. |
-| 32 | COURIER ORCHESTRATION | Specified; implementation and production validation pending. |
-| 33 | REWARD SYSTEM | Specified; implementation and production validation pending. |
-| 34 | QR / NFC ITEM REGISTRATION | Specified; implementation and production validation pending. |
-| 35 | DIGITAL ITEM PASSPORT | Specified; implementation and production validation pending. |
+| 32 | COURIER ORCHESTRATION | Local HTTP gateway contract implements quotes, consent, booking, authorized pickup/custody, tracking/proof, cancellation, owner/staff receipt, signed callbacks and ambiguous-outcome reconciliation. Commercial provider and site acceptance remain open. |
+| 33 | REWARD SYSTEM | Voluntary immutable terms, balanced minor-unit ledger, reserve/release/refund, independent disputes, unknown-outcome reconciliation, blocked-intent recovery and compensating reversals are implemented and verified with synthetic payment effects. Live financial/provider acceptance remains open. |
+| 34 | QR / NFC ITEM REGISTRATION | Actor-private registration, QR/NFC locator creation/consumption, revocable token hashes, owner inbox and restricted pseudonymous finder relay are implemented. Scans never establish ownership. Physical tag/reader and deployment acceptance remain open. |
+| 35 | DIGITAL ITEM PASSPORT | Private versioned internal UUID, QR/NFC, enterprise asset and constrained GS1 reference assertions are implemented. External assertions remain unverified; optional DID/blockchain cryptographic adapters are unadopted. |
 | 36 | SECURE ANONYMOUS MESSAGING | Claim-bound relay with fixed phrases, participant isolation, blocking, abuse review and bounded retention is implemented. |
 | 37 | NOTIFICATIONS | WhatsApp templates, explicit consent, match watches, atomic alert capture, dispatch, bounded retry and monotone delivery reconciliation are implemented. Additional channels and external provider acceptance remain. |
 | 38 | LOCATION INTELLIGENCE | Raw place labels and optional coordinates/radius preserved; spatial indexing/geocoding/intelligence and production validation remain. |

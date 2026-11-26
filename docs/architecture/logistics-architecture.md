@@ -1,6 +1,6 @@
 # Courier orchestration and reconciliation
 
-Accepted design, 2026-10-26. Implementation is pending. This view follows the [current baseline](baseline.md) and ADRs [0022](../adr/0022-release-authorization.md); [0018](../adr/0018-no-default-blockchain.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
+Accepted design, 2026-10-26. The local M10 gateway profile is implemented; see its [API contract](../development/fulfillment.md) and [verification](../testing/m10-verification-2026-11-26.md). This view follows the [current baseline](baseline.md) and ADRs [0022](../adr/0022-release-authorization.md); [0018](../adr/0018-no-default-blockchain.md). The canonical audits linked by those ADRs provide pinned source evidence and scope limits. Runtime/artifact choices must pass [dependency adoption](dependency-adoption.md).
 
 ## Authority and operation lifecycle
 
@@ -14,6 +14,6 @@ Share only the address/contact subset needed by the selected courier under expli
 
 ## Acceptance
 
-A15–A18 and A27–A28. Test duplicate booking, unknown timeout, out-of-order/replayed callbacks, revoked authorization before pickup, minimal address disclosure and loss/dispute workflows. Provider sandbox verification remains future implementation work.
+A15–A18 and A27–A28. Local execution covers duplicate booking, lost replies and reconciliation, early/out-of-order/replayed callbacks, held/revoked authorization, consent withdrawal, staff return, minimal route references and owner receipt. The executable provider is an explicit development sandbox, not a vendor certification. Institution/provider deployment acceptance remains open.
 
 Acceptance IDs refer to [the implementation acceptance ledger](acceptance.md); none is claimed executed by this document.

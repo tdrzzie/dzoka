@@ -201,3 +201,14 @@ See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownersh
 [M9 verification](../testing/m9-verification-2026-11-26.md).
 
 [Current edge, public-removal and censored-baseline execution](../testing/m9-completion-2026-11-26.md).
+
+## M10 local fulfillment profile (2026-11-26)
+
+| Acceptance | Executed local scope | Target evidence |
+| --- | --- | --- |
+| A15–A17 | Approved claim, report/version, hold, custody and policy checks for booking/handoff; delivery separate from claimant receipt; early/out-of-order tracking, consent withdrawal, staff return and independent receipt reauthorization | Staffed site handoff, approved route vault, actual courier sandbox/callback acceptance |
+| A18 | Lost-reply reconciliation, stable keys, balanced immutable ledger, one release/refund under race, disputes, blocked-intent recovery and compensating payout/fee reversal | Approved payment rail, fee/reversal terms, funding accounts and real-provider reconciliation |
+| A24/A27 | Forced tenant RLS, actor-private registrations/passports, QR/NFC possession without ownership approval, restricted relay, persisted scan/quote quotas and bounded purge | Institution privacy/retention configuration and physical tag/client acceptance |
+| A28 | Courier custody and owner/staff returns remain authoritative distinct facts; stale receipt snapshots require independent review | Target recovery/operational trial |
+
+[M10 final execution and remaining acceptance](../testing/m10-verification-2026-11-26.md).

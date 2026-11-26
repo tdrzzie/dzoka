@@ -19,7 +19,7 @@ class ModuleBoundaryTest {
                     if(normalized.contains("/application/"))
                         assertFalse(dependency.startsWith("org.dzoka.")&&dependency.contains(".adapters."),
                                 ()->path+" depends on adapter "+dependency);
-                    for(String owner:java.util.List.of("organizations","events","intake","media","identity","fingerprints","matching","recovery","channels","federation","traceability","edge")) {
+                    for(String owner:java.util.List.of("organizations","events","intake","media","identity","fingerprints","matching","recovery","channels","federation","traceability","edge","logistics","rewards","passports","fulfillment")) {
                         if(!normalized.contains("/"+owner+"/"))continue;
                         assertFalse(dependency.startsWith("org.dzoka.")&&!dependency.startsWith("org.dzoka."+owner+".")
                                         &&dependency.contains(".adapters."),()->path+" reaches another module adapter");

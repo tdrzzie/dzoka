@@ -76,6 +76,9 @@ SELECT jsonb_build_object(
    (SELECT p.oid::regprocedure::text signature,pg_get_userbyid(p.proowner) owner,p.proacl,
            pg_get_functiondef(p.oid) definition
     FROM pg_proc p JOIN pg_namespace n ON n.oid=p.pronamespace WHERE n.nspname='dzoka') x),
+ 'views',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.relname) FROM
+   (SELECT c.relname,pg_get_userbyid(c.relowner) owner,c.relacl,c.reloptions,pg_get_viewdef(c.oid,true) definition
+    FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='dzoka' AND c.relkind='v') x),
  'columns',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.relname,x.attname) FROM
    (SELECT c.relname,a.attname,a.attacl FROM pg_attribute a JOIN pg_class c ON c.oid=a.attrelid
     JOIN pg_namespace n ON n.oid=c.relnamespace WHERE n.nspname='dzoka' AND a.attnum>0 AND NOT a.attisdropped) x)

@@ -26,15 +26,27 @@ public final class RecoveryIntelligence {
                       SELECT id,'RETURNED',site_id,site_id,created_at,created_at FROM dzoka.recovery_returns
                       WHERE intake_id=? AND created_at<=?
                         AND EXISTS(SELECT 1 FROM dzoka.recovery_report_status(intake_id) s WHERE s.available)
+                      UNION ALL
+                      SELECT cc.shipment_id,'COURIER_DISPATCHED',i.site_id,NULL::uuid,cc.dispatched_at,cc.dispatched_at
+                      FROM dzoka.courier_custody cc JOIN dzoka.recovery_intakes i ON(i.tenant_id,i.id)=(cc.tenant_id,cc.intake_id)
+                      WHERE cc.intake_id=? AND cc.dispatched_at<=?
+                        AND EXISTS(SELECT 1 FROM dzoka.recovery_report_status(cc.intake_id) s WHERE s.available)
+                      UNION ALL
+                      SELECT cc.shipment_id,cc.receipt_kind,i.site_id,i.site_id,cc.received_at,cc.received_at
+                      FROM dzoka.courier_custody cc JOIN dzoka.recovery_intakes i ON(i.tenant_id,i.id)=(cc.tenant_id,cc.intake_id)
+                      WHERE cc.intake_id=? AND cc.closed AND cc.received_at<=?
+                        AND EXISTS(SELECT 1 FROM dzoka.recovery_report_status(cc.intake_id) s WHERE s.available)
                     ) observations
                     ORDER BY recorded_at,id LIMIT 200
                     """)) {
                 query.setObject(1,intake);query.setTimestamp(2,java.sql.Timestamp.from(cutoff));query.setTimestamp(3,java.sql.Timestamp.from(cutoff));
                 query.setObject(4,intake);query.setTimestamp(5,java.sql.Timestamp.from(cutoff));
+                query.setObject(6,intake);query.setTimestamp(7,java.sql.Timestamp.from(cutoff));
+                query.setObject(8,intake);query.setTimestamp(9,java.sql.Timestamp.from(cutoff));
                 try(var row=query.executeQuery()) {
                     while(row.next()) edges.add(new Edge(row.getObject(1,UUID.class),row.getString(2),row.getObject(3,UUID.class),
                             row.getObject(4,UUID.class),row.getTimestamp(5).toInstant(),row.getTimestamp(6).toInstant(),
-                            Set.of("STORED","TRANSFER_ACCEPTED","INCIDENT","RETURNED").contains(row.getString(2))?"OBSERVED":"UNCONFIRMED"));
+                            Set.of("STORED","TRANSFER_ACCEPTED","INCIDENT","RETURNED","COURIER_DISPATCHED","OWNER_RETURN","STAFF_RETURN").contains(row.getString(2))?"OBSERVED":"UNCONFIRMED"));
                 }
             }
             return List.copyOf(edges);
