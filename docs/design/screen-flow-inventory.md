@@ -10,6 +10,12 @@ Repository-derived editable design inventory · 2026-11-27 · Dzoka remains a te
 
 [Open Dzoka](https://penpot.nyasham.dev/?screen=workspace&team-id=a5efc7a3-ef74-80db-8008-f02c367e6621&file-id=456d79de-921a-81c4-8009-02637f9b3b01) · [JSON inventory](screen-flow-inventory.json) · [Completion plan](flow-completion-plan.json)
 
+## Interactive prototype
+
+[Play the prototype](https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-028a30190730&frame-id=01c1c9a5-459f-804b-8009-028a54c3c6ba&section=interactions&zoom=fit) · [Guide and live-viewer checks](interactive-prototype.md) · [Native interaction receipt](interactive-prototype.json)
+
+The prototype adds a continuous 27-state recovery journey, seven native overlays and 26 focused-flow entry points. The actual graph reaches every recovery state with no invalid local targets. Sample form entry, confirmation/cancel and expired-pass paths were exercised in the live viewer. Canonical concept counts remain 215; prototype copies are recorded separately.
+
 ## Meaning and authority
 
 Designed means native editable concepts, branch outcomes and primary navigation exist with recorded evidence. It does not establish runtime behavior, institutional/financial policy adoption, live credentials, performance, accessibility conformance or provider acceptance. Original source research and previous evidence remain preserved.

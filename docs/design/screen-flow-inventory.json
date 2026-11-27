@@ -10768,7 +10768,15 @@
         "Confirmed identity → A05; current membership determines access.",
         "Denied workspace → E05; expired session → E06; account recovery → A04."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F01",
+        "start": "A01",
+        "page": "3885c71d-2bc7-8052-8009-026e252e2168",
+        "board": "3885c71d-2bc7-8052-8009-026e291218ea",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec327491c",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026e252e2168&frame-id=3885c71d-2bc7-8052-8009-026e291218ea&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F02",
@@ -10799,7 +10807,15 @@
         "Valid submission → M04; missing detail → E03.",
         "Offline → C14; interrupted upload → E01; quarantine → E02; restored connection → E08."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F02",
+        "start": "M02",
+        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+        "board": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec34aca28",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288d9235c4e&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F03",
@@ -10824,7 +10840,15 @@
         "Available candidates → M05/M06; no candidates → C04; partial routes → C05.",
         "Reliable identity contradiction → C15; unavailable evidence is not mismatch."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F03",
+        "start": "M05",
+        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+        "board": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec36ca6e1",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288e16af4b5&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F04",
@@ -10852,7 +10876,15 @@
         "Private submission → C07; representative evidence → C12; more proof → C06.",
         "Inconclusive → C08; not approved → C09; withdrawal → C10; attempt limit → E04."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F04",
+        "start": "M06",
+        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+        "board": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec38e170c",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288e428eafb&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F05",
@@ -10879,7 +10911,15 @@
         "Independent approval and current policy permit M09; pending review cannot issue a pass.",
         "Expired pass → C13; active hold → E07; wrong/used/invalid pass → S19; actual recipient and item check → D11/D12."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F05",
+        "start": "M09",
+        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+        "board": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec3b2291f",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288f5566ad3&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F06",
@@ -10903,7 +10943,15 @@
         "Finder report → M10/M13; staff intake → D03.",
         "Only nominated receiver accepts → S06; stale generation → S07; report alone never transfers custody."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F06",
+        "start": "M10",
+        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+        "board": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec3d67b88",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288f88b9e92&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F07",
@@ -10925,7 +10973,15 @@
         "Only REQUEST_UPDATE, READY_TO_ARRANGE_PICKUP and THANK_YOU in current claim relay → M11/C11.",
         "Flag/block and scoped abuse review → S17; no arbitrary private answers sent outbound."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F07",
+        "start": "M11",
+        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+        "board": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec3fdabc0",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288fa8d360d&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F08",
@@ -10957,7 +11013,7 @@
         "Explicit channel consent → A07; availability → O07.",
         "Unknown send/callback outcome → O08; signed replay-checked delivery cannot change custody."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Channel-specific template editor and variable safety",
         "Source/target locale preview with review gating",
@@ -10972,7 +11028,15 @@
         "Throttled, unknown, rejected and confirmed-delivery branches"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-028069bae3d3",
-      "detailPageId": "01c1c9a5-459f-804b-8009-027fd49031a5"
+      "detailPageId": "01c1c9a5-459f-804b-8009-027fd49031a5",
+      "prototypeEntry": {
+        "flow": "F08",
+        "start": "N01",
+        "page": "01c1c9a5-459f-804b-8009-027fd49031a5",
+        "board": "01c1c9a5-459f-804b-8009-027fe071f986",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec41a57a5",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-027fd49031a5&frame-id=01c1c9a5-459f-804b-8009-027fe071f986&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F09",
@@ -11008,7 +11072,7 @@
         "Private route consent → L02; quote review → L03; current staff authority required before dispatch.",
         "Unknown booking → L04; cancellation → L17; provider facts cannot release property."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Private route and expired/unserviceable quote branches",
         "Dedicated staff booking with current review/custody",
@@ -11023,7 +11087,15 @@
         "Cancellation confirmed/unknown/too-late branches"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-0281b670f9d3",
-      "detailPageId": "01c1c9a5-459f-804b-8009-028166f2473a"
+      "detailPageId": "01c1c9a5-459f-804b-8009-028166f2473a",
+      "prototypeEntry": {
+        "flow": "F09",
+        "start": "Q01",
+        "page": "01c1c9a5-459f-804b-8009-028166f2473a",
+        "board": "01c1c9a5-459f-804b-8009-028172a6fb36",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec43b9893",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-028166f2473a&frame-id=01c1c9a5-459f-804b-8009-028172a6fb36&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F10",
@@ -11047,7 +11119,15 @@
         "Provider tracking → L05; actual receipt confirmation → L06/L07.",
         "Changed policy/hold in transit → S11/S12; delivery alone never confirms owner return."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F10",
+        "start": "L06",
+        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+        "board": "01c1c9a5-459f-804b-8009-028914cb024e",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec45bb58e",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-028914cb024e&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F11",
@@ -11085,7 +11165,7 @@
         "Immutable terms → L20; unknown payment → L15; dispute → L10/S13.",
         "Ledger evidence → S14; refund/reversal → L16; no unconfirmed or fabricated recovered funds."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Explicit immutable terms and payment consent",
         "Declined, unknown, reserve and settlement states",
@@ -11100,7 +11180,15 @@
         "Confirmed refund/reversal with compensating ledger and unsupported outcomes"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-02822c134a16",
-      "detailPageId": "01c1c9a5-459f-804b-8009-0281e6d5eb6b"
+      "detailPageId": "01c1c9a5-459f-804b-8009-0281e6d5eb6b",
+      "prototypeEntry": {
+        "flow": "F11",
+        "start": "W01",
+        "page": "01c1c9a5-459f-804b-8009-0281e6d5eb6b",
+        "board": "01c1c9a5-459f-804b-8009-0281f1fd150f",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec47c13b3",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0281e6d5eb6b&frame-id=01c1c9a5-459f-804b-8009-0281f1fd150f&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F12",
@@ -11134,7 +11222,7 @@
         "Private item → L11/L12; tag management → L13/L19; unavailable tag → L18.",
         "Finder phrase relay → L14; a tag scan never creates a claim or ownership authority."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Private QR/NFC issuance and secure-download/print layout",
         "NFC write-success/retry flow",
@@ -11149,7 +11237,15 @@
         "Finder privacy/phrase limits"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-0282a4b990a9",
-      "detailPageId": "01c1c9a5-459f-804b-8009-0282637eb3d6"
+      "detailPageId": "01c1c9a5-459f-804b-8009-0282637eb3d6",
+      "prototypeEntry": {
+        "flow": "F12",
+        "start": "T01",
+        "page": "01c1c9a5-459f-804b-8009-0282637eb3d6",
+        "board": "01c1c9a5-459f-804b-8009-02826d432b1c",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec49b111a",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0282637eb3d6&frame-id=01c1c9a5-459f-804b-8009-02826d432b1c&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F13",
@@ -11175,7 +11271,15 @@
         "Queue → S01; competing claims → S02; risk/holds → S03.",
         "Scoped evidence access → S04; staff-attested safe challenge → S05; expected answer stays secret."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F13",
+        "start": "D01",
+        "page": "3885c71d-2bc7-8052-8009-0266ab070036",
+        "board": "3885c71d-2bc7-8052-8009-0266df49b06a",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec4bc071d",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-0266ab070036&frame-id=3885c71d-2bc7-8052-8009-0266df49b06a&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F14",
@@ -11198,7 +11302,15 @@
         "Transfer acceptance → S06; stale update → S07.",
         "Incident → S08 creates a hold; no stale or offline observation overwrites custody."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F14",
+        "start": "D06",
+        "page": "3885c71d-2bc7-8052-8009-0266ab070036",
+        "board": "3885c71d-2bc7-8052-8009-0267340adc9e",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec4dc11d9",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-0266ab070036&frame-id=3885c71d-2bc7-8052-8009-0267340adc9e&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F15",
@@ -11224,7 +11336,7 @@
         "Retention queue → S09; legal hold blocks terminal actions.",
         "Current eligibility, reason and recipient evidence are required for S10."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Configurable institution policy/eligibility not invented legal defaults",
         "Recipient and destination evidence",
@@ -11239,7 +11351,15 @@
         "Final audited disposition confirmation"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-028330238c0e",
-      "detailPageId": "01c1c9a5-459f-804b-8009-0282ea982848"
+      "detailPageId": "01c1c9a5-459f-804b-8009-0282ea982848",
+      "prototypeEntry": {
+        "flow": "F15",
+        "start": "DPO1",
+        "page": "01c1c9a5-459f-804b-8009-0282ea982848",
+        "board": "01c1c9a5-459f-804b-8009-0282f801a52f",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec4febb8f",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0282ea982848&frame-id=01c1c9a5-459f-804b-8009-0282f801a52f&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F16",
@@ -11267,7 +11387,7 @@
         "Exact purpose, camera, time, expiry and budget → S15.",
         "Masked crop review → S16; source scene → D08; no default facial recognition."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Editable integer source region and disclosure mask with validation",
         "Changed plan requires fresh independent approval",
@@ -11282,7 +11402,15 @@
         "Grant revocation and governed purge outcome"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-0283d3353475",
-      "detailPageId": "01c1c9a5-459f-804b-8009-02837e10310c"
+      "detailPageId": "01c1c9a5-459f-804b-8009-02837e10310c",
+      "prototypeEntry": {
+        "flow": "F16",
+        "start": "V01",
+        "page": "01c1c9a5-459f-804b-8009-02837e10310c",
+        "board": "01c1c9a5-459f-804b-8009-0283899389e6",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec520187a",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02837e10310c&frame-id=01c1c9a5-459f-804b-8009-0283899389e6&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F17",
@@ -11305,7 +11433,15 @@
         "Peer-local ranks and explicit availability → D07.",
         "Bilateral trust/key controls → O09/O10; stale or withdrawn offers → S18."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F17",
+        "start": "D07",
+        "page": "3885c71d-2bc7-8052-8009-0266ab070036",
+        "board": "3885c71d-2bc7-8052-8009-0267960b13fd",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec540685b",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-0266ab070036&frame-id=3885c71d-2bc7-8052-8009-0267960b13fd&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F18",
@@ -11326,7 +11462,15 @@
         "History → O11; mapping/source/correction → O12.",
         "202 submission is not completed capture; corrections append rather than replace originals."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F18",
+        "start": "O11",
+        "page": "3885c71d-2bc7-8052-8009-026fbaca2aa5",
+        "board": "3885c71d-2bc7-8052-8009-02701f7d3318",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec55fc8d8",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026fbaca2aa5&frame-id=3885c71d-2bc7-8052-8009-02701f7d3318&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F19",
@@ -11356,7 +11500,7 @@
         "Members/scopes → O01/O02; sites/pickup policy → O03.",
         "Policy/hold change → O04 requires current approval checks; tenant scope remains explicit."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "IdP enrollment handoff separate from local membership",
         "Site/permission matrix and independent-review conflicts",
@@ -11371,7 +11515,15 @@
         "Policy change impact and stale-version confirmation"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-02842eca9183",
-      "detailPageId": "01c1c9a5-459f-804b-8009-0283fbc0f956"
+      "detailPageId": "01c1c9a5-459f-804b-8009-0283fbc0f956",
+      "prototypeEntry": {
+        "flow": "F19",
+        "start": "AOP1",
+        "page": "01c1c9a5-459f-804b-8009-0283fbc0f956",
+        "board": "01c1c9a5-459f-804b-8009-0284065ad62d",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec580182c",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0283fbc0f956&frame-id=01c1c9a5-459f-804b-8009-0284065ad62d&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F20",
@@ -11394,7 +11546,15 @@
         "Request → A08/A09; retention queue → O05; detailed scope → O06.",
         "Legal holds block incompatible deletion; derivatives and post-backup tombstones stay in scope."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F20",
+        "start": "O05",
+        "page": "3885c71d-2bc7-8052-8009-026fbaca2aa5",
+        "board": "3885c71d-2bc7-8052-8009-026fc6c362e9",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec59eea39",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026fbaca2aa5&frame-id=3885c71d-2bc7-8052-8009-026fc6c362e9&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F21",
@@ -11423,7 +11583,7 @@
         "Availability and callback operation → O07/O08.",
         "Permitted source terms/provenance → O13; scoped client/template configuration → O14; secrets are not printed."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Scoped partner client setup without printing secrets",
         "Origin/permission/rotation review and signed test failure",
@@ -11438,7 +11598,15 @@
         "Channel/template localisation handoff"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-028489af6caa",
-      "detailPageId": "01c1c9a5-459f-804b-8009-02845af171a3"
+      "detailPageId": "01c1c9a5-459f-804b-8009-02845af171a3",
+      "prototypeEntry": {
+        "flow": "F21",
+        "start": "I01",
+        "page": "01c1c9a5-459f-804b-8009-02845af171a3",
+        "board": "01c1c9a5-459f-804b-8009-0284661124e8",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec5bfbc9e",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02845af171a3&frame-id=01c1c9a5-459f-804b-8009-0284661124e8&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F22",
@@ -11462,7 +11630,15 @@
         "Tenant/node readiness → P01/P02; jobs → P03.",
         "Restore erasures must replay before serving; provider/quotas/audit → P09/P10; ambiguous sends reconcile."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F22",
+        "start": "P01",
+        "page": "3885c71d-2bc7-8052-8009-02706542568f",
+        "board": "3885c71d-2bc7-8052-8009-027065765863",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec5dfbe10",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-02706542568f&frame-id=3885c71d-2bc7-8052-8009-027065765863&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F23",
@@ -11495,7 +11671,7 @@
         "Input/model provenance → P04; independent labels/frozen splits → P05.",
         "Evaluation/calibration → P06; incomplete quality blocks P07; only valid explicit rollback → P08."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Frozen dataset editor, consent and source-validity blocks",
         "Independent source-bound adjudication form",
@@ -11510,7 +11686,15 @@
         "Independent promotion and compare-version rollback confirmation"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-0284ed2c7698",
-      "detailPageId": "01c1c9a5-459f-804b-8009-0284b316e091"
+      "detailPageId": "01c1c9a5-459f-804b-8009-0284b316e091",
+      "prototypeEntry": {
+        "flow": "F23",
+        "start": "G01",
+        "page": "01c1c9a5-459f-804b-8009-0284b316e091",
+        "board": "01c1c9a5-459f-804b-8009-0284bf602922",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec602d709",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0284b316e091&frame-id=01c1c9a5-459f-804b-8009-0284bf602922&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F24",
@@ -11538,7 +11722,7 @@
         "Tenant operational summary → D09; observed/inferred pathways → P11.",
         "Insufficient support stays unavailable; optional hardware/consent → P12, disabled until adopted."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "All specified report families selectable with definitions/denominators",
         "Suppression/no-data/permission export states",
@@ -11553,7 +11737,15 @@
         "Optional provider adoption and revocable device consent"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-02854c23e6b8",
-      "detailPageId": "01c1c9a5-459f-804b-8009-02851e8c7635"
+      "detailPageId": "01c1c9a5-459f-804b-8009-02851e8c7635",
+      "prototypeEntry": {
+        "flow": "F24",
+        "start": "H01",
+        "page": "01c1c9a5-459f-804b-8009-02851e8c7635",
+        "board": "01c1c9a5-459f-804b-8009-028528c6dc99",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec624d847",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02851e8c7635&frame-id=01c1c9a5-459f-804b-8009-028528c6dc99&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F25",
@@ -11587,7 +11779,7 @@
         "Desktop reporting/verification → R01/R02; mobile staff inventory/acceptance → R03/R04.",
         "Tablet collection/overview → R05/R06; full breakpoint and accessibility acceptance remain open."
       ],
-      "prototypeScope": "Dedicated forms/confirmations/branch-state views, linked stage navigation and flow guide. Critical actions are nonfunctional prototype illustrations.",
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
       "completionCriteria": [
         "Route-family breakpoint contract for all flows, not six isolated examples",
         "Mobile/tablet/desktop state navigation and focus/error behavior",
@@ -11602,7 +11794,15 @@
         "Keyboard and screen-reader design annotations with no conformance claim"
       ],
       "guideBoard": "01c1c9a5-459f-804b-8009-0285b08c0b3f",
-      "detailPageId": "01c1c9a5-459f-804b-8009-02857bd89943"
+      "detailPageId": "01c1c9a5-459f-804b-8009-02857bd89943",
+      "prototypeEntry": {
+        "flow": "F25",
+        "start": "B01",
+        "page": "01c1c9a5-459f-804b-8009-02857bd89943",
+        "board": "01c1c9a5-459f-804b-8009-028586dc8553",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec6450930",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02857bd89943&frame-id=01c1c9a5-459f-804b-8009-028586dc8553&section=interactions&zoom=fit"
+      }
     },
     {
       "id": "F26",
@@ -11629,7 +11829,15 @@
         "Upload/validation/quarantine → E01/E02/E03; throttling → E04.",
         "Access/session → E05/E06; hold → E07; reconnection → E08 without replaying critical actions."
       ],
-      "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
+      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeEntry": {
+        "flow": "F26",
+        "start": "E01",
+        "page": "3885c71d-2bc7-8052-8009-02710c362d3e",
+        "board": "3885c71d-2bc7-8052-8009-02710d9d902f",
+        "hotspot": "01c1c9a5-459f-804b-8009-028ec664b08b",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-02710c362d3e&frame-id=3885c71d-2bc7-8052-8009-02710d9d902f&section=interactions&zoom=fit"
+      }
     }
   ],
   "state": "All eleven recorded partial-flow design gaps completed; 215 editable concepts and 26 designed concept flows.",
@@ -11654,9 +11862,16 @@
   },
   "resume": [],
   "prototype": {
-    "samePage": "Native navigate-to; new mobile back controls use previous-screen history.",
-    "crossPage": "Explicit same-file viewer URLs open a new tab because native cross-page navigate-to is unsupported.",
-    "scope": "All 130 states are indexed in the 26-flow catalogue. Main actions/section links are connected. Forms, protected actions and external providers do not execute."
+    "status": "Native interactive design prototype; preset inputs and synthetic outcomes",
+    "launcherUrl": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-028a30190730&frame-id=01c1c9a5-459f-804b-8009-028a54c3c6ba&section=interactions&zoom=fit",
+    "recoveryUrl": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288d6ec44cf&section=interactions&zoom=fit",
+    "receipt": "docs/design/interactive-prototype.json",
+    "guide": "docs/design/interactive-prototype.md",
+    "entryPoints": 26,
+    "continuousRecoveryStates": 27,
+    "nativeRecoveryOverlays": 7,
+    "reachableStatesVerified": 27,
+    "runtimeAcceptance": false
   },
   "verification": {
     "auditGate": "PASS; rerun with final repository checks",

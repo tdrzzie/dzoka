@@ -21,7 +21,7 @@ Forms use preset sample states. Arbitrary typing, real uploads, device writes an
 
 - Same-page recovery navigation, back routes, sample evidence entry, confirmation, cancellation, message feedback and alternate outcomes.
 - Seven recovery overlays: scenarios, report submission, sample evidence, claim confirmation, owner receipt, queued message and conversation safety.
-- Forty-two new result-row links across notifications, courier, rewards, access requests, connectors, model governance and analytics.
+- Thirty-seven new result-row links across notifications, courier, rewards, access requests, connectors, model governance and analytics.
 - Native confirmation overlays with explicit close controls for relevant focused flows; simulated NFC and investigation result choosers.
 - A compact desktop launcher with 26 clickable flow cards.
 
