@@ -1,0 +1,1196 @@
+{
+  "date": "2026-11-27",
+  "fileId": "456d79de-921a-81c4-8009-02637f9b3b01",
+  "pages": {
+    "owner": "01c1c9a5-459f-804b-8009-0288142c2967",
+    "launcher": "01c1c9a5-459f-804b-8009-028a30190730"
+  },
+  "launcher": {
+    "board": "01c1c9a5-459f-804b-8009-028a54c3c6ba",
+    "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-028a30190730&frame-id=01c1c9a5-459f-804b-8009-028a54c3c6ba&section=interactions&zoom=fit"
+  },
+  "recovery": {
+    "board": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+    "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288d6ec44cf&section=interactions&zoom=fit"
+  },
+  "states": [
+    {
+      "id": "M01",
+      "board": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026565a41470",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M02",
+      "board": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026566a3b5fa",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M03",
+      "board": "01c1c9a5-459f-804b-8009-0288da559cd6",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265674187fb",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M04",
+      "board": "01c1c9a5-459f-804b-8009-0288dba45ece",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265680aeb15",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M05",
+      "board": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265ad957c5d",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M06",
+      "board": "01c1c9a5-459f-804b-8009-0288e428eafb",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265af456eef",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M07",
+      "board": "01c1c9a5-459f-804b-8009-0288e5dd3827",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265aff60b44",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M08",
+      "board": "01c1c9a5-459f-804b-8009-0288e72e7651",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265b08dfdca",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M09",
+      "board": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265fe0199b4",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M10",
+      "board": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0266020e7c28",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M11",
+      "board": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026603150fb3",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M12",
+      "board": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0266048a68bc",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M13",
+      "board": "01c1c9a5-459f-804b-8009-028904cdc249",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0266a7875bb4",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M14",
+      "board": "01c1c9a5-459f-804b-8009-028906538248",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0266a9ad8229",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "C07",
+      "board": "01c1c9a5-459f-804b-8009-02890815ecbf",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e56f986a5",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "C13",
+      "board": "01c1c9a5-459f-804b-8009-0289097e1ae2",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e5b592224",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "C15",
+      "board": "01c1c9a5-459f-804b-8009-0289104d2afa",
+      "sourceBoard": "46d4ce92-2766-80d6-8009-02768d8ac162",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "E03",
+      "board": "01c1c9a5-459f-804b-8009-028911bbd903",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-02710eca8415",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "L01",
+      "board": "01c1c9a5-459f-804b-8009-0289134963e2",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e7c74077f",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "L06",
+      "board": "01c1c9a5-459f-804b-8009-028914cb024e",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e7feeffd1",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "L07",
+      "board": "01c1c9a5-459f-804b-8009-028916698802",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e809bd3d1",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "C09",
+      "board": "01c1c9a5-459f-804b-8009-02893c9717ca",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e584931e3",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "L02",
+      "board": "01c1c9a5-459f-804b-8009-02893d9704ca",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e7d58c539",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "L03",
+      "board": "01c1c9a5-459f-804b-8009-02893e96a269",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e7e00879a",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "L04",
+      "board": "01c1c9a5-459f-804b-8009-02893f7efe99",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e7ea9c15b",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "L05",
+      "board": "01c1c9a5-459f-804b-8009-0289408781a0",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-026e7f45a063",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    },
+    {
+      "id": "M07_FILLED",
+      "board": "01c1c9a5-459f-804b-8009-0289a81d4b53",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265aff60b44",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967"
+    }
+  ],
+  "overlays": [
+    {
+      "name": "scenarios",
+      "board": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+      "width": 366.00000858306885,
+      "height": 708.0000042915344
+    },
+    {
+      "name": "report",
+      "board": "01c1c9a5-459f-804b-8009-02897dee3098",
+      "width": 366.00000858306885,
+      "height": 430.0000190734863
+    },
+    {
+      "name": "evidence",
+      "board": "01c1c9a5-459f-804b-8009-02897faeb074",
+      "width": 366.00000858306885,
+      "height": 430.0000190734863
+    },
+    {
+      "name": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-028981cfc66f",
+      "width": 366.00000858306885,
+      "height": 430.0000190734863
+    },
+    {
+      "name": "message",
+      "board": "01c1c9a5-459f-804b-8009-028983e257b7",
+      "width": 366.00000858306885,
+      "height": 300
+    },
+    {
+      "name": "safety",
+      "board": "01c1c9a5-459f-804b-8009-028984f02b37",
+      "width": 366.00000858306885,
+      "height": 359.99999046325684
+    },
+    {
+      "name": "claim-confirm",
+      "board": "01c1c9a5-459f-804b-8009-0289a90bcd3d",
+      "width": 366.00000858306885,
+      "height": 359.99999046325684
+    }
+  ],
+  "entries": [
+    {
+      "flow": "F01",
+      "start": "A01",
+      "page": "3885c71d-2bc7-8052-8009-026e252e2168",
+      "board": "3885c71d-2bc7-8052-8009-026e291218ea",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec327491c",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026e252e2168&frame-id=3885c71d-2bc7-8052-8009-026e291218ea&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F02",
+      "start": "M02",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+      "board": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec34aca28",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288d9235c4e&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F03",
+      "start": "M05",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+      "board": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec36ca6e1",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288e16af4b5&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F04",
+      "start": "M06",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+      "board": "01c1c9a5-459f-804b-8009-0288e428eafb",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec38e170c",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288e428eafb&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F05",
+      "start": "M09",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+      "board": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec3b2291f",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288f5566ad3&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F06",
+      "start": "M10",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+      "board": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec3d67b88",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288f88b9e92&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F07",
+      "start": "M11",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+      "board": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec3fdabc0",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288fa8d360d&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F08",
+      "start": "N01",
+      "page": "01c1c9a5-459f-804b-8009-027fd49031a5",
+      "board": "01c1c9a5-459f-804b-8009-027fe071f986",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec41a57a5",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-027fd49031a5&frame-id=01c1c9a5-459f-804b-8009-027fe071f986&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F09",
+      "start": "Q01",
+      "page": "01c1c9a5-459f-804b-8009-028166f2473a",
+      "board": "01c1c9a5-459f-804b-8009-028172a6fb36",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec43b9893",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-028166f2473a&frame-id=01c1c9a5-459f-804b-8009-028172a6fb36&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F10",
+      "start": "L06",
+      "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+      "board": "01c1c9a5-459f-804b-8009-028914cb024e",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec45bb58e",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-028914cb024e&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F11",
+      "start": "W01",
+      "page": "01c1c9a5-459f-804b-8009-0281e6d5eb6b",
+      "board": "01c1c9a5-459f-804b-8009-0281f1fd150f",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec47c13b3",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0281e6d5eb6b&frame-id=01c1c9a5-459f-804b-8009-0281f1fd150f&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F12",
+      "start": "T01",
+      "page": "01c1c9a5-459f-804b-8009-0282637eb3d6",
+      "board": "01c1c9a5-459f-804b-8009-02826d432b1c",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec49b111a",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0282637eb3d6&frame-id=01c1c9a5-459f-804b-8009-02826d432b1c&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F13",
+      "start": "D01",
+      "page": "3885c71d-2bc7-8052-8009-0266ab070036",
+      "board": "3885c71d-2bc7-8052-8009-0266df49b06a",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec4bc071d",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-0266ab070036&frame-id=3885c71d-2bc7-8052-8009-0266df49b06a&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F14",
+      "start": "D06",
+      "page": "3885c71d-2bc7-8052-8009-0266ab070036",
+      "board": "3885c71d-2bc7-8052-8009-0267340adc9e",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec4dc11d9",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-0266ab070036&frame-id=3885c71d-2bc7-8052-8009-0267340adc9e&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F15",
+      "start": "DPO1",
+      "page": "01c1c9a5-459f-804b-8009-0282ea982848",
+      "board": "01c1c9a5-459f-804b-8009-0282f801a52f",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec4febb8f",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0282ea982848&frame-id=01c1c9a5-459f-804b-8009-0282f801a52f&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F16",
+      "start": "V01",
+      "page": "01c1c9a5-459f-804b-8009-02837e10310c",
+      "board": "01c1c9a5-459f-804b-8009-0283899389e6",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec520187a",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02837e10310c&frame-id=01c1c9a5-459f-804b-8009-0283899389e6&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F17",
+      "start": "D07",
+      "page": "3885c71d-2bc7-8052-8009-0266ab070036",
+      "board": "3885c71d-2bc7-8052-8009-0267960b13fd",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec540685b",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-0266ab070036&frame-id=3885c71d-2bc7-8052-8009-0267960b13fd&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F18",
+      "start": "O11",
+      "page": "3885c71d-2bc7-8052-8009-026fbaca2aa5",
+      "board": "3885c71d-2bc7-8052-8009-02701f7d3318",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec55fc8d8",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026fbaca2aa5&frame-id=3885c71d-2bc7-8052-8009-02701f7d3318&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F19",
+      "start": "AOP1",
+      "page": "01c1c9a5-459f-804b-8009-0283fbc0f956",
+      "board": "01c1c9a5-459f-804b-8009-0284065ad62d",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec580182c",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0283fbc0f956&frame-id=01c1c9a5-459f-804b-8009-0284065ad62d&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F20",
+      "start": "O05",
+      "page": "3885c71d-2bc7-8052-8009-026fbaca2aa5",
+      "board": "3885c71d-2bc7-8052-8009-026fc6c362e9",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec59eea39",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026fbaca2aa5&frame-id=3885c71d-2bc7-8052-8009-026fc6c362e9&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F21",
+      "start": "I01",
+      "page": "01c1c9a5-459f-804b-8009-02845af171a3",
+      "board": "01c1c9a5-459f-804b-8009-0284661124e8",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec5bfbc9e",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02845af171a3&frame-id=01c1c9a5-459f-804b-8009-0284661124e8&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F22",
+      "start": "P01",
+      "page": "3885c71d-2bc7-8052-8009-02706542568f",
+      "board": "3885c71d-2bc7-8052-8009-027065765863",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec5dfbe10",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-02706542568f&frame-id=3885c71d-2bc7-8052-8009-027065765863&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F23",
+      "start": "G01",
+      "page": "01c1c9a5-459f-804b-8009-0284b316e091",
+      "board": "01c1c9a5-459f-804b-8009-0284bf602922",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec602d709",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0284b316e091&frame-id=01c1c9a5-459f-804b-8009-0284bf602922&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F24",
+      "start": "H01",
+      "page": "01c1c9a5-459f-804b-8009-02851e8c7635",
+      "board": "01c1c9a5-459f-804b-8009-028528c6dc99",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec624d847",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02851e8c7635&frame-id=01c1c9a5-459f-804b-8009-028528c6dc99&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F25",
+      "start": "B01",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943",
+      "board": "01c1c9a5-459f-804b-8009-028586dc8553",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec6450930",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-02857bd89943&frame-id=01c1c9a5-459f-804b-8009-028586dc8553&section=interactions&zoom=fit"
+    },
+    {
+      "flow": "F26",
+      "start": "E01",
+      "page": "3885c71d-2bc7-8052-8009-02710c362d3e",
+      "board": "3885c71d-2bc7-8052-8009-02710d9d902f",
+      "hotspot": "01c1c9a5-459f-804b-8009-028ec664b08b",
+      "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-02710c362d3e&frame-id=3885c71d-2bc7-8052-8009-02710d9d902f&section=interactions&zoom=fit"
+    }
+  ],
+  "upgrades": [
+    {
+      "flow": "F08",
+      "page": "01c1c9a5-459f-804b-8009-027fd49031a5",
+      "rowBranches": 5,
+      "overlayTriggers": 0
+    },
+    {
+      "flow": "F09",
+      "page": "01c1c9a5-459f-804b-8009-028166f2473a",
+      "rowBranches": 5,
+      "overlayTriggers": 2
+    },
+    {
+      "flow": "F11",
+      "page": "01c1c9a5-459f-804b-8009-0281e6d5eb6b",
+      "rowBranches": 8,
+      "overlayTriggers": 1
+    },
+    {
+      "flow": "F12",
+      "page": "01c1c9a5-459f-804b-8009-0282637eb3d6",
+      "rowBranches": 0,
+      "overlayTriggers": 1
+    },
+    {
+      "flow": "F15",
+      "page": "01c1c9a5-459f-804b-8009-0282ea982848",
+      "rowBranches": 0,
+      "overlayTriggers": 1
+    },
+    {
+      "flow": "F16",
+      "page": "01c1c9a5-459f-804b-8009-02837e10310c",
+      "rowBranches": 0,
+      "overlayTriggers": 1
+    },
+    {
+      "flow": "F19",
+      "page": "01c1c9a5-459f-804b-8009-0283fbc0f956",
+      "rowBranches": 3,
+      "overlayTriggers": 1
+    },
+    {
+      "flow": "F21",
+      "page": "01c1c9a5-459f-804b-8009-02845af171a3",
+      "rowBranches": 4,
+      "overlayTriggers": 0
+    },
+    {
+      "flow": "F23",
+      "page": "01c1c9a5-459f-804b-8009-0284b316e091",
+      "rowBranches": 7,
+      "overlayTriggers": 5
+    },
+    {
+      "flow": "F24",
+      "page": "01c1c9a5-459f-804b-8009-02851e8c7635",
+      "rowBranches": 5,
+      "overlayTriggers": 2
+    },
+    {
+      "flow": "F25",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943",
+      "rowBranches": 0,
+      "overlayTriggers": 0
+    }
+  ],
+  "graph": {
+    "links": [
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "source": "01c1c9a5-459f-804b-8009-0288d8c620b8",
+        "to": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "source": "01c1c9a5-459f-804b-8009-0288d8e13012",
+        "to": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "source": "01c1c9a5-459f-804b-8009-0288d8ff98c2",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "source": "01c1c9a5-459f-804b-8009-0288d9099a3f",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "source": "01c1c9a5-459f-804b-8009-0288d9125353",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "source": "01c1c9a5-459f-804b-8009-0288d91995ac",
+        "to": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "source": "01c1c9a5-459f-804b-8009-028986881705",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+        "source": "01c1c9a5-459f-804b-8009-0288da2f41c6",
+        "to": "01c1c9a5-459f-804b-8009-0288da559cd6",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+        "source": "01c1c9a5-459f-804b-8009-0288da4d2805",
+        "to": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+        "source": "01c1c9a5-459f-804b-8009-028986f17b8c",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288da559cd6",
+        "source": "01c1c9a5-459f-804b-8009-0288db798adc",
+        "to": "01c1c9a5-459f-804b-8009-02897dee3098",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288da559cd6",
+        "source": "01c1c9a5-459f-804b-8009-0288db9ab1ee",
+        "to": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288da559cd6",
+        "source": "01c1c9a5-459f-804b-8009-0289874ae08a",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288dba45ece",
+        "source": "01c1c9a5-459f-804b-8009-0288dca6a6e5",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288dba45ece",
+        "source": "01c1c9a5-459f-804b-8009-0288dccb256c",
+        "to": "01c1c9a5-459f-804b-8009-0288da559cd6",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288dba45ece",
+        "source": "01c1c9a5-459f-804b-8009-028987a67667",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "source": "01c1c9a5-459f-804b-8009-0288e3d46bf7",
+        "to": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "source": "01c1c9a5-459f-804b-8009-0288e3e2e452",
+        "to": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "source": "01c1c9a5-459f-804b-8009-0288e3ef616d",
+        "to": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "source": "01c1c9a5-459f-804b-8009-0288e3fde62e",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "source": "01c1c9a5-459f-804b-8009-0288e40bd87d",
+        "to": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "source": "01c1c9a5-459f-804b-8009-0288e4190d59",
+        "to": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "source": "01c1c9a5-459f-804b-8009-028987fa4590",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "source": "01c1c9a5-459f-804b-8009-0288e5a3a329",
+        "to": "01c1c9a5-459f-804b-8009-0288e5dd3827",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "source": "01c1c9a5-459f-804b-8009-0288e5cfee75",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "source": "01c1c9a5-459f-804b-8009-02898872771f",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e5dd3827",
+        "source": "01c1c9a5-459f-804b-8009-0288e6f24cbc",
+        "to": "01c1c9a5-459f-804b-8009-02897faeb074",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e5dd3827",
+        "source": "01c1c9a5-459f-804b-8009-0288e7220972",
+        "to": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e5dd3827",
+        "source": "01c1c9a5-459f-804b-8009-028988e8d629",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e5dd3827",
+        "source": "01c1c9a5-459f-804b-8009-0289aa77945e",
+        "to": "01c1c9a5-459f-804b-8009-02897faeb074",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289a81d4b53",
+        "source": "01c1c9a5-459f-804b-8009-0289a81d4b55",
+        "to": "01c1c9a5-459f-804b-8009-0289a90bcd3d",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289a81d4b53",
+        "source": "01c1c9a5-459f-804b-8009-0289a81d4b56",
+        "to": "01c1c9a5-459f-804b-8009-0288e428eafb",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289a81d4b53",
+        "source": "01c1c9a5-459f-804b-8009-0289a81d4b57",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289a81d4b53",
+        "source": "01c1c9a5-459f-804b-8009-0289aa955183",
+        "to": "01c1c9a5-459f-804b-8009-02897faeb074",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e72e7651",
+        "source": "01c1c9a5-459f-804b-8009-0288e8c013b7",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e72e7651",
+        "source": "01c1c9a5-459f-804b-8009-0288e8d06d41",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e72e7651",
+        "source": "01c1c9a5-459f-804b-8009-0288e90778fb",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288e72e7651",
+        "source": "01c1c9a5-459f-804b-8009-028989482793",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+        "source": "01c1c9a5-459f-804b-8009-0288f820c3a5",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+        "source": "01c1c9a5-459f-804b-8009-0288f8705c42",
+        "to": "01c1c9a5-459f-804b-8009-0288e72e7651",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+        "source": "01c1c9a5-459f-804b-8009-028989a41398",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+        "source": "01c1c9a5-459f-804b-8009-0289aafec564",
+        "to": "01c1c9a5-459f-804b-8009-0289134963e2",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+        "source": "01c1c9a5-459f-804b-8009-0288fa109f9f",
+        "to": "01c1c9a5-459f-804b-8009-028904cdc249",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+        "source": "01c1c9a5-459f-804b-8009-0288fa6fe6e2",
+        "to": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+        "source": "01c1c9a5-459f-804b-8009-02898a17b56a",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fcd08ca3",
+        "to": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fce9bc08",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fd017ea6",
+        "to": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fd200f41",
+        "to": "01c1c9a5-459f-804b-8009-0288e72e7651",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fd3b0bf7",
+        "to": "01c1c9a5-459f-804b-8009-028983e257b7",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fd56e01e",
+        "to": "01c1c9a5-459f-804b-8009-028983e257b7",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fd75be0d",
+        "to": "01c1c9a5-459f-804b-8009-028983e257b7",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-0288fd91c7a0",
+        "to": "01c1c9a5-459f-804b-8009-028984f02b37",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "source": "01c1c9a5-459f-804b-8009-02898a9edc44",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "source": "01c1c9a5-459f-804b-8009-0288ffad0215",
+        "to": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "source": "01c1c9a5-459f-804b-8009-0288ffc7e9a5",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "source": "01c1c9a5-459f-804b-8009-0288ffd99106",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "source": "01c1c9a5-459f-804b-8009-02898afb8bc9",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028904cdc249",
+        "source": "01c1c9a5-459f-804b-8009-028905f293d3",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028904cdc249",
+        "source": "01c1c9a5-459f-804b-8009-0289063fc2bc",
+        "to": "01c1c9a5-459f-804b-8009-0288f88b9e92",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028904cdc249",
+        "source": "01c1c9a5-459f-804b-8009-02898b5ecb9b",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028906538248",
+        "source": "01c1c9a5-459f-804b-8009-02890763b79b",
+        "to": "01c1c9a5-459f-804b-8009-0288fdaa7e99",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028906538248",
+        "source": "01c1c9a5-459f-804b-8009-028907c3a8e6",
+        "to": "01c1c9a5-459f-804b-8009-0288d6ec44cf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028906538248",
+        "source": "01c1c9a5-459f-804b-8009-02898bd5cb4a",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02890815ecbf",
+        "source": "01c1c9a5-459f-804b-8009-0289091afeb1",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02890815ecbf",
+        "source": "01c1c9a5-459f-804b-8009-02898c54f72d",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289097e1ae2",
+        "source": "01c1c9a5-459f-804b-8009-02890aa404a6",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289097e1ae2",
+        "source": "01c1c9a5-459f-804b-8009-02898cb03e3b",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289104d2afa",
+        "source": "01c1c9a5-459f-804b-8009-028911556121",
+        "to": "01c1c9a5-459f-804b-8009-0288e16af4b5",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289104d2afa",
+        "source": "01c1c9a5-459f-804b-8009-02898d031716",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028911bbd903",
+        "source": "01c1c9a5-459f-804b-8009-028912d70171",
+        "to": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028911bbd903",
+        "source": "01c1c9a5-459f-804b-8009-02898d6b4c51",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289134963e2",
+        "source": "01c1c9a5-459f-804b-8009-02891443dc5c",
+        "to": "01c1c9a5-459f-804b-8009-02893d9704ca",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289134963e2",
+        "source": "01c1c9a5-459f-804b-8009-02898dc0402b",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289134963e2",
+        "source": "01c1c9a5-459f-804b-8009-0289aaab62de",
+        "to": "01c1c9a5-459f-804b-8009-0288f5566ad3",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289134963e2",
+        "source": "01c1c9a5-459f-804b-8009-0289aacfb758",
+        "to": "01c1c9a5-459f-804b-8009-02893d9704ca",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028914cb024e",
+        "source": "01c1c9a5-459f-804b-8009-028915db6646",
+        "to": "01c1c9a5-459f-804b-8009-028981cfc66f",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028914cb024e",
+        "source": "01c1c9a5-459f-804b-8009-02898e09468e",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028916698802",
+        "source": "01c1c9a5-459f-804b-8009-02898e76d367",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893c9717ca",
+        "source": "01c1c9a5-459f-804b-8009-02893d3cf9cb",
+        "to": "01c1c9a5-459f-804b-8009-0289134963e2",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893c9717ca",
+        "source": "01c1c9a5-459f-804b-8009-02898eff1d0b",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893d9704ca",
+        "source": "01c1c9a5-459f-804b-8009-02893e4e2e30",
+        "to": "01c1c9a5-459f-804b-8009-02893e96a269",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893d9704ca",
+        "source": "01c1c9a5-459f-804b-8009-02898f6cbfb2",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893e96a269",
+        "source": "01c1c9a5-459f-804b-8009-02893f369781",
+        "to": "01c1c9a5-459f-804b-8009-02893f7efe99",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893e96a269",
+        "source": "01c1c9a5-459f-804b-8009-02898ff8c535",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893f7efe99",
+        "source": "01c1c9a5-459f-804b-8009-02894040006e",
+        "to": "01c1c9a5-459f-804b-8009-0289408781a0",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02893f7efe99",
+        "source": "01c1c9a5-459f-804b-8009-0289905437c5",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289408781a0",
+        "source": "01c1c9a5-459f-804b-8009-02894122fe99",
+        "to": "01c1c9a5-459f-804b-8009-028914cb024e",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289408781a0",
+        "source": "01c1c9a5-459f-804b-8009-028990c55fe8",
+        "to": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "kind": "open-overlay"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "source": "01c1c9a5-459f-804b-8009-02897b4d78f9",
+        "to": "01c1c9a5-459f-804b-8009-02890815ecbf",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "source": "01c1c9a5-459f-804b-8009-02897bb69dfb",
+        "to": "01c1c9a5-459f-804b-8009-02893c9717ca",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "source": "01c1c9a5-459f-804b-8009-02897c3357ba",
+        "to": "01c1c9a5-459f-804b-8009-0289104d2afa",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "source": "01c1c9a5-459f-804b-8009-02897c9eae2d",
+        "to": "01c1c9a5-459f-804b-8009-0289097e1ae2",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "source": "01c1c9a5-459f-804b-8009-02897cf5f4ce",
+        "to": "01c1c9a5-459f-804b-8009-02893f7efe99",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "source": "01c1c9a5-459f-804b-8009-02897d4cd345",
+        "to": "01c1c9a5-459f-804b-8009-028914cb024e",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897ab09bbf",
+        "source": "01c1c9a5-459f-804b-8009-028df7296dd8",
+        "to": "01c1c9a5-459f-804b-8009-028906538248",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897dee3098",
+        "source": "01c1c9a5-459f-804b-8009-02897e82595b",
+        "to": "01c1c9a5-459f-804b-8009-0288dba45ece",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897dee3098",
+        "source": "01c1c9a5-459f-804b-8009-02897eef14c3",
+        "to": "01c1c9a5-459f-804b-8009-028911bbd903",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897faeb074",
+        "source": "01c1c9a5-459f-804b-8009-0289804eecb8",
+        "to": "01c1c9a5-459f-804b-8009-0289a81d4b53",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-02897faeb074",
+        "source": "01c1c9a5-459f-804b-8009-028980df0064",
+        "to": "01c1c9a5-459f-804b-8009-028911bbd903",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028981cfc66f",
+        "source": "01c1c9a5-459f-804b-8009-028982745e75",
+        "to": "01c1c9a5-459f-804b-8009-028916698802",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028981cfc66f",
+        "source": "01c1c9a5-459f-804b-8009-028982f9b5bd",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-028984f02b37",
+        "source": "01c1c9a5-459f-804b-8009-028985866263",
+        "to": "01c1c9a5-459f-804b-8009-0288fa8d360d",
+        "kind": "navigate-to"
+      },
+      {
+        "from": "01c1c9a5-459f-804b-8009-0289a90bcd3d",
+        "source": "01c1c9a5-459f-804b-8009-0289a99919db",
+        "to": "01c1c9a5-459f-804b-8009-02890815ecbf",
+        "kind": "navigate-to"
+      }
+    ],
+    "invalid": [],
+    "unreachable": [],
+    "roots": 34,
+    "reached": 34
+  },
+  "missingEntryTargets": [],
+  "validation": [],
+  "saved": true,
+  "saveLabel": "Interactive prototyping complete · launcher, recovery and focused branches",
+  "visualReviews": [
+    "Recovery home",
+    "Search results after coordinate correction",
+    "Launcher at 1440 × 1040",
+    "Native report and evidence overlays in live viewer"
+  ],
+  "liveViewerChecks": [
+    {
+      "path": [
+        "M01",
+        "M02",
+        "M03",
+        "report overlay",
+        "cancel",
+        "M03"
+      ],
+      "result": "passed; form preserved"
+    },
+    {
+      "path": [
+        "M03",
+        "report overlay",
+        "complete sample",
+        "M04"
+      ],
+      "result": "passed; submission receipt displayed"
+    },
+    {
+      "path": [
+        "M01 active report",
+        "M05",
+        "M06",
+        "M07",
+        "evidence overlay",
+        "M07_FILLED",
+        "claim-confirm overlay",
+        "C07"
+      ],
+      "result": "passed; private sample entry ends in independent review pending"
+    },
+    {
+      "path": [
+        "C07",
+        "scenario overlay",
+        "expired pass",
+        "C13"
+      ],
+      "result": "passed; expired pass cannot be redeemed"
+    }
+  ],
+  "limitations": [
+    "Preset sample states, not arbitrary text entry or real uploads.",
+    "No runtime, provider, payment, hardware, membership or property-release side effects.",
+    "Cross-page launcher entries open focused viewer sessions; continuous recovery uses same-page native navigation.",
+    "Focused branch links and destination references were statically verified; not every focused-flow path was manually clicked.",
+    "Canonical 215-view concept inventory remains separate from prototype copies and preset variants.",
+    "No accessibility conformance or usability acceptance claim."
+  ]
+}
