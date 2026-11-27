@@ -1,0 +1,137 @@
+{
+  "date": "2026-11-27",
+  "commit": "01e67470ca7128079298edb540b03388ec26a1ed",
+  "verdict": "Defined local M2 foundation implemented; fresh checks pass. Historical receipt Git byte-preservation correction was prepared locally at inspection and is included in subsequent publication changes. Production identity/deployment acceptance separate.",
+  "checks": {
+    "javaUnit": 38,
+    "m2Integration": 24,
+    "skipped": 0,
+    "launcherUnit": 2,
+    "dependencyLockUnit": 5,
+    "dependencyArtifacts": 106,
+    "sourceGate": "PASS",
+    "registry": "PASS",
+    "architecture": "PASS"
+  },
+  "suites": [
+    {
+      "suite": "org.dzoka.FoundationIT",
+      "tests": 14,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "missingRequiredClaimsAndUnsignedTokensAreRejected",
+        "inboxDuplicatesConflictAndCrashRollbackShareOneTransaction",
+        "runtimeRejectsMigrationOrSuperuserCredentials",
+        "idempotentConcurrencyCommitsOneOrganizationAuditAndOutbox",
+        "failedOutboxInsertRollsBackEntireCommandAndRetrySucceeds",
+        "tokenAdminRoleCannotGrantMembershipOrWrite",
+        "databaseConnectionFailureDoesNotProduceSuccess",
+        "outboxExpiredLeaseRejectsStaleAckAndAmbiguousPublishCanRedeliver",
+        "invalidAndOversizedJsonFailsSafely",
+        "idempotencyIsBoundToVerifiedActorAtTheDatabaseBoundary",
+        "signaturesIssuerAudienceExpiryAndAnonymousFailClosed",
+        "tenantApiIsolationAndRevokedMembership",
+        "inboxConcurrentRedeliveryAppliesOneEffect",
+        "rowPoliciesFailClosedAndPooledContextDoesNotLeak"
+      ],
+      "reportSha256": "5b8483e2b59c3c92540b809962b51a325e91575aacc236a80ebefefb63b5a498"
+    },
+    {
+      "suite": "org.dzoka.FoundationAdministrationIT",
+      "tests": 9,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "updateFailureRollsBackStateReceiptAuditAndEvent",
+        "populatedV25UpgradeBackfillsOriginalIdempotencyResponses",
+        "signingKeyRotationSupportsOverlapAndRejectsUnknownKeys",
+        "archiveReactivationAndHistoricalCreateReplayPreserveReferences",
+        "cursorPagesReachBeyondOldCapWithoutCrossTenantRows",
+        "realOperatorProcessCreatesAndDisablesTenantWithoutApiAuthority",
+        "operatorReceiptFailureRollsBackMembershipAndCanRetry",
+        "concurrentVersionsAndDuplicateKeysProduceOneLogicalChange",
+        "operatorProvisionsAndRevokesWithImmutableVersionedReceipts"
+      ],
+      "reportSha256": "2d5e6dbd3d3b67e254971e5869d9ded1bf7fdfd7c0ef0b37a833e6469053ea92"
+    },
+    {
+      "suite": "org.dzoka.StartupConfigurationIT",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        "packagedApplicationCannotStartWithoutRequiredConfiguration"
+      ],
+      "reportSha256": "1b7770081f6bb5d083261e6ecc5a370141ef39ba5dca707d34976e99f37b4045"
+    }
+  ],
+  "restore": {
+    "status": "PASS",
+    "tables": 111,
+    "rows": 244,
+    "rowAndCatalogEquality": true,
+    "restoredTenantIsolation": true,
+    "restoredPlaceIsolation": true,
+    "operatorJournalPrivate": true,
+    "sourceSnapshotIndependence": true,
+    "limits": [
+      "same-cluster logical restore; roles pre-exist",
+      "object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects",
+      "not production RPO/RTO, HA or point-in-time recovery"
+    ]
+  },
+  "rawRestoreReceiptSha256": "7379533371cfba6c73370163993ee3037ae8f924104101c316cabfa7dd432b0e",
+  "publication": [
+    {
+      "file": "jvm-tests.json",
+      "recordedSha256": "53103e668a30ee7d322ed25893f319267eec6506df59d7c115087105a1119038",
+      "publishedHeadSha256": "59a42cbbd4bc71f7098d8dc71a3034c23e65f312be0c108a3a5db0be2bf328fc",
+      "publishedHeadMatches": false,
+      "originalWorkingBytesMatch": true,
+      "correctedGitFilterPreservesBytes": true
+    },
+    {
+      "file": "reproducibility.json",
+      "recordedSha256": "38a06ad6e846f81e071697d556bf0054f4cfd35be264ea3358bf5b1411f9aa8f",
+      "publishedHeadSha256": "27f5aa5d501a9cba6bdab938a7d45a940fe36a5fef2fb4b28a363b4592524aa0",
+      "publishedHeadMatches": false,
+      "originalWorkingBytesMatch": true,
+      "correctedGitFilterPreservesBytes": true
+    },
+    {
+      "file": "restore.json",
+      "recordedSha256": "06dcf264328d8ec146968561fef2f8a7d949b73f072d1b1174c1940b7e4fd3bd",
+      "publishedHeadSha256": "8f3f4189534b19a1b97fd311370b8503e3ba71c12f999e5aaea1cc8fe8b6acfa",
+      "publishedHeadMatches": false,
+      "originalWorkingBytesMatch": true,
+      "correctedGitFilterPreservesBytes": true
+    }
+  ],
+  "sourceSha256": {
+    "src/main/java/org/dzoka/foundation/persistence/FoundationAdmin.java": "7ba2775c534b18c9152a9c76bb19aba4432980d0d55cc193213289ce57f0ba4b",
+    "src/main/java/org/dzoka/foundation/persistence/TenantTransactions.java": "d9b7ee46922601a2d7589368bd2df586db1109a9ffede172cae1ae3bb4d98bd5",
+    "src/main/java/org/dzoka/foundation/persistence/RuntimeDatabaseGuard.java": "bbbf3888f8bf842f21aeff634bb94077c31fa3f5452ebea1d7549877602c50b9",
+    "src/main/java/org/dzoka/foundation/security/SecurityConfiguration.java": "8afc4162014100949c09cd8628553ba55a500784a2b6e1920d11d24d444bc6b7",
+    "src/main/java/org/dzoka/organizations/adapters/JdbcOrganizations.java": "6131be346ff569fe8ea58a6c7c8296d23bfaeb952e2096c6bc011d537cc1ae34",
+    "src/main/resources/db/migration/V1__tenant_foundation.sql": "b7c8308ea75966a11f89959c9a5ca0bea346a42db9ad0eab68a07445a6719d91",
+    "src/main/resources/db/migration/V2__actor_bound_idempotency.sql": "141ba1c8a1fd33eb3ccd245c1dbae5547393a668a04afdaeb90af42c3cfbec9c",
+    "src/main/resources/db/migration/V26__foundation_administration.sql": "2711ec50500fa663e6824aaa225eb0f31a7fad4b0a07d595db0c355d6fccaf5f",
+    "src/test/java/org/dzoka/FoundationIT.java": "81cb79163ee5e34fce33aa47a63dd8aec279cfdf404c89bd1c7115c7f8757163",
+    "src/test/java/org/dzoka/FoundationAdministrationIT.java": "01cac1bb31aceee68ab9962b54fd80430d660aa390a29a081c51360821d05b34",
+    "src/test/java/org/dzoka/StartupConfigurationIT.java": "6678d742856c16e0abb4922df89c734da3c9fd339861a12edb0f3fef28825771",
+    "tools/core.py": "c9fe823c88315df7be61f20a07a6ba148855acbcca8bdb81a398a0999e273f5f",
+    "tools/restore_drill.py": "f5f9c961e51a58f67ddca8e4c9312b48b2e8bcfe2934588cc6bd0e19fa4292c5",
+    "pom.xml": "05a098a6063b0f6e4ee82fe0e66334e59e339bb844e56bc104c27514fdfc4e13",
+    "dependencies.lock.json": "a98720966dcd65097853d6c41e4dabd94f456cccf0e2ee1db71468c02e767cbf"
+  },
+  "limits": [
+    "Actual ephemeral RSA/JWKS fixture, not institutional IdP account lifecycle",
+    "Ambiguous outbox transport uses fault injection, not a fresh live Kafka test",
+    "Current 27-migration checkout; no fresh binary reproduction or whole-provider suite claimed",
+    "Same-cluster synthetic logical restore with pre-existing roles and empty object backup manifest"
+  ]
+}

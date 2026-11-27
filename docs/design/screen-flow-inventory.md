@@ -4,7 +4,7 @@ Repository-derived editable design inventory · 2026-11-27 · Dzoka remains a te
 
 ## Live design coverage
 
-**215 designed / 0 partial / 0 missing view concepts out of 215 planned.** The completion pass adds 85 detailed views to the original 130. Views remain missing until authored and verified; the plan is not completion evidence.
+**215 designed / 0 partial / 0 missing view concepts out of 215 planned.** The completion pass adds 85 detailed views to the original 130. All added views are authored and verified; per-flow receipts record the completion evidence.
 
 **26 designed concept flows / 0 partial flows.** A flow is updated only after its recorded criteria are represented, linked, saved and checked in Penpot.
 
@@ -732,6 +732,12 @@ All 100 specification headings retain their source line. A UI mapping is not pro
 | 98 | ARCHITECTURAL INVARIANTS | 2992 | F03, F04, F05, F07, F10, F11, F14, F16, F17, F20, F23 |
 | 99 | WORKING STYLE | 3019 | Engineering/governance requirement; no standalone application screen inferred |
 | 100 | FIRST ACTIONS | 3047 | Engineering/governance requirement; no standalone application screen inferred |
+
+## Completion verification
+
+All eleven recorded partial flows are complete. Native checks resolved all 215 board IDs, found no file-validation errors, and verified eleven catalogue links to the new guides. Each flow has a saved checkpoint and representative visual review. The four native responsive annotation boards cover all 26 families.
+
+[Final native receipt](penpot-completion-verification-2026-11-27.json) · [Responsive layout contract](responsive-layout-contract.json)
 
 ## Verification limits
 

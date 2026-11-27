@@ -95,5 +95,26 @@
   "responsiveContract": "docs/design/responsive-layout-contract.json",
   "corrections": [
     "Moved enlarged-text footer inside frame; enlarged error copy and rechecked exported layout."
+  ],
+  "nativeAnnotationBoards": [
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286a62ec947",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    },
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286a80313b8",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    },
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286be9cd497",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    },
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286c1dcfb17",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    }
+  ],
+  "additionalExportsReviewed": [
+    "01c1c9a5-459f-804b-8009-0286a62ec947"
   ]
 }

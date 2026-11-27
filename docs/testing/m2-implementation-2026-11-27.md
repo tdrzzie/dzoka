@@ -1,5 +1,7 @@
 # M2 local implementation completion
 
+The [fresh post-M3 recheck](m2-post-m3-recheck-2026-11-27.md) confirms current foundation behavior and records a local correction for Git line-ending normalization of these historical receipt bytes. Original digests/JSON values remain unchanged; the correction is included in the subsequent publication changes. Counts and binary hashes below remain the original execution record.
+
 2026-11-27. Completes the remaining local foundation administration work identified after the [M2 recheck](m2-verification-2026-11-27.md). This extends the original create/list and manual-provisioning slice with working backend/operator functionality. It does not claim a complete frontend or institutional production acceptance.
 
 ## Implemented behavior

@@ -11632,7 +11632,7 @@
       "prototypeScope": "Primary navigation and catalogue access to every named state; forms do not execute and cross-role viewer links do not grant authority."
     }
   ],
-  "state": "Completing the eleven explicitly partial flows; inventory updated after each verified flow.",
+  "state": "All eleven recorded partial-flow design gaps completed; 215 editable concepts and 26 designed concept flows.",
   "summary": {
     "plannedScreenStates": 215,
     "verifiedExistingFrames": 215,
@@ -12931,6 +12931,9 @@
       "F24",
       "F25"
     ],
-    "scope": "Completes the specific recorded design gaps. Native concept design is not implemented workflow, institutional adoption or production acceptance."
+    "scope": "Completes the specific recorded design gaps. Native concept design is not implemented workflow, institutional adoption or production acceptance.",
+    "verification": "docs/design/penpot-completion-verification-2026-11-27.json",
+    "responsiveContract": "docs/design/responsive-layout-contract.json",
+    "catalogueDetailLinks": 11
   }
 }

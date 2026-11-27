@@ -1,6 +1,6 @@
 {
   "date": "2026-11-27",
-  "status": "planned; verified flow completion is recorded incrementally in the inventory",
+  "status": "complete; all eleven recorded partial-flow gaps authored, linked, saved and verified in Penpot",
   "flows": [
     {
       "flow": "F08",
@@ -509,7 +509,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F08.json"
     },
     {
       "flow": "F09",
@@ -1061,7 +1063,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F09.json"
     },
     {
       "flow": "F11",
@@ -1617,7 +1621,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F11.json"
     },
     {
       "flow": "F12",
@@ -1944,7 +1950,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F12.json"
     },
     {
       "flow": "F15",
@@ -2211,7 +2219,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F15.json"
     },
     {
       "flow": "F16",
@@ -2526,7 +2536,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F16.json"
     },
     {
       "flow": "F19",
@@ -2877,7 +2889,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F19.json"
     },
     {
       "flow": "F21",
@@ -3226,7 +3240,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F21.json"
     },
     {
       "flow": "F23",
@@ -3729,7 +3745,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F23.json"
     },
     {
       "flow": "F24",
@@ -4087,7 +4105,9 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F24.json"
     },
     {
       "flow": "F25",
@@ -4558,7 +4578,10 @@
             ]
           ]
         }
-      ]
+      ],
+      "status": "designed",
+      "evidence": "docs/design/flow-completion/F25.json"
     }
-  ]
+  ],
+  "verification": "docs/design/penpot-completion-verification-2026-11-27.json"
 }

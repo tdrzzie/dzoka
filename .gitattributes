@@ -60,3 +60,6 @@ ai/edge-runtime.lock.json -text
 docs/dependencies/notices/edge-video/** -text
 
 docs/testing/artifacts/m11-verification-20261126/** -text
+
+# Preserve the original M2 execution receipt bytes bound by its manifest.
+docs/testing/artifacts/m2-implementation-20261127/** -text

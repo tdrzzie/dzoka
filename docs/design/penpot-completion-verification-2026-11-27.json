@@ -1,0 +1,121 @@
+{
+  "verified": 215,
+  "missing": [],
+  "flows": [
+    {
+      "flow": "F08",
+      "page": "01c1c9a5-459f-804b-8009-027fd49031a5",
+      "rootBoards": 10,
+      "interactionSources": 93,
+      "actions": 93
+    },
+    {
+      "flow": "F09",
+      "page": "01c1c9a5-459f-804b-8009-028166f2473a",
+      "rootBoards": 11,
+      "interactionSources": 111,
+      "actions": 111
+    },
+    {
+      "flow": "F11",
+      "page": "01c1c9a5-459f-804b-8009-0281e6d5eb6b",
+      "rootBoards": 12,
+      "interactionSources": 103,
+      "actions": 103
+    },
+    {
+      "flow": "F12",
+      "page": "01c1c9a5-459f-804b-8009-0282637eb3d6",
+      "rootBoards": 9,
+      "interactionSources": 32,
+      "actions": 32
+    },
+    {
+      "flow": "F15",
+      "page": "01c1c9a5-459f-804b-8009-0282ea982848",
+      "rootBoards": 6,
+      "interactionSources": 35,
+      "actions": 35
+    },
+    {
+      "flow": "F16",
+      "page": "01c1c9a5-459f-804b-8009-02837e10310c",
+      "rootBoards": 7,
+      "interactionSources": 48,
+      "actions": 48
+    },
+    {
+      "flow": "F19",
+      "page": "01c1c9a5-459f-804b-8009-0283fbc0f956",
+      "rootBoards": 7,
+      "interactionSources": 48,
+      "actions": 48
+    },
+    {
+      "flow": "F21",
+      "page": "01c1c9a5-459f-804b-8009-02845af171a3",
+      "rootBoards": 7,
+      "interactionSources": 48,
+      "actions": 48
+    },
+    {
+      "flow": "F23",
+      "page": "01c1c9a5-459f-804b-8009-0284b316e091",
+      "rootBoards": 10,
+      "interactionSources": 100,
+      "actions": 100
+    },
+    {
+      "flow": "F24",
+      "page": "01c1c9a5-459f-804b-8009-02851e8c7635",
+      "rootBoards": 7,
+      "interactionSources": 43,
+      "actions": 43
+    },
+    {
+      "flow": "F25",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943",
+      "rootBoards": 14,
+      "interactionSources": 87,
+      "actions": 87
+    }
+  ],
+  "contractBoards": [
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286a62ec947",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    },
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286a80313b8",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    },
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286be9cd497",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    },
+    {
+      "id": "01c1c9a5-459f-804b-8009-0286c1dcfb17",
+      "page": "01c1c9a5-459f-804b-8009-02857bd89943"
+    }
+  ],
+  "validation": [],
+  "date": "2026-11-27",
+  "fileId": "456d79de-921a-81c4-8009-02637f9b3b01",
+  "catalogueDetailLinks": 11,
+  "newViews": 85,
+  "completedFlows": [
+    "F08",
+    "F09",
+    "F11",
+    "F12",
+    "F15",
+    "F16",
+    "F19",
+    "F21",
+    "F23",
+    "F24",
+    "F25"
+  ],
+  "scope": "Native editable concept completion; runtime, provider, usability, localization and accessibility acceptance are separate.",
+  "savedVersion": "All 11 partial flows completed · 215 views · linked catalogue / Responsive contract · all 26 families annotated"
+}
