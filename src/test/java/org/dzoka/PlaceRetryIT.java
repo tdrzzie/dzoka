@@ -55,7 +55,7 @@ class PlaceRetryIT extends IntegrationFixture {
     }
     private PlaceView success(HttpResponse<String> response){assertEquals(200,response.statusCode());return json.readValue(response.body(),PlaceView.class);}
     @Test void realHttpReplicasAndRestartReturnTheSameCreateAndUpdateReceipts()throws Exception {
-        long before=count("places",A),events=count("outbox",A);String createKey=UUID.randomUUID().toString(),updateKey=UUID.randomUUID().toString();var d=draft("Replica institution",0);
+        long before=count("places",A),events=count("outbox",A);String createKey=UUID.randomUUID().toString(),updateKey=UUID.randomUUID().toString();var d=draft("Replica institution \uD83D\uDE80",0);
         PlaceView created,updated;
         try(var one=new Replica(url);var two=new Replica(url)) {
             assertNotEquals(one.child.pid(),two.child.pid());
@@ -63,13 +63,13 @@ class PlaceRetryIT extends IntegrationFixture {
                 var a=pool.submit(()->request(one,"POST",A,"/places","place-manager",d,createKey));var b=pool.submit(()->request(two,"POST",A,"/places","place-manager",d,createKey));
                 created=success(a.get(15,TimeUnit.SECONDS));assertEquals(created,success(b.get(15,TimeUnit.SECONDS)));
             }
-            var change=draft("Renamed replica institution",1);updated=success(request(two,"PUT",A,"/places/"+created.id(),"place-manager",change,updateKey));
+            var change=draft("Renamed replica institution \uD83D\uDE80",1);updated=success(request(two,"PUT",A,"/places/"+created.id(),"place-manager",change,updateKey));
             assertEquals(updated,success(request(one,"PUT",A,"/places/"+created.id(),"place-manager",change,updateKey)));
             assertEquals(409,request(one,"POST",A,"/places","place-manager",draft("Changed replay",0),createKey).statusCode());
         }
         try(var restarted=new Replica(url)) {
             assertEquals(created,success(request(restarted,"POST",A,"/places","place-manager",d,createKey)));
-            assertEquals(updated,success(request(restarted,"PUT",A,"/places/"+created.id(),"place-manager",draft("Renamed replica institution",1),updateKey)));
+            assertEquals(updated,success(request(restarted,"PUT",A,"/places/"+created.id(),"place-manager",draft("Renamed replica institution \uD83D\uDE80",1),updateKey)));
             assertEquals(403,request(restarted,"POST",B,"/places","place-manager",d,createKey).statusCode());
         }
         assertEquals(before+1,count("places",A));assertEquals(events+2,count("outbox",A));
@@ -85,7 +85,7 @@ class PlaceRetryIT extends IntegrationFixture {
     @Test void populatedV27ReceiptsInBothOrdersSurviveUpgradeReplicasRestartAndRevocation()throws Exception {
         String database="dzoka_place_receipt_"+UUID.randomUUID().toString().replace("-","");String oldUrl=url.replace("/dzoka_test","/"+database);
         try(var c=admin();var s=c.createStatement()){s.execute("CREATE DATABASE "+database+" OWNER dzoka_migrator");}
-        var d=draft("Legacy institution",0);var change=draft("Legacy renamed institution",1);String[] keys={UUID.randomUUID().toString(),UUID.randomUUID().toString()};UUID[] ids={UUID.randomUUID(),UUID.randomUUID()};String[] hashes={legacy(null,d,false),legacy(null,d,true)};
+        var d=draft("Legacy institution \uD83D\uDE80",0);var change=draft("Legacy renamed institution \uD83D\uDE80",1);String[] keys={UUID.randomUUID().toString(),UUID.randomUUID().toString()};UUID[] ids={UUID.randomUUID(),UUID.randomUUID()};String[] hashes={legacy(null,d,false),legacy(null,d,true)};
         String[] updateKeys={UUID.randomUUID().toString(),UUID.randomUUID().toString()};String[] updateHashes={legacy(ids[0],change,false),legacy(ids[1],change,true)};
         assertNotEquals(hashes[0],hashes[1]);
         try {

@@ -16,6 +16,10 @@ public record PlaceDraft(String name,String kind,UUID parentId,Double latitude,D
         if((latitude==null || longitude==null || uncertaintyMeters==null) && !(latitude==null && longitude==null && uncertaintyMeters==null))throw new IllegalArgumentException("Incomplete location");
         if(latitude!=null && (!Double.isFinite(latitude)||!Double.isFinite(longitude)||!Double.isFinite(uncertaintyMeters)||Math.abs(latitude)>90||Math.abs(longitude)>180||uncertaintyMeters<0||uncertaintyMeters>200000))throw new IllegalArgumentException("Invalid location");
     }
-    private static void label(String value){if(value==null || value.isBlank() || value.length()>160 || value.codePoints().anyMatch(Character::isISOControl))throw new IllegalArgumentException("Invalid place label");}
+    private static void label(String value){
+        // codePoints combines valid pairs; a remaining surrogate is malformed UTF-16.
+        if(value==null || value.isBlank() || value.length()>160 || value.codePoints().anyMatch(cp->Character.isISOControl(cp)||(cp>=0xD800 && cp<=0xDFFF)))
+            throw new IllegalArgumentException("Invalid place label");
+    }
     public static String normalize(String value){label(value);return Normalizer.normalize(value,Normalizer.Form.NFC).replaceAll("(?U)\\s+"," ").strip().toLowerCase(Locale.ROOT);}
 }

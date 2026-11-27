@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "explicitSandboxFlag": true,
+  "tests": 3,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "rawXmlSha256": "94470a6fe7dfb703d1a72f3d57e1594427fb74bcc539d2b289e55334996f21d9",
+  "cases": [
+    "baselineHasNoUnsupportedProbabilityOrFutureEvidence",
+    "realIsolatedFrameWorkerUsesCameraLeaseAndSubmitsOnlyMetadata",
+    "grantRevocationStopsCompletionAndReadAndPreservesTenantIsolation"
+  ]
+}

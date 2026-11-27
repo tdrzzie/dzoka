@@ -1,0 +1,69 @@
+{
+  "date": "2026-11-27",
+  "executionBaseCommit": "e50a75f3fb9b010ae8b03fc59868d6ad99424e76",
+  "verdict": "Defined local M3 implementation complete and verified; target/site production acceptance remains separate",
+  "fullGateInputSha256": "073b95ebc3164075ca4e83ce949a42a344ea36a46bd7b2418fd4e96730cf6e75",
+  "sourceInputs": 496,
+  "checks": {
+    "fullGatePhases": 27,
+    "fullGateStatus": "PASS",
+    "python": 269,
+    "javaUnit": 45,
+    "fullIntegration": 157,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "isolatedProfiles": 53,
+    "jointTextBoundaryCases": 3,
+    "independentApiJvms": 6,
+    "legacyUpgradeCreateAndUpdateReceipts": 4,
+    "installedTaskLifecycleCases": 14,
+    "nativeBrokerRecoveryCases": 9,
+    "queueCompletedAfterCrash": 33,
+    "restoreTables": 111,
+    "restoreRows": 8309,
+    "restoredReceiptHashVersions": {
+      "1": 2,
+      "2": 58
+    },
+    "sourceAuditGate": "PASS",
+    "registryIntegrity": "PASS",
+    "architecture": "PASS",
+    "pinnedDependencyArtifacts": 106,
+    "publishedSourceInputsVerified": 496
+  },
+  "runtime": {
+    "jdk": "Oracle 25.0.4",
+    "bytecode": 21,
+    "postgresql": "18.6",
+    "maven": "3.9.16",
+    "privateS3": "reviewed native SeaweedFS 4.51",
+    "modelBundleSha256": "2382b945fbe3532f6253246d969a41d7d51623b2cc737630c64a09f49738b027",
+    "managementReleaseSha256": "7a8d0fe791250532a418411b8cc51db54264f01b6ea44637ff0c1e3f8fc85a26"
+  },
+  "artifacts": {
+    "attempt-1-cpu.json": "6dbcfc5c43233bbf1d41a517147c835c6c7bd3e3a32b827246817f64ce1d2b0c",
+    "attempt-2-watchdog.json": "d34634503c3e34679332271b0ea4f94a1de32e2d19c8bc2c6b2f70da2abbdfc3",
+    "attempts-1-2-sources.json": "647aaf8b65498bebc149ffd6aeb95dd9b98487b83bde68c33bc2b070699c60d3",
+    "before-fix.json": "d7c32157dd27118b0954190c04ca6dbe178331b94be7ea873bab752dbe57ca9c",
+    "cpu-availability-observation.json": "924fe9f1f83597bb133b64550f5a30fc40057ca6d7b89201782273adb7ee04eb",
+    "current-account-deployment.json": "e5ef349407d39013bba77b588000c84f970504c7124fa45062a749c5780e2983",
+    "focused-tests.json": "5d7b8f7a7ecf11043b6e4bf78978753ee71a4579577e0064aae234626d615b3f",
+    "full-gate.json": "f664e5d530c4fbdb49b997d11b910356391801470f6b59b2f9a208d1b8814964",
+    "golden-vectors.json": "73e67e7a3911d839d156ca50a242f2a858a433437c1abf655ec29c12090cbece",
+    "jvm-tests.json": "07537a3a166361f4bf0a7371d709507a9545b697f3bce627b1e2ec419fdccfbc",
+    "python-tests.json": "f91073bf67eb191f030e5907be776f2048ba8802e8707b7780a62ceec6cd4b7e",
+    "queue-recovery.json": "cfa9e6d337f3f8516275277181d73dd9b52740b061ae243fc3e2fe08e32802f2",
+    "restore.json": "ae57a8a2dc724a21d77a5252081dd2fb5e42b5d542a5b03734a01e7a90d3acf4",
+    "source-publication.json": "bb5f774aa18e7003f6014d271b28dddad25483bea2861e2d9946ab3a26c0f8a2",
+    "sources.json": "2ea67110ea5cd128e4346e233c58b32495629ba28c921b3bab99db72e1a8a943",
+    "watchdog-timing-diagnostic.json": "1f228d69f55c49a910282db924bc41c5b7a0b438f90eb59563387ea20c5a3b75"
+  },
+  "limits": [
+    "Final gate is a complete new run; failed attempts and diagnostic timing override are separately retained.",
+    "The original one-off native CPU container failure is not explained or described as repaired.",
+    "Readiness bound correction changes verification timing, not worker security/restart policy or production SLO.",
+    "Same-cluster logical restore, roles pre-exist, explicit empty object snapshot; no target RPO/RTO/HA certification.",
+    "No representative model-quality promotion, all-format/site acceptance or remote CI execution is claimed."
+  ]
+}

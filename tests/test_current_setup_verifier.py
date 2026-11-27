@@ -39,7 +39,7 @@ class ReadinessVerifierTests(unittest.TestCase):
 
     def test_slow_verification_window_is_measured_without_weakening_readiness(self):
         rows=[{}, {'phase':'STARTING','run':'b'*32},{'phase':'STARTING','run':'b'*32},{'phase':'STARTING','run':'b'*32},{'phase':'RUNNING','run':'b'*32}]
-        with patch.object(v,'snapshot',side_effect=rows),patch.object(v,'active',return_value=True):self.assertEqual(400,self.wait())
+        with patch.object(v,'snapshot',side_effect=rows),patch.object(v,'active',return_value=True):self.assertEqual(400,self.wait(previous='a'*32))
 
     def test_permanent_starting_never_becomes_a_success(self):
         with patch.object(v,'snapshot',return_value={'phase':'STARTING','run':'b'*32}),patch.object(v,'active') as active:

@@ -10768,14 +10768,104 @@
         "Confirmed identity → A05; current membership determines access.",
         "Denied workspace → E05; expired session → E06; account recovery → A04."
       ],
-      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeScope": "Dedicated native preset player with verified semantic forward/back/branch/guard paths. Runtime and accessibility acceptance remain separate.",
       "prototypeEntry": {
         "flow": "F01",
         "start": "A01",
-        "page": "3885c71d-2bc7-8052-8009-026e252e2168",
-        "board": "3885c71d-2bc7-8052-8009-026e291218ea",
-        "hotspot": "01c1c9a5-459f-804b-8009-028ec327491c",
-        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026e252e2168&frame-id=3885c71d-2bc7-8052-8009-026e291218ea&section=interactions&zoom=fit"
+        "page": "01c1c9a5-459f-804b-8009-029173a1469f",
+        "board": "01c1c9a5-459f-804b-8009-02917a6988f2",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-029173a1469f&frame-id=01c1c9a5-459f-804b-8009-02917a6988f2&section=interactions&zoom=fit"
+      },
+      "prototypeEntryHistory": [
+        {
+          "flow": "F01",
+          "start": "A01",
+          "page": "3885c71d-2bc7-8052-8009-026e252e2168",
+          "board": "3885c71d-2bc7-8052-8009-026e291218ea",
+          "hotspot": "01c1c9a5-459f-804b-8009-028ec327491c",
+          "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=3885c71d-2bc7-8052-8009-026e252e2168&frame-id=3885c71d-2bc7-8052-8009-026e291218ea&section=interactions&zoom=fit"
+        }
+      ],
+      "interactionPrototype": {
+        "status": "native preset interaction semantics verified",
+        "entry": {
+          "flow": "F01",
+          "start": "A01",
+          "page": "01c1c9a5-459f-804b-8009-029173a1469f",
+          "board": "01c1c9a5-459f-804b-8009-02917a6988f2",
+          "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-029173a1469f&frame-id=01c1c9a5-459f-804b-8009-02917a6988f2&section=interactions&zoom=fit"
+        },
+        "entryEvidence": "Derived from actual local native board roster; launcher card has not been verified by this receipt",
+        "canonicalContexts": 9,
+        "canonicalBoards": [
+          {
+            "id": "A01",
+            "board": "01c1c9a5-459f-804b-8009-02917a6988f2"
+          },
+          {
+            "id": "A02",
+            "board": "01c1c9a5-459f-804b-8009-02917d574fb7"
+          },
+          {
+            "id": "A03",
+            "board": "01c1c9a5-459f-804b-8009-02917f2a0b16"
+          },
+          {
+            "id": "A04",
+            "board": "01c1c9a5-459f-804b-8009-02918157b1a4"
+          },
+          {
+            "id": "A05",
+            "board": "01c1c9a5-459f-804b-8009-029191082089"
+          },
+          {
+            "id": "A06",
+            "board": "01c1c9a5-459f-804b-8009-0291933b265c"
+          },
+          {
+            "id": "A10",
+            "board": "01c1c9a5-459f-804b-8009-02919602b372"
+          },
+          {
+            "id": "E05",
+            "board": "01c1c9a5-459f-804b-8009-02919873a7c0"
+          },
+          {
+            "id": "E06",
+            "board": "01c1c9a5-459f-804b-8009-02919af113f4"
+          }
+        ],
+        "variants": 3,
+        "overlays": 43,
+        "nativeClonedControlsInspected": 65,
+        "nativeClonedControlsUnbound": 0,
+        "semanticChecks": {
+          "primary": {
+            "expected": 9,
+            "passed": 9
+          },
+          "completedPrimary": {
+            "expected": 3,
+            "passed": 3
+          },
+          "back": {
+            "expected": 9,
+            "passed": 9
+          },
+          "branches": {
+            "expected": 4,
+            "passed": 4
+          },
+          "critical": {
+            "expected": 0,
+            "passed": 0
+          }
+        },
+        "geometryErrors": 0,
+        "nativeReceipt": "docs/design/interaction-receipts/F01.json",
+        "saveLabel": "Interactive F01 verified · 2026-11-27",
+        "liveViewerChecks": [],
+        "limits": "Native preset evidence only; no arbitrary input, real effects, production or accessibility acceptance."
       }
     },
     {
@@ -10807,14 +10897,116 @@
         "Valid submission → M04; missing detail → E03.",
         "Offline → C14; interrupted upload → E01; quarantine → E02; restored connection → E08."
       ],
-      "prototypeScope": "Launcher entry to linked concept flow; preset sample states; not full control or runtime acceptance.",
+      "prototypeScope": "Dedicated native preset player with verified semantic forward/back/branch/guard paths. Runtime and accessibility acceptance remain separate.",
       "prototypeEntry": {
         "flow": "F02",
-        "start": "M02",
-        "page": "01c1c9a5-459f-804b-8009-0288142c2967",
-        "board": "01c1c9a5-459f-804b-8009-0288d9235c4e",
-        "hotspot": "01c1c9a5-459f-804b-8009-028ec34aca28",
-        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288d9235c4e&section=interactions&zoom=fit"
+        "start": "M01",
+        "page": "01c1c9a5-459f-804b-8009-0291b3a4c8a0",
+        "board": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+        "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0291b3a4c8a0&frame-id=01c1c9a5-459f-804b-8009-0291cfc9643d&section=interactions&zoom=fit"
+      },
+      "prototypeEntryHistory": [
+        {
+          "flow": "F02",
+          "start": "M02",
+          "page": "01c1c9a5-459f-804b-8009-0288142c2967",
+          "board": "01c1c9a5-459f-804b-8009-0288d9235c4e",
+          "hotspot": "01c1c9a5-459f-804b-8009-028ec34aca28",
+          "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0288142c2967&frame-id=01c1c9a5-459f-804b-8009-0288d9235c4e&section=interactions&zoom=fit"
+        }
+      ],
+      "interactionPrototype": {
+        "status": "native preset interaction semantics verified",
+        "entry": {
+          "flow": "F02",
+          "start": "M01",
+          "page": "01c1c9a5-459f-804b-8009-0291b3a4c8a0",
+          "board": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+          "url": "https://penpot.nyasham.dev/?screen=viewer&file-id=456d79de-921a-81c4-8009-02637f9b3b01&page-id=01c1c9a5-459f-804b-8009-0291b3a4c8a0&frame-id=01c1c9a5-459f-804b-8009-0291cfc9643d&section=interactions&zoom=fit"
+        },
+        "entryEvidence": "Derived from actual local native board roster; launcher card has not been verified by this receipt",
+        "canonicalContexts": 12,
+        "canonicalBoards": [
+          {
+            "id": "M01",
+            "board": "01c1c9a5-459f-804b-8009-0291cfc9643d"
+          },
+          {
+            "id": "M02",
+            "board": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          },
+          {
+            "id": "M03",
+            "board": "01c1c9a5-459f-804b-8009-0291d6d47675"
+          },
+          {
+            "id": "M04",
+            "board": "01c1c9a5-459f-804b-8009-0291da3aea03"
+          },
+          {
+            "id": "C01",
+            "board": "01c1c9a5-459f-804b-8009-0291e4f7a59b"
+          },
+          {
+            "id": "C02",
+            "board": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          },
+          {
+            "id": "C03",
+            "board": "01c1c9a5-459f-804b-8009-0291ed948bde"
+          },
+          {
+            "id": "C14",
+            "board": "01c1c9a5-459f-804b-8009-0291f0c278eb"
+          },
+          {
+            "id": "E01",
+            "board": "01c1c9a5-459f-804b-8009-0291fafb382c"
+          },
+          {
+            "id": "E02",
+            "board": "01c1c9a5-459f-804b-8009-0291fe61e1fd"
+          },
+          {
+            "id": "E03",
+            "board": "01c1c9a5-459f-804b-8009-029201737a71"
+          },
+          {
+            "id": "E08",
+            "board": "01c1c9a5-459f-804b-8009-029204ca73aa"
+          }
+        ],
+        "variants": 4,
+        "overlays": 58,
+        "nativeClonedControlsInspected": 99,
+        "nativeClonedControlsUnbound": 0,
+        "semanticChecks": {
+          "primary": {
+            "expected": 12,
+            "passed": 12
+          },
+          "completedPrimary": {
+            "expected": 4,
+            "passed": 4
+          },
+          "back": {
+            "expected": 12,
+            "passed": 12
+          },
+          "branches": {
+            "expected": 6,
+            "passed": 6
+          },
+          "critical": {
+            "expected": 1,
+            "passed": 1
+          }
+        },
+        "geometryErrors": 0,
+        "nativeReceipt": "docs/design/interaction-receipts/F02.json",
+        "saveLabel": "Interactive F02 verified · 2026-11-27",
+        "liveViewerChecks": [],
+        "limits": "Native preset evidence only; no arbitrary input, real effects, production or accessibility acceptance."
       }
     },
     {
@@ -13150,5 +13342,32 @@
     "verification": "docs/design/penpot-completion-verification-2026-11-27.json",
     "responsiveContract": "docs/design/responsive-layout-contract.json",
     "catalogueDetailLinks": 11
+  },
+  "fullInteractionProgress": {
+    "expectedFlows": 26,
+    "verified": {
+      "F01": {
+        "receipt": "docs/design/interaction-receipts/F01.json",
+        "page": "01c1c9a5-459f-804b-8009-029173a1469f",
+        "entryBoard": "01c1c9a5-459f-804b-8009-02917a6988f2",
+        "canonicalContexts": 9,
+        "saveLabel": "Interactive F01 verified · 2026-11-27"
+      },
+      "F02": {
+        "receipt": "docs/design/interaction-receipts/F02.json",
+        "page": "01c1c9a5-459f-804b-8009-0291b3a4c8a0",
+        "entryBoard": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+        "canonicalContexts": 12,
+        "saveLabel": "Interactive F02 verified · 2026-11-27"
+      }
+    },
+    "status": "IN_PROGRESS; final combined native receipt and documentation remain pending",
+    "verifiedFlowIds": [
+      "F01",
+      "F02"
+    ],
+    "verifiedFlows": 2,
+    "remainingFlows": 24,
+    "scope": "Only flows with actual saved native semantic and geometry receipts are recorded; planned cases are not execution evidence."
   }
 }

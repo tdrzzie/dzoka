@@ -1,0 +1,1355 @@
+{
+  "schema": 1,
+  "date": "2026-11-27",
+  "status": "Planned acceptance checks; not executed tests",
+  "scope": "Native Penpot preset interaction contract; runtime/provider/accessibility acceptance separate",
+  "controlPatterns": {
+    "textInput": {
+      "behavior": "Open a labelled input overlay with complete synthetic value, missing-required and invalid examples; Apply creates a visibly changed preset; Cancel returns to invoking form.",
+      "critical": "Do not imply arbitrary keyboard text entry or that a hidden value was accepted."
+    },
+    "privateInput": {
+      "behavior": "Only masked synthetic completed-state text; upload/evidence ref never an expected ownership answer.",
+      "critical": "Private answer must not appear in public, relay, export or logs."
+    },
+    "select": {
+      "behavior": "Open native choice overlay; active option and selected field text change in the resulting preset; include unavailable/disabled options with explanation.",
+      "critical": "No no-op choice that silently returns to unchanged field."
+    },
+    "checkbox": {
+      "behavior": "Checked/unchecked variants visibly change state and validation eligibility; decline/cancel preserves input.",
+      "critical": "Prerequisite checkbox must guard consequential CTA, not decorate it."
+    },
+    "consentToggle": {
+      "behavior": "Explicit off/on/withdrawn presets and saved confirmation; verified contact/provider adoption gates enabling.",
+      "critical": "Disabled provider/device permission cannot be enabled by toggle."
+    },
+    "tableRow": {
+      "behavior": "Whole labelled row opens its corresponding detail or outcome; current row may remain selected; paging/filter/sort create distinct presets.",
+      "critical": "Unknown, empty, denied, mismatched and confirmed outcomes stay separate."
+    },
+    "tabs": {
+      "behavior": "Each tab selects visible content/current style and a relevant result population; return preserves context.",
+      "critical": "No decorative non-channel tabs; accessible table remains available."
+    },
+    "upload": {
+      "behavior": "Chooser offers synthetic attached, uploading, interrupted, quarantined, failed and sanitised-preview outcomes; remove/retry confirmed.",
+      "critical": "No real upload, file dialog or preview before isolation approval."
+    },
+    "criticalAction": {
+      "behavior": "Required fields and prerequisites -> review overlay -> explicit simulated current-authority result -> distinct success/blocked/unknown receipt. Cancel/back retain prior state.",
+      "critical": "No automatic provider success, money transfer, custody release or privilege grant."
+    },
+    "externalHandoff": {
+      "behavior": "Explicit external-provider/IdP simulator overlay with cancel, denied, expired, unknown and confirmed sample options.",
+      "critical": "No live credential, payment, provider send or membership grant."
+    },
+    "regionMask": {
+      "behavior": "Keyboard/numeric-equivalent region choices, paint/erase/reset presets, visible mask preview, out-of-bounds/dimension mismatch and metadata-only branches.",
+      "critical": "Viewport/mask sample never certifies identity or facial recognition."
+    },
+    "printTag": {
+      "behavior": "Native print-preview overlay, generic tag artwork and back/cancel; rotate/revoke confirmation and unavailable finder state.",
+      "critical": "Artwork has no live token or owner/contact data."
+    },
+    "navigation": {
+      "behavior": "All primary/secondary/back/sidebar/menu/link controls have meaningful destinations; modal close cancels; terminal views can return to entry or launcher.",
+      "critical": "Do not substitute launcher or scenario menu reachability for working in-flow controls."
+    },
+    "statusScenario": {
+      "behavior": "Reviewer-only scenario picker labels all outcomes as synthetic. Operational CTA remains guarded independently.",
+      "critical": "Scenario choices must not relabel rejection/unknown as success."
+    },
+    "export": {
+      "behavior": "Format and privacy-scope presets -> confirmation -> approved/suppressed/no-data/denied outcomes with safe preview; cancel unchanged.",
+      "critical": "No raw private contact/evidence or actual file export required."
+    }
+  },
+  "tests": [
+    {
+      "flow": "F01",
+      "title": "Access, identity & workspace",
+      "canonicalStates": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A10",
+        "E05",
+        "E06"
+      ],
+      "cases": [
+        {
+          "name": "identity success",
+          "path": [
+            "A01",
+            "A02",
+            "A03",
+            "A05"
+          ],
+          "expected": "A05 only after explicit confirmed IdP result; membership is checked separately.",
+          "status": "not executed"
+        },
+        {
+          "name": "recovery and denial",
+          "path": [
+            "A02",
+            "A04",
+            "A03",
+            "A05",
+            "E05"
+          ],
+          "expected": "Recovery is enumeration-safe; denied workspace loads no private records.",
+          "status": "not executed"
+        },
+        {
+          "name": "expired session",
+          "path": [
+            "A05",
+            "E06",
+            "A02"
+          ],
+          "expected": "No automatic replay of critical operations.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F02",
+      "title": "Lost report & revision",
+      "canonicalStates": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "C01",
+        "C02",
+        "C03",
+        "C14",
+        "E01",
+        "E02",
+        "E03",
+        "E08"
+      ],
+      "cases": [
+        {
+          "name": "complete report",
+          "path": [
+            "M01",
+            "M02",
+            "M03",
+            "M04",
+            "C02",
+            "C03",
+            "C02"
+          ],
+          "expected": "Original input remains retained after revision.",
+          "status": "not executed"
+        },
+        {
+          "name": "invalid and offline",
+          "path": [
+            "M02",
+            "E03",
+            "M02",
+            "C14",
+            "E08",
+            "C03"
+          ],
+          "expected": "Invalid submission preserves draft; offline save is not server receipt.",
+          "status": "not executed"
+        },
+        {
+          "name": "upload failure",
+          "path": [
+            "M02",
+            "E01",
+            "E02",
+            "E03",
+            "M02"
+          ],
+          "expected": "Preview unavailable before sanitisation; no success implied.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F03",
+      "title": "Search & partial availability",
+      "canonicalStates": [
+        "M05",
+        "M06",
+        "C04",
+        "C05",
+        "D04",
+        "C15"
+      ],
+      "cases": [
+        {
+          "name": "candidate",
+          "path": [
+            "M05",
+            "M06"
+          ],
+          "expected": "Possible match is not ownership.",
+          "status": "not executed"
+        },
+        {
+          "name": "no data and partial route",
+          "path": [
+            "M05",
+            "C04",
+            "M05",
+            "C05",
+            "M05"
+          ],
+          "expected": "No candidates, delayed routes and unavailable evidence are distinct.",
+          "status": "not executed"
+        },
+        {
+          "name": "identity conflict",
+          "path": [
+            "M06",
+            "C15",
+            "M05"
+          ],
+          "expected": "Hard identity contradiction prevents claim progression even at high similarity.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F04",
+      "title": "Private ownership & representative claim",
+      "canonicalStates": [
+        "M07",
+        "M08",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C12",
+        "E04"
+      ],
+      "cases": [
+        {
+          "name": "private claim",
+          "path": [
+            "M07",
+            "C07",
+            "C06",
+            "C07"
+          ],
+          "expected": "Submission ends pending independent review; preset private values remain masked.",
+          "status": "not executed"
+        },
+        {
+          "name": "representative and rejection",
+          "path": [
+            "M07",
+            "C12",
+            "C07",
+            "C08",
+            "C06",
+            "C07",
+            "C09"
+          ],
+          "expected": "C09 is rejection and must not issue a pass.",
+          "status": "not executed"
+        },
+        {
+          "name": "withdrawal and rate limit",
+          "path": [
+            "C07",
+            "C10",
+            "C01",
+            "M07",
+            "E04"
+          ],
+          "expected": "Cancel withdrawal returns to C07; attempt limit discloses no expected answer.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F05",
+      "title": "Approval, collection & return",
+      "canonicalStates": [
+        "M09",
+        "M14",
+        "C13",
+        "E07",
+        "D05",
+        "D11",
+        "D12",
+        "S19"
+      ],
+      "cases": [
+        {
+          "name": "authorised physical return",
+          "path": [
+            "D05",
+            "M09",
+            "D11",
+            "D12",
+            "M14"
+          ],
+          "expected": "Independent approval, current policy/holds/custody, valid pass, actual recipient and item are separate prerequisites; role sessions remain labelled.",
+          "status": "not executed"
+        },
+        {
+          "name": "pass blocked",
+          "path": [
+            "M09",
+            "C13",
+            "M09",
+            "E07",
+            "D11",
+            "S19"
+          ],
+          "expected": "Expired, held, wrong-desk or used pass cannot record a return.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel return",
+          "path": [
+            "D11",
+            "D11"
+          ],
+          "expected": "Open return confirmation then cancel; token and custody unchanged.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F06",
+      "title": "Finder intake & staffed acceptance",
+      "canonicalStates": [
+        "M10",
+        "M13",
+        "D03",
+        "S06",
+        "S07"
+      ],
+      "cases": [
+        {
+          "name": "staffed acceptance",
+          "path": [
+            "M10",
+            "M13",
+            "D03",
+            "S06"
+          ],
+          "expected": "Finder report alone leaves possession with finder. Actual nominated receiver and current generation required.",
+          "status": "not executed"
+        },
+        {
+          "name": "stale acceptance",
+          "path": [
+            "S06",
+            "S07",
+            "S06"
+          ],
+          "expected": "A stale observation does not overwrite custody; inspect current state.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel handover",
+          "path": [
+            "S06",
+            "S06"
+          ],
+          "expected": "Cancel confirmation retains original custody.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F07",
+      "title": "Private relay & moderation",
+      "canonicalStates": [
+        "M11",
+        "C11",
+        "S17"
+      ],
+      "cases": [
+        {
+          "name": "approved phrase",
+          "path": [
+            "M11",
+            "C11",
+            "M11"
+          ],
+          "expected": "Only approved phrase catalogue; queued is distinct from sent/delivered.",
+          "status": "not executed"
+        },
+        {
+          "name": "moderation",
+          "path": [
+            "C11",
+            "S17",
+            "C11"
+          ],
+          "expected": "Flag or block requires confirmation and minimal scoped evidence; cancellation preserves thread state.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F08",
+      "title": "Notification consent & delivery",
+      "canonicalStates": [
+        "A07",
+        "O07",
+        "O08",
+        "O14",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "N07",
+        "N08",
+        "N09"
+      ],
+      "cases": [
+        {
+          "name": "template editing",
+          "path": [
+            "N01",
+            "N07",
+            "N08",
+            "N09",
+            "N02",
+            "N06"
+          ],
+          "expected": "Tabs work; source and target review independent; unavailable target locale cannot publish.",
+          "status": "not executed"
+        },
+        {
+          "name": "consent",
+          "path": [
+            "N03",
+            "N06",
+            "N03"
+          ],
+          "expected": "Explicit consent on/off and withdrawal have distinct saved preset states; disabled provider cannot enable.",
+          "status": "not executed"
+        },
+        {
+          "name": "provider uncertainty",
+          "path": [
+            "N04",
+            "N04",
+            "N09",
+            "N04",
+            "N05"
+          ],
+          "expected": "N05 only through explicit signed confirmed-delivery sample; reconcile may remain unknown and never changes custody.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F09",
+      "title": "Courier quote, consent & reconciliation",
+      "canonicalStates": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "S11",
+        "L17",
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "cases": [
+        {
+          "name": "confirmed booking and handoff",
+          "path": [
+            "Q01",
+            "Q03",
+            "Q06",
+            "Q04",
+            "Q07"
+          ],
+          "expected": "Q04 reachable for operational handoff only with explicitly confirmed booking, consent, current authority and no hold. Q07 records courier possession only.",
+          "status": "not executed"
+        },
+        {
+          "name": "quote and dispatch failures",
+          "path": [
+            "Q01",
+            "Q02",
+            "Q01",
+            "Q03",
+            "Q09"
+          ],
+          "expected": "Expired quote, revoked consent, hold or stale generation block dispatch.",
+          "status": "not executed"
+        },
+        {
+          "name": "unknown reconciliation",
+          "path": [
+            "Q06",
+            "Q10",
+            "Q06"
+          ],
+          "expected": "Unknown stays unknown; NOT_FOUND only permits the identical durable operation resend.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancellation",
+          "path": [
+            "Q06",
+            "Q05",
+            "Q08",
+            "Q06"
+          ],
+          "expected": "Q08 only confirmed cancellation before dispatch. Cancel modal returns with no operation mutation.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F10",
+      "title": "Owner receipt & transit changes",
+      "canonicalStates": [
+        "L05",
+        "L06",
+        "L07",
+        "S11",
+        "S12"
+      ],
+      "cases": [
+        {
+          "name": "owner receipt",
+          "path": [
+            "L05",
+            "L06",
+            "L07"
+          ],
+          "expected": "Tracking delivery alone is insufficient; explicit physical receipt and current authority required.",
+          "status": "not executed"
+        },
+        {
+          "name": "transit authority change",
+          "path": [
+            "L05",
+            "S11",
+            "S12",
+            "L06"
+          ],
+          "expected": "Independent current reauthorization precedes owner confirmation; original dispatch retained.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel receipt",
+          "path": [
+            "L06",
+            "L06"
+          ],
+          "expected": "Cancelling receipt leaves owner-return unconfirmed.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F11",
+      "title": "Voluntary reward & financial dispute",
+      "canonicalStates": [
+        "L08",
+        "L09",
+        "L10",
+        "S13",
+        "S14",
+        "L15",
+        "L16",
+        "L20",
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W05",
+        "W06",
+        "W07",
+        "W08",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "cases": [
+        {
+          "name": "optional reserve and settle",
+          "path": [
+            "W01",
+            "W02",
+            "W03",
+            "W08",
+            "W09"
+          ],
+          "expected": "Terms fixed before reservation; explicit confirmed reserve, owner receipt and valid settlement permission required; payment never gates recovery.",
+          "status": "not executed"
+        },
+        {
+          "name": "declined or unknown",
+          "path": [
+            "W02",
+            "W03",
+            "W07",
+            "W01",
+            "W03",
+            "W11"
+          ],
+          "expected": "Decline credits no escrow; unknown operation reconciles before another send.",
+          "status": "not executed"
+        },
+        {
+          "name": "reviewed refund",
+          "path": [
+            "W03",
+            "W04",
+            "W05",
+            "W06",
+            "W10"
+          ],
+          "expected": "Refund request must pass independent review and confirmation; W10 requires explicit provider confirmation.",
+          "status": "not executed"
+        },
+        {
+          "name": "unsupported reversal",
+          "path": [
+            "W06",
+            "W11",
+            "W04"
+          ],
+          "expected": "Unsupported, declined or unknown reversal retains original settlement and invents no recovered money.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel financial intent",
+          "path": [
+            "W04",
+            "W05",
+            "W04"
+          ],
+          "expected": "Cancel resolution before queueing; immutable terms and ledger unchanged.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F12",
+      "title": "Registration, tags & finder relay",
+      "canonicalStates": [
+        "M12",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L18",
+        "L19",
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08"
+      ],
+      "cases": [
+        {
+          "name": "QR and NFC",
+          "path": [
+            "T01",
+            "T02",
+            "T03",
+            "T07"
+          ],
+          "expected": "Print/write action uses illustrated QR; T07 only explicit successful device read-back sample.",
+          "status": "not executed"
+        },
+        {
+          "name": "failed NFC",
+          "path": [
+            "T03",
+            "T06",
+            "T03",
+            "T08"
+          ],
+          "expected": "Failed or unsupported write offers retry and QR fallback; no success assumption.",
+          "status": "not executed"
+        },
+        {
+          "name": "revocation and finder",
+          "path": [
+            "T04",
+            "T05",
+            "L18",
+            "M10"
+          ],
+          "expected": "Revoked old locator cannot remain active; rotation creates distinct replacement. Scan is not ownership.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel revoke",
+          "path": [
+            "T04",
+            "T04"
+          ],
+          "expected": "Cancel preserves current tag state.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F13",
+      "title": "Staff queue, evidence & risk",
+      "canonicalStates": [
+        "D01",
+        "D02",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "cases": [
+        {
+          "name": "staff queue and evidence",
+          "path": [
+            "D01",
+            "D02",
+            "S01",
+            "S04",
+            "S05",
+            "S01"
+          ],
+          "expected": "Queue rows and filters act; private evidence access requires purpose and task scope; expected answers remain secret.",
+          "status": "not executed"
+        },
+        {
+          "name": "competing claims and hold",
+          "path": [
+            "S01",
+            "S02",
+            "S03",
+            "S01"
+          ],
+          "expected": "Conflict/active hold blocks release rather than merely reducing a score.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel scoped access",
+          "path": [
+            "S04",
+            "S04"
+          ],
+          "expected": "Cancel retains masked evidence.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F14",
+      "title": "Custody, stale updates & incident holds",
+      "canonicalStates": [
+        "D06",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "cases": [
+        {
+          "name": "accept receiver custody",
+          "path": [
+            "D06",
+            "S06",
+            "D06"
+          ],
+          "expected": "Only nominated receiver can confirm physical possession at current generation; one append-only custody event.",
+          "status": "not executed"
+        },
+        {
+          "name": "stale and incident",
+          "path": [
+            "S06",
+            "S07",
+            "S08",
+            "D06"
+          ],
+          "expected": "Stale update alone does not create a missing-item incident. Explicit inspected incident creates hold; current authoritative location is preserved.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel acceptance",
+          "path": [
+            "S06",
+            "D06"
+          ],
+          "expected": "No implicit transfer on cancellation.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F15",
+      "title": "Unclaimed property disposition",
+      "canonicalStates": [
+        "S09",
+        "S10",
+        "DPO1",
+        "DPO2",
+        "DPO3",
+        "DPO4",
+        "DPO5"
+      ],
+      "cases": [
+        {
+          "name": "eligible disposition",
+          "path": [
+            "S09",
+            "DPO1",
+            "DPO2",
+            "DPO3",
+            "DPO5"
+          ],
+          "expected": "Adopted institutional policy, no active holds/claims, current versions, authorised recipient and actual completed physical action required.",
+          "status": "not executed"
+        },
+        {
+          "name": "blocked and cancel",
+          "path": [
+            "DPO2",
+            "DPO3",
+            "DPO4",
+            "DPO1"
+          ],
+          "expected": "Changed check blocks terminal action. Cancel confirmation returns to DPO2 and does not record disposition.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F16",
+      "title": "Scoped investigation & crop access",
+      "canonicalStates": [
+        "D08",
+        "S15",
+        "S16",
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06"
+      ],
+      "cases": [
+        {
+          "name": "region and mask approval",
+          "path": [
+            "D08",
+            "V01",
+            "V02",
+            "V03",
+            "S16"
+          ],
+          "expected": "Exact camera/time/purpose/expiry/budget and independent crop disclosure approval before reads/exports.",
+          "status": "not executed"
+        },
+        {
+          "name": "invalid region",
+          "path": [
+            "V01",
+            "V04",
+            "V01",
+            "V02",
+            "V04"
+          ],
+          "expected": "Out-of-bounds coordinates or absent/mismatched mask prevent pixel disclosure; metadata-only is distinct.",
+          "status": "not executed"
+        },
+        {
+          "name": "revoke and purge",
+          "path": [
+            "V03",
+            "V05",
+            "V06"
+          ],
+          "expected": "Revocation stops future access immediately; purge pending, completed and legal-hold retained outcomes are distinct. Cancel leaves grant unchanged.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F17",
+      "title": "Trusted network & dispute",
+      "canonicalStates": [
+        "D07",
+        "O09",
+        "O10",
+        "S18"
+      ],
+      "cases": [
+        {
+          "name": "peer trust review",
+          "path": [
+            "D07",
+            "O09",
+            "O10",
+            "D07"
+          ],
+          "expected": "Peer-local rank retained; trust/keys review uses protected references and explicit bilateral policy.",
+          "status": "not executed"
+        },
+        {
+          "name": "withdrawn offer dispute",
+          "path": [
+            "D07",
+            "S18",
+            "D07"
+          ],
+          "expected": "Opaque origin attribution, no private evidence/contact export; no local custody mutation from peer offer.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F18",
+      "title": "Audit, EPCIS & correction",
+      "canonicalStates": [
+        "O11",
+        "O12"
+      ],
+      "cases": [
+        {
+          "name": "append correction",
+          "path": [
+            "O11",
+            "O12",
+            "O11"
+          ],
+          "expected": "Original native custody fact remains unchanged; correction appends reference and reason.",
+          "status": "not executed"
+        },
+        {
+          "name": "async capture state",
+          "path": [
+            "O12",
+            "O12"
+          ],
+          "expected": "202 accepted/pending, confirmed capture and rejected/unavailable are selectable distinct sample results; cancel retains original event.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F19",
+      "title": "Organisation access & policy",
+      "canonicalStates": [
+        "D10",
+        "O01",
+        "O02",
+        "O03",
+        "O04",
+        "AOP1",
+        "AOP2",
+        "AOP3",
+        "AOP4",
+        "AOP5",
+        "AOP6"
+      ],
+      "cases": [
+        {
+          "name": "operator request",
+          "path": [
+            "D10",
+            "O01",
+            "O02",
+            "AOP1",
+            "AOP2",
+            "AOP3"
+          ],
+          "expected": "Local membership changes are prepared/tracked operator requests, never public API grant; IdP lifecycle external.",
+          "status": "not executed"
+        },
+        {
+          "name": "policy version",
+          "path": [
+            "O03",
+            "O04",
+            "AOP4",
+            "AOP5",
+            "AOP6"
+          ],
+          "expected": "Current expected version and impact review required; conflict stops change; existing passes rechecked.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel policy",
+          "path": [
+            "AOP4",
+            "AOP5",
+            "AOP4"
+          ],
+          "expected": "No policy or membership mutation from Cancel.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F20",
+      "title": "Privacy, retention & deletion",
+      "canonicalStates": [
+        "A08",
+        "A09",
+        "O05",
+        "O06"
+      ],
+      "cases": [
+        {
+          "name": "privacy request",
+          "path": [
+            "A08",
+            "A09",
+            "O05",
+            "O06"
+          ],
+          "expected": "Authenticated private scope, retention/legal hold and derivative propagation are explicit.",
+          "status": "not executed"
+        },
+        {
+          "name": "held deletion and cancel",
+          "path": [
+            "O05",
+            "O06",
+            "O05"
+          ],
+          "expected": "Held, accepted/pending and completed-with-manifest are separate results; no blanket immediate delete. Cancel does not remove records.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F21",
+      "title": "Connectors, sources & API clients",
+      "canonicalStates": [
+        "O07",
+        "O08",
+        "O13",
+        "O14",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06"
+      ],
+      "cases": [
+        {
+          "name": "scoped connector",
+          "path": [
+            "O07",
+            "I01",
+            "I02",
+            "I03",
+            "I06"
+          ],
+          "expected": "No actual secret shown; current bounded origin, permitted scope and independent external acceptance remain explicit.",
+          "status": "not executed"
+        },
+        {
+          "name": "source permission",
+          "path": [
+            "I01",
+            "I04",
+            "I06"
+          ],
+          "expected": "Source terms/provenance and publication review distinct from truth/ownership confidence.",
+          "status": "not executed"
+        },
+        {
+          "name": "failed callback",
+          "path": [
+            "I03",
+            "I02",
+            "I03"
+          ],
+          "expected": "Bad signature, replay and expiry fail closed without raw payload or secret leakage.",
+          "status": "not executed"
+        },
+        {
+          "name": "locale handoff",
+          "path": [
+            "I03",
+            "I05",
+            "N02",
+            "I05"
+          ],
+          "expected": "Qualified target-locale review required; not automatically published.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F22",
+      "title": "Platform, restore & operation failures",
+      "canonicalStates": [
+        "P01",
+        "P02",
+        "P03",
+        "P09",
+        "P10"
+      ],
+      "cases": [
+        {
+          "name": "restore readiness",
+          "path": [
+            "P01",
+            "P02",
+            "P03",
+            "P09",
+            "P10"
+          ],
+          "expected": "Metadata health does not grant tenant evidence access; erasure replay barrier precedes serving.",
+          "status": "not executed"
+        },
+        {
+          "name": "unknown operation",
+          "path": [
+            "P03",
+            "P03"
+          ],
+          "expected": "Reconcile original operation; no blind new send. Cancel provider/quota review has no runtime effect.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F23",
+      "title": "Governed data, evaluation & rollout",
+      "canonicalStates": [
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "cases": [
+        {
+          "name": "governed activation",
+          "path": [
+            "P04",
+            "G01",
+            "G07",
+            "G02",
+            "G03",
+            "G04",
+            "G08",
+            "G09"
+          ],
+          "expected": "Fully reviewed package is a separately labelled synthetic state; incomplete G04 cannot activate. Independent approvals and current compare-and-swap version required.",
+          "status": "not executed"
+        },
+        {
+          "name": "invalid and rollback",
+          "path": [
+            "G07",
+            "G06",
+            "G03",
+            "G05",
+            "G06"
+          ],
+          "expected": "Invalid source/consent/splits block freeze; rollback target still permitted; stale comparison applies no switch.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel approval",
+          "path": [
+            "G04",
+            "G08",
+            "G04"
+          ],
+          "expected": "Cancel preserves active snapshot and evidence history.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F24",
+      "title": "Analytics, movement & optional prevention",
+      "canonicalStates": [
+        "D09",
+        "P11",
+        "P12",
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06"
+      ],
+      "cases": [
+        {
+          "name": "tenant report and export",
+          "path": [
+            "D09",
+            "H01",
+            "H02",
+            "H03",
+            "H06"
+          ],
+          "expected": "Filters/tabs work; chart and table population/denominator consistent. Export excludes secrets and suppresses small groups.",
+          "status": "not executed"
+        },
+        {
+          "name": "uncertainty and consent",
+          "path": [
+            "H02",
+            "H04",
+            "H05",
+            "H06"
+          ],
+          "expected": "Observed and inferred paths distinct; unavailable estimate is not zero; hardware optional/disabled until adoption.",
+          "status": "not executed"
+        },
+        {
+          "name": "cancel export",
+          "path": [
+            "H02",
+            "H03",
+            "H02"
+          ],
+          "expected": "No download/private rows loaded from cancel. Suppressed/no-data/denied outcomes selectable separately.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F25",
+      "title": "Responsive access & critical workflows",
+      "canonicalStates": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "cases": [
+        {
+          "name": "responsive states",
+          "path": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B06",
+            "B09",
+            "B07"
+          ],
+          "expected": "All controls remain reachable across narrow, medium, wide, enlarged text and long-locale states.",
+          "status": "not executed"
+        },
+        {
+          "name": "modal validation",
+          "path": [
+            "B05",
+            "B08",
+            "B08",
+            "B04"
+          ],
+          "expected": "Missing reason blocks confirm; corrected preset required; Cancel closes and restores invoking context; do not claim runtime focus testing from diagram.",
+          "status": "not executed"
+        },
+        {
+          "name": "staff responsive",
+          "path": [
+            "R03",
+            "R04",
+            "R03",
+            "R05",
+            "R06"
+          ],
+          "expected": "Current receiver/generation and physical return guards remain identical across breakpoints.",
+          "status": "not executed"
+        }
+      ]
+    },
+    {
+      "flow": "F26",
+      "title": "Shared recovery and access failures",
+      "canonicalStates": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "cases": [
+        {
+          "name": "failure recovery",
+          "path": [
+            "E01",
+            "E02",
+            "E03",
+            "E08",
+            "C02"
+          ],
+          "expected": "Interrupted upload, quarantine, required detail and reconnect are distinct; preserve draft and explicit retry.",
+          "status": "not executed"
+        },
+        {
+          "name": "access and safety",
+          "path": [
+            "E04",
+            "E05",
+            "A05",
+            "E06",
+            "A02",
+            "E07",
+            "C11"
+          ],
+          "expected": "No private records on denied/expired context; no replay of payment, custody or release.",
+          "status": "not executed"
+        }
+      ]
+    }
+  ]
+}

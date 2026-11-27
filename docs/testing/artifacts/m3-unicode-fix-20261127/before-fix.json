@@ -1,0 +1,12 @@
+{
+  "status": "EXPECTED_FAILURE_BEFORE_FIX",
+  "applicationBaseline": "e50a75f",
+  "test": "PlaceDraftTest.malformedUnicodeIsRejectedBeforeNormalizationAndPersistence",
+  "testsRun": 4,
+  "failures": 1,
+  "errors": 0,
+  "skipped": 0,
+  "observation": "Expected IllegalArgumentException was not thrown",
+  "rawLogSha256": "e796f595fcad52f4bfd710a0e7d8850487e864c147033b5182fa96a9ed663e9f",
+  "testSourceSha256": "b7df9c505ed0624d9d5c1c8b649e306d4b8089d53e448335ac685d51e24b25e6"
+}

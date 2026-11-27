@@ -1,0 +1,6406 @@
+{
+  "schema": 2,
+  "date": "2026-11-27",
+  "status": "Native implementation contract; not completion/test evidence.",
+  "scope": "All 26 flows and all 215 canonical states; canonical screen IDs only. Cross-flow targets are explicit role/context handoffs.",
+  "simulationBoundary": "Penpot uses native preset input/selection/filtered/error states and overlays; arbitrary text entry, real uploads, authentication, providers, hardware and authoritative writes remain external. Same-screen targets require visible changed sample/selection/validation state, never silent no-ops.",
+  "controlRequirements": [
+    "Every enabled field/select/check/tab/filter/row/action has a mapped interaction with visible response.",
+    "Every state has a meaningful primary/back/alternate route; Back and Cancel preserve invoking context.",
+    "Critical actions have confirmation and cancelled/invalid/blocked/stale/unknown alternatives as applicable.",
+    "Unknown results preserve original durable operations and never become success automatically.",
+    "Each role flow is reachable from its own entry; cross-role handoffs are labelled and have safe return context.",
+    "Record actual native IDs and live-viewer branch coverage separately from this contract."
+  ],
+  "importantCorrections": [
+    "C09 is declined, never approved.",
+    "O02 prepares operator requests; no public membership grant.",
+    "L14 finder never opens owner passport L12.",
+    "S06 accepted custody goes D06; stale S07 is separate branch.",
+    "T08 print does not revoke/rotate; return T02.",
+    "L04 unknown booking reconciles; never silently jump delivered L05.",
+    "L15 unknown financial operation uses W04, not courier Q10.",
+    "N04 reconciliation alone cannot imply N05 confirmed delivery.",
+    "W08 reserve/receipt checkbox alone cannot imply confirmed external payout W09.",
+    "B08 missing required reason blocks confirmation.",
+    "W08 default goes to W03 financial-operation review. W09 requires an explicit confirmed external-payout sample with current authority and holds checked.",
+    "T03 default remains read-back pending and returns to T03. Only the explicit read-back-confirmed sample branch reaches T07.",
+    "B08 initial missing-reason action is validation-blocked; only its completed-input preset has primary destination B05."
+  ],
+  "flows": [
+    {
+      "flow": "F01",
+      "title": "Access, identity & workspace",
+      "entry": "A01",
+      "states": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A10",
+        "E05",
+        "E06"
+      ],
+      "primaryOverrides": {
+        "A01": "A02",
+        "A02": "A03",
+        "A03": "A02",
+        "A04": "A03",
+        "A05": "M01",
+        "A06": "A07",
+        "A10": "A06",
+        "E05": "A05",
+        "E06": "A02"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "A01",
+          "primary": {
+            "target": "A02",
+            "label": "Get started",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "A02",
+          "primary": {
+            "target": "A03",
+            "label": "Continue securely",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A01",
+          "branches": []
+        },
+        {
+          "screen": "A03",
+          "primary": {
+            "target": "A02",
+            "label": "Return to sign-in",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A02",
+          "branches": [
+            {
+              "screen": "A03",
+              "label": "Confirmed IdP + valid memberships sample",
+              "target": "A05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "A04",
+          "primary": {
+            "target": "A03",
+            "label": "Open recovery options",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A02",
+          "branches": []
+        },
+        {
+          "screen": "A05",
+          "primary": {
+            "target": "M01",
+            "label": "Open personal workspace",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A02",
+          "branches": [
+            {
+              "screen": "A05",
+              "label": "Authorised staff workspace",
+              "target": "D01",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "A05",
+              "label": "Pending membership unavailable",
+              "target": "E05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "A06",
+          "primary": {
+            "target": "A07",
+            "label": "Save preferences",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "A10",
+          "primary": {
+            "target": "A06",
+            "label": "Save device preferences",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A06",
+          "branches": []
+        },
+        {
+          "screen": "E05",
+          "primary": {
+            "target": "A05",
+            "label": "Choose another workspace",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A02",
+          "branches": []
+        },
+        {
+          "screen": "E06",
+          "primary": {
+            "target": "A02",
+            "label": "Return to secure sign-in",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": [
+            {
+              "screen": "E06",
+              "label": "Fresh sign-in, no critical action replay",
+              "target": "A02",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [],
+      "terminalStates": [],
+      "blockedStates": [
+        "E05",
+        "E06"
+      ],
+      "branches": [
+        {
+          "screen": "A03",
+          "label": "Confirmed IdP + valid memberships sample",
+          "target": "A05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "A05",
+          "label": "Authorised staff workspace",
+          "target": "D01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "A05",
+          "label": "Pending membership unavailable",
+          "target": "E05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "E06",
+          "label": "Fresh sign-in, no critical action replay",
+          "target": "A02",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Identity provider handles sign-in and recovery; membership separately gates workspace access.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F02",
+      "title": "Lost report & revision",
+      "entry": "M01",
+      "states": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "C01",
+        "C02",
+        "C03",
+        "C14",
+        "E01",
+        "E02",
+        "E03",
+        "E08"
+      ],
+      "primaryOverrides": {
+        "M01": "M02",
+        "M02": "M03",
+        "M03": "M04",
+        "M04": "C02",
+        "C01": "C02",
+        "C02": "C03",
+        "C03": "C02",
+        "C14": "C03",
+        "E01": "M02",
+        "E02": "M02",
+        "E03": "M02",
+        "E08": "C02"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "M01",
+          "primary": {
+            "target": "M02",
+            "label": "Open 02 · Report a lost item",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A05",
+          "branches": []
+        },
+        {
+          "screen": "M02",
+          "primary": {
+            "target": "M03",
+            "label": "Open 03 · Place and time",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": [
+            {
+              "screen": "M02",
+              "label": "Interrupted attachment",
+              "target": "E01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "M03",
+          "primary": {
+            "target": "M04",
+            "label": "Open 04 · Report submitted",
+            "stateChangeRequired": false,
+            "guard": "Explicit exact report submission; cancel retains draft and original observations."
+          },
+          "back": "M02",
+          "branches": [
+            {
+              "screen": "M03",
+              "label": "Required detail missing",
+              "target": "E03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "M04",
+          "primary": {
+            "target": "C02",
+            "label": "Open Your backpack report",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "C01",
+          "primary": {
+            "target": "C02",
+            "label": "Open backpack report",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "C02",
+          "primary": {
+            "target": "C03",
+            "label": "Edit report details",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C01",
+          "branches": [
+            {
+              "screen": "C02",
+              "label": "Partial search routes",
+              "target": "C05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "C03",
+          "primary": {
+            "target": "C02",
+            "label": "Save a new revision",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C02",
+          "branches": []
+        },
+        {
+          "screen": "C14",
+          "primary": {
+            "target": "C03",
+            "label": "Review saved draft",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C01",
+          "branches": []
+        },
+        {
+          "screen": "E01",
+          "primary": {
+            "target": "M02",
+            "label": "Retry the photo upload",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C14",
+          "branches": [
+            {
+              "screen": "E01",
+              "label": "Continue text-only",
+              "target": "M02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "E02",
+          "primary": {
+            "target": "M02",
+            "label": "Continue with text details",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "E01",
+          "branches": [
+            {
+              "screen": "E02",
+              "label": "Replace quarantined attachment",
+              "target": "M02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "E03",
+          "primary": {
+            "target": "M02",
+            "label": "Save corrected draft",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M03",
+          "branches": []
+        },
+        {
+          "screen": "E08",
+          "primary": {
+            "target": "C02",
+            "label": "Review my report",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C14",
+          "branches": [
+            {
+              "screen": "E08",
+              "label": "Stale custody observation",
+              "target": "S07",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "M03",
+          "target": "M04",
+          "reason": "Explicit exact report submission; cancel retains draft and original observations."
+        }
+      ],
+      "terminalStates": [
+        "M04"
+      ],
+      "blockedStates": [
+        "E01",
+        "E02",
+        "E03"
+      ],
+      "branches": [
+        {
+          "screen": "M02",
+          "label": "Interrupted attachment",
+          "target": "E01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "M03",
+          "label": "Required detail missing",
+          "target": "E03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "C02",
+          "label": "Partial search routes",
+          "target": "C05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "E01",
+          "label": "Continue text-only",
+          "target": "M02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "E02",
+          "label": "Replace quarantined attachment",
+          "target": "M02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "E08",
+          "label": "Stale custody observation",
+          "target": "S07",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Original observations and revisions retained; offline draft is not a server submission.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F03",
+      "title": "Search & partial availability",
+      "entry": "M05",
+      "states": [
+        "M05",
+        "M06",
+        "C04",
+        "C05",
+        "D04",
+        "C15"
+      ],
+      "primaryOverrides": {
+        "M05": "M06",
+        "M06": "M07",
+        "C04": "C02",
+        "C05": "M05",
+        "D04": "D05",
+        "C15": "M05"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "M05",
+          "primary": {
+            "target": "M06",
+            "label": "Open 06 · Candidate detail",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C02",
+          "branches": [
+            {
+              "screen": "M05",
+              "label": "Completed available search empty",
+              "target": "C04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "M05",
+              "label": "Hard identity contradiction",
+              "target": "C15",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "M06",
+          "primary": {
+            "target": "M07",
+            "label": "Open 07 · Private ownership check",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M05",
+          "branches": []
+        },
+        {
+          "screen": "C04",
+          "primary": {
+            "target": "C02",
+            "label": "Review report details",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C02",
+          "branches": []
+        },
+        {
+          "screen": "C05",
+          "primary": {
+            "target": "M05",
+            "label": "View available results",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C02",
+          "branches": []
+        },
+        {
+          "screen": "D04",
+          "primary": {
+            "target": "D05",
+            "label": "Open 05 · Independent claim review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D02",
+          "branches": []
+        },
+        {
+          "screen": "C15",
+          "primary": {
+            "target": "M05",
+            "label": "Review other candidates",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M06",
+          "branches": []
+        }
+      ],
+      "criticalActions": [],
+      "terminalStates": [],
+      "blockedStates": [
+        "C15"
+      ],
+      "branches": [
+        {
+          "screen": "M05",
+          "label": "Completed available search empty",
+          "target": "C04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "M05",
+          "label": "Hard identity contradiction",
+          "target": "C15",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Unavailable search routes are not empty; coverage and contradictions are independent.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F04",
+      "title": "Private ownership & representative claim",
+      "entry": "M06",
+      "states": [
+        "M07",
+        "M08",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C12",
+        "E04"
+      ],
+      "primaryOverrides": {
+        "M07": "C07",
+        "M08": "C11",
+        "C06": "C07",
+        "C07": "C11",
+        "C08": "C06",
+        "C09": "C11",
+        "C10": "C01",
+        "C12": "C07",
+        "E04": "C11"
+      },
+      "labelOverrides": {
+        "C09": "Contact the review team"
+      },
+      "routes": [
+        {
+          "screen": "M07",
+          "primary": {
+            "target": "C07",
+            "label": "Open Your claim is under review",
+            "stateChangeRequired": false,
+            "guard": "Private evidence goes only to independent review pending; no exposed expected answer."
+          },
+          "back": "M06",
+          "branches": [
+            {
+              "screen": "M07",
+              "label": "Representative entitlement",
+              "target": "C12",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "M07",
+              "label": "Private evidence missing / budget limited",
+              "target": "E04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "M08",
+          "primary": {
+            "target": "C11",
+            "label": "Open Private recovery messages",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C02",
+          "branches": []
+        },
+        {
+          "screen": "C06",
+          "primary": {
+            "target": "C07",
+            "label": "Send evidence for review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M07",
+          "branches": []
+        },
+        {
+          "screen": "C07",
+          "primary": {
+            "target": "C11",
+            "label": "Message the review team",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C02",
+          "branches": [
+            {
+              "screen": "C07",
+              "label": "Inconclusive review",
+              "target": "C08",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "C07",
+              "label": "Declined review",
+              "target": "C09",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "C07",
+              "label": "Explicit approved-current-authority sample",
+              "target": "M09",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "C08",
+          "primary": {
+            "target": "C06",
+            "label": "Provide more evidence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C07",
+          "branches": []
+        },
+        {
+          "screen": "C09",
+          "primary": {
+            "target": "C11",
+            "label": "Contact the review team",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C07",
+          "branches": []
+        },
+        {
+          "screen": "C10",
+          "primary": {
+            "target": "C01",
+            "label": "Request withdrawal",
+            "stateChangeRequired": false,
+            "guard": "Explicit withdrawal; retain earlier evidence and audit; legal/security restrictions stay blocked."
+          },
+          "back": "C07",
+          "branches": []
+        },
+        {
+          "screen": "C12",
+          "primary": {
+            "target": "C07",
+            "label": "Submit representative evidence",
+            "stateChangeRequired": false,
+            "guard": "Independent representative/principal evidence; no automatic entitlement."
+          },
+          "back": "M07",
+          "branches": []
+        },
+        {
+          "screen": "E04",
+          "primary": {
+            "target": "C11",
+            "label": "Open support options",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M07",
+          "branches": []
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "M07",
+          "target": "C07",
+          "reason": "Private evidence goes only to independent review pending; no exposed expected answer."
+        },
+        {
+          "screen": "C10",
+          "target": "C01",
+          "reason": "Explicit withdrawal; retain earlier evidence and audit; legal/security restrictions stay blocked."
+        },
+        {
+          "screen": "C12",
+          "target": "C07",
+          "reason": "Independent representative/principal evidence; no automatic entitlement."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [
+        "C08",
+        "C09",
+        "E04"
+      ],
+      "branches": [
+        {
+          "screen": "M07",
+          "label": "Representative entitlement",
+          "target": "C12",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "M07",
+          "label": "Private evidence missing / budget limited",
+          "target": "E04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "C07",
+          "label": "Inconclusive review",
+          "target": "C08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "C07",
+          "label": "Declined review",
+          "target": "C09",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "C07",
+          "label": "Explicit approved-current-authority sample",
+          "target": "M09",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Staff-attested evidence, attempt budgets and independent review; no disclosed answers.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F05",
+      "title": "Approval, collection & return",
+      "entry": "D05",
+      "states": [
+        "M09",
+        "M14",
+        "C13",
+        "E07",
+        "D05",
+        "D11",
+        "D12",
+        "S19"
+      ],
+      "primaryOverrides": {
+        "M09": "C11",
+        "M14": "L12",
+        "C13": "C11",
+        "E07": "C11",
+        "D05": "D11",
+        "D11": "D12",
+        "D12": "D02",
+        "S19": "S01"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "M09",
+          "primary": {
+            "target": "C11",
+            "label": "Open Private recovery messages",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L01",
+          "branches": []
+        },
+        {
+          "screen": "M14",
+          "primary": {
+            "target": "L12",
+            "label": "Open Your item passport",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "C13",
+          "primary": {
+            "target": "C11",
+            "label": "Request collection help",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L01",
+          "branches": []
+        },
+        {
+          "screen": "E07",
+          "primary": {
+            "target": "C11",
+            "label": "Ask the holding team",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M09",
+          "branches": []
+        },
+        {
+          "screen": "D05",
+          "primary": {
+            "target": "D11",
+            "label": "Open 11 · Collection desk",
+            "stateChangeRequired": false,
+            "guard": "Current independent human claim review with distinct entitlement, risk, holds and custody."
+          },
+          "back": "S01",
+          "branches": [
+            {
+              "screen": "D05",
+              "label": "Competing claims",
+              "target": "S02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "D11",
+          "primary": {
+            "target": "D12",
+            "label": "Open 12 · Return receipt",
+            "stateChangeRequired": false,
+            "guard": "Current unused audience-bound pass, actual recipient, holds, policy, custody and physical item; consume once only."
+          },
+          "back": "D01",
+          "branches": [
+            {
+              "screen": "D11",
+              "label": "Pass expired/used/wrong desk",
+              "target": "S19",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "D11",
+              "label": "Current hold",
+              "target": "E07",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "D12",
+          "primary": {
+            "target": "D02",
+            "label": "Open 02 · Found inventory",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "S19",
+          "primary": {
+            "target": "S01",
+            "label": "Return to the review queue",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D11",
+          "branches": []
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "D05",
+          "target": "D11",
+          "reason": "Current independent human claim review with distinct entitlement, risk, holds and custody."
+        },
+        {
+          "screen": "D11",
+          "target": "D12",
+          "reason": "Current unused audience-bound pass, actual recipient, holds, policy, custody and physical item; consume once only."
+        }
+      ],
+      "terminalStates": [
+        "M14",
+        "D12"
+      ],
+      "blockedStates": [
+        "C13",
+        "E07",
+        "S19"
+      ],
+      "branches": [
+        {
+          "screen": "D05",
+          "label": "Competing claims",
+          "target": "S02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "D11",
+          "label": "Pass expired/used/wrong desk",
+          "target": "S19",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "D11",
+          "label": "Current hold",
+          "target": "E07",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Approval, token, actual recipient, custody and owner return remain separate checks.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F06",
+      "title": "Finder intake & staffed acceptance",
+      "entry": "M10",
+      "states": [
+        "M10",
+        "M13",
+        "D03",
+        "S06",
+        "S07"
+      ],
+      "primaryOverrides": {
+        "M10": "M13",
+        "M13": "C11",
+        "D03": "S06",
+        "S06": "D06",
+        "S07": "D06"
+      },
+      "labelOverrides": {
+        "S06": "Confirm physical receiver acceptance",
+        "S07": "Record reviewed stale observation"
+      },
+      "routes": [
+        {
+          "screen": "M10",
+          "primary": {
+            "target": "M13",
+            "label": "Open 13 · Finder handover",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "M13",
+          "primary": {
+            "target": "C11",
+            "label": "Open Private recovery messages",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M10",
+          "branches": [
+            {
+              "screen": "M13",
+              "label": "Nominated receiver acceptance",
+              "target": "S06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "D03",
+          "primary": {
+            "target": "S06",
+            "label": "Open Accept a custody transfer",
+            "stateChangeRequired": false,
+            "guard": "Intake does not transfer physical custody."
+          },
+          "back": "D02",
+          "branches": []
+        },
+        {
+          "screen": "S06",
+          "primary": {
+            "target": "D06",
+            "label": "Confirm physical receiver acceptance",
+            "stateChangeRequired": false,
+            "guard": "Nominated receiver, current generation and actual physical receipt; stale/incident separate."
+          },
+          "back": "D06",
+          "branches": [
+            {
+              "screen": "S06",
+              "label": "Stale generation",
+              "target": "S07",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "S06",
+              "label": "Incident / physical discrepancy",
+              "target": "S08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S07",
+          "primary": {
+            "target": "D06",
+            "label": "Record reviewed stale observation",
+            "stateChangeRequired": false,
+            "guard": "Append stale observation; never overwrite authoritative custody."
+          },
+          "back": "S06",
+          "branches": [
+            {
+              "screen": "S07",
+              "label": "Keep current custody; append reviewed stale observation",
+              "target": "D06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "S07",
+              "label": "Escalate physical incident",
+              "target": "S08",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "D03",
+          "target": "S06",
+          "reason": "Intake does not transfer physical custody."
+        },
+        {
+          "screen": "S06",
+          "target": "D06",
+          "reason": "Nominated receiver, current generation and actual physical receipt; stale/incident separate."
+        },
+        {
+          "screen": "S07",
+          "target": "D06",
+          "reason": "Append stale observation; never overwrite authoritative custody."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [
+        "S07"
+      ],
+      "branches": [
+        {
+          "screen": "M13",
+          "label": "Nominated receiver acceptance",
+          "target": "S06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S06",
+          "label": "Stale generation",
+          "target": "S07",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S06",
+          "label": "Incident / physical discrepancy",
+          "target": "S08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S07",
+          "label": "Keep current custody; append reviewed stale observation",
+          "target": "D06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S07",
+          "label": "Escalate physical incident",
+          "target": "S08",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Finder retains possession until an authorised receiving operator accepts physical custody.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F07",
+      "title": "Private relay & moderation",
+      "entry": "M11",
+      "states": [
+        "M11",
+        "C11",
+        "S17"
+      ],
+      "primaryOverrides": {
+        "M11": "C11",
+        "C11": "C07",
+        "S17": "S01"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "M11",
+          "primary": {
+            "target": "C11",
+            "label": "Open Private recovery messages",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M08",
+          "branches": []
+        },
+        {
+          "screen": "C11",
+          "primary": {
+            "target": "C07",
+            "label": "Send selected phrase",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M08",
+          "branches": [
+            {
+              "screen": "C11",
+              "label": "Flag or block",
+              "target": "S17",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S17",
+          "primary": {
+            "target": "S01",
+            "label": "Record moderation decision",
+            "stateChangeRequired": false,
+            "guard": "Scoped moderation confirmation; contacts remain hidden."
+          },
+          "back": "C11",
+          "branches": [
+            {
+              "screen": "S17",
+              "label": "Cancel moderation request",
+              "target": "C11",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "S17",
+          "target": "S01",
+          "reason": "Scoped moderation confirmation; contacts remain hidden."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "C11",
+          "label": "Flag or block",
+          "target": "S17",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S17",
+          "label": "Cancel moderation request",
+          "target": "C11",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Current runtime is phrase-only; block, flag and retention controls apply.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F08",
+      "title": "Notification consent & delivery",
+      "entry": "N01",
+      "states": [
+        "A07",
+        "O07",
+        "O08",
+        "O14",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "N07",
+        "N08",
+        "N09"
+      ],
+      "primaryOverrides": {
+        "A07": "N06",
+        "O07": "I01",
+        "O08": "N04",
+        "O14": "I02",
+        "N01": "N02",
+        "N02": "N06",
+        "N03": "N06",
+        "N04": "N04",
+        "N05": "N03",
+        "N06": "N01",
+        "N07": "N09",
+        "N08": "N09",
+        "N09": "N01"
+      },
+      "labelOverrides": {
+        "N04": "Reconcile original operation; retain unknown absent evidence"
+      },
+      "routes": [
+        {
+          "screen": "A07",
+          "primary": {
+            "target": "N06",
+            "label": "Save notification choices",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A06",
+          "branches": []
+        },
+        {
+          "screen": "O07",
+          "primary": {
+            "target": "I01",
+            "label": "Review delivery operation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D10",
+          "branches": []
+        },
+        {
+          "screen": "O08",
+          "primary": {
+            "target": "N04",
+            "label": "Back to integration health",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O07",
+          "branches": []
+        },
+        {
+          "screen": "O14",
+          "primary": {
+            "target": "I02",
+            "label": "Save reviewed configuration",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O07",
+          "branches": []
+        },
+        {
+          "screen": "N01",
+          "primary": {
+            "target": "N02",
+            "label": "Review languages",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O14",
+          "branches": [
+            {
+              "screen": "N01",
+              "label": "Delivery operations",
+              "target": "N04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N02",
+          "primary": {
+            "target": "N06",
+            "label": "Request language review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "N01",
+          "branches": [
+            {
+              "screen": "N02",
+              "label": "Edit source",
+              "target": "N01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N03",
+          "primary": {
+            "target": "N06",
+            "label": "Save notification choices",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A07",
+          "branches": [
+            {
+              "screen": "N03",
+              "label": "Delivery history",
+              "target": "N05",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "N03",
+              "label": "Opt in / withdraw explicit sample choice",
+              "target": "N06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N04",
+          "primary": {
+            "target": "N04",
+            "label": "Reconcile original operation; retain unknown absent evidence",
+            "stateChangeRequired": true,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O08",
+          "branches": [
+            {
+              "screen": "N04",
+              "label": "Review template",
+              "target": "N01",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "N04",
+              "label": "Still unknown after reconciliation",
+              "target": "N04",
+              "stateChangeRequired": true
+            },
+            {
+              "screen": "N04",
+              "label": "Signed confirmed-delivery evidence sample",
+              "target": "N05",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "N04",
+              "label": "Provider-rejected template",
+              "target": "N09",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N05",
+          "primary": {
+            "target": "N03",
+            "label": "Manage consent",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "N04",
+          "branches": [
+            {
+              "screen": "N05",
+              "label": "Review other operations",
+              "target": "N04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N06",
+          "primary": {
+            "target": "N01",
+            "label": "Back to templates",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "N03",
+          "branches": [
+            {
+              "screen": "N06",
+              "label": "My notification choices",
+              "target": "N03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N07",
+          "primary": {
+            "target": "N09",
+            "label": "Validate and review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "N01",
+          "branches": [
+            {
+              "screen": "N07",
+              "label": "Preview languages",
+              "target": "N02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N08",
+          "primary": {
+            "target": "N09",
+            "label": "Validate and review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "N01",
+          "branches": [
+            {
+              "screen": "N08",
+              "label": "Edit WhatsApp template",
+              "target": "N01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "N09",
+          "primary": {
+            "target": "N01",
+            "label": "Fix source content",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "N02",
+          "branches": [
+            {
+              "screen": "N09",
+              "label": "Request locale review",
+              "target": "N02",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [],
+      "terminalStates": [
+        "N05",
+        "N06"
+      ],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "N01",
+          "label": "Delivery operations",
+          "target": "N04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N02",
+          "label": "Edit source",
+          "target": "N01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N03",
+          "label": "Delivery history",
+          "target": "N05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N03",
+          "label": "Opt in / withdraw explicit sample choice",
+          "target": "N06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N04",
+          "label": "Review template",
+          "target": "N01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N04",
+          "label": "Still unknown after reconciliation",
+          "target": "N04",
+          "stateChangeRequired": true
+        },
+        {
+          "screen": "N04",
+          "label": "Signed confirmed-delivery evidence sample",
+          "target": "N05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N04",
+          "label": "Provider-rejected template",
+          "target": "N09",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N05",
+          "label": "Review other operations",
+          "target": "N04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N06",
+          "label": "My notification choices",
+          "target": "N03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N07",
+          "label": "Preview languages",
+          "target": "N02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N08",
+          "label": "Edit WhatsApp template",
+          "target": "N01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "N09",
+          "label": "Request locale review",
+          "target": "N02",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Consent and provider operation state are separate from custody.",
+      "completedInputPrimaryOverrides": {},
+      "defaultFeedbackRequirements": {
+        "N04": "Default reconciliation shows still-unknown feedback and returns to the original operation; signed confirmed-delivery evidence is an explicit separate N05 branch."
+      }
+    },
+    {
+      "flow": "F09",
+      "title": "Courier quote, consent & reconciliation",
+      "entry": "Q01",
+      "states": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "S11",
+        "L17",
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "primaryOverrides": {
+        "L01": "L02",
+        "L02": "L03",
+        "L03": "Q03",
+        "L04": "Q10",
+        "L05": "L06",
+        "S11": "S12",
+        "L17": "Q05",
+        "Q01": "Q03",
+        "Q02": "Q01",
+        "Q03": "Q06",
+        "Q04": "Q07",
+        "Q05": "Q06",
+        "Q06": "Q03",
+        "Q07": "S12",
+        "Q08": "Q01",
+        "Q09": "Q03",
+        "Q10": "Q06"
+      },
+      "labelOverrides": {
+        "L04": "Review original booking operation"
+      },
+      "routes": [
+        {
+          "screen": "L01",
+          "primary": {
+            "target": "L02",
+            "label": "Review delivery options",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M09",
+          "branches": []
+        },
+        {
+          "screen": "L02",
+          "primary": {
+            "target": "L03",
+            "label": "Review a delivery quote",
+            "stateChangeRequired": false,
+            "guard": "Shipment-specific route permission through approved provider vault."
+          },
+          "back": "L01",
+          "branches": []
+        },
+        {
+          "screen": "L03",
+          "primary": {
+            "target": "Q03",
+            "label": "Request staff booking review",
+            "stateChangeRequired": false,
+            "guard": "Owner requests independent staff booking review; cannot self-approve dispatch."
+          },
+          "back": "L02",
+          "branches": []
+        },
+        {
+          "screen": "L04",
+          "primary": {
+            "target": "Q10",
+            "label": "Review original booking operation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L03",
+          "branches": []
+        },
+        {
+          "screen": "L05",
+          "primary": {
+            "target": "L06",
+            "label": "Review receipt confirmation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L01",
+          "branches": [
+            {
+              "screen": "L05",
+              "label": "Policy changed in transit",
+              "target": "S12",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S11",
+          "primary": {
+            "target": "S12",
+            "label": "Review receipt authorisation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S01",
+          "branches": []
+        },
+        {
+          "screen": "L17",
+          "primary": {
+            "target": "Q05",
+            "label": "Request cancellation review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L05",
+          "branches": []
+        },
+        {
+          "screen": "Q01",
+          "primary": {
+            "target": "Q03",
+            "label": "Submit booking request",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L02",
+          "branches": [
+            {
+              "screen": "Q01",
+              "label": "Quote unavailable",
+              "target": "Q02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q02",
+          "primary": {
+            "target": "Q01",
+            "label": "Request a fresh quote",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L01",
+          "branches": [
+            {
+              "screen": "Q02",
+              "label": "View booking status",
+              "target": "Q06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q03",
+          "primary": {
+            "target": "Q06",
+            "label": "Queue booking operation",
+            "stateChangeRequired": false,
+            "guard": "Independent staff current checks and durable booking operation; uncertain send does not duplicate."
+          },
+          "back": "Q01",
+          "branches": [
+            {
+              "screen": "Q03",
+              "label": "Prepare physical handoff",
+              "target": "Q04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "Q03",
+              "label": "Confirmed booking sample",
+              "target": "Q04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "Q03",
+              "label": "Unknown booking",
+              "target": "Q10",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q04",
+          "primary": {
+            "target": "Q07",
+            "label": "Record courier handoff",
+            "stateChangeRequired": false,
+            "guard": "Current custodian records actual physical courier handoff, not owner return."
+          },
+          "back": "Q06",
+          "branches": [
+            {
+              "screen": "Q04",
+              "label": "A check failed",
+              "target": "Q06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "Q04",
+              "label": "Current hold blocks dispatch",
+              "target": "Q09",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q05",
+          "primary": {
+            "target": "Q06",
+            "label": "Request cancellation",
+            "stateChangeRequired": false,
+            "guard": "Confirmed, unknown and too-late cancellation are distinct."
+          },
+          "back": "Q06",
+          "branches": [
+            {
+              "screen": "Q05",
+              "label": "Keep booking",
+              "target": "Q03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "Q05",
+              "label": "Pre-dispatch cancellation confirmed sample",
+              "target": "Q08",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "Q05",
+              "label": "Unknown cancellation",
+              "target": "Q10",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "Q05",
+              "label": "Already dispatched",
+              "target": "Q07",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q06",
+          "primary": {
+            "target": "Q03",
+            "label": "Review booking details",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "Q01",
+          "branches": [
+            {
+              "screen": "Q06",
+              "label": "Cancellation request",
+              "target": "Q05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q07",
+          "primary": {
+            "target": "S12",
+            "label": "Open receipt checks",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "Q06",
+          "branches": [
+            {
+              "screen": "Q07",
+              "label": "Review operation history",
+              "target": "Q06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q08",
+          "primary": {
+            "target": "Q01",
+            "label": "Review another route",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "Q06",
+          "branches": [
+            {
+              "screen": "Q08",
+              "label": "View original operation",
+              "target": "Q06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q09",
+          "primary": {
+            "target": "Q03",
+            "label": "Review current authorisation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "Q06",
+          "branches": [
+            {
+              "screen": "Q09",
+              "label": "Inspect cancellation options",
+              "target": "Q05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "Q10",
+          "primary": {
+            "target": "Q06",
+            "label": "Review reconciled outcome",
+            "stateChangeRequired": false,
+            "guard": "Reconcile original durable operation; only definitive not-found permits same-request resend."
+          },
+          "back": "Q06",
+          "branches": [
+            {
+              "screen": "Q10",
+              "label": "Back to booking record",
+              "target": "Q03",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "L02",
+          "target": "L03",
+          "reason": "Shipment-specific route permission through approved provider vault."
+        },
+        {
+          "screen": "L03",
+          "target": "Q03",
+          "reason": "Owner requests independent staff booking review; cannot self-approve dispatch."
+        },
+        {
+          "screen": "Q03",
+          "target": "Q06",
+          "reason": "Independent staff current checks and durable booking operation; uncertain send does not duplicate."
+        },
+        {
+          "screen": "Q04",
+          "target": "Q07",
+          "reason": "Current custodian records actual physical courier handoff, not owner return."
+        },
+        {
+          "screen": "Q05",
+          "target": "Q06",
+          "reason": "Confirmed, unknown and too-late cancellation are distinct."
+        },
+        {
+          "screen": "Q10",
+          "target": "Q06",
+          "reason": "Reconcile original durable operation; only definitive not-found permits same-request resend."
+        }
+      ],
+      "terminalStates": [
+        "Q07",
+        "Q08"
+      ],
+      "blockedStates": [
+        "L04",
+        "Q02",
+        "Q09"
+      ],
+      "branches": [
+        {
+          "screen": "L05",
+          "label": "Policy changed in transit",
+          "target": "S12",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q01",
+          "label": "Quote unavailable",
+          "target": "Q02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q02",
+          "label": "View booking status",
+          "target": "Q06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q03",
+          "label": "Prepare physical handoff",
+          "target": "Q04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q03",
+          "label": "Confirmed booking sample",
+          "target": "Q04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q03",
+          "label": "Unknown booking",
+          "target": "Q10",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q04",
+          "label": "A check failed",
+          "target": "Q06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q04",
+          "label": "Current hold blocks dispatch",
+          "target": "Q09",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q05",
+          "label": "Keep booking",
+          "target": "Q03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q05",
+          "label": "Pre-dispatch cancellation confirmed sample",
+          "target": "Q08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q05",
+          "label": "Unknown cancellation",
+          "target": "Q10",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q05",
+          "label": "Already dispatched",
+          "target": "Q07",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q06",
+          "label": "Cancellation request",
+          "target": "Q05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q07",
+          "label": "Review operation history",
+          "target": "Q06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q08",
+          "label": "View original operation",
+          "target": "Q06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q09",
+          "label": "Inspect cancellation options",
+          "target": "Q05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "Q10",
+          "label": "Back to booking record",
+          "target": "Q03",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Provider-vault route consent; booking does not change custody; unknown sends reconcile.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F10",
+      "title": "Owner receipt & transit changes",
+      "entry": "L05",
+      "states": [
+        "L05",
+        "L06",
+        "L07",
+        "S11",
+        "S12"
+      ],
+      "primaryOverrides": {
+        "L05": "L06",
+        "L06": "L07",
+        "L07": "W01",
+        "S11": "S12",
+        "S12": "S11"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "L05",
+          "primary": {
+            "target": "L06",
+            "label": "Review receipt confirmation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L01",
+          "branches": [
+            {
+              "screen": "L05",
+              "label": "Policy changed in transit",
+              "target": "S12",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "L06",
+          "primary": {
+            "target": "L07",
+            "label": "Submit receipt confirmation",
+            "stateChangeRequired": false,
+            "guard": "Actual correct item plus current independent receipt authority; tracking is insufficient."
+          },
+          "back": "L05",
+          "branches": [
+            {
+              "screen": "L06",
+              "label": "Physical item issue",
+              "target": "S11",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "L07",
+          "primary": {
+            "target": "W01",
+            "label": "Review voluntary reward",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "S11",
+          "primary": {
+            "target": "S12",
+            "label": "Review receipt authorisation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S01",
+          "branches": []
+        },
+        {
+          "screen": "S12",
+          "primary": {
+            "target": "S11",
+            "label": "Record review decision",
+            "stateChangeRequired": false,
+            "guard": "Fresh independent receipt authority after changed current policy/hold/report/custody."
+          },
+          "back": "S11",
+          "branches": [
+            {
+              "screen": "S12",
+              "label": "Current independent receipt authority sample",
+              "target": "L06",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "L06",
+          "target": "L07",
+          "reason": "Actual correct item plus current independent receipt authority; tracking is insufficient."
+        },
+        {
+          "screen": "S12",
+          "target": "S11",
+          "reason": "Fresh independent receipt authority after changed current policy/hold/report/custody."
+        }
+      ],
+      "terminalStates": [
+        "L07"
+      ],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "L05",
+          "label": "Policy changed in transit",
+          "target": "S12",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "L06",
+          "label": "Physical item issue",
+          "target": "S11",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S12",
+          "label": "Current independent receipt authority sample",
+          "target": "L06",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Delivery does not confirm receipt; policy/hold changes require current independent authority.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F11",
+      "title": "Voluntary reward & financial dispute",
+      "entry": "W01",
+      "states": [
+        "L08",
+        "L09",
+        "L10",
+        "S13",
+        "S14",
+        "L15",
+        "L16",
+        "L20",
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W05",
+        "W06",
+        "W07",
+        "W08",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "primaryOverrides": {
+        "L08": "L20",
+        "L09": "W04",
+        "L10": "W04",
+        "S13": "W04",
+        "S14": "W04",
+        "L15": "W04",
+        "L16": "W04",
+        "L20": "W02",
+        "W01": "W02",
+        "W02": "W03",
+        "W03": "W04",
+        "W04": "W05",
+        "W05": "W06",
+        "W06": "W04",
+        "W07": "W01",
+        "W08": "W03",
+        "W09": "W04",
+        "W10": "S14",
+        "W11": "W04"
+      },
+      "labelOverrides": {
+        "L15": "Review original financial operation"
+      },
+      "routes": [
+        {
+          "screen": "L08",
+          "primary": {
+            "target": "L20",
+            "label": "Review reward terms",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L07",
+          "branches": []
+        },
+        {
+          "screen": "L09",
+          "primary": {
+            "target": "W04",
+            "label": "Report a reward dispute",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L07",
+          "branches": []
+        },
+        {
+          "screen": "L10",
+          "primary": {
+            "target": "W04",
+            "label": "Submit for independent review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L09",
+          "branches": []
+        },
+        {
+          "screen": "S13",
+          "primary": {
+            "target": "W04",
+            "label": "Review ledger evidence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S01",
+          "branches": []
+        },
+        {
+          "screen": "S14",
+          "primary": {
+            "target": "W04",
+            "label": "Back to dispute review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S13",
+          "branches": []
+        },
+        {
+          "screen": "L15",
+          "primary": {
+            "target": "W04",
+            "label": "Review original financial operation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L09",
+          "branches": []
+        },
+        {
+          "screen": "L16",
+          "primary": {
+            "target": "W04",
+            "label": "Review dispute status",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L10",
+          "branches": []
+        },
+        {
+          "screen": "L20",
+          "primary": {
+            "target": "W02",
+            "label": "Review reservation outcome",
+            "stateChangeRequired": false,
+            "guard": "Immutable optional terms before reserve; payment never gates property recovery."
+          },
+          "back": "L08",
+          "branches": []
+        },
+        {
+          "screen": "W01",
+          "primary": {
+            "target": "W02",
+            "label": "Review payment authorisation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L07",
+          "branches": [
+            {
+              "screen": "W01",
+              "label": "View reward status",
+              "target": "W03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W02",
+          "primary": {
+            "target": "W03",
+            "label": "Continue with provider",
+            "stateChangeRequired": false,
+            "guard": "Fixed optional terms and provider consent; confirmed external reserve before ledger."
+          },
+          "back": "W01",
+          "branches": [
+            {
+              "screen": "W02",
+              "label": "Back to fixed terms",
+              "target": "W01",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W02",
+              "label": "Reserve declined",
+              "target": "W07",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W02",
+              "label": "Reserve confirmed sample",
+              "target": "W08",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W02",
+              "label": "Unknown financial operation",
+              "target": "W11",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W03",
+          "primary": {
+            "target": "W04",
+            "label": "Review a dispute",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "W02",
+          "branches": [
+            {
+              "screen": "W03",
+              "label": "Request refund",
+              "target": "W06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W04",
+          "primary": {
+            "target": "W05",
+            "label": "Review resolution",
+            "stateChangeRequired": false,
+            "guard": "Independent from payer and beneficiary; protected source evidence and reason."
+          },
+          "back": "W03",
+          "branches": [
+            {
+              "screen": "W04",
+              "label": "Inspect unresolved outcomes",
+              "target": "W03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W05",
+          "primary": {
+            "target": "W06",
+            "label": "Queue permitted resolution",
+            "stateChangeRequired": false,
+            "guard": "Queue reviewed intent; never assert confirmed compensation from intent alone."
+          },
+          "back": "W04",
+          "branches": [
+            {
+              "screen": "W05",
+              "label": "Revise review",
+              "target": "W04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W06",
+          "primary": {
+            "target": "W04",
+            "label": "View independent review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "W03",
+          "branches": [
+            {
+              "screen": "W06",
+              "label": "Return to reward status",
+              "target": "W03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W06",
+              "label": "Confirmed compensation",
+              "target": "W10",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W06",
+              "label": "Unknown or unsupported reversal",
+              "target": "W11",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W07",
+          "primary": {
+            "target": "W01",
+            "label": "Review your choices",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L07",
+          "branches": [
+            {
+              "screen": "W07",
+              "label": "Continue without a reward",
+              "target": "L01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W08",
+          "primary": {
+            "target": "W03",
+            "label": "Review permitted settlement",
+            "stateChangeRequired": false,
+            "guard": "Authoritative return, payer confirmation, no hold and confirmed external payout before settlement."
+          },
+          "back": "W03",
+          "branches": [
+            {
+              "screen": "W08",
+              "label": "Raise a dispute",
+              "target": "W04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W08",
+              "label": "Missing authoritative owner receipt",
+              "target": "L06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W08",
+              "label": "Confirmed external payout sample with current gates",
+              "target": "W09",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "W08",
+              "label": "Hold/dispute blocks payout",
+              "target": "W04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W09",
+          "primary": {
+            "target": "W04",
+            "label": "Inspect financial review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "W08",
+          "branches": [
+            {
+              "screen": "W09",
+              "label": "View confirmed refund variant",
+              "target": "W10",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W10",
+          "primary": {
+            "target": "S14",
+            "label": "Review ledger history",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "W04",
+          "branches": [
+            {
+              "screen": "W10",
+              "label": "Unresolved reversal variant",
+              "target": "W11",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "W11",
+          "primary": {
+            "target": "W04",
+            "label": "Return to independent review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "W03",
+          "branches": [
+            {
+              "screen": "W11",
+              "label": "Review provider outcomes",
+              "target": "W06",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "L20",
+          "target": "W02",
+          "reason": "Immutable optional terms before reserve; payment never gates property recovery."
+        },
+        {
+          "screen": "W02",
+          "target": "W03",
+          "reason": "Fixed optional terms and provider consent; confirmed external reserve before ledger."
+        },
+        {
+          "screen": "W04",
+          "target": "W05",
+          "reason": "Independent from payer and beneficiary; protected source evidence and reason."
+        },
+        {
+          "screen": "W05",
+          "target": "W06",
+          "reason": "Queue reviewed intent; never assert confirmed compensation from intent alone."
+        },
+        {
+          "screen": "W08",
+          "target": "W03",
+          "reason": "Authoritative return, payer confirmation, no hold and confirmed external payout before settlement."
+        }
+      ],
+      "terminalStates": [
+        "W07",
+        "W09",
+        "W10"
+      ],
+      "blockedStates": [
+        "L15",
+        "W07",
+        "W11"
+      ],
+      "branches": [
+        {
+          "screen": "W01",
+          "label": "View reward status",
+          "target": "W03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W02",
+          "label": "Back to fixed terms",
+          "target": "W01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W02",
+          "label": "Reserve declined",
+          "target": "W07",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W02",
+          "label": "Reserve confirmed sample",
+          "target": "W08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W02",
+          "label": "Unknown financial operation",
+          "target": "W11",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W03",
+          "label": "Request refund",
+          "target": "W06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W04",
+          "label": "Inspect unresolved outcomes",
+          "target": "W03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W05",
+          "label": "Revise review",
+          "target": "W04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W06",
+          "label": "Return to reward status",
+          "target": "W03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W06",
+          "label": "Confirmed compensation",
+          "target": "W10",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W06",
+          "label": "Unknown or unsupported reversal",
+          "target": "W11",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W07",
+          "label": "Continue without a reward",
+          "target": "L01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W08",
+          "label": "Raise a dispute",
+          "target": "W04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W08",
+          "label": "Missing authoritative owner receipt",
+          "target": "L06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W08",
+          "label": "Confirmed external payout sample with current gates",
+          "target": "W09",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W08",
+          "label": "Hold/dispute blocks payout",
+          "target": "W04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W09",
+          "label": "View confirmed refund variant",
+          "target": "W10",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W10",
+          "label": "Unresolved reversal variant",
+          "target": "W11",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "W11",
+          "label": "Review provider outcomes",
+          "target": "W06",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Payment never gates recovery; immutable terms and independently reviewed reconciliation.",
+      "completedInputPrimaryOverrides": {},
+      "defaultFeedbackRequirements": {
+        "W08": "Default settlement review opens W03 operation review; only explicit confirmed external-payout sample with current gates reaches W09."
+      }
+    },
+    {
+      "flow": "F12",
+      "title": "Registration, tags & finder relay",
+      "entry": "T01",
+      "states": [
+        "M12",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L18",
+        "L19",
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08"
+      ],
+      "primaryOverrides": {
+        "M12": "L11",
+        "L11": "L12",
+        "L12": "L13",
+        "L13": "L14",
+        "L14": "M13",
+        "L18": "M10",
+        "L19": "T04",
+        "T01": "T02",
+        "T02": "T08",
+        "T03": "T03",
+        "T04": "T05",
+        "T05": "T02",
+        "T06": "T03",
+        "T07": "T04",
+        "T08": "T02"
+      },
+      "labelOverrides": {
+        "L14": "Send finder phrase / arrange staffed handover",
+        "T08": "Back to prepared tag"
+      },
+      "routes": [
+        {
+          "screen": "M12",
+          "primary": {
+            "target": "L11",
+            "label": "Open Register an item",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "L11",
+          "primary": {
+            "target": "L12",
+            "label": "Create private item record",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M12",
+          "branches": []
+        },
+        {
+          "screen": "L12",
+          "primary": {
+            "target": "L13",
+            "label": "Manage item tags",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M12",
+          "branches": []
+        },
+        {
+          "screen": "L13",
+          "primary": {
+            "target": "L14",
+            "label": "Open finder contact",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L12",
+          "branches": []
+        },
+        {
+          "screen": "L14",
+          "primary": {
+            "target": "M13",
+            "label": "Send finder phrase / arrange staffed handover",
+            "stateChangeRequired": false,
+            "guard": "Finder stays in limited safe capability; never opens owner private passport."
+          },
+          "back": "M10",
+          "branches": []
+        },
+        {
+          "screen": "L18",
+          "primary": {
+            "target": "M10",
+            "label": "Open found-item reporting",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "L19",
+          "primary": {
+            "target": "T04",
+            "label": "Review updated tag status",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L13",
+          "branches": []
+        },
+        {
+          "screen": "T01",
+          "primary": {
+            "target": "T02",
+            "label": "Create sample tag",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "L11",
+          "branches": [
+            {
+              "screen": "T01",
+              "label": "Manage existing tags",
+              "target": "T04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "T02",
+          "primary": {
+            "target": "T08",
+            "label": "View printable layout",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "T01",
+          "branches": [
+            {
+              "screen": "T02",
+              "label": "Write NFC tag",
+              "target": "T03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "T02",
+              "label": "Manage existing tag",
+              "target": "T04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "T02",
+              "label": "NFC write",
+              "target": "T03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "T03",
+          "primary": {
+            "target": "T03",
+            "label": "Write and verify tag",
+            "stateChangeRequired": true,
+            "guard": "Synthetic device outcomes only; read-back confirmation before NFC-ready state."
+          },
+          "back": "T02",
+          "branches": [
+            {
+              "screen": "T03",
+              "label": "Troubleshoot a failed write",
+              "target": "T06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "T03",
+              "label": "Read-back confirmed sample",
+              "target": "T07",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "T03",
+              "label": "Write failed",
+              "target": "T06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "T03",
+              "label": "Unsupported hardware / printable QR",
+              "target": "T08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "T04",
+          "primary": {
+            "target": "T05",
+            "label": "Confirm tag change",
+            "stateChangeRequired": false,
+            "guard": "Explicit revoke/rotate; replacement is distinct capability."
+          },
+          "back": "L13",
+          "branches": [
+            {
+              "screen": "T04",
+              "label": "Keep current tag",
+              "target": "T02",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "T04",
+              "label": "Cancel without revocation",
+              "target": "L13",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "T05",
+          "primary": {
+            "target": "T02",
+            "label": "Prepare replacement",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "T04",
+          "branches": [
+            {
+              "screen": "T05",
+              "label": "Preview finder contact",
+              "target": "L14",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "T05",
+              "label": "Old revoked tag scan",
+              "target": "L18",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "T06",
+          "primary": {
+            "target": "T03",
+            "label": "Retry this NFC write",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "T02",
+          "branches": [
+            {
+              "screen": "T06",
+              "label": "Use the printable QR",
+              "target": "T08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "T07",
+          "primary": {
+            "target": "T04",
+            "label": "Manage this tag",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "T02",
+          "branches": [
+            {
+              "screen": "T07",
+              "label": "Preview private finder relay",
+              "target": "L14",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "T08",
+          "primary": {
+            "target": "T02",
+            "label": "Back to prepared tag",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "T02",
+          "branches": [
+            {
+              "screen": "T08",
+              "label": "Use NFC instead",
+              "target": "T03",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "L14",
+          "target": "M13",
+          "reason": "Finder stays in limited safe capability; never opens owner private passport."
+        },
+        {
+          "screen": "T03",
+          "target": "T03",
+          "reason": "Synthetic device outcomes only; read-back confirmation before NFC-ready state."
+        },
+        {
+          "screen": "T04",
+          "target": "T05",
+          "reason": "Explicit revoke/rotate; replacement is distinct capability."
+        }
+      ],
+      "terminalStates": [
+        "T05",
+        "T07"
+      ],
+      "blockedStates": [
+        "L18",
+        "T06"
+      ],
+      "branches": [
+        {
+          "screen": "T01",
+          "label": "Manage existing tags",
+          "target": "T04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T02",
+          "label": "Write NFC tag",
+          "target": "T03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T02",
+          "label": "Manage existing tag",
+          "target": "T04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T02",
+          "label": "NFC write",
+          "target": "T03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T03",
+          "label": "Troubleshoot a failed write",
+          "target": "T06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T03",
+          "label": "Read-back confirmed sample",
+          "target": "T07",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T03",
+          "label": "Write failed",
+          "target": "T06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T03",
+          "label": "Unsupported hardware / printable QR",
+          "target": "T08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T04",
+          "label": "Keep current tag",
+          "target": "T02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T04",
+          "label": "Cancel without revocation",
+          "target": "L13",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T05",
+          "label": "Preview finder contact",
+          "target": "L14",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T05",
+          "label": "Old revoked tag scan",
+          "target": "L18",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T06",
+          "label": "Use the printable QR",
+          "target": "T08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T07",
+          "label": "Preview private finder relay",
+          "target": "L14",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "T08",
+          "label": "Use NFC instead",
+          "target": "T03",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "A tag scan neither establishes ownership nor creates release authority.",
+      "completedInputPrimaryOverrides": {},
+      "defaultFeedbackRequirements": {
+        "T03": "Default write request shows read-back pending and returns to T03; only explicit synthetic read-back confirmation reaches T07."
+      }
+    },
+    {
+      "flow": "F13",
+      "title": "Staff queue, evidence & risk",
+      "entry": "S01",
+      "states": [
+        "D01",
+        "D02",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "primaryOverrides": {
+        "D01": "S01",
+        "D02": "D04",
+        "S01": "S02",
+        "S02": "D05",
+        "S03": "S04",
+        "S04": "S05",
+        "S05": "S01"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "D01",
+          "primary": {
+            "target": "S01",
+            "label": "Open Review work, in one place",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A05",
+          "branches": []
+        },
+        {
+          "screen": "D02",
+          "primary": {
+            "target": "D04",
+            "label": "Open 04 · Match review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "S01",
+          "primary": {
+            "target": "S02",
+            "label": "Open competing-claim review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": [
+            {
+              "screen": "S01",
+              "label": "Sensitive evidence access",
+              "target": "S04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "S01",
+              "label": "Receipt reauthorisation",
+              "target": "S12",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "S01",
+              "label": "Risk hold",
+              "target": "S03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S02",
+          "primary": {
+            "target": "D05",
+            "label": "Record review outcome",
+            "stateChangeRequired": false,
+            "guard": "First claim/high score does not win; independent evidence and reason required."
+          },
+          "back": "S01",
+          "branches": []
+        },
+        {
+          "screen": "S03",
+          "primary": {
+            "target": "S04",
+            "label": "Review restricted evidence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S01",
+          "branches": []
+        },
+        {
+          "screen": "S04",
+          "primary": {
+            "target": "S05",
+            "label": "Request task-scoped access",
+            "stateChangeRequired": false,
+            "guard": "Private evidence purpose, actor, task, tenant scope; denial discloses nothing."
+          },
+          "back": "S01",
+          "branches": [
+            {
+              "screen": "S04",
+              "label": "Denied/expired evidence scope",
+              "target": "E05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S05",
+          "primary": {
+            "target": "S01",
+            "label": "Record protected observation",
+            "stateChangeRequired": false,
+            "guard": "Current staff-attested protected observation and disclosure checks."
+          },
+          "back": "S04",
+          "branches": []
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "S02",
+          "target": "D05",
+          "reason": "First claim/high score does not win; independent evidence and reason required."
+        },
+        {
+          "screen": "S04",
+          "target": "S05",
+          "reason": "Private evidence purpose, actor, task, tenant scope; denial discloses nothing."
+        },
+        {
+          "screen": "S05",
+          "target": "S01",
+          "reason": "Current staff-attested protected observation and disclosure checks."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [
+        "S03"
+      ],
+      "branches": [
+        {
+          "screen": "S01",
+          "label": "Sensitive evidence access",
+          "target": "S04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S01",
+          "label": "Receipt reauthorisation",
+          "target": "S12",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S01",
+          "label": "Risk hold",
+          "target": "S03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S04",
+          "label": "Denied/expired evidence scope",
+          "target": "E05",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Task-scoped private evidence, separate risk, competing claims and recorded reasons.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F14",
+      "title": "Custody, stale updates & incident holds",
+      "entry": "D06",
+      "states": [
+        "D06",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "primaryOverrides": {
+        "D06": "S06",
+        "S06": "D06",
+        "S07": "D06",
+        "S08": "S01"
+      },
+      "labelOverrides": {
+        "S06": "Confirm physical receiver acceptance",
+        "S07": "Record reviewed stale observation"
+      },
+      "routes": [
+        {
+          "screen": "D06",
+          "primary": {
+            "target": "S06",
+            "label": "Open Accept a custody transfer",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "S06",
+          "primary": {
+            "target": "D06",
+            "label": "Confirm physical receiver acceptance",
+            "stateChangeRequired": false,
+            "guard": "Nominated receiver, current generation and actual physical receipt; stale/incident separate."
+          },
+          "back": "D06",
+          "branches": [
+            {
+              "screen": "S06",
+              "label": "Stale generation",
+              "target": "S07",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "S06",
+              "label": "Incident / physical discrepancy",
+              "target": "S08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S07",
+          "primary": {
+            "target": "D06",
+            "label": "Record reviewed stale observation",
+            "stateChangeRequired": false,
+            "guard": "Append stale observation; never overwrite authoritative custody."
+          },
+          "back": "S06",
+          "branches": [
+            {
+              "screen": "S07",
+              "label": "Keep current custody; append reviewed stale observation",
+              "target": "D06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "S07",
+              "label": "Escalate physical incident",
+              "target": "S08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S08",
+          "primary": {
+            "target": "S01",
+            "label": "Record incident and hold",
+            "stateChangeRequired": false,
+            "guard": "Append incident/hold; no silent possession change."
+          },
+          "back": "D06",
+          "branches": []
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "S06",
+          "target": "D06",
+          "reason": "Nominated receiver, current generation and actual physical receipt; stale/incident separate."
+        },
+        {
+          "screen": "S07",
+          "target": "D06",
+          "reason": "Append stale observation; never overwrite authoritative custody."
+        },
+        {
+          "screen": "S08",
+          "target": "S01",
+          "reason": "Append incident/hold; no silent possession change."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [
+        "S07",
+        "S08"
+      ],
+      "branches": [
+        {
+          "screen": "S06",
+          "label": "Stale generation",
+          "target": "S07",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S06",
+          "label": "Incident / physical discrepancy",
+          "target": "S08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S07",
+          "label": "Keep current custody; append reviewed stale observation",
+          "target": "D06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "S07",
+          "label": "Escalate physical incident",
+          "target": "S08",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Receiver acceptance, generation check, append-only incident and current hold.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F15",
+      "title": "Unclaimed property disposition",
+      "entry": "DPO1",
+      "states": [
+        "S09",
+        "S10",
+        "DPO1",
+        "DPO2",
+        "DPO3",
+        "DPO4",
+        "DPO5"
+      ],
+      "primaryOverrides": {
+        "S09": "DPO1",
+        "S10": "DPO2",
+        "DPO1": "DPO2",
+        "DPO2": "DPO3",
+        "DPO3": "DPO5",
+        "DPO4": "DPO1",
+        "DPO5": "D06"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "S09",
+          "primary": {
+            "target": "DPO1",
+            "label": "Review disposition",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S01",
+          "branches": []
+        },
+        {
+          "screen": "S10",
+          "primary": {
+            "target": "DPO2",
+            "label": "Record authorised disposition",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S09",
+          "branches": []
+        },
+        {
+          "screen": "DPO1",
+          "primary": {
+            "target": "DPO2",
+            "label": "Prepare a disposition",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S09",
+          "branches": [
+            {
+              "screen": "DPO1",
+              "label": "Review blocked state",
+              "target": "DPO4",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "DPO1",
+              "label": "Hold/claim/policy prevents eligibility",
+              "target": "DPO4",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "DPO2",
+          "primary": {
+            "target": "DPO3",
+            "label": "Send for independent approval",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "DPO1",
+          "branches": [
+            {
+              "screen": "DPO2",
+              "label": "Return to eligibility",
+              "target": "DPO1",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "DPO3",
+          "primary": {
+            "target": "DPO5",
+            "label": "Record completed disposition",
+            "stateChangeRequired": false,
+            "guard": "Institution-adopted policy, current holds/claims/custody and actually completed physical action."
+          },
+          "back": "DPO2",
+          "branches": [
+            {
+              "screen": "DPO3",
+              "label": "A check changed",
+              "target": "DPO4",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "DPO3",
+              "label": "Completed physical terminal action sample",
+              "target": "DPO5",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "DPO3",
+              "label": "Current check changed",
+              "target": "DPO4",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "DPO4",
+          "primary": {
+            "target": "DPO1",
+            "label": "Recheck eligibility",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S09",
+          "branches": [
+            {
+              "screen": "DPO4",
+              "label": "Review evidence package",
+              "target": "DPO2",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "DPO5",
+          "primary": {
+            "target": "D06",
+            "label": "View retained history",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S09",
+          "branches": [
+            {
+              "screen": "DPO5",
+              "label": "Review another item",
+              "target": "S09",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "DPO3",
+          "target": "DPO5",
+          "reason": "Institution-adopted policy, current holds/claims/custody and actually completed physical action."
+        }
+      ],
+      "terminalStates": [
+        "DPO5"
+      ],
+      "blockedStates": [
+        "DPO4"
+      ],
+      "branches": [
+        {
+          "screen": "DPO1",
+          "label": "Review blocked state",
+          "target": "DPO4",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "DPO1",
+          "label": "Hold/claim/policy prevents eligibility",
+          "target": "DPO4",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "DPO2",
+          "label": "Return to eligibility",
+          "target": "DPO1",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "DPO3",
+          "label": "A check changed",
+          "target": "DPO4",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "DPO3",
+          "label": "Completed physical terminal action sample",
+          "target": "DPO5",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "DPO3",
+          "label": "Current check changed",
+          "target": "DPO4",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "DPO4",
+          "label": "Review evidence package",
+          "target": "DPO2",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "DPO5",
+          "label": "Review another item",
+          "target": "S09",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Retention and legal hold checked before an audited policy-authorised terminal action.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F16",
+      "title": "Scoped investigation & crop access",
+      "entry": "V01",
+      "states": [
+        "D08",
+        "S15",
+        "S16",
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06"
+      ],
+      "primaryOverrides": {
+        "D08": "V01",
+        "S15": "V01",
+        "S16": "V02",
+        "V01": "V02",
+        "V02": "V03",
+        "V03": "V05",
+        "V04": "V01",
+        "V05": "V06",
+        "V06": "D08"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "D08",
+          "primary": {
+            "target": "V01",
+            "label": "Open Define the source region.",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "S15",
+          "primary": {
+            "target": "V01",
+            "label": "Review masked crop",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D08",
+          "branches": []
+        },
+        {
+          "screen": "S16",
+          "primary": {
+            "target": "V02",
+            "label": "Record crop review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "S15",
+          "branches": []
+        },
+        {
+          "screen": "V01",
+          "primary": {
+            "target": "V02",
+            "label": "Edit disclosure mask",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D08",
+          "branches": [
+            {
+              "screen": "V01",
+              "label": "Review invalid region",
+              "target": "V04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "V01",
+              "label": "Invalid region dimensions",
+              "target": "V04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "V02",
+          "primary": {
+            "target": "V03",
+            "label": "Submit plan for approval",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "V01",
+          "branches": [
+            {
+              "screen": "V02",
+              "label": "Use metadata only",
+              "target": "V03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "V02",
+              "label": "Metadata-only scope",
+              "target": "V03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "V03",
+          "primary": {
+            "target": "V05",
+            "label": "Approve current plan",
+            "stateChangeRequired": false,
+            "guard": "Independent exact-plan approval; changed source/region/mask needs fresh review."
+          },
+          "back": "V02",
+          "branches": [
+            {
+              "screen": "V03",
+              "label": "Reject invalid plan",
+              "target": "V04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "V03",
+              "label": "Invalid/expired/revoked grant",
+              "target": "V04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "V04",
+          "primary": {
+            "target": "V01",
+            "label": "Edit source region",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "V02",
+          "branches": [
+            {
+              "screen": "V04",
+              "label": "Edit mask",
+              "target": "V02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "V05",
+          "primary": {
+            "target": "V06",
+            "label": "Record revocation request",
+            "stateChangeRequired": false,
+            "guard": "Immediate future access revocation; purge remains independently tracked and hold-aware."
+          },
+          "back": "V03",
+          "branches": [
+            {
+              "screen": "V05",
+              "label": "Review current plan",
+              "target": "V03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "V05",
+              "label": "Revoke and track permitted purge",
+              "target": "V06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "V06",
+          "primary": {
+            "target": "D08",
+            "label": "Review investigation history",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "V05",
+          "branches": [
+            {
+              "screen": "V06",
+              "label": "Inspect purge request",
+              "target": "V05",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "V03",
+          "target": "V05",
+          "reason": "Independent exact-plan approval; changed source/region/mask needs fresh review."
+        },
+        {
+          "screen": "V05",
+          "target": "V06",
+          "reason": "Immediate future access revocation; purge remains independently tracked and hold-aware."
+        }
+      ],
+      "terminalStates": [
+        "V06"
+      ],
+      "blockedStates": [
+        "V04"
+      ],
+      "branches": [
+        {
+          "screen": "V01",
+          "label": "Review invalid region",
+          "target": "V04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V01",
+          "label": "Invalid region dimensions",
+          "target": "V04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V02",
+          "label": "Use metadata only",
+          "target": "V03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V02",
+          "label": "Metadata-only scope",
+          "target": "V03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V03",
+          "label": "Reject invalid plan",
+          "target": "V04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V03",
+          "label": "Invalid/expired/revoked grant",
+          "target": "V04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V04",
+          "label": "Edit mask",
+          "target": "V02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V05",
+          "label": "Review current plan",
+          "target": "V03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V05",
+          "label": "Revoke and track permitted purge",
+          "target": "V06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "V06",
+          "label": "Inspect purge request",
+          "target": "V05",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Camera/time/purpose/expiry/budget grant, local footage and independent crop review.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F17",
+      "title": "Trusted network & dispute",
+      "entry": "D07",
+      "states": [
+        "D07",
+        "O09",
+        "O10",
+        "S18"
+      ],
+      "primaryOverrides": {
+        "D07": "O10",
+        "O09": "O10",
+        "O10": "O09",
+        "S18": "S01"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "D07",
+          "primary": {
+            "target": "O10",
+            "label": "Open Peer trust & publication",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": [
+            {
+              "screen": "D07",
+              "label": "Withdrawn/stale peer offer",
+              "target": "S18",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "O09",
+          "primary": {
+            "target": "O10",
+            "label": "Review peer trust",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D07",
+          "branches": [
+            {
+              "screen": "O09",
+              "label": "Peer trust scope",
+              "target": "O10",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "O10",
+          "primary": {
+            "target": "O09",
+            "label": "Record trust decision",
+            "stateChangeRequired": false,
+            "guard": "Coarse peer-local discovery; trust does not grant local release/custody authority."
+          },
+          "back": "O09",
+          "branches": [
+            {
+              "screen": "O10",
+              "label": "Revocation of trust sample",
+              "target": "O09",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "S18",
+          "primary": {
+            "target": "S01",
+            "label": "Back to local review queue",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D07",
+          "branches": []
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "O10",
+          "target": "O09",
+          "reason": "Coarse peer-local discovery; trust does not grant local release/custody authority."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "D07",
+          "label": "Withdrawn/stale peer offer",
+          "target": "S18",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "O09",
+          "label": "Peer trust scope",
+          "target": "O10",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "O10",
+          "label": "Revocation of trust sample",
+          "target": "O09",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Coarse attributed projection and peer-local ranks; physical custody stays local.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F18",
+      "title": "Audit, EPCIS & correction",
+      "entry": "O11",
+      "states": [
+        "O11",
+        "O12"
+      ],
+      "primaryOverrides": {
+        "O11": "O12",
+        "O12": "O11"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "O11",
+          "primary": {
+            "target": "O12",
+            "label": "Review event provenance",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D10",
+          "branches": [
+            {
+              "screen": "O11",
+              "label": "Native event source/provenance",
+              "target": "O12",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "O12",
+          "primary": {
+            "target": "O11",
+            "label": "Back to audit history",
+            "stateChangeRequired": false,
+            "guard": "Append correction and reconcile external submission; original native fact retained."
+          },
+          "back": "O11",
+          "branches": [
+            {
+              "screen": "O12",
+              "label": "Append correction; preserve original",
+              "target": "O11",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "O12",
+              "label": "202 accepted remains submission pending",
+              "target": "O12",
+              "stateChangeRequired": true
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "O12",
+          "target": "O11",
+          "reason": "Append correction and reconcile external submission; original native fact retained."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "O11",
+          "label": "Native event source/provenance",
+          "target": "O12",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "O12",
+          "label": "Append correction; preserve original",
+          "target": "O11",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "O12",
+          "label": "202 accepted remains submission pending",
+          "target": "O12",
+          "stateChangeRequired": true
+        }
+      ],
+      "authorityBoundary": "Native custody fact is authoritative; asynchronous submission and correction retain originals.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F19",
+      "title": "Organisation access & policy",
+      "entry": "AOP1",
+      "states": [
+        "D10",
+        "O01",
+        "O02",
+        "O03",
+        "O04",
+        "AOP1",
+        "AOP2",
+        "AOP3",
+        "AOP4",
+        "AOP5",
+        "AOP6"
+      ],
+      "primaryOverrides": {
+        "D10": "O01",
+        "O01": "AOP1",
+        "O02": "AOP1",
+        "O03": "AOP4",
+        "O04": "AOP4",
+        "AOP1": "AOP2",
+        "AOP2": "AOP3",
+        "AOP3": "AOP2",
+        "AOP4": "AOP5",
+        "AOP5": "AOP6",
+        "AOP6": "AOP4"
+      },
+      "labelOverrides": {
+        "O02": "Prepare operator access request"
+      },
+      "routes": [
+        {
+          "screen": "D10",
+          "primary": {
+            "target": "O01",
+            "label": "Open People & permissions",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "O01",
+          "primary": {
+            "target": "AOP1",
+            "label": "Review member permissions",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D10",
+          "branches": []
+        },
+        {
+          "screen": "O02",
+          "primary": {
+            "target": "AOP1",
+            "label": "Prepare operator access request",
+            "stateChangeRequired": false,
+            "guard": "Prepare package only; separate privileged operator executes per ADR0066."
+          },
+          "back": "O01",
+          "branches": [
+            {
+              "screen": "O02",
+              "label": "Operator package only, no public grant",
+              "target": "AOP1",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "O03",
+          "primary": {
+            "target": "AOP4",
+            "label": "Review release policy",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D10",
+          "branches": []
+        },
+        {
+          "screen": "O04",
+          "primary": {
+            "target": "AOP4",
+            "label": "Submit policy for review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O03",
+          "branches": []
+        },
+        {
+          "screen": "AOP1",
+          "primary": {
+            "target": "AOP2",
+            "label": "Review permission matrix",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O01",
+          "branches": [
+            {
+              "screen": "AOP1",
+              "label": "Track operator request",
+              "target": "AOP3",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "AOP2",
+          "primary": {
+            "target": "AOP3",
+            "label": "Prepare operator package",
+            "stateChangeRequired": false,
+            "guard": "Operator request only; least privilege and reviewer conflicts explicit."
+          },
+          "back": "AOP1",
+          "branches": [
+            {
+              "screen": "AOP2",
+              "label": "Review policy change",
+              "target": "AOP4",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "AOP3",
+          "primary": {
+            "target": "AOP2",
+            "label": "Review current permission request",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "AOP1",
+          "branches": [
+            {
+              "screen": "AOP3",
+              "label": "Prepare another request",
+              "target": "AOP1",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "AOP3",
+              "label": "Stale operator request",
+              "target": "AOP1",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "AOP4",
+          "primary": {
+            "target": "AOP5",
+            "label": "Confirm reviewed policy change",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O03",
+          "branches": [
+            {
+              "screen": "AOP4",
+              "label": "Return to roles",
+              "target": "AOP2",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "AOP5",
+          "primary": {
+            "target": "AOP6",
+            "label": "Record reviewed version",
+            "stateChangeRequired": false,
+            "guard": "Expected current version; append accepted version, preserve current state on conflict."
+          },
+          "back": "AOP4",
+          "branches": [
+            {
+              "screen": "AOP5",
+              "label": "Compare impact again",
+              "target": "AOP4",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "AOP5",
+              "label": "Expected-version accepted sample",
+              "target": "AOP6",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "AOP5",
+              "label": "Conflict keeps current policy version",
+              "target": "AOP6",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "AOP6",
+          "primary": {
+            "target": "AOP4",
+            "label": "Review policy impact",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "AOP3",
+          "branches": [
+            {
+              "screen": "AOP6",
+              "label": "Review operator requests",
+              "target": "AOP3",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "O02",
+          "target": "AOP1",
+          "reason": "Prepare package only; separate privileged operator executes per ADR0066."
+        },
+        {
+          "screen": "AOP2",
+          "target": "AOP3",
+          "reason": "Operator request only; least privilege and reviewer conflicts explicit."
+        },
+        {
+          "screen": "AOP5",
+          "target": "AOP6",
+          "reason": "Expected current version; append accepted version, preserve current state on conflict."
+        }
+      ],
+      "terminalStates": [
+        "AOP6"
+      ],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "O02",
+          "label": "Operator package only, no public grant",
+          "target": "AOP1",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP1",
+          "label": "Track operator request",
+          "target": "AOP3",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP2",
+          "label": "Review policy change",
+          "target": "AOP4",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP3",
+          "label": "Prepare another request",
+          "target": "AOP1",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP3",
+          "label": "Stale operator request",
+          "target": "AOP1",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP4",
+          "label": "Return to roles",
+          "target": "AOP2",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP5",
+          "label": "Compare impact again",
+          "target": "AOP4",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP5",
+          "label": "Expected-version accepted sample",
+          "target": "AOP6",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP5",
+          "label": "Conflict keeps current policy version",
+          "target": "AOP6",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "AOP6",
+          "label": "Review operator requests",
+          "target": "AOP3",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Least privilege, independent reviewer, versioned local policies and site scope.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F20",
+      "title": "Privacy, retention & deletion",
+      "entry": "A08",
+      "states": [
+        "A08",
+        "A09",
+        "O05",
+        "O06"
+      ],
+      "primaryOverrides": {
+        "A08": "A09",
+        "A09": "A08",
+        "O05": "O06",
+        "O06": "O05"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "A08",
+          "primary": {
+            "target": "A09",
+            "label": "Review deletion request",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A06",
+          "branches": [
+            {
+              "screen": "A08",
+              "label": "Authenticated export request",
+              "target": "O06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "A09",
+          "primary": {
+            "target": "A08",
+            "label": "Back to privacy settings",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A08",
+          "branches": [
+            {
+              "screen": "A09",
+              "label": "Retention/hold review",
+              "target": "O06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "O05",
+          "primary": {
+            "target": "O06",
+            "label": "Review deletion scope",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D10",
+          "branches": []
+        },
+        {
+          "screen": "O06",
+          "primary": {
+            "target": "O05",
+            "label": "Record privacy decision",
+            "stateChangeRequired": false,
+            "guard": "Retention/hold-aware erasure request and downstream tombstones; no blanket instant delete."
+          },
+          "back": "O05",
+          "branches": [
+            {
+              "screen": "O06",
+              "label": "Held deletion remains blocked",
+              "target": "O05",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "O06",
+              "label": "Permitted erasure request sample",
+              "target": "O05",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "O06",
+          "target": "O05",
+          "reason": "Retention/hold-aware erasure request and downstream tombstones; no blanket instant delete."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "A08",
+          "label": "Authenticated export request",
+          "target": "O06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "A09",
+          "label": "Retention/hold review",
+          "target": "O06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "O06",
+          "label": "Held deletion remains blocked",
+          "target": "O05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "O06",
+          "label": "Permitted erasure request sample",
+          "target": "O05",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Class-specific retention, holds and propagated erasure; minimal audit facts retained.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F21",
+      "title": "Connectors, sources & API clients",
+      "entry": "I01",
+      "states": [
+        "O07",
+        "O08",
+        "O13",
+        "O14",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06"
+      ],
+      "primaryOverrides": {
+        "O07": "I01",
+        "O08": "N04",
+        "O13": "I04",
+        "O14": "I02",
+        "I01": "I02",
+        "I02": "I03",
+        "I03": "I02",
+        "I04": "I06",
+        "I05": "N02",
+        "I06": "I04"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "O07",
+          "primary": {
+            "target": "I01",
+            "label": "Review delivery operation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D10",
+          "branches": []
+        },
+        {
+          "screen": "O08",
+          "primary": {
+            "target": "N04",
+            "label": "Back to integration health",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O07",
+          "branches": []
+        },
+        {
+          "screen": "O13",
+          "primary": {
+            "target": "I04",
+            "label": "Back to integrations",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O07",
+          "branches": []
+        },
+        {
+          "screen": "O14",
+          "primary": {
+            "target": "I02",
+            "label": "Save reviewed configuration",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O07",
+          "branches": []
+        },
+        {
+          "screen": "I01",
+          "primary": {
+            "target": "I02",
+            "label": "Choose client scopes",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "O07",
+          "branches": [
+            {
+              "screen": "I01",
+              "label": "Review permitted source",
+              "target": "I04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "I01",
+              "label": "Permitted source terms/provenance",
+              "target": "I04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "I02",
+          "primary": {
+            "target": "I03",
+            "label": "Run scoped connection check",
+            "stateChangeRequired": false,
+            "guard": "Approved origin/audience, least privilege, signature/replay checks; no release/member-grant scope."
+          },
+          "back": "I01",
+          "branches": [
+            {
+              "screen": "I02",
+              "label": "Revise connector",
+              "target": "I01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "I03",
+          "primary": {
+            "target": "I02",
+            "label": "Fix scoped configuration",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "I01",
+          "branches": [
+            {
+              "screen": "I03",
+              "label": "Review localisation",
+              "target": "I05",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "I03",
+              "label": "Signature/replay rejection",
+              "target": "I02",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "I03",
+              "label": "Language/template review",
+              "target": "I05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "I04",
+          "primary": {
+            "target": "I06",
+            "label": "Review source registration",
+            "stateChangeRequired": false,
+            "guard": "Terms/authorisation/provenance/retention and separate publication permission."
+          },
+          "back": "O13",
+          "branches": [
+            {
+              "screen": "I04",
+              "label": "Connector settings",
+              "target": "I01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "I05",
+          "primary": {
+            "target": "N02",
+            "label": "Open full template review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "I03",
+          "branches": [
+            {
+              "screen": "I05",
+              "label": "Return to connection checks",
+              "target": "I03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "I06",
+          "primary": {
+            "target": "I04",
+            "label": "Review source evidence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "I02",
+          "branches": [
+            {
+              "screen": "I06",
+              "label": "Review API scope",
+              "target": "I02",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "I02",
+          "target": "I03",
+          "reason": "Approved origin/audience, least privilege, signature/replay checks; no release/member-grant scope."
+        },
+        {
+          "screen": "I04",
+          "target": "I06",
+          "reason": "Terms/authorisation/provenance/retention and separate publication permission."
+        }
+      ],
+      "terminalStates": [
+        "I06"
+      ],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "I01",
+          "label": "Review permitted source",
+          "target": "I04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I01",
+          "label": "Permitted source terms/provenance",
+          "target": "I04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I02",
+          "label": "Revise connector",
+          "target": "I01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I03",
+          "label": "Review localisation",
+          "target": "I05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I03",
+          "label": "Signature/replay rejection",
+          "target": "I02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I03",
+          "label": "Language/template review",
+          "target": "I05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I04",
+          "label": "Connector settings",
+          "target": "I01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I05",
+          "label": "Return to connection checks",
+          "target": "I03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "I06",
+          "label": "Review API scope",
+          "target": "I02",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Approved origins/terms, secret references, signed callbacks and scoped clients.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F22",
+      "title": "Platform, restore & operation failures",
+      "entry": "P01",
+      "states": [
+        "P01",
+        "P02",
+        "P03",
+        "P09",
+        "P10"
+      ],
+      "primaryOverrides": {
+        "P01": "P02",
+        "P02": "P03",
+        "P03": "P04",
+        "P09": "I01",
+        "P10": "H01"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "P01",
+          "primary": {
+            "target": "P02",
+            "label": "Inspect node readiness",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "P02",
+          "primary": {
+            "target": "P03",
+            "label": "Review operational jobs",
+            "stateChangeRequired": false,
+            "guard": "Serving blocked until required authoritative erasure replay; no readiness by button alone."
+          },
+          "back": "P01",
+          "branches": [
+            {
+              "screen": "P02",
+              "label": "Restore barrier stays blocked until erasure replay",
+              "target": "P02",
+              "stateChangeRequired": true
+            }
+          ]
+        },
+        {
+          "screen": "P03",
+          "primary": {
+            "target": "P04",
+            "label": "Inspect inference provenance",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P01",
+          "branches": [
+            {
+              "screen": "P03",
+              "label": "Uncertain external operation reconciliation",
+              "target": "Q10",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "P09",
+          "primary": {
+            "target": "I01",
+            "label": "Review quotas and retention",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P01",
+          "branches": [
+            {
+              "screen": "P09",
+              "label": "Protected provider configuration",
+              "target": "I01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "P10",
+          "primary": {
+            "target": "H01",
+            "label": "Open recovery intelligence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P01",
+          "branches": []
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "P02",
+          "target": "P03",
+          "reason": "Serving blocked until required authoritative erasure replay; no readiness by button alone."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "P02",
+          "label": "Restore barrier stays blocked until erasure replay",
+          "target": "P02",
+          "stateChangeRequired": true
+        },
+        {
+          "screen": "P03",
+          "label": "Uncertain external operation reconciliation",
+          "target": "Q10",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "P09",
+          "label": "Protected provider configuration",
+          "target": "I01",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "System metadata does not grant tenant evidence access; restore barriers precede serving.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F23",
+      "title": "Governed data, evaluation & rollout",
+      "entry": "G01",
+      "states": [
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "primaryOverrides": {
+        "P04": "G01",
+        "P05": "G01",
+        "P06": "G03",
+        "P07": "G04",
+        "P08": "G05",
+        "G01": "G07",
+        "G02": "G03",
+        "G03": "G04",
+        "G04": "G06",
+        "G05": "G06",
+        "G06": "G01",
+        "G07": "G02",
+        "G08": "G09",
+        "G09": "G05"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "P04",
+          "primary": {
+            "target": "G01",
+            "label": "Open evaluation evidence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P03",
+          "branches": []
+        },
+        {
+          "screen": "P05",
+          "primary": {
+            "target": "G01",
+            "label": "Review evaluation run",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P04",
+          "branches": []
+        },
+        {
+          "screen": "P06",
+          "primary": {
+            "target": "G03",
+            "label": "Review model approval",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P05",
+          "branches": []
+        },
+        {
+          "screen": "P07",
+          "primary": {
+            "target": "G04",
+            "label": "Review rollback options",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P06",
+          "branches": []
+        },
+        {
+          "screen": "P08",
+          "primary": {
+            "target": "G05",
+            "label": "Return to evaluation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P07",
+          "branches": []
+        },
+        {
+          "screen": "G01",
+          "primary": {
+            "target": "G07",
+            "label": "Validate and freeze membership",
+            "stateChangeRequired": false,
+            "guard": "Exact permitted source-bound frozen membership, splits and source cutoff."
+          },
+          "back": "P05",
+          "branches": [
+            {
+              "screen": "G01",
+              "label": "Review blocked dataset",
+              "target": "G06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "G01",
+              "label": "Invalid/revoked source membership",
+              "target": "G06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G02",
+          "primary": {
+            "target": "G03",
+            "label": "Review evaluation views",
+            "stateChangeRequired": false,
+            "guard": "Independent adjudication preserves inconclusive/censored outcomes."
+          },
+          "back": "G01",
+          "branches": [
+            {
+              "screen": "G02",
+              "label": "Back to dataset",
+              "target": "G01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G03",
+          "primary": {
+            "target": "G04",
+            "label": "Request independent approval",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "G02",
+          "branches": [
+            {
+              "screen": "G03",
+              "label": "Review invalidation",
+              "target": "G06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G04",
+          "primary": {
+            "target": "G06",
+            "label": "Record pending review",
+            "stateChangeRequired": false,
+            "guard": "Incomplete quality evidence never activates a model."
+          },
+          "back": "G03",
+          "branches": [
+            {
+              "screen": "G04",
+              "label": "Review rollback plan",
+              "target": "G05",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "G04",
+              "label": "Preview a fully reviewed package",
+              "target": "G08",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "G04",
+              "label": "Incomplete quality review stays pending",
+              "target": "G06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "G04",
+              "label": "Explicit fully reviewed synthetic package",
+              "target": "G08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G05",
+          "primary": {
+            "target": "G06",
+            "label": "Record reviewed rollback",
+            "stateChangeRequired": false,
+            "guard": "Compare-and-swap rollback to currently still-permitted target only."
+          },
+          "back": "G03",
+          "branches": [
+            {
+              "screen": "G05",
+              "label": "Compare evaluations",
+              "target": "G03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "G05",
+              "label": "Current still-permitted rollback sample",
+              "target": "G09",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G06",
+          "primary": {
+            "target": "G01",
+            "label": "Review dataset evidence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "G04",
+          "branches": [
+            {
+              "screen": "G06",
+              "label": "Review promotion decision",
+              "target": "G04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G07",
+          "primary": {
+            "target": "G02",
+            "label": "Freeze reviewed membership",
+            "stateChangeRequired": false,
+            "guard": "Exact snapshot must pass validation before freeze."
+          },
+          "back": "G01",
+          "branches": [
+            {
+              "screen": "G07",
+              "label": "Review validation failure",
+              "target": "G06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G08",
+          "primary": {
+            "target": "G09",
+            "label": "Record independent approval",
+            "stateChangeRequired": false,
+            "guard": "Independent exact-package production approval; no ownership/release authority."
+          },
+          "back": "G04",
+          "branches": [
+            {
+              "screen": "G08",
+              "label": "Return to incomplete package",
+              "target": "G04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "G09",
+          "primary": {
+            "target": "G05",
+            "label": "Review rollback confirmation",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "G08",
+          "branches": [
+            {
+              "screen": "G09",
+              "label": "Review exact approval",
+              "target": "G08",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "G09",
+              "label": "Stale comparison keeps current active version",
+              "target": "G03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "G09",
+              "label": "Revoked consent/source blocks serving",
+              "target": "G06",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "G01",
+          "target": "G07",
+          "reason": "Exact permitted source-bound frozen membership, splits and source cutoff."
+        },
+        {
+          "screen": "G02",
+          "target": "G03",
+          "reason": "Independent adjudication preserves inconclusive/censored outcomes."
+        },
+        {
+          "screen": "G04",
+          "target": "G06",
+          "reason": "Incomplete quality evidence never activates a model."
+        },
+        {
+          "screen": "G05",
+          "target": "G06",
+          "reason": "Compare-and-swap rollback to currently still-permitted target only."
+        },
+        {
+          "screen": "G07",
+          "target": "G02",
+          "reason": "Exact snapshot must pass validation before freeze."
+        },
+        {
+          "screen": "G08",
+          "target": "G09",
+          "reason": "Independent exact-package production approval; no ownership/release authority."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "G01",
+          "label": "Review blocked dataset",
+          "target": "G06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G01",
+          "label": "Invalid/revoked source membership",
+          "target": "G06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G02",
+          "label": "Back to dataset",
+          "target": "G01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G03",
+          "label": "Review invalidation",
+          "target": "G06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G04",
+          "label": "Review rollback plan",
+          "target": "G05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G04",
+          "label": "Preview a fully reviewed package",
+          "target": "G08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G04",
+          "label": "Incomplete quality review stays pending",
+          "target": "G06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G04",
+          "label": "Explicit fully reviewed synthetic package",
+          "target": "G08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G05",
+          "label": "Compare evaluations",
+          "target": "G03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G05",
+          "label": "Current still-permitted rollback sample",
+          "target": "G09",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G06",
+          "label": "Review promotion decision",
+          "target": "G04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G07",
+          "label": "Review validation failure",
+          "target": "G06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G08",
+          "label": "Return to incomplete package",
+          "target": "G04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G09",
+          "label": "Review exact approval",
+          "target": "G08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G09",
+          "label": "Stale comparison keeps current active version",
+          "target": "G03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "G09",
+          "label": "Revoked consent/source blocks serving",
+          "target": "G06",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Versioned input/model provenance, independent labels/approval, scoped calibration and valid rollback.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F24",
+      "title": "Analytics, movement & optional prevention",
+      "entry": "H01",
+      "states": [
+        "D09",
+        "P11",
+        "P12",
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06"
+      ],
+      "primaryOverrides": {
+        "D09": "H01",
+        "P11": "H04",
+        "P12": "H05",
+        "H01": "H02",
+        "H02": "H03",
+        "H03": "H06",
+        "H04": "H05",
+        "H05": "H06",
+        "H06": "H01"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "D09",
+          "primary": {
+            "target": "H01",
+            "label": "Open Build a tenant-scoped report.",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "P11",
+          "primary": {
+            "target": "H04",
+            "label": "Review prediction governance",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D09",
+          "branches": []
+        },
+        {
+          "screen": "P12",
+          "primary": {
+            "target": "H05",
+            "label": "Back to node overview",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "P11",
+          "branches": []
+        },
+        {
+          "screen": "H01",
+          "primary": {
+            "target": "H02",
+            "label": "Open report explorer",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D09",
+          "branches": [
+            {
+              "screen": "H01",
+              "label": "Privacy and export controls",
+              "target": "H03",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "H02",
+          "primary": {
+            "target": "H03",
+            "label": "Review export privacy",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "H01",
+          "branches": [
+            {
+              "screen": "H02",
+              "label": "Inspect recovery paths",
+              "target": "H04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "H02",
+              "label": "Observed versus inferred movement",
+              "target": "H04",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "H03",
+          "primary": {
+            "target": "H06",
+            "label": "Review safe export preview",
+            "stateChangeRequired": false,
+            "guard": "Permitted aggregate export, suppression/no-data/denial distinct; no private raw fields."
+          },
+          "back": "H01",
+          "branches": [
+            {
+              "screen": "H03",
+              "label": "Revise report",
+              "target": "H01",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "H03",
+              "label": "Suppressed/no-data/denied export outcomes",
+              "target": "H06",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "H04",
+          "primary": {
+            "target": "H05",
+            "label": "Manage prevention consent",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "H02",
+          "branches": [
+            {
+              "screen": "H04",
+              "label": "Back to report families",
+              "target": "H02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "H05",
+          "primary": {
+            "target": "H06",
+            "label": "Save prevention choice",
+            "stateChangeRequired": false,
+            "guard": "Optional provider adoption and revocable device/purpose consent."
+          },
+          "back": "H04",
+          "branches": [
+            {
+              "screen": "H05",
+              "label": "Review recovery paths",
+              "target": "H04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "H05",
+              "label": "Withdraw optional consent",
+              "target": "H06",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "H05",
+              "label": "Provider unavailable remains disabled",
+              "target": "H05",
+              "stateChangeRequired": true
+            }
+          ]
+        },
+        {
+          "screen": "H06",
+          "primary": {
+            "target": "H01",
+            "label": "Revise report scope",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "H02",
+          "branches": [
+            {
+              "screen": "H06",
+              "label": "Manage optional alerts",
+              "target": "H05",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "H03",
+          "target": "H06",
+          "reason": "Permitted aggregate export, suppression/no-data/denial distinct; no private raw fields."
+        },
+        {
+          "screen": "H05",
+          "target": "H06",
+          "reason": "Optional provider adoption and revocable device/purpose consent."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "H01",
+          "label": "Privacy and export controls",
+          "target": "H03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H02",
+          "label": "Inspect recovery paths",
+          "target": "H04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H02",
+          "label": "Observed versus inferred movement",
+          "target": "H04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H03",
+          "label": "Revise report",
+          "target": "H01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H03",
+          "label": "Suppressed/no-data/denied export outcomes",
+          "target": "H06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H04",
+          "label": "Back to report families",
+          "target": "H02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H05",
+          "label": "Review recovery paths",
+          "target": "H04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H05",
+          "label": "Withdraw optional consent",
+          "target": "H06",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "H05",
+          "label": "Provider unavailable remains disabled",
+          "target": "H05",
+          "stateChangeRequired": true
+        },
+        {
+          "screen": "H06",
+          "label": "Manage optional alerts",
+          "target": "H05",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Tenant aggregates and uncertainty; inferred transitions do not establish possession.",
+      "completedInputPrimaryOverrides": {}
+    },
+    {
+      "flow": "F25",
+      "title": "Responsive access & critical workflows",
+      "entry": "B01",
+      "states": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "primaryOverrides": {
+        "R01": "R02",
+        "R02": "C07",
+        "R03": "R04",
+        "R04": "R03",
+        "R05": "D12",
+        "R06": "R05",
+        "B01": "B02",
+        "B02": "B03",
+        "B03": "B04",
+        "B04": "B05",
+        "B05": "B06",
+        "B06": "B01",
+        "B07": "B03",
+        "B08": "B08",
+        "B09": "B01"
+      },
+      "labelOverrides": {
+        "B08": "Show required-reason validation"
+      },
+      "routes": [
+        {
+          "screen": "R01",
+          "primary": {
+            "target": "R02",
+            "label": "Review report",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": []
+        },
+        {
+          "screen": "R02",
+          "primary": {
+            "target": "C07",
+            "label": "Submit for independent review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "R01",
+          "branches": []
+        },
+        {
+          "screen": "R03",
+          "primary": {
+            "target": "R04",
+            "label": "Open item custody",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "R04",
+          "primary": {
+            "target": "R03",
+            "label": "Record accepted custody",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "R03",
+          "branches": []
+        },
+        {
+          "screen": "R05",
+          "primary": {
+            "target": "D12",
+            "label": "Record physical return",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "R06",
+          "branches": []
+        },
+        {
+          "screen": "R06",
+          "primary": {
+            "target": "R05",
+            "label": "Open collection desk",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "D01",
+          "branches": []
+        },
+        {
+          "screen": "B01",
+          "primary": {
+            "target": "B02",
+            "label": "Inspect narrow form state",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "R01",
+          "branches": [
+            {
+              "screen": "B01",
+              "label": "Keyboard and reading order",
+              "target": "B05",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "B01",
+              "label": "Narrow / medium / wide comparison",
+              "target": "B03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "B01",
+              "label": "200 percent enlarged text",
+              "target": "B07",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B02",
+          "primary": {
+            "target": "B03",
+            "label": "Review corrected form",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "B01",
+          "branches": [
+            {
+              "screen": "B02",
+              "label": "Offline recovery state",
+              "target": "E01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B03",
+          "primary": {
+            "target": "B04",
+            "label": "Inspect wide review",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "B02",
+          "branches": [
+            {
+              "screen": "B03",
+              "label": "Back to narrow view",
+              "target": "B02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B04",
+          "primary": {
+            "target": "B05",
+            "label": "Review keyboard and announcements",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "B03",
+          "branches": [
+            {
+              "screen": "B04",
+              "label": "Compare medium layout",
+              "target": "B03",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "B04",
+              "label": "Error/focus dialog",
+              "target": "B08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B05",
+          "primary": {
+            "target": "B06",
+            "label": "Review locale and low-bandwidth state",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "B01",
+          "branches": [
+            {
+              "screen": "B05",
+              "label": "Back to route contract",
+              "target": "B01",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B06",
+          "primary": {
+            "target": "B01",
+            "label": "Return to responsive contract",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "B02",
+          "branches": [
+            {
+              "screen": "B06",
+              "label": "Review error interaction",
+              "target": "B02",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "B06",
+              "label": "Locale expansion",
+              "target": "B09",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B07",
+          "primary": {
+            "target": "B03",
+            "label": "Review corrected evidence",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "B02",
+          "branches": [
+            {
+              "screen": "B07",
+              "label": "Keep local draft",
+              "target": "E08",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B08",
+          "primary": {
+            "target": "B08",
+            "label": "Show required-reason validation",
+            "stateChangeRequired": true,
+            "guard": "Missing reason cannot confirm; explicit validation/corrected sample and safe cancel."
+          },
+          "back": "B04",
+          "branches": [
+            {
+              "screen": "B08",
+              "label": "6 · Cancel and return focus",
+              "target": "B04",
+              "stateChangeRequired": false
+            },
+            {
+              "screen": "B08",
+              "label": "Missing reason stays validation error",
+              "target": "B08",
+              "stateChangeRequired": true
+            },
+            {
+              "screen": "B08",
+              "label": "Corrected sample reason allows review",
+              "target": "B05",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "B09",
+          "primary": {
+            "target": "B01",
+            "label": "Return to layout contract",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "B07",
+          "branches": [
+            {
+              "screen": "B09",
+              "label": "Inspect enlarged text",
+              "target": "B07",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [
+        {
+          "screen": "B08",
+          "target": "B08",
+          "reason": "Missing reason cannot confirm; explicit validation/corrected sample and safe cancel."
+        }
+      ],
+      "terminalStates": [],
+      "blockedStates": [],
+      "branches": [
+        {
+          "screen": "B01",
+          "label": "Keyboard and reading order",
+          "target": "B05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B01",
+          "label": "Narrow / medium / wide comparison",
+          "target": "B03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B01",
+          "label": "200 percent enlarged text",
+          "target": "B07",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B02",
+          "label": "Offline recovery state",
+          "target": "E01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B03",
+          "label": "Back to narrow view",
+          "target": "B02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B04",
+          "label": "Compare medium layout",
+          "target": "B03",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B04",
+          "label": "Error/focus dialog",
+          "target": "B08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B05",
+          "label": "Back to route contract",
+          "target": "B01",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B06",
+          "label": "Review error interaction",
+          "target": "B02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B06",
+          "label": "Locale expansion",
+          "target": "B09",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B07",
+          "label": "Keep local draft",
+          "target": "E08",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B08",
+          "label": "6 · Cancel and return focus",
+          "target": "B04",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B08",
+          "label": "Missing reason stays validation error",
+          "target": "B08",
+          "stateChangeRequired": true
+        },
+        {
+          "screen": "B08",
+          "label": "Corrected sample reason allows review",
+          "target": "B05",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "B09",
+          "label": "Inspect enlarged text",
+          "target": "B07",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Representative desktop, tablet and mobile adaptations; complete breakpoint testing remains separate.",
+      "completedInputPrimaryOverrides": {
+        "B08": "B05"
+      },
+      "defaultFeedbackRequirements": {
+        "B08": "Initial required-reason submission remains validation-blocked; completed reason preset may continue to B05."
+      }
+    },
+    {
+      "flow": "F26",
+      "title": "Shared recovery and access failures",
+      "entry": "E01",
+      "states": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "primaryOverrides": {
+        "E01": "M02",
+        "E02": "M02",
+        "E03": "M02",
+        "E04": "C11",
+        "E05": "A05",
+        "E06": "A02",
+        "E07": "C11",
+        "E08": "C02"
+      },
+      "labelOverrides": {},
+      "routes": [
+        {
+          "screen": "E01",
+          "primary": {
+            "target": "M02",
+            "label": "Retry the photo upload",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C14",
+          "branches": [
+            {
+              "screen": "E01",
+              "label": "Continue text-only",
+              "target": "M02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "E02",
+          "primary": {
+            "target": "M02",
+            "label": "Continue with text details",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "E01",
+          "branches": [
+            {
+              "screen": "E02",
+              "label": "Replace quarantined attachment",
+              "target": "M02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "E03",
+          "primary": {
+            "target": "M02",
+            "label": "Save corrected draft",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M03",
+          "branches": []
+        },
+        {
+          "screen": "E04",
+          "primary": {
+            "target": "C11",
+            "label": "Open support options",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M07",
+          "branches": []
+        },
+        {
+          "screen": "E05",
+          "primary": {
+            "target": "A05",
+            "label": "Choose another workspace",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "A02",
+          "branches": []
+        },
+        {
+          "screen": "E06",
+          "primary": {
+            "target": "A02",
+            "label": "Return to secure sign-in",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M01",
+          "branches": [
+            {
+              "screen": "E06",
+              "label": "Fresh sign-in, no critical action replay",
+              "target": "A02",
+              "stateChangeRequired": false
+            }
+          ]
+        },
+        {
+          "screen": "E07",
+          "primary": {
+            "target": "C11",
+            "label": "Ask the holding team",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "M09",
+          "branches": []
+        },
+        {
+          "screen": "E08",
+          "primary": {
+            "target": "C02",
+            "label": "Review my report",
+            "stateChangeRequired": false,
+            "guard": "Completed synthetic input/selection state; preserve scope and prior observations."
+          },
+          "back": "C14",
+          "branches": [
+            {
+              "screen": "E08",
+              "label": "Stale custody observation",
+              "target": "S07",
+              "stateChangeRequired": false
+            }
+          ]
+        }
+      ],
+      "criticalActions": [],
+      "terminalStates": [],
+      "blockedStates": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07"
+      ],
+      "branches": [
+        {
+          "screen": "E01",
+          "label": "Continue text-only",
+          "target": "M02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "E02",
+          "label": "Replace quarantined attachment",
+          "target": "M02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "E06",
+          "label": "Fresh sign-in, no critical action replay",
+          "target": "A02",
+          "stateChangeRequired": false
+        },
+        {
+          "screen": "E08",
+          "label": "Stale custody observation",
+          "target": "S07",
+          "stateChangeRequired": false
+        }
+      ],
+      "authorityBoundary": "Explicit validation, quarantine, throttling, expiry, denial and sync outcomes.",
+      "completedInputPrimaryOverrides": {}
+    }
+  ],
+  "defaultTransitionPolicy": "Primary routes describe the safe default action, not the most optimistic result. Completed-input exceptions and explicit external-result branches are recorded separately."
+}

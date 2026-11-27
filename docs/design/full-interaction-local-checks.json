@@ -1,0 +1,1258 @@
+{
+  "schema": 2,
+  "date": "2026-11-27",
+  "executedAtUtc": "2026-11-27T16:50:14.441821+00:00",
+  "status": "OFFLINE CHECKS PASSED; native interaction execution and acceptance are recorded separately",
+  "commandBatchCapturedAtUtc": "2026-11-27T16:50:09.440Z",
+  "contract": {
+    "flows": 26,
+    "contextRouteRecords": 230,
+    "uniqueCanonicalStates": 215,
+    "branches": 197,
+    "criticalActions": 53,
+    "allPrimaryBackBranchAndCriticalTargetsResolve": true
+  },
+  "tabPresets": {
+    "presets": 24,
+    "screens": 7,
+    "allSourceAndTargetReferencesResolve": true,
+    "rowShapesValid": true,
+    "exactSourceFieldRows": 14,
+    "exactSourceTableRows": 17,
+    "derivedSelectionRows": 8,
+    "historicalViewerSampleRows": 4,
+    "newUnsupportedNumericalMetrics": 0,
+    "provenanceLimits": [
+      "M05 cards retain their declared earlier live-viewer provenance; this batch made no native queries.",
+      "N02 readiness/fallback and H02 trust/network split are derived source-plan selections, not newly measured approvals or accuracy results.",
+      "The repository D02 preset artifact retains its original native-filter source-evidence limitation; native behavior is outside this offline batch."
+    ]
+  },
+  "testCases": {
+    "flows": 26,
+    "plannedCases": 76,
+    "allPathIdsCanonical": true,
+    "allCasesRemainNotExecuted": true,
+    "nativeCasesExecutedByThisCheck": 0
+  },
+  "offlineExecution": {
+    "commands": 15,
+    "failedCommands": 0,
+    "nodeFixturePrograms": 12,
+    "nodeFixtureProgramsPassed": 12,
+    "pythonFinalizerUnitTests": 20,
+    "pythonFinalizerPassed": 20,
+    "registryGatePassed": true,
+    "designWhitespacePassed": true,
+    "explicitNodeCaseCounts": {
+      "programsReportingTotals": 8,
+      "reportedCases": 108,
+      "limit": "Four fixture programs report compound assertions without a test-case total; no total is invented for them."
+    },
+    "results": [
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-toggle-cycles-selftest.js",
+        "exitCode": 0,
+        "output": "PASS completed-form native cycle repaired; main CTAs and unchecked blockers preserved\nPASS idempotent repeated repair adds no actions\nPASS one source control mapped to multiple variants refuses both complete cycles\nPASS conflicting reverse destinations refuse source as well\nPASS disabled control metadata prevents an enabled duplicate from being repaired\nPASS coverage cannot rebind a primary CTA as a toggle\nPASS coverage cannot rebind the required-unchecked primary as a return checkbox\nPASS unrelated metadata/media variant is not a toggle destination\nPASS missing native return control refuses repair without changing forward\nPASS canonical base cycles supported; duplicate identical receipts deduplicated\nPASS: 10 offline toggle-cycle repair cases; no native Penpot execution.\n",
+        "wallTimeSeconds": 1.9802772,
+        "file": ".test-tmp/full-player-toggle-cycles-selftest.js",
+        "sourceSha256AfterExecution": "b5fdc3cf2427df9fbe65f0c2cbff4995ca5efef9e78bd09f91e8a1a880190d65",
+        "explicitlyReportedCaseCount": 10
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-source-order-selftest.js",
+        "exitCode": 0,
+        "output": "PASS sourceIndex order survives native bringToFront order; control/extra/menu slots, native z-order and all guard interactions remain unchanged; metadata repair is idempotent.\n",
+        "wallTimeSeconds": 1.9086683,
+        "file": ".test-tmp/full-player-source-order-selftest.js",
+        "sourceSha256AfterExecution": "1ad6104ec6106b193ef09a446447429dd72161dd6aff5abede035f999b2a71e5",
+        "explicitlyReportedCaseCount": null
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-source-navigation-selftest.js",
+        "exitCode": 0,
+        "output": "PASS: 23 source-navigation and scoped-target cases; no native Penpot execution\n",
+        "wallTimeSeconds": 1.9067555,
+        "file": ".test-tmp/full-player-source-navigation-selftest.js",
+        "sourceSha256AfterExecution": "9b5656e024379e70e91b7746db88f3efe1f77c246714494b044d62ca38007e13",
+        "explicitlyReportedCaseCount": 23
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-secondaries-selftest.js",
+        "exitCode": 0,
+        "output": "PASS wrong declared secondary is detected independently of a good result selector\nPASS source-secondary repair preserves main action and explicit Back\nPASS cloned source secondary is repaired too\nPASS own dedicated secondary confirmation keeps its body and Cancel\nPASS shared primary confirmation is never retargeted for secondary semantics\nPASS blocked acknowledgement gate is preserved and reported\nPASS source catalog resolves declared target even without plan or branch entry\nPASS unresolved source declarations are reported instead of guessed\nPASS physical handoff wording in a source state never supplies an external labelled handoff\nPASS Q05 multiplication-sign dismiss returns to Q06 instead of asserting a cancelled booking\nPASS all nine source multiplication-sign dismiss controls follow their exact contract Back target\nPASS DPO3 A check changed escapes a misassigned physical prerequisite while the real positive primary stays guarded\nPASS an explicit declared Back can leave a misplaced guard, but a positive action never gains that exception\n13 declared-secondary integrity checks passed. These are local mocks, not native Penpot execution.\n",
+        "wallTimeSeconds": 2.0106146,
+        "file": ".test-tmp/full-player-secondaries-selftest.js",
+        "sourceSha256AfterExecution": "3f3a1c99bb0fdf61e0cbf493ec066814680a0dc40e6a6f8c1ef6419bdf8651ee",
+        "explicitlyReportedCaseCount": 13
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-repair-primary-selftest.js",
+        "exitCode": 0,
+        "output": "PASS exact E06 default changes without touching branches or cancel\nPASS completed input leaves generic validation loop while draft stays guarded\nPASS physical disposition prerequisite survives generic completed-primary repair\nPASS unchecked toggle guards are untouched\nPASS W08 default never implies confirmed payout, explicit success branch survives\nPASS notification and NFC defaults show pending feedback with unchanged returns\nPASS B08 completed reason reaches review while initial validation stays blocked\nPASS missing critical guard remains a reported failure, never fabricated evidence\n8 default-action repair integrity checks passed. These are mock-native tests, not Penpot viewer execution.\n",
+        "wallTimeSeconds": 1.9436955999999999,
+        "file": ".test-tmp/full-player-repair-primary-selftest.js",
+        "sourceSha256AfterExecution": "db1906bdd346f13d2b5430196b8285323a219abbf40cdb612a07dfd152819a60",
+        "explicitlyReportedCaseCount": 8
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-recover-canonical-geometry-selftest.js",
+        "exitCode": 0,
+        "output": "PASS: native-ID rename recovery and shuffled control geometry mapping; mock metadata only\n",
+        "wallTimeSeconds": 2.0948881,
+        "file": ".test-tmp/full-player-recover-canonical-geometry-selftest.js",
+        "sourceSha256AfterExecution": "13dd89a1b624d956b98310d73932d0b937e3a4f8f5438081b4a362e539a71677",
+        "explicitlyReportedCaseCount": null
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-preset-verify-selftest.js",
+        "exitCode": 0,
+        "output": "PASS empty nonpreset flow is valid\nPASS native toggle reverse cycle and unchecked guard are verified\nPASS broken reverse cycle is rejected\nPASS incorrect visible toggle selection is rejected\nPASS unchecked prerequisite cannot navigate past guard\nPASS distinct tab content and all owner selectors verify\nPASS duplicate tab board identities are rejected\nPASS missing planned tab cannot silently pass\nPASS incorrect tab heading content is rejected\nPASS misdirected tab selector is rejected\nPASS three metadata-only boards and native review/revocation chain verify\nPASS all inherited confirmation choices are checked\nPASS labelled external pixel branch is repaired into metadata scope\nPASS metadata field editor cannot fall back to canonical pixels\nPASS metadata handoff cannot fall back to pixel review\nPASS read-only audit prunes SVG child graphs and does not mutate controls\nPASS metadata-proven empty preset flow reads no native state or overlay children\nPASS active preset index skips unrelated owners and overlays but still checks the referenced acknowledgement\nPASS an actual source toggle prevents the metadata-empty fast path even without an active receipt\nPASS actual tab/filter source controls or native tab variants prevent an empty fast path\nPASS: 20 offline native-shape fixture cases; no native Penpot execution.\n",
+        "wallTimeSeconds": 2.0945811,
+        "file": ".test-tmp/full-player-preset-verify-selftest.js",
+        "sourceSha256AfterExecution": "06e1c99007ab897f85613dd7a60e9ae1b76786f61786e48997947212a3e08b37",
+        "explicitlyReportedCaseCount": 20
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-metadata-cleanup-selftest.js",
+        "exitCode": 0,
+        "output": "PASS: ordered scoped onward path, Return/Cancel preservation, no purge-completion claim, idempotent reuse, missing-scope refusal; offline native-shape fixtures only.\n",
+        "wallTimeSeconds": 2.0748917000000002,
+        "file": ".test-tmp/full-player-metadata-cleanup-selftest.js",
+        "sourceSha256AfterExecution": "59b1f3ab29e6b577754f3a69cf303d216c8c0bb619acb8cf9f05d98aee76be30",
+        "explicitlyReportedCaseCount": null
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-geometry-selftest.js",
+        "exitCode": 0,
+        "output": "PASS known source SVG children are never read while following native text is inspected\nPASS native tables still report their board overflow\nPASS P and Interactive groups cannot hide overflowing native text\nPASS an unnamed native group with its own interaction is retained\nPASS unregistered root graphics are inspected rather than assumed to be F.copy SVG art\nPASS registered variants use the same safe source-art pruning\nPASS unrelated players are filtered before any native shape getter is read\nPASS native page children and shared parent bounds are read once per inspection\n8 geometry integrity checks passed; these are local native-object mocks.\n",
+        "wallTimeSeconds": 2.0495878,
+        "file": ".test-tmp/full-player-geometry-selftest.js",
+        "sourceSha256AfterExecution": "349f3ceac78394330df42d36e9cf957c9af416ec0649f4dcf37ef56ffdf3e61b",
+        "explicitlyReportedCaseCount": 8
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-candidate-selftest.js",
+        "exitCode": 0,
+        "output": "PASS seven exact forward sources across 28 canonical/variant contexts, 12 visible desktop controls, unchanged guards/branches/cancel, idempotence and all eight added-secondary paths.\nPASS all three generated M05 tabs have real forward paths; Nearby returns to available matches without fabricating a row.\nPASS all three approved phrase selections across 12 contexts retain selected text, preview C11 and reversible Cancel.\nPASS read-only supplemental audit checks every real tab/phrase forward path and rejects a wrong phrase default.\n",
+        "wallTimeSeconds": 2.1584242,
+        "file": ".test-tmp/full-player-candidate-selftest.js",
+        "sourceSha256AfterExecution": "1a54960e84a07af91c9ef08684ea45eee573e9c1e14c31ae1cdb944d950a6959",
+        "explicitlyReportedCaseCount": null
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-verify-selftest.js",
+        "exitCode": 0,
+        "output": "PASS exact primary/back/branch and critical guard paths pass\nPASS a menu or branch cannot stand in for the default primary\nPASS missing explicit back is rejected\nPASS every native cloned P control is inspected\nPASS an external destination requires labelled handoff and correct page\nPASS silent self branches fail; visible feedback must preserve its return\nPASS same-state back requires visible restart confirmation\nPASS missing exact critical reason is rejected\nPASS M05 selects the Canvas candidate and rejects a Cancel-only detail\nPASS M05 repair covers all native contexts and preserves other candidates and confirm choices\nPASS M05 candidate cannot pass with a wrong default and a good alternative\nPASS an exact extra Action is a real forward control\nPASS M11 first approved phrase uses the guarded default trace\nPASS completed form physical-handoff body does not masquerade as a labelled handoff overlay\nPASS disposition physical validation follows only the positive completed context actual primary and guarded confirm\nPASS an unchecked toggle context cannot stand in for the physical-completion prerequisite variant\nPASS disposition positive context still fails a wrong primary despite an existing good confirm\nPASS known first imported source SVG art is pruned without touching its vector children\nPASS native P or Interactive groups remain fully inspected even in the first-child position\nPASS an unnamed group with a native interaction is not classified as static source SVG\n20 semantic verifier integrity checks passed.\n",
+        "wallTimeSeconds": 2.2701007,
+        "file": ".test-tmp/full-player-verify-selftest.js",
+        "sourceSha256AfterExecution": "97d7b21a5bdf2d21a709840680fecc01d9b938e15289d950c19a1a5d24d92042",
+        "explicitlyReportedCaseCount": 20
+      },
+      {
+        "kind": "node-fixture-selftest",
+        "command": "node .test-tmp\\full-player-unchecked-editors-selftest.js",
+        "exitCode": 0,
+        "output": "PASS: 6 offline required-unchecked editor guard cases; not native Penpot execution\n",
+        "wallTimeSeconds": 2.159011,
+        "file": ".test-tmp/full-player-unchecked-editors-selftest.js",
+        "sourceSha256AfterExecution": "033fa059ea05e281305f329bdb8e022087ea9b78a1ae1080ac5c7cd96ceb5081",
+        "explicitlyReportedCaseCount": 6
+      },
+      {
+        "kind": "python-finalizer-gates",
+        "command": "python .test-tmp/test_finalizer_extra_gates.py",
+        "exitCode": 0,
+        "output": "....................\r\n----------------------------------------------------------------------\r\nRan 20 tests in 0.005s\r\n\r\nOK\r\n",
+        "wallTimeSeconds": 2.4170504,
+        "file": ".test-tmp/test_finalizer_extra_gates.py",
+        "sourceSha256AfterExecution": "d21f4e01d138215b822f482f6be8b2e363dcbf3fadc2c8a025debd2397fa405a"
+      },
+      {
+        "kind": "source-audit-registry",
+        "command": "python tools/audit_registry.py gate",
+        "exitCode": 0,
+        "output": "PASS: mandatory source audit gate\r\n",
+        "wallTimeSeconds": 2.7971365,
+        "file": "tools/audit_registry.py",
+        "sourceSha256AfterExecution": "8972df2a03816408e355681dfd742e1a746b2b1ec8a82bcdaef953c1f49a17d1"
+      },
+      {
+        "kind": "design-whitespace",
+        "command": "git diff --check -- STATUS.md docs/design",
+        "exitCode": 0,
+        "output": "warning: in the working copy of 'STATUS.md', LF will be replaced by CRLF the next time Git touches it\n",
+        "wallTimeSeconds": 2.1931853
+      }
+    ],
+    "limits": "These are local mock/native-object fixture tests and finalizer guard tests, not real Penpot SDK or viewer interaction execution."
+  },
+  "javascriptSyntax": {
+    "helpers": 46,
+    "passed": 46,
+    "results": [
+      {
+        "file": ".test-tmp/full-player-bind-resume.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "b4a93fbaea22d6671c3fc23e145dc6bc5d4cf32cd803b0e89eea12149bbb0107",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-bootstrap.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "24912246fa400531fa6cb956918476ddc1b1192fd3cc9783731b5bb21a0a0b58",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-branch-choices.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "8911aa49f0eede1dff2be1d24aaad68f0b4df2cda09d88208fda183982322ee3",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-candidate-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "1a54960e84a07af91c9ef08684ea45eee573e9c1e14c31ae1cdb944d950a6959",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-candidate.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "a26670c54784aaa036bd72b1070c996ed6b48321ffb03661e90302d943f9b874",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-checkpoint.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "07f4358d8816a63d831ec7c59a893bfa3127c62740ea936652fb7e439230fd22",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-disposition.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "45a7862d9e7091b594c66af1aee9cb416efec5ae37831f8db57e8cf29d31dd45",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-enrich.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "a42dfae4a1a3a2335419285a4d565f7712e4aae87d37c6f6b5bffebb49b0a99e",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-fast-dialog.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "530e150709e04e72d73d9744a6c3937583b17c371445268bf520c236727b69b8",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-flow-menu.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "38b41f46b6e31cbb12e142852b33d2fa2eddc23f682b090322251e4cb457472b",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-geometry-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "349f3ceac78394330df42d36e9cf957c9af416ec0649f4dcf37ef56ffdf3e61b",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-geometry.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "8d725ab9beee2314c862f1a3f6dc6f5b2b0078f38c6c1bcd9ba254a296ed27fb",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-launcher.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "0f2e4a2a546f5b5d6f15c3d709197c73970fe268ad75ce07327e45c0e8647298",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-link-audit.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "7305e03c5a42d6813bfa965c03022fb802664512042ac531895b4993f9207884",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-media.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "1c91054519837aa8e8a8bca718379628bde87cf40e6e37055feedc775b151f4f",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-metadata-cleanup-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "59b1f3ab29e6b577754f3a69cf303d216c8c0bb619acb8cf9f05d98aee76be30",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-metadata-cleanup.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "2ca3e5034b5696fad33e54e87d9a9ea12e4a1228c45d986b14dc7eeacd57b56c",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-metadata-only.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "5a4dcbf0d2fb082dc1df588fa34509cb078ed56d70e2a8a5bd149ca52864597a",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-navigation.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "ed3bab1099abedd611bfee2a57c912082c16762da08fd9321e881620d94eeea2",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-preset-verify-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "06e1c99007ab897f85613dd7a60e9ae1b76786f61786e48997947212a3e08b37",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-preset-verify.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "4887d331872e86858f1e2c0f60c4b2eff7a0d6e3b56b8284b71f2170fd2785c4",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-recover-canonical-geometry-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "13dd89a1b624d956b98310d73932d0b937e3a4f8f5438081b4a362e539a71677",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-recover-canonical-geometry.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "270832f381b6c4e9fb0a489666c2fa45a362167ec78b7ecab262a3af4920c2c3",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-recover-canonical.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "df07f09b52e67459cd637cc0853ba9cd9b59345ba2675dfaa7721dd1e4f5374b",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-recover-variants.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "f151e269a5472eb53955a81bbeeed87f94ee143cf5ce75ceadad07d2042603be",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-repair-primary-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "db1906bdd346f13d2b5430196b8285323a219abbf40cdb612a07dfd152819a60",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-repair-primary.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "2e61203e885218a97db886d0501a0d91a42a597fd69dbbbc0ad108db985ae728",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-repair-variants.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "14b899d002538fa325ed1f18efcfcda0ff2f08a99abd469bfde2aaca5705a1b6",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-retire-legacy.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "5b10fa48e1fee34f274e875876c1b4a8995af910dc9da667162fac363e99f103",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-reviewed.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "aee7362c83745a58ba5392a9211250dca6b1b71bce9e4ea889f6b2f380098390",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-secondaries-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "3f3a1c99bb0fdf61e0cbf493ec066814680a0dc40e6a6f8c1ef6419bdf8651ee",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-secondaries.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "3e4cdc7931877270b80e365eebd7bffaa6a5f4dfba4119e04909249522579406",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-source-navigation-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "9b5656e024379e70e91b7746db88f3efe1f77c246714494b044d62ca38007e13",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-source-navigation.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "57f43c032e8168073ab52d101ecc41968250221d6b4fb99e258377da73556d4b",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-source-order-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "1ad6104ec6106b193ef09a446447429dd72161dd6aff5abede035f999b2a71e5",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-source-order.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "b2f6794a871abd3fafd5fa30dd0163252f39fe0af9406fd27bade24392dc577c",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-tabs.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "cfdb072aa0cc23bd057c8f1794adefebd034d65dfcb59ba07f0896cc69dd7765",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-toggle-cycles-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "b5fdc3cf2427df9fbe65f0c2cbff4995ca5efef9e78bd09f91e8a1a880190d65",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-toggle-cycles.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "c836a109cd38288e59bda9affa2bb9f93b9bdcbef20628f140159f845849cc0b",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-toggles.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "fe54b3fca0b610b6cbcd9bd0c0f02197fb658764016bfaae1ac57c076b5d6a96",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-unchecked-editors-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "033fa059ea05e281305f329bdb8e022087ea9b78a1ae1080ac5c7cd96ceb5081",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-unchecked-editors.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "f2de018f5d95b6c5ee13e46fc31d711b15825b4993cfdb90c371e95b79dbfd43",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-variant-step.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "fef016d43e7b3af7bfe2d9a9506a247f02ae8b44716382b9a256ccdf8c31075a",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-verify-selftest.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "97d7b21a5bdf2d21a709840680fecc01d9b938e15289d950c19a1a5d24d92042",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player-verify.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "f7a7c16360da1d0769a8b7dff3232aa1de7908e377376f91756e28d1535f3ddc",
+        "output": ""
+      },
+      {
+        "file": ".test-tmp/full-player.js",
+        "exitCode": 0,
+        "status": "passed",
+        "sha256": "a03362e69335ada87afc82262e96138ab9664426ec4876b42eb184044139ea33",
+        "output": ""
+      }
+    ],
+    "limit": "node --check parses JavaScript only; it does not execute native interaction paths."
+  },
+  "nativeChecks": {
+    "status": "NOT EXECUTED by this offline batch; actual native receipts are separate",
+    "penpotQueries": 0,
+    "activePageChanges": 0,
+    "interactionClicks": 0,
+    "geometryChecks": 0
+  },
+  "scope": {
+    "applicationJavaTests": "Not run for this prototype-authoring-only batch",
+    "statusAndCanonicalInventory": "Not modified by this batch",
+    "nativeRuntimeOrProductionAcceptance": false
+  },
+  "history": [
+    {
+      "schema": 1,
+      "date": "2026-11-27",
+      "executedAtUtc": "2026-11-27T14:38:42.271670+00:00",
+      "status": "OFFLINE CHECKS PASSED; native interaction execution and acceptance are not established",
+      "contract": {
+        "flows": 26,
+        "contextRouteRecords": 230,
+        "uniqueCanonicalStates": 215,
+        "branches": 197,
+        "criticalActions": 53,
+        "allPrimaryBackBranchAndCriticalTargetsResolve": true
+      },
+      "tabPresets": {
+        "presets": 24,
+        "screens": 7,
+        "allSourceAndTargetReferencesResolve": true,
+        "rowShapesValid": true,
+        "exactSourceFieldRows": 14,
+        "exactSourceTableRows": 17,
+        "derivedSelectionRows": 8,
+        "historicalViewerSampleRows": 4,
+        "newUnsupportedNumericalMetrics": 0,
+        "provenanceLimits": [
+          "M05 sample cards are attributed to the earlier live-viewer observation declared in tab-presets.json; they were not re-read from Penpot by these checks.",
+          "N02 readiness/fallback rows and H02 trust/network split are derived selections checked against the recorded source plan; they are not newly measured provider or model results.",
+          "D02 native filter details remain explicitly unresolved in the source preset artifact."
+        ]
+      },
+      "testCases": {
+        "flows": 26,
+        "plannedCases": 76,
+        "allPathIdsCanonical": true,
+        "allCasesRemainNotExecuted": true,
+        "nativeCasesExecutedByThisCheck": 0
+      },
+      "javascriptSyntax": {
+        "helpers": 18,
+        "passed": 18,
+        "results": [
+          {
+            "file": ".test-tmp/full-player-bind-resume.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "17b4f1c0d531e66afd1d819d5b2128d480e8013b61ecfcf33068d944196f0c97"
+          },
+          {
+            "file": ".test-tmp/full-player-bootstrap.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "24912246fa400531fa6cb956918476ddc1b1192fd3cc9783731b5bb21a0a0b58"
+          },
+          {
+            "file": ".test-tmp/full-player-checkpoint.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "07f4358d8816a63d831ec7c59a893bfa3127c62740ea936652fb7e439230fd22"
+          },
+          {
+            "file": ".test-tmp/full-player-enrich.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "a42dfae4a1a3a2335419285a4d565f7712e4aae87d37c6f6b5bffebb49b0a99e"
+          },
+          {
+            "file": ".test-tmp/full-player-fast-dialog.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "530e150709e04e72d73d9744a6c3937583b17c371445268bf520c236727b69b8"
+          },
+          {
+            "file": ".test-tmp/full-player-link-audit.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "7305e03c5a42d6813bfa965c03022fb802664512042ac531895b4993f9207884"
+          },
+          {
+            "file": ".test-tmp/full-player-media.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "1c91054519837aa8e8a8bca718379628bde87cf40e6e37055feedc775b151f4f"
+          },
+          {
+            "file": ".test-tmp/full-player-navigation.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "0cf57e5a7514f40d0acde1cd8dc0e44fb258dfbf2f229fb49aecae09255c3252"
+          },
+          {
+            "file": ".test-tmp/full-player-recover-canonical.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "df07f09b52e67459cd637cc0853ba9cd9b59345ba2675dfaa7721dd1e4f5374b"
+          },
+          {
+            "file": ".test-tmp/full-player-recover-variants.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "f151e269a5472eb53955a81bbeeed87f94ee143cf5ce75ceadad07d2042603be"
+          },
+          {
+            "file": ".test-tmp/full-player-repair-variants.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "14b899d002538fa325ed1f18efcfcda0ff2f08a99abd469bfde2aaca5705a1b6"
+          },
+          {
+            "file": ".test-tmp/full-player-reviewed.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "5bb1744c40eb5fab86e5b06ee65f67093169b4461677952adef5696ea4508b6e"
+          },
+          {
+            "file": ".test-tmp/full-player-tabs.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "cfdb072aa0cc23bd057c8f1794adefebd034d65dfcb59ba07f0896cc69dd7765"
+          },
+          {
+            "file": ".test-tmp/full-player-toggles.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "a742c46860a1091fcc29f74fa933566cc787007595aac74da7a2bd0c84b26d70"
+          },
+          {
+            "file": ".test-tmp/full-player-variant-step.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "ee4f26654149dba8f1be1428aef28d45401f62852ab312bc9a001bd48ab1b99d"
+          },
+          {
+            "file": ".test-tmp/full-player-verify-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "e4e63d660efd0a2d050694372f6ac869e01b4f17fec371bed96891aec71c7e5b"
+          },
+          {
+            "file": ".test-tmp/full-player-verify.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "915f943d5eec5dd936df362e3bf1b25e016b3aef254dafd4b73cdfff39a52891"
+          },
+          {
+            "file": ".test-tmp/full-player.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "a03362e69335ada87afc82262e96138ab9664426ec4876b42eb184044139ea33"
+          }
+        ],
+        "limit": "node --check parses JavaScript only; it does not execute the Penpot API, prove control behavior, or test runtime logic."
+      },
+      "lineEndings": [
+        {
+          "file": "docs/design/full-interaction-contract.json",
+          "action": "already LF",
+          "containsCRLF": false
+        },
+        {
+          "file": "docs/design/full-interaction-progress.json",
+          "action": "already LF",
+          "containsCRLF": false
+        },
+        {
+          "file": "docs/design/interaction-test-cases.json",
+          "action": "already LF",
+          "containsCRLF": false
+        },
+        {
+          "file": "docs/design/tab-presets.json",
+          "action": "already LF",
+          "containsCRLF": false
+        }
+      ],
+      "nativeChecks": {
+        "status": "NOT EXECUTED by this offline validation",
+        "penpotQueries": 0,
+        "activePageChanges": 0,
+        "interactionClicks": 0,
+        "geometryChecks": 0
+      },
+      "limits": [
+        "This artifact validates repository data/reference integrity and JavaScript syntax only.",
+        "Progress snapshots are recovery metadata, not native verification evidence, and may be superseded by ongoing assembly.",
+        "No runtime, provider, authorization, hardware, financial, accessibility or production-readiness acceptance is claimed."
+      ]
+    },
+    {
+      "schema": 2,
+      "date": "2026-11-27",
+      "executedAtUtc": "2026-11-27T16:39:46.467334+00:00",
+      "status": "OFFLINE CHECKS PASSED; native interaction execution and acceptance are recorded separately",
+      "commandBatchCapturedAtUtc": "2026-11-27T16:39:40.225Z",
+      "contract": {
+        "flows": 26,
+        "contextRouteRecords": 230,
+        "uniqueCanonicalStates": 215,
+        "branches": 197,
+        "criticalActions": 53,
+        "allPrimaryBackBranchAndCriticalTargetsResolve": true
+      },
+      "tabPresets": {
+        "presets": 24,
+        "screens": 7,
+        "allSourceAndTargetReferencesResolve": true,
+        "rowShapesValid": true,
+        "exactSourceFieldRows": 14,
+        "exactSourceTableRows": 17,
+        "derivedSelectionRows": 8,
+        "historicalViewerSampleRows": 4,
+        "newUnsupportedNumericalMetrics": 0,
+        "provenanceLimits": [
+          "M05 cards retain their declared earlier live-viewer provenance; this batch made no native queries.",
+          "N02 readiness/fallback and H02 trust/network split are derived source-plan selections, not newly measured approvals or accuracy results.",
+          "The repository D02 preset artifact retains its original native-filter source-evidence limitation; native behavior is outside this offline batch."
+        ]
+      },
+      "testCases": {
+        "flows": 26,
+        "plannedCases": 76,
+        "allPathIdsCanonical": true,
+        "allCasesRemainNotExecuted": true,
+        "nativeCasesExecutedByThisCheck": 0
+      },
+      "offlineExecution": {
+        "commands": 14,
+        "failedCommands": 0,
+        "nodeFixturePrograms": 11,
+        "nodeFixtureProgramsPassed": 11,
+        "pythonFinalizerUnitTests": 20,
+        "pythonFinalizerPassed": 20,
+        "registryGatePassed": true,
+        "designWhitespacePassed": true,
+        "explicitNodeCaseCounts": {
+          "programsReportingTotals": 7,
+          "reportedCases": 92,
+          "limit": "Four fixture programs report compound assertions without a test-case total; no total is invented for them."
+        },
+        "results": [
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-repair-primary-selftest.js",
+            "exitCode": 0,
+            "output": "PASS exact E06 default changes without touching branches or cancel\nPASS completed input leaves generic validation loop while draft stays guarded\nPASS physical disposition prerequisite survives generic completed-primary repair\nPASS unchecked toggle guards are untouched\nPASS W08 default never implies confirmed payout, explicit success branch survives\nPASS notification and NFC defaults show pending feedback with unchanged returns\nPASS B08 completed reason reaches review while initial validation stays blocked\nPASS missing critical guard remains a reported failure, never fabricated evidence\n8 default-action repair integrity checks passed. These are mock-native tests, not Penpot viewer execution.\n",
+            "wallTimeSeconds": 1.3282763,
+            "file": ".test-tmp/full-player-repair-primary-selftest.js",
+            "sourceSha256AfterExecution": "db1906bdd346f13d2b5430196b8285323a219abbf40cdb612a07dfd152819a60",
+            "explicitlyReportedCaseCount": 8
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-recover-canonical-geometry-selftest.js",
+            "exitCode": 0,
+            "output": "PASS: native-ID rename recovery and shuffled control geometry mapping; mock metadata only\n",
+            "wallTimeSeconds": 1.2501579,
+            "file": ".test-tmp/full-player-recover-canonical-geometry-selftest.js",
+            "sourceSha256AfterExecution": "13dd89a1b624d956b98310d73932d0b937e3a4f8f5438081b4a362e539a71677",
+            "explicitlyReportedCaseCount": null
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-preset-verify-selftest.js",
+            "exitCode": 0,
+            "output": "PASS empty nonpreset flow is valid\nPASS native toggle reverse cycle and unchecked guard are verified\nPASS broken reverse cycle is rejected\nPASS incorrect visible toggle selection is rejected\nPASS unchecked prerequisite cannot navigate past guard\nPASS distinct tab content and all owner selectors verify\nPASS duplicate tab board identities are rejected\nPASS missing planned tab cannot silently pass\nPASS incorrect tab heading content is rejected\nPASS misdirected tab selector is rejected\nPASS three metadata-only boards and native review/revocation chain verify\nPASS all inherited confirmation choices are checked\nPASS labelled external pixel branch is repaired into metadata scope\nPASS metadata field editor cannot fall back to canonical pixels\nPASS metadata handoff cannot fall back to pixel review\nPASS read-only audit prunes SVG child graphs and does not mutate controls\nPASS: 16 offline native-shape fixture cases; no native Penpot execution.\n",
+            "wallTimeSeconds": 1.4543833,
+            "file": ".test-tmp/full-player-preset-verify-selftest.js",
+            "sourceSha256AfterExecution": "6932df6dc5dea1d5c3353334de9a5612e04c36856c97587a2d8c975c753c6a94",
+            "explicitlyReportedCaseCount": 16
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-metadata-cleanup-selftest.js",
+            "exitCode": 0,
+            "output": "PASS: ordered scoped onward path, Return/Cancel preservation, no purge-completion claim, idempotent reuse, missing-scope refusal; offline native-shape fixtures only.\n",
+            "wallTimeSeconds": 1.4312102,
+            "file": ".test-tmp/full-player-metadata-cleanup-selftest.js",
+            "sourceSha256AfterExecution": "59b1f3ab29e6b577754f3a69cf303d216c8c0bb619acb8cf9f05d98aee76be30",
+            "explicitlyReportedCaseCount": null
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-geometry-selftest.js",
+            "exitCode": 0,
+            "output": "PASS known source SVG children are never read while following native text is inspected\nPASS native tables still report their board overflow\nPASS P and Interactive groups cannot hide overflowing native text\nPASS an unnamed native group with its own interaction is retained\nPASS unregistered root graphics are inspected rather than assumed to be F.copy SVG art\nPASS registered variants use the same safe source-art pruning\n6 geometry integrity checks passed; these are local native-object mocks.\n",
+            "wallTimeSeconds": 1.4009812,
+            "file": ".test-tmp/full-player-geometry-selftest.js",
+            "sourceSha256AfterExecution": "d85921cf41bc5d2212b68ded0142b6a1c88142a0af667505b8c929d03c1a5d9b",
+            "explicitlyReportedCaseCount": 6
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-candidate-selftest.js",
+            "exitCode": 0,
+            "output": "PASS seven exact forward sources across 28 canonical/variant contexts, 12 visible desktop controls, unchanged guards/branches/cancel, idempotence and all eight added-secondary paths.\nPASS all three generated M05 tabs have real forward paths; Nearby returns to available matches without fabricating a row.\nPASS all three approved phrase selections across 12 contexts retain selected text, preview C11 and reversible Cancel.\nPASS read-only supplemental audit checks every real tab/phrase forward path and rejects a wrong phrase default.\n",
+            "wallTimeSeconds": 1.3758032,
+            "file": ".test-tmp/full-player-candidate-selftest.js",
+            "sourceSha256AfterExecution": "1a54960e84a07af91c9ef08684ea45eee573e9c1e14c31ae1cdb944d950a6959",
+            "explicitlyReportedCaseCount": null
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-verify-selftest.js",
+            "exitCode": 0,
+            "output": "PASS exact primary/back/branch and critical guard paths pass\nPASS a menu or branch cannot stand in for the default primary\nPASS missing explicit back is rejected\nPASS every native cloned P control is inspected\nPASS an external destination requires labelled handoff and correct page\nPASS silent self branches fail; visible feedback must preserve its return\nPASS same-state back requires visible restart confirmation\nPASS missing exact critical reason is rejected\nPASS M05 selects the Canvas candidate and rejects a Cancel-only detail\nPASS M05 repair covers all native contexts and preserves other candidates and confirm choices\nPASS M05 candidate cannot pass with a wrong default and a good alternative\nPASS an exact extra Action is a real forward control\nPASS M11 first approved phrase uses the guarded default trace\nPASS completed form physical-handoff body does not masquerade as a labelled handoff overlay\nPASS disposition physical validation follows only the positive completed context actual primary and guarded confirm\nPASS an unchecked toggle context cannot stand in for the physical-completion prerequisite variant\nPASS disposition positive context still fails a wrong primary despite an existing good confirm\nPASS known first imported source SVG art is pruned without touching its vector children\nPASS native P or Interactive groups remain fully inspected even in the first-child position\nPASS an unnamed group with a native interaction is not classified as static source SVG\n20 semantic verifier integrity checks passed.\n",
+            "wallTimeSeconds": 1.5020132,
+            "file": ".test-tmp/full-player-verify-selftest.js",
+            "sourceSha256AfterExecution": "97d7b21a5bdf2d21a709840680fecc01d9b938e15289d950c19a1a5d24d92042",
+            "explicitlyReportedCaseCount": 20
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-unchecked-editors-selftest.js",
+            "exitCode": 0,
+            "output": "PASS: 6 offline required-unchecked editor guard cases; not native Penpot execution\n",
+            "wallTimeSeconds": 1.4858783,
+            "file": ".test-tmp/full-player-unchecked-editors-selftest.js",
+            "sourceSha256AfterExecution": "033fa059ea05e281305f329bdb8e022087ea9b78a1ae1080ac5c7cd96ceb5081",
+            "explicitlyReportedCaseCount": 6
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-source-order-selftest.js",
+            "exitCode": 0,
+            "output": "PASS sourceIndex order survives native bringToFront order; control/extra/menu slots, native z-order and all guard interactions remain unchanged; metadata repair is idempotent.\n",
+            "wallTimeSeconds": 1.4600071,
+            "file": ".test-tmp/full-player-source-order-selftest.js",
+            "sourceSha256AfterExecution": "1ad6104ec6106b193ef09a446447429dd72161dd6aff5abede035f999b2a71e5",
+            "explicitlyReportedCaseCount": null
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-source-navigation-selftest.js",
+            "exitCode": 0,
+            "output": "PASS: 23 source-navigation and scoped-target cases; no native Penpot execution\n",
+            "wallTimeSeconds": 1.4656311,
+            "file": ".test-tmp/full-player-source-navigation-selftest.js",
+            "sourceSha256AfterExecution": "9b5656e024379e70e91b7746db88f3efe1f77c246714494b044d62ca38007e13",
+            "explicitlyReportedCaseCount": 23
+          },
+          {
+            "kind": "node-fixture-selftest",
+            "command": "node .test-tmp\\full-player-secondaries-selftest.js",
+            "exitCode": 0,
+            "output": "PASS wrong declared secondary is detected independently of a good result selector\nPASS source-secondary repair preserves main action and explicit Back\nPASS cloned source secondary is repaired too\nPASS own dedicated secondary confirmation keeps its body and Cancel\nPASS shared primary confirmation is never retargeted for secondary semantics\nPASS blocked acknowledgement gate is preserved and reported\nPASS source catalog resolves declared target even without plan or branch entry\nPASS unresolved source declarations are reported instead of guessed\nPASS physical handoff wording in a source state never supplies an external labelled handoff\nPASS Q05 multiplication-sign dismiss returns to Q06 instead of asserting a cancelled booking\nPASS all nine source multiplication-sign dismiss controls follow their exact contract Back target\nPASS DPO3 A check changed escapes a misassigned physical prerequisite while the real positive primary stays guarded\nPASS an explicit declared Back can leave a misplaced guard, but a positive action never gains that exception\n13 declared-secondary integrity checks passed. These are local mocks, not native Penpot execution.\n",
+            "wallTimeSeconds": 1.451547,
+            "file": ".test-tmp/full-player-secondaries-selftest.js",
+            "sourceSha256AfterExecution": "3f3a1c99bb0fdf61e0cbf493ec066814680a0dc40e6a6f8c1ef6419bdf8651ee",
+            "explicitlyReportedCaseCount": 13
+          },
+          {
+            "kind": "python-finalizer-gates",
+            "command": "python .test-tmp/test_finalizer_extra_gates.py",
+            "exitCode": 0,
+            "output": "....................\r\n----------------------------------------------------------------------\r\nRan 20 tests in 0.003s\r\n\r\nOK\r\n",
+            "wallTimeSeconds": 1.6615115,
+            "file": ".test-tmp/test_finalizer_extra_gates.py",
+            "sourceSha256AfterExecution": "d21f4e01d138215b822f482f6be8b2e363dcbf3fadc2c8a025debd2397fa405a"
+          },
+          {
+            "kind": "source-audit-registry",
+            "command": "python tools/audit_registry.py gate",
+            "exitCode": 0,
+            "output": "PASS: mandatory source audit gate\r\n",
+            "wallTimeSeconds": 1.8901587,
+            "file": "tools/audit_registry.py",
+            "sourceSha256AfterExecution": "8972df2a03816408e355681dfd742e1a746b2b1ec8a82bcdaef953c1f49a17d1"
+          },
+          {
+            "kind": "design-whitespace",
+            "command": "git diff --check -- STATUS.md docs/design",
+            "exitCode": 0,
+            "output": "warning: in the working copy of 'STATUS.md', LF will be replaced by CRLF the next time Git touches it\n",
+            "wallTimeSeconds": 1.4603964999999999
+          }
+        ],
+        "limits": "These are local mock/native-object fixture tests and finalizer guard tests, not real Penpot SDK or viewer interaction execution."
+      },
+      "javascriptSyntax": {
+        "helpers": 44,
+        "passed": 44,
+        "results": [
+          {
+            "file": ".test-tmp/full-player-bind-resume.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "b4a93fbaea22d6671c3fc23e145dc6bc5d4cf32cd803b0e89eea12149bbb0107",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-bootstrap.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "24912246fa400531fa6cb956918476ddc1b1192fd3cc9783731b5bb21a0a0b58",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-branch-choices.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "8911aa49f0eede1dff2be1d24aaad68f0b4df2cda09d88208fda183982322ee3",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-candidate-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "1a54960e84a07af91c9ef08684ea45eee573e9c1e14c31ae1cdb944d950a6959",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-candidate.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "a26670c54784aaa036bd72b1070c996ed6b48321ffb03661e90302d943f9b874",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-checkpoint.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "07f4358d8816a63d831ec7c59a893bfa3127c62740ea936652fb7e439230fd22",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-disposition.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "45a7862d9e7091b594c66af1aee9cb416efec5ae37831f8db57e8cf29d31dd45",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-enrich.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "a42dfae4a1a3a2335419285a4d565f7712e4aae87d37c6f6b5bffebb49b0a99e",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-fast-dialog.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "530e150709e04e72d73d9744a6c3937583b17c371445268bf520c236727b69b8",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-flow-menu.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "38b41f46b6e31cbb12e142852b33d2fa2eddc23f682b090322251e4cb457472b",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-geometry-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "d85921cf41bc5d2212b68ded0142b6a1c88142a0af667505b8c929d03c1a5d9b",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-geometry.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "3d3484ddb8e370f0ee9f5aadb11a28689ba5489c4f7e6e24776cd7f939fecc70",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-launcher.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "0f2e4a2a546f5b5d6f15c3d709197c73970fe268ad75ce07327e45c0e8647298",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-link-audit.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "7305e03c5a42d6813bfa965c03022fb802664512042ac531895b4993f9207884",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-media.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "1c91054519837aa8e8a8bca718379628bde87cf40e6e37055feedc775b151f4f",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-metadata-cleanup-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "59b1f3ab29e6b577754f3a69cf303d216c8c0bb619acb8cf9f05d98aee76be30",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-metadata-cleanup.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "2ca3e5034b5696fad33e54e87d9a9ea12e4a1228c45d986b14dc7eeacd57b56c",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-metadata-only.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "5a4dcbf0d2fb082dc1df588fa34509cb078ed56d70e2a8a5bd149ca52864597a",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-navigation.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "ed3bab1099abedd611bfee2a57c912082c16762da08fd9321e881620d94eeea2",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-preset-verify-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "6932df6dc5dea1d5c3353334de9a5612e04c36856c97587a2d8c975c753c6a94",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-preset-verify.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "452fd1abe3e8443fbe26da018ece21e78b717554658f01d67c1f7f0daf4da1f2",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-recover-canonical-geometry-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "13dd89a1b624d956b98310d73932d0b937e3a4f8f5438081b4a362e539a71677",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-recover-canonical-geometry.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "270832f381b6c4e9fb0a489666c2fa45a362167ec78b7ecab262a3af4920c2c3",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-recover-canonical.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "df07f09b52e67459cd637cc0853ba9cd9b59345ba2675dfaa7721dd1e4f5374b",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-recover-variants.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "f151e269a5472eb53955a81bbeeed87f94ee143cf5ce75ceadad07d2042603be",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-repair-primary-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "db1906bdd346f13d2b5430196b8285323a219abbf40cdb612a07dfd152819a60",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-repair-primary.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "2e61203e885218a97db886d0501a0d91a42a597fd69dbbbc0ad108db985ae728",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-repair-variants.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "14b899d002538fa325ed1f18efcfcda0ff2f08a99abd469bfde2aaca5705a1b6",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-retire-legacy.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "5b10fa48e1fee34f274e875876c1b4a8995af910dc9da667162fac363e99f103",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-reviewed.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "aee7362c83745a58ba5392a9211250dca6b1b71bce9e4ea889f6b2f380098390",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-secondaries-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "3f3a1c99bb0fdf61e0cbf493ec066814680a0dc40e6a6f8c1ef6419bdf8651ee",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-secondaries.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "3e4cdc7931877270b80e365eebd7bffaa6a5f4dfba4119e04909249522579406",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-source-navigation-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "9b5656e024379e70e91b7746db88f3efe1f77c246714494b044d62ca38007e13",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-source-navigation.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "57f43c032e8168073ab52d101ecc41968250221d6b4fb99e258377da73556d4b",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-source-order-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "1ad6104ec6106b193ef09a446447429dd72161dd6aff5abede035f999b2a71e5",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-source-order.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "b2f6794a871abd3fafd5fa30dd0163252f39fe0af9406fd27bade24392dc577c",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-tabs.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "cfdb072aa0cc23bd057c8f1794adefebd034d65dfcb59ba07f0896cc69dd7765",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-toggles.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "a742c46860a1091fcc29f74fa933566cc787007595aac74da7a2bd0c84b26d70",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-unchecked-editors-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "033fa059ea05e281305f329bdb8e022087ea9b78a1ae1080ac5c7cd96ceb5081",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-unchecked-editors.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "f2de018f5d95b6c5ee13e46fc31d711b15825b4993cfdb90c371e95b79dbfd43",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-variant-step.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "ee4f26654149dba8f1be1428aef28d45401f62852ab312bc9a001bd48ab1b99d",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-verify-selftest.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "97d7b21a5bdf2d21a709840680fecc01d9b938e15289d950c19a1a5d24d92042",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player-verify.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "f7a7c16360da1d0769a8b7dff3232aa1de7908e377376f91756e28d1535f3ddc",
+            "output": ""
+          },
+          {
+            "file": ".test-tmp/full-player.js",
+            "exitCode": 0,
+            "status": "passed",
+            "sha256": "a03362e69335ada87afc82262e96138ab9664426ec4876b42eb184044139ea33",
+            "output": ""
+          }
+        ],
+        "limit": "node --check parses JavaScript only; it does not execute native interaction paths."
+      },
+      "nativeChecks": {
+        "status": "NOT EXECUTED by this offline batch; actual native receipts are separate",
+        "penpotQueries": 0,
+        "activePageChanges": 0,
+        "interactionClicks": 0,
+        "geometryChecks": 0
+      },
+      "scope": {
+        "applicationJavaTests": "Not run for this prototype-authoring-only batch",
+        "statusAndCanonicalInventory": "Not modified by this batch",
+        "nativeRuntimeOrProductionAcceptance": false
+      },
+      "limits": [
+        "Reference and fixture verification cannot substitute for native graph, geometry or live-viewer checks.",
+        "Source hashes were measured after command execution during report generation; they identify the local files read at reporting time.",
+        "No planned case is silently marked executed; no provider, hardware, financial, accessibility or production acceptance follows from these checks."
+      ]
+    }
+  ],
+  "limits": [
+    "Reference and fixture verification cannot substitute for native graph, geometry or live-viewer checks.",
+    "Source hashes were measured after command execution during report generation; they identify the local files read at reporting time.",
+    "No planned case is silently marked executed; no provider, hardware, financial, accessibility or production acceptance follows from these checks."
+  ]
+}

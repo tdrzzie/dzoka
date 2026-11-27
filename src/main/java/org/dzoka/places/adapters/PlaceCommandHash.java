@@ -1,6 +1,8 @@
 package org.dzoka.places.adapters;
 
 import java.io.*;
+import java.nio.CharBuffer;
+import java.nio.charset.CharacterCodingException;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 import org.dzoka.foundation.application.ContentDigest;
@@ -31,7 +33,11 @@ public final class PlaceCommandHash {
     }
     private static void text(DataOutputStream out,String value)throws IOException {
         if(value==null){out.writeInt(-1);return;}
-        byte[] bytes=value.getBytes(StandardCharsets.UTF_8);out.writeInt(bytes.length);out.write(bytes);
+        // REPORT malformed UTF-16 instead of aliasing it to a literal replacement byte.
+        try {
+            var encoded=StandardCharsets.UTF_8.newEncoder().encode(CharBuffer.wrap(value));
+            byte[] bytes=new byte[encoded.remaining()];encoded.get(bytes);out.writeInt(bytes.length);out.write(bytes);
+        } catch(CharacterCodingException invalid) { throw new IllegalArgumentException("Malformed place command text",invalid); }
     }
     private static void number(DataOutputStream out,Double value)throws IOException {
         out.writeBoolean(value!=null);if(value!=null)out.writeLong(Double.doubleToLongBits(value));

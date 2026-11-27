@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-27",
+  "commit": "e50a75f3fb9b010ae8b03fc59868d6ad99424e76",
+  "verdict": "CONFIRMED LOCAL DEFECT: accepted malformed Unicode can alias a different place-command body in version 2 hashing",
+  "scope": "Actual signed HTTP calls against current CoreApplication, ephemeral JWKS and a fresh harness-owned PostgreSQL cluster; synthetic public question-mark/lone-surrogate names; application sources unchanged",
+  "httpObservations": [
+    "PROBE firstStatus=200",
+    "PROBE changedMalformedStatus=200",
+    "PROBE sameOriginalResult=true",
+    "PROBE ordinaryChangedStatus=409",
+    "PROBE addedPlaces=1"
+  ],
+  "directHashObservation": {
+    "namesEqual": false,
+    "secondCodeUnit": "d800",
+    "digestA": "161c7f0868af7d9a79049beea9c5da43936ce3f77c3d7123134afd2af2dc7a4b",
+    "digestB": "161c7f0868af7d9a79049beea9c5da43936ce3f77c3d7123134afd2af2dc7a4b",
+    "acceptsChangedBody": true
+  },
+  "rawHttpLogSha256": "ceadedb960063599a5c54381a62f13650e5abcbfc3a53c3abcc36fd1df59ba70",
+  "limits": [
+    "This is a changed-body retry validation defect, not a cryptographic SHA-256 collision.",
+    "The probe uses an authorized same-tenant actor; no tenant/authentication bypass or property-release effect is established.",
+    "The existing valid-Unicode restart/replica and legacy-receipt fix remains supported by its executed evidence."
+  ],
+  "probeSourceSha256": {
+    "M3UnicodeHashProbe.java": "bf8030aaf1b9076bb4d8d596159dfcc4f5f5ea7c81744693246ce1f0f179d65c",
+    "run_unicode_place_probe.py": "20876528fa8dc373f27c5a63dacc13c1e70c9984981ef3ea45a5b810a568486e",
+    "UnicodePlaceHttpProbe.java": "8a00e32f469e838834755f287293e55ade052d9c794a2d11d85675d0122c7020"
+  }
+}

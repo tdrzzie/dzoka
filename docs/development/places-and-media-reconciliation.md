@@ -40,6 +40,8 @@ Version 1 reconstructs both historical outer-map JSON orderings with a private f
 
 Drain old API replicas, apply V28 with the migration identity, then start patched replicas with the runtime identity. Do not route traffic to old binaries or downgrade after writing version 2 receipts: those binaries cannot read version 2 and retain the original legacy map-order defect. Keep old receipts intact. [ADR 0068](../adr/0068-stable-place-command-receipts.md) defines compatibility; [executed migration/restart/replica checks](../testing/m3-retry-fix-2026-11-27.md) establish the local behavior.
 
+Names, aliases and directory query labels must contain well-formed Unicode. JSON escapes for valid surrogate pairs and equivalent literal supplementary characters represent the same text; lone high/low surrogates are rejected with HTTP 400 before persistence or retry lookup. Valid raw spelling, combining sequences, literal `?` and U+FFFD remain unchanged. UTF-8 encoding fails strictly, and valid version 1/version 2 receipt hashes retain their original values. See the [Unicode regression and compatibility record](../testing/m3-unicode-fix-2026-11-27.md).
+
 ## Report linkage
 
 Report JSON may additionally contain `placeId` and `placeVersion`; both are required together or both absent. The selected revision and all current ancestors must be active, and the version must be current at submission. The locations application interface validates under the report transaction's shared hierarchy lock, and tenant-qualified foreign keys retain exact historical references.

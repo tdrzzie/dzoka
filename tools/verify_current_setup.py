@@ -38,8 +38,8 @@ def active(config):
 def wait_running(config,previous=None,seconds=720,clock=None,pause=None,emit=None):
     """Bound launch/verification readiness; reject stale or terminal generations.
 
-    This is a diagnostic wait bound, not a production startup SLO. Keep the
-    existing short explicit bound for watchdog recovery at its call site.
+    This diagnostic bound includes scheduler launch and full startup integrity
+    verification for every generation. It is not a production startup SLO.
     """
     if type(seconds) is not int or not 1<=seconds<=720:raise ValueError('Bounded readiness wait required')
     clock=clock or time.monotonic;pause=pause or time.sleep;emit=emit or (lambda value:print(value,flush=True))
@@ -130,7 +130,7 @@ def main():
                     else:raise AssertionError('Wrong task descriptor accepted')
                 finally:worker.descriptor=original
             previous=kill_owned(config,path,digest);cases.append('exact_registered_worker_crash_injected')
-            readiness['watchdogRecoveryWaitSeconds']=wait_running(config,previous,180)
+            readiness['watchdogRecoveryWaitSeconds']=wait_running(config,previous)
             cases.append('bounded_periodic_worker_restart_verified')
             baseline=len(calls);wait(lambda:len(calls)>baseline);cases.append('restart_recovers_then_resumes_claims')
             worker.stop(config,path,digest);assert snapshot(config)['phase']=='STOPPED';cases.append('graceful_generation_bound_stop')

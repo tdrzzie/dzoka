@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "scope": "AUTHORED_CURRENT_ACCOUNT_HTTP_BURST_AND_CRASH_RECOVERY",
+  "initialAdmissions": 32,
+  "capacityRejections": 1,
+  "replenishedAdmissions": 1,
+  "completed": 33,
+  "reclaimedAttempts": 2,
+  "otherTenantUnclaimed": true,
+  "quality": "NOT_EVALUATED",
+  "productionSlo": "NOT_ESTABLISHED",
+  "rawReceiptSha256": "ed10993b177963baea74d007fcfb42a182fec901665833da59621aa4111d2650"
+}

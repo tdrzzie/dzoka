@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-27",
+  "commit": "e50a75f3fb9b010ae8b03fc59868d6ad99424e76",
+  "verdict": "LOCAL COMPLETION REOPENED: confirmed malformed-Unicode changed-body replay; previous implementation/test execution is real",
+  "checks": {
+    "publishedAndCurrentNormalizedSourceHashes": 400,
+    "priorChildArtifactHashes": "PASS",
+    "sourceAuditGate": "PASS",
+    "registryIntegrity": "PASS",
+    "architecture": "PASS",
+    "pinnedDependencies": 106,
+    "freshJavaUnit": 42,
+    "freshIntegrationTotal": 136,
+    "freshIntegrationExecuted": 135,
+    "freshIntegrationSkipped": 1,
+    "separateEdgeReplayExecuted": 3,
+    "separateEdgeReplaySkipped": 0,
+    "freshRestoreTables": 111,
+    "freshRestoreRows": 6474,
+    "httpDefectReproduced": true
+  },
+  "sourceCanonicalLfSha256": {
+    "src/main/java/org/dzoka/places/domain/PlaceDraft.java": "4424d4a9dcefbdd84be85b90dd357f749d8dcabcdee501166fcc186ce397fcdd",
+    "src/main/java/org/dzoka/places/adapters/PlaceCommandHash.java": "bb6e2ce58f1986700222f73bbc901242349387383c6f3201db36714fd3c99007",
+    "src/main/java/org/dzoka/places/adapters/JdbcPlaces.java": "c6a07a32f4dd2848b9d47f10b0a1f7576bad5838df03d372e1cfbe1013edf2f0",
+    "src/main/java/org/dzoka/places/api/PlaceController.java": "44d64bdd800e81017ca663f0cf2a820a978a464387b57d499784e45131782e8a",
+    "src/test/java/org/dzoka/IntegrationFixture.java": "dee794a7e084c0318202357bb75ccab54e4f4087f51ee87ca8a1a148d17f1183",
+    "tools/test_foundation.py": "cc36351c45e1e22f0cb3bf01dbdcd3bdb0ec919160c897347946656fcae0890b",
+    "tools/test_intake.py": "cfa53f653b728aa5086d9a3f72bf43869109f7e0965f8cf0f484e4119d2f35c9",
+    "tools/restore_drill.py": "a60618c1d7fbeb8c5ab7e4961a0f6ad261c7c3b30854d8bd9d0babb858c1477e"
+  },
+  "logSha256": {
+    "m3-independent-recheck-20261127.log": "ed9eb18fbaaeb885001b18a1ca5f5a6de03698f4894f3dddaaa6d4b6b0970dd8",
+    "m3-independent-edge-replay-20261127.log": "b602313288ca312e36ab7eaa442c9d3473ac3cc5275651005bb18c9dc2195b4c",
+    "m3-unicode-http-probe-20261127.log": "ceadedb960063599a5c54381a62f13650e5abcbfc3a53c3abcc36fd1df59ba70"
+  },
+  "artifacts": {
+    "edge-replay.json": "e6b324a0492833b4443146966e0e1637134224fa59dceecbfb4ffbf4b5b1dc7d",
+    "jvm-tests.json": "fbf0e162073f857f31f0300499a41f40e114691bf687a6ee95dc3ada921b0c0b",
+    "M3UnicodeHashProbe.java": "bf8030aaf1b9076bb4d8d596159dfcc4f5f5ea7c81744693246ce1f0f179d65c",
+    "probe.json": "80494d8b2578bb55c3bea31edf142d4f3f7fdb3c64c83726c429b91840975b54",
+    "restore.json": "f2c979e15b291ecffafbf808c3c3128cc50706e8039f7dd36da5bfabd8d3f28f",
+    "run_unicode_place_probe.py": "20876528fa8dc373f27c5a63dacc13c1e70c9984981ef3ea45a5b810a568486e",
+    "UnicodePlaceHttpProbe.java": "8a00e32f469e838834755f287293e55ade052d9c794a2d11d85675d0122c7020"
+  },
+  "limits": [
+    "No application behavior changed; this records an actual defect, not its repair.",
+    "Fresh main suite skipped optional video because its flag was omitted; the skipped case passed in the separate real sandbox replay.",
+    "Existing regressions passing do not waive the confirmed malformed-Unicode finding."
+  ]
+}

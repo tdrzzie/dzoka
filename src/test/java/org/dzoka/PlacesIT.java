@@ -121,4 +121,37 @@ class PlacesIT extends IntegrationFixture {
         try{assertThrows(Failures.Forbidden.class,()->places().save(who("place-manager"),A,null,d,key));}
         finally{try(var c=admin();var s=c.prepareStatement("UPDATE dzoka.memberships SET active=true WHERE tenant_id=? AND issuer=? AND subject='place-manager'")){s.setObject(1,A);s.setString(2,issuer);s.executeUpdate();}}
     }
+    private java.net.http.HttpResponse<String> placeRequest(String method,String path,String body,String key)throws Exception {
+        var request=java.net.http.HttpRequest.newBuilder(java.net.URI.create(base+"/api/v1/tenants/"+A+path))
+            .timeout(java.time.Duration.ofSeconds(15)).header("Authorization","Bearer "+token("place-manager"))
+            .header("Content-Type","application/json").header("Idempotency-Key",key)
+            .method(method,java.net.http.HttpRequest.BodyPublishers.ofString(body)).build();
+        return http.send(request,java.net.http.HttpResponse.BodyHandlers.ofString());
+    }
+    @Test void malformedUnicodeIsRejectedForCreateUpdateAndReplayOverHttp()throws Exception {
+        long nodes=count("places",A),revisions=count("place_revisions",A),receipts=count("place_commands",A),audits=count("audit_events",A),events=count("outbox",A);
+        String valid="{\"name\":\"?\",\"kind\":\"FACILITY\",\"aliases\":[\"?\"],\"active\":true,\"expectedVersion\":0}";
+        String key=UUID.randomUUID().toString();var initial=placeRequest("POST","/places",valid,key);assertEquals(200,initial.statusCode());
+        var json=app.getBean(ObjectMapper.class);String id=json.readTree(initial.body()).get("id").asText();
+        for(String malformed:List.of("\\ud800","\\udc00","x\\ud800y","x\\udc00y","\\udc00\\ud800")) {
+            for(String bad:List.of(valid.replace("\"name\":\"?\"","\"name\":\""+malformed+"\""),
+                                   valid.replace("[\"?\"]","[\""+malformed+"\"]"))) {
+                assertEquals(400,placeRequest("POST","/places",bad,key).statusCode());
+                assertEquals(400,placeRequest("POST","/places",bad,UUID.randomUUID().toString()).statusCode());
+                assertEquals(400,placeRequest("PUT","/places/"+id,bad.replace("Version\":0","Version\":1"),UUID.randomUUID().toString()).statusCode());
+            }
+        }
+        assertEquals(json.readTree(initial.body()),json.readTree(placeRequest("POST","/places",valid,key).body()));
+        assertEquals(409,placeRequest("POST","/places",valid.replace("\"name\":\"?\"","\"name\":\"Different\""),key).statusCode());
+        assertEquals(nodes+1,count("places",A));assertEquals(revisions+1,count("place_revisions",A));assertEquals(receipts+1,count("place_commands",A));assertEquals(audits+1,count("audit_events",A));assertEquals(events+1,count("outbox",A));
+    }
+    @Test void validSupplementaryEscapesAndRawCharactersReplayTheSameReceipt()throws Exception {
+        String escaped="{\"name\":\"Cafe\\u0301 \\ud83d\\ude80\",\"kind\":\"FACILITY\",\"aliases\":[\"Door \\ud83d\\ude80\"],\"active\":true,\"expectedVersion\":0}";
+        String raw=escaped.replace("\\u0301","\u0301").replace("\\ud83d\\ude80","\uD83D\uDE80");String key=UUID.randomUUID().toString();
+        var first=placeRequest("POST","/places",escaped,key);assertEquals(200,first.statusCode());
+        var replay=placeRequest("POST","/places",raw,key);assertEquals(200,replay.statusCode());var json=app.getBean(ObjectMapper.class);
+        assertEquals(json.readTree(first.body()),json.readTree(replay.body()));
+        assertEquals("Cafe\u0301 \uD83D\uDE80",json.readTree(replay.body()).get("name").asText());
+        assertEquals("Door \uD83D\uDE80",json.readTree(replay.body()).get("aliases").get(0).asText());
+    }
 }

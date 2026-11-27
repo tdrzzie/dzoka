@@ -232,4 +232,10 @@ Final current-account checks pass 267 Python, 36 Java unit and 111 Core/private-
 
 ## M3 durable retry correction (2026-11-27)
 
+The subsequent [Unicode recheck](../testing/m3-unicode-recheck-2026-11-27.md) reproduced a distinct changed-body replay through HTTP. The [verified Unicode repair](../testing/m3-unicode-fix-2026-11-27.md) now closes it; the successes below remain historical execution evidence.
+
 The local intake/place/media contract now includes executed concurrent API replicas and restarted JVMs, populated V27-to-V28 upgrade with both historical create/update hash orderings, unchanged legacy digests/results, changed-body conflicts and tenant/actor/revocation boundaries. Full verification passes 269 Python/42 Java unit/136 integrations without skips and an exact 111-table/6,486-row restore including both receipt versions. [Source-bound execution and deployment limits](../testing/m3-retry-fix-2026-11-27.md). Target HA, mixed-version rollout, storage/backup recovery and institution/site acceptance are not inferred from these local tests.
+
+## M3 final Unicode and receipt closure (2026-11-27)
+
+Strict label/alias/normalization validation and UTF-8 framing reject malformed Unicode with HTTP 400 before writes or receipt replay. Valid supplementary strings and both legacy receipt formats remain exact across independent replicas, restarts and populated upgrade. The final uninterrupted 27-phase gate passes 269 Python/45 Java unit/157 integrations without skips and restores 111 tables/8,309 rows, including two legacy and 58 version 2 receipts. The native 33-job burst/crash case, installed-task lifecycle and real S3/sandbox regressions pass. [Executed source-bound evidence, earlier failed attempts and target acceptance limits](../testing/m3-unicode-fix-2026-11-27.md). This closes the defined local M3 profile, without claiming production/site, all-format or representative model-quality acceptance.

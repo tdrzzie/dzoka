@@ -1,5 +1,7 @@
 # M3 local implementation completion
 
+**Latest verification:** the [Unicode validation repair and final local closure](m3-unicode-fix-2026-11-27.md) supersedes these historical counts and completes the subsequent retry/input corrections with a full 27-phase gate and restore.
+
 **Historical execution counts:** the [post-publication recheck](m3-post-publication-recheck-2026-11-27.md) found a JVM-dependent retry hash. The subsequent [verified correction](m3-retry-fix-2026-11-27.md) repairs it, preserves historical receipts and closes local M3 with actual restart/replica coverage and full restore.
 
 2026-11-27. Completes the two local gaps in the [substantive recheck](m3-verification-2026-11-27.md): canonical places/aliases/hierarchy and independent cleanup after unacknowledged late media writes. The documented text/PNG/JPEG backend profile is implemented and locally verified; this is not production/site or all-format certification.

@@ -1,0 +1,319 @@
+{
+  "status": "PASS",
+  "unit": 45,
+  "integration": 13,
+  "skipped": 0,
+  "suites": [
+    {
+      "class": "org.dzoka.AutomaticShonaEvidenceTest",
+      "kind": "unit",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "ca340e118e6ed95249e8b506f69c01d8e40fc2ef15550e9c4ef7b785b7a39ea2",
+      "cases": [
+        "noProposalIsUnavailableLanguageCoverageAndScanBoundsAreEnforced",
+        "proposalsRequireExactSourceAndOutputAndUnverifiedTrust"
+      ]
+    },
+    {
+      "class": "org.dzoka.CanonicalPngTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "f0b653915aaf2e82220f742f7ffd452ff0f766974b9a6860c8cf39efd55fd67b",
+      "cases": [
+        "outputValidationRejectsMetadataAndTamperingWithoutDecoding"
+      ]
+    },
+    {
+      "class": "org.dzoka.DomainTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "b857f660fd174c9365661ed79ba01638c47ccdf89c34db8cee641d6f7a47eb80",
+      "cases": [
+        "identifiersAndNamesHaveExplicitInvariants"
+      ]
+    },
+    {
+      "class": "org.dzoka.EdgeWindowTest",
+      "kind": "unit",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "b9f0523b8e6769b44d26b8aeff9b3a2a6bf102e61b160a3479825aa250e6374f",
+      "cases": [
+        "intervalObservationsAndPresentToPresentHaveNoRemovalHypothesis",
+        "gapsAndChangedProvidersCannotBecomeDisappearanceEvidence"
+      ]
+    },
+    {
+      "class": "org.dzoka.EmbeddingSpaceTest",
+      "kind": "unit",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "1e36a6b3553d4808bd32e17bea56e8ea416c095cab8b3fa0184b715eadf837f6",
+      "cases": [
+        "isolatedProviderIsAnExplicitAdoptionAndUnknownProvidersStayUnavailable",
+        "dimensionsDoNotEstablishCompatibilityAndResultRejectsFabricatedVectors"
+      ]
+    },
+    {
+      "class": "org.dzoka.FingerprintRolloutTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "74a230dac3ed032dca31d13b2248f489f2b13d6e8937b8100e5ad6a4880250f3",
+      "cases": [
+        "cohortIdentityIsOrderIndependentButNeverDropsDuplicateOrMissingPolicy"
+      ]
+    },
+    {
+      "class": "org.dzoka.foundation.security.SecurityConfigurationTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "b18497d4c315d8db7cd651bfdbdd6cdade6136df1d6f8200d0f378cf00dc4746",
+      "cases": [
+        "insecureOrAmbiguousIdentityConfigurationFailsClosed"
+      ]
+    },
+    {
+      "class": "org.dzoka.FulfillmentPolicyTest",
+      "kind": "unit",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "82ffddd20096387b6aa5352a446552638a1365803f63ddbac66618db40acf94c",
+      "cases": [
+        "absentOrMalformedWebhookConfigurationCannotAuthenticate",
+        "moneyAndUnadoptedIdentityProvidersFailClosed",
+        "providerIsDisabledWithoutConfigurationAndInsecureOriginsNeedExplicitFixtureMode"
+      ]
+    },
+    {
+      "class": "org.dzoka.GenerativeEvidenceTest",
+      "kind": "unit",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "920cdfe77769c50532d22d2cecf30d8f8eedc7757dc72d3119213ff2fb3a0479",
+      "cases": [
+        "marianRepresentationIsBoundToProfileAndItsOwnStructuralTokenCount",
+        "evenActiveLookingDraftsCannotBecomeIntrinsicFingerprints",
+        "ctranslateDirectionAndRepresentationStayUnverified",
+        "draftsCannotGainAuthorityOrHideTruncation",
+        "extendedTranslationBoundsRequireTheNewExplicitProfile",
+        "explicitDirectionsAndRepresentedCoverageAreRequired"
+      ]
+    },
+    {
+      "class": "org.dzoka.LanguageEvidenceTest",
+      "kind": "unit",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "590ded9d28b88953ed3b6b1ff515c035bcf86e24c7f977bf9073e94d78a9e90d",
+      "cases": [
+        "rawLogitsRequireExactCandidatesAndStableOrderAndAreNotProbabilities",
+        "queryDependentScoresCannotBecomeIntrinsicFingerprintComponents",
+        "hallucinatedAmbiguousAndBrokenUnicodeSpansCannotBecomeFacts"
+      ]
+    },
+    {
+      "class": "org.dzoka.LearningEvaluationTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "d38bb8509c71a422b9122324b5ef13db3e37d137edc93cd38082b4658c04e77c",
+      "cases": [
+        "unavailableEvidenceDoesNotBecomeNegativeAndCoverageIsSeparate"
+      ]
+    },
+    {
+      "class": "org.dzoka.MatchingTest",
+      "kind": "unit",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "a368929df8baa45ca098eebce408dc7c422eb717162404fc15b5e20682730c12",
+      "cases": [
+        "vectorRankingMatchesIndependentExactAngularOrderAndReportsBudgets",
+        "highJointCosineCannotOverrideTrustedContradiction",
+        "sparseAndZeroReliabilityCarryNoScoreAndCorrelatedSignalsShareOneBudget"
+      ]
+    },
+    {
+      "class": "org.dzoka.ModuleBoundaryTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "03e126f0cd9ccc3f248bd70aa56eb828505892dff5116b7deee545cadff87049",
+      "cases": [
+        "domainHasNoFrameworkAndApplicationDoesNotImportAdapters"
+      ]
+    },
+    {
+      "class": "org.dzoka.OperationalTransportTest",
+      "kind": "unit",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "0b4c4e0f9b7940f65bf329e4f35a793a8b040a04f93b2712cc10d8958e9f0f8f",
+      "cases": [
+        "diagnosticContextCannotLeakAcrossNestedScopesOrThreads",
+        "responsesAndRedirectsAreBoundedAndEndpointsCannotOverrideTheOrigin"
+      ]
+    },
+    {
+      "class": "org.dzoka.PerceptionEvidenceTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "afa93f77187b225b8252b8ec362bf4b9057dfdd4b8d45752804ae39d03aff42f",
+      "cases": [
+        "finiteShapePixelBoundsAndEmptyEvidenceAreDifferentFromInvalidOutput"
+      ]
+    },
+    {
+      "class": "org.dzoka.PlaceDraftTest",
+      "kind": "unit",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "f976ecaa8da10ecd20d7e9766d538b2223d87c3e7b80b6839c82730f1afc417a",
+      "cases": [
+        "malformedUnicodeIsRejectedBeforeNormalizationAndPersistence",
+        "invalidCoordinatesAndAmbiguousWithinPlaceAliasesAreRejected",
+        "aliasesRetainRawUnicodeAndNormalizeSeparately",
+        "validSupplementaryAndReplacementCharactersRemainExact"
+      ]
+    },
+    {
+      "class": "org.dzoka.places.adapters.PlaceCommandHashTest",
+      "kind": "unit",
+      "tests": 5,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "1dfb37e3e153eeda816d927332473687a135750340d6d5ece3e50d1dc75be05a",
+      "cases": [
+        "canonicalGoldenVectorUsesSpecifiedBinaryFraming",
+        "fieldBoundariesNullsRawAliasesAndUpdateTargetRemainSignificant",
+        "unknownVersionsAndUnrecognizedDigestsFailClosed",
+        "bothObservedHistoricalDigestsAreAcceptedWithoutWeakeningBodyChecks",
+        "validSupplementaryTextRetainsCanonicalAndBothHistoricalGoldenHashes"
+      ]
+    },
+    {
+      "class": "org.dzoka.ReportDraftTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "8496eefbe0b7042b35547cd735c7de456d7261a3a6c5188c338c97b6de820dba",
+      "cases": [
+        "unknownEvidenceIsNullableAndZeroCoordinatesRemainObserved"
+      ]
+    },
+    {
+      "class": "org.dzoka.ShonaEvidenceTest",
+      "kind": "unit",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "bd267bea88cae71e5180b015348bff18cba23b0997cf30f684dc7f7b427aaa20",
+      "cases": [
+        "malformedCollidingNestedAndUnmarkedInputsFailClosed",
+        "exactUtf16SourceAndOutputQuotesAreRequired"
+      ]
+    },
+    {
+      "class": "org.dzoka.traceability.EpcisProjectionTest",
+      "kind": "unit",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "485fa322f9661211be61b680c6514cb6d14911ab78b07de89cc77d231adffa03",
+      "cases": [
+        "acceptedTransferAndOwnerReturnKeepTheirDistinctObservations"
+      ]
+    },
+    {
+      "class": "org.dzoka.VisionEvidenceTest",
+      "kind": "unit",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "064f620be2cf09cc850d78b2ce21eb54da36a35277119155cef4b74eb13ca337",
+      "cases": [
+        "typedBoxesAndCanonicalMasksRejectOverflowAndInvalidVocabulary",
+        "alternativeOutputsCannotMasqueradeAsLegacyProfiles"
+      ]
+    },
+    {
+      "class": "org.dzoka.PlaceRetryIT",
+      "kind": "integration",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "b7c853cb591030a739544d0495f7bea914fec72fb776b90964dca2f7fd0c07f3",
+      "cases": [
+        "realHttpReplicasAndRestartReturnTheSameCreateAndUpdateReceipts",
+        "populatedV27ReceiptsInBothOrdersSurviveUpgradeReplicasRestartAndRevocation"
+      ]
+    },
+    {
+      "class": "org.dzoka.PlacesIT",
+      "kind": "integration",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "rawXmlSha256": "5217a7de2fd5d69993db6ce4a1c40525fbb909905539928025dd18647938f8f7",
+      "cases": [
+        "databaseForeignKeysImmutabilityAndRevokedReplaysEnforceIsolation",
+        "rawAliasesAmbiguityAndTenantBoundariesAreRealHttpContracts",
+        "maximumDepthAndSubtreeMovesAreBounded",
+        "validSupplementaryEscapesAndRawCharactersReplayTheSameReceipt",
+        "malformedUnicodeIsRejectedForCreateUpdateAndReplayOverHttp",
+        "reportReferencesAreVersionedAndNeverRewriteRawLocation",
+        "populatedV26UpgradeRetainsOldOutboxAndReleasedMediaTombstones",
+        "reparentingRetainsHistoricalAncestorChainAndRejectsCrossTenantParents",
+        "historyArchiveAndVersionedRetriesCannotSilentlyReplacePlaceEvidence",
+        "outboxFailureRollsBackPlaceAliasesReceiptAndAudit",
+        "concurrentCyclesAndDuplicateCommandsRespectOneTenantForest"
+      ]
+    }
+  ]
+}

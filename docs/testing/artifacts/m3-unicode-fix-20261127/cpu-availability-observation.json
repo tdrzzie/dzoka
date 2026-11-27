@@ -1,0 +1,59 @@
+{
+  "originalFailure": "CPU translation unavailable in first full-gate attempt; root cause not established",
+  "ownedDiagnostic": [
+    {
+      "returnCode": 0,
+      "stderr": ""
+    }
+  ],
+  "exactCpuReplayStatus": "PASS",
+  "exactCpuReplayCases": [
+    {
+      "profile": "CPU_EN_SN",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_EN_SN",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_SN_EN",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_SN_EN",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_EN_SN_KEEP",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_SN_EN_KEEP",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_SN_EN_AUTO",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_SN_EN_AUTO",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    },
+    {
+      "profile": "CPU_SN_EN_AUTO",
+      "finishReason": "EOS",
+      "trust": "UNVERIFIED_TRANSLATION"
+    }
+  ],
+  "rawReplayLogSha256": "c1b14c9c60b163590aa3722384d16a87a1eae7a66c2afd93872cb8b59b181f9d",
+  "productionReliability": "NOT_ESTABLISHED"
+}

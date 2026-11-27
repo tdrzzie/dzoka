@@ -1,0 +1,635 @@
+{
+  "schema": 1,
+  "date": "2026-11-27",
+  "status": "Native preset content definitions; not executed verification",
+  "scope": "Distinct content and active-state variants for identified source tabs. No live data or invented measurement.",
+  "presets": [
+    {
+      "screen": "N01",
+      "tabLabel": "WhatsApp",
+      "heading": "Write a useful update.",
+      "columns": [
+        "Field",
+        "Sample value"
+      ],
+      "rows": [
+        [
+          "Template name",
+          "Match update"
+        ],
+        [
+          "Source language",
+          "English  ⌄"
+        ],
+        [
+          "Approved variables",
+          "Case reference · Institution display name"
+        ],
+        [
+          "Message body",
+          "There is an update to your report. Open Dzoka to review it."
+        ]
+      ],
+      "summary": "Draft channel content only. Language review, consent and provider approval remain independent.",
+      "target": "N01",
+      "sourceScreenIds": [
+        "N01"
+      ]
+    },
+    {
+      "screen": "N01",
+      "tabLabel": "Email",
+      "heading": "Draft an email update.",
+      "columns": [
+        "Field",
+        "Sample value"
+      ],
+      "rows": [
+        [
+          "Subject",
+          "An update to your report"
+        ],
+        [
+          "Source locale",
+          "English"
+        ],
+        [
+          "Plain-text body",
+          "Open your private case to review the update."
+        ],
+        [
+          "Allowed variables",
+          "Opaque case reference · Institution name"
+        ],
+        [
+          "Reply routing",
+          "Approved institutional relay only"
+        ]
+      ],
+      "summary": "Draft channel content only. Language review, consent and provider approval remain independent.",
+      "target": "N07",
+      "sourceScreenIds": [
+        "N07"
+      ]
+    },
+    {
+      "screen": "N01",
+      "tabLabel": "SMS",
+      "heading": "Keep an SMS update minimal.",
+      "columns": [
+        "Field",
+        "Sample value"
+      ],
+      "rows": [
+        [
+          "Source locale",
+          "English"
+        ],
+        [
+          "Message",
+          "Your report has an update. Open your private case."
+        ],
+        [
+          "Length / encoding",
+          "Validate against the approved provider’s current budget"
+        ],
+        [
+          "Allowed link / reference",
+          "Approved case entry route only"
+        ],
+        [
+          "Sender profile",
+          "Configured institution sender reference"
+        ]
+      ],
+      "summary": "Draft channel content only. Language review, consent and provider approval remain independent.",
+      "target": "N08",
+      "sourceScreenIds": [
+        "N08"
+      ]
+    },
+    {
+      "screen": "N02",
+      "tabLabel": "English · Ready",
+      "heading": "English source review",
+      "columns": [
+        "Locale / check",
+        "Review state",
+        "Publication"
+      ],
+      "rows": [
+        [
+          "English content",
+          "Reviewed",
+          "Provider approval pending"
+        ],
+        [
+          "Provider template",
+          "Approval pending",
+          "Not published"
+        ]
+      ],
+      "summary": "The source content is reviewed. This does not mean the provider approved the template or that sending is enabled.",
+      "target": "N01",
+      "sourceScreenIds": [
+        "N02"
+      ]
+    },
+    {
+      "screen": "N02",
+      "tabLabel": "Shona · Review needed",
+      "heading": "Shona locale review",
+      "columns": [
+        "Locale / check",
+        "Review state",
+        "Publication"
+      ],
+      "rows": [
+        [
+          "Shona · sn-ZW",
+          "Translation awaiting qualified review",
+          "Locale disabled"
+        ],
+        [
+          "Independent reviewer",
+          "Not selected",
+          "Review required"
+        ]
+      ],
+      "summary": "No approved Shona translation is supplied. Keep the target locale disabled until qualified review; do not invent translated content.",
+      "target": "N02",
+      "sourceScreenIds": [
+        "N02"
+      ]
+    },
+    {
+      "screen": "N02",
+      "tabLabel": "Fallback rules",
+      "heading": "Fallback remains explicit",
+      "columns": [
+        "Fallback",
+        "Condition",
+        "Result"
+      ],
+      "rows": [
+        [
+          "English",
+          "Only with policy permission",
+          "No silent substitution"
+        ],
+        [
+          "Unavailable target locale",
+          "Qualified review absent",
+          "Target locale remains disabled"
+        ]
+      ],
+      "summary": "Fallback is a separate policy choice. It does not approve the target translation or bypass provider, consent or publication checks.",
+      "target": "N02",
+      "sourceScreenIds": [
+        "N02"
+      ]
+    },
+    {
+      "screen": "N04",
+      "tabLabel": "Unknown",
+      "heading": "Unknown notification operations",
+      "columns": [
+        "Operation",
+        "Provider outcome",
+        "Permitted action"
+      ],
+      "rows": [
+        [
+          "NO–048",
+          "Unknown · Receipt missing",
+          "Reconcile existing operation"
+        ]
+      ],
+      "summary": "Receipt missing. Poll or reconcile the original durable operation; do not create a second send. A reconciliation can remain unknown.",
+      "target": "N04",
+      "sourceScreenIds": [
+        "N04"
+      ]
+    },
+    {
+      "screen": "N04",
+      "tabLabel": "Throttled",
+      "heading": "Throttled notification operations",
+      "columns": [
+        "Operation",
+        "Provider outcome",
+        "Permitted action"
+      ],
+      "rows": [
+        [
+          "NO–046",
+          "Explicit throttling",
+          "Wait at least one minute"
+        ]
+      ],
+      "summary": "Explicit throttling permits only the documented bounded retry after the wait. Recheck consent before any new send.",
+      "target": "N04",
+      "sourceScreenIds": [
+        "N04"
+      ]
+    },
+    {
+      "screen": "N04",
+      "tabLabel": "Rejected",
+      "heading": "Rejected notification operations",
+      "columns": [
+        "Operation",
+        "Provider outcome",
+        "Permitted action"
+      ],
+      "rows": [
+        [
+          "NO–043",
+          "Rejected · Template not approved",
+          "Fix configuration before resend"
+        ]
+      ],
+      "summary": "The provider rejected an unapproved template. Fix configuration and language/provider approval before resend.",
+      "target": "N09",
+      "sourceScreenIds": [
+        "N04"
+      ]
+    },
+    {
+      "screen": "W03",
+      "tabLabel": "Reserved",
+      "heading": "Reserved reward state",
+      "columns": [
+        "State",
+        "Ledger consequence",
+        "Permitted action"
+      ],
+      "rows": [
+        [
+          "Reserve confirmed",
+          "Funding → Escrow",
+          "Await recovery confirmation"
+        ],
+        [
+          "Settlement blocked",
+          "Reserved funds remain held",
+          "Resolve hold/dispute"
+        ]
+      ],
+      "summary": "Only confirmed reservation credits escrow. Settlement remains blocked while the hold/dispute is unresolved; reservation never gates property recovery.",
+      "target": "W08",
+      "sourceScreenIds": [
+        "W03"
+      ]
+    },
+    {
+      "screen": "W03",
+      "tabLabel": "Declined",
+      "heading": "Declined reward state",
+      "columns": [
+        "State",
+        "Ledger consequence",
+        "Permitted action"
+      ],
+      "rows": [
+        [
+          "Reserve declined",
+          "No escrow funds credited",
+          "Review provider reason"
+        ]
+      ],
+      "summary": "Reservation was declined. No escrow funds are credited. Returning to terms must not silently send another payment.",
+      "target": "W07",
+      "sourceScreenIds": [
+        "W03"
+      ]
+    },
+    {
+      "screen": "W03",
+      "tabLabel": "Unknown",
+      "heading": "Unknown reward state",
+      "columns": [
+        "State",
+        "Ledger consequence",
+        "Permitted action"
+      ],
+      "rows": [
+        [
+          "Outcome unknown",
+          "No unconfirmed funds credited",
+          "Reconcile same operation"
+        ]
+      ],
+      "summary": "No unconfirmed funds are credited. Reconcile the same operation before considering another send; unknown is not declined or confirmed.",
+      "target": "W11",
+      "sourceScreenIds": [
+        "W03"
+      ]
+    },
+    {
+      "screen": "G03",
+      "tabLabel": "Ranking",
+      "heading": "Ranking evidence",
+      "columns": [
+        "Diagnostic",
+        "Denominator / slice",
+        "Approval state"
+      ],
+      "rows": [
+        [
+          "Ranking at K",
+          "Paired identity-evidence cases",
+          "Representative review pending"
+        ],
+        [
+          "Ownership / recovery safety",
+          "Independent outcome audit",
+          "Separate from retrieval quality"
+        ]
+      ],
+      "summary": "No validated run is selected. The preset shows the diagnostic and population definition, not a measured ranking score or production accuracy.",
+      "target": "G04",
+      "sourceScreenIds": [
+        "G03"
+      ]
+    },
+    {
+      "screen": "G03",
+      "tabLabel": "Coverage",
+      "heading": "Evidence coverage",
+      "columns": [
+        "Diagnostic",
+        "Denominator / slice",
+        "Approval state"
+      ],
+      "rows": [
+        [
+          "Available evidence coverage",
+          "All eligible inputs, including unavailable",
+          "Reported separately"
+        ],
+        [
+          "Ownership / recovery safety",
+          "Independent outcome audit",
+          "Separate from retrieval quality"
+        ]
+      ],
+      "summary": "Coverage includes eligible unavailable inputs separately. Missing evidence is unavailable, not automatic mismatch; no measured percentage is supplied.",
+      "target": "G04",
+      "sourceScreenIds": [
+        "G03"
+      ]
+    },
+    {
+      "screen": "G03",
+      "tabLabel": "Calibration",
+      "heading": "Calibration evidence",
+      "columns": [
+        "Diagnostic",
+        "Denominator / slice",
+        "Approval state"
+      ],
+      "rows": [
+        [
+          "Probability error / reliability",
+          "Approved target-population holdout",
+          "Calibration not approved"
+        ],
+        [
+          "Ownership / recovery safety",
+          "Independent outcome audit",
+          "Separate from retrieval quality"
+        ]
+      ],
+      "summary": "Calibration is not approved. A target-population holdout and independent approval are required; raw similarity is not ownership confidence.",
+      "target": "G04",
+      "sourceScreenIds": [
+        "G03"
+      ]
+    },
+    {
+      "screen": "H02",
+      "tabLabel": "Recovery",
+      "heading": "Recovery report definitions",
+      "columns": [
+        "Family",
+        "Measures",
+        "Denominator / uncertainty"
+      ],
+      "rows": [
+        [
+          "Recovery",
+          "Reported, returned, rate, elapsed time",
+          "Eligible cohort; censored outcomes separate"
+        ]
+      ],
+      "summary": "Defined eligible cohort; confirmed returns and elapsed times remain separate from censored or unknown outcomes. No production result values supplied.",
+      "target": "H03",
+      "sourceScreenIds": [
+        "H02"
+      ]
+    },
+    {
+      "screen": "H02",
+      "tabLabel": "Loss patterns",
+      "heading": "Loss patterns report definitions",
+      "columns": [
+        "Family",
+        "Measures",
+        "Denominator / uncertainty"
+      ],
+      "rows": [
+        [
+          "Loss patterns",
+          "Broad places, times and categories",
+          "Reported observations; no private locations"
+        ]
+      ],
+      "summary": "Reported observations grouped by broad place, time and category. No private precise locations or ownership inference.",
+      "target": "H03",
+      "sourceScreenIds": [
+        "H02"
+      ]
+    },
+    {
+      "screen": "H02",
+      "tabLabel": "Storage",
+      "heading": "Storage report definitions",
+      "columns": [
+        "Family",
+        "Measures",
+        "Denominator / uncertainty"
+      ],
+      "rows": [
+        [
+          "Storage",
+          "Backlog, age, unclaimed inventory",
+          "Current custody and retention scope"
+        ]
+      ],
+      "summary": "Current custody and retention scope define backlog, age and unclaimed inventory. No measured counts supplied.",
+      "target": "H03",
+      "sourceScreenIds": [
+        "H02"
+      ]
+    },
+    {
+      "screen": "H02",
+      "tabLabel": "Trust",
+      "heading": "Trust report definitions",
+      "columns": [
+        "Family",
+        "Measures",
+        "Denominator / uncertainty"
+      ],
+      "rows": [
+        [
+          "Trust",
+          "Fraud review",
+          "Independent labels"
+        ]
+      ],
+      "summary": "This view separates the fraud-review portion of the source Trust / network row. Independent outcome labels are required; no measured fraud rate supplied.",
+      "target": "H03",
+      "sourceScreenIds": [
+        "H02"
+      ]
+    },
+    {
+      "screen": "H02",
+      "tabLabel": "Network",
+      "heading": "Network report definitions",
+      "columns": [
+        "Family",
+        "Measures",
+        "Denominator / uncertainty"
+      ],
+      "rows": [
+        [
+          "Network",
+          "Federation contribution",
+          "Peer attribution"
+        ]
+      ],
+      "summary": "This view separates the federation-contribution portion of the source Trust / network row. Peer attribution is retained; independent peer scores are not comparable.",
+      "target": "H03",
+      "sourceScreenIds": [
+        "H02"
+      ]
+    },
+    {
+      "screen": "H02",
+      "tabLabel": "Logistics",
+      "heading": "Logistics report definitions",
+      "columns": [
+        "Family",
+        "Measures",
+        "Denominator / uncertainty"
+      ],
+      "rows": [
+        [
+          "Logistics / rewards",
+          "Courier and reward usage",
+          "Permitted operation counts; no private money data"
+        ]
+      ],
+      "summary": "Courier and reward usage counts retain operation scope and exclude private money/contact details. No measured usage counts supplied.",
+      "target": "H03",
+      "sourceScreenIds": [
+        "H02"
+      ]
+    },
+    {
+      "screen": "M05",
+      "tabLabel": "All matches",
+      "heading": "Visible candidate samples",
+      "columns": [
+        "Candidate",
+        "Published context",
+        "Observation time"
+      ],
+      "rows": [
+        [
+          "Canvas backpack",
+          "CityLink Transit · Harare",
+          "Found 26 Nov"
+        ],
+        [
+          "Olive daypack",
+          "Central Library · Harare",
+          "Found 25 Nov"
+        ]
+      ],
+      "summary": "These are the two visible cards in the original sample screen, not an exhaustive candidate count. A possible match still requires a private ownership check.",
+      "target": "M06",
+      "sourceScreenIds": [
+        "M05"
+      ]
+    },
+    {
+      "screen": "M05",
+      "tabLabel": "Nearby",
+      "heading": "Nearby ordering unavailable",
+      "columns": [
+        "Candidate",
+        "Published context",
+        "Observation time"
+      ],
+      "rows": [],
+      "summary": "The source design supplies broad Harare locations but no permitted exact distance evidence. Do not invent metres, proximity order or a mismatch; return to All matches for available candidates.",
+      "target": "M05",
+      "sourceScreenIds": [
+        "M05"
+      ]
+    },
+    {
+      "screen": "M05",
+      "tabLabel": "Newest",
+      "heading": "Newest published observations",
+      "columns": [
+        "Candidate",
+        "Published context",
+        "Observation time"
+      ],
+      "rows": [
+        [
+          "Canvas backpack",
+          "CityLink Transit · Harare",
+          "Found 26 Nov"
+        ],
+        [
+          "Olive daypack",
+          "Central Library · Harare",
+          "Found 25 Nov"
+        ]
+      ],
+      "summary": "Ordered only by the two displayed observation dates, 26 Nov then 25 Nov. This does not establish exact observation time or ownership.",
+      "target": "M06",
+      "sourceScreenIds": [
+        "M05"
+      ]
+    }
+  ],
+  "originalScreenEvidence": {
+    "M05": {
+      "labels": [
+        "All matches",
+        "Nearby",
+        "Newest"
+      ],
+      "evidence": "Labels and two visible candidate cards observed in the parent chat live viewer; canonical inventory/register supplies source board provenance.",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0265ad957c5d"
+    },
+    "D02": {
+      "status": "Exact filter labels and rows are not recorded in repository source documents.",
+      "sourceBoard": "3885c71d-2bc7-8052-8009-0266e39e4ea2",
+      "required": "Use observed native source control labels/rows; do not invent statuses or counts."
+    }
+  },
+  "rules": [
+    "Each tab changes active appearance and renders its own heading/content; returning to a tab restores that preset.",
+    "An unavailable ordering or diagnostic is explicit; do not fabricate a value to populate an empty chart.",
+    "Source content/language readiness is distinct from provider approval and publication.",
+    "Navigation targets are review paths, not automated successful operational effects."
+  ]
+}

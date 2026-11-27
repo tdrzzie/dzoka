@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "tables": 111,
+  "rows": 8309,
+  "rowAndCatalogEquality": true,
+  "restoredTenantIsolation": true,
+  "restoredPlaceIsolation": true,
+  "restoredPlaceReceiptHashVersions": {
+    "1": 2,
+    "2": 58
+  },
+  "operatorJournalPrivate": true,
+  "sourceSnapshotIndependence": true,
+  "limits": [
+    "same-cluster logical restore; roles pre-exist",
+    "object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects",
+    "not production RPO/RTO, HA or point-in-time recovery"
+  ],
+  "rawReceiptSha256": "345e4a32a56d4ad69c02fe237e610d66c4aa742402c75c06f97fda219ea5fdc3",
+  "restoredPlaceCommandTable": {
+    "sha256": "9b6535adf1a37ec1a94bc84716495ca91085ac2e069aae26f9092e06420fb505",
+    "rows": 60
+  }
+}

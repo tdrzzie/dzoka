@@ -1,0 +1,22 @@
+{
+  "fixture": {
+    "name": "Synthetic \ud83d\ude80",
+    "kind": "FACILITY",
+    "parentId": null,
+    "latitude": null,
+    "longitude": null,
+    "uncertaintyMeters": null,
+    "timezone": "Africa/Harare",
+    "aliases": [
+      "Door \ud83d\ude80"
+    ],
+    "active": true,
+    "expectedVersion": 0
+  },
+  "independentCalculation": "Python standard struct big-endian framing and UTF-8 for version 2; insertion-ordered compact JSON and UTF-8 for historical version 1; no application helper invoked",
+  "canonicalSha256": "4c66e71751d6668b71234609ae107f5f9ed7510e2f97a0a56b2f3b1238cd91d6",
+  "legacySha256": [
+    "737e4026a6da44167c5713d397f26a964428710c57032ccc44737efe391f6bd2",
+    "b0f75df8c81c5c86aab2baeddd7a34287259a98a17bdc1e85077fb2022a74dca"
+  ]
+}

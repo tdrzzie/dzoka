@@ -1,0 +1,2144 @@
+{
+  "fileId": "456d79de-921a-81c4-8009-02637f9b3b01",
+  "flow": "F02",
+  "date": "2026-11-27",
+  "saved": true,
+  "saveLabel": "Interactive F02 verified · 2026-11-27",
+  "nativeValidation": [],
+  "player": {
+    "page": "01c1c9a5-459f-804b-8009-0291b3a4c8a0",
+    "states": [
+      {
+        "id": "M01",
+        "board": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-026565a41470"
+      },
+      {
+        "id": "M02",
+        "board": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-026566a3b5fa"
+      },
+      {
+        "id": "M03",
+        "board": "01c1c9a5-459f-804b-8009-0291d6d47675",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-0265674187fb"
+      },
+      {
+        "id": "M04",
+        "board": "01c1c9a5-459f-804b-8009-0291da3aea03",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-0265680aeb15"
+      },
+      {
+        "id": "C01",
+        "board": "01c1c9a5-459f-804b-8009-0291e4f7a59b",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-026e53407785"
+      },
+      {
+        "id": "C02",
+        "board": "01c1c9a5-459f-804b-8009-0291e9a15db8",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-026e53dec8bb"
+      },
+      {
+        "id": "C03",
+        "board": "01c1c9a5-459f-804b-8009-0291ed948bde",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-026e5483ae8e"
+      },
+      {
+        "id": "C14",
+        "board": "01c1c9a5-459f-804b-8009-0291f0c278eb",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-026e5c4c0fab"
+      },
+      {
+        "id": "E01",
+        "board": "01c1c9a5-459f-804b-8009-0291fafb382c",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-02710d9d902f"
+      },
+      {
+        "id": "E02",
+        "board": "01c1c9a5-459f-804b-8009-0291fe61e1fd",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-02710e34bbb2"
+      },
+      {
+        "id": "E03",
+        "board": "01c1c9a5-459f-804b-8009-029201737a71",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-02710eca8415"
+      },
+      {
+        "id": "E08",
+        "board": "01c1c9a5-459f-804b-8009-029204ca73aa",
+        "sourceBoard": "3885c71d-2bc7-8052-8009-02711253ddfd"
+      }
+    ],
+    "nextX": 7840.000066757202,
+    "variants": [
+      {
+        "board": "01c1c9a5-459f-804b-8009-029823e39857",
+        "source": "M02",
+        "kind": "completed sample"
+      },
+      {
+        "board": "01c1c9a5-459f-804b-8009-029825523773",
+        "source": "M03",
+        "kind": "completed sample"
+      },
+      {
+        "board": "01c1c9a5-459f-804b-8009-0298296fa51e",
+        "source": "C03",
+        "kind": "completed sample"
+      },
+      {
+        "board": "01c1c9a5-459f-804b-8009-02982c9c123d",
+        "source": "E03",
+        "kind": "completed sample"
+      }
+    ],
+    "overlays": [
+      "01c1c9a5-459f-804b-8009-02981bb68bd9",
+      "01c1c9a5-459f-804b-8009-02982e99c48d",
+      "01c1c9a5-459f-804b-8009-02982e58351d",
+      "01c1c9a5-459f-804b-8009-02982e30768c",
+      "01c1c9a5-459f-804b-8009-02982c82f0eb",
+      "01c1c9a5-459f-804b-8009-02982c671f1d",
+      "01c1c9a5-459f-804b-8009-02982c3b5970",
+      "01c1c9a5-459f-804b-8009-02982bfc5541",
+      "01c1c9a5-459f-804b-8009-02982b779dd1",
+      "01c1c9a5-459f-804b-8009-02982af4b147",
+      "01c1c9a5-459f-804b-8009-02982adbc05c",
+      "01c1c9a5-459f-804b-8009-029829417e5c",
+      "01c1c9a5-459f-804b-8009-029829134b79",
+      "01c1c9a5-459f-804b-8009-0298286bf1d0",
+      "01c1c9a5-459f-804b-8009-0298283532b7",
+      "01c1c9a5-459f-804b-8009-0298276b011a",
+      "01c1c9a5-459f-804b-8009-0298274442b0",
+      "01c1c9a5-459f-804b-8009-029826e9b6aa",
+      "01c1c9a5-459f-804b-8009-029826c37148",
+      "01c1c9a5-459f-804b-8009-0298252fd4ec",
+      "01c1c9a5-459f-804b-8009-029823c444d5",
+      "01c1c9a5-459f-804b-8009-029821b49fe2",
+      "01c1c9a5-459f-804b-8009-029821864b75",
+      "01c1c9a5-459f-804b-8009-0298215dd080",
+      "01c1c9a5-459f-804b-8009-02982e7f6957",
+      "01c1c9a5-459f-804b-8009-02982c242b1a",
+      "01c1c9a5-459f-804b-8009-02982bb0ae86",
+      "01c1c9a5-459f-804b-8009-02982b9bc023",
+      "01c1c9a5-459f-804b-8009-02982b2f0ea0",
+      "01c1c9a5-459f-804b-8009-02982b184b46",
+      "01c1c9a5-459f-804b-8009-029828e85912",
+      "01c1c9a5-459f-804b-8009-029828c3cea7",
+      "01c1c9a5-459f-804b-8009-0298289d8dd9",
+      "01c1c9a5-459f-804b-8009-029827e57754",
+      "01c1c9a5-459f-804b-8009-029827c1e72e",
+      "01c1c9a5-459f-804b-8009-0298279ecbee",
+      "01c1c9a5-459f-804b-8009-0298271e5b7f",
+      "01c1c9a5-459f-804b-8009-02982694ed8e",
+      "01c1c9a5-459f-804b-8009-02982260d1dd",
+      "01c1c9a5-459f-804b-8009-02982e0dd2c9",
+      "01c1c9a5-459f-804b-8009-02982db1bb82",
+      "01c1c9a5-459f-804b-8009-02982bcb3ed2",
+      "01c1c9a5-459f-804b-8009-02982b4ff417",
+      "01c1c9a5-459f-804b-8009-02982a92998e",
+      "01c1c9a5-459f-804b-8009-0298280df942",
+      "01c1c9a5-459f-804b-8009-029826508b54",
+      "01c1c9a5-459f-804b-8009-029825031d88",
+      "01c1c9a5-459f-804b-8009-029824b30b2d",
+      "01c1c9a5-459f-804b-8009-0298239971bc",
+      "86344a6c-a2a0-8028-8009-02a455f6a204",
+      "86344a6c-a2a0-8028-8009-02a455d5fd14",
+      "86344a6c-a2a0-8028-8009-02a45653846f",
+      "86344a6c-a2a0-8028-8009-02a456adff76",
+      "86344a6c-a2a0-8028-8009-02a4568af2a2",
+      "86344a6c-a2a0-8028-8009-02a4571907fb",
+      "86344a6c-a2a0-8028-8009-02a457861026",
+      "86344a6c-a2a0-8028-8009-02a4576e4fe2",
+      "86344a6c-a2a0-8028-8009-02a873c34ac6"
+    ],
+    "menu": "01c1c9a5-459f-804b-8009-02981bb68bd9",
+    "templates": {
+      "366x2": "01c1c9a5-459f-804b-8009-0298207ec184",
+      "366x1": "01c1c9a5-459f-804b-8009-029821db4b4e",
+      "366x3": "01c1c9a5-459f-804b-8009-0298229418c6",
+      "390.00000953674316x2": "86344a6c-a2a0-8028-8009-02a454dab2cd"
+    },
+    "progress": {
+      "bound": true,
+      "bindState": null,
+      "enhancePhase": null
+    },
+    "controls": [
+      {
+        "state": "M01",
+        "shape": "01c1c9a5-459f-804b-8009-0291d34d0bc5",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-0298215dd080"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "01c1c9a5-459f-804b-8009-0291d375da94",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029821b49fe2"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "01c1c9a5-459f-804b-8009-0291d39e31e6",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982260d1dd"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "01c1c9a5-459f-804b-8009-0291d3a88ec4",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "01c1c9a5-459f-804b-8009-0291d3b26dd3",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "01c1c9a5-459f-804b-8009-0291d3bba104",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "01c1c9a5-459f-804b-8009-0291d3dedff7",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M02",
+        "shape": "01c1c9a5-459f-804b-8009-0291d64c8ac9",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029823c444d5"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M02",
+        "shape": "01c1c9a5-459f-804b-8009-0291d677e8ef",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291cfc9643d"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M02",
+        "shape": "01c1c9a5-459f-804b-8009-0291d68418b3",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029824b30b2d"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M02",
+        "shape": "01c1c9a5-459f-804b-8009-0291d68e38d1",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029824b30b2d"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M02",
+        "shape": "01c1c9a5-459f-804b-8009-0291d699b591",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029824b30b2d"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M02",
+        "shape": "01c1c9a5-459f-804b-8009-0291d6af1a96",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "01c1c9a5-459f-804b-8009-0291d97d48f3",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-0298252fd4ec"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "01c1c9a5-459f-804b-8009-0291d9b56418",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "01c1c9a5-459f-804b-8009-0291d9c64097",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029826508b54"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "01c1c9a5-459f-804b-8009-0291d9d6c105",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029826508b54"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "01c1c9a5-459f-804b-8009-0291d9e6efc9",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029826508b54"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "01c1c9a5-459f-804b-8009-0291da093122",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M04",
+        "shape": "01c1c9a5-459f-804b-8009-0291dd9ed0fc",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029826c37148"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M04",
+        "shape": "01c1c9a5-459f-804b-8009-0291ddfb9fe1",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291cfc9643d"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M04",
+        "shape": "01c1c9a5-459f-804b-8009-0291de28bab8",
+        "type": "extra",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-0298271e5b7f"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M04",
+        "shape": "01c1c9a5-459f-804b-8009-0291de3f3c8d",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C01",
+        "shape": "01c1c9a5-459f-804b-8009-0291e88cbdfa",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-0298274442b0"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C01",
+        "shape": "01c1c9a5-459f-804b-8009-0291e8e29a64",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291cfc9643d"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C01",
+        "shape": "01c1c9a5-459f-804b-8009-0291e8ff4f0c",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-0298279ecbee"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C01",
+        "shape": "01c1c9a5-459f-804b-8009-0291e9193b5a",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029827c1e72e"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C01",
+        "shape": "01c1c9a5-459f-804b-8009-0291e9334f0b",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029827e57754"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C01",
+        "shape": "01c1c9a5-459f-804b-8009-0291e9568dad",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C02",
+        "shape": "01c1c9a5-459f-804b-8009-0291eca496b0",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-0298280df942"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C02",
+        "shape": "01c1c9a5-459f-804b-8009-0291ecf06dd8",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291e4f7a59b"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C02",
+        "shape": "01c1c9a5-459f-804b-8009-0291ed0576b3",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-0298289d8dd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C02",
+        "shape": "01c1c9a5-459f-804b-8009-0291ed1b324b",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029828c3cea7"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C02",
+        "shape": "01c1c9a5-459f-804b-8009-0291ed2f39fb",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029828e85912"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C02",
+        "shape": "01c1c9a5-459f-804b-8009-0291ed50b79b",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C03",
+        "shape": "01c1c9a5-459f-804b-8009-0291f0173d5b",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-029829417e5c"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C03",
+        "shape": "01c1c9a5-459f-804b-8009-0291f0473fac",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C03",
+        "shape": "01c1c9a5-459f-804b-8009-0291f055c690",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982a92998e"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C03",
+        "shape": "01c1c9a5-459f-804b-8009-0291f0631f54",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982a92998e"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C03",
+        "shape": "01c1c9a5-459f-804b-8009-0291f071ddd6",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982a92998e"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C03",
+        "shape": "01c1c9a5-459f-804b-8009-0291f08dee19",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C14",
+        "shape": "01c1c9a5-459f-804b-8009-0291f3361383",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982adbc05c"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C14",
+        "shape": "01c1c9a5-459f-804b-8009-0291f362c775",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291e4f7a59b"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C14",
+        "shape": "01c1c9a5-459f-804b-8009-0291f36f95ff",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982b184b46"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C14",
+        "shape": "01c1c9a5-459f-804b-8009-0291f37ed8ab",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982b2f0ea0"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "C14",
+        "shape": "01c1c9a5-459f-804b-8009-0291f398200b",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E01",
+        "shape": "01c1c9a5-459f-804b-8009-0291fdc664d6",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982b4ff417"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E01",
+        "shape": "01c1c9a5-459f-804b-8009-0291fdfc2c65",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291f0c278eb"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E01",
+        "shape": "01c1c9a5-459f-804b-8009-0291fe0c8080",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982b9bc023"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E01",
+        "shape": "01c1c9a5-459f-804b-8009-0291fe18b961",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982bb0ae86"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E01",
+        "shape": "01c1c9a5-459f-804b-8009-0291fe2edc49",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E02",
+        "shape": "01c1c9a5-459f-804b-8009-029200cff8f9",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982bcb3ed2"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E02",
+        "shape": "01c1c9a5-459f-804b-8009-02920100b992",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291fafb382c"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E02",
+        "shape": "01c1c9a5-459f-804b-8009-02920111321f",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982c242b1a"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E02",
+        "shape": "01c1c9a5-459f-804b-8009-0292011c8857",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982c3b5970"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E02",
+        "shape": "01c1c9a5-459f-804b-8009-02920134b909",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E03",
+        "shape": "01c1c9a5-459f-804b-8009-02920400dc66",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982c82f0eb"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E03",
+        "shape": "01c1c9a5-459f-804b-8009-029204371ef1",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291d6d47675"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E03",
+        "shape": "01c1c9a5-459f-804b-8009-0292044c2e1a",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982db1bb82"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E03",
+        "shape": "01c1c9a5-459f-804b-8009-0292045e12ec",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982db1bb82"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E03",
+        "shape": "01c1c9a5-459f-804b-8009-02920470c6c4",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982db1bb82"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E03",
+        "shape": "01c1c9a5-459f-804b-8009-0292048b3585",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E08",
+        "shape": "01c1c9a5-459f-804b-8009-0292073c668e",
+        "type": "old",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982e0dd2c9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E08",
+        "shape": "01c1c9a5-459f-804b-8009-029207741d15",
+        "type": "old",
+        "declaredResponse": "navigate-to",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "navigate-to",
+            "target": "01c1c9a5-459f-804b-8009-0291f0c278eb"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E08",
+        "shape": "01c1c9a5-459f-804b-8009-02920783b7ca",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982e7f6957"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E08",
+        "shape": "01c1c9a5-459f-804b-8009-0292078fa488",
+        "type": "control",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02982e99c48d"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "E08",
+        "shape": "01c1c9a5-459f-804b-8009-029207a4c004",
+        "type": "menu",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "01c1c9a5-459f-804b-8009-02981bb68bd9"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "86344a6c-a2a0-8028-8009-02a45637420b",
+        "type": "visible-text-link",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "86344a6c-a2a0-8028-8009-02a455d5fd14"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "86344a6c-a2a0-8028-8009-02a45678557a",
+        "type": "visible-text-link",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "86344a6c-a2a0-8028-8009-02a45653846f"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "86344a6c-a2a0-8028-8009-02a456ea22c6",
+        "type": "visible-text-link",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "86344a6c-a2a0-8028-8009-02a4568af2a2"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "86344a6c-a2a0-8028-8009-02a45739c41d",
+        "type": "visible-text-link",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "86344a6c-a2a0-8028-8009-02a4571907fb"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M03",
+        "shape": "86344a6c-a2a0-8028-8009-02a4574f09f7",
+        "type": "visible-text-link",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "86344a6c-a2a0-8028-8009-02a4571907fb"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M04",
+        "shape": "86344a6c-a2a0-8028-8009-02a457b5dddf",
+        "type": "visible-text-link",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "86344a6c-a2a0-8028-8009-02a4576e4fe2"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      },
+      {
+        "state": "M01",
+        "shape": "86344a6c-a2a0-8028-8009-02a8737d5c80",
+        "type": "explicit-back",
+        "declaredResponse": "open-overlay",
+        "actualResponses": [
+          {
+            "trigger": "click",
+            "kind": "open-overlay",
+            "target": "86344a6c-a2a0-8028-8009-02a873c34ac6"
+          }
+        ],
+        "unresolved": false,
+        "readError": false
+      }
+    ],
+    "controlCount": 74,
+    "nativeResponsesInspected": true,
+    "actualResponseCount": 74,
+    "intentionallySelectedCount": 0,
+    "unresolvedResponseCount": 0
+  },
+  "liveViewerChecks": [],
+  "semantic": {
+    "flow": "F02",
+    "page": "01c1c9a5-459f-804b-8009-0291b3a4c8a0",
+    "readOnly": true,
+    "canonicalStates": 12,
+    "primary": {
+      "expected": 12,
+      "passed": 12
+    },
+    "completedPrimary": {
+      "expected": 4,
+      "passed": 4
+    },
+    "back": {
+      "expected": 12,
+      "passed": 12
+    },
+    "branches": {
+      "expected": 6,
+      "passed": 6
+    },
+    "critical": {
+      "expected": 1,
+      "passed": 1
+    },
+    "clonedControls": {
+      "inspected": 99,
+      "unbound": 0
+    },
+    "missingStates": [],
+    "errors": [],
+    "zeroErrors": true,
+    "primaryChecks": [
+      {
+        "state": "M01",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-0291d34d0bc5",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291d34d0bc5",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-0298215dd080"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298215dd083",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      },
+      {
+        "state": "M02",
+        "expected": "M03",
+        "control": "01c1c9a5-459f-804b-8009-0291d64c8ac9",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d6d47675",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291d64c8ac9",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029823c444d5"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029823c444d8",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029824b30b2d"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029824b30b30",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-029823e39857"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029823e39867",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-0298239971bc"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298239971bf",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d6d47675"
+          }
+        ]
+      },
+      {
+        "state": "M03",
+        "expected": "M04",
+        "control": "01c1c9a5-459f-804b-8009-0291d97d48f3",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291da3aea03",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291d97d48f3",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-0298252fd4ec"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298252fd4ef",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029826508b54"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029826508b57",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-029825523773"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029825523785",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029825031d88"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029825031d8b",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291da3aea03"
+          }
+        ]
+      },
+      {
+        "state": "M04",
+        "expected": "C02",
+        "control": "01c1c9a5-459f-804b-8009-0291dd9ed0fc",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e9a15db8",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291dd9ed0fc",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029826c37148"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029826c3714b",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          }
+        ]
+      },
+      {
+        "state": "C01",
+        "expected": "C02",
+        "control": "01c1c9a5-459f-804b-8009-0291e88cbdfa",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e9a15db8",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291e88cbdfa",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-0298274442b0"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298274442b3",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          }
+        ]
+      },
+      {
+        "state": "C02",
+        "expected": "C03",
+        "control": "01c1c9a5-459f-804b-8009-0291eca496b0",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291ed948bde",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291eca496b0",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-0298280df942"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298280df945",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291ed948bde"
+          }
+        ]
+      },
+      {
+        "state": "C03",
+        "expected": "C02",
+        "control": "01c1c9a5-459f-804b-8009-0291f0173d5b",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e9a15db8",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291f0173d5b",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029829417e5c"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029829417e5f",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982a92998e"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982a929991",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0298296fa51e"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298296fa52d",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029829134b79"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029829134b7c",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          }
+        ]
+      },
+      {
+        "state": "C14",
+        "expected": "C03",
+        "control": "01c1c9a5-459f-804b-8009-0291f3361383",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291ed948bde",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291f3361383",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982adbc05c"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982adbc05f",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291ed948bde"
+          }
+        ]
+      },
+      {
+        "state": "E01",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-0291fdc664d6",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291fdc664d6",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982b4ff417"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982b4ff41a",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      },
+      {
+        "state": "E02",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-029200cff8f9",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029200cff8f9",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982bcb3ed2"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982bcb3ed5",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      },
+      {
+        "state": "E03",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-02920400dc66",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02920400dc66",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982c82f0eb"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982c82f0ee",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982db1bb82"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982db1bb85",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-02982c9c123d"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982c9c124d",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982c671f1d"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982c6775af",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      },
+      {
+        "state": "E08",
+        "expected": "C02",
+        "control": "01c1c9a5-459f-804b-8009-0292073c668e",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e9a15db8",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0292073c668e",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982e0dd2c9"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982e0dd2cc",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          }
+        ]
+      }
+    ],
+    "completedPrimaryChecks": [
+      {
+        "state": "M02",
+        "variant": "01c1c9a5-459f-804b-8009-029823e39857",
+        "expected": "M03",
+        "control": "01c1c9a5-459f-804b-8009-029823e39867",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d6d47675",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029823e39867",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-0298239971bc"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298239971bf",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d6d47675"
+          }
+        ]
+      },
+      {
+        "state": "M03",
+        "variant": "01c1c9a5-459f-804b-8009-029825523773",
+        "expected": "M04",
+        "control": "01c1c9a5-459f-804b-8009-029825523785",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291da3aea03",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029825523785",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029825031d88"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029825031d8b",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291da3aea03"
+          }
+        ]
+      },
+      {
+        "state": "C03",
+        "variant": "01c1c9a5-459f-804b-8009-0298296fa51e",
+        "expected": "C02",
+        "control": "01c1c9a5-459f-804b-8009-0298296fa52d",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e9a15db8",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298296fa52d",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029829134b79"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029829134b7c",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          }
+        ]
+      },
+      {
+        "state": "E03",
+        "variant": "01c1c9a5-459f-804b-8009-02982c9c123d",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-02982c9c124d",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982c9c124d",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982c671f1d"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982c6775af",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      }
+    ],
+    "backChecks": [
+      {
+        "state": "M01",
+        "expected": "A05",
+        "control": "86344a6c-a2a0-8028-8009-02a8737d5c80",
+        "ok": true,
+        "reason": "mapped-external-target",
+        "actual": "01c1c9a5-459f-804b-8009-029191082089",
+        "path": [
+          {
+            "shape": "86344a6c-a2a0-8028-8009-02a8737d5c80",
+            "action": "open-overlay",
+            "to": "86344a6c-a2a0-8028-8009-02a873c34ac6"
+          },
+          {
+            "shape": "86344a6c-a2a0-8028-8009-02a873c34ac9",
+            "action": "open-url",
+            "to": null
+          }
+        ]
+      },
+      {
+        "state": "M02",
+        "expected": "M01",
+        "control": "01c1c9a5-459f-804b-8009-0291d677e8ef",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291d677e8ef",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291cfc9643d"
+          }
+        ]
+      },
+      {
+        "state": "M03",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-0291d9b56418",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291d9b56418",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      },
+      {
+        "state": "M04",
+        "expected": "M01",
+        "control": "01c1c9a5-459f-804b-8009-0291ddfb9fe1",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291ddfb9fe1",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291cfc9643d"
+          }
+        ]
+      },
+      {
+        "state": "C01",
+        "expected": "M01",
+        "control": "01c1c9a5-459f-804b-8009-0291e8e29a64",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291e8e29a64",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291cfc9643d"
+          }
+        ]
+      },
+      {
+        "state": "C02",
+        "expected": "C01",
+        "control": "01c1c9a5-459f-804b-8009-0291ecf06dd8",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e4f7a59b",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291ecf06dd8",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e4f7a59b"
+          }
+        ]
+      },
+      {
+        "state": "C03",
+        "expected": "C02",
+        "control": "01c1c9a5-459f-804b-8009-0291f0473fac",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e9a15db8",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291f0473fac",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e9a15db8"
+          }
+        ]
+      },
+      {
+        "state": "C14",
+        "expected": "C01",
+        "control": "01c1c9a5-459f-804b-8009-0291f362c775",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291e4f7a59b",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291f362c775",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291e4f7a59b"
+          }
+        ]
+      },
+      {
+        "state": "E01",
+        "expected": "C14",
+        "control": "01c1c9a5-459f-804b-8009-0291fdfc2c65",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291f0c278eb",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0291fdfc2c65",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291f0c278eb"
+          }
+        ]
+      },
+      {
+        "state": "E02",
+        "expected": "E01",
+        "control": "01c1c9a5-459f-804b-8009-02920100b992",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291fafb382c",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02920100b992",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291fafb382c"
+          }
+        ]
+      },
+      {
+        "state": "E03",
+        "expected": "M03",
+        "control": "01c1c9a5-459f-804b-8009-029204371ef1",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d6d47675",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029204371ef1",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d6d47675"
+          }
+        ]
+      },
+      {
+        "state": "E08",
+        "expected": "C14",
+        "control": "01c1c9a5-459f-804b-8009-029207741d15",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291f0c278eb",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029207741d15",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291f0c278eb"
+          }
+        ]
+      }
+    ],
+    "branchChecks": [
+      {
+        "state": "M02",
+        "label": "Interrupted attachment",
+        "expected": "E01",
+        "control": "01c1c9a5-459f-804b-8009-0298239971c0",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291fafb382c",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298239971c0",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291fafb382c"
+          }
+        ]
+      },
+      {
+        "state": "M03",
+        "label": "Required detail missing",
+        "expected": "E03",
+        "control": "01c1c9a5-459f-804b-8009-029825031d8c",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-029201737a71",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-029825031d8c",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-029201737a71"
+          }
+        ]
+      },
+      {
+        "state": "C02",
+        "label": "Partial search routes",
+        "expected": "C05",
+        "control": "01c1c9a5-459f-804b-8009-0298280df946",
+        "ok": true,
+        "reason": "mapped-external-target",
+        "actual": "01c1c9a5-459f-804b-8009-029222f16b1c",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298280df946",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-0298283532b7"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-0298283532ba",
+            "action": "open-url",
+            "to": null
+          }
+        ]
+      },
+      {
+        "state": "E01",
+        "label": "Continue text-only",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-02982b4ff41b",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982b4ff41b",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      },
+      {
+        "state": "E02",
+        "label": "Replace quarantined attachment",
+        "expected": "M02",
+        "control": "01c1c9a5-459f-804b-8009-02982bcb3ed6",
+        "ok": true,
+        "reason": "mapped-local-target",
+        "actual": "01c1c9a5-459f-804b-8009-0291d408b4b6",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982bcb3ed6",
+            "action": "navigate-to",
+            "to": "01c1c9a5-459f-804b-8009-0291d408b4b6"
+          }
+        ]
+      },
+      {
+        "state": "E08",
+        "label": "Stale custody observation",
+        "expected": "S07",
+        "control": "01c1c9a5-459f-804b-8009-02982e0dd2cd",
+        "ok": true,
+        "reason": "mapped-external-target",
+        "actual": "01c1c9a5-459f-804b-8009-02934c73a214",
+        "path": [
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982e0dd2cd",
+            "action": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-02982e30768c"
+          },
+          {
+            "shape": "01c1c9a5-459f-804b-8009-02982e30768f",
+            "action": "open-url",
+            "to": null
+          }
+        ]
+      }
+    ],
+    "criticalChecks": [
+      {
+        "state": "M03",
+        "ok": true,
+        "overlay": "01c1c9a5-459f-804b-8009-029825031d88"
+      }
+    ],
+    "limitations": "Checks exact semantic action paths and all native P/ controls. It does not substitute menu reachability for forward/back/branch semantics or establish runtime authorization."
+  },
+  "secondary": {
+    "flow": "F02",
+    "readOnly": true,
+    "declaredActions": 1,
+    "instances": 1,
+    "passed": 1,
+    "errors": [],
+    "zeroErrors": true,
+    "checks": [
+      {
+        "state": "M01",
+        "label": "I found something",
+        "target": "M10",
+        "declaredBy": "source-snapshot",
+        "board": "01c1c9a5-459f-804b-8009-0291cfc9643d",
+        "control": "01c1c9a5-459f-804b-8009-0291d375da94",
+        "ok": true,
+        "reason": "declared-external-target",
+        "actual": "01c1c9a5-459f-804b-8009-02933a079da9",
+        "path": [
+          {
+            "control": "01c1c9a5-459f-804b-8009-0291d375da94",
+            "type": "open-overlay",
+            "to": "01c1c9a5-459f-804b-8009-029821b49fe2"
+          },
+          {
+            "control": "01c1c9a5-459f-804b-8009-029821b49fe5",
+            "type": "open-url",
+            "to": null
+          }
+        ]
+      }
+    ]
+  },
+  "geometryErrors": [],
+  "setup": {
+    "unbound": {
+      "flow": "F02",
+      "repaired": 0,
+      "missing": [],
+      "zeroMissing": true
+    },
+    "defaults": {
+      "flow": "F02",
+      "defaultsRewired": 0,
+      "completedToConfirm": 0,
+      "alreadyCorrect": 16,
+      "protectedGuardsPreserved": 0,
+      "missingConfirm": [],
+      "missingDefault": [],
+      "missingCompletedPrimary": [],
+      "missingGuard": [],
+      "complete": true
+    },
+    "branches": {
+      "flow": "F02",
+      "added": [],
+      "retained": [
+        {
+          "state": "M02",
+          "label": "Interrupted attachment",
+          "control": "01c1c9a5-459f-804b-8009-0298239971c0"
+        },
+        {
+          "state": "M03",
+          "label": "Required detail missing",
+          "control": "01c1c9a5-459f-804b-8009-029825031d8c"
+        },
+        {
+          "state": "C02",
+          "label": "Partial search routes",
+          "control": "01c1c9a5-459f-804b-8009-0298280df946"
+        },
+        {
+          "state": "E01",
+          "label": "Continue text-only",
+          "control": "01c1c9a5-459f-804b-8009-02982b4ff41b"
+        },
+        {
+          "state": "E02",
+          "label": "Replace quarantined attachment",
+          "control": "01c1c9a5-459f-804b-8009-02982bcb3ed6"
+        },
+        {
+          "state": "E08",
+          "label": "Stale custody observation",
+          "control": "01c1c9a5-459f-804b-8009-02982e0dd2cd"
+        }
+      ],
+      "missingConfirm": [],
+      "metadataRestrictionMissing": [],
+      "complete": true
+    },
+    "secondaries": {
+      "flow": "F02",
+      "sourceActions": 1,
+      "instances": 1,
+      "alreadyCorrect": 1,
+      "repaired": 0,
+      "protected": [],
+      "unresolved": [],
+      "complete": true
+    }
+  },
+  "nav": {
+    "navigation": {
+      "flow": "F02",
+      "existingBack": 15,
+      "addedBack": 1,
+      "resetBack": 0,
+      "selfFeedback": 0,
+      "selfBranchMismatches": [],
+      "selfBranchCorrections": [],
+      "guardsRetained": 1,
+      "guardsRepaired": 0,
+      "missingConfirm": [],
+      "complete": true
+    },
+    "unchecked": {
+      "flow": "F02",
+      "requiredUncheckedVariants": 0,
+      "editorControlsInspected": 0,
+      "rebound": 0,
+      "alreadyPreserved": 0,
+      "missingGuards": [],
+      "complete": true
+    },
+    "cleanup": {
+      "flow": "F02",
+      "menus": 16,
+      "tabs": 0,
+      "requestLabels": 0
+    }
+  }
+}

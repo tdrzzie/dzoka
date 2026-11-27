@@ -30,3 +30,7 @@ The [confirmed recheck](../testing/m3-post-publication-recheck-2026-11-27.md), [
 Test independent-process hashing, actual concurrent HTTP replicas and restarted servers against one real database/JWKS, both historical encodings through a populated V27→V28 upgrade, preserved receipt bytes/results, changed bodies, tenant/actor scopes and revocation. Run full provider integration and restore checks before closing M3.
 
 [Execution and source-bound evidence](../testing/m3-retry-fix-2026-11-27.md) record the completed checks separately from this decision.
+
+## Unicode validity refinement (2026-11-27)
+
+The [Unicode recheck](../testing/m3-unicode-recheck-2026-11-27.md) reproduced an accepted lone-surrogate label aliasing a literal question mark before hashing. Place label/alias construction and normalization now reject residual surrogate code points; valid pairs remain accepted and raw labels stay exact. The version 2 text encoder independently uses strict UTF-8 encoding. These are input-validity checks: every previously valid Unicode digest remains byte-identical, both historical readers remain intact, no receipt is rewritten and V28 is unchanged. Invalid historical request text is rejected rather than reconstructed through lossy replacement. No new runtime dependency or format version is introduced. [Repair execution](../testing/m3-unicode-fix-2026-11-27.md) records regression and full-gate evidence.

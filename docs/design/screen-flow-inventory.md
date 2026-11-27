@@ -16,6 +16,39 @@ Repository-derived editable design inventory · 2026-11-27 · Dzoka remains a te
 
 The prototype adds a continuous 27-state recovery journey, seven native overlays and 26 focused-flow entry points. The actual graph reaches every recovery state with no invalid local targets. Sample form entry, confirmation/cancel and expired-pass paths were exercised in the live viewer. Canonical concept counts remain 215; prototype copies are recorded separately.
 
+## Full interaction verification progress
+
+2/26 native preset players have passed their saved semantic and geometry checks. The combined final receipt remains pending; prototype coverage is separate from canonical concept design status.
+
+| Flow | Verification | Native receipt |
+|---|---|---|
+| F01 | Native semantics verified | [F01](interaction-receipts/F01.json) |
+| F02 | Native semantics verified | [F02](interaction-receipts/F02.json) |
+| F03 | Pending | Pending |
+| F04 | Pending | Pending |
+| F05 | Pending | Pending |
+| F06 | Pending | Pending |
+| F07 | Pending | Pending |
+| F08 | Pending | Pending |
+| F09 | Pending | Pending |
+| F10 | Pending | Pending |
+| F11 | Pending | Pending |
+| F12 | Pending | Pending |
+| F13 | Pending | Pending |
+| F14 | Pending | Pending |
+| F15 | Pending | Pending |
+| F16 | Pending | Pending |
+| F17 | Pending | Pending |
+| F18 | Pending | Pending |
+| F19 | Pending | Pending |
+| F20 | Pending | Pending |
+| F21 | Pending | Pending |
+| F22 | Pending | Pending |
+| F23 | Pending | Pending |
+| F24 | Pending | Pending |
+| F25 | Pending | Pending |
+| F26 | Pending | Pending |
+
 ## Meaning and authority
 
 Designed means native editable concepts, branch outcomes and primary navigation exist with recorded evidence. It does not establish runtime behavior, institutional/financial policy adoption, live credentials, performance, accessibility conformance or provider acceptance. Original source research and previous evidence remain preserved.

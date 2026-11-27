@@ -1,0 +1,28 @@
+{
+  "cases": [
+    "installed_least_privilege_interactive_task",
+    "current_account_docker_preflight",
+    "actual_authenticated_idle_claim",
+    "scheduler_duplicate_start_excluded",
+    "actual_control_lock_excludes_competing_operation",
+    "wrong_arguments_descriptor_rejected",
+    "wrong_source_descriptor_rejected",
+    "exact_registered_worker_crash_injected",
+    "bounded_periodic_worker_restart_verified",
+    "restart_recovers_then_resumes_claims",
+    "graceful_generation_bound_stop",
+    "explicit_restart_after_graceful_stop",
+    "exhausted_budget_disables_task_before_claim",
+    "exact_task_and_owned_resource_cleanup"
+  ],
+  "readinessWaits": {
+    "initialReadyWaitSeconds": 109.177,
+    "watchdogRecoveryWaitSeconds": 126.861,
+    "explicitRestartReadyWaitSeconds": 131.468
+  },
+  "startupWaitBoundSeconds": 720,
+  "scope": "Actual installed interactive task, empty-queue authenticated protocol; diagnostic readiness waits, not production startup SLO; real model/core jobs are separate integration tests; not boot-before-login",
+  "rawReceiptSha256": "d1a826ebdb0dbd07326e6329bc64dca13f8fc486b216fcf808ee28fa36f6b7bd",
+  "managementReleaseSha256": "7a8d0fe791250532a418411b8cc51db54264f01b6ea44637ff0c1e3f8fc85a26",
+  "diagnosticOverride": false
+}

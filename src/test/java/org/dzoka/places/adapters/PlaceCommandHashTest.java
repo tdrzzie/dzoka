@@ -28,4 +28,10 @@ class PlaceCommandHashTest {
         var d=fixture();assertFalse(PlaceCommandHash.matches(0,PlaceCommandHash.canonical(null,d),null,d));assertFalse(PlaceCommandHash.matches(3,PlaceCommandHash.canonical(null,d),null,d));
         assertFalse(PlaceCommandHash.matches(1,"0".repeat(64),null,d));assertTrue(PlaceCommandHash.matches(2,PlaceCommandHash.canonical(null,d),null,d));
     }
+    @Test void validSupplementaryTextRetainsCanonicalAndBothHistoricalGoldenHashes(){
+        var d=new PlaceDraft("Synthetic \uD83D\uDE80","FACILITY",null,null,null,null,"Africa/Harare",List.of("Door \uD83D\uDE80"),true,0L);
+        assertEquals("4c66e71751d6668b71234609ae107f5f9ed7510e2f97a0a56b2f3b1238cd91d6",PlaceCommandHash.canonical(null,d));
+        for(String digest:Set.of("737e4026a6da44167c5713d397f26a964428710c57032ccc44737efe391f6bd2","b0f75df8c81c5c86aab2baeddd7a34287259a98a17bdc1e85077fb2022a74dca"))assertTrue(PlaceCommandHash.matches(1,digest,null,d));
+        assertNotEquals(PlaceCommandHash.canonical(null,d),PlaceCommandHash.canonical(null,new PlaceDraft("Synthetic ?","FACILITY",null,null,null,null,"Africa/Harare",d.aliases(),true,0L)));
+    }
 }
