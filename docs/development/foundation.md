@@ -1,5 +1,7 @@
 # Running and verifying the foundation
 
+2026-11-27 extension: [foundation administration](../operations/foundation-administration.md) adds complete cursor traversal, organization lookup/rename/archive/reactivation, immutable retry responses and separate audited operator tenant/membership provisioning and revocation. Historical create/list-only and manual-provisioning limits below describe the original slice; the new guide governs these additions. Production IdP enrollment, target acceptance and independent security/load assessment remain separate.
+
 This guide describes the M2 transactional foundation: organization creation/listing through verified JWT identity, local membership permissions, tenant-scoped SQL, idempotency, minimal audit and outbox. M3 adds [report intake and private images](intake-media.md); claim/recovery workflows and production AI remain future work.
 
 ## Build and dependency integrity

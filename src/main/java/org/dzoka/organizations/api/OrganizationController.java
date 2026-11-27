@@ -27,4 +27,21 @@ public final class OrganizationController {
     public List<Organization> list(@PathVariable UUID tenant, @AuthenticationPrincipal Jwt jwt) {
         return service.list(actor(jwt), tenant);
     }
+    @GetMapping("/page")
+    public org.dzoka.organizations.ports.OrganizationCommands.Page page(@PathVariable UUID tenant, @AuthenticationPrincipal Jwt jwt,
+            @RequestParam(required=false) UUID after, @RequestParam(defaultValue="50") int limit,
+            @RequestParam(defaultValue="false") boolean includeInactive) {
+        return service.page(actor(jwt),tenant,after,limit,includeInactive);
+    }
+    public record UpdateOrganization(String name, Boolean active, Long expectedVersion) {}
+    @GetMapping("/{id}")
+    public org.dzoka.organizations.domain.OrganizationState get(@PathVariable UUID tenant,@PathVariable UUID id,@AuthenticationPrincipal Jwt jwt) {
+        return service.get(actor(jwt),tenant,id);
+    }
+    @PutMapping("/{id}")
+    public org.dzoka.organizations.domain.OrganizationState update(@PathVariable UUID tenant,@PathVariable UUID id,
+            @AuthenticationPrincipal Jwt jwt,@RequestHeader("Idempotency-Key") String key,@RequestBody UpdateOrganization body) {
+        if(body.active()==null || body.expectedVersion()==null)throw new IllegalArgumentException("Required update fields");
+        return service.update(actor(jwt),tenant,id,body.name(),body.active(),body.expectedVersion(),key);
+    }
 }

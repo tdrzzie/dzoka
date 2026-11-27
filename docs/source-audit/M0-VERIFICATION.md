@@ -1,5 +1,7 @@
 # M0 independent revalidation
 
+Latest recheck: [2026-11-27](#revalidation--2026-11-27). The dated historical inspection below is preserved.
+
 Rechecked on 2026-10-26 in response to the user's question whether M0 was actually completed or merely marked complete. This is a fresh verification of existing evidence, not a retrospective claim that upstream programs or security tests were executed.
 
 ## Verdict
@@ -46,3 +48,19 @@ python tools/verify_source_evidence.py
 ```
 
 The last command performs read-only public downloads; it installs/runs no upstream code. Its default report is ignored under `.audit-cache`. Network failure yields UNVERIFIED and a nonzero exit, never a successful audit claim. Source-byte mismatch and incorrect line counts also fail. Recheck root trees and narrative claims separately when changing a pin; the existing audit statuses were not altered to manufacture a passing result.
+
+## Revalidation — 2026-11-27
+
+**Verdict: M0's defined local governance and bounded source-review deliverables are substantiated, not merely marked COMPLETE. Remote CI acceptance remains open.** This is a fresh check of the current evidence against pinned upstream objects, not a claim that every narrative conclusion has been independently re-audited or upstream programs executed.
+
+- All 30 audit names match specification section 2. Registry integrity and the mandatory gate pass: COMPLETE 30; PENDING/IN_PROGRESS/STALE zero. Canonical records retain the required sections, source ranges, hashes, dispositions and limitations; five reconciled findings and the governance files are present.
+- Fresh downloads match **176/176** SHA-256 records, including repository Git blob hashes/decoded line counts and the standard PDF byte length. No mismatches or unverified downloads.
+- **29/29** Git commit identities and their referenced root trees resolve through the live GitHub API. The nine unresolved project grants still have no root license/copying candidate; these remain reuse restrictions, not unreviewed audits or permission to copy.
+- **24 targeted regressions pass:** 20 registry/gate integrity and bypass tests, plus four source-byte/encoding/failure tests. This is the current M0-specific count, not a new run of the entire application suite.
+- A fresh hash-verified syntax inspection of Globalenglish's `do_return` handler (lines 167–185) corroborates its payload-supplied return/verification fields and lack of a conditional authorization check inside that handler. This supports that scoped finding; it is not a complete security re-audit.
+
+**Historical receipt metadata defect:** the 2026-10-26 root-check receipt's `rootTreeSha` values were the requested **commit** IDs. They were mislabeled and should not be treated as actual root-tree SHAs. The fresh receipt separately verifies the commit identity and records the actual tree referenced by that commit. The old receipt is preserved as historical evidence; no canonical source pin or inspected-file hash has been changed to obtain a pass.
+
+The latest published-commit [Repository governance run](https://github.com/tdrzzie/dzoka/actions/runs/45885355341) and [Core foundation run](https://github.com/tdrzzie/dzoka/actions/runs/45885355308) were prevented from starting by the account billing lock. They establish neither passing remote enforcement nor a code/test failure. Thus “M0 locally complete, remote CI acceptance blocked” is accurate; unqualified end-to-end CI completion is not.
+
+Fresh machine-readable evidence: [summary](verification/m0-summary-2026-11-27.json), [176 byte checks](verification/m0-bytes-2026-11-27.json), [29 commit/root checks](verification/m0-roots-2026-11-27.json). This recheck does not execute upstream tests, clear unresolved licenses/weights/dependencies, establish a production security response, or certify Dzoka production readiness. Existing unrelated STATUS/design edits were left untouched.

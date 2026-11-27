@@ -72,5 +72,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 | 0053 | [Bounded matching and vector backends](0053-bounded-matching-and-vector-backends.md) | Implemented bounded routes and local conformance scope |
 | 0054 | [Indexed matching and durable history](0054-indexed-matching-and-durable-history.md) | Implemented with local conformance and target acceptance open |
 | 0065 | [Governed feedback and operational controls](0065-governed-feedback-and-operational-boundaries.md) | Implemented current-account profile; production acceptance remains separate |
+| 0066 | [Foundation administration](0066-foundation-administration.md) | Versioned organization lifecycle and privileged local tenant/membership administration |
 
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

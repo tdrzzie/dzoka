@@ -1,5 +1,27 @@
 # M1 independent revalidation
 
+## Fresh check — 2026-11-27
+
+**Verdict: M1 is complete as the specified architecture/design baseline. Its completion is supported by the deliverables and fresh checks, not merely by a status label. This is not certification of the current implementation or production readiness.**
+
+Rechecked the original specification sections 66–67, governing baseline, all 24 M1 technical ADR decisions and the 18 current design views. The six supplied views remain preserved research governed by the baseline. The minimum investigation mapping below remains applicable: 23 required investigations, plus the tenancy/security ADR. No missing required M1 design deliverable was found.
+
+Executed on this date:
+
+| Command | Fresh result |
+|---|---|
+| `python -B tools/audit_registry.py gate` | PASS |
+| `python -B tools/verify_architecture.py` | PASS: 24 required views, 24 baseline ADRs, 23 required investigations, 74 matched source citations, 29 acceptance scenarios, 13 preserved bodies, 53 checked documents |
+| `python -B -m unittest discover -s tests -p test_architecture.py -v` | PASS: all five tests, including missing-view, missing-scenario, changed-preserved-body and unmatched-source-pin rejection |
+
+The checker establishes structure, registered source-pin consistency, preservation and local-reference integrity. The substantive document review checks the design decisions and their boundaries; neither establishes that every implemented path obeys them. The acceptance ledger defines later verification obligations, rather than proving all 29 scenarios executed in M1. No application/runtime tests, diagram rendering, independent expert sign-off or production deployment acceptance were performed in this recheck. The earlier 37-test count below is historical, not a fresh whole-suite result.
+
+**Documentation maintenance finding:** current architecture documentation contains stale implementation-status prose. For example, `baseline.md` says Compose/Helm are not implemented and federation protocol code is waiting; later implementation records describe the M8 wire profile and M11 deployment profile. Trust, security, privacy, tenancy and integration views also retain generic October “Implementation is pending” introductions. Observability and deployment views already append explicit M11 supersession notices. These statements must not be used to infer today's implementation coverage or missing M1 decisions. Current execution scope belongs to the later ADRs, acceptance ledger and milestone verification records; a consolidated as-built documentation refresh remains useful maintenance. This check does not certify those later milestones.
+
+The October inspection below is retained as a dated record. In particular, its “future implementation” and local/publication statements describe that inspection date; they are not a current inventory of remaining engineering work. This recheck makes no new remote-CI claim.
+
+## Original inspection — 2026-10-26
+
 Checked on 2026-10-26 against the original specification, the actual design documents and registered source evidence. No milestone status was used as proof of completion.
 
 ## Verdict and scope

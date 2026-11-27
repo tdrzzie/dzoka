@@ -1,0 +1,900 @@
+{
+  "fileId": "456d79de-921a-81c4-8009-02637f9b3b01",
+  "validation": [],
+  "pages": [
+    {
+      "id": "456d79de-921a-81c4-8009-02637f9b3b02",
+      "name": "00 · Design language",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265399bb6c2",
+          "name": "Design language · Internal concept",
+          "width": 1439.9999618530273,
+          "height": 1060.0000381469727
+        }
+      ],
+      "links": 0,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-02653ae32ecd",
+      "name": "01 · Your recovery",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-026565a41470",
+          "name": "01 · Home",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026566a3b5fa",
+          "name": "02 · Report a lost item",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265674187fb",
+          "name": "03 · Place and time",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265680aeb15",
+          "name": "04 · Report submitted",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265ad957c5d",
+          "name": "05 · Possible matches",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265af456eef",
+          "name": "06 · Candidate detail",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265aff60b44",
+          "name": "07 · Private ownership check",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265b08dfdca",
+          "name": "08 · Recovery progress",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0265fe0199b4",
+          "name": "09 · Collection pass",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0266020e7c28",
+          "name": "10 · Finder report",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026603150fb3",
+          "name": "11 · Private messages",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0266048a68bc",
+          "name": "12 · My items",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0266a7875bb4",
+          "name": "13 · Finder handover",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0266a9ad8229",
+          "name": "14 · Back together",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        }
+      ],
+      "links": 44,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-0266ab070036",
+      "name": "02 · Institution workspace",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-0266df49b06a",
+          "name": "01 · Institution overview",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0266e39e4ea2",
+          "name": "02 · Found inventory",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0266e75bc0a6",
+          "name": "03 · Found-item intake",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02672a0f4faf",
+          "name": "04 · Match review",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02672f9e6994",
+          "name": "05 · Independent claim review",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0267340adc9e",
+          "name": "06 · Custody & transfers",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0267960b13fd",
+          "name": "07 · Trusted network",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02679dc62314",
+          "name": "08 · Authorised investigation",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0267a3a46f04",
+          "name": "09 · Recovery analytics",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026802666291",
+          "name": "10 · Workspace administration",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02680c6ca5a9",
+          "name": "11 · Collection desk",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026814a95cd2",
+          "name": "12 · Return receipt",
+          "width": 1439.9999618530273,
+          "height": 1000
+        }
+      ],
+      "links": 140,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-026e252e2168",
+      "name": "03 · Access & preferences",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e291218ea",
+          "name": "A01 · Welcome to Dzoka",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e29e7a370",
+          "name": "A02 · Sign in securely",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e2a91b403",
+          "name": "A03 · Check your sign-in",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e2b54759f",
+          "name": "A04 · Recover account access",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e2be9975c",
+          "name": "A05 · Choose your workspace",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e2ca63feb",
+          "name": "A06 · Your profile",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e2d6c168d",
+          "name": "A07 · Updates, your way",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e2e36f43d",
+          "name": "A08 · Privacy & your data",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e2f3f9b8c",
+          "name": "A09 · Review deletion request",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e302cdfcf",
+          "name": "A10 · Language & accessibility",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "links": 20,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-026e532af9e9",
+      "name": "04 · Reports & claim states",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e53407785",
+          "name": "C01 · My reports",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e53dec8bb",
+          "name": "C02 · Your backpack report",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e5483ae8e",
+          "name": "C03 · Update your report",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e550ebd39",
+          "name": "C04 · No matches yet",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e55b208d6",
+          "name": "C05 · Part of search is delayed",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e565a3841",
+          "name": "C06 · A little more evidence",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e56f986a5",
+          "name": "C07 · Your claim is under review",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e579e7196",
+          "name": "C08 · More review is needed",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e584931e3",
+          "name": "C09 · Claim decision",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "46d4ce92-2766-80d6-8009-02768d8ac162",
+          "name": "C15 · This candidate has a conflict",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e59075ec2",
+          "name": "C10 · Withdraw this claim?",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e59cfbde4",
+          "name": "C11 · Private recovery messages",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e5a91c24e",
+          "name": "C12 · Collecting for someone",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e5b592224",
+          "name": "C13 · This pass has expired",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e5c4c0fab",
+          "name": "C14 · Draft saved offline",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "links": 30,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-026e7c58ffa2",
+      "name": "05 · Delivery rewards & passports",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e7c74077f",
+          "name": "L01 · Choose how it comes back",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e7d58c539",
+          "name": "L02 · Delivery details & consent",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e7e00879a",
+          "name": "L03 · Review delivery quote",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e7ea9c15b",
+          "name": "L04 · Booking needs a check",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e7f45a063",
+          "name": "L05 · Follow your item",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e7feeffd1",
+          "name": "L06 · Confirm you received it",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e809bd3d1",
+          "name": "L07 · Recovery confirmed",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e8166b860",
+          "name": "L08 · Offer a voluntary reward",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e8237e3d5",
+          "name": "L09 · Reward & payment status",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e830a4642",
+          "name": "L10 · Reward dispute",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e83d5641f",
+          "name": "L11 · Register an item",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e84a512b6",
+          "name": "L12 · Your item passport",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e85791960",
+          "name": "L13 · Tags & finder contact",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026e864ee39d",
+          "name": "L14 · A finder can reach the team",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02728911fd0f",
+          "name": "L15 · Payment outcome is pending",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02728a388ef2",
+          "name": "L16 · Refund or reversal status",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02728b892e5e",
+          "name": "L17 · Cancel this delivery request?",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02728cc2161a",
+          "name": "L18 · This tag is unavailable",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02728e10cd60",
+          "name": "L19 · Revoke or rotate a tag",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02728f728920",
+          "name": "L20 · Confirm voluntary reward terms",
+          "width": 390.00000953674316,
+          "height": 843.9999580383301
+        }
+      ],
+      "links": 40,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-026ecb8fbe8a",
+      "name": "06 · Staff decisions & exceptions",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-026ef1a5fc10",
+          "name": "S01 · Review work, in one place",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026ef4edd291",
+          "name": "S02 · Resolve competing claims",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026ef766bff0",
+          "name": "S03 · Risk & active holds",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "46d4ce92-2766-80d6-8009-027667d4364f",
+          "name": "S19 · Pickup attempt denied",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026ef9a8d4a5",
+          "name": "S04 · Sensitive evidence access",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026efc5d48d8",
+          "name": "S05 · Protected evidence & challenge",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f000855dc",
+          "name": "S06 · Accept a custody transfer",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f03609f74",
+          "name": "S07 · Review an offline conflict",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f06424da4",
+          "name": "S08 · Custody incident & hold",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f0904f43f",
+          "name": "S09 · Unclaimed property queue",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f0c55cf71",
+          "name": "S10 · Approve a disposition",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f0ff23a37",
+          "name": "S11 · Shipment & receipt exceptions",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f13c32d0d",
+          "name": "S12 · Reauthorise an owner receipt",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f17958441",
+          "name": "S13 · Payment dispute review",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f1b7b8a2e",
+          "name": "S14 · Reward ledger & reconciliation",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f2057d535",
+          "name": "S15 · Approve investigation scope",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f24101464",
+          "name": "S16 · Review a masked item crop",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f27c9c283",
+          "name": "S17 · Relay moderation & abuse",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026f2c77ac34",
+          "name": "S18 · Federation dispute review",
+          "width": 1439.9999618530273,
+          "height": 1000
+        }
+      ],
+      "links": 154,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-026fbaca2aa5",
+      "name": "07 · Organisation administration",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-026fbcac3281",
+          "name": "O01 · People & permissions",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026fbfa0be9a",
+          "name": "O02 · Member & service access",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026fc23808ec",
+          "name": "O03 · Sites & collection policy",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026fc48dc224",
+          "name": "O04 · Policy versions & holds",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026fc6c362e9",
+          "name": "O05 · Retention & deletion requests",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026fc9419a6f",
+          "name": "O06 · Privacy request detail",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-026fcb733a2f",
+          "name": "O07 · Integrations & delivery",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027013d71ea1",
+          "name": "O08 · Notification & webhook operation",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027017c940e2",
+          "name": "O09 · Trusted peers & keys",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02701c1b9bec",
+          "name": "O10 · Peer trust & publication",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02701f7d3318",
+          "name": "O11 · Audit & traceability",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270223e6b92",
+          "name": "O12 · Event provenance & correction",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027024962177",
+          "name": "O13 · Permitted source ingestion",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270278b5b5a",
+          "name": "O14 · API clients & notification templates",
+          "width": 1439.9999618530273,
+          "height": 1000
+        }
+      ],
+      "links": 100,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-02706542568f",
+      "name": "08 · Platform & model operations",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-027065765863",
+          "name": "P01 · Tenants & node health",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027067d8da0b",
+          "name": "P02 · Node readiness & restore",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027069ec320c",
+          "name": "P03 · Jobs & provider operations",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02706c509372",
+          "name": "P04 · Artifact & input provenance",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02706ee70208",
+          "name": "P05 · Datasets & independent labels",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027072c991a2",
+          "name": "P06 · Evaluation & calibration",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270b6615cbe",
+          "name": "P07 · Approve a model version",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270b9cddf24",
+          "name": "P08 · Activation & rollback",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270bd72e07f",
+          "name": "P09 · Providers & controlled features",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270c0315b46",
+          "name": "P10 · Quotas & platform audit",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270c3c85477",
+          "name": "P11 · Recovery paths & uncertainty",
+          "width": 1439.9999618530273,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-0270c7481afe",
+          "name": "P12 · Prevention & hardware consent",
+          "width": 1439.9999618530273,
+          "height": 1000
+        }
+      ],
+      "links": 80,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-02710c362d3e",
+      "name": "09 · Recovery & access states",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-02710d9d902f",
+          "name": "E01 · Upload needs attention",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02710e34bbb2",
+          "name": "E02 · Media held for review",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02710eca8415",
+          "name": "E03 · A required detail is missing",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02710f636ea2",
+          "name": "E04 · Please wait before trying again",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027110002dd5",
+          "name": "E05 · This workspace is restricted",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027110c6e8b3",
+          "name": "E06 · Your session has ended",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-027111a3b768",
+          "name": "E07 · Collection is on hold",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02711253ddfd",
+          "name": "E08 · Connection restored",
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "links": 16,
+      "overflow": []
+    },
+    {
+      "id": "3885c71d-2bc7-8052-8009-027139c101d8",
+      "name": "10 · Responsive adaptations",
+      "boards": [
+        {
+          "id": "3885c71d-2bc7-8052-8009-027139d199eb",
+          "name": "R01 · Report a lost item · desktop",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02713b58eec3",
+          "name": "R02 · Ownership check · desktop",
+          "width": 1440,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02713d5e2bae",
+          "name": "R03 · Staff inventory · mobile",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02713e2d4ef8",
+          "name": "R04 · Custody acceptance · mobile",
+          "width": 390,
+          "height": 844
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02713eef61e5",
+          "name": "R05 · Collection desk · tablet",
+          "width": 1024,
+          "height": 1000
+        },
+        {
+          "id": "3885c71d-2bc7-8052-8009-02714096a663",
+          "name": "R06 · Overview · tablet",
+          "width": 1024,
+          "height": 1000
+        }
+      ],
+      "links": 28,
+      "overflow": []
+    },
+    {
+      "id": "46d4ce92-2766-80d6-8009-0277f03d8174",
+      "name": "11 · Screen & flow map",
+      "boards": [
+        {
+          "id": "46d4ce92-2766-80d6-8009-0277f44e6cbe",
+          "name": "Flow map · Recovery decisions",
+          "width": 1720.0000762939453,
+          "height": 1119.9999809265137
+        },
+        {
+          "id": "46d4ce92-2766-80d6-8009-0277f5f534f2",
+          "name": "Flow catalogue · 26 flows and 130 states",
+          "width": 1720.0000762939453,
+          "height": 2400
+        }
+      ],
+      "links": 155,
+      "overflow": []
+    }
+  ]
+}

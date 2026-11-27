@@ -1,0 +1,57 @@
+{
+  "reviewDate": "2026-11-27",
+  "scope": "Independent revalidation of existing bounded M0 deliverables, not a full re-audit or upstream runtime execution",
+  "registrySha256": "138178431b4965bbb2d6e59b1b12a2155b1eaaa34d68b926acdf0223d9fee9cd",
+  "requiredAudits": 30,
+  "complete": 30,
+  "pending": 0,
+  "inProgress": 0,
+  "stale": 0,
+  "liveArtifacts": 176,
+  "matchedArtifacts": 176,
+  "pinnedCommitsAndRootTrees": 29,
+  "specScopeNamesMatched": 30,
+  "dispositions": {
+    "ADAPT": 6,
+    "REFERENCE": 16,
+    "REJECT": 3,
+    "ADOPT": 5
+  },
+  "regressionTests": {
+    "registryAndGate": 20,
+    "sourceByteVerifier": 4,
+    "result": "PASS"
+  },
+  "checks": {
+    "registryIntegrity": "PASS",
+    "mandatoryGate": "PASS",
+    "fiveFindingsDocuments": "PRESENT",
+    "rootGovernanceFiles": "PRESENT"
+  },
+  "narrativeSpotCheck": {
+    "source": "globalenglish-lostfound",
+    "revision": "6ff8cffe55bfc3e7274124512a69fae746ceb643",
+    "path": "backend/app/api/matches.py",
+    "lines": [
+      167,
+      185
+    ],
+    "method": "Hash-verified fresh source, parsed without execution",
+    "finding": "do_return accepts payload returned_by/returned_to and verification_result and has no conditional branch in its handler; corroborates the scoped return-authorization finding, not the entire application security review"
+  },
+  "historicalReceiptCorrection": "The 2026-10-26 rootTreeSha fields held requested commit IDs. The new roots receipt separately verifies commitMatch and records the actual commit.tree.sha/root tree SHA. Historical receipts and canonical audit pins are preserved.",
+  "remoteCi": {
+    "head": "9d14dd7cab7d7ee57c420322cbd2ff8f653f1278",
+    "runs": [
+      45885355341,
+      45885355308
+    ],
+    "result": "BLOCKED_BEFORE_JOB_START",
+    "annotation": "The job was not started because your account is locked due to a billing issue."
+  },
+  "verdict": "Defined local M0 governance/source-review deliverables are substantiated. Remote CI acceptance is still open. No production/runtime assurance is implied.",
+  "evidenceSha256": {
+    "m0-bytes-2026-11-27.json": "b177f3f2351588b9a7e67a7a1a5eecf98e920ea103950d42a828a95d064a9e11",
+    "m0-roots-2026-11-27.json": "9fb24b1c4cd59e65b19c4675ef4ea8f915ab36b627e29c3d46e6419a625cc024"
+  }
+}

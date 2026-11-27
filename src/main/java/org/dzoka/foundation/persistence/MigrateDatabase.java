@@ -10,7 +10,7 @@ public final class MigrateDatabase {
                 required("DZOKA_MIGRATION_USER"), required("DZOKA_MIGRATION_PASSWORD"))
                 .locations("classpath:db/migration").cleanDisabled(true).load().migrate();
     }
-    private static String required(String key) {
+    static String required(String key) {
         String value = System.getenv(key);
         String file=System.getenv(key+"_FILE");
         if(file!=null&&!file.isBlank()) {

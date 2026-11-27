@@ -38,6 +38,8 @@ Performance/availability targets, retention durations, legal-policy defaults and
 
 ## Executed foundation portions (2026-10-26)
 
+The [2026-11-27 M2 extension](../testing/m2-implementation-2026-11-27.md) additionally executes organization paging/archive/reactivation, concurrent versioned retries, operator tenant/member lifecycle and denial, private immutable receipts, JWT signing-key overlap and a populated V25→V26 upgrade. It supersedes create/list-only and manual-provisioning limits for this local profile; later-module/target acceptance is still separately scoped.
+
 [FoundationIT](../../src/test/java/org/dzoka/FoundationIT.java) and [startup test](../../src/test/java/org/dzoka/StartupConfigurationIT.java) exercise real PostgreSQL/JWT/HTTP behavior; [run instructions](../development/foundation.md) state exact scope and runtime. This is not completion of every surface in the broader acceptance rows.
 
 | Acceptance IDs | Verified foundation portion | Still pending |

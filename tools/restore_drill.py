@@ -55,7 +55,10 @@ def drill(command, archive):
         catalog = sql(database, """
 SELECT jsonb_build_object(
  'tables',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.relname) FROM
-   (SELECT c.relname,pg_get_userbyid(c.relowner) owner,c.relrowsecurity,c.relforcerowsecurity,c.relacl
+   (SELECT c.relname,pg_get_userbyid(c.relowner) owner,c.relrowsecurity,c.relforcerowsecurity,
+     (SELECT jsonb_agg(jsonb_build_array(a.grantor,a.grantee,a.privilege_type,a.is_grantable)
+       ORDER BY a.grantor,a.grantee,a.privilege_type,a.is_grantable)
+      FROM aclexplode(coalesce(c.relacl,acldefault('r',c.relowner))) a) relacl
     FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace
     WHERE n.nspname='dzoka' AND c.relkind IN ('r','p')) x),
  'policies',(SELECT jsonb_agg(to_jsonb(x) ORDER BY x.tablename,x.policyname) FROM
@@ -110,7 +113,8 @@ COMMIT;
         staged.mkdir()
         shutil.copyfile(archive, staged/'postgres.dump')
         (staged/'objects.json').write_text(json.dumps({'scope':'SYNTHETIC_EMPTY_OBJECT_SNAPSHOT','objects':[]}),encoding='utf-8')
-        (staged/'configuration.json').write_text(json.dumps({'schemaMigrations':25,'runtimeRole':'dzoka_app','scope':'SYNTHETIC_RESTORE'}),encoding='utf-8')
+        migration_version=int(sql(source,"SELECT max(version::integer) FROM public.flyway_schema_history WHERE success AND version ~ '^[0-9]+$';"))
+        (staged/'configuration.json').write_text(json.dumps({'schemaMigrations':migration_version,'runtimeRole':'dzoka_app','scope':'SYNTHETIC_RESTORE'}),encoding='utf-8')
         (staged/'tombstones.json').write_text(sql(source,"SELECT coalesce(jsonb_agg(to_jsonb(j) ORDER BY tenant_id,report_id),'[]') FROM dzoka.erasure_journal j;"),encoding='utf-8')
         inventory=[{'kind':kind,'name':name} for kind,name in [('postgres','postgres.dump'),('objects','objects.json'),('configuration','configuration.json'),('tombstones','tombstones.json')]]
         checkpoint=hashlib.sha256(json.dumps(before,sort_keys=True).encode()).hexdigest()
@@ -128,6 +132,20 @@ COMMIT;
                                if source_catalog.get(section) != restored_catalog.get(section))
     require_equal([], differing_tables, 'row hashes in ' + ', '.join(differing_tables))
     require_equal([], differing_catalog, 'catalog sections ' + ', '.join(differing_catalog))
+    operator_journal_private = None
+    if 'dzoka.foundation_admin_operations' in after['tables']:
+        require_equal('f', sql(restored,"SELECT has_table_privilege('dzoka_app','dzoka.foundation_admin_operations','SELECT');"),
+                      'operator receipts remain private after restore')
+        # Prove canonical ACL comparison still rejects a real permission change.
+        try:
+            sql(restored,'GRANT SELECT ON dzoka.foundation_admin_operations TO dzoka_app;')
+            _, altered_catalog = snapshot(restored)
+            require_equal(False, restored_catalog['tables'] == altered_catalog['tables'],
+                          'unexpected runtime SELECT grant must change catalog evidence')
+        finally:
+            sql(restored,'REVOKE SELECT ON dzoka.foundation_admin_operations FROM dzoka_app;')
+        require_equal(restored_catalog,snapshot(restored)[1],'permission fault cleanup restores exact effective ACLs')
+        operator_journal_private = True
 
     def visible(tenant=None, subject=None):
         context = ''
@@ -156,6 +174,7 @@ COMMIT;
     result = {'status': 'PASS', 'tables': len(after['tables']),
               'rows': sum(t['rows'] for t in after['tables'].values()),
               'rowAndCatalogEquality': True, 'restoredTenantIsolation': True,
+              'operatorJournalPrivate': operator_journal_private,
               'sourceSnapshotIndependence': True, 'backupBundle': bundle, 'snapshot': after,
               'limits': ['same-cluster logical restore; roles pre-exist',
                          'object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects',

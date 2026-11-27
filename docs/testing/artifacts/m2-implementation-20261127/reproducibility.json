@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "scope": "Two fresh source copies, offline shared pinned Maven cache, same reviewed JDK/host",
+  "builds": [
+    {
+      "build": "first",
+      "sha256": "456278744413fb51cf74f1ced515e5cdb0c28d5711360985575973c80c07211c",
+      "bytes": 40751523
+    },
+    {
+      "build": "second",
+      "sha256": "456278744413fb51cf74f1ced515e5cdb0c28d5711360985575973c80c07211c",
+      "bytes": 40751523
+    }
+  ]
+}
