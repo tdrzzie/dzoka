@@ -74,5 +74,6 @@ The [architecture baseline](../architecture/baseline.md) is the current implemen
 | 0065 | [Governed feedback and operational controls](0065-governed-feedback-and-operational-boundaries.md) | Implemented current-account profile; production acceptance remains separate |
 | 0066 | [Foundation administration](0066-foundation-administration.md) | Versioned organization lifecycle and privileged local tenant/membership administration |
 | 0067 | [Canonical places and media reconciliation](0067-canonical-places-and-media-reconciliation.md) | Versioned tenant place hierarchy and recurring leased tombstone sweeps |
+| 0068 | [Stable place-command receipts](0068-stable-place-command-receipts.md) | Versioned deterministic hashes and frozen historical readers |
 
 Changes to invariants require a superseding ADR with evidence and consequences. New records use `NNNN-short-title.md`, status, context, decision, alternatives, consequences, source-audit evidence and implementation implications. No major requirement has been dropped.

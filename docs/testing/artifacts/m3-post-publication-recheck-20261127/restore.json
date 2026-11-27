@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "tables": 111,
+  "rows": 6452,
+  "rowAndCatalogEquality": true,
+  "restoredTenantIsolation": true,
+  "restoredPlaceIsolation": true,
+  "operatorJournalPrivate": true,
+  "sourceSnapshotIndependence": true,
+  "limits": [
+    "same-cluster logical restore; roles pre-exist",
+    "object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects",
+    "not production RPO/RTO, HA or point-in-time recovery"
+  ],
+  "rawReceiptSha256": "87aa760201d3b685d35fd0bc0de63b62cb5cfdec0c728f96ae66ab03cf5735d0"
+}

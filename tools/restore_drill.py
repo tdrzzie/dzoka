@@ -122,6 +122,9 @@ INSERT INTO dzoka.place_aliases(tenant_id,place_id,version,ordinal,raw_label,nor
  ('{b}','{place_b}',1,0,'Restore shared alias','restore shared alias');
 COMMIT;
 """)
+    receipt_versions = None
+    if sql(source,"SELECT EXISTS(SELECT 1 FROM information_schema.columns WHERE table_schema='dzoka' AND table_name='place_commands' AND column_name='request_hash_version');") == 't':
+        receipt_versions = json.loads(sql(source,"SELECT coalesce(jsonb_object_agg(version,rows),'{}') FROM (SELECT request_hash_version::text version,count(*) rows FROM dzoka.place_commands GROUP BY request_hash_version) x;"))
     before, source_catalog = snapshot(source)
     command('pg_dump', '-h', '127.0.0.1', '-U', 'dzoka_control', '-d', source,
             '--format=custom', '--file=' + str(archive))
@@ -151,6 +154,9 @@ COMMIT;
                                if source_catalog.get(section) != restored_catalog.get(section))
     require_equal([], differing_tables, 'row hashes in ' + ', '.join(differing_tables))
     require_equal([], differing_catalog, 'catalog sections ' + ', '.join(differing_catalog))
+    if receipt_versions is not None:
+        require_equal(receipt_versions,json.loads(sql(restored,"SELECT coalesce(jsonb_object_agg(version,rows),'{}') FROM (SELECT request_hash_version::text version,count(*) rows FROM dzoka.place_commands GROUP BY request_hash_version) x;")),
+                      'restored legacy and canonical place receipt formats')
     operator_journal_private = None
     if 'dzoka.foundation_admin_operations' in after['tables']:
         require_equal('f', sql(restored,"SELECT has_table_privilege('dzoka_app','dzoka.foundation_admin_operations','SELECT');"),
@@ -213,6 +219,7 @@ COMMIT;
               'rowAndCatalogEquality': True, 'restoredTenantIsolation': True,
               'operatorJournalPrivate': operator_journal_private,
               'restoredPlaceIsolation': restored_place_isolation,
+              'restoredPlaceReceiptHashVersions': receipt_versions,
               'sourceSnapshotIndependence': True, 'backupBundle': bundle, 'snapshot': after,
               'limits': ['same-cluster logical restore; roles pre-exist',
                          'object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects',

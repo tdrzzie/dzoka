@@ -229,3 +229,7 @@ See the [M5 execution record](../testing/m5-verification-2026-11-18.md). Ownersh
 | A29 | Separate pair/ownership/fraud decisions, independent source-bound outcome audits, known-denominator suppression, dataset source/split/dedup checks, independent thresholds and default fail-closed model governance | Permitted representative cohorts, qualified reviewers, approved thresholds and calibration |
 
 Final current-account checks pass 267 Python, 36 Java unit and 111 Core/private-S3/raster integrations with zero skips. [M11 scope, receipts and blockers](../testing/m11-verification-2026-11-26.md). All-specification production acceptance and earlier explicit deferrals remain open.
+
+## M3 durable retry correction (2026-11-27)
+
+The local intake/place/media contract now includes executed concurrent API replicas and restarted JVMs, populated V27-to-V28 upgrade with both historical create/update hash orderings, unchanged legacy digests/results, changed-body conflicts and tenant/actor/revocation boundaries. Full verification passes 269 Python/42 Java unit/136 integrations without skips and an exact 111-table/6,486-row restore including both receipt versions. [Source-bound execution and deployment limits](../testing/m3-retry-fix-2026-11-27.md). Target HA, mixed-version rollout, storage/backup recovery and institution/site acceptance are not inferred from these local tests.

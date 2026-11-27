@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-27",
+  "baseCommit": "20791be6760405d724b0d812f035039756eb35a2",
+  "verdict": "Local M3 retry defect fixed and verified; production/site acceptance remains separate",
+  "checks": {
+    "python": 269,
+    "javaUnit": 42,
+    "fullIntegration": 136,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "independentCanonicalHashJvms": 8,
+    "independentHttpServerJvms": 6,
+    "legacyUpgradeReceipts": 4,
+    "sourceAuditGate": "PASS",
+    "registryIntegrity": "PASS",
+    "architecture": "PASS",
+    "dependencyArtifacts": 106,
+    "restoreTables": 111,
+    "restoreRows": 6486,
+    "restoreReceiptVersions": {
+      "1": 2,
+      "2": 56
+    }
+  },
+  "runtime": {
+    "jdk": "Oracle 25.0.4",
+    "targetBytecode": 21,
+    "postgresql": "18.6",
+    "maven": "3.9.16",
+    "privateS3": "reviewed native SeaweedFS 4.51",
+    "raster": "existing pinned Docker image"
+  },
+  "logs": {
+    "m3-retry-fix-full-20261127.log": "3be96a28b680e53877adeb5ccfbe7b9f913513c31247e6bb435ee8bbdefd5dc0",
+    "m3-retry-fix-python-20261127.log": "33ab48e9576f6f97bf8b934565df2b4b37e6c4715be5155f9d29ecfb5364c0dc"
+  },
+  "artifacts": {
+    "canonical-probe.json": "cc114715d740dd0f5bbcb517255b2adebc8ffb72d23443cf205f76d4d3d91edb",
+    "CanonicalPlaceRetryHashProbe.java": "8aec3385f9348f33dad42cd618e4a0a6d0e32a09a80bd106c0351c7414ef6600",
+    "jvm-tests.json": "57f12aa964a940c71ffb653e0fda647f70ee9f1fa4e36960a58d05b07ff1ce32",
+    "restore.json": "26f73c8ae11e65e0313bc7ef7da9eedbb236b7474c777a61c3006d6490459aaf",
+    "sources.json": "787bc83bc39ee17b27fd2cd153801697d98bde9b2c8c1f7c68d95e14c7698f85"
+  },
+  "limits": [
+    "same-cluster logical restore; roles pre-exist",
+    "object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects",
+    "not production RPO/RTO, HA or point-in-time recovery"
+  ]
+}

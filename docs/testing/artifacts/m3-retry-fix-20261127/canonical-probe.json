@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "independentJvmProcesses": 8,
+  "uniqueDigests": 1,
+  "fixture": "public synthetic input",
+  "runs": [
+    {
+      "run": 1,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    },
+    {
+      "run": 2,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    },
+    {
+      "run": 3,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    },
+    {
+      "run": 4,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    },
+    {
+      "run": 5,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    },
+    {
+      "run": 6,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    },
+    {
+      "run": 7,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    },
+    {
+      "run": 8,
+      "result": "PROBE 2 728f6989f01bb363b84d950978da6c83c676103499f4c42b5a195165e313e104"
+    }
+  ],
+  "sourceSha256": "8aec3385f9348f33dad42cd618e4a0a6d0e32a09a80bd106c0351c7414ef6600"
+}

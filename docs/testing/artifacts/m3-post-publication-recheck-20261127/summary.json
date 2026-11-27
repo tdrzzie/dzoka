@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-27",
+  "commit": "20791be6760405d724b0d812f035039756eb35a2",
+  "verdict": "NOT FULLY COMPLETE: cross-process place-command request hash is nondeterministic; durable retries can conflict after restart or on another replica",
+  "probe": {
+    "scope": "Eight separate JVMs using Spring Boot Jackson auto-configuration and repository application.properties; identical public PlaceDraft and actual JdbcPlaces hash expression",
+    "values": [
+      "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+      "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+      "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+      "PROBE:false:0b96326d588fb61bd31291304358e6c1b547ba88708ae3f7ada0a71c48da73be",
+      "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+      "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+      "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+      "PROBE:false:0b96326d588fb61bd31291304358e6c1b547ba88708ae3f7ada0a71c48da73be"
+    ],
+    "distinctDigests": [
+      "0b96326d588fb61bd31291304358e6c1b547ba88708ae3f7ada0a71c48da73be",
+      "bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b"
+    ],
+    "mapKeySortingEnabled": false
+  },
+  "scopeNotes": [
+    "Exact current JdbcPlaces digest expression and Spring Boot Jackson auto-configuration with repository application.properties",
+    "Actual hashing executed in eight separate reviewed JVM processes using only public synthetic input",
+    "HTTP/SQL replay after restart was not separately executed; conflict outcome follows from inspected digest equality check",
+    "Existing same-process integration suite does not exercise this condition"
+  ],
+  "publishedM3ArtifactHashesVerified": [
+    "full-restore.json",
+    "jvm-tests.json",
+    "place-restore.json"
+  ],
+  "publishedCanonicalSourceHashesMatchOriginalManifest": true,
+  "sourceSha256": {
+    "src/main/java/org/dzoka/places/adapters/JdbcPlaces.java": "6d2b86671fb351dba074c536e960fc0d46416bf3dfa9c5f692a4a9f5e4de309c",
+    "src/main/java/org/dzoka/places/domain/PlaceDraft.java": "4424d4a9dcefbdd84be85b90dd357f749d8dcabcdee501166fcc186ce397fcdd",
+    "src/main/java/org/dzoka/places/application/Places.java": "4792488a63af6a2ae2fcc4901a257abad136d3c6e6303c66990486d3794395f5",
+    "src/main/resources/application.properties": "f78a8da432108514f92d6e89eebb83c2c5d14a04e2fc06d21a02500b0f28ad9f",
+    "dependencies.lock.json": "a98720966dcd65097853d6c41e4dabd94f456cccf0e2ee1db71468c02e767cbf"
+  },
+  "artifactSha256": {
+    "restore.json": "4a2c1ef3ed83a66fea479ab8901c695dea9ca3df6096b3f9531c373442736448",
+    "spring-result.json": "1a0cee3fe3cd19e7e4c94a7fafc6bd1afdf01c129bf0936170d2adf57bbfcd0f",
+    "SpringPlaceRetryHashProbe.java": "8c0e6434b67073cdc44f781230c3db2567d340e1453380d8115da815ee071c74"
+  },
+  "applicationChanged": false,
+  "checks": {
+    "sourceGate": "PASS",
+    "dependencyArtifactCount": 106,
+    "architecture": "PASS",
+    "javaUnit": 38,
+    "integration": 134,
+    "skipped": 0,
+    "restore": {
+      "status": "PASS",
+      "tables": 111,
+      "rows": 6452,
+      "rowAndCatalogEquality": true,
+      "restoredTenantIsolation": true,
+      "restoredPlaceIsolation": true,
+      "operatorJournalPrivate": true,
+      "sourceSnapshotIndependence": true,
+      "limits": [
+        "same-cluster logical restore; roles pre-exist",
+        "object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects",
+        "not production RPO/RTO, HA or point-in-time recovery"
+      ],
+      "rawReceiptSha256": "87aa760201d3b685d35fd0bc0de63b62cb5cfdec0c728f96ae66ab03cf5735d0"
+    },
+    "placeRequestHashStability": "FAIL"
+  }
+}

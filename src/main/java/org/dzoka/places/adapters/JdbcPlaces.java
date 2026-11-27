@@ -7,11 +7,10 @@ import org.dzoka.identity.domain.VerifiedIdentity;
 import org.dzoka.places.domain.*;
 import org.dzoka.places.ports.PlaceCatalog;
 import org.springframework.stereotype.Component;
-import tools.jackson.databind.ObjectMapper;
 @Component
 public final class JdbcPlaces implements PlaceCatalog {
-    private final TenantTransactions tx;private final ObjectMapper json;
-    public JdbcPlaces(TenantTransactions tx,ObjectMapper json){this.tx=tx;this.json=json;}
+    private final TenantTransactions tx;
+    public JdbcPlaces(TenantTransactions tx){this.tx=tx;}
     private static void lock(Connection c,UUID tenant,boolean shared)throws SQLException{
         try(var s=c.prepareStatement("SELECT "+(shared?"pg_advisory_xact_lock_shared":"pg_advisory_xact_lock")+"(hashtextextended(?,67))")){s.setString(1,"places:"+tenant);s.execute();}
     }
@@ -42,11 +41,11 @@ public final class JdbcPlaces implements PlaceCatalog {
         path(c,tenant,id,null,true);
     }
     @Override public PlaceView save(VerifiedIdentity actor,UUID tenant,UUID target,PlaceDraft d,String key){
-        String digest=VerifiedIdentity.digest(json.writeValueAsString(Map.of("id",target==null?"CREATE":target.toString(),"draft",d))),keyHash=VerifiedIdentity.digest(key);
+        String digest=PlaceCommandHash.canonical(target,d),keyHash=VerifiedIdentity.digest(key);
         return tx.execute(actor,tenant,"places:manage",c->{
             lock(c,tenant,false);
-            try(var s=c.prepareStatement("SELECT request_hash,place_id,version FROM dzoka.place_commands WHERE tenant_id=? AND actor_ref=? AND key_hash=?")){
-                s.setObject(1,tenant);s.setString(2,actor.reference());s.setString(3,keyHash);try(var r=s.executeQuery()){if(r.next()){if(!digest.equals(r.getString(1)))throw new Failures.Conflict();return read(c,tenant,r.getObject(2,UUID.class),r.getLong(3));}}
+            try(var s=c.prepareStatement("SELECT request_hash,place_id,version,request_hash_version FROM dzoka.place_commands WHERE tenant_id=? AND actor_ref=? AND key_hash=?")){
+                s.setObject(1,tenant);s.setString(2,actor.reference());s.setString(3,keyHash);try(var r=s.executeQuery()){if(r.next()){if(!PlaceCommandHash.matches(r.getInt(4),r.getString(1),target,d))throw new Failures.Conflict();return read(c,tenant,r.getObject(2,UUID.class),r.getLong(3));}}
             }
             UUID id=target==null?UUID.randomUUID():target;long next=target==null?1:current(c,tenant,id)+1;
             if(next!=d.expectedVersion()+1)throw new Failures.Conflict();
@@ -63,7 +62,7 @@ public final class JdbcPlaces implements PlaceCatalog {
                 s.setObject(1,tenant);s.setObject(2,id);s.setLong(3,next);s.setString(4,d.name());s.setString(5,PlaceDraft.normalize(d.name()));s.setString(6,d.kind());s.setObject(7,d.parentId());s.setObject(8,parentVersion);s.setBoolean(9,d.active());s.setObject(10,d.latitude());s.setObject(11,d.longitude());s.setObject(12,d.uncertaintyMeters());s.setString(13,d.timezone());s.setString(14,actor.reference());s.executeUpdate();
             }
             try(var s=c.prepareStatement("INSERT INTO dzoka.place_aliases(tenant_id,place_id,version,ordinal,raw_label,normalized_label) VALUES(?,?,?,?,?,?)")){int ordinal=0;for(String alias:d.aliases()){s.setObject(1,tenant);s.setObject(2,id);s.setLong(3,next);s.setInt(4,ordinal++);s.setString(5,alias);s.setString(6,PlaceDraft.normalize(alias));s.addBatch();}s.executeBatch();}
-            try(var s=c.prepareStatement("INSERT INTO dzoka.place_commands(tenant_id,actor_ref,key_hash,request_hash,place_id,version) VALUES(?,?,?,?,?,?)")){s.setObject(1,tenant);s.setString(2,actor.reference());s.setString(3,keyHash);s.setString(4,digest);s.setObject(5,id);s.setLong(6,next);s.executeUpdate();}
+            try(var s=c.prepareStatement("INSERT INTO dzoka.place_commands(tenant_id,actor_ref,key_hash,request_hash,place_id,version,request_hash_version) VALUES(?,?,?,?,?,?,?)")){s.setObject(1,tenant);s.setString(2,actor.reference());s.setString(3,keyHash);s.setString(4,digest);s.setObject(5,id);s.setLong(6,next);s.setInt(7,PlaceCommandHash.CURRENT_VERSION);s.executeUpdate();}
             String event=target==null?"place.created":"place.updated";
             try(var s=c.prepareStatement("INSERT INTO dzoka.audit_events(tenant_id,id,actor_ref,action,entity_id) VALUES(?,?,?,?,?)")){s.setObject(1,tenant);s.setObject(2,UUID.randomUUID());s.setString(3,actor.reference());s.setString(4,event);s.setObject(5,id);s.executeUpdate();}
             try(var s=c.prepareStatement("INSERT INTO dzoka.outbox(tenant_id,id,event_type,aggregate_id,aggregate_version,place_id,payload) VALUES(?,?,?,?,?,?,jsonb_build_object('placeId',CAST(? AS text)))")){s.setObject(1,tenant);s.setObject(2,UUID.randomUUID());s.setString(3,event);s.setObject(4,id);s.setLong(5,next);s.setObject(6,id);s.setString(7,id.toString());s.executeUpdate();}

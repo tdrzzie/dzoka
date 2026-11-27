@@ -1,0 +1,18 @@
+{
+  "scope": "Eight separate JVMs using Spring Boot Jackson auto-configuration and repository application.properties; identical public PlaceDraft and actual JdbcPlaces hash expression",
+  "values": [
+    "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+    "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+    "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+    "PROBE:false:0b96326d588fb61bd31291304358e6c1b547ba88708ae3f7ada0a71c48da73be",
+    "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+    "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+    "PROBE:false:bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b",
+    "PROBE:false:0b96326d588fb61bd31291304358e6c1b547ba88708ae3f7ada0a71c48da73be"
+  ],
+  "distinctDigests": [
+    "0b96326d588fb61bd31291304358e6c1b547ba88708ae3f7ada0a71c48da73be",
+    "bc33e0440698a8d2b25e2357af6167e3f8c068d55b8b93c546b0999ebdb22b6b"
+  ],
+  "mapKeySortingEnabled": false
+}

@@ -32,6 +32,14 @@ Hierarchy depth, including the leaf, is at most 32. Per-tenant serialization pre
 
 Each change commits pointer/revision/aliases, actor-private retry receipt, minimal audit and outbox together. Same key/body returns the original revision after later changes; a changed request conflicts. Membership is rechecked before replay. Labels and coordinates are not included in outbox payloads. Place names are operational metadata, not proof of custody, identity or ownership.
 
+## Durable receipt formats and upgrade
+
+V28 adds `request_hash_version`: existing receipts become version 1 without changing their digest, key or historical result. New commands explicitly write version 2 using domain-separated binary framing, fixed field order and exact UTF-8 labels. Alias ordering, nulls, coordinate bits, target ID and expected version remain significant. This encoding is independent of JSON mapper configuration and process map iteration.
+
+Version 1 reconstructs both historical outer-map JSON orderings with a private frozen ten-field projection and accepts only a matching stored digest. Membership and tenant/actor scope are checked before replay; changed bodies still conflict. Unknown versions fail closed. Both formats return the original immutable revision even after later updates.
+
+Drain old API replicas, apply V28 with the migration identity, then start patched replicas with the runtime identity. Do not route traffic to old binaries or downgrade after writing version 2 receipts: those binaries cannot read version 2 and retain the original legacy map-order defect. Keep old receipts intact. [ADR 0068](../adr/0068-stable-place-command-receipts.md) defines compatibility; [executed migration/restart/replica checks](../testing/m3-retry-fix-2026-11-27.md) establish the local behavior.
+
 ## Report linkage
 
 Report JSON may additionally contain `placeId` and `placeVersion`; both are required together or both absent. The selected revision and all current ancestors must be active, and the version must be current at submission. The locations application interface validates under the report transaction's shared hierarchy lock, and tenant-qualified foreign keys retain exact historical references.
