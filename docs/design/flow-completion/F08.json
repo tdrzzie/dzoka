@@ -1,0 +1,102 @@
+{
+  "flow": "F08",
+  "page": "01c1c9a5-459f-804b-8009-027fd49031a5",
+  "guide": "01c1c9a5-459f-804b-8009-028069bae3d3",
+  "views": [
+    {
+      "id": "N01",
+      "title": "Write a useful update.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-027fe071f986",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "N02",
+      "title": "Review every language.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-027fe360f736",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "N03",
+      "title": "Choose your updates.",
+      "device": "mobile",
+      "kind": "consent",
+      "board": "01c1c9a5-459f-804b-8009-027fe57cbc60",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "N04",
+      "title": "Resolve a delivery issue.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-027fe660c6bf",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "N05",
+      "title": "A confirmed notice, not a return.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-028009922d3c",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "N06",
+      "title": "Your request is recorded.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-02800c79ec68",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "N07",
+      "title": "Draft an email update.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-02800f6e4f90",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "N08",
+      "title": "Keep an SMS update minimal.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-02801707554a",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "N09",
+      "title": "Resolve template validation.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-02801914d19c",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 84,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "N01"
+  ],
+  "scope": "Native concept and navigation design, not runtime implementation",
+  "criteria": [
+    "Channel-specific template editor and variable safety",
+    "Source/target locale preview with review gating",
+    "Explicit channel opt-in/withdrawal",
+    "Throttled, unknown, rejected and confirmed-delivery branches"
+  ]
+}

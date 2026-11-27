@@ -169,7 +169,7 @@ class FoundationAdministrationIT extends IntegrationFixture {
                     s.setObject(1,tenant);s.setString(2,hash);s.setString(3,hash);s.setString(4,hash);s.setObject(5,organization);s.executeUpdate();
                 }
             }
-            var migration=org.flywaydb.core.Flyway.configure().dataSource(upgradeUrl,required("DZOKA_TEST_MIGRATION_USER"),required("DZOKA_TEST_MIGRATION_PASSWORD")).load();
+            var migration=org.flywaydb.core.Flyway.configure().dataSource(upgradeUrl,required("DZOKA_TEST_MIGRATION_USER"),required("DZOKA_TEST_MIGRATION_PASSWORD")).target("26").load();
             assertEquals(1,migration.migrate().migrationsExecuted);migration.validate();assertEquals(0,migration.migrate().migrationsExecuted);
             try(var c=DriverManager.getConnection(upgradeUrl,adminUser,adminPassword);var s=c.prepareStatement("SELECT result_name,result_version FROM dzoka.idempotency WHERE tenant_id=?")) {
                 s.setObject(1,tenant);try(var r=s.executeQuery()){assertTrue(r.next());assertEquals("Original upgrade institution",r.getString(1));assertEquals(1,r.getLong(2));}

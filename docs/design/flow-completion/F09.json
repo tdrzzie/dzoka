@@ -1,0 +1,104 @@
+{
+  "flow": "F09",
+  "page": "01c1c9a5-459f-804b-8009-028166f2473a",
+  "guide": "01c1c9a5-459f-804b-8009-0281b670f9d3",
+  "views": [
+    {
+      "id": "Q01",
+      "title": "Review a private delivery route.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-028172a6fb36",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q02",
+      "title": "This route needs another check.",
+      "device": "mobile",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-0281754fd31f",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "Q03",
+      "title": "Authorise the booking request.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-02817637ec12",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q04",
+      "title": "Hand over the physical item.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0281798cc9b8",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q05",
+      "title": "Review cancellation.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-0281885ff5cc",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q06",
+      "title": "Track the exact operation.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-02818c636059",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q07",
+      "title": "Courier possession recorded.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-028191ae3d8f",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q08",
+      "title": "Cancellation confirmed.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-028195f9adfe",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q09",
+      "title": "Do not dispatch this item.",
+      "device": "desktop",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-0281a76ba312",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "Q10",
+      "title": "Reconcile before another send.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0281af925f86",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 101,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "Q05"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "flow": "F25",
+  "page": "01c1c9a5-459f-804b-8009-02857bd89943",
+  "guide": "01c1c9a5-459f-804b-8009-0285b08c0b3f",
+  "views": [
+    {
+      "id": "B01",
+      "title": "One system across every route.",
+      "device": "desktop",
+      "kind": "responsiveSpec",
+      "board": "01c1c9a5-459f-804b-8009-028586dc8553",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "B02",
+      "title": "Review your private evidence.",
+      "device": "mobile",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-02858a12466b",
+      "width": 320.0000047683716,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "B03",
+      "title": "Review without losing context.",
+      "device": "tablet",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-02858b46c630",
+      "width": 1023.9999771118164,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "B04",
+      "title": "More room, the same boundary.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-028592a88c16",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "B05",
+      "title": "Make each action reachable.",
+      "device": "desktop",
+      "kind": "accessibility",
+      "board": "01c1c9a5-459f-804b-8009-0285963de83f",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "B06",
+      "title": "Readable when the network is not.",
+      "device": "desktop",
+      "kind": "responsiveSpec",
+      "board": "01c1c9a5-459f-804b-8009-02859981dac9",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "B07",
+      "title": "Private evidence, enlarged.",
+      "device": "largeText",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0285a90e4472",
+      "width": 320.0000047683716,
+      "height": 1679.9999237060547
+    },
+    {
+      "id": "B08",
+      "title": "Focus stays with the task.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-0285a9ea6782",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "B09",
+      "title": "Preview longer localised content.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0285abc86355",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 74,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "B07"
+  ],
+  "responsiveContract": "docs/design/responsive-layout-contract.json",
+  "corrections": [
+    "Moved enlarged-text footer inside frame; enlarged error copy and rechecked exported layout."
+  ]
+}

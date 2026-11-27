@@ -6,7 +6,7 @@ import org.dzoka.media.domain.MediaView;
 public interface MediaStore {
     record Asset(UUID tenant,UUID id,UUID report,String state,String sourceKey,String sourceSha,long sourceBytes,
             String declaredType,String derivativeKey,String derivativeSha,long derivativeBytes,Integer width,Integer height,
-            Instant expires,String rejection,UUID lease,long purgeVersion) {
+            Instant expires,String rejection,UUID lease,long purgeVersion,UUID cleanupToken) {
         public MediaView view(){return new MediaView(id,report,state,sourceBytes,width,height,expires,rejection);}
     }
     void authorizeUpload(VerifiedIdentity actor,UUID tenant,UUID report);

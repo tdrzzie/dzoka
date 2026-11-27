@@ -1,0 +1,68 @@
+{
+  "flow": "F19",
+  "page": "01c1c9a5-459f-804b-8009-0283fbc0f956",
+  "guide": "01c1c9a5-459f-804b-8009-02842eca9183",
+  "views": [
+    {
+      "id": "AOP1",
+      "title": "Prepare a member access request.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0284065ad62d",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "AOP2",
+      "title": "Grant only the needed scope.",
+      "device": "desktop",
+      "kind": "matrix",
+      "board": "01c1c9a5-459f-804b-8009-02840a8480d8",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "AOP3",
+      "title": "Track the operator decision.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-02840d4e6f5d",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "AOP4",
+      "title": "Understand the policy impact.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-028415c2fd44",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "AOP5",
+      "title": "Confirm the current policy version.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-028419c4defd",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "AOP6",
+      "title": "A policy decision, with history.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-02841c673a53",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 42,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "AOP3"
+  ]
+}

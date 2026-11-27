@@ -97,7 +97,7 @@ public final class JdbcMediaStore implements MediaStore {
         }
     }
     private static void queueCleanup(Connection c,Asset a) throws SQLException {
-        try(var s=c.prepareStatement("UPDATE dzoka.media_assets SET state='DELETED',purge_pending=true,purge_version=purge_version+1,lease_token=NULL,lease_owner=NULL,lease_until=NULL WHERE tenant_id=? AND id=?")){
+        try(var s=c.prepareStatement("UPDATE dzoka.media_assets SET state='DELETED',purge_pending=true,purge_version=purge_version+1,cleanup_token=NULL,cleanup_until=NULL,lease_token=NULL,lease_owner=NULL,lease_until=NULL WHERE tenant_id=? AND id=?")){
             s.setObject(1,a.tenant());s.setObject(2,a.id());s.executeUpdate();
         }
     }
@@ -158,34 +158,43 @@ public final class JdbcMediaStore implements MediaStore {
             try(var s=c.createStatement();var r=s.executeQuery("SELECT dzoka.permitted('reports:purge')")){
                 r.next();if(!r.getBoolean(1))throw new Failures.Forbidden();
             }
-            UUID report;boolean parentDeleted;
+            UUID report;
             try(var s=c.prepareStatement("""
-                SELECT r.id,r.deleted_at IS NOT NULL FROM dzoka.reports r WHERE r.tenant_id=? AND NOT r.legal_hold AND EXISTS(
+                SELECT r.id FROM dzoka.reports r WHERE r.tenant_id=? AND NOT r.legal_hold AND EXISTS(
                     SELECT 1 FROM dzoka.media_assets m WHERE m.tenant_id=r.tenant_id AND m.report_id=r.id
-                    AND (m.purge_pending OR (r.deleted_at IS NOT NULL AND NOT m.reservation_released)))
+                    AND (m.cleanup_until IS NULL OR m.cleanup_until<clock_timestamp())
+                    AND (m.purge_pending OR ((r.deleted_at IS NOT NULL OR r.expires_at<=clock_timestamp() OR m.state='REJECTED')
+                     AND (NOT m.reservation_released OR m.cleanup_checked_at IS NULL OR m.cleanup_checked_at<=clock_timestamp()-interval '15 minutes'))))
                 ORDER BY r.id LIMIT 1 FOR UPDATE OF r SKIP LOCKED
                 """)){
-                s.setObject(1,tenant);try(var r=s.executeQuery()){if(!r.next())return Optional.empty();report=r.getObject(1,UUID.class);parentDeleted=r.getBoolean(2);}
+                s.setObject(1,tenant);try(var r=s.executeQuery()){if(!r.next())return Optional.empty();report=r.getObject(1,UUID.class);}
             }
             try(var s=c.prepareStatement("""
                 UPDATE dzoka.media_assets SET purge_started_at=coalesce(purge_started_at,clock_timestamp()),purge_pending=true,
                 state=CASE WHEN state='REJECTED' THEN 'REJECTED' ELSE 'DELETED' END,
-                lease_token=NULL,lease_owner=NULL,lease_until=NULL
-                WHERE tenant_id=? AND id=(SELECT id FROM dzoka.media_assets WHERE tenant_id=? AND report_id=?
-                    AND (purge_pending OR (? AND NOT reservation_released)) ORDER BY created_at,id LIMIT 1 FOR UPDATE SKIP LOCKED) RETURNING *
+                lease_token=NULL,lease_owner=NULL,lease_until=NULL,purge_version=purge_version+1,
+                cleanup_token=?,cleanup_until=clock_timestamp()+interval '120 seconds'
+                WHERE tenant_id=? AND id=(SELECT m.id FROM dzoka.media_assets m JOIN dzoka.reports r ON(r.tenant_id,r.id)=(m.tenant_id,m.report_id)
+                    WHERE m.tenant_id=? AND m.report_id=? AND NOT r.legal_hold AND (m.cleanup_until IS NULL OR m.cleanup_until<clock_timestamp())
+                    AND (m.purge_pending OR ((r.deleted_at IS NOT NULL OR r.expires_at<=clock_timestamp() OR m.state='REJECTED')
+                     AND (NOT m.reservation_released OR m.cleanup_checked_at IS NULL OR m.cleanup_checked_at<=clock_timestamp()-interval '15 minutes')))
+                    ORDER BY m.cleanup_checked_at NULLS FIRST,m.created_at,m.id LIMIT 1 FOR UPDATE OF m SKIP LOCKED) RETURNING *
                 """)){
-                s.setObject(1,tenant);s.setObject(2,tenant);s.setObject(3,report);s.setBoolean(4,parentDeleted);
+                s.setObject(1,UUID.randomUUID());s.setObject(2,tenant);s.setObject(3,tenant);s.setObject(4,report);
                 try(var r=s.executeQuery()){return r.next()?Optional.of(asset(r)):Optional.empty();}
             }
         });
     }
     @Override public boolean purged(VerifiedIdentity worker,Asset a){
         return tx.execute(worker,a.tenant(),"media:purge",c->{
-            try(var s=c.prepareStatement("SELECT * FROM dzoka.media_assets WHERE tenant_id=? AND id=? FOR UPDATE")){
+            try(var permission=c.createStatement();var r=permission.executeQuery("SELECT dzoka.permitted('reports:purge')")){r.next();if(!r.getBoolean(1))throw new Failures.Forbidden();}
+            try(var s=c.prepareStatement("SELECT *,cleanup_until>clock_timestamp() AS cleanup_current FROM dzoka.media_assets WHERE tenant_id=? AND id=? FOR UPDATE")){
                 s.setObject(1,a.tenant());s.setObject(2,a.id());try(var r=s.executeQuery()){
-                    if(!r.next() || r.getLong("purge_version")!=a.purgeVersion())return false;
+                    if(!r.next() || r.getLong("purge_version")!=a.purgeVersion() || !java.util.Objects.equals(r.getObject("cleanup_token",UUID.class),a.cleanupToken()))return false;
                     boolean released=r.getBoolean("reservation_released");
-                    try(var u=c.prepareStatement("UPDATE dzoka.media_assets SET purge_pending=false,reservation_released=true WHERE tenant_id=? AND id=?")){
+                    if(!r.getBoolean("purge_pending") && released)return true;
+                    if(!r.getBoolean("cleanup_current"))return false;
+                    try(var u=c.prepareStatement("UPDATE dzoka.media_assets SET purge_pending=false,reservation_released=true,cleanup_checked_at=clock_timestamp(),cleanup_until=NULL WHERE tenant_id=? AND id=?")){
                         u.setObject(1,a.tenant());u.setObject(2,a.id());u.executeUpdate();
                     }
                     if(!released)try(var u=c.prepareStatement("UPDATE dzoka.media_usage SET reserved_bytes=reserved_bytes-? WHERE tenant_id=?")){
@@ -200,6 +209,6 @@ public final class JdbcMediaStore implements MediaStore {
         return new Asset(r.getObject("tenant_id",UUID.class),r.getObject("id",UUID.class),r.getObject("report_id",UUID.class),r.getString("state"),
             r.getString("source_key"),r.getString("source_sha256"),r.getLong("source_bytes"),r.getString("declared_type"),r.getString("derivative_key"),
             r.getString("derivative_sha256"),r.getLong("derivative_bytes"),(Integer)r.getObject("width"),(Integer)r.getObject("height"),
-            r.getTimestamp("expires_at").toInstant(),r.getString("rejection_code"),r.getObject("lease_token",UUID.class),r.getLong("purge_version"));
+            r.getTimestamp("expires_at").toInstant(),r.getString("rejection_code"),r.getObject("lease_token",UUID.class),r.getLong("purge_version"),r.getObject("cleanup_token",UUID.class));
     }
 }

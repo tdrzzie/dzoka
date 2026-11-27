@@ -1,0 +1,68 @@
+{
+  "flow": "F21",
+  "page": "01c1c9a5-459f-804b-8009-02845af171a3",
+  "guide": "01c1c9a5-459f-804b-8009-028489af6caa",
+  "views": [
+    {
+      "id": "I01",
+      "title": "Configure a bounded connector.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0284661124e8",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "I02",
+      "title": "Review partner API scope.",
+      "device": "desktop",
+      "kind": "matrix",
+      "board": "01c1c9a5-459f-804b-8009-02846810abca",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "I03",
+      "title": "Read the connection check result.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-02846a845ac6",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "I04",
+      "title": "Approve the source, not its claims.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-028474eb5d05",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "I05",
+      "title": "Localise the outbound message.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-028477280547",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "I06",
+      "title": "Connector registration outcome.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-02847942ddee",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 42,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "I01"
+  ]
+}

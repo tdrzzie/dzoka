@@ -1,0 +1,967 @@
+{
+  "date": "2026-11-27",
+  "status": "Designed layout and interaction contract; implementation and assistive-technology verification remain outstanding.",
+  "penpotFlow": "F25",
+  "representatives": [
+    "B01",
+    "B02",
+    "B03",
+    "B04",
+    "B05",
+    "B06",
+    "B07",
+    "B08",
+    "B09"
+  ],
+  "breakpoints": {
+    "narrow": {
+      "min": 320,
+      "max": 767
+    },
+    "medium": {
+      "min": 768,
+      "max": 1199
+    },
+    "wide": {
+      "min": 1200
+    }
+  },
+  "shared": {
+    "readingOrder": "Page title/status, error summary, main content and field errors, contextual evidence, actions. DOM order follows visual order when implemented.",
+    "navigation": "Skip link to main; narrow menu opens a focused drawer, Escape closes and focus returns to its trigger; never depend on hover.",
+    "focus": "Visible 2 px contrasting focus ring; logical Tab/Shift+Tab order; interactive target at least 48 x 48 CSS px; no keyboard trap outside modal.",
+    "dialog": "Move focus to labelled dialog heading; keep focus inside while open; error summary links to fields; Escape/cancel restores trigger focus; destructive action is never initial focus.",
+    "errors": "Retain input and attachment state; focus error summary on failed submission; field-level message includes correction; announce asynchronous changes politely without stealing focus.",
+    "textExpansion": "Allow 200% text sizing and long locale strings with vertical growth; no fixed-height clipping, truncated critical labels or horizontal page scrolling at 320 px.",
+    "tables": "Real labelled headers; labelled cards or disclosure on narrow layouts; preserve sort/filter context; accessible table accompanies charts.",
+    "media": "Fit without distortion; preserve exact coordinate/dimension provenance; keyboard/numeric alternative to pointer selection; optional media has low-bandwidth fallback.",
+    "asyncAndOffline": "Show pending/unknown/rejected separately; preserve drafts with privacy controls; do not automatically replay release, handoff, financial or provider operations.",
+    "localeAndTime": "Show selected locale and explicit fallback; retain original raw input; label local time and UTC/offset with temporal uncertainty; locale review is independent.",
+    "privacy": "Role/tenant boundaries and unavailable private evidence remain intact at every breakpoint; hiding columns does not grant disclosure.",
+    "motion": "Respect reduced-motion preference; no status conveyed by motion or colour alone.",
+    "acceptance": "Concept layouts specify behavior; runtime keyboard, screen-reader, zoom, localization and browser/device tests are not claimed."
+  },
+  "patterns": {
+    "form": {
+      "narrow": "Single column; labels above fields; field help and errors follow their input; actions wrap below content.",
+      "medium": "Single readable form column plus collapsible context; keep labels with inputs.",
+      "wide": "Form and bounded contextual review panel; maximum form line length; primary action follows form."
+    },
+    "search": {
+      "narrow": "Filters open a focused sheet; results as summary cards; selected detail is a separate route.",
+      "medium": "Collapsible filters above result list; detail replaces list on selection.",
+      "wide": "Filter rail, results and selected detail; preserve result position on return."
+    },
+    "evidence": {
+      "narrow": "One private evidence section at a time; original input and derived interpretation labelled separately.",
+      "medium": "Evidence and review stack in reading order; media fits container.",
+      "wide": "Private evidence and current decision context side by side; never reveal secrets in summary."
+    },
+    "decision": {
+      "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+      "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+      "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+    },
+    "conversation": {
+      "narrow": "Chronological messages; composer follows latest message; attachment states inline.",
+      "medium": "Thread with collapsible case context.",
+      "wide": "Conversation and case context side by side; private contact details remain excluded."
+    },
+    "tag": {
+      "narrow": "QR has quiet zone and text alternative; print/write/manage actions stack; locator never truncated in exported artifact.",
+      "medium": "Tag preview and issuance details stack at intrinsic readable size.",
+      "wide": "Printable preview beside revocation and write state; print excludes owner data."
+    },
+    "queue": {
+      "narrow": "Table rows become labelled cards; priority, custody and action stay visible; details on separate route.",
+      "medium": "Essential columns plus row detail; optional columns in disclosure.",
+      "wide": "Sortable queue with explicit column headings and accessible labelled row actions."
+    },
+    "media": {
+      "narrow": "Fit source image without distorting coordinates; region/mask controls follow preview; numeric equivalent for pointer tools.",
+      "medium": "Preview above form; keyboard region controls and approval details below.",
+      "wide": "Source, numeric coordinates and disclosure preview in parallel; no hover-only tools."
+    },
+    "audit": {
+      "narrow": "Chronological event cards preserve timestamp, timezone, provenance and correction relation.",
+      "medium": "Essential event columns with expanded detail.",
+      "wide": "Append-oriented event table and correction context; original event remains readable."
+    },
+    "administration": {
+      "narrow": "Permission matrix becomes labelled scope cards; request summary follows; credential values stay hidden.",
+      "medium": "Scope groups collapse; current version remains visible.",
+      "wide": "Scope matrix and impact review side by side; no implicit cross-tenant selection."
+    },
+    "operations": {
+      "narrow": "Severity, availability and exact operation reference first; no automatic critical resend.",
+      "medium": "Stack operation history and reconciliation controls.",
+      "wide": "Operation table with current health, original attempt and repair controls."
+    },
+    "report": {
+      "narrow": "Filters in focused sheet; chart follows summary with equivalent accessible table; optional columns disclosed.",
+      "medium": "Two-column summaries only where readable; charts and data tables stack.",
+      "wide": "Report filters, denominator and charts with full tabular alternative; privacy suppression persists in exports."
+    },
+    "failure": {
+      "narrow": "Plain-language status, preserved work and one safe next action; no implied successful side effect.",
+      "medium": "Error summary before retained context.",
+      "wide": "Status panel and recovery context; unknown, denied, unavailable and failed are distinct."
+    }
+  },
+  "families": [
+    {
+      "flow": "F01",
+      "title": "Access, identity & workspace",
+      "pattern": "form",
+      "screenIds": [
+        "A01",
+        "A02",
+        "A03",
+        "A04",
+        "A05",
+        "A06",
+        "A10",
+        "E05",
+        "E06"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Single column; labels above fields; field help and errors follow their input; actions wrap below content.",
+        "medium": "Single readable form column plus collapsible context; keep labels with inputs.",
+        "wide": "Form and bounded contextual review panel; maximum form line length; primary action follows form."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F02",
+      "title": "Lost report & revision",
+      "pattern": "form",
+      "screenIds": [
+        "M01",
+        "M02",
+        "M03",
+        "M04",
+        "C01",
+        "C02",
+        "C03",
+        "C14",
+        "E01",
+        "E02",
+        "E03",
+        "E08"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Single column; labels above fields; field help and errors follow their input; actions wrap below content.",
+        "medium": "Single readable form column plus collapsible context; keep labels with inputs.",
+        "wide": "Form and bounded contextual review panel; maximum form line length; primary action follows form."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F03",
+      "title": "Search & partial availability",
+      "pattern": "search",
+      "screenIds": [
+        "M05",
+        "M06",
+        "C04",
+        "C05",
+        "D04",
+        "C15"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Filters open a focused sheet; results as summary cards; selected detail is a separate route.",
+        "medium": "Collapsible filters above result list; detail replaces list on selection.",
+        "wide": "Filter rail, results and selected detail; preserve result position on return."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F04",
+      "title": "Private ownership & representative claim",
+      "pattern": "evidence",
+      "screenIds": [
+        "M07",
+        "M08",
+        "C06",
+        "C07",
+        "C08",
+        "C09",
+        "C10",
+        "C12",
+        "E04"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "One private evidence section at a time; original input and derived interpretation labelled separately.",
+        "medium": "Evidence and review stack in reading order; media fits container.",
+        "wide": "Private evidence and current decision context side by side; never reveal secrets in summary."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F05",
+      "title": "Approval, collection & return",
+      "pattern": "decision",
+      "screenIds": [
+        "M09",
+        "M14",
+        "C13",
+        "E07",
+        "D05",
+        "D11",
+        "D12",
+        "S19"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F06",
+      "title": "Finder intake & staffed acceptance",
+      "pattern": "form",
+      "screenIds": [
+        "M10",
+        "M13",
+        "D03",
+        "S06",
+        "S07"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Single column; labels above fields; field help and errors follow their input; actions wrap below content.",
+        "medium": "Single readable form column plus collapsible context; keep labels with inputs.",
+        "wide": "Form and bounded contextual review panel; maximum form line length; primary action follows form."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F07",
+      "title": "Private relay & moderation",
+      "pattern": "conversation",
+      "screenIds": [
+        "M11",
+        "C11",
+        "S17"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Chronological messages; composer follows latest message; attachment states inline.",
+        "medium": "Thread with collapsible case context.",
+        "wide": "Conversation and case context side by side; private contact details remain excluded."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F08",
+      "title": "Notification consent & delivery",
+      "pattern": "form",
+      "screenIds": [
+        "A07",
+        "O07",
+        "O08",
+        "O14",
+        "N01",
+        "N02",
+        "N03",
+        "N04",
+        "N05",
+        "N06",
+        "N07",
+        "N08",
+        "N09"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Single column; labels above fields; field help and errors follow their input; actions wrap below content.",
+        "medium": "Single readable form column plus collapsible context; keep labels with inputs.",
+        "wide": "Form and bounded contextual review panel; maximum form line length; primary action follows form."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F09",
+      "title": "Courier quote, consent & reconciliation",
+      "pattern": "decision",
+      "screenIds": [
+        "L01",
+        "L02",
+        "L03",
+        "L04",
+        "L05",
+        "S11",
+        "L17",
+        "Q01",
+        "Q02",
+        "Q03",
+        "Q04",
+        "Q05",
+        "Q06",
+        "Q07",
+        "Q08",
+        "Q09",
+        "Q10"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F10",
+      "title": "Owner receipt & transit changes",
+      "pattern": "decision",
+      "screenIds": [
+        "L05",
+        "L06",
+        "L07",
+        "S11",
+        "S12"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F11",
+      "title": "Voluntary reward & financial dispute",
+      "pattern": "decision",
+      "screenIds": [
+        "L08",
+        "L09",
+        "L10",
+        "S13",
+        "S14",
+        "L15",
+        "L16",
+        "L20",
+        "W01",
+        "W02",
+        "W03",
+        "W04",
+        "W05",
+        "W06",
+        "W07",
+        "W08",
+        "W09",
+        "W10",
+        "W11"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F12",
+      "title": "Registration, tags & finder relay",
+      "pattern": "tag",
+      "screenIds": [
+        "M12",
+        "L11",
+        "L12",
+        "L13",
+        "L14",
+        "L18",
+        "L19",
+        "T01",
+        "T02",
+        "T03",
+        "T04",
+        "T05",
+        "T06",
+        "T07",
+        "T08"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "QR has quiet zone and text alternative; print/write/manage actions stack; locator never truncated in exported artifact.",
+        "medium": "Tag preview and issuance details stack at intrinsic readable size.",
+        "wide": "Printable preview beside revocation and write state; print excludes owner data."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F13",
+      "title": "Staff queue, evidence & risk",
+      "pattern": "queue",
+      "screenIds": [
+        "D01",
+        "D02",
+        "S01",
+        "S02",
+        "S03",
+        "S04",
+        "S05"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Table rows become labelled cards; priority, custody and action stay visible; details on separate route.",
+        "medium": "Essential columns plus row detail; optional columns in disclosure.",
+        "wide": "Sortable queue with explicit column headings and accessible labelled row actions."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F14",
+      "title": "Custody, stale updates & incident holds",
+      "pattern": "decision",
+      "screenIds": [
+        "D06",
+        "S06",
+        "S07",
+        "S08"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F15",
+      "title": "Unclaimed property disposition",
+      "pattern": "decision",
+      "screenIds": [
+        "S09",
+        "S10",
+        "DPO1",
+        "DPO2",
+        "DPO3",
+        "DPO4",
+        "DPO5"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F16",
+      "title": "Scoped investigation & crop access",
+      "pattern": "media",
+      "screenIds": [
+        "D08",
+        "S15",
+        "S16",
+        "V01",
+        "V02",
+        "V03",
+        "V04",
+        "V05",
+        "V06"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Fit source image without distorting coordinates; region/mask controls follow preview; numeric equivalent for pointer tools.",
+        "medium": "Preview above form; keyboard region controls and approval details below.",
+        "wide": "Source, numeric coordinates and disclosure preview in parallel; no hover-only tools."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F17",
+      "title": "Trusted network & dispute",
+      "pattern": "decision",
+      "screenIds": [
+        "D07",
+        "O09",
+        "O10",
+        "S18"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F18",
+      "title": "Audit, EPCIS & correction",
+      "pattern": "audit",
+      "screenIds": [
+        "O11",
+        "O12"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Chronological event cards preserve timestamp, timezone, provenance and correction relation.",
+        "medium": "Essential event columns with expanded detail.",
+        "wide": "Append-oriented event table and correction context; original event remains readable."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F19",
+      "title": "Organisation access & policy",
+      "pattern": "administration",
+      "screenIds": [
+        "D10",
+        "O01",
+        "O02",
+        "O03",
+        "O04",
+        "AOP1",
+        "AOP2",
+        "AOP3",
+        "AOP4",
+        "AOP5",
+        "AOP6"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Permission matrix becomes labelled scope cards; request summary follows; credential values stay hidden.",
+        "medium": "Scope groups collapse; current version remains visible.",
+        "wide": "Scope matrix and impact review side by side; no implicit cross-tenant selection."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F20",
+      "title": "Privacy, retention & deletion",
+      "pattern": "decision",
+      "screenIds": [
+        "A08",
+        "A09",
+        "O05",
+        "O06"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Current status, holds and scope first; evidence then guarded action; confirmation is a full-width dialog.",
+        "medium": "Stacked action form and contextual decision package; no hidden critical hold.",
+        "wide": "Action form and decision context in parallel; confirmation shows exact current version."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F21",
+      "title": "Connectors, sources & API clients",
+      "pattern": "administration",
+      "screenIds": [
+        "O07",
+        "O08",
+        "O13",
+        "O14",
+        "I01",
+        "I02",
+        "I03",
+        "I04",
+        "I05",
+        "I06"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Permission matrix becomes labelled scope cards; request summary follows; credential values stay hidden.",
+        "medium": "Scope groups collapse; current version remains visible.",
+        "wide": "Scope matrix and impact review side by side; no implicit cross-tenant selection."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F22",
+      "title": "Platform, restore & operation failures",
+      "pattern": "operations",
+      "screenIds": [
+        "P01",
+        "P02",
+        "P03",
+        "P09",
+        "P10"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Severity, availability and exact operation reference first; no automatic critical resend.",
+        "medium": "Stack operation history and reconciliation controls.",
+        "wide": "Operation table with current health, original attempt and repair controls."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F23",
+      "title": "Governed data, evaluation & rollout",
+      "pattern": "report",
+      "screenIds": [
+        "P04",
+        "P05",
+        "P06",
+        "P07",
+        "P08",
+        "G01",
+        "G02",
+        "G03",
+        "G04",
+        "G05",
+        "G06",
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Filters in focused sheet; chart follows summary with equivalent accessible table; optional columns disclosed.",
+        "medium": "Two-column summaries only where readable; charts and data tables stack.",
+        "wide": "Report filters, denominator and charts with full tabular alternative; privacy suppression persists in exports."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F24",
+      "title": "Analytics, movement & optional prevention",
+      "pattern": "report",
+      "screenIds": [
+        "D09",
+        "P11",
+        "P12",
+        "H01",
+        "H02",
+        "H03",
+        "H04",
+        "H05",
+        "H06"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Filters in focused sheet; chart follows summary with equivalent accessible table; optional columns disclosed.",
+        "medium": "Two-column summaries only where readable; charts and data tables stack.",
+        "wide": "Report filters, denominator and charts with full tabular alternative; privacy suppression persists in exports."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F25",
+      "title": "Responsive access & critical workflows",
+      "pattern": "form",
+      "screenIds": [
+        "R01",
+        "R02",
+        "R03",
+        "R04",
+        "R05",
+        "R06",
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Single column; labels above fields; field help and errors follow their input; actions wrap below content.",
+        "medium": "Single readable form column plus collapsible context; keep labels with inputs.",
+        "wide": "Form and bounded contextual review panel; maximum form line length; primary action follows form."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    },
+    {
+      "flow": "F26",
+      "title": "Shared recovery and access failures",
+      "pattern": "failure",
+      "screenIds": [
+        "E01",
+        "E02",
+        "E03",
+        "E04",
+        "E05",
+        "E06",
+        "E07",
+        "E08"
+      ],
+      "designReferences": [
+        "B01",
+        "B02",
+        "B03",
+        "B04",
+        "B05",
+        "B06",
+        "B07",
+        "B08",
+        "B09"
+      ],
+      "reflow": {
+        "narrow": "Plain-language status, preserved work and one safe next action; no implied successful side effect.",
+        "medium": "Error summary before retained context.",
+        "wide": "Status panel and recovery context; unknown, denied, unavailable and failed are distinct."
+      },
+      "appliesTo": "All listed family states, including confirmations, pending, denied, empty, error and unknown outcomes."
+    }
+  ]
+}

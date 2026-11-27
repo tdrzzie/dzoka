@@ -13,7 +13,10 @@ import org.springframework.stereotype.Component;
 @Component
 public final class JdbcReports implements Reports {
     private final TenantTransactions tx;
-    public JdbcReports(TenantTransactions tx){this.tx=tx;}
+    private final org.dzoka.places.application.Places places;
+    public JdbcReports(TenantTransactions tx){this.tx=tx;this.places=null;}
+    @org.springframework.beans.factory.annotation.Autowired
+    public JdbcReports(TenantTransactions tx,org.dzoka.places.application.Places places){this.tx=tx;this.places=places;}
     @Override public ReportReceipt submit(VerifiedIdentity actor,UUID tenant,UUID target,Integer expected,
             ReportDraft draft,byte[] raw,String key){
         String operation=target==null?"report.create.v1":"report.revise.v1:"+target+":"+expected;
@@ -34,6 +37,7 @@ public final class JdbcReports implements Reports {
                     }
                 }
             }
+            if(draft.placeId()!=null){if(places==null)throw new Failures.Unavailable(new IllegalStateException("Place validator unavailable"));places.requireReference(c,tenant,draft.placeId(),draft.placeVersion());}
             UUID caseId,itemId,reportId;int version;long aggregateVersion;
             try(var budget=c.prepareStatement("SELECT dzoka.consume_report_budget()");var rows=budget.executeQuery()){rows.next();if(!rows.getBoolean(1))throw new Failures.RateLimited();}
             if(target==null){
@@ -59,14 +63,14 @@ public final class JdbcReports implements Reports {
             try(var s=c.prepareStatement("""
                 INSERT INTO dzoka.report_revisions(tenant_id,report_id,revision,raw_request,raw_sha256,raw_text,
                  normalized_text,normalization_version,language,timezone,raw_location,raw_time,latitude,longitude,
-                 uncertainty_meters,occurred_after,occurred_before,actor_ref,category)
-                VALUES(?,?,?,?,?,?,?,'unicode-nfc-whitespace-v1',?,?,?,?,?,?,?,?,?,?,?)
+                 uncertainty_meters,occurred_after,occurred_before,actor_ref,category,place_id,place_version)
+                VALUES(?,?,?,?,?,?,?,'unicode-nfc-whitespace-v1',?,?,?,?,?,?,?,?,?,?,?,?,?)
                 """)){
                 s.setObject(1,tenant);s.setObject(2,reportId);s.setInt(3,version);s.setBytes(4,raw);s.setString(5,digest);
                 s.setString(6,draft.rawText());s.setString(7,draft.normalizedText());s.setString(8,draft.language());s.setString(9,draft.timezone());
                 s.setString(10,draft.rawLocation());s.setString(11,draft.rawTime());s.setObject(12,draft.latitude());s.setObject(13,draft.longitude());
                 s.setObject(14,draft.uncertaintyMeters());s.setTimestamp(15,timestamp(draft.occurredAfter()));s.setTimestamp(16,timestamp(draft.occurredBefore()));
-                s.setString(17,actor.reference());s.setString(18,draft.category());s.executeUpdate();
+                s.setString(17,actor.reference());s.setString(18,draft.category());s.setObject(19,draft.placeId());s.setObject(20,draft.placeVersion());s.executeUpdate();
             }
             try(var s=c.prepareStatement("UPDATE dzoka.intake_commands SET report_id=?,case_id=?,item_id=?,result_revision=? WHERE tenant_id=? AND actor_ref=? AND operation=? AND key_hash=?")){
                 s.setObject(1,reportId);s.setObject(2,caseId);s.setObject(3,itemId);s.setInt(4,version);s.setObject(5,tenant);
@@ -104,7 +108,7 @@ public final class JdbcReports implements Reports {
                         r.getString("raw_text"),r.getString("normalized_text"),r.getString("normalization_version"),r.getString("language"),r.getString("timezone"),
                         r.getString("raw_location"),r.getString("raw_time"),(Double)r.getObject("latitude"),(Double)r.getObject("longitude"),(Double)r.getObject("uncertainty_meters"),
                         instant(r.getTimestamp("occurred_after")),instant(r.getTimestamp("occurred_before")),
-                        r.getTimestamp("expires_at").toInstant(),r.getBoolean("legal_hold"),r.getString("category"));
+                        r.getTimestamp("expires_at").toInstant(),r.getBoolean("legal_hold"),r.getString("category"),r.getObject("place_id",UUID.class),(Long)r.getObject("place_version"));
                 }
             }
         });

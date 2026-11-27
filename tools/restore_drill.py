@@ -103,6 +103,25 @@ INSERT INTO dzoka.organizations(tenant_id,id,name,version) VALUES
  ('{a}','{org_a}','Synthetic restore A',1),('{b}','{org_b}','Synthetic restore B',1);
 COMMIT;
 """)
+    place_fixtures = None
+    if sql(source,"SELECT to_regclass('dzoka.places') IS NOT NULL;") == 't':
+        place_a, place_child, place_b = (str(uuid.uuid4()) for _ in range(3))
+        place_fixtures = (place_a,place_child,place_b)
+        sql(source,f"""
+BEGIN;
+UPDATE dzoka.memberships SET permissions=array_append(permissions,'places:read') WHERE tenant_id IN ('{a}','{b}');
+INSERT INTO dzoka.places(tenant_id,id,version,parent_id,active) VALUES
+ ('{a}','{place_a}',1,NULL,true),('{a}','{place_child}',1,'{place_a}',true),('{b}','{place_b}',1,NULL,true);
+INSERT INTO dzoka.place_revisions(tenant_id,place_id,version,name,normalized_name,kind,parent_id,parent_version,active,actor_ref) VALUES
+ ('{a}','{place_a}',1,'Synthetic place A','synthetic place a','FACILITY',NULL,NULL,true,repeat('a',64)),
+ ('{a}','{place_child}',1,'Synthetic child A','synthetic child a','ROOM','{place_a}',1,true,repeat('a',64)),
+ ('{b}','{place_b}',1,'Synthetic place B','synthetic place b','FACILITY',NULL,NULL,true,repeat('b',64));
+INSERT INTO dzoka.place_aliases(tenant_id,place_id,version,ordinal,raw_label,normalized_label) VALUES
+ ('{a}','{place_a}',1,0,'Restore shared alias','restore shared alias'),
+ ('{a}','{place_child}',1,0,'Restore shared alias','restore shared alias'),
+ ('{b}','{place_b}',1,0,'Restore shared alias','restore shared alias');
+COMMIT;
+""")
     before, source_catalog = snapshot(source)
     command('pg_dump', '-h', '127.0.0.1', '-U', 'dzoka_control', '-d', source,
             '--format=custom', '--file=' + str(archive))
@@ -163,6 +182,24 @@ COMMIT;
     require_equal([org_a], visible(a, 'alice'), 'tenant A restored scope')
     require_equal([org_b], visible(b, 'bob'), 'tenant B restored scope')
     require_equal([''], visible(b, 'alice'), 'cross-tenant restored actor denied')
+    restored_place_isolation = None
+    if place_fixtures:
+        place_a,place_child,place_b = place_fixtures
+        def aliases(tenant=None,subject=None):
+            context=''
+            if tenant:
+                context=(f"SELECT set_config('dzoka.tenant_id','{tenant}',true);"
+                         "SELECT set_config('dzoka.issuer','https://restore.invalid',true);"
+                         f"SELECT set_config('dzoka.subject','{subject}',true);")
+            result=sql(restored,'BEGIN;'+context+
+                       "SELECT 'PLACES:'||coalesce(string_agg(place_id::text,',' ORDER BY place_id),'') FROM dzoka.place_aliases WHERE normalized_label='restore shared alias';ROLLBACK;",role='dzoka_app')
+            return [line.removeprefix('PLACES:') for line in result.splitlines() if line.startswith('PLACES:')]
+        require_equal([''],aliases(),'restored place aliases deny missing context')
+        require_equal([','.join(sorted([place_a,place_child]))],aliases(a,'alice'),'restored place alias ambiguity stays local to A')
+        require_equal([place_b],aliases(b,'bob'),'restored place aliases stay local to B')
+        require_equal([''],aliases(b,'alice'),'restored place aliases reject cross-tenant actor')
+        require_equal(place_a+':1',sql(restored,f"SELECT parent_id::text||':'||parent_version FROM dzoka.place_revisions WHERE tenant_id='{a}' AND place_id='{place_child}' AND version=1;"),'restored immutable parent revision')
+        restored_place_isolation=True
     unsafe = sql(restored, "SELECT count(*) FROM pg_roles WHERE rolname='dzoka_app' "
                  "AND (rolsuper OR rolbypassrls OR rolcreaterole OR rolcreatedb);"
                  "SELECT count(*) FROM pg_class c JOIN pg_namespace n ON n.oid=c.relnamespace "
@@ -175,6 +212,7 @@ COMMIT;
               'rows': sum(t['rows'] for t in after['tables'].values()),
               'rowAndCatalogEquality': True, 'restoredTenantIsolation': True,
               'operatorJournalPrivate': operator_journal_private,
+              'restoredPlaceIsolation': restored_place_isolation,
               'sourceSnapshotIndependence': True, 'backupBundle': bundle, 'snapshot': after,
               'limits': ['same-cluster logical restore; roles pre-exist',
                          'object snapshot is explicitly empty; tombstone replay is separately integration-tested; no external effects',

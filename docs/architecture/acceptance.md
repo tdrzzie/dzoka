@@ -55,6 +55,10 @@ No accuracy, load, recovery, backup/restore or production-readiness result is cl
 
 ## Executed intake/private-image portions (2026-10-26)
 
+The [M3 local completion record](../testing/m3-implementation-2026-11-27.md) supersedes the two local gaps identified by the recheck: V27 adds canonical place/alias/hierarchy APIs, exact report revision links and independent leased tombstone sweeps. New real-S3 tests omit both callbacks, revoke the original writer and reclaim cleanup leases; finite maintenance and populated upgrade execute. Verification passes 269 Python/38 Java unit/134 full integrations with zero skips, full 111-table/6,443-row restore and an additional restored place-isolation drill. Target rollout/all-format acceptance remains separately scoped.
+
+The [2026-11-27 substantive recheck](../testing/m3-verification-2026-11-27.md) verifies the current implementation and identifies remaining local place/reconciliation gaps. Its 120-case full suite includes 22 directly relevant M3 integrations. M11's real S3 restore-barrier/tombstone case supersedes the historical restore-replay deferral below; full object-store/target disaster recovery remains unproven.
+
 A clean build passed 5 Java unit checks and 36 integration tests on native PostgreSQL 18.6/SeaweedFS 4.51 plus the pinned Docker Temurin decoder. The all-Docker PostgreSQL/S3/decoder route independently passed the same suite, including the strengthened late-write/stale-cleanup acknowledgment case. The host JDK was Oracle 25.0.4 with Java 21 bytecode; remote CI and its exact host JDK are unverified. [IntakeIT](../../src/test/java/org/dzoka/IntakeIT.java), [MediaStoreIT](../../src/test/java/org/dzoka/MediaStoreIT.java), [S3StorageIT](../../src/test/java/org/dzoka/S3StorageIT.java) and [SandboxMediaIT](../../src/test/java/org/dzoka/SandboxMediaIT.java) extend the foundation coverage. [Run instructions](../development/intake-media.md) distinguish the full real-provider suite from explicitly narrower storage/database routes.
 
 | Acceptance IDs | Verified M3 portion | Still pending |

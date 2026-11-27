@@ -11,6 +11,15 @@ import org.dzoka.media.ports.MediaStore;
 import org.junit.jupiter.api.*;
 
 class MediaStoreIT extends IntegrationFixture {
+    @Test void releasedLegacyTombstoneWithNoPreviousSweepIsImmediatelyEligible()throws Exception {
+        var store=app.getBean(MediaStore.class);UUID report=report();var asset=prepare(report);
+        app.getBean(IntakeService.class).delete(who("owner"),A,report);
+        try(var c=admin()){
+            try(var s=c.prepareStatement("UPDATE dzoka.media_assets SET state='DELETED',reservation_released=true,purge_pending=false,cleanup_checked_at=NULL WHERE tenant_id=? AND id=?")){s.setObject(1,A);s.setObject(2,asset.id());s.executeUpdate();}
+            try(var s=c.prepareStatement("UPDATE dzoka.media_usage SET reserved_bytes=0 WHERE tenant_id=?")){s.setObject(1,A);s.executeUpdate();}
+        }
+        var legacy=store.purgeCandidate(who("purger"),A).orElseThrow();assertEquals(asset.id(),legacy.id());assertTrue(store.purged(who("purger"),legacy));assertTrue(store.purgeCandidate(who("purger"),A).isEmpty());
+    }
     @BeforeEach void clearOnlyThisSyntheticTenantMedia() throws Exception {
         try(var c=admin()){
             for(String table:List.of("outbox","media_assets","media_usage"))

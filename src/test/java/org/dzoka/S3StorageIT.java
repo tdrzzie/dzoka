@@ -13,6 +13,62 @@ import org.junit.jupiter.api.Test;
 import tools.jackson.databind.ObjectMapper;
 
 class S3StorageIT extends S3Fixture {
+    private void maintenanceCycle()throws Exception {
+        var javaExe=java.nio.file.Path.of(System.getProperty("java.home"),"bin",System.getProperty("os.name").startsWith("Windows")?"java.exe":"java").toString();
+        var builder=new ProcessBuilder(javaExe,"-cp",System.getProperty("java.class.path"),"org.dzoka.bootstrap.MediaWorkerMain","maintain");
+        var env=builder.environment();env.keySet().removeIf(k->k.startsWith("DZOKA_")||k.startsWith("SPRING_"));
+        env.put("DZOKA_DB_URL",url);env.put("DZOKA_DB_USER","dzoka_app");env.put("DZOKA_DB_PASSWORD",required("DZOKA_TEST_APP_PASSWORD"));
+        env.put("DZOKA_WORKER_ISSUER",issuer);env.put("DZOKA_WORKER_SUBJECT","maintainer");env.put("DZOKA_WORKER_TENANT",A.toString());env.put("DZOKA_WORKER_LIMIT","2");env.put("DZOKA_WORKER_CYCLES","1");
+        env.put("DZOKA_MEDIA_ENDPOINT",endpoint);env.put("DZOKA_MEDIA_REGION","us-east-1");env.put("DZOKA_MEDIA_BUCKET",bucket);env.put("DZOKA_MEDIA_ACCESS_KEY",access);env.put("DZOKA_MEDIA_SECRET_KEY",secret);env.put("DZOKA_MEDIA_ALLOW_INSECURE_LOOPBACK","true");
+        var log=java.nio.file.Files.createTempFile(java.nio.file.Path.of(".test-tmp"),"media-maintenance-",".log");builder.redirectErrorStream(true).redirectOutput(log.toFile());
+        Process child=builder.start();try{assertTrue(child.waitFor(60,java.util.concurrent.TimeUnit.SECONDS));assertEquals(0,child.exitValue());}finally{if(child.isAlive())child.destroyForcibly();}
+    }
+    @Test void actualBoundedMaintenanceProcessSanitizesAndReconcilesPrivateMedia()throws Exception {
+        membership(A,"maintainer","reports:purge","media:purge","media:process");UUID report=report();var response=upload(report,png(),"image/png",UUID.randomUUID().toString());assertEquals(200,response.statusCode());
+        UUID id=app.getBean(ObjectMapper.class).readValue(response.body(),MediaView.class).id();maintenanceCycle();assertEquals("SANITIZED",app.getBean(MediaStore.class).read(who("owner"),A,id).state());
+        app.getBean(IntakeService.class).delete(who("owner"),A,report);maintenanceCycle();
+        assertEquals(404,media(A,id,"owner","/preview").statusCode());assertFalse(worker().purgeOne(who("purger"),A));
+    }
+    private void makeReconciliationDue(UUID id)throws Exception {
+        try(var c=admin();var s=c.prepareStatement("UPDATE dzoka.media_assets SET cleanup_checked_at=clock_timestamp()-interval '16 minutes' WHERE tenant_id=? AND id=?")){s.setObject(1,A);s.setObject(2,id);s.executeUpdate();}
+    }
+    @Test void unacknowledgedLateSourceAndDerivativeWritesAreIndependentlyErased()throws Exception {
+        UUID report=report();byte[] bytes=png();var response=upload(report,bytes,"image/png",UUID.randomUUID().toString());assertEquals(200,response.statusCode());
+        UUID id=app.getBean(ObjectMapper.class).readValue(response.body(),MediaView.class).id();var store=app.getBean(MediaStore.class);var objects=app.getBean(PrivateObjects.class);var asset=store.claim(who("processor"),A).orElseThrow();
+        app.getBean(IntakeService.class).delete(who("owner"),A,report);
+        var first=store.purgeCandidate(who("purger"),A).orElseThrow();objects.delete(first.sourceKey());objects.delete(first.derivativeKey());assertTrue(store.purged(who("purger"),first));
+        assertFalse(worker().purgeOne(who("purger"),A));
+        // Both PUTs finish after acknowledged erasure, and neither completion callback runs.
+        objects.put(asset.sourceKey(),bytes,asset.sourceSha(),"application/octet-stream");
+        String sha=ContentDigest.sha256(bytes);objects.put(asset.derivativeKey(),bytes,sha,"image/png");
+        assertEquals(404,media(A,id,"owner","/preview").statusCode());makeReconciliationDue(id);
+        assertTrue(worker().purgeOne(who("purger"),A));
+        assertThrows(Failures.Unavailable.class,()->objects.get(asset.sourceKey(),asset.sourceSha(),bytes.length,5*1024*1024));
+        assertThrows(Failures.Unavailable.class,()->objects.get(asset.derivativeKey(),sha,bytes.length,20*1024*1024));
+        assertFalse(store.purged(who("purger"),first));assertFalse(worker().purgeOne(who("purger"),A));
+        try(var c=admin();var s=c.prepareStatement("SELECT reserved_bytes FROM dzoka.media_usage WHERE tenant_id=?")){s.setObject(1,A);try(var r=s.executeQuery()){r.next();assertEquals(0,r.getLong(1));}}
+    }
+    @Test void revokedWriterCannotPreventIndependentLateWriteReconciliation()throws Exception {
+        UUID report=report();byte[] bytes=png();assertEquals(200,upload(report,bytes,"image/png",UUID.randomUUID().toString()).statusCode());
+        var store=app.getBean(MediaStore.class);var asset=store.claim(who("processor"),A).orElseThrow();var objects=app.getBean(PrivateObjects.class);
+        app.getBean(IntakeService.class).delete(who("owner"),A,report);assertTrue(worker().purgeOne(who("purger"),A));
+        objects.put(asset.derivativeKey(),bytes,ContentDigest.sha256(bytes),"image/png");
+        try(var c=admin();var s=c.prepareStatement("UPDATE dzoka.memberships SET active=false WHERE tenant_id=? AND issuer=? AND subject='processor'")){s.setObject(1,A);s.setString(2,issuer);s.executeUpdate();}
+        try {
+            assertThrows(Failures.Forbidden.class,()->store.complete(who("processor"),asset,ContentDigest.sha256(bytes),bytes.length,8,7,"diagnostic"));
+            makeReconciliationDue(asset.id());assertTrue(worker().purgeOne(who("purger"),A));
+            assertThrows(Failures.Unavailable.class,()->objects.get(asset.derivativeKey(),ContentDigest.sha256(bytes),bytes.length,20*1024*1024));
+        } finally {try(var c=admin();var s=c.prepareStatement("UPDATE dzoka.memberships SET active=true WHERE tenant_id=? AND issuer=? AND subject='processor'")){s.setObject(1,A);s.setString(2,issuer);s.executeUpdate();}}
+    }
+    @Test void crashedCleanupLeaseCanBeReclaimedWithoutDoubleQuotaRelease()throws Exception {
+        UUID report=report();assertEquals(200,upload(report,png(),"image/png",UUID.randomUUID().toString()).statusCode());app.getBean(IntakeService.class).delete(who("owner"),A,report);
+        var store=app.getBean(MediaStore.class);var first=store.purgeCandidate(who("purger"),A).orElseThrow();assertTrue(store.purgeCandidate(who("purger"),A).isEmpty());
+        app.getBean(PrivateObjects.class).delete(first.sourceKey()); // process dies before acknowledgment
+        try(var c=admin();var s=c.prepareStatement("UPDATE dzoka.media_assets SET cleanup_until=clock_timestamp()-interval '1 second' WHERE tenant_id=? AND id=?")){s.setObject(1,A);s.setObject(2,first.id());s.executeUpdate();}
+        var next=store.purgeCandidate(who("purger"),A).orElseThrow();assertNotEquals(first.cleanupToken(),next.cleanupToken());assertFalse(store.purged(who("purger"),first));
+        var objects=app.getBean(PrivateObjects.class);objects.delete(next.sourceKey());objects.delete(next.derivativeKey());assertTrue(store.purged(who("purger"),next));assertTrue(store.purged(who("purger"),next));
+        assertFalse(worker().purgeOne(who("purger"),A));
+    }
     @Test void restoredPrivateObjectCannotReopenBeforePostBackupErasureIsApplied() throws Exception {
         membership(A,"restore-worker","retention:recover","operations:read","reports:purge","media:purge");
         UUID report=report();byte[] original=png();var response=upload(report,original,"image/png",UUID.randomUUID().toString());assertEquals(200,response.statusCode());

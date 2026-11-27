@@ -91,7 +91,7 @@ def main():
             time.sleep(0.5)
         else:raise RuntimeError('Authenticated S3 readiness timeout')
         env['DZOKA_TEST_S3_ENDPOINT']=endpoint
-        classes=['FoundationIT','FoundationAdministrationIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','MatchingIT','RecoveryIT','ChannelsIT','FederationIT','TraceabilityIT','EdgeIT','FulfillmentIT','LearningIT','OperationsIT','PerceptionJobsIT','VisionJobsIT','LanguageJobsIT','GenerativeJobsIT','QualityJobsIT','ShonaJobsIT','ShonaCpuJobsIT','StartupConfigurationIT']
+        classes=['FoundationIT','FoundationAdministrationIT','PlacesIT','IntakeIT','MediaStoreIT','S3StorageIT','AiJobsIT','FingerprintRolloutsIT','MatchingIT','RecoveryIT','ChannelsIT','FederationIT','TraceabilityIT','EdgeIT','FulfillmentIT','LearningIT','OperationsIT','PerceptionJobsIT','VisionJobsIT','LanguageJobsIT','GenerativeJobsIT','QualityJobsIT','ShonaJobsIT','ShonaCpuJobsIT','StartupConfigurationIT']
         if not args.storage_only:classes.append('SandboxMediaIT')
         if args.with_docker_shona:
             subprocess.run([sys.executable,str(ROOT/'tools/shona_supervised_runtime.py'),'check'],cwd=ROOT,env=env,check=True)

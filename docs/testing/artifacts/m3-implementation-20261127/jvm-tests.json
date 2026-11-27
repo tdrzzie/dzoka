@@ -1,0 +1,427 @@
+{
+  "scope": "Full 134-case integration run; latest unit/PlacesIT XML reports are from the subsequent 9-case place-restore replay with unchanged application/test source",
+  "suites": {
+    "surefire-reports": [
+      {
+        "suite": "org.dzoka.AutomaticShonaEvidenceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "337261b76231ecfc72285052045ba0c35076296a69d395f96fe429b17ff79d17"
+      },
+      {
+        "suite": "org.dzoka.CanonicalPngTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "f42f7b9709b7f20a3dad30274216c5bf24fbadb9aca80425e64d1a0dfa19c6d3"
+      },
+      {
+        "suite": "org.dzoka.DomainTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "d7021843e2fe700f915c97e89996b758e8d23b9b758f98de8927f849c214c2b7"
+      },
+      {
+        "suite": "org.dzoka.EdgeWindowTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "672c34f92d33affd995a513754421e4b9a55e9d3870e5f8981bae529dc10c0a6"
+      },
+      {
+        "suite": "org.dzoka.EmbeddingSpaceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "ce813348d6925794176f7484c613a9c9ef091c6e8c7e6d68943a1974e8056d07"
+      },
+      {
+        "suite": "org.dzoka.FingerprintRolloutTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "2720b54de9fa4f5df43bdf40db1c515d60f04b28a58ba385b22d0182d5de22ff"
+      },
+      {
+        "suite": "org.dzoka.foundation.security.SecurityConfigurationTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "926f4d3a705f00e7f6b7dbe0f5e84986ac92489fc58ecef7fe59a8dc3c009dba"
+      },
+      {
+        "suite": "org.dzoka.FulfillmentPolicyTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "fb0d1fb60d3741b85ad8ec2e0fa274b5b922287141ae1c2cd312981b998e95b0"
+      },
+      {
+        "suite": "org.dzoka.GenerativeEvidenceTest",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "37b5408ac68cfb862d10cee203eade0fed1081770dc50ac3ae52ffeb0a90da59"
+      },
+      {
+        "suite": "org.dzoka.LanguageEvidenceTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "c386697a913e4b7488db0672769ad86fdf477d33c909adba750462023d06f343"
+      },
+      {
+        "suite": "org.dzoka.LearningEvaluationTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "916f3b77f985eae2e6b31cabf184772f1aadcbc5b982394934adc1b9bcb8b49c"
+      },
+      {
+        "suite": "org.dzoka.MatchingTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "cbe63defb0157269bb7f27c80cb97729dd748ee1fdeebc2cddd383f00f997c4d"
+      },
+      {
+        "suite": "org.dzoka.ModuleBoundaryTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "f248f0b71514966bc0bac214e18732572289e8ea50256672e55ad08347542ef4"
+      },
+      {
+        "suite": "org.dzoka.OperationalTransportTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "5ff36ce891b98692b049127e9e3ecb2b47dd6df4447598d4f3e4068244754995"
+      },
+      {
+        "suite": "org.dzoka.PerceptionEvidenceTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "f1f668d7aafe499ed772ef239555f1f328979272186e574029233db1a3a433e3"
+      },
+      {
+        "suite": "org.dzoka.PlaceDraftTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "1abca160ae1b6a4900b94e553c931d95c37d7fcc504136e74fc0820769b91114",
+        "cases": [
+          "invalidCoordinatesAndAmbiguousWithinPlaceAliasesAreRejected",
+          "aliasesRetainRawUnicodeAndNormalizeSeparately"
+        ]
+      },
+      {
+        "suite": "org.dzoka.ReportDraftTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "1becccb52e234c58c8ef812aad0abde48aaa8d6661237a5c14b8afffd87c1215"
+      },
+      {
+        "suite": "org.dzoka.ShonaEvidenceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "1b4220d0ead85aa78893a88827421bccfe269a3ce4b8e146495df31dfa0b6ee9"
+      },
+      {
+        "suite": "org.dzoka.traceability.EpcisProjectionTest",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "c891f37504aefc24f2f080d467250839d646131d3e5bd6222dc2d160ada77b20"
+      },
+      {
+        "suite": "org.dzoka.VisionEvidenceTest",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "9a15779f97dd26b92063d89b85a4c32a63afb0f47efef8239cfac5b754b239c1"
+      }
+    ],
+    "failsafe-reports": [
+      {
+        "suite": "org.dzoka.AiJobsIT",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "4b89f6d7b90b6a5fecc3dc2267856a67744f742d1b8ce7e6aec8ef857e8f9ac8"
+      },
+      {
+        "suite": "org.dzoka.ChannelsIT",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "0f397e711158920773f5d939b336881775b694316cfd5761c492d63b656381c7"
+      },
+      {
+        "suite": "org.dzoka.EdgeIT",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "ac03d8a2980e082099b563ab58470742339fb6195a0cf6436862b33009bba53f"
+      },
+      {
+        "suite": "org.dzoka.FederationIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "ad688f5fa5dc10ab38acaa80dda245238dab72e56275f6b82b167c66c0cca8b8"
+      },
+      {
+        "suite": "org.dzoka.FingerprintRolloutsIT",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "53e7edc3bb656814740d4d7cb15a1a31d6b3f621c97bf160a727af3a6264a9ad"
+      },
+      {
+        "suite": "org.dzoka.FoundationAdministrationIT",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "ff1be0d6ec1c84d3e91a473834dca68fa6ec9f21e85037e985fdd392aa90f2d3"
+      },
+      {
+        "suite": "org.dzoka.FoundationIT",
+        "tests": 14,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "7d3b1c5f3aaec42ff71a961d06b7587278322d99e0516bfb2910028d37300dbe"
+      },
+      {
+        "suite": "org.dzoka.FulfillmentIT",
+        "tests": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "d586366a875797b69327fc046faf834ac9d25c20c82142af2196a7afac395f64"
+      },
+      {
+        "suite": "org.dzoka.GenerativeJobsIT",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "b7bb3b8c75609646d64fa60bc084b245fbce4f227fbd392f4e4af904d275ebb2"
+      },
+      {
+        "suite": "org.dzoka.IntakeIT",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "0f8acdf6f35555a3564731bbdba589f8b075280aa83f7d84d7f1ca61788b0d88",
+        "cases": [
+          "legalHoldExpiryErasureAndRetryDoNotResurrectRawEvidence",
+          "competingRevisionsCannotOverwriteOneAnother",
+          "sameTenantAndCrossTenantIdsDoNotExposeReports",
+          "concurrentCreationRetainsOneLogicalResult",
+          "caseAndItemReferencesRemainUnresolvedAndOwnerScoped",
+          "revisionsAreAppendOnlyAndStaleUpdatesConflict",
+          "rawBytesUnicodeAndUncertainContextArePreservedSeparately",
+          "invalidPositionTimeZoneAndRoleFieldsFailBeforePersistence",
+          "reportCommitRollsBackWhenOutboxFails"
+        ]
+      },
+      {
+        "suite": "org.dzoka.LanguageJobsIT",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "4b04461390ecc42d9e49afde4987898ae35f847230edc78f0a73e87ac02d638d"
+      },
+      {
+        "suite": "org.dzoka.LearningIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "cbecc830919e2a09fdc57e4c72faef9f8664c978dea7f202ba818bf39fc91f01"
+      },
+      {
+        "suite": "org.dzoka.MatchingIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "3ed96ee5294b7475e188f729f93f4c96d9f44402216cfc785fec37b6a05ec3c7"
+      },
+      {
+        "suite": "org.dzoka.MediaStoreIT",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "eedae2d2ad6ee8804d2d8984818a9053c6d14276a6ee182bcdfece6c84568b7f",
+        "cases": [
+          "uploadIntentIsIdempotentScopedAndQuotaBound",
+          "releasedLegacyTombstoneWithNoPreviousSweepIsImmediatelyEligible",
+          "staleLeaseCannotActivateAndParentDeletionRevokesLateResult",
+          "transientOutagePreservesEvidenceAndRequiresExplicitRetry",
+          "rejectedAssetCleanupDoesNotDeleteValidNeighborAndHoldBlocksCleanup"
+        ]
+      },
+      {
+        "suite": "org.dzoka.OperationsIT",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "d0047cacaa9750542d34b537c87bdba874b82fad3ae199547d6764f5665f04a6"
+      },
+      {
+        "suite": "org.dzoka.PerceptionJobsIT",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "cd9aabc6bd4c036cf6659a77194870200ee7a40a1bdae9a6633b89bc32608c4e"
+      },
+      {
+        "suite": "org.dzoka.PlacesIT",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "5d050e2dd5c12826cf3fd9e36b4c0740477ab4b49c22bff11f0be8de5cefa051",
+        "cases": [
+          "databaseForeignKeysImmutabilityAndRevokedReplaysEnforceIsolation",
+          "rawAliasesAmbiguityAndTenantBoundariesAreRealHttpContracts",
+          "maximumDepthAndSubtreeMovesAreBounded",
+          "reportReferencesAreVersionedAndNeverRewriteRawLocation",
+          "populatedV26UpgradeRetainsOldOutboxAndReleasedMediaTombstones",
+          "reparentingRetainsHistoricalAncestorChainAndRejectsCrossTenantParents",
+          "historyArchiveAndVersionedRetriesCannotSilentlyReplacePlaceEvidence",
+          "outboxFailureRollsBackPlaceAliasesReceiptAndAudit",
+          "concurrentCyclesAndDuplicateCommandsRespectOneTenantForest"
+        ]
+      },
+      {
+        "suite": "org.dzoka.QualityJobsIT",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "f3cb48441338997ef2812419e976a413d7c738c377f9bbec7f71b42b4f6ce6c5"
+      },
+      {
+        "suite": "org.dzoka.RecoveryIT",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "cb3baf9b550fc65fbc1d54acd950c8e18126897d590a1925a656a14ac8f74821"
+      },
+      {
+        "suite": "org.dzoka.S3StorageIT",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "d78066a79157fa188cce42a78dad491028f35cb533acdebaf235e5eeea864e2a",
+        "cases": [
+          "uploadSizeAndUnsupportedFormatsFailBeforePublishing",
+          "realConnectionFailurePreservesIntentAndExactRetryRecovers",
+          "unacknowledgedLateSourceAndDerivativeWritesAreIndependentlyErased",
+          "realPrivateUploadIsIdempotentAndQuarantineCannotBePreviewed",
+          "actualBoundedMaintenanceProcessSanitizesAndReconcilesPrivateMedia",
+          "restoredPrivateObjectCannotReopenBeforePostBackupErasureIsApplied",
+          "objectManifestAndConditionalWritesDetectTampering",
+          "lateCompletionCannotPublishAndActualObjectsArePurgedAfterDeletion",
+          "revokedWriterCannotPreventIndependentLateWriteReconciliation",
+          "crashedCleanupLeaseCanBeReclaimedWithoutDoubleQuotaRelease"
+        ]
+      },
+      {
+        "suite": "org.dzoka.SandboxMediaIT",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "0424d7b18e5811fa6284c7edcde62e8a146af0f829b472378a5d020a81d01353",
+        "cases": [
+          "realSandboxCanonicalizesPixelsDropsMetadataAndOnlyThenAllowsPreview",
+          "spoofedAndMalformedImageContentNeverActivates",
+          "jpegAlsoProducesOnlyCanonicalPng"
+        ]
+      },
+      {
+        "suite": "org.dzoka.ShonaCpuJobsIT",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "d94ed06b2249e9915c0ade99c6d18cd419a24e1b084771a14b1dcd7edf034d68"
+      },
+      {
+        "suite": "org.dzoka.ShonaJobsIT",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "0e94a18c329e1da17de26858a494d8a1cf8671b0e5195d000fbaa767a50ece7a"
+      },
+      {
+        "suite": "org.dzoka.StartupConfigurationIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "a4c184172bfc42caab0bb211d32a9b976abf785c9370a4aa1be34932660c4d9b"
+      },
+      {
+        "suite": "org.dzoka.TraceabilityIT",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "46ccfdd7c7a0825526ff496a4e3606b6ce8685a28513c45469cd455ec4ad5dca"
+      },
+      {
+        "suite": "org.dzoka.VisionJobsIT",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "latestReportSha256": "3d2513d78247d0c6a1fe80d8fbd43ae1a548c27d90d9c21359ddbce040779192"
+      }
+    ]
+  }
+}

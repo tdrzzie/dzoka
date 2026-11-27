@@ -1,0 +1,68 @@
+{
+  "flow": "F16",
+  "page": "01c1c9a5-459f-804b-8009-02837e10310c",
+  "guide": "01c1c9a5-459f-804b-8009-0283d3353475",
+  "views": [
+    {
+      "id": "V01",
+      "title": "Define the source region.",
+      "device": "desktop",
+      "kind": "region",
+      "board": "01c1c9a5-459f-804b-8009-0283899389e6",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "V02",
+      "title": "Mask only the approved item.",
+      "device": "desktop",
+      "kind": "mask",
+      "board": "01c1c9a5-459f-804b-8009-02839185e32f",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "V03",
+      "title": "Approve the bounded plan.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-028399630ca2",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "V04",
+      "title": "Fix the plan before running.",
+      "device": "desktop",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-0283aa545a5e",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "V05",
+      "title": "Revoke access or purge retained crops.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0283b2ebe43b",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "V06",
+      "title": "Access revoked. Purge is tracked.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-0283bc9fb0f8",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 42,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "V02"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "flow": "F15",
+  "page": "01c1c9a5-459f-804b-8009-0282ea982848",
+  "guide": "01c1c9a5-459f-804b-8009-028330238c0e",
+  "views": [
+    {
+      "id": "DPO1",
+      "title": "Review unclaimed-item eligibility.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0282f801a52f",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "DPO2",
+      "title": "Prepare the disposition record.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-02830092f314",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "DPO3",
+      "title": "Approve and confirm disposition.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-02830966d235",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "DPO4",
+      "title": "Disposition is blocked.",
+      "device": "desktop",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-02831c558b74",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "DPO5",
+      "title": "Disposition recorded.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-028325861451",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 30,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "DPO2"
+  ]
+}

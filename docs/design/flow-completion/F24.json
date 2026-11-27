@@ -1,0 +1,68 @@
+{
+  "flow": "F24",
+  "page": "01c1c9a5-459f-804b-8009-02851e8c7635",
+  "guide": "01c1c9a5-459f-804b-8009-02854c23e6b8",
+  "views": [
+    {
+      "id": "H01",
+      "title": "Build a tenant-scoped report.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-028528c6dc99",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "H02",
+      "title": "Explore every report family.",
+      "device": "desktop",
+      "kind": "analytics",
+      "board": "01c1c9a5-459f-804b-8009-02852a90d890",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "H03",
+      "title": "Export only permitted aggregates.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-02852cdf6c42",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "H04",
+      "title": "Keep facts and predictions apart.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-02853716a648",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "H05",
+      "title": "Enable only the alerts you choose.",
+      "device": "mobile",
+      "kind": "consent",
+      "board": "01c1c9a5-459f-804b-8009-0285399624f2",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "H06",
+      "title": "A clear result, including unavailable.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-02853b3db770",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 37,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "H03"
+  ]
+}

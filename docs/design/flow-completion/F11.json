@@ -1,0 +1,113 @@
+{
+  "flow": "F11",
+  "page": "01c1c9a5-459f-804b-8009-0281e6d5eb6b",
+  "guide": "01c1c9a5-459f-804b-8009-02822c134a16",
+  "views": [
+    {
+      "id": "W01",
+      "title": "A voluntary thank-you.",
+      "device": "mobile",
+      "kind": "consent",
+      "board": "01c1c9a5-459f-804b-8009-0281f1fd150f",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "W02",
+      "title": "Authorise only these terms.",
+      "device": "mobile",
+      "kind": "consent",
+      "board": "01c1c9a5-459f-804b-8009-0281f48dcefd",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "W03",
+      "title": "Know what actually happened.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-0281f6b7aa72",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "W04",
+      "title": "An independent financial decision.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0281fa19fc51",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "W05",
+      "title": "Confirm the resolution intent.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-0282034f2bff",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "W06",
+      "title": "Refund and reversal outcomes.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-0282074e9ab7",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "W07",
+      "title": "Payment was not authorised.",
+      "device": "mobile",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-02820a011424",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "W08",
+      "title": "Reserved, with your permission.",
+      "device": "mobile",
+      "kind": "consent",
+      "board": "01c1c9a5-459f-804b-8009-02820bdc43f1",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "W09",
+      "title": "Settlement confirmation.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-02821fcc1ac9",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "W10",
+      "title": "Refund confirmed, history retained.",
+      "device": "desktop",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-028224682f13",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "W11",
+      "title": "A reversal is not confirmed.",
+      "device": "desktop",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-028227ce9efe",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 92,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "W01"
+  ]
+}

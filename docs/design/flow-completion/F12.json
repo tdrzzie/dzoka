@@ -1,0 +1,86 @@
+{
+  "flow": "F12",
+  "page": "01c1c9a5-459f-804b-8009-0282637eb3d6",
+  "guide": "01c1c9a5-459f-804b-8009-0282a4b990a9",
+  "views": [
+    {
+      "id": "T01",
+      "title": "Create a private finder tag.",
+      "device": "mobile",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-02826d432b1c",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "T02",
+      "title": "Print or write your tag.",
+      "device": "mobile",
+      "kind": "tag",
+      "board": "01c1c9a5-459f-804b-8009-02826ee6e3e7",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "T03",
+      "title": "Write to an NFC tag.",
+      "device": "mobile",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-028274e9ac9c",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "T04",
+      "title": "Replace or revoke this tag?",
+      "device": "mobile",
+      "kind": "consent",
+      "board": "01c1c9a5-459f-804b-8009-028276ac086a",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "T05",
+      "title": "Your tag state is explicit.",
+      "device": "mobile",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-02828015842b",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "T06",
+      "title": "The NFC write did not finish.",
+      "device": "mobile",
+      "kind": "state",
+      "board": "01c1c9a5-459f-804b-8009-028282a4ea5d",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "T07",
+      "title": "Your NFC tag is ready.",
+      "device": "mobile",
+      "kind": "receipt",
+      "board": "01c1c9a5-459f-804b-8009-028284c28a9f",
+      "width": 390.00000953674316,
+      "height": 939.9999618530273
+    },
+    {
+      "id": "T08",
+      "title": "Print a private finder tag.",
+      "device": "desktop",
+      "kind": "printTag",
+      "board": "01c1c9a5-459f-804b-8009-028287679395",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 24,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "T02"
+  ]
+}

@@ -9,7 +9,7 @@ from dependency_lock import check
 ROOT=Path(__file__).resolve().parents[1]
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('operation',choices=['serve','migrate','admin-foundation','sanitize-media','purge-media','expire-intake','purge-ai']);args=parser.parse_args()
+    parser=argparse.ArgumentParser();parser.add_argument('operation',choices=['serve','migrate','admin-foundation','sanitize-media','purge-media','expire-intake','maintain-media','purge-ai']);args=parser.parse_args()
     check(ROOT)
     java=(Path(os.environ['JAVA_HOME'])/'bin'/('java.exe' if os.name=='nt' else 'java')) if os.environ.get('JAVA_HOME') else shutil.which('java')
     if not java:raise SystemExit('Reviewed Java 21+ runtime is required')
@@ -28,7 +28,7 @@ def main():
             command=[str(java),'-cp',os.pathsep.join(paths),'org.dzoka.bootstrap.AiMaintenanceMain']
             child_environment={k:v for k,v in os.environ.items() if not k.startswith(('DZOKA_MIGRATION_','DZOKA_OIDC_','DZOKA_MEDIA_','DZOKA_AI_'))}
         else:
-            operation={'sanitize-media':'sanitize','purge-media':'purge','expire-intake':'expire'}[args.operation]
+            operation={'sanitize-media':'sanitize','purge-media':'purge','expire-intake':'expire','maintain-media':'maintain'}[args.operation]
             command=[str(java),'-cp',os.pathsep.join(paths),'org.dzoka.bootstrap.MediaWorkerMain',operation]
             child_environment={k:v for k,v in os.environ.items() if not k.startswith(('DZOKA_MIGRATION_','DZOKA_OIDC_'))}
     return subprocess.run(command,cwd=ROOT,env=child_environment).returncode

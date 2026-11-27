@@ -1,0 +1,95 @@
+{
+  "flow": "F23",
+  "page": "01c1c9a5-459f-804b-8009-0284b316e091",
+  "guide": "01c1c9a5-459f-804b-8009-0284ed2c7698",
+  "views": [
+    {
+      "id": "G01",
+      "title": "Freeze a source-bound dataset.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0284bf602922",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G02",
+      "title": "Adjudicate independently.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0284c1f86d1c",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G03",
+      "title": "Compare evidence, not one score.",
+      "device": "desktop",
+      "kind": "evaluation",
+      "board": "01c1c9a5-459f-804b-8009-0284c4add44d",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G04",
+      "title": "Review a production promotion.",
+      "device": "desktop",
+      "kind": "editor",
+      "board": "01c1c9a5-459f-804b-8009-0284cdb65ab5",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G05",
+      "title": "Confirm a permitted rollback.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-0284cff5a13b",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G06",
+      "title": "Read the governed decision.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-0284d2275bb2",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G07",
+      "title": "Validate before freezing.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-0284df62a12f",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G08",
+      "title": "Approve an exact evidence package.",
+      "device": "desktop",
+      "kind": "dialog",
+      "board": "01c1c9a5-459f-804b-8009-0284e20b9de9",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    },
+    {
+      "id": "G09",
+      "title": "Activation retains the comparison.",
+      "device": "desktop",
+      "kind": "table",
+      "board": "01c1c9a5-459f-804b-8009-0284e54f6379",
+      "width": 1439.9999618530273,
+      "height": 1039.9999618530273
+    }
+  ],
+  "links": 91,
+  "overflow": [],
+  "validation": [],
+  "saved": true,
+  "exportsReviewed": [
+    "G03"
+  ]
+}

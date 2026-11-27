@@ -5,8 +5,12 @@ import java.time.*;
 
 public record ReportDraft(Kind kind, String rawText, String language, String timezone,
         String rawLocation, String rawTime, Double latitude, Double longitude, Double uncertaintyMeters,
-        Instant occurredAfter, Instant occurredBefore, String category) {
+        Instant occurredAfter, Instant occurredBefore, String category, java.util.UUID placeId, Long placeVersion) {
     public enum Kind { LOST, FOUND }
+    public ReportDraft(Kind kind,String rawText,String language,String timezone,String rawLocation,String rawTime,
+                       Double latitude,Double longitude,Double uncertaintyMeters,Instant occurredAfter,Instant occurredBefore,String category) {
+        this(kind,rawText,language,timezone,rawLocation,rawTime,latitude,longitude,uncertaintyMeters,occurredAfter,occurredBefore,category,null,null);
+    }
     public ReportDraft(Kind kind,String rawText,String language,String timezone,String rawLocation,String rawTime,
                        Double latitude,Double longitude,Double uncertaintyMeters,Instant occurredAfter,Instant occurredBefore) {
         this(kind,rawText,language,timezone,rawLocation,rawTime,latitude,longitude,uncertaintyMeters,occurredAfter,occurredBefore,null);
@@ -26,6 +30,7 @@ public record ReportDraft(Kind kind, String rawText, String language, String tim
         if(occurredAfter!=null && occurredBefore!=null && occurredAfter.isAfter(occurredBefore))
             throw new IllegalArgumentException("Invalid time interval");
         if(category!=null && !category.matches("[A-Z][A-Z0-9_]{0,47}")) throw new IllegalArgumentException("Invalid category code");
+        if((placeId==null)!=(placeVersion==null) || placeVersion!=null&&placeVersion<1)throw new IllegalArgumentException("Incomplete place reference");
     }
     public String normalizedText() {
         return rawText==null?null:Normalizer.normalize(rawText,Normalizer.Form.NFC).replaceAll("(?U)\\s+"," ").strip();
